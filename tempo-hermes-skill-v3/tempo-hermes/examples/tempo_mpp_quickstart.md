@@ -44,3 +44,5 @@ export async function handler(request: Request) {
   return result.withReceipt(Response.json({ ok: true }))
 }
 ```
+
+For a runnable local demo package, see `examples/mpp-demo/`.

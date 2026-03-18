@@ -5,13 +5,16 @@
   "type": "module",
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "check": "tsc -p tsconfig.json --noEmit"
+    "check": "tsc -p tsconfig.json --noEmit",
+    "start:server": "node dist/devServer.js",
+    "start:client": "node dist/client.js"
   },
   "dependencies": {
     "mppx": "^0.1.0",
     "viem": "^2.43.0"
   },
   "devDependencies": {
+    "@types/node": "^24.6.0",
     "typescript": "^5.9.0"
   }
 }

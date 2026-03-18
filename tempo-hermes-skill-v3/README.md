@@ -35,6 +35,7 @@ This is still a starter, but it is closer to runnable code:
 - payment helpers are shaped for Codex to finish rather than reinvent
 - MPP workflows are routed to the official quickstarts instead of guessed abstractions
 - the skill now includes installable agent metadata and a self-contained MPP demo package
+- the MPP demo package can now be built and run locally with a Node HTTP wrapper
 
 ## Deliberate non-goals
 - no fake Tempo->ETH bridge logic
