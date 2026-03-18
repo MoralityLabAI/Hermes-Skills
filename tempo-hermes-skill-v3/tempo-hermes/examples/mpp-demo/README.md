@@ -30,6 +30,7 @@ set MPP_MAX_DEPOSIT=1
 ```bash
 npm install
 npm run build
+npm run smoke
 npm run start:server
 ```
 
@@ -48,3 +49,5 @@ npx mppx --inspect http://localhost:3000/paid
 ```
 
 Or, if you want to test with the Tempo CLI against a public paid service, use the recipes in `../tempo_cli_agent_demo.md`.
+
+`npm run smoke` is local-only: it starts the demo server, requests `/paid`, and verifies that the endpoint returns a valid `402 Payment Required` challenge.
