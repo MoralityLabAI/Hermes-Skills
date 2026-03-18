@@ -15,7 +15,7 @@ const mppx = Mppx.create({
   ],
 })
 
-export async function handler(request: Request) {
+export async function chargeHandler(request: Request) {
   const result = await mppx.charge({
     amount: process.env.MPP_PRICE ?? '0.01',
   })(request)
@@ -30,3 +30,24 @@ export async function handler(request: Request) {
     }),
   )
 }
+
+export async function sessionHandler(request: Request) {
+  const result = await mppx.session({
+    amount: process.env.MPP_SESSION_PRICE ?? '0.01',
+    unitType: process.env.MPP_SESSION_UNIT_TYPE ?? 'request',
+    suggestedDeposit: process.env.MPP_SUGGESTED_DEPOSIT ?? '1',
+  })(request)
+
+  if (result.status === 402) return result.challenge
+
+  return result.withReceipt(
+    Response.json({
+      ok: true,
+      settledOn: 'tempo',
+      mode: 'session',
+      message: 'Session-based paid resource unlocked.',
+    }),
+  )
+}
+
+export const handler = chargeHandler

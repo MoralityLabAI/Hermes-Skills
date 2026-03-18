@@ -1,6 +1,6 @@
 import { createServer } from 'node:http'
 import { NodeListener } from 'mppx/server'
-import { handler } from './server.js'
+import { chargeHandler, sessionHandler } from './server.js'
 
 const port = Number(process.env.PORT ?? 3000)
 
@@ -29,13 +29,14 @@ async function readBody(req: import('node:http').IncomingMessage): Promise<Buffe
 
 const server = createServer(async (req, res) => {
   try {
-    if ((req.url ?? '/') !== '/paid') {
+    const path = new URL(req.url ?? '/', `http://${req.headers.host ?? `localhost:${port}`}`).pathname
+    if (path !== '/paid' && path !== '/session') {
       await NodeListener.sendResponse(res, new Response('Not Found', { status: 404 }))
       return
     }
 
     const request = await toRequest(req)
-    const response = await handler(request)
+    const response = path === '/session' ? await sessionHandler(request) : await chargeHandler(request)
     await NodeListener.sendResponse(res, response)
   } catch (error) {
     console.error(error)
@@ -44,5 +45,5 @@ const server = createServer(async (req, res) => {
 })
 
 server.listen(port, () => {
-  console.log(`Tempo MPP demo listening on http://localhost:${port}/paid`)
+  console.log(`Tempo MPP demo listening on http://localhost:${port}/paid and /session`)
 })

@@ -2,6 +2,7 @@ import { spawn, type ChildProcess } from 'node:child_process'
 
 const port = 3100 + Math.floor(Math.random() * 1000)
 const baseUrl = `http://127.0.0.1:${port}`
+const path = process.argv.includes('--session') ? '/session' : '/paid'
 
 function startServer(): Promise<ChildProcess> {
   return new Promise((resolve, reject) => {
@@ -54,7 +55,7 @@ async function waitForServer(child: ChildProcess): Promise<void> {
     }
 
     try {
-      const response = await fetch(`${baseUrl}/paid`, { redirect: 'manual' })
+      const response = await fetch(`${baseUrl}${path}`, { redirect: 'manual' })
       if (response.status > 0) return
     } catch {
       // Server is not ready yet.
@@ -77,7 +78,7 @@ async function main() {
   const child = await startServer()
 
   try {
-    const response = await fetch(`${baseUrl}/paid`)
+    const response = await fetch(`${baseUrl}${path}`)
     const authenticate = response.headers.get('www-authenticate')
 
     if (response.status !== 402) {
@@ -88,7 +89,7 @@ async function main() {
       throw new Error('Missing payment challenge in www-authenticate header')
     }
 
-    console.log('Smoke test passed: local MPP demo returned a payment challenge.')
+    console.log(`Smoke test passed: local MPP demo returned a payment challenge for ${path}.`)
   } finally {
     await stopServer(child)
   }
