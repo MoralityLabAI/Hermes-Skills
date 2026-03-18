@@ -1,0 +1,15 @@
+interface:
+  display_name: "Tempo Hermes"
+  short_description: "Build on Tempo and MPP"
+  default_prompt: "Use $tempo-hermes to build or update a Tempo blockchain or MPP integration with current official docs."
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "tempo-docs"
+      description: "Tempo documentation MCP server"
+      transport: "streamable_http"
+      url: "https://docs.tempo.xyz/api/mcp"
+
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,16 @@
+{
+  "name": "tempo-hermes-skill-v3",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "check:rpc": "bash scripts/check_tempo_rpc.sh",
+    "plan": "python3 scripts/render_tempo_plan.py --payments --sponsorship --parallel --codex"
+  },
+  "dependencies": {
+    "viem": "^2.43.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.0"
+  }
+}
