@@ -1,0 +1,27 @@
+{
+  "run_id": "trm_routerBench",
+  "data_source": "persistent-tesseract",
+  "trainer_recipe": "persistent_tesseract_qlora",
+  "baseline_model": "",
+  "router_model": "",
+  "anchor_set": {
+    "envs": ["persistent-tesseract"]
+  },
+  "mutations": [
+    {
+      "name": "routerbench_smoke",
+      "batch_size": 4,
+      "epochs": 1,
+      "lr": 0.0002,
+      "max_examples": 8
+    }
+  ],
+  "generalization_ladder": [
+    { "generalization_level": 0, "label": "in_domain" },
+    { "generalization_level": 2, "label": "cross_run" }
+  ],
+  "plateau_patience": 1,
+  "maximize_key": "anchor_score",
+  "max_generalization_gap": 0.15,
+  "scorecard_relpath": "scorecard.json"
+}

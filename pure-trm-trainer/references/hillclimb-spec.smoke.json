@@ -1,0 +1,29 @@
+{
+  "run_id": "trm_hillclimb_smoke",
+  "artifact_root": "C:/projects/GPTStoryworld/hermes-skills/pure-trm-trainer/runs",
+  "template_root": "C:/projects/HRM-re/experiments/hrm_trainer_template",
+  "trainer_script": "C:/projects/HRM-re/experiments/hrm_trainer_template/run_trainer.ps1",
+  "base_trainer_config": "C:/projects/HRM-re/experiments/hrm_trainer_template/trainer_config_safe.json",
+  "corpus_spec": "C:/projects/GPTStoryworld/hermes-skills/storyworld-conveyor/sample_data/trm_training_corpus_spec.sample.json",
+  "evaluator_script": "C:/projects/GPTStoryworld/hermes-skills/pure-trm-trainer/scripts/evaluate_trm_scorecard.py",
+  "scorecard_relpath": "scorecard.json",
+  "plateau_patience": 1,
+  "maximize_key": "anchor_score",
+  "max_generalization_gap": 0.15,
+  "anchor_set": {
+    "envs": ["heldout_world_a"]
+  },
+  "mutations": [
+    {
+      "name": "smoke_mutation",
+      "batch_size": 4,
+      "epochs": 1,
+      "lr": 0.0002,
+      "max_examples": 8
+    }
+  ],
+  "generalization_ladder": [
+    { "generalization_level": 0, "label": "in_domain" },
+    { "generalization_level": 2, "label": "cross_run" }
+  ]
+}

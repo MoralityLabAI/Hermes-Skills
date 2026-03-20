@@ -1,0 +1,4 @@
+interface:
+  display_name: "Pure TRM Trainer"
+  short_description: "Train, benchmark, and tune pure TRM controllers with Hermes"
+  default_prompt: "Use $pure-trm-trainer to assemble TRM data, run the persistent-tesseract router QLoRA recipe, launch a named bench from the bench menu, or tail a running bench with the Hermes-style status card watcher."

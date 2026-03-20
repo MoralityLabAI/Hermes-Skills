@@ -1,0 +1,64 @@
+{
+  "run_id": "trm_primehubBaseline",
+  "data_source": "primehub-reasoning-subset-vs-baseline",
+  "trainer_recipe": "persistent_tesseract_qlora",
+  "baseline_model": "",
+  "router_model": "",
+  "anchor_set": {
+    "envs": [
+      "gsm8k",
+      "intellect-3-rl/math",
+      "intellect-3-rl/logic",
+      "intellect-3-rl/science",
+      "mmlu/college_computer_science",
+      "mmlu/elementary_mathematics",
+      "mmlu/formal_logic",
+      "mmlu/high_school_computer_science",
+      "mmlu/logical_fallacies",
+      "mmlu/machine_learning",
+      "mmlu/miscellaneous"
+    ]
+  },
+  "comparison_mode": "baseline_vs_router",
+  "env_groups": {
+    "requested_alias": "gmsk8",
+    "math": [
+      "gsm8k",
+      "intellect-3-rl/math",
+      "mmlu/elementary_mathematics"
+    ],
+    "logic": [
+      "intellect-3-rl/logic",
+      "mmlu/formal_logic",
+      "mmlu/logical_fallacies"
+    ],
+    "science": [
+      "intellect-3-rl/science"
+    ],
+    "cs": [
+      "mmlu/college_computer_science",
+      "mmlu/high_school_computer_science",
+      "mmlu/machine_learning"
+    ],
+    "broad": [
+      "mmlu/miscellaneous"
+    ]
+  },
+  "mutations": [
+    {
+      "name": "primehub_baseline_smoke",
+      "batch_size": 4,
+      "epochs": 1,
+      "lr": 0.0002,
+      "max_examples": 12
+    }
+  ],
+  "generalization_ladder": [
+    { "generalization_level": 1, "label": "light_generalization" },
+    { "generalization_level": 3, "label": "cross_env_family" }
+  ],
+  "plateau_patience": 1,
+  "maximize_key": "anchor_score",
+  "max_generalization_gap": 0.2,
+  "scorecard_relpath": "scorecard.json"
+}

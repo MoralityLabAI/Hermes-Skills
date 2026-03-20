@@ -1,0 +1,24 @@
+{
+  "run_id": "trm_routerTrain",
+  "trainer_recipe": "persistent_tesseract_qlora",
+  "trainer_script": "D:/Research_Engine/prime_lab/storyworld_sft/train_qlora_sft.py",
+  "corpus_builder_script": "../scripts/build_router_training_corpus.py",
+  "source_jsonl": "D:/Research_Engine/tesseract_persistent/data/router/tesseract-router-dataset-v1.jsonl",
+  "messages_jsonl": "../runs/trm_routerTrain/router_messages.jsonl",
+  "output_dir": "../runs/trm_routerTrain/trainer_outputs",
+  "baseline_model": "",
+  "model": "",
+  "train_hparams": {
+    "max_steps": 200,
+    "seq_len": 512,
+    "batch_size": 1,
+    "lr": 0.0002,
+    "grad_accum": 16,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "target_modules": "q_proj,k_proj,v_proj,o_proj",
+    "streaming": true
+  },
+  "benchmark_spec": "primehub-envs-bench.json"
+}
