@@ -1,0 +1,7 @@
+environment: toy_env
+model: qwen-9b
+training:
+  steps: 100
+  batch_size: 1
+reward:
+  type: simple

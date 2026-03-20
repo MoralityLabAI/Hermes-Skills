@@ -1,0 +1,6 @@
+environment: toy_env
+model: qwen-9b
+num_examples: 10
+num_rollouts: 2
+metrics:
+  - reward

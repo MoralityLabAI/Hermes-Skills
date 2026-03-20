@@ -1,0 +1,24 @@
+{
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "max_steps": 40,
+  "seq_len": 384,
+  "batch_size": 1,
+  "lr": 0.0001,
+  "grad_accum": 8,
+  "lora_r": 16,
+  "lora_alpha": 32,
+  "lora_dropout": 0.05,
+  "target_modules": "q_proj,k_proj,v_proj,o_proj",
+  "seed": 1,
+  "envs": [
+    {
+      "name": "gsm8k_main_sample",
+      "kind": "qa",
+      "source_root": "D:/Research_Engine/prime_envs/gsm8k",
+      "data_glob": "main/train-*.parquet",
+      "split": "train",
+      "limit": 256,
+      "prompt_prefix": "Solve the grade-school math problem carefully. Return only the final answer."
+    }
+  ]
+}

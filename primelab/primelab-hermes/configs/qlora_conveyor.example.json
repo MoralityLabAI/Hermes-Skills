@@ -1,0 +1,33 @@
+{
+  "model": "Qwen/Qwen3.5-27B",
+  "max_steps": 80,
+  "seq_len": 640,
+  "batch_size": 2,
+  "lr": 0.0001,
+  "grad_accum": 8,
+  "lora_r": 64,
+  "lora_alpha": 128,
+  "lora_dropout": 0.05,
+  "target_modules": "q_proj,k_proj,v_proj,o_proj",
+  "seed": 1,
+  "envs": [
+    {
+      "name": "intellect_math",
+      "kind": "qa",
+      "source_root": "/mnt/d/Research_Engine/prime_envs/intellect-3-rl",
+      "data_glob": "math/train-*.parquet",
+      "split": "train",
+      "limit": 1024,
+      "prompt_prefix": "Solve the problem carefully. Return the final answer directly."
+    },
+    {
+      "name": "intellect_logic",
+      "kind": "qa",
+      "source_root": "/mnt/d/Research_Engine/prime_envs/intellect-3-rl",
+      "data_glob": "logic/train-*.parquet",
+      "split": "train",
+      "limit": 1024,
+      "prompt_prefix": "Reason through the logic problem carefully. Return the final answer directly."
+    }
+  ]
+}

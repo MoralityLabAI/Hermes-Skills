@@ -1,0 +1,11 @@
+model = "Qwen/Qwen3-30B-A3B-Instruct-2507"
+
+[sampling]
+max_tokens = 256
+
+[[env]]
+id = "primeintellect/wiki-search"
+
+[eval]
+num_examples = 16
+rollouts_per_example = 1

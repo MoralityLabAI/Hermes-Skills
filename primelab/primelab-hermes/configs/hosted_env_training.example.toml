@@ -1,0 +1,24 @@
+model = "Qwen/Qwen3-30B-A3B-Instruct-2507"
+max_steps = 100
+batch_size = 128
+rollouts_per_example = 8
+
+[sampling]
+max_tokens = 512
+
+[[env]]
+id = "primeintellect/wiki-search"
+
+[eval]
+interval = 25
+num_examples = 30
+rollouts_per_example = 1
+eval_base_model = true
+
+[[eval.env]]
+id = "primeintellect/wiki-search"
+args = { split = "test" }
+
+[wandb]
+project = "primelab-hermes"
+name = "qwen3-30b-i-wiki-search"

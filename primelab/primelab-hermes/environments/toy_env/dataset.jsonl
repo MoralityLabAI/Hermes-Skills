@@ -1,0 +1,4 @@
+{"input": "Return exactly the number 2", "target": "2"}
+{"input": "Return exactly the number 5", "target": "5"}
+{"input": "Return exactly the number 10", "target": "10"}
+{"input": "Return exactly the number 42", "target": "42"}

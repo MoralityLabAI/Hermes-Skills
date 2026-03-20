@@ -1,0 +1,8 @@
+datasets>=2.19
+peft>=0.12
+transformers>=4.46
+trl>=0.10
+accelerate>=0.33
+bitsandbytes>=0.43
+pillow>=10.3
+torchvision>=0.19

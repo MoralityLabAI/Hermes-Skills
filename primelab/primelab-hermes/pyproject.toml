@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "primelab-hermes"
+version = "0.1.0"
+description = "Starter repo for Prime Intellect Lab + Hermes workflows"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "typer>=0.12",
+  "rich>=13.7",
+  "pydantic>=2.6",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

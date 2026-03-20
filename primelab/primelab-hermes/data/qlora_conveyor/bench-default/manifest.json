@@ -1,0 +1,14 @@
+{
+  "envs": [
+    {
+      "name": "gsm8k_main_sample",
+      "source_root": "D:\\Research_Engine\\prime_envs\\gsm8k",
+      "config_name": null,
+      "split": "train",
+      "kind": "qa",
+      "limit": 256,
+      "records": 256,
+      "out_path": "data\\qlora_conveyor\\bench-default\\gsm8k_main_sample\\train.jsonl"
+    }
+  ]
+}
