@@ -1,0 +1,13 @@
+{
+  "run_dir": "runs\\qlora_conveyor\\bench-josiefied-qwen35-08b-2step",
+  "log": "runs\\qlora_conveyor\\bench-josiefied-qwen35-08b-2step.log",
+  "log_summary": {
+    "loss_points": 0,
+    "final_loss": null,
+    "finite_final_loss": false,
+    "last_loss_line": ""
+  },
+  "run_meta": {
+    "adapter_present": false
+  }
+}

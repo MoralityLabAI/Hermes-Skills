@@ -190,6 +190,9 @@ G. Hosted Training guardrails
 - Local endpoint aliases such as Trinity or other inference models do not by themselves prove Hosted Training support.
 - If a model is not in `prime rl models`, route it to the pod / QLoRA lane instead of the Hosted Training lane.
 - Be careful with Qwen3 thinking models in multi-turn training: the Prime docs note that Qwen3 chat templates can strip `<think>` blocks, which can violate increasing-context assumptions.
+- Prefer concrete starter configs over blank TOML when possible:
+  - `configs/hosted_env_training.example.toml`
+  - `configs/hosted_gsm8k_training.example.toml`
 
 H. Training prep
 - Choose a starting model appropriate to the goal:

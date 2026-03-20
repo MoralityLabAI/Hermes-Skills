@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+src/primelab_hermes/__init__.py
+src/primelab_hermes/local_eval.py
+src/primelab_hermes/qlora_conveyor.py
+src/primelab_hermes/trainer_compat.py
+src/primelab_hermes.egg-info/PKG-INFO
+src/primelab_hermes.egg-info/SOURCES.txt
+src/primelab_hermes.egg-info/dependency_links.txt
+src/primelab_hermes.egg-info/requires.txt
+src/primelab_hermes.egg-info/top_level.txt

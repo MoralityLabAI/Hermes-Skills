@@ -30,6 +30,7 @@ primelab-hermes/
 |-- configs/
 |   |-- base_eval.yaml
 |   |-- base_rl.yaml
+|   |-- hosted_gsm8k_training.example.toml
 |   |-- hosted_env_training.example.toml
 |   `-- qlora_conveyor.example.json
 |-- environments/
@@ -170,12 +171,21 @@ The current Prime docs say Hosted Training supports:
 - `PrimeIntellect/INTELLECT-3`
 
 Use [hosted_env_training.example.toml](C:/projects/Hermes-Skills/Hermes%20Skills/primelab/primelab-hermes/configs/hosted_env_training.example.toml) as the starter config for this lane.
+Use [hosted_gsm8k_training.example.toml](C:/projects/Hermes-Skills/Hermes%20Skills/primelab/primelab-hermes/configs/hosted_gsm8k_training.example.toml) when you want the concrete `gsm8k` version of the same lane.
 
 Important constraint:
 
 - local endpoint aliases such as `trinity-mini` in a lab workspace may work for eval or inference, but they are not proof of Hosted Training support
 - if the model is not returned by `prime rl models`, route it to the pod / QLoRA conveyor instead
 - Qwen3 thinking models need extra care in multi-turn training because the Prime docs note that Qwen3 chat templates can remove prior `<think>` blocks
+
+Minimal `gsm8k` hosted flow:
+
+```bash
+prime eval run primeintellect/gsm8k -m Qwen/Qwen3-30B-A3B-Instruct-2507 -n 16 -r 1
+prime rl run configs/hosted_gsm8k_training.example.toml
+prime rl logs <run_id> -f
+```
 
 ## QLoRA conveyor
 

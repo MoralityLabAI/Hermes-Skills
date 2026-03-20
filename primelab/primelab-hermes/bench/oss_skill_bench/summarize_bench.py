@@ -6,22 +6,45 @@ import re
 from pathlib import Path
 
 
-LOSS_PATTERN = re.compile(r"'loss':\s*([0-9eE.+-]+)")
+LOSS_PATTERN = re.compile(r"['\"]loss['\"]:\s*([0-9eE.+-]+)")
+
+
+def _read_text(path: Path) -> str:
+    for encoding in ("utf-8", "utf-16", "utf-16-le", "cp1252"):
+        try:
+            return path.read_text(encoding=encoding)
+        except UnicodeError:
+            continue
+    return path.read_text(encoding="utf-8", errors="replace")
 
 
 def parse_log(log_path: Path) -> dict:
     losses = []
     last_step_line = ""
     if log_path.exists():
-        for line in log_path.read_text(encoding="utf-8", errors="replace").splitlines():
-            if "loss" in line:
+        for line in _read_text(log_path).splitlines():
+            stripped = line.strip()
+            if stripped.startswith("{") and stripped.endswith("}"):
+                try:
+                    payload = ast.literal_eval(stripped)
+                except (SyntaxError, ValueError):
+                    payload = None
+                if isinstance(payload, dict):
+                    if "loss" in payload:
+                        try:
+                            losses.append(float(payload["loss"]))
+                        except (TypeError, ValueError):
+                            pass
+                    if "train_loss" in payload or "loss" in payload:
+                        last_step_line = stripped
+            if "loss" in line.lower():
                 match = LOSS_PATTERN.search(line)
                 if match:
                     try:
                         losses.append(float(match.group(1)))
                     except ValueError:
                         pass
-            if "train_loss" in line or "loss" in line:
+            if "train_loss" in line.lower() or "loss" in line.lower():
                 last_step_line = line
     final_loss = losses[-1] if losses else None
     return {

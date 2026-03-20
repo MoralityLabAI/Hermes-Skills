@@ -1,0 +1,25 @@
+Traceback (most recent call last):
+  File "C:\projects\Hermes-Skills\Hermes Skills\primelab\primelab-hermes\.venv-gpu\Lib\site-packages\transformers\models\auto\configuration_auto.py", line 1360, in from_pretrained
+    config_class = CONFIG_MAPPING[config_dict["model_type"]]
+                   ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\projects\Hermes-Skills\Hermes Skills\primelab\primelab-hermes\.venv-gpu\Lib\site-packages\transformers\models\auto\configuration_auto.py", line 1048, in __getitem__
+    raise KeyError(key)
+KeyError: 'qwen3_5'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\projects\Hermes-Skills\Hermes Skills\primelab\primelab-hermes\scripts\train_qlora_sft.py", line 144, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "C:\projects\Hermes-Skills\Hermes Skills\primelab\primelab-hermes\scripts\train_qlora_sft.py", line 58, in main
+    cfg, tok, patch_meta = load_patched_config(args.model)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\projects\Hermes-Skills\Hermes Skills\primelab\primelab-hermes\src\primelab_hermes\trainer_compat.py", line 33, in load_patched_config
+    cfg = AutoConfig.from_pretrained(model_name, trust_remote_code=True)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\projects\Hermes-Skills\Hermes Skills\primelab\primelab-hermes\.venv-gpu\Lib\site-packages\transformers\models\auto\configuration_auto.py", line 1362, in from_pretrained
+    raise ValueError(
+ValueError: The checkpoint you are trying to load has model type `qwen3_5` but Transformers does not recognize this architecture. This could be because of an issue with the checkpoint, or because your version of Transformers is out of date.
+
+You can update Transformers with the command `pip install --upgrade transformers`. If this does not work, and the checkpoint is very new, then there may not be a release version that supports this model yet. In this case, you can get the most up-to-date code by installing Transformers from source with the command `pip install git+https://github.com/huggingface/transformers.git`

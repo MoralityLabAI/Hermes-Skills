@@ -1,0 +1,10 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'bos_token_id': None}.
+trainable params: 1,081,344 || all params: 495,114,112 || trainable%: 0.2184
+  0%|          | 0/2 [00:00<?, ?it/s]C:\projects\Hermes-Skills\Hermes Skills\primelab\primelab-hermes\.venv-gpu\Lib\site-packages\transformers\integrations\sdpa_attention.py:96: UserWarning: 1Torch was not compiled with flash attention. (Triggered internally at ..\aten\src\ATen\native\transformers\cuda\sdp_utils.cpp:455.)
+  attn_output = torch.nn.functional.scaled_dot_product_attention(
+ 50%|#####     | 1/2 [00:05<00:05,  5.31s/it]                                              50%|#####     | 1/2 [00:05<00:05,  5.31s/it]100%|##########| 2/2 [00:07<00:00,  3.67s/it]                                             100%|##########| 2/2 [00:07<00:00,  3.67s/it]                                             100%|##########| 2/2 [00:09<00:00,  3.67s/it]100%|##########| 2/2 [00:09<00:00,  4.91s/it]
+{'loss': 2.7591, 'grad_norm': 10.375, 'learning_rate': 0.0002, 'entropy': 1.1880967617034912, 'num_tokens': 164.0, 'mean_token_accuracy': 0.6012269854545593, 'epoch': 0.5}
+{'loss': 2.6005, 'grad_norm': 4.78125, 'learning_rate': 0.0001, 'entropy': 1.3139581680297852, 'num_tokens': 325.0, 'mean_token_accuracy': 0.6000000238418579, 'epoch': 1.0}
+{'train_runtime': 9.8374, 'train_samples_per_second': 0.203, 'train_steps_per_second': 0.203, 'train_loss': 2.6798170804977417, 'epoch': 1.0}
+OK: saved adapter to runs\qlora_conveyor\bench-qwen25-05b-2step\adapter

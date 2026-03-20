@@ -1,0 +1,41 @@
+{
+  "run_dir": "runs\\qlora_conveyor\\bench-smoke-qwen25-05b-gpu3",
+  "log": "runs\\qlora_conveyor\\bench-smoke-qwen25-05b-gpu3.log",
+  "log_summary": {
+    "loss_points": 2,
+    "final_loss": 2.7591,
+    "finite_final_loss": true,
+    "last_loss_line": "{'train_runtime': 8.6733, 'train_samples_per_second': 0.115, 'train_steps_per_second': 0.115, 'train_loss': 2.759129047393799, 'epoch': 1.0}"
+  },
+  "run_meta": {
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "data": "data\\qlora_conveyor\\bench-default\\gsm8k_main_sample\\train.jsonl",
+    "out": "runs\\qlora_conveyor\\bench-smoke-qwen25-05b-gpu3\\adapter",
+    "max_steps": 1,
+    "seq_len": 256,
+    "batch_size": 1,
+    "grad_accum": 1,
+    "lr": 0.0002,
+    "lora": {
+      "r": 8,
+      "alpha": 16,
+      "dropout": 0.05,
+      "target_modules": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj"
+      ]
+    },
+    "patch_meta": {
+      "pad_token_id": 151643,
+      "tokenizer_pad_token_id": 151643,
+      "tokenizer_eos_token_id": 151645,
+      "rope_scaling": null,
+      "max_position_embeddings": 32768,
+      "rope_theta": 1000000.0,
+      "config_class": "Qwen2Config"
+    },
+    "adapter_present": true
+  }
+}
