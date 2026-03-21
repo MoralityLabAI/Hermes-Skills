@@ -41,7 +41,9 @@ primelab-hermes/
 |       `-- rubric.py
 |-- scripts/
 |   |-- build_qlora_dataset.py
+|   |-- capture_hosted_run.py
 |   |-- exfiltrate_prime_qlora_run.sh
+|   |-- hosted_run_menu.py
 |   |-- remote_qlora_conveyor.py
 |   |-- inspect_rollouts.py
 |   |-- run_eval.sh
@@ -57,6 +59,7 @@ primelab-hermes/
 |   `-- qlora_conveyor/
 |-- src/
 |   `-- primelab_hermes/
+|       |-- hosted_training.py
 |       |-- __init__.py
 |       |-- local_eval.py
 |       |-- qlora_conveyor.py
@@ -128,6 +131,8 @@ For QLoRA runs, prefer a stage machine with explicit receipts over a single opaq
 prime eval run toy_env -m qwen-9b -n 10 -r 2
 prime rl run configs/base_rl.yaml
 prime rl logs <run_id> -f
+python scripts/capture_hosted_run.py --run-id <run_id> --config configs/hosted_gsm8k_training.example.toml
+python scripts/hosted_run_menu.py
 bash scripts/run_prime_qlora_conveyor.sh .
 RUN_ROOT_LOCAL=runs/qlora_conveyor/<run_id> bash scripts/exfiltrate_prime_qlora_run.sh .
 ```
@@ -185,7 +190,14 @@ Minimal `gsm8k` hosted flow:
 prime eval run primeintellect/gsm8k -m Qwen/Qwen3-30B-A3B-Instruct-2507 -n 16 -r 1
 prime rl run configs/hosted_gsm8k_training.example.toml
 prime rl logs <run_id> -f
+python scripts/capture_hosted_run.py --run-id <run_id> --config configs/hosted_gsm8k_training.example.toml
+python scripts/hosted_run_menu.py --compare <run_id>
 ```
+
+The hosted-run capture path is meant to replace dashboard-only memory:
+
+- `scripts/capture_hosted_run.py` pulls the current Prime logs, parses step/reward/eval metrics, writes `runs/hosted_training/<run_id>/receipt.json`, and prints a compact ASCII status table
+- `scripts/hosted_run_menu.py` lists saved receipts and compares runs in an ASCII table that a small controller model can read directly
 
 ## QLoRA conveyor
 

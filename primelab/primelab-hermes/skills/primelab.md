@@ -128,8 +128,10 @@ D. QLoRA conveyor design
 - Never bury the control logic inside a giant monolithic script if the same behavior can be represented as a resumable stage machine.
 - Prefer the packaged starter files in this repo over ad hoc copies:
   - `configs/qlora_conveyor.example.json`
+  - `scripts/capture_hosted_run.py`
   - `scripts/build_qlora_dataset.py`
   - `scripts/exfiltrate_prime_qlora_run.sh`
+  - `scripts/hosted_run_menu.py`
   - `scripts/stage_qlora_bundle.py`
   - `scripts/train_qlora_sft.py`
   - `scripts/remote_qlora_conveyor.py`
@@ -193,6 +195,11 @@ G. Hosted Training guardrails
 - Prefer concrete starter configs over blank TOML when possible:
   - `configs/hosted_env_training.example.toml`
   - `configs/hosted_gsm8k_training.example.toml`
+- After a hosted run starts or finishes, capture it locally:
+  - `python scripts/capture_hosted_run.py --run-id <run_id> --config <config>`
+- When comparing hosted runs, prefer the saved local receipts:
+  - `python scripts/hosted_run_menu.py`
+  - `python scripts/hosted_run_menu.py --compare <run_id_a> <run_id_b>`
 
 H. Training prep
 - Choose a starting model appropriate to the goal:

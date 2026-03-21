@@ -1,1 +1,1 @@
-__all__ = ["local_eval", "qlora_conveyor", "trainer_compat"]
+__all__ = ["hosted_training", "local_eval", "qlora_conveyor", "trainer_compat"]

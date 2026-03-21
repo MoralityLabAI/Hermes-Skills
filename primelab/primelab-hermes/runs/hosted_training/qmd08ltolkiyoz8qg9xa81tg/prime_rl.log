@@ -1,0 +1,1063 @@
+   Building prime-rl @ file:///app
+Downloading jedi (1.5MiB)
+Downloading virtualenv (5.7MiB)
+Downloading ruff (12.8MiB)
+Downloading widgetsnbextension (2.1MiB)
+Downloading debugpy (4.0MiB)
+ Downloaded widgetsnbextension
+ Downloaded debugpy
+ Downloaded virtualenv
+ Downloaded jedi
+ Downloaded ruff
+      Built prime-rl @ file:///app
+Uninstalled 1 package in 0.57ms
+Installed 35 packages in 86ms
+/app/.venv/lib/python3.12/site-packages/tyro/_resolver.py:600: TyroWarning: 
+<class 'prime_rl.configs.orchestrator.DefaultAdvantageConfig'> does not match 
+any type in Union: [<class 'types.UnionType'>, <class 'NoneType'>]
+  warnings.warn(
+17:16:59 [INFO] Starting orchestrator
+17:16:59 [INFO] Installing environment primeintellect/gsm8k@0.1.3
+17:17:14 [INFO] Successfully installed environment primeintellect/gsm8k@0.1.3
+17:17:14 [WARNING] Token-in-token-out (TITO) client is enabled. Only use this if
+your environment has a linear history and the chat template has the extension 
+property.
+17:17:15 [INFO] Initializing tokenizer for Qwen/Qwen3-30B-A3B-Instruct-2507
+17:17:19 [INFO] Initialized 2 rollout filter(s): ['gibberish', 'repetition']
+17:17:19 [INFO] Initializing monitor (wandb=None, 
+prime_monitor=base_url='https://backend-worker-abruy2xuia-ew.a.run.app/api/inter
+nal/rft' api_key_var='PRIME_API_KEY' log_extras=LogExtrasConfig(samples=True, 
+distributions=True, interval=10))
+17:17:19 [INFO] Initializing PrimeMonitor 
+(base_url='https://backend-worker-abruy2xuia-ew.a.run.app/api/internal/rft' 
+api_key_var='PRIME_API_KEY' log_extras=LogExtrasConfig(samples=True, 
+distributions=True, interval=10))
+17:17:19 [INFO] Loading 1 training environment(s) (primeintellect/gsm8k@0.1.3)
+Generating train split: 100%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ| 7473/7473 [00:00<00:00, 124475.43 
+examples/s]
+Generating test split: 100%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ| 1319/1319 [00:00<00:00, 491977.50 
+examples/s]
+Map (num_proc=10): 100%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ| 7473/7473 [00:00<00:00, 26389.58 examples/s]
+Map (num_proc=10): 100%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ| 1319/1319 [00:00<00:00, 5489.27 examples/s]
+Map: 100%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ| 7473/7473 [00:00<00:00, 34463.71 examples/s]
+Map: 100%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ| 7473/7473 [00:00<00:00, 34566.99 examples/s]
+Map: 100%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ| 7473/7473 [00:00<00:00, 36372.87 examples/s]
+Map: 100%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ| 1319/1319 [00:00<00:00, 33431.35 examples/s]
+Map: 100%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ| 1319/1319 [00:00<00:00, 34184.10 examples/s]
+Map: 100%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ| 7473/7473 [00:02<00:00, 3453.29 examples/s]
+Map: 100%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ| 1319/1319 [00:00<00:00, 3401.12 examples/s]
+Map: 100%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‰| 7468/7473 [00:02<00:00, 3588.09 examples/s]
+Map: 100%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ| 7473/7473 [00:02<00:00, 3451.88 examples/s]
+Map: 100%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ| 1319/1319 [00:00<00:00, 3411.12 examples/s]
+17:17:29 [INFO] Connecting train environment primeintellect/gsm8k to server at 
+tcp://rft-env-qmd08ltolkiyoz8qg9xa81tg-gsm8k-0.rft-stack-prod-qwen3-30b-instruct
+-h100-2.svc.cluster.local:5555
+17:17:29 [INFO] Waiting for train environment servers to be ready
+17:17:29 [INFO] Waiting for env server primeintellect/gsm8k 
+(tcp://rft-env-qmd08ltolkiyoz8qg9xa81tg-gsm8k-0.rft-stack-prod-qwen3-30b-instruc
+t-h100-2.svc.cluster.local:5555) to become healthy (timeout=10m)
+17:17:29 [INFO] Env server primeintellect/gsm8k 
+(tcp://rft-env-qmd08ltolkiyoz8qg9xa81tg-gsm8k-0.rft-stack-prod-qwen3-30b-instruc
+t-h100-2.svc.cluster.local:5555) became healthy (was startup)
+17:17:29 [INFO] Env server primeintellect/gsm8k 
+(tcp://rft-env-qmd08ltolkiyoz8qg9xa81tg-gsm8k-0.rft-stack-prod-qwen3-30b-instruc
+t-h100-2.svc.cluster.local:5555) is healthy
+17:17:29 [SUCCESS] Train environment servers ready
+17:17:32 [INFO] Connecting eval environment primeintellect/gsm8k to server at 
+tcp://127.0.0.1:42727
+17:17:32 [INFO] Waiting for eval environment servers to be ready
+17:17:32 [INFO] Waiting for env server primeintellect/gsm8k 
+(tcp://127.0.0.1:42727) to become healthy (timeout=10m)
+17:17:52 [INFO] Env server primeintellect/gsm8k (tcp://127.0.0.1:42727) became 
+healthy (was startup)
+17:17:52 [INFO] Env server primeintellect/gsm8k (tcp://127.0.0.1:42727) is 
+healthy
+17:17:52 [SUCCESS] Eval environment servers ready
+17:17:52 [INFO] Setting up buffer (seed=None env_ratios=None easy_threshold=None
+hard_threshold=None easy_fraction=0.0 hard_fraction=0.0 
+online_difficulty_filtering=False hash_keys=['task', 'prompt'])
+17:17:52 [INFO] Initializing checkpoint manager (interval=3 resume_step=-1 
+wait_for_weights_timeout=1200 keep_last=5 keep_interval=None skip_progress=False
+skip_buffer=False)
+17:17:52 [WARNING] No checkpoints found in 
+/data/outputs/run_qmd08ltolkiyoz8qg9xa81tg/checkpoints. Starting from scratch.
+17:17:52 [INFO] Waiting for inference pool to be ready
+17:17:54 [SUCCESS] Inference pool ready
+17:17:54 [INFO] Initializing weight broadcast (type='filesystem')
+17:17:54 [INFO] Initializing training batch sender (type='filesystem')
+17:17:54 [INFO] Training from scratch
+17:17:54 [INFO] Starting orchestrator loop (max_steps=100)
+17:17:54 [INFO] Starting orchestrator step 0
+17:17:54 [INFO] Running evals for checkpoint step 0
+17:17:54 [INFO] Evaluating primeintellect/gsm8k (num_examples=30, 
+rollouts_per_example=1)
+17:18:09 [SUCCESS] Evaluated primeintellect/gsm8k in 15.31s (Avg@1=0.9667, 
+Pass@1: 0.9667, No-response: 0.0%, Completion Length: 293.83 (Â±147.54, âˆˆ[98.00, 
+868.00]), Truncated: 0.0%)
+17:18:24 [WARNING] Detected busy event loop. Measured 0.3s (min=0.0s, med=0.0s, 
+p90=0.0s, max=13.8s) event loop lag over the last 53 measurement(s)
+17:18:24 [INFO] Logging samples to Prime Intellect API at step 0
+17:18:24 [INFO] Logging distributions to Prime Intellect API at step 0
+17:18:24 [SUCCESS] Step 0 | Time: 30.31s | Reward: 1.0000 | Throughput: 5557.2 
+tokens/s | Seq. Length: 318.5 tokens/sample | Async Level: 0 | Max. Off-Policy 
+Level: 0
+17:18:24 [INFO] Starting orchestrator step 1
+17:18:50 [SUCCESS] Step 1 | Time: 26.31s | Reward: 0.8828 | Throughput: 3770.3 
+tokens/s | Seq. Length: 386.8 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+17:18:51 [INFO] Starting orchestrator step 2
+17:18:51 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 1 (>1 step(s) ahead). Training is progressing normally.
+17:20:25 [INFO] Orchestrator resumed: checkpoint 1 ready (after 94.10s)
+17:20:50 [SUCCESS] Step 2 | Time: 119.31s | Reward: 0.9141 | Throughput: 10630.5
+tokens/s | Seq. Length: 374.2 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+17:20:50 [INFO] Saving checkpoint at step 3
+17:20:50 [INFO] Starting orchestrator step 3
+17:20:50 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 2 (>1 step(s) ahead). Training is progressing normally.
+17:22:20 [INFO] Orchestrator resumed: checkpoint 2 ready (after 90.10s)
+17:23:19 [SUCCESS] Step 3 | Time: 148.34s | Reward: 0.9453 | Throughput: 5975.7 
+tokens/s | Seq. Length: 346.3 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+17:23:19 [INFO] Starting orchestrator step 4
+17:23:19 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 3 (>1 step(s) ahead). Training is progressing normally.
+17:24:19 [INFO] Orchestrator resumed: checkpoint 3 ready (after 60.07s)
+17:25:14 [SUCCESS] Step 4 | Time: 115.28s | Reward: 0.9688 | Throughput: 5819.2 
+tokens/s | Seq. Length: 358.8 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+17:25:14 [INFO] Starting orchestrator step 5
+17:25:14 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 4 (>1 step(s) ahead). Training is progressing normally.
+17:27:44 [INFO] Orchestrator resumed: checkpoint 4 ready (after 150.18s)
+17:28:12 [SUCCESS] Step 5 | Time: 178.01s | Reward: 0.8438 | Throughput: 6676.9 
+tokens/s | Seq. Length: 375.0 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+17:28:12 [INFO] Saving checkpoint at step 6
+17:28:12 [INFO] Starting orchestrator step 6
+17:28:12 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 5 (>1 step(s) ahead). Training is progressing normally.
+17:29:43 [INFO] Orchestrator resumed: checkpoint 5 ready (after 90.10s)
+17:40:52 [SUCCESS] Step 6 | Time: 759.28s | Reward: 0.8594 | Throughput: 141.9 
+tokens/s | Seq. Length: 356.9 tokens/sample | Async Level: 0 | Max. Off-Policy 
+Level: 0
+17:40:52 [INFO] Starting orchestrator step 7
+17:41:45 [SUCCESS] Step 7 | Time: 52.93s | Reward: 1.0000 | Throughput: 1480.5 
+tokens/s | Seq. Length: 305.9 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+17:41:45 [INFO] Starting orchestrator step 8
+17:41:45 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 7 (>1 step(s) ahead). Training is progressing normally.
+17:42:15 [INFO] Orchestrator resumed: checkpoint 7 ready (after 30.03s)
+17:44:41 [SUCCESS] Step 8 | Time: 175.85s | Reward: 0.9102 | Throughput: 2305.3 
+tokens/s | Seq. Length: 332.4 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+17:44:41 [INFO] Saving checkpoint at step 9
+17:44:41 [INFO] Starting orchestrator step 9
+17:44:41 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 8 (>1 step(s) ahead). Training is progressing normally.
+17:45:41 [INFO] Orchestrator resumed: checkpoint 8 ready (after 60.06s)
+17:46:06 [SUCCESS] Step 9 | Time: 84.88s | Reward: 0.9688 | Throughput: 14871.1 
+tokens/s | Seq. Length: 325.3 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+17:46:06 [INFO] Starting orchestrator step 10
+17:46:06 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 9 (>1 step(s) ahead). Training is progressing normally.
+17:49:06 [INFO] Orchestrator resumed: checkpoint 9 ready (after 180.21s)
+17:49:29 [INFO] Logging samples to Prime Intellect API at step 10
+17:49:29 [INFO] Logging distributions to Prime Intellect API at step 10
+17:49:29 [SUCCESS] Step 10 | Time: 203.12s | Reward: 1.0000 | Throughput: 
+11282.1 tokens/s | Seq. Length: 301.7 tokens/sample | Async Level: 1 | Max. 
+Off-Policy Level: 0
+17:49:30 [INFO] Starting orchestrator step 11
+17:49:30 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 10 (>1 step(s) ahead). Training is progressing normally.
+17:51:30 [INFO] Orchestrator resumed: checkpoint 10 ready (after 120.13s)
+17:52:10 [SUCCESS] Step 11 | Time: 160.33s | Reward: 0.9141 | Throughput: 7290.6
+tokens/s | Seq. Length: 322.7 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+17:52:10 [INFO] Saving checkpoint at step 12
+17:52:10 [INFO] Starting orchestrator step 12
+17:52:10 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 11 (>1 step(s) ahead). Training is progressing normally.
+17:53:40 [INFO] Orchestrator resumed: checkpoint 11 ready (after 90.10s)
+17:54:11 [WARNING] No trajectory steps for example 3051. Skipping rollout.
+17:54:11 [WARNING] No trajectory steps for example 2104. Skipping rollout.
+17:54:11 [WARNING] No trajectory steps for example 5879. Skipping rollout.
+17:54:11 [WARNING] No trajectory steps for example 5879. Skipping rollout.
+17:54:11 [WARNING] No trajectory steps for example 4058. Skipping rollout.
+17:54:11 [WARNING] No trajectory steps for example 2278. Skipping rollout.
+17:54:11 [WARNING] No trajectory steps for example 793. Skipping rollout.
+17:54:11 [WARNING] No trajectory steps for example 793. Skipping rollout.
+17:54:11 [WARNING] No trajectory steps for example 1403. Skipping rollout.
+17:54:11 [WARNING] No trajectory steps for example 3399. Skipping rollout.
+17:54:11 [WARNING] No trajectory steps for example 5514. Skipping rollout.
+17:54:11 [WARNING] No trajectory steps for example 5156. Skipping rollout.
+17:54:11 [WARNING] No trajectory steps for example 3312. Skipping rollout.
+17:54:11 [WARNING] No trajectory steps for example 3312. Skipping rollout.
+17:54:11 [WARNING] No trajectory steps for example 1050. Skipping rollout.
+17:54:11 [WARNING] No trajectory steps for example 6269. Skipping rollout.
+17:54:11 [WARNING] No trajectory steps for example 5189. Skipping rollout.
+17:54:11 [WARNING] No trajectory steps for example 660. Skipping rollout.
+17:54:11 [SUCCESS] Step 12 | Time: 121.12s | Reward: 0.8438 | Throughput: 8763.8
+tokens/s | Seq. Length: 305.7 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+17:54:12 [INFO] Starting orchestrator step 13
+17:54:12 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 12 (>1 step(s) ahead). Training is progressing normally.
+17:56:41 [INFO] Orchestrator resumed: checkpoint 12 ready (after 149.17s)
+17:57:10 [WARNING] No trajectory steps for example 7099. Skipping rollout.
+17:57:10 [WARNING] No trajectory steps for example 742. Skipping rollout.
+17:57:10 [WARNING] No trajectory steps for example 742. Skipping rollout.
+17:57:10 [WARNING] No trajectory steps for example 4148. Skipping rollout.
+17:57:10 [WARNING] No trajectory steps for example 4148. Skipping rollout.
+17:57:10 [WARNING] No trajectory steps for example 474. Skipping rollout.
+17:57:10 [WARNING] No trajectory steps for example 4958. Skipping rollout.
+17:57:10 [WARNING] No trajectory steps for example 1203. Skipping rollout.
+17:57:10 [WARNING] No trajectory steps for example 4633. Skipping rollout.
+17:57:10 [WARNING] No trajectory steps for example 3473. Skipping rollout.
+17:57:10 [WARNING] No trajectory steps for example 2058. Skipping rollout.
+17:57:10 [WARNING] No trajectory steps for example 2058. Skipping rollout.
+17:57:10 [WARNING] No trajectory steps for example 7216. Skipping rollout.
+17:57:10 [WARNING] No trajectory steps for example 3013. Skipping rollout.
+17:57:10 [WARNING] No trajectory steps for example 3013. Skipping rollout.
+17:57:10 [WARNING] No trajectory steps for example 6934. Skipping rollout.
+17:57:10 [WARNING] No trajectory steps for example 5600. Skipping rollout.
+17:57:10 [WARNING] No trajectory steps for example 2974. Skipping rollout.
+17:57:10 [WARNING] No trajectory steps for example 2974. Skipping rollout.
+17:57:10 [WARNING] No trajectory steps for example 4273. Skipping rollout.
+17:57:10 [SUCCESS] Step 13 | Time: 178.41s | Reward: 0.8320 | Throughput: 
+12338.2 tokens/s | Seq. Length: 300.6 tokens/sample | Async Level: 1 | Max. 
+Off-Policy Level: 0
+17:57:10 [INFO] Starting orchestrator step 14
+17:57:10 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 13 (>1 step(s) ahead). Training is progressing normally.
+18:05:11 [INFO] Orchestrator resumed: checkpoint 13 ready (after 480.51s)
+18:05:57 [SUCCESS] Step 14 | Time: 526.70s | Reward: 0.8867 | Throughput: 5387.1
+tokens/s | Seq. Length: 367.5 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+18:05:57 [INFO] Saving checkpoint at step 15
+18:05:57 [INFO] Starting orchestrator step 15
+18:05:57 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 14 (>1 step(s) ahead). Training is progressing normally.
+18:09:57 [INFO] Orchestrator resumed: checkpoint 14 ready (after 240.27s)
+18:12:44 [SUCCESS] Step 15 | Time: 406.73s | Reward: 0.9570 | Throughput: 577.3 
+tokens/s | Seq. Length: 333.2 tokens/sample | Async Level: 0 | Max. Off-Policy 
+Level: 1
+18:12:44 [INFO] Starting orchestrator step 16
+18:15:48 [SUCCESS] Step 16 | Time: 184.29s | Reward: 0.9375 | Throughput: 461.6 
+tokens/s | Seq. Length: 332.2 tokens/sample | Async Level: 0 | Max. Off-Policy 
+Level: 1
+18:15:49 [INFO] Starting orchestrator step 17
+18:28:33 [SUCCESS] Step 17 | Time: 764.53s | Reward: 0.9375 | Throughput: 115.7 
+tokens/s | Seq. Length: 345.4 tokens/sample | Async Level: 0 | Max. Off-Policy 
+Level: 1
+18:28:33 [INFO] Saving checkpoint at step 18
+18:28:33 [INFO] Starting orchestrator step 18
+18:29:26 [SUCCESS] Step 18 | Time: 52.43s | Reward: 0.9648 | Throughput: 1617.3 
+tokens/s | Seq. Length: 330.9 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 1
+18:29:26 [INFO] Starting orchestrator step 19
+18:29:26 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 18 (>1 step(s) ahead). Training is progressing normally.
+18:29:56 [INFO] Orchestrator resumed: checkpoint 18 ready (after 30.04s)
+18:30:29 [SUCCESS] Step 19 | Time: 62.82s | Reward: 0.8984 | Throughput: 12110.6
+tokens/s | Seq. Length: 372.9 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+18:30:29 [INFO] Starting orchestrator step 20
+18:30:29 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 19 (>1 step(s) ahead). Training is progressing normally.
+18:31:59 [INFO] Orchestrator resumed: checkpoint 19 ready (after 90.10s)
+18:32:41 [INFO] Logging samples to Prime Intellect API at step 20
+18:32:41 [INFO] Logging distributions to Prime Intellect API at step 20
+18:32:41 [SUCCESS] Step 20 | Time: 131.71s | Reward: 0.9609 | Throughput: 4306.3
+tokens/s | Seq. Length: 365.3 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+18:32:41 [INFO] Saving checkpoint at step 21
+18:32:41 [INFO] Starting orchestrator step 21
+18:32:41 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 20 (>1 step(s) ahead). Training is progressing normally.
+18:32:41 [INFO] Orchestrator resumed: checkpoint 20 ready (after 0.00s)
+18:33:04 [SUCCESS] Step 21 | Time: 23.03s | Reward: 0.9062 | Throughput: 4025.5 
+tokens/s | Seq. Length: 363.8 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 1
+18:33:04 [INFO] Starting orchestrator step 22
+18:33:04 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 21 (>1 step(s) ahead). Training is progressing normally.
+18:34:34 [INFO] Orchestrator resumed: checkpoint 21 ready (after 90.11s)
+18:34:57 [SUCCESS] Step 22 | Time: 112.55s | Reward: 0.9492 | Throughput: 
+9554802.6 tokens/s | Seq. Length: 340.6 tokens/sample | Async Level: 1 | Max. 
+Off-Policy Level: 0
+18:34:57 [INFO] Starting orchestrator step 23
+18:34:57 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 22 (>1 step(s) ahead). Training is progressing normally.
+18:35:57 [INFO] Orchestrator resumed: checkpoint 22 ready (after 60.07s)
+18:36:46 [SUCCESS] Step 23 | Time: 108.65s | Reward: 0.9570 | Throughput: 
+12302.9 tokens/s | Seq. Length: 352.5 tokens/sample | Async Level: 1 | Max. 
+Off-Policy Level: 0
+18:36:46 [INFO] Saving checkpoint at step 24
+18:36:46 [INFO] Starting orchestrator step 24
+18:36:46 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 23 (>1 step(s) ahead). Training is progressing normally.
+18:37:09 [INFO] Orchestrator resumed: checkpoint 23 ready (after 23.03s)
+18:37:37 [SUCCESS] Step 24 | Time: 51.68s | Reward: 0.8984 | Throughput: 10033.3
+tokens/s | Seq. Length: 352.8 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+18:37:38 [INFO] Starting orchestrator step 25
+18:37:38 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 24 (>1 step(s) ahead). Training is progressing normally.
+18:40:59 [INFO] Orchestrator resumed: checkpoint 24 ready (after 201.22s)
+18:41:25 [SUCCESS] Step 25 | Time: 227.00s | Reward: 0.9727 | Throughput: 
+12481.0 tokens/s | Seq. Length: 322.1 tokens/sample | Async Level: 1 | Max. 
+Off-Policy Level: 0
+18:41:25 [INFO] Starting orchestrator step 26
+18:41:25 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 25 (>1 step(s) ahead). Training is progressing normally.
+18:42:25 [INFO] Orchestrator resumed: checkpoint 25 ready (after 60.07s)
+18:43:40 [SUCCESS] Step 26 | Time: 135.35s | Reward: 0.9375 | Throughput: 2929.0
+tokens/s | Seq. Length: 312.7 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+18:43:40 [INFO] Saving checkpoint at step 27
+18:43:40 [INFO] Starting orchestrator step 27
+18:43:40 [INFO] Running evals for checkpoint step 25
+18:43:40 [INFO] Evaluating primeintellect/gsm8k (num_examples=30, 
+rollouts_per_example=1)
+18:43:50 [SUCCESS] Evaluated primeintellect/gsm8k in 9.37s (Avg@1=0.9333, 
+Pass@1: 0.9333, No-response: 0.0%, Completion Length: 262.77 (Â±90.36, âˆˆ[97.00, 
+412.00]), Truncated: 0.0%)
+18:43:50 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 26 (>1 step(s) ahead). Training is progressing normally.
+18:43:54 [INFO] Orchestrator resumed: checkpoint 26 ready (after 4.01s)
+18:44:29 [SUCCESS] Step 27 | Time: 48.96s | Reward: 0.9375 | Throughput: 6372.6 
+tokens/s | Seq. Length: 345.6 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+18:44:30 [INFO] Starting orchestrator step 28
+18:44:30 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 27 (>1 step(s) ahead). Training is progressing normally.
+18:47:41 [INFO] Orchestrator resumed: checkpoint 27 ready (after 191.22s)
+18:48:17 [WARNING] No trajectory steps for example 6097. Skipping rollout.
+18:48:17 [WARNING] No trajectory steps for example 6097. Skipping rollout.
+18:48:17 [WARNING] No trajectory steps for example 3394. Skipping rollout.
+18:48:17 [WARNING] No trajectory steps for example 2575. Skipping rollout.
+18:48:17 [WARNING] No trajectory steps for example 7056. Skipping rollout.
+18:48:17 [WARNING] No trajectory steps for example 356. Skipping rollout.
+18:48:17 [WARNING] No trajectory steps for example 356. Skipping rollout.
+18:48:17 [WARNING] No trajectory steps for example 277. Skipping rollout.
+18:48:17 [WARNING] No trajectory steps for example 7101. Skipping rollout.
+18:48:17 [WARNING] No trajectory steps for example 7101. Skipping rollout.
+18:48:17 [WARNING] No trajectory steps for example 7009. Skipping rollout.
+18:48:17 [WARNING] No trajectory steps for example 4938. Skipping rollout.
+18:48:17 [WARNING] No trajectory steps for example 4938. Skipping rollout.
+18:48:17 [WARNING] No trajectory steps for example 3365. Skipping rollout.
+18:48:17 [WARNING] No trajectory steps for example 3365. Skipping rollout.
+18:48:17 [WARNING] No trajectory steps for example 4738. Skipping rollout.
+18:48:17 [WARNING] No trajectory steps for example 905. Skipping rollout.
+18:48:17 [WARNING] No trajectory steps for example 905. Skipping rollout.
+18:48:17 [WARNING] No trajectory steps for example 759. Skipping rollout.
+18:48:17 [WARNING] No trajectory steps for example 759. Skipping rollout.
+18:48:17 [WARNING] No trajectory steps for example 4197. Skipping rollout.
+18:48:17 [WARNING] No trajectory steps for example 7295. Skipping rollout.
+18:48:17 [WARNING] No trajectory steps for example 7295. Skipping rollout.
+18:48:17 [WARNING] No trajectory steps for example 904. Skipping rollout.
+18:48:17 [WARNING] No trajectory steps for example 904. Skipping rollout.
+18:48:17 [SUCCESS] Step 28 | Time: 227.05s | Reward: 0.8008 | Throughput: 
+15531.4 tokens/s | Seq. Length: 341.3 tokens/sample | Async Level: 1 | Max. 
+Off-Policy Level: 0
+18:48:17 [INFO] Starting orchestrator step 29
+18:48:17 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 28 (>1 step(s) ahead). Training is progressing normally.
+18:51:47 [INFO] Orchestrator resumed: checkpoint 28 ready (after 210.26s)
+18:52:47 [WARNING] No trajectory steps for example 2706. Skipping rollout.
+18:52:47 [WARNING] No trajectory steps for example 2706. Skipping rollout.
+18:52:47 [WARNING] No trajectory steps for example 2706. Skipping rollout.
+18:52:47 [WARNING] No trajectory steps for example 2706. Skipping rollout.
+18:52:47 [WARNING] No trajectory steps for example 2706. Skipping rollout.
+18:52:47 [WARNING] No trajectory steps for example 3879. Skipping rollout.
+18:52:47 [SUCCESS] Step 29 | Time: 270.19s | Reward: 0.9336 | Throughput: 2146.0
+tokens/s | Seq. Length: 302.1 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+18:52:47 [INFO] Saving checkpoint at step 30
+18:52:47 [INFO] Starting orchestrator step 30
+18:52:48 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 29 (>1 step(s) ahead). Training is progressing normally.
+18:52:55 [INFO] Orchestrator resumed: checkpoint 29 ready (after 7.01s)
+18:53:42 [INFO] Logging samples to Prime Intellect API at step 30
+18:53:42 [INFO] Logging distributions to Prime Intellect API at step 30
+18:53:42 [SUCCESS] Step 30 | Time: 54.44s | Reward: 0.9648 | Throughput: 3981.4 
+tokens/s | Seq. Length: 345.6 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+18:53:42 [INFO] Starting orchestrator step 31
+18:53:42 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 30 (>1 step(s) ahead). Training is progressing normally.
+18:55:48 [INFO] Orchestrator resumed: checkpoint 30 ready (after 126.14s)
+18:58:07 [SUCCESS] Step 31 | Time: 264.90s | Reward: 0.9336 | Throughput: 796.0 
+tokens/s | Seq. Length: 365.2 tokens/sample | Async Level: 0 | Max. Off-Policy 
+Level: 1
+18:58:07 [INFO] Starting orchestrator step 32
+19:02:03 [SUCCESS] Step 32 | Time: 235.97s | Reward: 0.9688 | Throughput: 374.3 
+tokens/s | Seq. Length: 344.9 tokens/sample | Async Level: 0 | Max. Off-Policy 
+Level: 1
+19:02:04 [INFO] Saving checkpoint at step 33
+19:02:04 [INFO] Starting orchestrator step 33
+19:04:41 [SUCCESS] Step 33 | Time: 157.92s | Reward: 1.0000 | Throughput: 579.7 
+tokens/s | Seq. Length: 357.5 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+19:04:42 [INFO] Starting orchestrator step 34
+19:04:42 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 33 (>1 step(s) ahead). Training is progressing normally.
+19:05:03 [INFO] Orchestrator resumed: checkpoint 33 ready (after 21.02s)
+19:05:52 [SUCCESS] Step 34 | Time: 70.60s | Reward: 0.9375 | Throughput: 3572.6 
+tokens/s | Seq. Length: 340.3 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+19:05:53 [INFO] Starting orchestrator step 35
+19:05:53 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 34 (>1 step(s) ahead). Training is progressing normally.
+19:09:23 [INFO] Orchestrator resumed: checkpoint 34 ready (after 210.22s)
+19:10:14 [SUCCESS] Step 35 | Time: 261.88s | Reward: 0.9531 | Throughput: 2678.2
+tokens/s | Seq. Length: 359.7 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+19:10:15 [INFO] Saving checkpoint at step 36
+19:10:15 [INFO] Starting orchestrator step 36
+19:10:15 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 35 (>1 step(s) ahead). Training is progressing normally.
+19:10:27 [INFO] Orchestrator resumed: checkpoint 35 ready (after 12.01s)
+19:11:16 [SUCCESS] Step 36 | Time: 61.50s | Reward: 0.9766 | Throughput: 3674.0 
+tokens/s | Seq. Length: 334.3 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 1
+19:11:16 [INFO] Starting orchestrator step 37
+19:11:16 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 36 (>1 step(s) ahead). Training is progressing normally.
+19:12:15 [INFO] Orchestrator resumed: checkpoint 36 ready (after 59.06s)
+19:12:34 [SUCCESS] Step 37 | Time: 78.08s | Reward: 0.9688 | Throughput: 
+9704120.9 tokens/s | Seq. Length: 330.3 tokens/sample | Async Level: 1 | Max. 
+Off-Policy Level: 2
+19:12:35 [INFO] Starting orchestrator step 38
+19:12:35 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 37 (>1 step(s) ahead). Training is progressing normally.
+19:13:35 [INFO] Orchestrator resumed: checkpoint 37 ready (after 60.07s)
+19:14:02 [SUCCESS] Step 38 | Time: 86.88s | Reward: 0.9023 | Throughput: 10709.0
+tokens/s | Seq. Length: 340.4 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+19:14:02 [INFO] Saving checkpoint at step 39
+19:14:02 [INFO] Starting orchestrator step 39
+19:14:02 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 38 (>1 step(s) ahead). Training is progressing normally.
+19:14:32 [INFO] Orchestrator resumed: checkpoint 38 ready (after 30.03s)
+19:15:24 [SUCCESS] Step 39 | Time: 82.42s | Reward: 0.9375 | Throughput: 8468.0 
+tokens/s | Seq. Length: 320.4 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+19:15:24 [INFO] Starting orchestrator step 40
+19:15:24 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 39 (>1 step(s) ahead). Training is progressing normally.
+19:19:33 [INFO] Orchestrator resumed: checkpoint 39 ready (after 248.28s)
+19:19:58 [INFO] Logging samples to Prime Intellect API at step 40
+19:19:58 [INFO] Logging distributions to Prime Intellect API at step 40
+19:19:58 [SUCCESS] Step 40 | Time: 273.64s | Reward: 0.9414 | Throughput: 
+10728.6 tokens/s | Seq. Length: 303.2 tokens/sample | Async Level: 1 | Max. 
+Off-Policy Level: 0
+19:19:58 [INFO] Starting orchestrator step 41
+19:19:58 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 40 (>1 step(s) ahead). Training is progressing normally.
+19:21:28 [INFO] Orchestrator resumed: checkpoint 40 ready (after 90.10s)
+19:21:52 [SUCCESS] Step 41 | Time: 113.27s | Reward: 0.8672 | Throughput: 
+10709.8 tokens/s | Seq. Length: 361.1 tokens/sample | Async Level: 1 | Max. 
+Off-Policy Level: 0
+19:21:52 [INFO] Saving checkpoint at step 42
+19:21:52 [INFO] Starting orchestrator step 42
+19:21:52 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 41 (>1 step(s) ahead). Training is progressing normally.
+19:23:22 [INFO] Orchestrator resumed: checkpoint 41 ready (after 90.10s)
+19:23:24 [WARNING] Failed to query /v1/models on 10.40.12.17: 
+19:23:24 [ERROR] Failed to sync server 10.40.12.17: All connection attempts 
+failed
+19:24:09 [SUCCESS] Step 42 | Time: 137.44s | Reward: 0.9766 | Throughput: 3384.7
+tokens/s | Seq. Length: 316.1 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+19:24:10 [INFO] Starting orchestrator step 43
+19:24:10 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 42 (>1 step(s) ahead). Training is progressing normally.
+19:24:40 [INFO] Orchestrator resumed: checkpoint 42 ready (after 30.03s)
+19:25:03 [SUCCESS] Step 43 | Time: 53.25s | Reward: 0.9414 | Throughput: 11239.6
+tokens/s | Seq. Length: 350.5 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+19:25:03 [INFO] Starting orchestrator step 44
+19:25:03 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 43 (>1 step(s) ahead). Training is progressing normally.
+19:28:25 [INFO] Orchestrator resumed: checkpoint 43 ready (after 202.22s)
+19:28:55 [SUCCESS] Step 44 | Time: 232.49s | Reward: 0.9062 | Throughput: 8769.6
+tokens/s | Seq. Length: 338.3 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+19:28:56 [INFO] Saving checkpoint at step 45
+19:28:56 [INFO] Starting orchestrator step 45
+19:28:56 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 44 (>1 step(s) ahead). Training is progressing normally.
+19:31:26 [INFO] Orchestrator resumed: checkpoint 44 ready (after 150.17s)
+19:32:23 [SUCCESS] Step 45 | Time: 207.41s | Reward: 0.9805 | Throughput: 3058.4
+tokens/s | Seq. Length: 322.9 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+19:32:23 [INFO] Starting orchestrator step 46
+19:32:23 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 45 (>1 step(s) ahead). Training is progressing normally.
+19:33:23 [INFO] Orchestrator resumed: checkpoint 45 ready (after 60.06s)
+19:33:52 [SUCCESS] Step 46 | Time: 88.99s | Reward: 0.8945 | Throughput: 7980.0 
+tokens/s | Seq. Length: 371.0 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+19:33:53 [INFO] Starting orchestrator step 47
+19:33:53 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 46 (>1 step(s) ahead). Training is progressing normally.
+19:35:23 [INFO] Orchestrator resumed: checkpoint 46 ready (after 90.10s)
+19:37:57 [SUCCESS] Step 47 | Time: 244.36s | Reward: 0.9531 | Throughput: 623.1 
+tokens/s | Seq. Length: 332.5 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+19:37:57 [INFO] Saving checkpoint at step 48
+19:37:57 [INFO] Starting orchestrator step 48
+19:37:57 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 47 (>1 step(s) ahead). Training is progressing normally.
+19:38:27 [INFO] Orchestrator resumed: checkpoint 47 ready (after 30.03s)
+19:39:09 [SUCCESS] Step 48 | Time: 72.05s | Reward: 0.9375 | Throughput: 4562.9 
+tokens/s | Seq. Length: 309.8 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+19:39:09 [INFO] Starting orchestrator step 49
+19:39:09 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 48 (>1 step(s) ahead). Training is progressing normally.
+19:40:39 [INFO] Orchestrator resumed: checkpoint 48 ready (after 90.09s)
+19:41:47 [SUCCESS] Step 49 | Time: 157.20s | Reward: 0.9531 | Throughput: 1825.7
+tokens/s | Seq. Length: 312.8 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+19:41:47 [INFO] Starting orchestrator step 50
+19:41:47 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 49 (>1 step(s) ahead). Training is progressing normally.
+19:42:16 [INFO] Orchestrator resumed: checkpoint 49 ready (after 29.03s)
+19:43:02 [INFO] Logging samples to Prime Intellect API at step 50
+19:43:02 [INFO] Logging distributions to Prime Intellect API at step 50
+19:43:02 [SUCCESS] Step 50 | Time: 75.19s | Reward: 0.8633 | Throughput: 3033.5 
+tokens/s | Seq. Length: 358.4 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+19:43:02 [INFO] Saving checkpoint at step 51
+19:43:02 [INFO] Starting orchestrator step 51
+19:43:02 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 50 (>1 step(s) ahead). Training is progressing normally.
+19:43:32 [INFO] Orchestrator resumed: checkpoint 50 ready (after 30.03s)
+19:45:12 [SUCCESS] Step 51 | Time: 129.50s | Reward: 0.9336 | Throughput: 1073.7
+tokens/s | Seq. Length: 324.3 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 1
+19:45:12 [INFO] Starting orchestrator step 52
+19:45:12 [INFO] Running evals for checkpoint step 50
+19:45:12 [INFO] Evaluating primeintellect/gsm8k (num_examples=30, 
+rollouts_per_example=1)
+19:46:31 [SUCCESS] Evaluated primeintellect/gsm8k in 78.86s (Avg@1=0.9333, 
+Pass@1: 0.9333, No-response: 0.0%, Completion Length: 242.43 (Â±81.99, âˆˆ[115.00, 
+412.00]), Truncated: 0.0%)
+19:46:44 [SUCCESS] Step 52 | Time: 91.84s | Reward: 0.9414 | Throughput: 6347.9 
+tokens/s | Seq. Length: 319.4 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+19:46:44 [INFO] Starting orchestrator step 53
+19:46:44 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 52 (>1 step(s) ahead). Training is progressing normally.
+19:47:17 [INFO] Orchestrator resumed: checkpoint 52 ready (after 33.04s)
+19:47:41 [SUCCESS] Step 53 | Time: 56.70s | Reward: 0.9219 | Throughput: 14532.7
+tokens/s | Seq. Length: 326.3 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+19:47:41 [INFO] Saving checkpoint at step 54
+19:47:41 [INFO] Starting orchestrator step 54
+19:47:41 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 53 (>1 step(s) ahead). Training is progressing normally.
+19:54:11 [INFO] Orchestrator resumed: checkpoint 53 ready (after 390.43s)
+19:55:43 [SUCCESS] Step 54 | Time: 482.17s | Reward: 0.9648 | Throughput: 2056.9
+tokens/s | Seq. Length: 329.9 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+19:55:43 [INFO] Starting orchestrator step 55
+19:55:43 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 54 (>1 step(s) ahead). Training is progressing normally.
+19:56:08 [INFO] Orchestrator resumed: checkpoint 54 ready (after 25.02s)
+19:56:50 [SUCCESS] Step 55 | Time: 66.97s | Reward: 0.9805 | Throughput: 2952.5 
+tokens/s | Seq. Length: 292.0 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 1
+19:56:51 [INFO] Starting orchestrator step 56
+19:56:51 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 55 (>1 step(s) ahead). Training is progressing normally.
+20:01:21 [INFO] Orchestrator resumed: checkpoint 55 ready (after 270.30s)
+20:01:37 [WARNING] No trajectory steps for example 4066. Skipping rollout.
+20:01:37 [WARNING] No trajectory steps for example 4490. Skipping rollout.
+20:01:37 [WARNING] No trajectory steps for example 4147. Skipping rollout.
+20:01:37 [WARNING] No trajectory steps for example 4561. Skipping rollout.
+20:01:37 [WARNING] No trajectory steps for example 2707. Skipping rollout.
+20:01:37 [WARNING] No trajectory steps for example 4307. Skipping rollout.
+20:01:37 [WARNING] No trajectory steps for example 3816. Skipping rollout.
+20:01:37 [WARNING] No trajectory steps for example 6166. Skipping rollout.
+20:01:37 [WARNING] No trajectory steps for example 6166. Skipping rollout.
+20:01:37 [WARNING] No trajectory steps for example 2522. Skipping rollout.
+20:01:37 [WARNING] No trajectory steps for example 2522. Skipping rollout.
+20:01:37 [WARNING] No trajectory steps for example 678. Skipping rollout.
+20:01:37 [WARNING] No trajectory steps for example 85. Skipping rollout.
+20:01:37 [WARNING] No trajectory steps for example 85. Skipping rollout.
+20:01:37 [WARNING] No trajectory steps for example 6041. Skipping rollout.
+20:01:37 [WARNING] No trajectory steps for example 4207. Skipping rollout.
+20:01:37 [WARNING] No trajectory steps for example 2298. Skipping rollout.
+20:01:37 [WARNING] No trajectory steps for example 2298. Skipping rollout.
+20:01:37 [WARNING] No trajectory steps for example 3523. Skipping rollout.
+20:01:37 [WARNING] No trajectory steps for example 4972. Skipping rollout.
+20:01:37 [WARNING] No trajectory steps for example 2487. Skipping rollout.
+20:01:37 [SUCCESS] Step 56 | Time: 286.76s | Reward: 0.8828 | Throughput: 
+8603689.8 tokens/s | Seq. Length: 290.3 tokens/sample | Async Level: 1 | Max. 
+Off-Policy Level: 1
+20:01:38 [INFO] Saving checkpoint at step 57
+20:01:38 [INFO] Starting orchestrator step 57
+20:01:38 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 56 (>1 step(s) ahead). Training is progressing normally.
+20:05:08 [INFO] Orchestrator resumed: checkpoint 56 ready (after 210.23s)
+20:05:52 [SUCCESS] Step 57 | Time: 254.27s | Reward: 1.0000 | Throughput: 3253.1
+tokens/s | Seq. Length: 282.7 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+20:05:52 [INFO] Starting orchestrator step 58
+20:05:52 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 57 (>1 step(s) ahead). Training is progressing normally.
+20:06:52 [INFO] Orchestrator resumed: checkpoint 57 ready (after 60.06s)
+20:07:22 [SUCCESS] Step 58 | Time: 89.91s | Reward: 0.9258 | Throughput: 10335.6
+tokens/s | Seq. Length: 337.5 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+20:07:22 [INFO] Starting orchestrator step 59
+20:07:22 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 58 (>1 step(s) ahead). Training is progressing normally.
+20:08:52 [INFO] Orchestrator resumed: checkpoint 58 ready (after 90.09s)
+20:09:23 [SUCCESS] Step 59 | Time: 121.22s | Reward: 0.9648 | Throughput: 8334.5
+tokens/s | Seq. Length: 313.2 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+20:09:24 [INFO] Saving checkpoint at step 60
+20:09:24 [INFO] Starting orchestrator step 60
+20:09:24 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 59 (>1 step(s) ahead). Training is progressing normally.
+20:10:54 [INFO] Orchestrator resumed: checkpoint 59 ready (after 90.10s)
+20:11:49 [INFO] Logging samples to Prime Intellect API at step 60
+20:11:49 [INFO] Logging distributions to Prime Intellect API at step 60
+20:11:49 [SUCCESS] Step 60 | Time: 145.27s | Reward: 0.9648 | Throughput: 3151.6
+tokens/s | Seq. Length: 290.1 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+20:11:49 [INFO] Starting orchestrator step 61
+20:11:49 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 60 (>1 step(s) ahead). Training is progressing normally.
+20:13:56 [INFO] Orchestrator resumed: checkpoint 60 ready (after 127.15s)
+20:14:32 [SUCCESS] Step 61 | Time: 163.20s | Reward: 0.9258 | Throughput: 4287.6
+tokens/s | Seq. Length: 322.0 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+20:14:33 [INFO] Starting orchestrator step 62
+20:14:33 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 61 (>1 step(s) ahead). Training is progressing normally.
+20:17:03 [INFO] Orchestrator resumed: checkpoint 61 ready (after 150.18s)
+20:17:29 [SUCCESS] Step 62 | Time: 176.34s | Reward: 0.9648 | Throughput: 7096.0
+tokens/s | Seq. Length: 314.0 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+20:17:29 [INFO] Saving checkpoint at step 63
+20:17:29 [INFO] Starting orchestrator step 63
+20:17:29 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 62 (>1 step(s) ahead). Training is progressing normally.
+20:18:29 [INFO] Orchestrator resumed: checkpoint 62 ready (after 60.06s)
+20:20:43 [SUCCESS] Step 63 | Time: 193.90s | Reward: 0.9688 | Throughput: 669.9 
+tokens/s | Seq. Length: 307.8 tokens/sample | Async Level: 0 | Max. Off-Policy 
+Level: 1
+20:20:43 [INFO] Starting orchestrator step 64
+20:21:48 [WARNING] No trajectory steps for example 5809. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 5660. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 5660. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 5660. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 5660. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 5660. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 5660. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 5660. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 5660. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 375. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 375. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 375. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 375. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 375. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 375. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 375. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 375. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 7389. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 7389. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 7389. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 7389. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 7389. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 7389. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 7389. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 2674. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 2674. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 2674. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 2674. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 2674. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 2674. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 2674. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 2674. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 429. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 429. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 429. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 429. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 429. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 429. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 429. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 429. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 3535. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 3535. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 3535. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 3535. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 3535. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 3535. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 3535. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 3535. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 361. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 361. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 361. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 361. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 361. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 361. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 361. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 361. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 2725. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 2725. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 2725. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 2725. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 2725. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 2725. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 2725. Skipping rollout.
+20:21:48 [WARNING] No trajectory steps for example 2725. Skipping rollout.
+20:21:48 [SUCCESS] Step 64 | Time: 64.51s | Reward: 0.7500 | Throughput: 972.2 
+tokens/s | Seq. Length: 244.7 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+20:21:48 [INFO] Starting orchestrator step 65
+20:21:48 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 64 (>1 step(s) ahead). Training is progressing normally.
+20:22:18 [INFO] Orchestrator resumed: checkpoint 64 ready (after 30.03s)
+20:25:58 [SUCCESS] Step 65 | Time: 250.10s | Reward: 0.9492 | Throughput: 468.5 
+tokens/s | Seq. Length: 338.5 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+20:25:58 [INFO] Saving checkpoint at step 66
+20:25:58 [INFO] Starting orchestrator step 66
+20:25:58 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 65 (>1 step(s) ahead). Training is progressing normally.
+20:26:25 [INFO] Orchestrator resumed: checkpoint 65 ready (after 27.03s)
+20:30:05 [SUCCESS] Step 66 | Time: 246.34s | Reward: 0.9688 | Throughput: 411.3 
+tokens/s | Seq. Length: 326.8 tokens/sample | Async Level: 0 | Max. Off-Policy 
+Level: 0
+20:30:05 [INFO] Starting orchestrator step 67
+20:31:04 [SUCCESS] Step 67 | Time: 59.07s | Reward: 0.9531 | Throughput: 1427.1 
+tokens/s | Seq. Length: 329.0 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+20:31:04 [INFO] Starting orchestrator step 68
+20:31:04 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 67 (>1 step(s) ahead). Training is progressing normally.
+20:36:36 [INFO] Orchestrator resumed: checkpoint 67 ready (after 331.37s)
+20:37:07 [SUCCESS] Step 68 | Time: 362.84s | Reward: 0.9648 | Throughput: 
+10038.6 tokens/s | Seq. Length: 289.8 tokens/sample | Async Level: 1 | Max. 
+Off-Policy Level: 0
+20:37:07 [INFO] Saving checkpoint at step 69
+20:37:07 [INFO] Starting orchestrator step 69
+20:37:07 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 68 (>1 step(s) ahead). Training is progressing normally.
+20:38:37 [INFO] Orchestrator resumed: checkpoint 68 ready (after 90.10s)
+20:39:22 [SUCCESS] Step 69 | Time: 134.26s | Reward: 0.9688 | Throughput: 6249.1
+tokens/s | Seq. Length: 301.2 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+20:39:22 [INFO] Starting orchestrator step 70
+20:39:22 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 69 (>1 step(s) ahead). Training is progressing normally.
+20:40:52 [INFO] Orchestrator resumed: checkpoint 69 ready (after 90.10s)
+20:41:13 [WARNING] No trajectory steps for example 5996. Skipping rollout.
+20:41:13 [WARNING] No trajectory steps for example 5015. Skipping rollout.
+20:41:13 [WARNING] No trajectory steps for example 7467. Skipping rollout.
+20:41:13 [WARNING] No trajectory steps for example 319. Skipping rollout.
+20:41:13 [WARNING] No trajectory steps for example 6362. Skipping rollout.
+20:41:13 [WARNING] No trajectory steps for example 2328. Skipping rollout.
+20:41:13 [WARNING] No trajectory steps for example 6807. Skipping rollout.
+20:41:13 [WARNING] No trajectory steps for example 2880. Skipping rollout.
+20:41:13 [WARNING] No trajectory steps for example 557. Skipping rollout.
+20:41:13 [WARNING] No trajectory steps for example 4358. Skipping rollout.
+20:41:13 [WARNING] No trajectory steps for example 3947. Skipping rollout.
+20:41:13 [WARNING] No trajectory steps for example 2089. Skipping rollout.
+20:41:13 [WARNING] No trajectory steps for example 3756. Skipping rollout.
+20:41:13 [WARNING] No trajectory steps for example 6341. Skipping rollout.
+20:41:14 [INFO] Logging samples to Prime Intellect API at step 70
+20:41:14 [INFO] Logging distributions to Prime Intellect API at step 70
+20:41:14 [SUCCESS] Step 70 | Time: 111.75s | Reward: 0.8438 | Throughput: 
+34536.0 tokens/s | Seq. Length: 326.9 tokens/sample | Async Level: 1 | Max. 
+Off-Policy Level: 0
+20:41:14 [INFO] Starting orchestrator step 71
+20:41:14 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 70 (>1 step(s) ahead). Training is progressing normally.
+20:44:14 [INFO] Orchestrator resumed: checkpoint 70 ready (after 180.20s)
+20:44:36 [WARNING] No trajectory steps for example 964. Skipping rollout.
+20:44:36 [WARNING] No trajectory steps for example 4567. Skipping rollout.
+20:44:36 [WARNING] No trajectory steps for example 2842. Skipping rollout.
+20:44:36 [WARNING] No trajectory steps for example 2234. Skipping rollout.
+20:44:36 [WARNING] No trajectory steps for example 3145. Skipping rollout.
+20:44:36 [WARNING] No trajectory steps for example 7034. Skipping rollout.
+20:44:36 [WARNING] No trajectory steps for example 3981. Skipping rollout.
+20:44:36 [WARNING] No trajectory steps for example 1522. Skipping rollout.
+20:44:36 [WARNING] No trajectory steps for example 4586. Skipping rollout.
+20:44:36 [WARNING] No trajectory steps for example 6914. Skipping rollout.
+20:44:36 [WARNING] No trajectory steps for example 6824. Skipping rollout.
+20:44:36 [WARNING] No trajectory steps for example 4361. Skipping rollout.
+20:44:36 [WARNING] No trajectory steps for example 2663. Skipping rollout.
+20:44:36 [WARNING] No trajectory steps for example 3020. Skipping rollout.
+20:44:36 [WARNING] No trajectory steps for example 4108. Skipping rollout.
+20:44:36 [WARNING] No trajectory steps for example 4108. Skipping rollout.
+20:44:36 [SUCCESS] Step 71 | Time: 202.29s | Reward: 0.8711 | Throughput: 8800.3
+tokens/s | Seq. Length: 268.8 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+20:44:36 [INFO] Saving checkpoint at step 72
+20:44:36 [INFO] Starting orchestrator step 72
+20:44:36 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 71 (>1 step(s) ahead). Training is progressing normally.
+20:48:37 [INFO] Orchestrator resumed: checkpoint 71 ready (after 240.27s)
+20:48:58 [SUCCESS] Step 72 | Time: 261.21s | Reward: 0.9180 | Throughput: 
+13073.3 tokens/s | Seq. Length: 305.3 tokens/sample | Async Level: 1 | Max. 
+Off-Policy Level: 0
+20:48:58 [INFO] Starting orchestrator step 73
+20:48:58 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 72 (>1 step(s) ahead). Training is progressing normally.
+20:50:28 [INFO] Orchestrator resumed: checkpoint 72 ready (after 90.10s)
+20:51:10 [SUCCESS] Step 73 | Time: 132.10s | Reward: 0.9805 | Throughput: 2954.4
+tokens/s | Seq. Length: 274.9 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+20:51:10 [INFO] Starting orchestrator step 74
+20:51:10 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 73 (>1 step(s) ahead). Training is progressing normally.
+20:57:41 [INFO] Orchestrator resumed: checkpoint 73 ready (after 390.44s)
+21:08:10 [SUCCESS] Step 74 | Time: 1019.51s | Reward: 0.9609 | Throughput: 122.9
+tokens/s | Seq. Length: 292.4 tokens/sample | Async Level: 0 | Max. Off-Policy 
+Level: 1
+21:08:10 [INFO] Saving checkpoint at step 75
+21:08:10 [INFO] Starting orchestrator step 75
+21:08:22 [SUCCESS] Step 75 | Time: 12.29s | Reward: 0.9492 | Throughput: 5998.1 
+tokens/s | Seq. Length: 286.8 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 1
+21:08:22 [INFO] Starting orchestrator step 76
+21:08:22 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 75 (>1 step(s) ahead). Training is progressing normally.
+21:09:40 [INFO] Orchestrator resumed: checkpoint 75 ready (after 78.08s)
+21:10:04 [SUCCESS] Step 76 | Time: 101.79s | Reward: 0.9062 | Throughput: 
+12024.2 tokens/s | Seq. Length: 282.3 tokens/sample | Async Level: 1 | Max. 
+Off-Policy Level: 0
+21:10:04 [INFO] Starting orchestrator step 77
+21:10:04 [INFO] Running evals for checkpoint step 75
+21:10:04 [INFO] Evaluating primeintellect/gsm8k (num_examples=30, 
+rollouts_per_example=1)
+21:10:22 [SUCCESS] Evaluated primeintellect/gsm8k in 17.20s (Avg@1=0.9333, 
+Pass@1: 0.9333, No-response: 0.0%, Completion Length: 220.87 (Â±82.31, âˆˆ[103.00, 
+412.00]), Truncated: 0.0%)
+21:10:22 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 76 (>1 step(s) ahead). Training is progressing normally.
+21:10:36 [INFO] Orchestrator resumed: checkpoint 76 ready (after 14.02s)
+21:12:56 [SUCCESS] Step 77 | Time: 171.67s | Reward: 0.9922 | Throughput: 
+11765.3 tokens/s | Seq. Length: 297.1 tokens/sample | Async Level: 1 | Max. 
+Off-Policy Level: 0
+21:12:56 [INFO] Saving checkpoint at step 78
+21:12:56 [INFO] Starting orchestrator step 78
+21:12:56 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 77 (>1 step(s) ahead). Training is progressing normally.
+21:12:56 [INFO] Orchestrator resumed: checkpoint 77 ready (after 0.00s)
+21:15:39 [SUCCESS] Step 78 | Time: 162.50s | Reward: 0.9648 | Throughput: 
+10172.9 tokens/s | Seq. Length: 331.2 tokens/sample | Async Level: 1 | Max. 
+Off-Policy Level: 0
+21:15:39 [INFO] Starting orchestrator step 79
+21:15:39 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 78 (>1 step(s) ahead). Training is progressing normally.
+21:18:31 [INFO] Orchestrator resumed: checkpoint 78 ready (after 172.18s)
+21:19:11 [SUCCESS] Step 79 | Time: 212.34s | Reward: 0.9375 | Throughput: 
+10162.1 tokens/s | Seq. Length: 300.1 tokens/sample | Async Level: 1 | Max. 
+Off-Policy Level: 0
+21:19:12 [INFO] Starting orchestrator step 80
+21:19:12 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 79 (>1 step(s) ahead). Training is progressing normally.
+21:20:42 [INFO] Orchestrator resumed: checkpoint 79 ready (after 90.10s)
+21:21:20 [INFO] Logging samples to Prime Intellect API at step 80
+21:21:20 [INFO] Logging distributions to Prime Intellect API at step 80
+21:21:20 [SUCCESS] Step 80 | Time: 128.29s | Reward: 0.8750 | Throughput: 9773.0
+tokens/s | Seq. Length: 291.8 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+21:21:20 [INFO] Saving checkpoint at step 81
+21:21:20 [INFO] Starting orchestrator step 81
+21:21:20 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 80 (>1 step(s) ahead). Training is progressing normally.
+21:23:20 [INFO] Orchestrator resumed: checkpoint 80 ready (after 120.14s)
+21:23:42 [SUCCESS] Step 81 | Time: 141.42s | Reward: 0.9297 | Throughput: 
+14421.0 tokens/s | Seq. Length: 309.5 tokens/sample | Async Level: 1 | Max. 
+Off-Policy Level: 0
+21:23:42 [INFO] Starting orchestrator step 82
+21:23:42 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 81 (>1 step(s) ahead). Training is progressing normally.
+21:25:51 [INFO] Orchestrator resumed: checkpoint 81 ready (after 129.14s)
+21:26:34 [SUCCESS] Step 82 | Time: 172.57s | Reward: 0.9961 | Throughput: 4612.3
+tokens/s | Seq. Length: 301.7 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+21:26:35 [INFO] Starting orchestrator step 83
+21:26:35 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 82 (>1 step(s) ahead). Training is progressing normally.
+21:29:05 [INFO] Orchestrator resumed: checkpoint 82 ready (after 150.16s)
+21:29:40 [WARNING] No trajectory steps for example 1392. Skipping rollout.
+21:29:40 [WARNING] No trajectory steps for example 1392. Skipping rollout.
+21:29:40 [WARNING] No trajectory steps for example 5090. Skipping rollout.
+21:29:40 [WARNING] No trajectory steps for example 5090. Skipping rollout.
+21:29:40 [WARNING] No trajectory steps for example 4249. Skipping rollout.
+21:29:40 [WARNING] No trajectory steps for example 4249. Skipping rollout.
+21:29:40 [WARNING] No trajectory steps for example 6777. Skipping rollout.
+21:29:40 [WARNING] No trajectory steps for example 6777. Skipping rollout.
+21:29:40 [WARNING] No trajectory steps for example 821. Skipping rollout.
+21:29:40 [WARNING] No trajectory steps for example 821. Skipping rollout.
+21:29:40 [WARNING] No trajectory steps for example 2989. Skipping rollout.
+21:29:40 [WARNING] No trajectory steps for example 2989. Skipping rollout.
+21:29:40 [WARNING] No trajectory steps for example 4118. Skipping rollout.
+21:29:40 [WARNING] No trajectory steps for example 4118. Skipping rollout.
+21:29:40 [WARNING] No trajectory steps for example 2182. Skipping rollout.
+21:29:40 [WARNING] No trajectory steps for example 2182. Skipping rollout.
+21:29:40 [WARNING] No trajectory steps for example 6517. Skipping rollout.
+21:29:40 [WARNING] No trajectory steps for example 6517. Skipping rollout.
+21:29:40 [WARNING] No trajectory steps for example 1818. Skipping rollout.
+21:29:40 [WARNING] No trajectory steps for example 1818. Skipping rollout.
+21:29:40 [WARNING] No trajectory steps for example 1418. Skipping rollout.
+21:29:40 [WARNING] No trajectory steps for example 1418. Skipping rollout.
+21:29:40 [WARNING] No trajectory steps for example 5134. Skipping rollout.
+21:29:40 [WARNING] No trajectory steps for example 5134. Skipping rollout.
+21:29:40 [WARNING] No trajectory steps for example 4828. Skipping rollout.
+21:29:40 [WARNING] No trajectory steps for example 4828. Skipping rollout.
+21:29:40 [WARNING] No trajectory steps for example 2678. Skipping rollout.
+21:29:40 [WARNING] No trajectory steps for example 2678. Skipping rollout.
+21:29:40 [WARNING] No trajectory steps for example 2678. Skipping rollout.
+21:29:40 [WARNING] No trajectory steps for example 2678. Skipping rollout.
+21:29:40 [WARNING] No trajectory steps for example 1765. Skipping rollout.
+21:29:40 [WARNING] No trajectory steps for example 1765. Skipping rollout.
+21:29:40 [SUCCESS] Step 83 | Time: 185.50s | Reward: 0.8203 | Throughput: 8506.7
+tokens/s | Seq. Length: 274.5 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+21:29:40 [INFO] Saving checkpoint at step 84
+21:29:40 [INFO] Starting orchestrator step 84
+21:29:40 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 83 (>1 step(s) ahead). Training is progressing normally.
+21:31:10 [INFO] Orchestrator resumed: checkpoint 83 ready (after 90.10s)
+21:32:18 [SUCCESS] Step 84 | Time: 157.66s | Reward: 0.9844 | Throughput: 2460.2
+tokens/s | Seq. Length: 261.1 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+21:32:18 [INFO] Starting orchestrator step 85
+21:32:18 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 84 (>1 step(s) ahead). Training is progressing normally.
+21:32:51 [INFO] Orchestrator resumed: checkpoint 84 ready (after 33.04s)
+21:33:19 [SUCCESS] Step 85 | Time: 60.95s | Reward: 0.9102 | Throughput: 6230.1 
+tokens/s | Seq. Length: 307.5 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+21:33:19 [INFO] Starting orchestrator step 86
+21:33:19 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 85 (>1 step(s) ahead). Training is progressing normally.
+21:35:50 [INFO] Orchestrator resumed: checkpoint 85 ready (after 150.20s)
+21:37:12 [SUCCESS] Step 86 | Time: 232.75s | Reward: 0.9141 | Throughput: 3096.7
+tokens/s | Seq. Length: 307.1 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+21:37:12 [INFO] Saving checkpoint at step 87
+21:37:12 [INFO] Starting orchestrator step 87
+21:37:12 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 86 (>1 step(s) ahead). Training is progressing normally.
+21:38:12 [INFO] Orchestrator resumed: checkpoint 86 ready (after 60.07s)
+21:40:26 [SUCCESS] Step 87 | Time: 194.04s | Reward: 0.9219 | Throughput: 764.7 
+tokens/s | Seq. Length: 310.3 tokens/sample | Async Level: 0 | Max. Off-Policy 
+Level: 1
+21:40:27 [INFO] Starting orchestrator step 88
+21:44:20 [SUCCESS] Step 88 | Time: 233.06s | Reward: 0.9492 | Throughput: 337.8 
+tokens/s | Seq. Length: 307.5 tokens/sample | Async Level: 0 | Max. Off-Policy 
+Level: 0
+21:44:20 [INFO] Starting orchestrator step 89
+21:48:32 [SUCCESS] Step 89 | Time: 252.11s | Reward: 0.9688 | Throughput: 283.8 
+tokens/s | Seq. Length: 280.5 tokens/sample | Async Level: 0 | Max. Off-Policy 
+Level: 1
+21:48:32 [INFO] Saving checkpoint at step 90
+21:48:32 [INFO] Starting orchestrator step 90
+21:51:27 [INFO] Logging samples to Prime Intellect API at step 90
+21:51:27 [INFO] Logging distributions to Prime Intellect API at step 90
+21:51:27 [SUCCESS] Step 90 | Time: 174.38s | Reward: 0.9688 | Throughput: 429.5 
+tokens/s | Seq. Length: 292.5 tokens/sample | Async Level: 0 | Max. Off-Policy 
+Level: 1
+21:51:27 [INFO] Starting orchestrator step 91
+21:51:40 [SUCCESS] Step 91 | Time: 12.88s | Reward: 1.0000 | Throughput: 5767.1 
+tokens/s | Seq. Length: 289.1 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 1
+21:51:40 [INFO] Starting orchestrator step 92
+21:51:40 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 91 (>1 step(s) ahead). Training is progressing normally.
+21:55:10 [INFO] Orchestrator resumed: checkpoint 91 ready (after 210.23s)
+21:56:13 [SUCCESS] Step 92 | Time: 273.08s | Reward: 1.0000 | Throughput: 
+17297.3 tokens/s | Seq. Length: 287.3 tokens/sample | Async Level: 1 | Max. 
+Off-Policy Level: 0
+21:56:13 [INFO] Saving checkpoint at step 93
+21:56:13 [INFO] Starting orchestrator step 93
+21:56:13 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 92 (>1 step(s) ahead). Training is progressing normally.
+21:56:13 [INFO] Orchestrator resumed: checkpoint 92 ready (after 0.00s)
+21:57:49 [SUCCESS] Step 93 | Time: 95.34s | Reward: 0.9688 | Throughput: 12960.3
+tokens/s | Seq. Length: 298.0 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+21:57:49 [INFO] Starting orchestrator step 94
+21:57:49 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 93 (>1 step(s) ahead). Training is progressing normally.
+21:58:49 [INFO] Orchestrator resumed: checkpoint 93 ready (after 60.07s)
+21:59:55 [SUCCESS] Step 94 | Time: 125.99s | Reward: 0.9688 | Throughput: 1494.0
+tokens/s | Seq. Length: 284.5 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+21:59:55 [INFO] Starting orchestrator step 95
+21:59:55 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 94 (>1 step(s) ahead). Training is progressing normally.
+22:01:55 [INFO] Orchestrator resumed: checkpoint 94 ready (after 120.13s)
+22:02:20 [SUCCESS] Step 95 | Time: 144.97s | Reward: 0.9688 | Throughput: 
+14758.0 tokens/s | Seq. Length: 291.3 tokens/sample | Async Level: 1 | Max. 
+Off-Policy Level: 0
+22:02:20 [INFO] Saving checkpoint at step 96
+22:02:20 [INFO] Starting orchestrator step 96
+22:02:20 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 95 (>1 step(s) ahead). Training is progressing normally.
+22:02:50 [INFO] Orchestrator resumed: checkpoint 95 ready (after 30.04s)
+22:03:16 [WARNING] No trajectory steps for example 1748. Skipping rollout.
+22:03:16 [WARNING] No trajectory steps for example 1477. Skipping rollout.
+22:03:16 [WARNING] No trajectory steps for example 3496. Skipping rollout.
+22:03:16 [WARNING] No trajectory steps for example 1610. Skipping rollout.
+22:03:16 [WARNING] No trajectory steps for example 1762. Skipping rollout.
+22:03:16 [WARNING] No trajectory steps for example 2435. Skipping rollout.
+22:03:16 [WARNING] No trajectory steps for example 5114. Skipping rollout.
+22:03:16 [WARNING] No trajectory steps for example 993. Skipping rollout.
+22:03:16 [WARNING] No trajectory steps for example 822. Skipping rollout.
+22:03:16 [WARNING] No trajectory steps for example 2643. Skipping rollout.
+22:03:16 [WARNING] No trajectory steps for example 4036. Skipping rollout.
+22:03:16 [WARNING] No trajectory steps for example 2070. Skipping rollout.
+22:03:16 [WARNING] No trajectory steps for example 5107. Skipping rollout.
+22:03:17 [SUCCESS] Step 96 | Time: 56.34s | Reward: 0.9062 | Throughput: 7616.1 
+tokens/s | Seq. Length: 280.4 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 1
+22:03:17 [INFO] Starting orchestrator step 97
+22:03:17 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 96 (>1 step(s) ahead). Training is progressing normally.
+22:04:47 [INFO] Orchestrator resumed: checkpoint 96 ready (after 90.09s)
+22:05:13 [WARNING] No trajectory steps for example 493. Skipping rollout.
+22:05:13 [WARNING] No trajectory steps for example 987. Skipping rollout.
+22:05:13 [WARNING] No trajectory steps for example 6004. Skipping rollout.
+22:05:13 [SUCCESS] Step 97 | Time: 116.62s | Reward: 0.9570 | Throughput: 
+10665.6 tokens/s | Seq. Length: 285.1 tokens/sample | Async Level: 1 | Max. 
+Off-Policy Level: 0
+22:05:14 [INFO] Starting orchestrator step 98
+22:05:14 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 97 (>1 step(s) ahead). Training is progressing normally.
+22:06:22 [INFO] Orchestrator resumed: checkpoint 97 ready (after 68.07s)
+22:06:44 [SUCCESS] Step 98 | Time: 89.97s | Reward: 0.9375 | Throughput: 11571.7
+tokens/s | Seq. Length: 299.1 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+22:06:44 [INFO] Starting orchestrator step 99
+22:06:44 [INFO] Orchestrator paused: waiting for trainer process to complete 
+checkpoint 98 (>1 step(s) ahead). Training is progressing normally.
+22:08:14 [INFO] Orchestrator resumed: checkpoint 98 ready (after 90.11s)
+22:09:09 [SUCCESS] Step 99 | Time: 144.96s | Reward: 0.9883 | Throughput: 3205.0
+tokens/s | Seq. Length: 283.4 tokens/sample | Async Level: 1 | Max. Off-Policy 
+Level: 0
+22:09:09 [INFO] Running final evals
+22:09:09 [INFO] Evaluating primeintellect/gsm8k (num_examples=30, 
+rollouts_per_example=1)
+22:09:18 [SUCCESS] Evaluated primeintellect/gsm8k in 9.43s (Avg@1=0.9333, 
+Pass@1: 0.9333, No-response: 0.0%, Completion Length: 223.80 (Â±84.16, âˆˆ[103.00, 
+414.00]), Truncated: 0.0%)
+22:09:18 [INFO] Saving final summary to Prime Intellect API
+22:09:18 [INFO] Writing final checkpoint
+22:09:21 [SUCCESS] Orchestrator finished.

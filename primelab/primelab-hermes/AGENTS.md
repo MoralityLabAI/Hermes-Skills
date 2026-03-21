@@ -25,4 +25,6 @@ Always:
 - prefer resumable manifests and receipts over ad hoc one-off scripts for QLoRA runs
 - prefer the packaged conveyor entrypoint `scripts/run_prime_qlora_conveyor.sh` and its JSON spec over free-form pod launches
 - treat Hosted Training models as an explicit allowlist from `prime rl models`, not from local inference endpoint aliases
+- capture hosted runs into `runs/hosted_training/<run_id>/receipt.json` with `scripts/capture_hosted_run.py` instead of relying on the dashboard alone
+- use `scripts/hosted_run_menu.py` to render controller-readable ASCII tables when comparing hosted runs
 - use `bench/oss_skill_bench/` when the goal is to compare local or OpenRouter models by baseline environment behavior plus small-run QLoRA loss

@@ -1,0 +1,24 @@
+model = "Qwen/Qwen3-30B-A3B-Instruct-2507"
+max_steps = 100
+batch_size = 256
+rollouts_per_example = 8
+
+[sampling]
+max_tokens = 512
+
+[[env]]
+id = "primeintellect/gsm8k"
+
+[eval]
+interval = 25
+num_examples = 30
+rollouts_per_example = 1
+eval_base_model = true
+
+[[eval.env]]
+id = "primeintellect/gsm8k"
+
+# Optional W&B logging:
+# [wandb]
+# project = "primelab-hermes"
+# name = "qwen3-30b-i-gsm8k"
