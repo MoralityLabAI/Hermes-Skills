@@ -135,6 +135,19 @@ Use this when the user wants the best TRM bench score, not just a one-off traine
 - Preserve source metadata in `meta` so later audits can trace bad behavior back to a world, run, or prompt family.
 - Treat reasoning traces as supervision only when they encode decision-relevant state, candidate actions, or critique. Skip decorative chain-of-thought.
 - Use Monte Carlo, verifier, or transition metrics to decide what the controller should improve; do not guess from surface prose.
+- For brittle exact-answer tasks, prefer `action_only` output contracts over outer JSON shells.
+- Do not merge a task family into the main training corpus unless it clears a minimum exact-positive floor.
+- If a family is mostly negatives, keep it separate for critic or abstention training rather than poisoning the main action corpus.
+- If critic quality is useful but retrieval exact match is poor, treat the critic as control-plane infrastructure, not an action policy.
+- When a heuristic corrector clearly beats a learned corrector on frozen holdout, freeze the heuristic path as the current baseline and improve the learned model offline.
+
+## Current TRM Lessons
+
+- Intellect-3 logic and Intellect-3 math should not share the same output contract.
+- Intellect-3 logic currently works best with `reasoning_mode=off` plus critic-gated heuristic correction.
+- Intellect-3 math collection can collapse into `inspect_and_continue` if the collector contract is too brittle; repair the collector before scaling the corpus.
+- Near-miss logic rows are highly useful for correction and critic training even when exact positives are scarce.
+- Large negative-only batch expansions can make the merged corpus worse; always re-check family bucket counts after every collection run.
 
 ## Hermes Runner
 
