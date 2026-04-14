@@ -18,7 +18,11 @@ export type TransferRequest = {
 
 export function normalizeTempoMemo(memo?: string): `0x${string}` | undefined {
   if (!memo) return undefined
-  return pad(stringToHex(memo), { size: 32 })
+  if (Buffer.byteLength(memo, "utf8") > 32) {
+    throw new Error("Tempo memo must be at most 32 bytes.")
+  }
+  const hex = stringToHex(memo)
+  return pad(hex, { size: 32 })
 }
 
 export function buildTransferCalldata(recipient: `0x${string}`, humanAmount: string, decimals = 6): `0x${string}` {
@@ -44,18 +48,24 @@ export async function sendTip20Transfer(req: TransferRequest) {
   })
 
   const client = createTempoWalletClient(req.privateKey)
+  const normalizedMemo = normalizeTempoMemo(req.memo)
+  const transaction: Record<string, unknown> = {
+    to: req.token,
+    data: buildTransferCalldata(req.recipient, req.humanAmount, req.decimals ?? 6),
+  }
+
+  if (req.feeToken) {
+    transaction.feeToken = req.feeToken
+  }
+  if (normalizedMemo) {
+    transaction.memo = normalizedMemo
+  }
 
   // NOTE:
   // Tempo docs recommend Tempo Transactions and fee-token-aware mutable actions.
   // This starter uses a plain wallet sendTransaction shape as a conservative scaffold.
   // Codex should swap this to the current viem/tempo action or SDK helper the project chooses.
-  const hash = await client.sendTransaction({
-    to: req.token,
-    data: buildTransferCalldata(req.recipient, req.humanAmount, req.decimals ?? 6),
-    // Placeholder extension points for Tempo-specific submission:
-    // feeToken: req.feeToken,
-    // memo: normalizeTempoMemo(req.memo),
-  } as any)
+  const hash = await client.sendTransaction(transaction as any)
 
   return {
     transactionHash: hash,

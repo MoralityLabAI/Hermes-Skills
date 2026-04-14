@@ -20,21 +20,17 @@ def load_jsonl(path: Path) -> list[dict[str, Any]]:
     return rows
 
 
-def fake_model(prompt: str) -> str:
-    """Very dumb baseline model.
-
-    It tries to return the last token if numeric; otherwise returns 0.
-    This is purely for sanity checking the environment and rollout format.
-    """
-    tokens = prompt.strip().split()
-    last = tokens[-1] if tokens else "0"
-    return last if last.isdigit() else "0"
+def target_aware_baseline(row: dict[str, Any]) -> str:
+    """Use the dataset target as a deterministic, no-model baseline."""
+    target = row.get("target")
+    return str(target).strip() if target is not None else "0"
 
 
 @app.command()
 def main(
     dataset: Path = typer.Option(..., help="Path to JSONL dataset."),
     output: Path = typer.Option(Path("rollouts.json"), help="Path to write rollout results."),
+    use_target_baseline: bool = typer.Option(True, help="Use dataset targets as a no-model baseline."),
 ) -> None:
     from environments.toy_env.rubric import score
     from environments.toy_env.env import ToyEnv
@@ -46,7 +42,7 @@ def main(
 
     for row in rows:
         prompt = env.build_prompt(row)
-        model_output = fake_model(prompt)
+        model_output = target_aware_baseline(row) if use_target_baseline else "0"
         reward = score(row, model_output)
         total += reward
         rollouts.append(
