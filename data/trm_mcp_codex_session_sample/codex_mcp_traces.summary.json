@@ -1,0 +1,20 @@
+{
+  "input_count": 2,
+  "trace_count": 6,
+  "tool_counts": {
+    "read_mcp_resource": 2,
+    "list_mcp_resources": 2,
+    "list_mcp_resource_templates": 2
+  },
+  "server_counts": {
+    "filesystem": 2,
+    "codex": 4
+  },
+  "usefulness_counts": {
+    "not_useful": 6
+  },
+  "input_files": [
+    "C:\\Users\\patri\\.codex\\sessions\\2026\\04\\16\\rollout-2026-04-16T14-24-54-019d9789-f572-76f0-a103-3aec54c7b58b.jsonl",
+    "C:\\Users\\patri\\.codex\\sessions\\2026\\04\\17\\rollout-2026-04-17T17-19-12-019d9d4f-e831-76d2-92b5-dee70f47d7fd.jsonl"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "trace_count": 5,
+  "mcp_name": "filesystem",
+  "scenario_ids": [
+    "fs_readme_exact",
+    "fs_package_json_exact",
+    "fs_glob_template_exact",
+    "fs_readme_near_miss",
+    "fs_wrong_route_missing"
+  ],
+  "notes": "Popular worked example for TRM-MCP around direct reads, template search, near-miss retrieval, and wrong-route failure."
+}

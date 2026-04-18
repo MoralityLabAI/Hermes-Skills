@@ -1,0 +1,12 @@
+{
+  "trace_count": 5,
+  "mcp_name": "github",
+  "scenario_ids": [
+    "gh_issue_exact",
+    "gh_pr_exact",
+    "gh_pr_search_template_exact",
+    "gh_issue_near_miss",
+    "gh_wrong_route_exact_pr"
+  ],
+  "notes": "Popular worked example for TRM-MCP around github issue reads, PR reads, search templates, near-miss retrieval, and wrong-route failure."
+}
