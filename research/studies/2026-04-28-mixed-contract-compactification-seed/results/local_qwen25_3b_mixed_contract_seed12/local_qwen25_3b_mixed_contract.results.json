@@ -1,0 +1,1517 @@
+{
+  "generated_at_utc": "2026-04-28T16:27:13.255858+00:00",
+  "model_path": "D:\\Research_Engine\\models\\Qwen2.5-3B-Instruct-GGUF\\qwen2.5-3b-instruct-q4_k_m.gguf",
+  "llama_completion_path": "D:\\Research_Engine\\tools\\llama.cpp-b8922-cuda12.4\\llama-completion.exe",
+  "rows_path": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\studies\\2026-04-28-mixed-contract-compactification-seed\\rows\\mixed_contract_seed_rows.jsonl",
+  "validator_path": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\studies\\2026-04-28-mixed-contract-compactification-seed\\validators\\validate_mixed_contracts.py",
+  "config": {
+    "case_ids": [
+      "ifsum_lakebed_001",
+      "ifsum_gate_question_002",
+      "pyd_task_003",
+      "pyd_verifier_004",
+      "ascii_flat_005",
+      "ascii_nested_006",
+      "ifeval_bullets_007",
+      "ifeval_json_array_008",
+      "boolq_nile_009",
+      "boolq_sky_010",
+      "choice_letter_011",
+      "pipe_triplet_012"
+    ],
+    "ctx": 1536,
+    "threads": 4,
+    "batch_size": 128,
+    "ubatch_size": 32,
+    "max_tokens": 64,
+    "timeout_sec": 120,
+    "gpu_layers": "all",
+    "max_child_rss_mb": 2600.0
+  },
+  "summary": {
+    "evidence_class": "live_model_local_3b",
+    "rows": 12,
+    "arms": {
+      "baseline": {
+        "rows": 12,
+        "contract_valid": 7,
+        "semantic_valid": 6,
+        "exact_success": 5,
+        "contract_rate": 0.5833333333333334,
+        "semantic_rate": 0.5,
+        "exact_rate": 0.4166666666666667
+      },
+      "metta_runtime": {
+        "rows": 12,
+        "contract_valid": 8,
+        "semantic_valid": 8,
+        "exact_success": 6,
+        "contract_rate": 0.6666666666666666,
+        "semantic_rate": 0.6666666666666666,
+        "exact_rate": 0.5
+      },
+      "metta_runtime_repair": {
+        "rows": 12,
+        "contract_valid": 9,
+        "semantic_valid": 10,
+        "exact_success": 8,
+        "contract_rate": 0.75,
+        "semantic_rate": 0.8333333333333334,
+        "exact_rate": 0.6666666666666666
+      },
+      "pure_trm": {
+        "rows": 12,
+        "contract_valid": 9,
+        "semantic_valid": 8,
+        "exact_success": 6,
+        "contract_rate": 0.75,
+        "semantic_rate": 0.6666666666666666,
+        "exact_rate": 0.5
+      }
+    },
+    "by_family": {
+      "baseline": {
+        "ascii_tree": {
+          "rows": 2,
+          "exact_success": 0,
+          "exact_rate": 0.0
+        },
+        "boolq_choice_contract": {
+          "rows": 2,
+          "exact_success": 2,
+          "exact_rate": 1.0
+        },
+        "choice_contract": {
+          "rows": 1,
+          "exact_success": 0,
+          "exact_rate": 0.0
+        },
+        "if_summarize_judge": {
+          "rows": 2,
+          "exact_success": 0,
+          "exact_rate": 0.0
+        },
+        "ifeval_contract_family": {
+          "rows": 2,
+          "exact_success": 1,
+          "exact_rate": 0.5
+        },
+        "pydantic_adherence": {
+          "rows": 2,
+          "exact_success": 1,
+          "exact_rate": 0.5
+        },
+        "structured_contract": {
+          "rows": 1,
+          "exact_success": 1,
+          "exact_rate": 1.0
+        }
+      },
+      "metta_runtime": {
+        "ascii_tree": {
+          "rows": 2,
+          "exact_success": 0,
+          "exact_rate": 0.0
+        },
+        "boolq_choice_contract": {
+          "rows": 2,
+          "exact_success": 2,
+          "exact_rate": 1.0
+        },
+        "choice_contract": {
+          "rows": 1,
+          "exact_success": 0,
+          "exact_rate": 0.0
+        },
+        "if_summarize_judge": {
+          "rows": 2,
+          "exact_success": 1,
+          "exact_rate": 0.5
+        },
+        "ifeval_contract_family": {
+          "rows": 2,
+          "exact_success": 1,
+          "exact_rate": 0.5
+        },
+        "pydantic_adherence": {
+          "rows": 2,
+          "exact_success": 1,
+          "exact_rate": 0.5
+        },
+        "structured_contract": {
+          "rows": 1,
+          "exact_success": 1,
+          "exact_rate": 1.0
+        }
+      },
+      "metta_runtime_repair": {
+        "ascii_tree": {
+          "rows": 2,
+          "exact_success": 0,
+          "exact_rate": 0.0
+        },
+        "boolq_choice_contract": {
+          "rows": 2,
+          "exact_success": 2,
+          "exact_rate": 1.0
+        },
+        "choice_contract": {
+          "rows": 1,
+          "exact_success": 1,
+          "exact_rate": 1.0
+        },
+        "if_summarize_judge": {
+          "rows": 2,
+          "exact_success": 1,
+          "exact_rate": 0.5
+        },
+        "ifeval_contract_family": {
+          "rows": 2,
+          "exact_success": 2,
+          "exact_rate": 1.0
+        },
+        "pydantic_adherence": {
+          "rows": 2,
+          "exact_success": 1,
+          "exact_rate": 0.5
+        },
+        "structured_contract": {
+          "rows": 1,
+          "exact_success": 1,
+          "exact_rate": 1.0
+        }
+      },
+      "pure_trm": {
+        "ascii_tree": {
+          "rows": 2,
+          "exact_success": 0,
+          "exact_rate": 0.0
+        },
+        "boolq_choice_contract": {
+          "rows": 2,
+          "exact_success": 2,
+          "exact_rate": 1.0
+        },
+        "choice_contract": {
+          "rows": 1,
+          "exact_success": 0,
+          "exact_rate": 0.0
+        },
+        "if_summarize_judge": {
+          "rows": 2,
+          "exact_success": 1,
+          "exact_rate": 0.5
+        },
+        "ifeval_contract_family": {
+          "rows": 2,
+          "exact_success": 2,
+          "exact_rate": 1.0
+        },
+        "pydantic_adherence": {
+          "rows": 2,
+          "exact_success": 1,
+          "exact_rate": 0.5
+        },
+        "structured_contract": {
+          "rows": 1,
+          "exact_success": 0,
+          "exact_rate": 0.0
+        }
+      }
+    },
+    "peak_child_ram_mb": 2371.0625,
+    "note": "Local Qwen2.5-3B Q4 smoke. Keep separate from deterministic validator smoke."
+  },
+  "evaluated": [
+    {
+      "ts": "2026-04-28T16:21:53.665189+00:00",
+      "row_id": "ifsum_lakebed_001",
+      "env_family": "if_summarize_judge",
+      "arm": "baseline",
+      "output": "Ancient lakebed found on Mars",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "details": {
+        "kind": "exact_word_count",
+        "word_count": 5,
+        "suffix_ok": true,
+        "punctuation_ok": true
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 3.526,
+        "peak_child_ram_mb": 2177.1719,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 3218914381\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =       3.69 ms\ncommon_perf_print:    samplers time =       1.25 ms /    63 tokens\ncommon_perf_print:        load time =     182.32 ms\ncommon_perf_print: prompt eval time =     181.93 ms /    55 tokens (    3.31 ms per token,   302.32 tokens per second)\ncommon_perf_print:        eval time =     140.02 ms /     7 runs   (   20.00 ms per token,    49.99 tokens per second)\ncommon_perf_print:       total time =     326.41 ms /    62 tokens\ncommon_perf_print: unaccounted time =       0.77 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =          6\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1389 + (1882 =  1834 +      28 +      18) +         823 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "Ancient lakebed found on Mars [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:21:58.199884+00:00",
+      "row_id": "ifsum_lakebed_001",
+      "env_family": "if_summarize_judge",
+      "arm": "pure_trm",
+      "output": "Ancient lakebed found in rover samples",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": true,
+      "semantic_valid": false,
+      "exact_success": false,
+      "details": {
+        "kind": "exact_word_count",
+        "word_count": 6,
+        "suffix_ok": true,
+        "punctuation_ok": true
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 4.0325,
+        "peak_child_ram_mb": 2247.8984,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 2162111355\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =       4.29 ms\ncommon_perf_print:    samplers time =       1.34 ms /   132 tokens\ncommon_perf_print:        load time =     304.18 ms\ncommon_perf_print: prompt eval time =     303.59 ms /   123 tokens (    2.47 ms per token,   405.16 tokens per second)\ncommon_perf_print:        eval time =     158.57 ms /     8 runs   (   19.82 ms per token,    50.45 tokens per second)\ncommon_perf_print:       total time =     467.46 ms /   131 tokens\ncommon_perf_print: unaccounted time =       1.01 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =          9\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "Ancient lakebed found in rover samples [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:22:02.727397+00:00",
+      "row_id": "ifsum_lakebed_001",
+      "env_family": "if_summarize_judge",
+      "arm": "metta_runtime",
+      "output": "Ancient lakebed found in Martian samples",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": true,
+      "semantic_valid": false,
+      "exact_success": false,
+      "details": {
+        "kind": "exact_word_count",
+        "word_count": 6,
+        "suffix_ok": true,
+        "punctuation_ok": true
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 4.0259,
+        "peak_child_ram_mb": 2371.0195,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 4052453816\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =       7.36 ms\ncommon_perf_print:    samplers time =       2.62 ms /   172 tokens\ncommon_perf_print:        load time =     347.33 ms\ncommon_perf_print: prompt eval time =     346.65 ms /   163 tokens (    2.13 ms per token,   470.21 tokens per second)\ncommon_perf_print:        eval time =     160.17 ms /     8 runs   (   20.02 ms per token,    49.95 tokens per second)\ncommon_perf_print:       total time =     515.77 ms /   171 tokens\ncommon_perf_print: unaccounted time =       1.59 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =          9\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "Ancient lakebed found in Martian samples [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:22:07.253645+00:00",
+      "row_id": "ifsum_lakebed_001",
+      "env_family": "if_summarize_judge",
+      "arm": "metta_runtime_repair",
+      "output": "Ancient lakebed found in Martian samples",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": true,
+      "semantic_valid": false,
+      "exact_success": false,
+      "details": {
+        "kind": "exact_word_count",
+        "word_count": 6,
+        "suffix_ok": true,
+        "punctuation_ok": true
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 4.0243,
+        "peak_child_ram_mb": 2350.8359,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 1989934392\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =       5.49 ms\ncommon_perf_print:    samplers time =       1.71 ms /   193 tokens\ncommon_perf_print:        load time =     346.59 ms\ncommon_perf_print: prompt eval time =     345.64 ms /   184 tokens (    1.88 ms per token,   532.35 tokens per second)\ncommon_perf_print:        eval time =     160.91 ms /     8 runs   (   20.11 ms per token,    49.72 tokens per second)\ncommon_perf_print:       total time =     513.40 ms /   192 tokens\ncommon_perf_print: unaccounted time =       1.36 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =          9\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "Ancient lakebed found in Martian samples [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:22:11.788563+00:00",
+      "row_id": "ifsum_gate_question_002",
+      "env_family": "if_summarize_judge",
+      "arm": "baseline",
+      "output": "Do symbolic gates reduce invalid contract commits?",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": true,
+      "exact_success": false,
+      "details": {
+        "kind": "exact_word_count",
+        "word_count": 7,
+        "suffix_ok": true,
+        "punctuation_ok": true
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 4.0327,
+        "peak_child_ram_mb": 2140.5547,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 3511695876\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =       6.04 ms\ncommon_perf_print:    samplers time =       2.00 ms /    61 tokens\ncommon_perf_print:        load time =     201.36 ms\ncommon_perf_print: prompt eval time =     200.91 ms /    52 tokens (    3.86 ms per token,   258.82 tokens per second)\ncommon_perf_print:        eval time =     152.16 ms /     8 runs   (   19.02 ms per token,    52.58 tokens per second)\ncommon_perf_print:       total time =     359.95 ms /    60 tokens\ncommon_perf_print: unaccounted time =       0.84 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =          7\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1389 + (1882 =  1834 +      28 +      18) +         823 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "Do symbolic gates reduce invalid contract commits? [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:22:16.320134+00:00",
+      "row_id": "ifsum_gate_question_002",
+      "env_family": "if_summarize_judge",
+      "arm": "pure_trm",
+      "output": "How do symbolic gates reduce invalid contract commits?",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_word_count",
+        "word_count": 8,
+        "suffix_ok": true,
+        "punctuation_ok": true
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 4.0288,
+        "peak_child_ram_mb": 2350.332,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 1208969160\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =       5.06 ms\ncommon_perf_print:    samplers time =       1.76 ms /   128 tokens\ncommon_perf_print:        load time =     292.69 ms\ncommon_perf_print: prompt eval time =     292.15 ms /   118 tokens (    2.48 ms per token,   403.90 tokens per second)\ncommon_perf_print:        eval time =     173.24 ms /     9 runs   (   19.25 ms per token,    51.95 tokens per second)\ncommon_perf_print:       total time =     471.49 ms /   127 tokens\ncommon_perf_print: unaccounted time =       1.04 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         10\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "How do symbolic gates reduce invalid contract commits? [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:22:20.842514+00:00",
+      "row_id": "ifsum_gate_question_002",
+      "env_family": "if_summarize_judge",
+      "arm": "metta_runtime",
+      "output": "How do symbolic gates reduce invalid contract commits?",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_word_count",
+        "word_count": 8,
+        "suffix_ok": true,
+        "punctuation_ok": true
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 4.0213,
+        "peak_child_ram_mb": 2350.5,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 4001379137\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =       7.97 ms\ncommon_perf_print:    samplers time =       2.25 ms /   168 tokens\ncommon_perf_print:        load time =     317.11 ms\ncommon_perf_print: prompt eval time =     315.99 ms /   158 tokens (    2.00 ms per token,   500.02 tokens per second)\ncommon_perf_print:        eval time =     178.35 ms /     9 runs   (   19.82 ms per token,    50.46 tokens per second)\ncommon_perf_print:       total time =     503.96 ms /   167 tokens\ncommon_perf_print: unaccounted time =       1.66 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         10\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "How do symbolic gates reduce invalid contract commits? [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:22:21.344497+00:00",
+      "row_id": "ifsum_gate_question_002",
+      "env_family": "if_summarize_judge",
+      "arm": "metta_runtime_repair",
+      "output": "How do symbolic gates reduce invalid contract commits?",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_word_count",
+        "word_count": 8,
+        "suffix_ok": true,
+        "punctuation_ok": true
+      },
+      "diagnostics": {
+        "repair_source": "metta_runtime_already_exact",
+        "elapsed_sec": 0.0,
+        "peak_child_ram_mb": 0.0
+      }
+    },
+    {
+      "ts": "2026-04-28T16:22:26.885162+00:00",
+      "row_id": "pyd_task_003",
+      "env_family": "pydantic_adherence",
+      "arm": "baseline",
+      "output": "{\"rows\": [{\"priority\": \"high\", \"due_date\": \"2026-05-02\", \"blocked\": false}]}",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "details": {
+        "kind": "json_object",
+        "parse_error": null,
+        "type_ok": false,
+        "values_ok": false,
+        "no_extra": false,
+        "keys": [
+          "rows"
+        ]
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 5.0392,
+        "peak_child_ram_mb": 2330.3672,
+        "stderr_tail": "atch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 791602991\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =      17.50 ms\ncommon_perf_print:    samplers time =       7.00 ms /    91 tokens\ncommon_perf_print:        load time =     220.76 ms\ncommon_perf_print: prompt eval time =     220.02 ms /    59 tokens (    3.73 ms per token,   268.16 tokens per second)\ncommon_perf_print:        eval time =     505.75 ms /    31 runs   (   16.31 ms per token,    61.30 tokens per second)\ncommon_perf_print:       total time =     745.79 ms /    90 tokens\ncommon_perf_print: unaccounted time =       2.52 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         30\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1389 + (1882 =  1834 +      28 +      18) +         823 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "{\"rows\": [{\"priority\": \"high\", \"due_date\": \"2026-05-02\", \"blocked\": false}]} [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:22:31.921059+00:00",
+      "row_id": "pyd_task_003",
+      "env_family": "pydantic_adherence",
+      "arm": "pure_trm",
+      "output": "{\n  \"task\": \"str\",\n  \"blocked\": true,\n  \"due_date\": \"2026-05-02\",\n  \"priority\": \"high\"\n}",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": true,
+      "semantic_valid": false,
+      "exact_success": false,
+      "details": {
+        "kind": "json_object",
+        "parse_error": null,
+        "type_ok": true,
+        "values_ok": false,
+        "no_extra": true,
+        "keys": [
+          "blocked",
+          "due_date",
+          "priority",
+          "task"
+        ]
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 4.5307,
+        "peak_child_ram_mb": 2350.4453,
+        "stderr_tail": "atch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 474314748\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =      25.41 ms\ncommon_perf_print:    samplers time =       9.99 ms /   190 tokens\ncommon_perf_print:        load time =     310.12 ms\ncommon_perf_print: prompt eval time =     309.47 ms /   150 tokens (    2.06 ms per token,   484.70 tokens per second)\ncommon_perf_print:        eval time =     619.62 ms /    39 runs   (   15.89 ms per token,    62.94 tokens per second)\ncommon_perf_print:       total time =     957.65 ms /   189 tokens\ncommon_perf_print: unaccounted time =       3.14 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         40\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "{\n  \"task\": \"str\",\n  \"blocked\": true,\n  \"due_date\": \"2026-05-02\",\n  \"priority\": \"high\"\n} [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:22:36.958410+00:00",
+      "row_id": "pyd_task_003",
+      "env_family": "pydantic_adherence",
+      "arm": "metta_runtime",
+      "output": "{\"task\": \"collect rows\", \"priority\": \"high\", \"due_date\": \"2026-05-02\", \"blocked\": false}",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_object",
+        "parse_error": null,
+        "type_ok": true,
+        "values_ok": true,
+        "no_extra": true,
+        "keys": [
+          "blocked",
+          "due_date",
+          "priority",
+          "task"
+        ]
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 4.5352,
+        "peak_child_ram_mb": 2350.6289,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 1808521887\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =      24.58 ms\ncommon_perf_print:    samplers time =       9.00 ms /   226 tokens\ncommon_perf_print:        load time =     349.31 ms\ncommon_perf_print: prompt eval time =     348.57 ms /   191 tokens (    1.82 ms per token,   547.96 tokens per second)\ncommon_perf_print:        eval time =     537.51 ms /    34 runs   (   15.81 ms per token,    63.25 tokens per second)\ncommon_perf_print:       total time =     913.69 ms /   225 tokens\ncommon_perf_print: unaccounted time =       3.03 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         35\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "{\"task\": \"collect rows\", \"priority\": \"high\", \"due_date\": \"2026-05-02\", \"blocked\": false} [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:22:37.460464+00:00",
+      "row_id": "pyd_task_003",
+      "env_family": "pydantic_adherence",
+      "arm": "metta_runtime_repair",
+      "output": "{\"task\": \"collect rows\", \"priority\": \"high\", \"due_date\": \"2026-05-02\", \"blocked\": false}",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_object",
+        "parse_error": null,
+        "type_ok": true,
+        "values_ok": true,
+        "no_extra": true,
+        "keys": [
+          "blocked",
+          "due_date",
+          "priority",
+          "task"
+        ]
+      },
+      "diagnostics": {
+        "repair_source": "metta_runtime_already_exact",
+        "elapsed_sec": 0.0,
+        "peak_child_ram_mb": 0.0
+      }
+    },
+    {
+      "ts": "2026-04-28T16:22:41.992590+00:00",
+      "row_id": "pyd_verifier_004",
+      "env_family": "pydantic_adherence",
+      "arm": "baseline",
+      "output": "{\"name\":\"verifier\",\"retries\":2,\"safe\":true}",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_object",
+        "parse_error": null,
+        "type_ok": true,
+        "values_ok": true,
+        "no_extra": true,
+        "keys": [
+          "name",
+          "retries",
+          "safe"
+        ]
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 4.0304,
+        "peak_child_ram_mb": 2330.4531,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 2091067484\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =       9.52 ms\ncommon_perf_print:    samplers time =       3.47 ms /    65 tokens\ncommon_perf_print:        load time =     196.03 ms\ncommon_perf_print: prompt eval time =     195.25 ms /    49 tokens (    3.98 ms per token,   250.96 tokens per second)\ncommon_perf_print:        eval time =     264.60 ms /    15 runs   (   17.64 ms per token,    56.69 tokens per second)\ncommon_perf_print:       total time =     471.03 ms /    64 tokens\ncommon_perf_print: unaccounted time =       1.66 ms /   0.4 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         14\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1389 + (1882 =  1834 +      28 +      18) +         823 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "{\"name\":\"verifier\",\"retries\":2,\"safe\":true} [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:22:46.535100+00:00",
+      "row_id": "pyd_verifier_004",
+      "env_family": "pydantic_adherence",
+      "arm": "pure_trm",
+      "output": "{\"name\": \"verifier\", \"retries\": 2, \"safe\": true}",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_object",
+        "parse_error": null,
+        "type_ok": true,
+        "values_ok": true,
+        "no_extra": true,
+        "keys": [
+          "name",
+          "retries",
+          "safe"
+        ]
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 4.0411,
+        "peak_child_ram_mb": 2350.3242,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 2085871426\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =      11.32 ms\ncommon_perf_print:    samplers time =       4.35 ms /   142 tokens\ncommon_perf_print:        load time =     298.16 ms\ncommon_perf_print: prompt eval time =     297.61 ms /   122 tokens (    2.44 ms per token,   409.93 tokens per second)\ncommon_perf_print:        eval time =     316.59 ms /    19 runs   (   16.66 ms per token,    60.01 tokens per second)\ncommon_perf_print:       total time =     627.60 ms /   141 tokens\ncommon_perf_print: unaccounted time =       2.08 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         20\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "{\"name\": \"verifier\", \"retries\": 2, \"safe\": true} [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:22:52.083566+00:00",
+      "row_id": "pyd_verifier_004",
+      "env_family": "pydantic_adherence",
+      "arm": "metta_runtime",
+      "output": "{\"env_family\": \"pydantic_adherence\", \"failure_labels\": [\"json_parse\", \"type_error\"], \"validator\": {\"required\": {\"name\": \"str\", \"retries\": \"int\", \"safe\": \"bool\"}, \"type\": \"json_object\"}}",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "details": {
+        "kind": "json_object",
+        "parse_error": null,
+        "type_ok": false,
+        "values_ok": false,
+        "no_extra": false,
+        "keys": [
+          "env_family",
+          "failure_labels",
+          "validator"
+        ]
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 5.0453,
+        "peak_child_ram_mb": 2371.0625,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 3806608413\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =      37.12 ms\ncommon_perf_print:    samplers time =      14.09 ms /   219 tokens\ncommon_perf_print:        load time =     346.12 ms\ncommon_perf_print: prompt eval time =     345.40 ms /   163 tokens (    2.12 ms per token,   471.92 tokens per second)\ncommon_perf_print:        eval time =     851.26 ms /    55 runs   (   15.48 ms per token,    64.61 tokens per second)\ncommon_perf_print:       total time =    1238.23 ms /   218 tokens\ncommon_perf_print: unaccounted time =       4.44 ms /   0.4 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         56\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "{\"env_family\": \"pydantic_adherence\", \"failure_labels\": [\"json_parse\", \"type_error\"], \"validator\": {\"required\": {\"name\": \"str\", \"retries\": \"int\", \"safe\": \"bool\"}, \"type\": \"json_object\"}} [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:22:58.120776+00:00",
+      "row_id": "pyd_verifier_004",
+      "env_family": "pydantic_adherence",
+      "arm": "metta_runtime_repair",
+      "output": "{\"env_family\": \"pydantic_adherence\", \"failure_labels\": [\"json_parse\", \"type_error\"], \"validator\": {\"required\": {\"name\": \"str\", \"retries\": \"int\", \"safe\": \"bool\"}, \"type\": \"json_object\"}, \"values_ok\": false}",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "details": {
+        "kind": "json_object",
+        "parse_error": null,
+        "type_ok": false,
+        "values_ok": false,
+        "no_extra": false,
+        "keys": [
+          "env_family",
+          "failure_labels",
+          "validator",
+          "values_ok"
+        ]
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 5.5337,
+        "peak_child_ram_mb": 2352.1875,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 4171700476\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =      38.32 ms\ncommon_perf_print:    samplers time =      13.57 ms /   310 tokens\ncommon_perf_print:        load time =     438.50 ms\ncommon_perf_print: prompt eval time =     437.64 ms /   248 tokens (    1.76 ms per token,   566.67 tokens per second)\ncommon_perf_print:        eval time =     977.30 ms /    61 runs   (   16.02 ms per token,    62.42 tokens per second)\ncommon_perf_print:       total time =    1457.58 ms /   309 tokens\ncommon_perf_print: unaccounted time =       4.31 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         63\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "{\"env_family\": \"pydantic_adherence\", \"failure_labels\": [\"json_parse\", \"type_error\"], \"validator\": {\"required\": {\"name\": \"str\", \"retries\": \"int\", \"safe\": \"bool\"}, \"type\": \"json_object\"}, \"values_ok\": false} [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:23:02.659517+00:00",
+      "row_id": "ascii_flat_005",
+      "env_family": "ascii_tree",
+      "arm": "baseline",
+      "output": "1\n     / \\\n    2   3\n   / \\ / \\\n  4  5 6  7",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "details": {
+        "kind": "ascii_tree_exact",
+        "actual_lines": [
+          "1",
+          "     / \\",
+          "    2   3",
+          "   / \\ / \\",
+          "  4  5 6  7"
+        ]
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 4.0375,
+        "peak_child_ram_mb": 2330.1992,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 2795822290\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =      14.10 ms\ncommon_perf_print:    samplers time =       5.11 ms /    76 tokens\ncommon_perf_print:        load time =     203.88 ms\ncommon_perf_print: prompt eval time =     203.46 ms /    45 tokens (    4.52 ms per token,   221.17 tokens per second)\ncommon_perf_print:        eval time =     471.46 ms /    30 runs   (   15.72 ms per token,    63.63 tokens per second)\ncommon_perf_print:       total time =     691.13 ms /    75 tokens\ncommon_perf_print: unaccounted time =       2.11 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         29\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1389 + (1882 =  1834 +      28 +      18) +         823 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "      1\n     / \\\n    2   3\n   / \\ / \\\n  4  5 6  7 [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:23:08.698184+00:00",
+      "row_id": "ascii_flat_005",
+      "env_family": "ascii_tree",
+      "arm": "pure_trm",
+      "output": "{\n  \"root\": {\n    \"rows\": {\n      \"validators\": {\n        \"results\": \"\"\n      }\n    }\n  }\n}",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": true,
+      "exact_success": false,
+      "details": {
+        "kind": "ascii_tree_exact",
+        "actual_lines": [
+          "{",
+          "  \"root\": {",
+          "    \"rows\": {",
+          "      \"validators\": {",
+          "        \"results\": \"\"",
+          "      }",
+          "    }",
+          "  }",
+          "}"
+        ]
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 5.5348,
+        "peak_child_ram_mb": 2350.3242,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 3575281973\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =      29.27 ms\ncommon_perf_print:    samplers time =      10.15 ms /   158 tokens\ncommon_perf_print:        load time =     423.07 ms\ncommon_perf_print: prompt eval time =     421.29 ms /   129 tokens (    3.27 ms per token,   306.20 tokens per second)\ncommon_perf_print:        eval time =     427.88 ms /    28 runs   (   15.28 ms per token,    65.44 tokens per second)\ncommon_perf_print:       total time =     882.45 ms /   157 tokens\ncommon_perf_print: unaccounted time =       4.01 ms /   0.5 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         30\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "{\n  \"root\": {\n    \"rows\": {\n      \"validators\": {\n        \"results\": \"\"\n      }\n    }\n  }\n} [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:23:21.289567+00:00",
+      "row_id": "ascii_flat_005",
+      "env_family": "ascii_tree",
+      "arm": "metta_runtime",
+      "output": "{\n  \"root\": {\n    \"rows\": {\n      \"0\": {\n        \"validators\": {\n          \"0\": \"v0\",\n          \"1\": \"v1\",\n          \"2\": \"v2\"\n        },\n        \"results\": {\n          \"0\": \"r0\",\n          \"1\":",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": true,
+      "exact_success": false,
+      "details": {
+        "kind": "ascii_tree_exact",
+        "actual_lines": [
+          "{",
+          "  \"root\": {",
+          "    \"rows\": {",
+          "      \"0\": {",
+          "        \"validators\": {",
+          "          \"0\": \"v0\",",
+          "          \"1\": \"v1\",",
+          "          \"2\": \"v2\"",
+          "        },",
+          "        \"results\": {",
+          "          \"0\": \"r0\",",
+          "          \"1\":"
+        ]
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 12.0887,
+        "peak_child_ram_mb": 2351.6562,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 1342543565\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =     155.71 ms\ncommon_perf_print:    samplers time =      76.40 ms /   234 tokens\ncommon_perf_print:        load time =    1046.91 ms\ncommon_perf_print: prompt eval time =    1043.45 ms /   170 tokens (    6.14 ms per token,   162.92 tokens per second)\ncommon_perf_print:        eval time =    1141.54 ms /    63 runs   (   18.12 ms per token,    55.19 tokens per second)\ncommon_perf_print:       total time =    2360.32 ms /   233 tokens\ncommon_perf_print: unaccounted time =      19.63 ms /   0.8 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         64\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "{\n  \"root\": {\n    \"rows\": {\n      \"0\": {\n        \"validators\": {\n          \"0\": \"v0\",\n          \"1\": \"v1\",\n          \"2\": \"v2\"\n        },\n        \"results\": {\n          \"0\": \"r0\",\n          \"1\":\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:23:31.851146+00:00",
+      "row_id": "ascii_flat_005",
+      "env_family": "ascii_tree",
+      "arm": "metta_runtime_repair",
+      "output": "{\n  \"root\": {\n    \"rows\": {\n      \"0\": {\n        \"validators\": {\n          \"0\": \"v0\",\n          \"1\": \"v1\",\n          \"2\": \"v2\"\n        },\n        \"results\": {\n          \"0\": \"r0\",\n          \"1\":",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": true,
+      "exact_success": false,
+      "details": {
+        "kind": "ascii_tree_exact",
+        "actual_lines": [
+          "{",
+          "  \"root\": {",
+          "    \"rows\": {",
+          "      \"0\": {",
+          "        \"validators\": {",
+          "          \"0\": \"v0\",",
+          "          \"1\": \"v1\",",
+          "          \"2\": \"v2\"",
+          "        },",
+          "        \"results\": {",
+          "          \"0\": \"r0\",",
+          "          \"1\":"
+        ]
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 10.0594,
+        "peak_child_ram_mb": 2352.0156,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 3518096003\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =     120.66 ms\ncommon_perf_print:    samplers time =      57.72 ms /   381 tokens\ncommon_perf_print:        load time =     912.87 ms\ncommon_perf_print: prompt eval time =     906.28 ms /   317 tokens (    2.86 ms per token,   349.78 tokens per second)\ncommon_perf_print:        eval time =    1132.04 ms /    63 runs   (   17.97 ms per token,    55.65 tokens per second)\ncommon_perf_print:       total time =    2177.82 ms /   380 tokens\ncommon_perf_print: unaccounted time =      18.84 ms /   0.9 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         66\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "{\n  \"root\": {\n    \"rows\": {\n      \"0\": {\n        \"validators\": {\n          \"0\": \"v0\",\n          \"1\": \"v1\",\n          \"2\": \"v2\"\n        },\n        \"results\": {\n          \"0\": \"r0\",\n          \"1\":\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:23:40.939617+00:00",
+      "row_id": "ascii_nested_006",
+      "env_family": "ascii_tree",
+      "arm": "baseline",
+      "output": "commit\n     /    \\\nparse    classify",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "details": {
+        "kind": "ascii_tree_exact",
+        "actual_lines": [
+          "commit",
+          "     /    \\",
+          "parse    classify"
+        ]
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 8.5852,
+        "peak_child_ram_mb": 2331.5039,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 3765984815\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =      24.02 ms\ncommon_perf_print:    samplers time =      10.80 ms /    59 tokens\ncommon_perf_print:        load time =     563.32 ms\ncommon_perf_print: prompt eval time =     561.47 ms /    48 tokens (   11.70 ms per token,    85.49 tokens per second)\ncommon_perf_print:        eval time =     306.56 ms /    10 runs   (   30.66 ms per token,    32.62 tokens per second)\ncommon_perf_print:       total time =     898.59 ms /    58 tokens\ncommon_perf_print: unaccounted time =       6.55 ms /   0.7 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =          9\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1389 + (1882 =  1834 +      28 +      18) +         823 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "      commit\n     /    \\\nparse    classify [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:23:53.055224+00:00",
+      "row_id": "ascii_nested_006",
+      "env_family": "ascii_tree",
+      "arm": "pure_trm",
+      "output": "```\npipeline\n|-- parse\n|   `-- classify\n`-- commit\n```",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": true,
+      "exact_success": false,
+      "details": {
+        "kind": "ascii_tree_exact",
+        "actual_lines": [
+          "```",
+          "pipeline",
+          "|-- parse",
+          "|   `-- classify",
+          "`-- commit",
+          "```"
+        ]
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 11.6128,
+        "peak_child_ram_mb": 2350.1094,
+        "stderr_tail": "atch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 709686988\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =      42.43 ms\ncommon_perf_print:    samplers time =      18.91 ms /   152 tokens\ncommon_perf_print:        load time =    1427.76 ms\ncommon_perf_print: prompt eval time =    1425.75 ms /   133 tokens (   10.72 ms per token,    93.28 tokens per second)\ncommon_perf_print:        eval time =     420.32 ms /    18 runs   (   23.35 ms per token,    42.82 tokens per second)\ncommon_perf_print:       total time =    1893.37 ms /   151 tokens\ncommon_perf_print: unaccounted time =       4.88 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         19\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "```\npipeline\n|-- parse\n|   `-- classify\n`-- commit\n``` [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:24:04.173529+00:00",
+      "row_id": "ascii_nested_006",
+      "env_family": "ascii_tree",
+      "arm": "metta_runtime",
+      "output": "pipeline\n|-- parse\n   |-- classify\n   `-- commit",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": true,
+      "exact_success": false,
+      "details": {
+        "kind": "ascii_tree_exact",
+        "actual_lines": [
+          "pipeline",
+          "|-- parse",
+          "   |-- classify",
+          "   `-- commit"
+        ]
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 10.6049,
+        "peak_child_ram_mb": 2329.25,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 2617651449\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =      31.57 ms\ncommon_perf_print:    samplers time =      12.44 ms /   188 tokens\ncommon_perf_print:        load time =     889.50 ms\ncommon_perf_print: prompt eval time =     848.70 ms /   174 tokens (    4.88 ms per token,   205.02 tokens per second)\ncommon_perf_print:        eval time =     325.69 ms /    13 runs   (   25.05 ms per token,    39.92 tokens per second)\ncommon_perf_print:       total time =    1249.82 ms /   187 tokens\ncommon_perf_print: unaccounted time =      43.86 ms /   3.5 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         14\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "pipeline\n|-- parse\n   |-- classify\n   `-- commit [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:24:16.429565+00:00",
+      "row_id": "ascii_nested_006",
+      "env_family": "ascii_tree",
+      "arm": "metta_runtime_repair",
+      "output": "pipeline\n|-- parse\n   |-- classify\n   `-- commit",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": true,
+      "exact_success": false,
+      "details": {
+        "kind": "ascii_tree_exact",
+        "actual_lines": [
+          "pipeline",
+          "|-- parse",
+          "   |-- classify",
+          "   `-- commit"
+        ]
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 11.7368,
+        "peak_child_ram_mb": 2352.0117,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 2980863039\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =      33.99 ms\ncommon_perf_print:    samplers time =      13.64 ms /   216 tokens\ncommon_perf_print:        load time =    1201.51 ms\ncommon_perf_print: prompt eval time =    1200.41 ms /   202 tokens (    5.94 ms per token,   168.28 tokens per second)\ncommon_perf_print:        eval time =     392.09 ms /    13 runs   (   30.16 ms per token,    33.16 tokens per second)\ncommon_perf_print:       total time =    1629.73 ms /   215 tokens\ncommon_perf_print: unaccounted time =       3.23 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         15\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "pipeline\n|-- parse\n   |-- classify\n   `-- commit [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:24:30.703460+00:00",
+      "row_id": "ifeval_bullets_007",
+      "env_family": "ifeval_contract_family",
+      "arm": "baseline",
+      "output": "- Parse input data\n- Validate input data\n- Commit validated data",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "bullet_list",
+        "line_count": 3,
+        "lines": [
+          "- Parse input data",
+          "- Validate input data",
+          "- Commit validated data"
+        ]
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 13.7606,
+        "peak_child_ram_mb": 2330.8125,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 2863846073\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =      45.70 ms\ncommon_perf_print:    samplers time =      24.04 ms /    65 tokens\ncommon_perf_print:        load time =    1035.54 ms\ncommon_perf_print: prompt eval time =    1027.91 ms /    50 tokens (   20.56 ms per token,    48.64 tokens per second)\ncommon_perf_print:        eval time =     519.67 ms /    14 runs   (   37.12 ms per token,    26.94 tokens per second)\ncommon_perf_print:       total time =    1603.08 ms /    64 tokens\ncommon_perf_print: unaccounted time =       9.80 ms /   0.6 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         13\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1389 + (1882 =  1834 +      28 +      18) +         823 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "- Parse input data\n- Validate input data\n- Commit validated data [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:24:46.094037+00:00",
+      "row_id": "ifeval_bullets_007",
+      "env_family": "ifeval_contract_family",
+      "arm": "pure_trm",
+      "output": "- Parse the contract.\n- Validate the parsed contract.\n- Commit the validated contract.",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "bullet_list",
+        "line_count": 3,
+        "lines": [
+          "- Parse the contract.",
+          "- Validate the parsed contract.",
+          "- Commit the validated contract."
+        ]
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 14.8782,
+        "peak_child_ram_mb": 2358.9414,
+        "stderr_tail": "atch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 765618254\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =      51.80 ms\ncommon_perf_print:    samplers time =      20.93 ms /   129 tokens\ncommon_perf_print:        load time =    1390.46 ms\ncommon_perf_print: prompt eval time =    1382.88 ms /   111 tokens (   12.46 ms per token,    80.27 tokens per second)\ncommon_perf_print:        eval time =     493.35 ms /    17 runs   (   29.02 ms per token,    34.46 tokens per second)\ncommon_perf_print:       total time =    1939.32 ms /   128 tokens\ncommon_perf_print: unaccounted time =      11.29 ms /   0.6 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         18\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "- Parse the contract.\n- Validate the parsed contract.\n- Commit the validated contract. [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:25:00.372200+00:00",
+      "row_id": "ifeval_bullets_007",
+      "env_family": "ifeval_contract_family",
+      "arm": "metta_runtime",
+      "output": "- line_count: 1\n- extra_text: 2",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "details": {
+        "kind": "bullet_list",
+        "line_count": 2,
+        "lines": [
+          "- line_count: 1",
+          "- extra_text: 2"
+        ]
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 13.7718,
+        "peak_child_ram_mb": 2351.4844,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 3941192514\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =      37.79 ms\ncommon_perf_print:    samplers time =      15.96 ms /   166 tokens\ncommon_perf_print:        load time =    1113.20 ms\ncommon_perf_print: prompt eval time =    1107.36 ms /   152 tokens (    7.29 ms per token,   137.26 tokens per second)\ncommon_perf_print:        eval time =     396.41 ms /    13 runs   (   30.49 ms per token,    32.79 tokens per second)\ncommon_perf_print:       total time =    1550.18 ms /   165 tokens\ncommon_perf_print: unaccounted time =       8.61 ms /   0.6 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         14\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "- line_count: 1\n- extra_text: 2 [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:25:15.214793+00:00",
+      "row_id": "ifeval_bullets_007",
+      "env_family": "ifeval_contract_family",
+      "arm": "metta_runtime_repair",
+      "output": "- parse\n- validate\n- commit",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "bullet_list",
+        "line_count": 3,
+        "lines": [
+          "- parse",
+          "- validate",
+          "- commit"
+        ]
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 14.3352,
+        "peak_child_ram_mb": 2329.1406,
+        "stderr_tail": "atch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 933881657\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =      19.87 ms\ncommon_perf_print:    samplers time =       8.91 ms /   192 tokens\ncommon_perf_print:        load time =    1143.76 ms\ncommon_perf_print: prompt eval time =    1141.19 ms /   183 tokens (    6.24 ms per token,   160.36 tokens per second)\ncommon_perf_print:        eval time =     262.89 ms /     8 runs   (   32.86 ms per token,    30.43 tokens per second)\ncommon_perf_print:       total time =    1428.17 ms /   191 tokens\ncommon_perf_print: unaccounted time =       4.22 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =          9\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "- parse\n- validate\n- commit [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:25:30.160098+00:00",
+      "row_id": "ifeval_json_array_008",
+      "env_family": "ifeval_contract_family",
+      "arm": "baseline",
+      "output": "[\"commit\", \"repair\", \"route\"]",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": true,
+      "semantic_valid": false,
+      "exact_success": false,
+      "details": {
+        "kind": "json_array",
+        "parse_error": null,
+        "length_ok": true,
+        "lowercase_ok": true,
+        "values_ok": false
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 14.4363,
+        "peak_child_ram_mb": 2331.2578,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 1139372772\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =      35.24 ms\ncommon_perf_print:    samplers time =      12.15 ms /    57 tokens\ncommon_perf_print:        load time =     947.01 ms\ncommon_perf_print: prompt eval time =     944.57 ms /    47 tokens (   20.10 ms per token,    49.76 tokens per second)\ncommon_perf_print:        eval time =     300.93 ms /     9 runs   (   33.44 ms per token,    29.91 tokens per second)\ncommon_perf_print:       total time =    1285.53 ms /    56 tokens\ncommon_perf_print: unaccounted time =       4.79 ms /   0.4 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =          8\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1389 + (1882 =  1834 +      28 +      18) +         823 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "[\"commit\", \"repair\", \"route\"] [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:25:40.300651+00:00",
+      "row_id": "ifeval_json_array_008",
+      "env_family": "ifeval_contract_family",
+      "arm": "pure_trm",
+      "output": "[\"route\", \"repair\", \"commit\"]",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_array",
+        "parse_error": null,
+        "length_ok": true,
+        "lowercase_ok": true,
+        "values_ok": true
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 9.6366,
+        "peak_child_ram_mb": 2298.2383,
+        "stderr_tail": "atch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 726139526\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =       9.19 ms\ncommon_perf_print:    samplers time =       3.28 ms /   123 tokens\ncommon_perf_print:        load time =     632.13 ms\ncommon_perf_print: prompt eval time =     630.25 ms /   113 tokens (    5.58 ms per token,   179.29 tokens per second)\ncommon_perf_print:        eval time =     195.05 ms /     9 runs   (   21.67 ms per token,    46.14 tokens per second)\ncommon_perf_print:       total time =     837.01 ms /   122 tokens\ncommon_perf_print: unaccounted time =       2.51 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         10\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "[\"route\", \"repair\", \"commit\"] [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:25:46.841417+00:00",
+      "row_id": "ifeval_json_array_008",
+      "env_family": "ifeval_contract_family",
+      "arm": "metta_runtime",
+      "output": "[\"route\", \"repair\", \"commit\"]",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_array",
+        "parse_error": null,
+        "length_ok": true,
+        "lowercase_ok": true,
+        "values_ok": true
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 6.0391,
+        "peak_child_ram_mb": 2299.9531,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 1672092776\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =      13.85 ms\ncommon_perf_print:    samplers time =       5.36 ms /   164 tokens\ncommon_perf_print:        load time =     477.38 ms\ncommon_perf_print: prompt eval time =     476.40 ms /   154 tokens (    3.09 ms per token,   323.26 tokens per second)\ncommon_perf_print:        eval time =     212.36 ms /     9 runs   (   23.60 ms per token,    42.38 tokens per second)\ncommon_perf_print:       total time =     704.75 ms /   163 tokens\ncommon_perf_print: unaccounted time =       2.14 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         10\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "[\"route\", \"repair\", \"commit\"] [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:25:47.343268+00:00",
+      "row_id": "ifeval_json_array_008",
+      "env_family": "ifeval_contract_family",
+      "arm": "metta_runtime_repair",
+      "output": "[\"route\", \"repair\", \"commit\"]",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_array",
+        "parse_error": null,
+        "length_ok": true,
+        "lowercase_ok": true,
+        "values_ok": true
+      },
+      "diagnostics": {
+        "repair_source": "metta_runtime_already_exact",
+        "elapsed_sec": 0.0,
+        "peak_child_ram_mb": 0.0
+      }
+    },
+    {
+      "ts": "2026-04-28T16:25:53.378181+00:00",
+      "row_id": "boolq_nile_009",
+      "env_family": "boolq_choice_contract",
+      "arm": "baseline",
+      "output": "true",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_label",
+        "stripped": "true",
+        "allowed": [
+          "true",
+          "false"
+        ]
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 5.5328,
+        "peak_child_ram_mb": 2232.3555,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 3784235779\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =       1.61 ms\ncommon_perf_print:    samplers time =       0.40 ms /    55 tokens\ncommon_perf_print:        load time =     298.86 ms\ncommon_perf_print: prompt eval time =     297.66 ms /    53 tokens (    5.62 ms per token,   178.06 tokens per second)\ncommon_perf_print:        eval time =      54.00 ms /     1 runs   (   54.00 ms per token,    18.52 tokens per second)\ncommon_perf_print:       total time =     354.60 ms /    54 tokens\ncommon_perf_print: unaccounted time =       1.33 ms /   0.4 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =          0\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1397 + (1882 =  1834 +      28 +      18) +         815 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "true [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:25:59.427349+00:00",
+      "row_id": "boolq_nile_009",
+      "env_family": "boolq_choice_contract",
+      "arm": "pure_trm",
+      "output": "true",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_label",
+        "stripped": "true",
+        "allowed": [
+          "true",
+          "false"
+        ]
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 5.5462,
+        "peak_child_ram_mb": 2270.1719,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 3329689161\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =       2.76 ms\ncommon_perf_print:    samplers time =       0.77 ms /   114 tokens\ncommon_perf_print:        load time =     365.33 ms\ncommon_perf_print: prompt eval time =     364.30 ms /   112 tokens (    3.25 ms per token,   307.44 tokens per second)\ncommon_perf_print:        eval time =      57.53 ms /     1 runs   (   57.53 ms per token,    17.38 tokens per second)\ncommon_perf_print:       total time =     425.76 ms /   113 tokens\ncommon_perf_print: unaccounted time =       1.18 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =          2\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "true [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:26:05.467221+00:00",
+      "row_id": "boolq_nile_009",
+      "env_family": "boolq_choice_contract",
+      "arm": "metta_runtime",
+      "output": "true",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_label",
+        "stripped": "true",
+        "allowed": [
+          "true",
+          "false"
+        ]
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 5.5384,
+        "peak_child_ram_mb": 2313.7617,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 2631934025\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =       3.39 ms\ncommon_perf_print:    samplers time =       1.67 ms /   155 tokens\ncommon_perf_print:        load time =     453.45 ms\ncommon_perf_print: prompt eval time =     452.60 ms /   153 tokens (    2.96 ms per token,   338.05 tokens per second)\ncommon_perf_print:        eval time =      55.81 ms /     1 runs   (   55.81 ms per token,    17.92 tokens per second)\ncommon_perf_print:       total time =     512.74 ms /   154 tokens\ncommon_perf_print: unaccounted time =       0.95 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =          2\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "true [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:26:05.970586+00:00",
+      "row_id": "boolq_nile_009",
+      "env_family": "boolq_choice_contract",
+      "arm": "metta_runtime_repair",
+      "output": "true",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_label",
+        "stripped": "true",
+        "allowed": [
+          "true",
+          "false"
+        ]
+      },
+      "diagnostics": {
+        "repair_source": "metta_runtime_already_exact",
+        "elapsed_sec": 0.0,
+        "peak_child_ram_mb": 0.0
+      }
+    },
+    {
+      "ts": "2026-04-28T16:26:12.516493+00:00",
+      "row_id": "boolq_sky_010",
+      "env_family": "boolq_choice_contract",
+      "arm": "baseline",
+      "output": "false",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_label",
+        "stripped": "false",
+        "allowed": [
+          "true",
+          "false"
+        ]
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 6.0439,
+        "peak_child_ram_mb": 2317.1133,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 1073327222\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =       2.04 ms\ncommon_perf_print:    samplers time =       0.73 ms /    62 tokens\ncommon_perf_print:        load time =     351.35 ms\ncommon_perf_print: prompt eval time =     350.04 ms /    60 tokens (    5.83 ms per token,   171.41 tokens per second)\ncommon_perf_print:        eval time =      73.64 ms /     1 runs   (   73.64 ms per token,    13.58 tokens per second)\ncommon_perf_print:       total time =     427.15 ms /    61 tokens\ncommon_perf_print: unaccounted time =       1.43 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =          0\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1397 + (1882 =  1834 +      28 +      18) +         815 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "false [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:26:18.554080+00:00",
+      "row_id": "boolq_sky_010",
+      "env_family": "boolq_choice_contract",
+      "arm": "pure_trm",
+      "output": "false",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_label",
+        "stripped": "false",
+        "allowed": [
+          "true",
+          "false"
+        ]
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 5.5346,
+        "peak_child_ram_mb": 2195.3359,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 1437590995\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =       2.34 ms\ncommon_perf_print:    samplers time =       0.48 ms /   121 tokens\ncommon_perf_print:        load time =     395.16 ms\ncommon_perf_print: prompt eval time =     394.34 ms /   119 tokens (    3.31 ms per token,   301.77 tokens per second)\ncommon_perf_print:        eval time =      72.22 ms /     1 runs   (   72.22 ms per token,    13.85 tokens per second)\ncommon_perf_print:       total time =     469.81 ms /   120 tokens\ncommon_perf_print: unaccounted time =       0.91 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =          2\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "false [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:26:25.644694+00:00",
+      "row_id": "boolq_sky_010",
+      "env_family": "boolq_choice_contract",
+      "arm": "metta_runtime",
+      "output": "false",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_label",
+        "stripped": "false",
+        "allowed": [
+          "true",
+          "false"
+        ]
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 6.5887,
+        "peak_child_ram_mb": 2272.293,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 3777866430\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =       2.17 ms\ncommon_perf_print:    samplers time =       0.62 ms /   162 tokens\ncommon_perf_print:        load time =     552.85 ms\ncommon_perf_print: prompt eval time =     549.40 ms /   160 tokens (    3.43 ms per token,   291.22 tokens per second)\ncommon_perf_print:        eval time =      72.34 ms /     1 runs   (   72.34 ms per token,    13.82 tokens per second)\ncommon_perf_print:       total time =     627.49 ms /   161 tokens\ncommon_perf_print: unaccounted time =       3.58 ms /   0.6 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =          3\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "false [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:26:26.147315+00:00",
+      "row_id": "boolq_sky_010",
+      "env_family": "boolq_choice_contract",
+      "arm": "metta_runtime_repair",
+      "output": "false",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_label",
+        "stripped": "false",
+        "allowed": [
+          "true",
+          "false"
+        ]
+      },
+      "diagnostics": {
+        "repair_source": "metta_runtime_already_exact",
+        "elapsed_sec": 0.0,
+        "peak_child_ram_mb": 0.0
+      }
+    },
+    {
+      "ts": "2026-04-28T16:26:33.210513+00:00",
+      "row_id": "choice_letter_011",
+      "env_family": "choice_contract",
+      "arm": "baseline",
+      "output": "C",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": true,
+      "semantic_valid": false,
+      "exact_success": false,
+      "details": {
+        "kind": "exact_label",
+        "stripped": "C",
+        "allowed": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 6.5611,
+        "peak_child_ram_mb": 2272.3906,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 1110982412\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =       5.02 ms\ncommon_perf_print:    samplers time =       1.19 ms /    58 tokens\ncommon_perf_print:        load time =     325.00 ms\ncommon_perf_print: prompt eval time =     324.23 ms /    56 tokens (    5.79 ms per token,   172.72 tokens per second)\ncommon_perf_print:        eval time =     117.62 ms /     1 runs   (  117.62 ms per token,     8.50 tokens per second)\ncommon_perf_print:       total time =     447.78 ms /    57 tokens\ncommon_perf_print: unaccounted time =       0.92 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =          0\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1397 + (1882 =  1834 +      28 +      18) +         815 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "C [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:26:39.774576+00:00",
+      "row_id": "choice_letter_011",
+      "env_family": "choice_contract",
+      "arm": "pure_trm",
+      "output": "C",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": true,
+      "semantic_valid": false,
+      "exact_success": false,
+      "details": {
+        "kind": "exact_label",
+        "stripped": "C",
+        "allowed": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 6.0612,
+        "peak_child_ram_mb": 2298.1367,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 2228541577\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =       2.08 ms\ncommon_perf_print:    samplers time =       0.75 ms /   118 tokens\ncommon_perf_print:        load time =     466.55 ms\ncommon_perf_print: prompt eval time =     465.74 ms /   116 tokens (    4.01 ms per token,   249.07 tokens per second)\ncommon_perf_print:        eval time =      56.92 ms /     1 runs   (   56.92 ms per token,    17.57 tokens per second)\ncommon_perf_print:       total time =     525.63 ms /   117 tokens\ncommon_perf_print: unaccounted time =       0.90 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =          2\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "C [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:26:47.027257+00:00",
+      "row_id": "choice_letter_011",
+      "env_family": "choice_contract",
+      "arm": "metta_runtime",
+      "output": "A",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": true,
+      "semantic_valid": false,
+      "exact_success": false,
+      "details": {
+        "kind": "exact_label",
+        "stripped": "A",
+        "allowed": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 6.7511,
+        "peak_child_ram_mb": 2272.5469,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 1560653451\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =       3.40 ms\ncommon_perf_print:    samplers time =       0.64 ms /   159 tokens\ncommon_perf_print:        load time =     572.06 ms\ncommon_perf_print: prompt eval time =     568.86 ms /   157 tokens (    3.62 ms per token,   275.99 tokens per second)\ncommon_perf_print:        eval time =      73.01 ms /     1 runs   (   73.01 ms per token,    13.70 tokens per second)\ncommon_perf_print:       total time =     648.63 ms /   158 tokens\ncommon_perf_print: unaccounted time =       3.37 ms /   0.5 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =          2\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "A [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:26:53.112935+00:00",
+      "row_id": "choice_letter_011",
+      "env_family": "choice_contract",
+      "arm": "metta_runtime_repair",
+      "output": "B",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_label",
+        "stripped": "B",
+        "allowed": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 5.58,
+        "peak_child_ram_mb": 2342.7734,
+        "stderr_tail": "atch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 151527899\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =       1.69 ms\ncommon_perf_print:    samplers time =       0.42 ms /   171 tokens\ncommon_perf_print:        load time =     441.28 ms\ncommon_perf_print: prompt eval time =     440.34 ms /   169 tokens (    2.61 ms per token,   383.79 tokens per second)\ncommon_perf_print:        eval time =      51.72 ms /     1 runs   (   51.72 ms per token,    19.34 tokens per second)\ncommon_perf_print:       total time =     494.78 ms /   170 tokens\ncommon_perf_print: unaccounted time =       1.03 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =          2\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "B [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:26:59.158291+00:00",
+      "row_id": "pipe_triplet_012",
+      "env_family": "structured_contract",
+      "arm": "baseline",
+      "output": "2026-04-28|trm|ready",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "pipe_triplet",
+        "parts": [
+          "2026-04-28",
+          "trm",
+          "ready"
+        ]
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 5.5429,
+        "peak_child_ram_mb": 2345.5508,
+        "stderr_tail": "atch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 215869296\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =      11.98 ms\ncommon_perf_print:    samplers time =       4.05 ms /    81 tokens\ncommon_perf_print:        load time =     349.36 ms\ncommon_perf_print: prompt eval time =     348.63 ms /    65 tokens (    5.36 ms per token,   186.44 tokens per second)\ncommon_perf_print:        eval time =     233.68 ms /    15 runs   (   15.58 ms per token,    64.19 tokens per second)\ncommon_perf_print:       total time =     596.14 ms /    80 tokens\ncommon_perf_print: unaccounted time =       1.85 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         16\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "2026-04-28|trm|ready [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:27:06.214101+00:00",
+      "row_id": "pipe_triplet_012",
+      "env_family": "structured_contract",
+      "arm": "pure_trm",
+      "output": "date|owner|status\n2026-04-28|trm|ready",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "details": {
+        "kind": "pipe_triplet",
+        "parts": [
+          "date",
+          "owner",
+          "status\n2026-04-28",
+          "trm",
+          "ready"
+        ]
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 6.5526,
+        "peak_child_ram_mb": 2350.9531,
+        "stderr_tail": "atch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 277187081\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =      27.09 ms\ncommon_perf_print:    samplers time =      10.52 ms /   168 tokens\ncommon_perf_print:        load time =     492.71 ms\ncommon_perf_print: prompt eval time =     491.84 ms /   146 tokens (    3.37 ms per token,   296.85 tokens per second)\ncommon_perf_print:        eval time =     402.53 ms /    21 runs   (   19.17 ms per token,    52.17 tokens per second)\ncommon_perf_print:       total time =     924.07 ms /   167 tokens\ncommon_perf_print: unaccounted time =       2.62 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         22\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "date|owner|status\n2026-04-28|trm|ready [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:27:12.253140+00:00",
+      "row_id": "pipe_triplet_012",
+      "env_family": "structured_contract",
+      "arm": "metta_runtime",
+      "output": "2026-04-28|trm|ready",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "pipe_triplet",
+        "parts": [
+          "2026-04-28",
+          "trm",
+          "ready"
+        ]
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 5.5368,
+        "peak_child_ram_mb": 2346.2305,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 1033813796\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 64, n_keep = 0\n\ncommon_perf_print:    sampling time =      17.62 ms\ncommon_perf_print:    samplers time =       6.95 ms /   203 tokens\ncommon_perf_print:        load time =     467.10 ms\ncommon_perf_print: prompt eval time =     465.71 ms /   187 tokens (    2.49 ms per token,   401.54 tokens per second)\ncommon_perf_print:        eval time =     282.76 ms /    15 runs   (   18.85 ms per token,    53.05 tokens per second)\ncommon_perf_print:       total time =     769.19 ms /   202 tokens\ncommon_perf_print: unaccounted time =       3.10 ms /   0.4 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         16\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "2026-04-28|trm|ready [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-28T16:27:12.754521+00:00",
+      "row_id": "pipe_triplet_012",
+      "env_family": "structured_contract",
+      "arm": "metta_runtime_repair",
+      "output": "2026-04-28|trm|ready",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "pipe_triplet",
+        "parts": [
+          "2026-04-28",
+          "trm",
+          "ready"
+        ]
+      },
+      "diagnostics": {
+        "repair_source": "metta_runtime_already_exact",
+        "elapsed_sec": 0.0,
+        "peak_child_ram_mb": 0.0
+      }
+    }
+  ]
+}

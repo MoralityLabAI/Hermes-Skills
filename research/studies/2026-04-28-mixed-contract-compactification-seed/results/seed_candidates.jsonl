@@ -1,48 +1,48 @@
-{"row_id":"ifsum_lakebed_001","arm":"baseline","output":"Mars rover samples show ancient lakebed.","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"ifsum_lakebed_001","arm":"pure_trm","output":"Mars rover samples reveal ancient lakebed","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"ifsum_lakebed_001","arm":"metta_runtime","output":"Mars rover samples reveal ancient lakebed","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"ifsum_lakebed_001","arm":"metta_runtime_repair","output":"Mars rover samples reveal ancient lakebed","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"ifsum_gate_question_002","arm":"baseline","output":"Symbolic gates reduce invalid contract commits.","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"ifsum_gate_question_002","arm":"pure_trm","output":"Can symbolic gates reduce invalid contract commits?","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"ifsum_gate_question_002","arm":"metta_runtime","output":"Could symbolic gates reduce invalid commits today?","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"ifsum_gate_question_002","arm":"metta_runtime_repair","output":"Could symbolic gates prevent invalid contract commits today?","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"pyd_task_003","arm":"baseline","output":"{task: collect rows, priority: urgent, due_date: May 2, blocked: no}","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"pyd_task_003","arm":"pure_trm","output":"{\"task\":\"collect rows\",\"priority\":\"high\",\"due_date\":\"2026-05-02\"}","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"pyd_task_003","arm":"metta_runtime","output":"{\"task\":\"collect rows\",\"priority\":\"high\",\"due_date\":\"2026-05-02\",\"blocked\":false}","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"pyd_task_003","arm":"metta_runtime_repair","output":"{\"task\":\"collect rows\",\"priority\":\"high\",\"due_date\":\"2026-05-02\",\"blocked\":false}","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"pyd_verifier_004","arm":"baseline","output":"{\"name\":\"verifier\",\"retries\":\"two\",\"safe\":\"yes\"}","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"pyd_verifier_004","arm":"pure_trm","output":"{\"name\":\"verifier\",\"retries\":2,\"safe\":true}","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"pyd_verifier_004","arm":"metta_runtime","output":"{\"name\":\"verifier\",\"retries\":2,\"safe\":true}","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"pyd_verifier_004","arm":"metta_runtime_repair","output":"{\"name\":\"verifier\",\"retries\":2,\"safe\":true}","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"ascii_flat_005","arm":"baseline","output":"root: rows, validators, results","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"ascii_flat_005","arm":"pure_trm","output":"root\n|-- rows\n|-- validators\n`-- results","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"ascii_flat_005","arm":"metta_runtime","output":"root\n|-- rows\n|-- validators\n`-- results","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"ascii_flat_005","arm":"metta_runtime_repair","output":"root\n|-- rows\n|-- validators\n`-- results","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"ascii_nested_006","arm":"baseline","output":"pipeline\n- parse\n- classify\n- commit","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"ascii_nested_006","arm":"pure_trm","output":"pipeline\n|-- parse\n|-- classify\n`-- commit","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"ascii_nested_006","arm":"metta_runtime","output":"pipeline\n|-- parse\n|   `-- classify\n`-- commit","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"ascii_nested_006","arm":"metta_runtime_repair","output":"pipeline\n|-- parse\n|   `-- classify\n`-- commit","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"ifeval_bullets_007","arm":"baseline","output":"The steps are parse, validate, and commit.","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"ifeval_bullets_007","arm":"pure_trm","output":"- parse\n- validate\n- commit","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"ifeval_bullets_007","arm":"metta_runtime","output":"- parse\n- validate\n- commit","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"ifeval_bullets_007","arm":"metta_runtime_repair","output":"- parse\n- validate\n- commit","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"ifeval_json_array_008","arm":"baseline","output":"Route, Repair, Commit","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"ifeval_json_array_008","arm":"pure_trm","output":"[\"route\",\"repair\",\"commit\"]","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"ifeval_json_array_008","arm":"metta_runtime","output":"[\"route\",\"repair\",\"commit\"]","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"ifeval_json_array_008","arm":"metta_runtime_repair","output":"[\"route\",\"repair\",\"commit\"]","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"boolq_nile_009","arm":"baseline","output":"Yes, true.","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"boolq_nile_009","arm":"pure_trm","output":"true","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"boolq_nile_009","arm":"metta_runtime","output":"true","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"boolq_nile_009","arm":"metta_runtime_repair","output":"true","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"boolq_sky_010","arm":"baseline","output":"false","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"boolq_sky_010","arm":"pure_trm","output":"false","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"boolq_sky_010","arm":"metta_runtime","output":"false","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"boolq_sky_010","arm":"metta_runtime_repair","output":"false","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"choice_letter_011","arm":"baseline","output":"B","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"choice_letter_011","arm":"pure_trm","output":"Commit: B","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"choice_letter_011","arm":"metta_runtime","output":"B","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"choice_letter_011","arm":"metta_runtime_repair","output":"B","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"pipe_triplet_012","arm":"baseline","output":"2026/04/28 | trm | ready","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"pipe_triplet_012","arm":"pure_trm","output":"2026-04-28|trm|ready","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"pipe_triplet_012","arm":"metta_runtime","output":"2026-04-28|trm|ready","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
-{"row_id":"pipe_triplet_012","arm":"metta_runtime_repair","output":"2026-04-28|trm|ready","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T15:06:47.748880+00:00"}
+{"row_id":"ifsum_lakebed_001","arm":"baseline","output":"Mars rover samples show ancient lakebed.","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"ifsum_lakebed_001","arm":"pure_trm","output":"Mars rover samples reveal ancient lakebed","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"ifsum_lakebed_001","arm":"metta_runtime","output":"Mars rover samples reveal ancient lakebed","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"ifsum_lakebed_001","arm":"metta_runtime_repair","output":"Mars rover samples reveal ancient lakebed","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"ifsum_gate_question_002","arm":"baseline","output":"Symbolic gates reduce invalid contract commits.","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"ifsum_gate_question_002","arm":"pure_trm","output":"Can symbolic gates reduce invalid contract commits?","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"ifsum_gate_question_002","arm":"metta_runtime","output":"Could symbolic gates reduce invalid commits today?","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"ifsum_gate_question_002","arm":"metta_runtime_repair","output":"Could symbolic gates prevent invalid contract commits today?","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"pyd_task_003","arm":"baseline","output":"{task: collect rows, priority: urgent, due_date: May 2, blocked: no}","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"pyd_task_003","arm":"pure_trm","output":"{\"task\":\"collect rows\",\"priority\":\"high\",\"due_date\":\"2026-05-02\"}","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"pyd_task_003","arm":"metta_runtime","output":"{\"task\":\"collect rows\",\"priority\":\"high\",\"due_date\":\"2026-05-02\",\"blocked\":false}","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"pyd_task_003","arm":"metta_runtime_repair","output":"{\"task\":\"collect rows\",\"priority\":\"high\",\"due_date\":\"2026-05-02\",\"blocked\":false}","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"pyd_verifier_004","arm":"baseline","output":"{\"name\":\"verifier\",\"retries\":\"two\",\"safe\":\"yes\"}","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"pyd_verifier_004","arm":"pure_trm","output":"{\"name\":\"verifier\",\"retries\":2,\"safe\":true}","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"pyd_verifier_004","arm":"metta_runtime","output":"{\"name\":\"verifier\",\"retries\":2,\"safe\":true}","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"pyd_verifier_004","arm":"metta_runtime_repair","output":"{\"name\":\"verifier\",\"retries\":2,\"safe\":true}","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"ascii_flat_005","arm":"baseline","output":"root: rows, validators, results","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"ascii_flat_005","arm":"pure_trm","output":"root\n|-- rows\n|-- validators\n`-- results","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"ascii_flat_005","arm":"metta_runtime","output":"root\n|-- rows\n|-- validators\n`-- results","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"ascii_flat_005","arm":"metta_runtime_repair","output":"root\n|-- rows\n|-- validators\n`-- results","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"ascii_nested_006","arm":"baseline","output":"pipeline\n- parse\n- classify\n- commit","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"ascii_nested_006","arm":"pure_trm","output":"pipeline\n|-- parse\n|-- classify\n`-- commit","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"ascii_nested_006","arm":"metta_runtime","output":"pipeline\n|-- parse\n|   `-- classify\n`-- commit","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"ascii_nested_006","arm":"metta_runtime_repair","output":"pipeline\n|-- parse\n|   `-- classify\n`-- commit","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"ifeval_bullets_007","arm":"baseline","output":"The steps are parse, validate, and commit.","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"ifeval_bullets_007","arm":"pure_trm","output":"- parse\n- validate\n- commit","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"ifeval_bullets_007","arm":"metta_runtime","output":"- parse\n- validate\n- commit","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"ifeval_bullets_007","arm":"metta_runtime_repair","output":"- parse\n- validate\n- commit","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"ifeval_json_array_008","arm":"baseline","output":"Route, Repair, Commit","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"ifeval_json_array_008","arm":"pure_trm","output":"[\"route\",\"repair\",\"commit\"]","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"ifeval_json_array_008","arm":"metta_runtime","output":"[\"route\",\"repair\",\"commit\"]","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"ifeval_json_array_008","arm":"metta_runtime_repair","output":"[\"route\",\"repair\",\"commit\"]","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"boolq_nile_009","arm":"baseline","output":"Yes, true.","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"boolq_nile_009","arm":"pure_trm","output":"true","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"boolq_nile_009","arm":"metta_runtime","output":"true","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"boolq_nile_009","arm":"metta_runtime_repair","output":"true","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"boolq_sky_010","arm":"baseline","output":"false","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"boolq_sky_010","arm":"pure_trm","output":"false","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"boolq_sky_010","arm":"metta_runtime","output":"false","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"boolq_sky_010","arm":"metta_runtime_repair","output":"false","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"choice_letter_011","arm":"baseline","output":"B","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"choice_letter_011","arm":"pure_trm","output":"Commit: B","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"choice_letter_011","arm":"metta_runtime","output":"B","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"choice_letter_011","arm":"metta_runtime_repair","output":"B","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"pipe_triplet_012","arm":"baseline","output":"2026/04/28 | trm | ready","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"pipe_triplet_012","arm":"pure_trm","output":"2026-04-28|trm|ready","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"pipe_triplet_012","arm":"metta_runtime","output":"2026-04-28|trm|ready","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}
+{"row_id":"pipe_triplet_012","arm":"metta_runtime_repair","output":"2026-04-28|trm|ready","evidence_class":"no_model_validator_smoke","generated_at_utc":"2026-04-28T16:17:42.678287+00:00"}

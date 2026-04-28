@@ -63,7 +63,7 @@ ROWS: list[dict[str, Any]] = [
         "row_id": "pyd_task_003",
         "env_family": "pydantic_adherence",
         "split": "seed_holdout",
-        "prompt": "Return JSON with task, priority, due_date, and blocked for the row collection task.",
+        "prompt": "Return JSON for task collect rows with priority high, due_date 2026-05-02, and blocked false.",
         "canonical_output": '{"task":"collect rows","priority":"high","due_date":"2026-05-02","blocked":false}',
         "validator": {
             "type": "json_object",
@@ -86,7 +86,7 @@ ROWS: list[dict[str, Any]] = [
         "row_id": "pyd_verifier_004",
         "env_family": "pydantic_adherence",
         "split": "seed_holdout",
-        "prompt": "Return JSON for a verifier component with name, retries, and safe fields.",
+        "prompt": "Return JSON for a verifier component with name verifier, retries 2, and safe true.",
         "canonical_output": '{"name":"verifier","retries":2,"safe":true}',
         "validator": {
             "type": "json_object",
@@ -176,7 +176,7 @@ ROWS: list[dict[str, Any]] = [
         "row_id": "pipe_triplet_012",
         "env_family": "structured_contract",
         "split": "seed_holdout",
-        "prompt": "Return exactly date|owner|status for today's seed artifact. Status must be ready.",
+        "prompt": "Return exactly date|owner|status for the seed artifact. Use date 2026-04-28, owner trm, and status ready.",
         "canonical_output": "2026-04-28|trm|ready",
         "validator": {
             "type": "pipe_triplet",
@@ -634,9 +634,13 @@ The next run should be a local 3B `live_model` or `replay_from_live_log` result 
         "next_live_model_requirement": "Preserve row_id, prompt, validator, and arm schema for local 3B/9B/27B comparison.",
     }
     STUDY.mkdir(parents=True, exist_ok=True)
-    (STUDY / "README.md").write_text(readme, encoding="utf-8")
-    (STUDY / "study_plan.md").write_text(plan, encoding="utf-8")
-    (STUDY / "claim_audit.md").write_text(audit, encoding="utf-8")
+    for path, content in (
+        (STUDY / "README.md", readme),
+        (STUDY / "study_plan.md", plan),
+        (STUDY / "claim_audit.md", audit),
+    ):
+        if not path.exists():
+            path.write_text(content, encoding="utf-8")
     CONFIG_PATH.parent.mkdir(parents=True, exist_ok=True)
     CONFIG_PATH.write_text(json.dumps(config, indent=2) + "\n", encoding="utf-8")
 
