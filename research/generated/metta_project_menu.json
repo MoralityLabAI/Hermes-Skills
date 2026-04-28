@@ -1,0 +1,495 @@
+{
+  "generated_at_utc": "2026-04-28T14:50:48.199857+00:00",
+  "purpose": "Actionable MeTTa project menu synthesized from local TRM/Hermes planning artifacts.",
+  "source_inputs": {
+    "scale_transfer_map": "research\\generated\\metta_trm_scale_transfer_map.json",
+    "fork_plan": "research\\generated\\metta_eval_meta_skill_fork_plan.json",
+    "composition_plan": "research\\generated\\metta_composition_plan.json"
+  },
+  "projects": [
+    {
+      "id": "real_tool_contract_router",
+      "title": "Real Tool-Contract Router",
+      "priority": 1,
+      "thesis": "Move the synthetic tool-router win onto real Hermes-style tool calls where MeTTa owns schema memory, argument validation, and commit gating.",
+      "why_now": "The synthetic 3B result is already clean, but the claim is too narrow until it survives real tool diversity.",
+      "env_families": [
+        "synthetic_tool_router",
+        "pydantic_adherence"
+      ],
+      "forks": [
+        "metta-structured-contract-repair-lane"
+      ],
+      "circuits": [
+        "tool_schema_composition_circuit"
+      ],
+      "first_artifact": "A 30-60 row real-tool trace suite covering repo search, file lookup, shell-safe commands, calendar-like scheduling, weather-like queries, and JSON argument traps.",
+      "first_experiment": "Run baseline vs pure_trm vs metta_runtime vs metta_runtime_repair on a small local model and score valid tool choice, valid JSON, argument exactness, and first-useful-hit rate.",
+      "success_metric": "At least +0.20 absolute exact tool-call validity over baseline with zero schema-invalid commits on held-out tools.",
+      "stop_rule": "If MeTTa only fixes JSON syntax while selecting the wrong tool family, split router and argument-repair TRMs before expanding.",
+      "paper_claim": "MeTTa/TRM improves control-plane tool-use reliability when tool schemas and arguments are verifier-visible.",
+      "source_evidence": [
+        {
+          "env_family": "synthetic_tool_router",
+          "scale_class": "scale_independent_positive",
+          "evidence": "Local Qwen2.5-3B Q4: 0.0000/1.0000/1.0000 for no-MeTTa/runtime/runtime+repair.",
+          "next_eval": "Replace synthetic cases with real Hermes tool calls from repo, calendar, shell-safe search, and weather-like APIs.",
+          "claim_boundary": "Current evidence is controlled/synthetic; needs real tool diversity before broad tool-calling claims."
+        },
+        {
+          "env_family": "pydantic_adherence",
+          "scale_class": "likely_scale_independent_positive",
+          "evidence": "Structured-map study reaches 1.0 reward; richer packet stayed 1.0 with and without MeTTa. Fresh local Qwen2.5-3B Q4 hard-schema probe: without_metta 0.0000, with_metta_runtime 1.0000, repair 1.0000.",
+          "next_eval": "Create harder schema variants with missing optional fields, enum traps, nested arrays, and adversarial dates.",
+          "claim_boundary": "Current row is ceilinged; needs harder cases to detect improvement."
+        }
+      ],
+      "metta_gates": [
+        "METTA_FIELD_TYPE_VALIDATE",
+        "METTA_SCHEMA_MEMORY",
+        "TRM_ARGUMENT_NORMALIZE",
+        "TRM_DEFAULT_POLICY_REPAIR",
+        "TRM_JSON_COMMIT_GATE",
+        "TRM_SCHEMA_PARSE",
+        "TRM_TOOL_INTENT_CLASSIFY",
+        "argument_validate_gate",
+        "canonical_repair_gate",
+        "commit_gate",
+        "contract_select_gate",
+        "field_validate_gate",
+        "json_repair_gate",
+        "schema_memory_gate",
+        "tool_route_gate"
+      ],
+      "benchmark_arms": [
+        "baseline",
+        "metta_runtime",
+        "metta_runtime_repair",
+        "pure_trm"
+      ],
+      "source_files": {
+        "scale_transfer_map": "research\\generated\\metta_trm_scale_transfer_map.json",
+        "fork_plan": "research\\generated\\metta_eval_meta_skill_fork_plan.json",
+        "composition_plan": "research\\generated\\metta_composition_plan.json"
+      }
+    },
+    {
+      "id": "mixed_contract_compactification",
+      "title": "Mixed Contract Compactification Suite",
+      "priority": 2,
+      "thesis": "Unify instruction constraints, pydantic objects, ASCII trees, choice labels, and IFEval-style literal contracts into one small-model compactification benchmark.",
+      "why_now": "The strongest positive evidence is scattered across format and schema envs; a mixed suite makes the methodology harder to dismiss as one-off repair.",
+      "env_families": [
+        "if_summarize_judge",
+        "pydantic_adherence",
+        "ascii_tree",
+        "ifeval_contract_family",
+        "boolq_choice_contract"
+      ],
+      "forks": [
+        "metta-structured-contract-repair-lane"
+      ],
+      "circuits": [
+        "contract_compactification_circuit"
+      ],
+      "first_artifact": "A 50-row held-out mixed-contract dataset with explicit failure labels, exact validators, and near-miss cases.",
+      "first_experiment": "Evaluate no-MeTTa, prompt-only MeTTa, repair-only MeTTa, and runtime+repair MeTTa against the same validators.",
+      "success_metric": "Runtime+repair wins on exact contract validity without reducing semantic correctness on choice or summary rows.",
+      "stop_rule": "If gains come only from deterministic postprocessing, label the result as verifier-owned repair rather than TRM training lift.",
+      "paper_claim": "Small LLMs can act as proposal engines when explicit symbolic gates own observable output contracts.",
+      "source_evidence": [
+        {
+          "env_family": "if_summarize_judge",
+          "scale_class": "scale_independent_positive",
+          "evidence": "0.8B HF 0.3333/0.3333/1.0000; SmolLM3-3B 0.0000/0.0000/1.0000; Qwen2.5-3B Q4 tok64 v2 0.0000/0.0000/1.0000 for no-MeTTa/runtime/runtime+repair.",
+          "next_eval": "Expand from three local seeds to a 20-50 row mixed constraint suite with held-out constraint families.",
+          "claim_boundary": "Strong for exact output-form constraints; not evidence of deeper reasoning improvement."
+        },
+        {
+          "env_family": "pydantic_adherence",
+          "scale_class": "likely_scale_independent_positive",
+          "evidence": "Structured-map study reaches 1.0 reward; richer packet stayed 1.0 with and without MeTTa. Fresh local Qwen2.5-3B Q4 hard-schema probe: without_metta 0.0000, with_metta_runtime 1.0000, repair 1.0000.",
+          "next_eval": "Create harder schema variants with missing optional fields, enum traps, nested arrays, and adversarial dates.",
+          "claim_boundary": "Current row is ceilinged; needs harder cases to detect improvement."
+        },
+        {
+          "env_family": "ascii_tree",
+          "scale_class": "likely_scale_independent_positive_with_ceiling",
+          "evidence": "Structured-map study: ascii_tree 0.0 -> 0.8; richer packet with/without MeTTa both 0.8. Fresh local Qwen2.5-3B Q4 deep-tree probe: without_metta 0.6000, with_metta_runtime 0.0500, repair 1.0000.",
+          "next_eval": "Add deeper trees, sibling ordering traps, missing-node penalties, and exact wrapper validation.",
+          "claim_boundary": "Evidence supports structure-sensitive usefulness, not broad reasoning."
+        },
+        {
+          "env_family": "ifeval_contract_family",
+          "scale_class": "scale_independent_candidate",
+          "evidence": "Local TRM-router benchmark reports gated contract success 1.0000 for allenai_ifeval, while pack columns were mostly zero/bridge-limited. Fresh local Qwen2.5-3B Q4 literal-count probe: without_metta 0.0000, runtime 0.0000, repair 1.0000.",
+          "next_eval": "Run a local 3B deterministic IFEval subset with per-constraint failure labels.",
+          "claim_boundary": "Existing evidence is router-benchmark, not direct live environment reward."
+        },
+        {
+          "env_family": "boolq_choice_contract",
+          "scale_class": "narrow_scale_independent_candidate",
+          "evidence": "Trainer-policy mining rerun: boolq/qwen35_27b/two-model-contract-repair-v1 moved 0.0 -> 1.0; wider family only 1 contract win across 22 comparisons.",
+          "next_eval": "Use as a small-model contract-control lane with semantic correctness separated from label validity.",
+          "claim_boundary": "Narrow `choice_contract` claim only."
+        }
+      ],
+      "metta_gates": [
+        "METTA_ALLOWED_LABEL_VALIDATE",
+        "METTA_CONTRACT_SELECT",
+        "METTA_FIELD_TYPE_VALIDATE",
+        "METTA_PARENT_CHILD_VALIDATE",
+        "METTA_REPAIR_EXACT_COUNT",
+        "TRM_ABSTAIN_OR_COMMIT",
+        "TRM_ASCII_INDENT_REPAIR",
+        "TRM_CHOICE_SET_PARSE",
+        "TRM_COMMIT_FASTPATH",
+        "TRM_CONSISTENCY_CHECK",
+        "TRM_CONSTRAINT_CLASSIFY",
+        "TRM_COVERAGE_COMMIT",
+        "TRM_DEFAULT_POLICY_REPAIR",
+        "TRM_INSTRUCTION_FAMILY_CLASSIFY",
+        "TRM_JSON_COMMIT_GATE",
+        "TRM_LITERAL_CONSTRAINT_VERIFY",
+        "TRM_NODE_LIST_PARSE",
+        "TRM_OUTPUT_METRIC_EXTRACT",
+        "TRM_REPAIR_OR_ABSTAIN",
+        "TRM_SCHEMA_PARSE",
+        "canonical_repair_gate",
+        "commit_gate",
+        "contract_select_gate",
+        "field_validate_gate",
+        "learning_gate",
+        "repair_gate",
+        "route_gate",
+        "validate_gate"
+      ],
+      "benchmark_arms": [
+        "baseline",
+        "metta_runtime",
+        "metta_runtime_repair",
+        "pure_trm"
+      ],
+      "source_files": {
+        "scale_transfer_map": "research\\generated\\metta_trm_scale_transfer_map.json",
+        "fork_plan": "research\\generated\\metta_eval_meta_skill_fork_plan.json",
+        "composition_plan": "research\\generated\\metta_composition_plan.json"
+      }
+    },
+    {
+      "id": "logic_signature_camp_gate",
+      "title": "Leakage-Safe Logic Signature Gate",
+      "priority": 3,
+      "thesis": "Test whether MeTTa signature checks can amplify weak Intellect-3 logic proposals without using target-grid leakage.",
+      "why_now": "The C-signature projection result is large, but the next claim needs puzzle-provided constraints only.",
+      "env_families": [
+        "intellect3_logic_camp_gate"
+      ],
+      "forks": [
+        "metta-intellect3-logic-signature-gate"
+      ],
+      "circuits": [
+        "intellect3_logic_signature_circuit"
+      ],
+      "first_artifact": "A tiny Campsite-style micro-suite with puzzle constraints, row/column signatures derivable from the prompt, and proposal-tier labels.",
+      "first_experiment": "Run local 3B proposals, classify partial-semantic vs full-candidate tiers, then apply MeTTa min-edit projection only from prompt-derived constraints.",
+      "success_metric": "Improved cell accuracy and exactness over raw proposals, with an audit column proving no target answer signatures were imported.",
+      "stop_rule": "If 3B proposals lack enough grid atoms for projection, switch this lane to 9B/27B or teacher-proposal mode.",
+      "paper_claim": "Symbolic amplification can help hard logic only after the model emits enough verifier-visible state.",
+      "source_evidence": [
+        {
+          "env_family": "intellect3_logic_camp_gate",
+          "scale_class": "scale_sensitive_but_symbolically_amplifiable",
+          "evidence": "27B/109 logic_skill_trm original exact 0.3028; C-only projection exact 0.6789; avg cell accuracy 0.8787 -> 0.9340.",
+          "next_eval": "Run local 3B on a tiny Campsite micro-suite to test whether weak proposals still contain enough T/C structure for projection.",
+          "claim_boundary": "Post-hoc projection uses known signatures; fresh runs must avoid answer leakage and include puzzle-provided constraints only."
+        }
+      ],
+      "metta_gates": [
+        "METTA_MIN_EDIT_C_PROJECTION",
+        "TRM_CAMP_ROW_COL_SIGNATURE",
+        "TRM_COMMIT_GRID",
+        "TRM_PARSE_GRID",
+        "commit_gate",
+        "constraint_parse_gate",
+        "min_edit_projection_gate",
+        "proposal_gate",
+        "signature_validate_gate"
+      ],
+      "benchmark_arms": [
+        "baseline",
+        "metta_runtime_repair",
+        "pure_trm"
+      ],
+      "source_files": {
+        "scale_transfer_map": "research\\generated\\metta_trm_scale_transfer_map.json",
+        "fork_plan": "research\\generated\\metta_eval_meta_skill_fork_plan.json",
+        "composition_plan": "research\\generated\\metta_composition_plan.json"
+      }
+    },
+    {
+      "id": "psycho_item_vector_stability",
+      "title": "PsychoBench Item-Vector Stability",
+      "priority": 4,
+      "thesis": "Replace scalar PsychoBench reward chasing with item-vector, subscale, and profile-stability instrumentation.",
+      "why_now": "The scalar lift is tiny, but the existing evidence shows MeTTa changes item geometry; that is a better research object.",
+      "env_families": [
+        "psycho_bench"
+      ],
+      "forks": [
+        "metta-psycho-item-vector-stability"
+      ],
+      "circuits": [
+        "psycho_item_vector_composition_circuit"
+      ],
+      "first_artifact": "Repeated profile probes with item vectors, BFI subscale deltas, stability bands, and repair provenance.",
+      "first_experiment": "Run repeated local 3B and later 9B/27B probes, then compare variance and subscale drift across with/without MeTTa.",
+      "success_metric": "Lower profile variance or clearer target-profile adherence without merely clipping every response to a safe midpoint.",
+      "stop_rule": "If MeTTa reduces variance by collapsing personality signal, treat as over-regularization and redesign gates.",
+      "paper_claim": "MeTTa/TRM can expose and control psychometric response geometry even when scalar reward barely moves.",
+      "source_evidence": [
+        {
+          "env_family": "psycho_bench",
+          "scale_class": "nuanced_scalar_not_enough",
+          "evidence": "Richer-packet run reward 3.3283 -> 3.3311; both arms pass 44/44 item contract; MeTTa changes 4 items and shifts neuroticism +0.2500.",
+          "next_eval": "Run repeated local 3B and 9B profile probes, score variance, and compare subscale drift instead of only aggregate reward.",
+          "claim_boundary": "Psychometric envs are interpretability/consistency probes, not conventional correctness benchmarks."
+        }
+      ],
+      "metta_gates": [
+        "METTA_PROFILE_DELTA_AUDIT",
+        "TRM_BFI_SUBSCALE_PROJECTOR",
+        "TRM_LIKERT_ITEM_VECTOR_CONTRACT",
+        "TRM_STABILITY_GATE",
+        "item_vector_validate_gate",
+        "profile_delta_audit_gate",
+        "stability_commit_gate",
+        "subscale_project_gate"
+      ],
+      "benchmark_arms": [
+        "baseline",
+        "metta_runtime",
+        "pure_trm"
+      ],
+      "source_files": {
+        "scale_transfer_map": "research\\generated\\metta_trm_scale_transfer_map.json",
+        "fork_plan": "research\\generated\\metta_eval_meta_skill_fork_plan.json",
+        "composition_plan": "research\\generated\\metta_composition_plan.json"
+      }
+    },
+    {
+      "id": "math_teacher_candidate_auditor",
+      "title": "Math Teacher-Candidate Auditor",
+      "priority": 5,
+      "thesis": "Use MeTTa/TRM as a candidate auditor for hard math rather than pretending small models solve 100B-class problems.",
+      "why_now": "Math is the clearest negative boundary; turning it into a teacher-candidate audit lane strengthens the paper.",
+      "env_families": [
+        "aime_boxed_answer",
+        "intellect3_math_router"
+      ],
+      "forks": [
+        "metta-intellect3-math-teacher-auditor"
+      ],
+      "circuits": [
+        "intellect3_math_teacher_auditor_circuit"
+      ],
+      "first_artifact": "A teacher-candidate bank with multiple proposed answers per item, numeric error archetypes, boxed-answer validators, and abstain labels.",
+      "first_experiment": "Compare keyword routing, pure TRM candidate routing, and MeTTa invariant/boxed-answer auditing on candidate selection accuracy.",
+      "success_metric": "Better candidate selection than keyword or always-first baselines while preserving a clear no-small-model-solve claim boundary.",
+      "stop_rule": "If teacher candidates are mostly wrong or indistinguishable, collect better candidate diversity before training auditors.",
+      "paper_claim": "For hard math, MeTTa/TRM is useful as an auditor and protocol gate, not as a substitute solver.",
+      "source_evidence": [
+        {
+          "env_family": "aime_boxed_answer",
+          "scale_class": "format_transfers_reasoning_does_not",
+          "evidence": "Local TRM-router benchmark reports gated boxed exact rate 1.0000, but hard-math live columns were bridge-limited or zero.",
+          "next_eval": "Separate answer-format extraction from actual AIME solve quality; use teacher candidates for the latter.",
+          "claim_boundary": "Good for protocol/answer extraction; not evidence of hard-math competence transfer."
+        },
+        {
+          "env_family": "intellect3_math_router",
+          "scale_class": "scale_sensitive_negative_boundary",
+          "evidence": "27B offline replay: current final 0.0700, hidden TRM candidate 0.1050, generic guard 0.1100. Local 3B first-5 smoke: vanilla 0.4000, always_trm 0.2000, generic guard 0.2000.",
+          "next_eval": "Use math as a negative-control lane and collect teacher candidates rather than relying on small-model TRM generations.",
+          "claim_boundary": "Do not claim small-model math improvement; current evidence maps the limit line."
+        }
+      ],
+      "metta_gates": [
+        "METTA_MOD_1000_VALIDATE",
+        "METTA_REGRET_AUDIT",
+        "TRM_BOXED_PARSE",
+        "TRM_NUMERIC_COMMIT",
+        "TRM_NUMERIC_ERROR_ARCHETYPE",
+        "TRM_PARSE_INTEGER_CANDIDATES",
+        "TRM_ROUTE_TRM_CANDIDATE",
+        "TRM_TEACHER_CANDIDATE_ROUTE",
+        "candidate_parse_gate",
+        "invariant_validate_gate",
+        "numeric_error_gate",
+        "teacher_candidate_commit_gate"
+      ],
+      "benchmark_arms": [
+        "baseline",
+        "pure_trm",
+        "teacher_candidate_metta"
+      ],
+      "source_files": {
+        "scale_transfer_map": "research\\generated\\metta_trm_scale_transfer_map.json",
+        "fork_plan": "research\\generated\\metta_eval_meta_skill_fork_plan.json",
+        "composition_plan": "research\\generated\\metta_composition_plan.json"
+      }
+    },
+    {
+      "id": "safety_abstain_router",
+      "title": "Safety Abstain Router",
+      "priority": 6,
+      "thesis": "Evaluate routing and refusal-format reliability separately from high-stakes advice quality.",
+      "why_now": "The route-only signal may transfer to small models, but the domain boundary must be explicit.",
+      "env_families": [
+        "safety_abstain_family"
+      ],
+      "forks": [],
+      "circuits": [
+        "safety_abstain_veto_circuit"
+      ],
+      "first_artifact": "A transparent route-only abstain-vs-answer dataset with borderline cases and separate advice-quality labels.",
+      "first_experiment": "Score route accuracy, refusal format validity, false abstains, false answers, and advice-quality abstentions separately.",
+      "success_metric": "Improved route/format reliability without claiming medical, security, or legal answer quality.",
+      "stop_rule": "If the model gives unsafe substantive content after correct routing, add a separate safe-completion verifier before expanding.",
+      "paper_claim": "MeTTa/TRM can enforce safety routing contracts, but high-stakes answer quality remains scale- and domain-sensitive.",
+      "source_evidence": [
+        {
+          "env_family": "safety_abstain_family",
+          "scale_class": "candidate_unknown",
+          "evidence": "Pack includes medsafetybench, jailbreak_bench, wmdp with abstain-guard variants. Fresh local Qwen2.5-3B Q4 obvious-route probe: without_metta 0.0000, with_metta_runtime 1.0000, repair 1.0000.",
+          "next_eval": "Expand the local abstain-vs-answer suite with transparent labels, borderline cases, and separate advice-quality scoring.",
+          "claim_boundary": "High-stakes domain; current evidence is routing/format safety only, not advice quality."
+        }
+      ],
+      "metta_gates": [
+        "METTA_POLICY_ROUTE",
+        "TRM_REFUSAL_FORMAT_VALIDATE",
+        "TRM_RISK_CLASSIFY",
+        "TRM_SAFE_COMPLETION_COMMIT",
+        "abstain_or_answer_gate",
+        "commit_gate",
+        "policy_validate_gate",
+        "risk_route_gate",
+        "safe_format_gate"
+      ],
+      "benchmark_arms": [
+        "baseline",
+        "metta_runtime",
+        "pure_trm"
+      ],
+      "source_files": {
+        "scale_transfer_map": "research\\generated\\metta_trm_scale_transfer_map.json",
+        "fork_plan": "research\\generated\\metta_eval_meta_skill_fork_plan.json",
+        "composition_plan": "research\\generated\\metta_composition_plan.json"
+      }
+    },
+    {
+      "id": "mcp_lookup_efficiency",
+      "title": "TRM-MCP Lookup Efficiency",
+      "priority": 7,
+      "thesis": "Turn MCP resource surfaces into short TRM rows for route, retrieve, verify, and first-useful-hit optimization.",
+      "why_now": "This is the most general infrastructure project and pairs naturally with tool-schema work.",
+      "env_families": [
+        "mcp_lookup_surface"
+      ],
+      "forks": [
+        "metta-flow-trm-circuit-controller"
+      ],
+      "circuits": [
+        "tool_schema_composition_circuit"
+      ],
+      "first_artifact": "A benchmark over filesystem, GitHub, Postgres, and PrimeHub-schema MCP examples with call-count and token-load metrics.",
+      "first_experiment": "Compare plain resource scan, cached index lookup, TRM route/retrieve, and MeTTa verifier-gated retrieve.",
+      "success_metric": "Fewer calls and fewer loaded tokens before first useful answer at equal or better answer correctness.",
+      "stop_rule": "If the resource surface is tiny, skip TRM and use direct scan; the project only matters on large or heterogeneous MCPs.",
+      "paper_claim": "TRM rows can compactify tool/resource lookup when the target is stable handles rather than raw memorized answers.",
+      "source_evidence": [],
+      "metta_gates": [
+        "argument_validate_gate",
+        "commit_gate",
+        "json_repair_gate",
+        "learning_gate",
+        "repair_gate",
+        "route_gate",
+        "schema_memory_gate",
+        "tool_route_gate",
+        "validate_gate"
+      ],
+      "benchmark_arms": [
+        "baseline",
+        "metta_runtime",
+        "metta_runtime_repair",
+        "pure_trm"
+      ],
+      "source_files": {
+        "scale_transfer_map": "research\\generated\\metta_trm_scale_transfer_map.json",
+        "fork_plan": "research\\generated\\metta_eval_meta_skill_fork_plan.json",
+        "composition_plan": "research\\generated\\metta_composition_plan.json"
+      }
+    },
+    {
+      "id": "live_symbolic_closure_threshold",
+      "title": "Live Symbolic Closure Threshold",
+      "priority": 8,
+      "thesis": "Replace deterministic proposal-tier simulations with observed local-model proposal tiers across env families.",
+      "why_now": "The control-plane result is conceptually important, but it needs live proposal distributions to become empirical.",
+      "env_families": [
+        "symbolic_closure_threshold_suite"
+      ],
+      "forks": [
+        "metta-flow-trm-circuit-controller"
+      ],
+      "circuits": [
+        "contract_compactification_circuit",
+        "intellect3_logic_signature_circuit"
+      ],
+      "first_artifact": "A proposal-tier classifier applied to local 3B logs across tool routing, contracts, ASCII tree, camp-gate, and math.",
+      "first_experiment": "Measure how often the model emits none, weak_surface, partial_semantic, or full_candidate state, then map which gates can close each case.",
+      "success_metric": "A clear threshold curve showing where the LLM becomes mostly a proposal generator and where it still needs scale.",
+      "stop_rule": "If tier labels are unstable across annotators or validators, formalize the label grammar before adding more envs.",
+      "paper_claim": "The compactification threshold is measurable as the amount of verifier-visible state emitted before symbolic execution takes over.",
+      "source_evidence": [
+        {
+          "env_family": "symbolic_closure_threshold_suite",
+          "scale_class": "control_plane_threshold_eval",
+          "evidence": "Deterministic threshold suite: MeTTa/TRM circuit exact at `partial_semantic` tier for tool routing, choice contracts, ASCII tree, and camp-gate projection; math exactness remains `full_candidate` only.",
+          "next_eval": "Replace synthetic proposal tiers with live local 3B proposal logs and measure the observed tier distribution per env family.",
+          "claim_boundary": "This is a deterministic control-plane threshold eval with zero model calls, not a live benchmark improvement."
+        }
+      ],
+      "metta_gates": [
+        "METTA_VALIDATE_GATE",
+        "TRM_COMMIT_GATE",
+        "TRM_LEARNING_GATE",
+        "TRM_REPAIR_GATE",
+        "TRM_ROUTE_GATE",
+        "commit_gate",
+        "constraint_parse_gate",
+        "contract_select_gate",
+        "learning_gate",
+        "min_edit_projection_gate",
+        "proposal_gate",
+        "repair_gate",
+        "route_gate",
+        "signature_validate_gate",
+        "validate_gate"
+      ],
+      "benchmark_arms": [
+        "baseline",
+        "metta_runtime",
+        "metta_runtime_repair",
+        "pure_trm"
+      ],
+      "source_files": {
+        "scale_transfer_map": "research\\generated\\metta_trm_scale_transfer_map.json",
+        "fork_plan": "research\\generated\\metta_eval_meta_skill_fork_plan.json",
+        "composition_plan": "research\\generated\\metta_composition_plan.json"
+      }
+    }
+  ]
+}
