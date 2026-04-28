@@ -1,0 +1,1046 @@
+{
+  "summary": {
+    "evidence_class": "no_model_validator_smoke",
+    "rows": 50,
+    "arms": {
+      "canonical_target": {
+        "rows": 50,
+        "contract_valid": 50,
+        "semantic_valid": 50,
+        "exact_success": 50,
+        "contract_rate": 1.0,
+        "semantic_rate": 1.0,
+        "exact_rate": 1.0
+      }
+    },
+    "by_family": {
+      "canonical_target": {
+        "ascii_tree": {
+          "rows": 8,
+          "exact_success": 8,
+          "exact_rate": 1.0
+        },
+        "boolq_choice_contract": {
+          "rows": 3,
+          "exact_success": 3,
+          "exact_rate": 1.0
+        },
+        "choice_contract": {
+          "rows": 2,
+          "exact_success": 2,
+          "exact_rate": 1.0
+        },
+        "if_summarize_judge": {
+          "rows": 10,
+          "exact_success": 10,
+          "exact_rate": 1.0
+        },
+        "ifeval_contract_family": {
+          "rows": 14,
+          "exact_success": 14,
+          "exact_rate": 1.0
+        },
+        "pydantic_adherence": {
+          "rows": 10,
+          "exact_success": 10,
+          "exact_rate": 1.0
+        },
+        "structured_contract": {
+          "rows": 3,
+          "exact_success": 3,
+          "exact_rate": 1.0
+        }
+      }
+    },
+    "note": "This is a deterministic validator smoke, not a model benchmark."
+  },
+  "evaluated": [
+    {
+      "row_id": "heldout_ifsum_001_climate",
+      "arm": "canonical_target",
+      "output": "Climate sensors detected steady coastal warming",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "if_summarize_judge",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_word_count",
+        "word_count": 6,
+        "suffix_ok": true,
+        "punctuation_ok": true
+      }
+    },
+    {
+      "row_id": "heldout_ifsum_002_robotics",
+      "arm": "canonical_target",
+      "output": "Warehouse robots delayed because charging docks failed",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "if_summarize_judge",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_word_count",
+        "word_count": 7,
+        "suffix_ok": true,
+        "punctuation_ok": true
+      }
+    },
+    {
+      "row_id": "heldout_ifsum_003_security",
+      "arm": "canonical_target",
+      "output": "Encrypted backups prevented data loss after outage",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "if_summarize_judge",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_word_count",
+        "word_count": 7,
+        "suffix_ok": true,
+        "punctuation_ok": true
+      }
+    },
+    {
+      "row_id": "heldout_ifsum_004_biology",
+      "arm": "canonical_target",
+      "output": "Protein assay confirmed improved enzyme stability",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "if_summarize_judge",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_word_count",
+        "word_count": 6,
+        "suffix_ok": true,
+        "punctuation_ok": true
+      }
+    },
+    {
+      "row_id": "heldout_ifsum_005_energy",
+      "arm": "canonical_target",
+      "output": "Solar microgrid restored power before sunrise",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "if_summarize_judge",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_word_count",
+        "word_count": 6,
+        "suffix_ok": true,
+        "punctuation_ok": true
+      }
+    },
+    {
+      "row_id": "heldout_ifsum_006_archive",
+      "arm": "canonical_target",
+      "output": "Archive index exposed missing migration receipts",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "if_summarize_judge",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_word_count",
+        "word_count": 6,
+        "suffix_ok": true,
+        "punctuation_ok": true
+      }
+    },
+    {
+      "row_id": "heldout_ifsum_007_question_logic",
+      "arm": "canonical_target",
+      "output": "Could verifier gates reduce invalid commits tomorrow?",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "if_summarize_judge",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_word_count",
+        "word_count": 7,
+        "suffix_ok": true,
+        "punctuation_ok": true
+      }
+    },
+    {
+      "row_id": "heldout_ifsum_008_question_data",
+      "arm": "canonical_target",
+      "output": "Can typed rows reveal brittle validators?",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "if_summarize_judge",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_word_count",
+        "word_count": 6,
+        "suffix_ok": true,
+        "punctuation_ok": true
+      }
+    },
+    {
+      "row_id": "heldout_ifsum_009_question_tools",
+      "arm": "canonical_target",
+      "output": "Will schema memory improve tool routing?",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "if_summarize_judge",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_word_count",
+        "word_count": 6,
+        "suffix_ok": true,
+        "punctuation_ok": true
+      }
+    },
+    {
+      "row_id": "heldout_ifsum_010_question_repair",
+      "arm": "canonical_target",
+      "output": "Should repair gates reject unsafe outputs?",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "if_summarize_judge",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_word_count",
+        "word_count": 6,
+        "suffix_ok": true,
+        "punctuation_ok": true
+      }
+    },
+    {
+      "row_id": "heldout_pyd_task_001",
+      "arm": "canonical_target",
+      "output": "{\"task\":\"collect invoices\",\"priority\":\"high\",\"due_date\":\"2026-05-03\",\"blocked\":false}",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "pydantic_adherence",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_object",
+        "parse_error": null,
+        "type_ok": true,
+        "values_ok": true,
+        "no_extra": true,
+        "keys": [
+          "blocked",
+          "due_date",
+          "priority",
+          "task"
+        ]
+      }
+    },
+    {
+      "row_id": "heldout_pyd_task_002",
+      "arm": "canonical_target",
+      "output": "{\"task\":\"audit validators\",\"priority\":\"medium\",\"due_date\":\"2026-05-04\",\"blocked\":false}",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "pydantic_adherence",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_object",
+        "parse_error": null,
+        "type_ok": true,
+        "values_ok": true,
+        "no_extra": true,
+        "keys": [
+          "blocked",
+          "due_date",
+          "priority",
+          "task"
+        ]
+      }
+    },
+    {
+      "row_id": "heldout_pyd_task_003",
+      "arm": "canonical_target",
+      "output": "{\"task\":\"freeze prompts\",\"priority\":\"high\",\"due_date\":\"2026-05-05\",\"blocked\":true}",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "pydantic_adherence",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_object",
+        "parse_error": null,
+        "type_ok": true,
+        "values_ok": true,
+        "no_extra": true,
+        "keys": [
+          "blocked",
+          "due_date",
+          "priority",
+          "task"
+        ]
+      }
+    },
+    {
+      "row_id": "heldout_pyd_task_004",
+      "arm": "canonical_target",
+      "output": "{\"task\":\"label failures\",\"priority\":\"medium\",\"due_date\":\"2026-05-06\",\"blocked\":false}",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "pydantic_adherence",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_object",
+        "parse_error": null,
+        "type_ok": true,
+        "values_ok": true,
+        "no_extra": true,
+        "keys": [
+          "blocked",
+          "due_date",
+          "priority",
+          "task"
+        ]
+      }
+    },
+    {
+      "row_id": "heldout_pyd_task_005",
+      "arm": "canonical_target",
+      "output": "{\"task\":\"ship receipts\",\"priority\":\"low\",\"due_date\":\"2026-05-07\",\"blocked\":false}",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "pydantic_adherence",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_object",
+        "parse_error": null,
+        "type_ok": true,
+        "values_ok": true,
+        "no_extra": true,
+        "keys": [
+          "blocked",
+          "due_date",
+          "priority",
+          "task"
+        ]
+      }
+    },
+    {
+      "row_id": "heldout_pyd_component_001",
+      "arm": "canonical_target",
+      "output": "{\"name\":\"router\",\"retries\":1,\"safe\":true}",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "pydantic_adherence",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_object",
+        "parse_error": null,
+        "type_ok": true,
+        "values_ok": true,
+        "no_extra": true,
+        "keys": [
+          "name",
+          "retries",
+          "safe"
+        ]
+      }
+    },
+    {
+      "row_id": "heldout_pyd_component_002",
+      "arm": "canonical_target",
+      "output": "{\"name\":\"retriever\",\"retries\":2,\"safe\":true}",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "pydantic_adherence",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_object",
+        "parse_error": null,
+        "type_ok": true,
+        "values_ok": true,
+        "no_extra": true,
+        "keys": [
+          "name",
+          "retries",
+          "safe"
+        ]
+      }
+    },
+    {
+      "row_id": "heldout_pyd_component_003",
+      "arm": "canonical_target",
+      "output": "{\"name\":\"auditor\",\"retries\":3,\"safe\":false}",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "pydantic_adherence",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_object",
+        "parse_error": null,
+        "type_ok": true,
+        "values_ok": true,
+        "no_extra": true,
+        "keys": [
+          "name",
+          "retries",
+          "safe"
+        ]
+      }
+    },
+    {
+      "row_id": "heldout_pyd_component_004",
+      "arm": "canonical_target",
+      "output": "{\"name\":\"repairer\",\"retries\":2,\"safe\":true}",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "pydantic_adherence",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_object",
+        "parse_error": null,
+        "type_ok": true,
+        "values_ok": true,
+        "no_extra": true,
+        "keys": [
+          "name",
+          "retries",
+          "safe"
+        ]
+      }
+    },
+    {
+      "row_id": "heldout_pyd_component_005",
+      "arm": "canonical_target",
+      "output": "{\"name\":\"committer\",\"retries\":1,\"safe\":false}",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "pydantic_adherence",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_object",
+        "parse_error": null,
+        "type_ok": true,
+        "values_ok": true,
+        "no_extra": true,
+        "keys": [
+          "name",
+          "retries",
+          "safe"
+        ]
+      }
+    },
+    {
+      "row_id": "heldout_ascii_001_docs",
+      "arm": "canonical_target",
+      "output": "docs\n|-- drafts\n|-- figures\n`-- refs",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "ascii_tree",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "ascii_tree_exact",
+        "actual_lines": [
+          "docs",
+          "|-- drafts",
+          "|-- figures",
+          "`-- refs"
+        ]
+      }
+    },
+    {
+      "row_id": "heldout_ascii_002_eval",
+      "arm": "canonical_target",
+      "output": "eval\n|-- rows\n|   `-- heldout\n`-- results",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "ascii_tree",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "ascii_tree_exact",
+        "actual_lines": [
+          "eval",
+          "|-- rows",
+          "|   `-- heldout",
+          "`-- results"
+        ]
+      }
+    },
+    {
+      "row_id": "heldout_ascii_003_tools",
+      "arm": "canonical_target",
+      "output": "tools\n|-- search\n|-- weather\n`-- calendar",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "ascii_tree",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "ascii_tree_exact",
+        "actual_lines": [
+          "tools",
+          "|-- search",
+          "|-- weather",
+          "`-- calendar"
+        ]
+      }
+    },
+    {
+      "row_id": "heldout_ascii_004_gate",
+      "arm": "canonical_target",
+      "output": "gate\n|-- parse\n|-- validate\n`-- commit",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "ascii_tree",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "ascii_tree_exact",
+        "actual_lines": [
+          "gate",
+          "|-- parse",
+          "|-- validate",
+          "`-- commit"
+        ]
+      }
+    },
+    {
+      "row_id": "heldout_ascii_005_pipe",
+      "arm": "canonical_target",
+      "output": "pipeline\n|-- collect\n|   `-- score\n`-- audit",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "ascii_tree",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "ascii_tree_exact",
+        "actual_lines": [
+          "pipeline",
+          "|-- collect",
+          "|   `-- score",
+          "`-- audit"
+        ]
+      }
+    },
+    {
+      "row_id": "heldout_ascii_006_repo",
+      "arm": "canonical_target",
+      "output": "repo\n|-- skills\n|-- studies\n`-- scripts",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "ascii_tree",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "ascii_tree_exact",
+        "actual_lines": [
+          "repo",
+          "|-- skills",
+          "|-- studies",
+          "`-- scripts"
+        ]
+      }
+    },
+    {
+      "row_id": "heldout_ascii_007_agent",
+      "arm": "canonical_target",
+      "output": "agent\n|-- route\n|   `-- project\n`-- report",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "ascii_tree",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "ascii_tree_exact",
+        "actual_lines": [
+          "agent",
+          "|-- route",
+          "|   `-- project",
+          "`-- report"
+        ]
+      }
+    },
+    {
+      "row_id": "heldout_ascii_008_model",
+      "arm": "canonical_target",
+      "output": "model\n|-- prompt\n|-- output\n`-- verdict",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "ascii_tree",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "ascii_tree_exact",
+        "actual_lines": [
+          "model",
+          "|-- prompt",
+          "|-- output",
+          "`-- verdict"
+        ]
+      }
+    },
+    {
+      "row_id": "heldout_bullets_001",
+      "arm": "canonical_target",
+      "output": "- parse\n- validate\n- commit",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "ifeval_contract_family",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "bullet_list",
+        "line_count": 3,
+        "lines": [
+          "- parse",
+          "- validate",
+          "- commit"
+        ]
+      }
+    },
+    {
+      "row_id": "heldout_bullets_002",
+      "arm": "canonical_target",
+      "output": "- collect rows\n- score rows\n- audit claims",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "ifeval_contract_family",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "bullet_list",
+        "line_count": 3,
+        "lines": [
+          "- collect rows",
+          "- score rows",
+          "- audit claims"
+        ]
+      }
+    },
+    {
+      "row_id": "heldout_bullets_003",
+      "arm": "canonical_target",
+      "output": "- freeze prompts\n- run models\n- compare arms",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "ifeval_contract_family",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "bullet_list",
+        "line_count": 3,
+        "lines": [
+          "- freeze prompts",
+          "- run models",
+          "- compare arms"
+        ]
+      }
+    },
+    {
+      "row_id": "heldout_bullets_004",
+      "arm": "canonical_target",
+      "output": "- label failures\n- repair outputs\n- log receipts",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "ifeval_contract_family",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "bullet_list",
+        "line_count": 3,
+        "lines": [
+          "- label failures",
+          "- repair outputs",
+          "- log receipts"
+        ]
+      }
+    },
+    {
+      "row_id": "heldout_bullets_005",
+      "arm": "canonical_target",
+      "output": "- route tools\n- fill args\n- check schema",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "ifeval_contract_family",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "bullet_list",
+        "line_count": 3,
+        "lines": [
+          "- route tools",
+          "- fill args",
+          "- check schema"
+        ]
+      }
+    },
+    {
+      "row_id": "heldout_bullets_006",
+      "arm": "canonical_target",
+      "output": "- draft table\n- render figure\n- write claim",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "ifeval_contract_family",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "bullet_list",
+        "line_count": 3,
+        "lines": [
+          "- draft table",
+          "- render figure",
+          "- write claim"
+        ]
+      }
+    },
+    {
+      "row_id": "heldout_bullets_007",
+      "arm": "canonical_target",
+      "output": "- load rows\n- call model\n- store verdicts",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "ifeval_contract_family",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "bullet_list",
+        "line_count": 3,
+        "lines": [
+          "- load rows",
+          "- call model",
+          "- store verdicts"
+        ]
+      }
+    },
+    {
+      "row_id": "heldout_bullets_008",
+      "arm": "canonical_target",
+      "output": "- reject leak\n- guard split\n- publish audit",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "ifeval_contract_family",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "bullet_list",
+        "line_count": 3,
+        "lines": [
+          "- reject leak",
+          "- guard split",
+          "- publish audit"
+        ]
+      }
+    },
+    {
+      "row_id": "heldout_array_001",
+      "arm": "canonical_target",
+      "output": "[\"route\",\"repair\",\"commit\"]",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "ifeval_contract_family",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_array",
+        "parse_error": null,
+        "length_ok": true,
+        "lowercase_ok": true,
+        "values_ok": true
+      }
+    },
+    {
+      "row_id": "heldout_array_002",
+      "arm": "canonical_target",
+      "output": "[\"train\",\"validate\",\"holdout\"]",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "ifeval_contract_family",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_array",
+        "parse_error": null,
+        "length_ok": true,
+        "lowercase_ok": true,
+        "values_ok": true
+      }
+    },
+    {
+      "row_id": "heldout_array_003",
+      "arm": "canonical_target",
+      "output": "[\"search\",\"read\",\"answer\"]",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "ifeval_contract_family",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_array",
+        "parse_error": null,
+        "length_ok": true,
+        "lowercase_ok": true,
+        "values_ok": true
+      }
+    },
+    {
+      "row_id": "heldout_array_004",
+      "arm": "canonical_target",
+      "output": "[\"schema\",\"args\",\"call\"]",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "ifeval_contract_family",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_array",
+        "parse_error": null,
+        "length_ok": true,
+        "lowercase_ok": true,
+        "values_ok": true
+      }
+    },
+    {
+      "row_id": "heldout_array_005",
+      "arm": "canonical_target",
+      "output": "[\"draft\",\"score\",\"audit\"]",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "ifeval_contract_family",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_array",
+        "parse_error": null,
+        "length_ok": true,
+        "lowercase_ok": true,
+        "values_ok": true
+      }
+    },
+    {
+      "row_id": "heldout_array_006",
+      "arm": "canonical_target",
+      "output": "[\"rows\",\"metrics\",\"claims\"]",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "ifeval_contract_family",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_array",
+        "parse_error": null,
+        "length_ok": true,
+        "lowercase_ok": true,
+        "values_ok": true
+      }
+    },
+    {
+      "row_id": "heldout_bool_001",
+      "arm": "canonical_target",
+      "output": "true",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "boolq_choice_contract",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_label",
+        "stripped": "true",
+        "allowed": [
+          "true",
+          "false"
+        ]
+      }
+    },
+    {
+      "row_id": "heldout_bool_002",
+      "arm": "canonical_target",
+      "output": "false",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "boolq_choice_contract",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_label",
+        "stripped": "false",
+        "allowed": [
+          "true",
+          "false"
+        ]
+      }
+    },
+    {
+      "row_id": "heldout_bool_003",
+      "arm": "canonical_target",
+      "output": "true",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "boolq_choice_contract",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_label",
+        "stripped": "true",
+        "allowed": [
+          "true",
+          "false"
+        ]
+      }
+    },
+    {
+      "row_id": "heldout_choice_004",
+      "arm": "canonical_target",
+      "output": "B",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "choice_contract",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_label",
+        "stripped": "B",
+        "allowed": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    },
+    {
+      "row_id": "heldout_choice_005",
+      "arm": "canonical_target",
+      "output": "B",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "choice_contract",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_label",
+        "stripped": "B",
+        "allowed": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    },
+    {
+      "row_id": "heldout_pipe_001",
+      "arm": "canonical_target",
+      "output": "2026-05-08|eval|ready",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "structured_contract",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "pipe_triplet",
+        "parts": [
+          "2026-05-08",
+          "eval",
+          "ready"
+        ]
+      }
+    },
+    {
+      "row_id": "heldout_pipe_002",
+      "arm": "canonical_target",
+      "output": "2026-05-09|audit|blocked",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "structured_contract",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "pipe_triplet",
+        "parts": [
+          "2026-05-09",
+          "audit",
+          "blocked"
+        ]
+      }
+    },
+    {
+      "row_id": "heldout_pipe_003",
+      "arm": "canonical_target",
+      "output": "2026-05-10|paper|ready",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:01:15.376153+00:00",
+      "env_family": "structured_contract",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "pipe_triplet",
+        "parts": [
+          "2026-05-10",
+          "paper",
+          "ready"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "generated_at_utc": "2026-04-28T17:01:15.377680+00:00",
+  "route_id": "paper_main_claim_extension",
+  "project_id": "mixed_contract_compactification",
+  "row_count": 50,
+  "family_counts": {
+    "if_summarize_judge": 10,
+    "pydantic_adherence": 10,
+    "ascii_tree": 8,
+    "ifeval_contract_family": 14,
+    "boolq_choice_contract": 3,
+    "choice_contract": 2,
+    "structured_contract": 3
+  },
+  "validator": "research\\studies\\2026-04-28-mixed-contract-compactification-heldout50\\validators\\validate_mixed_contracts.py",
+  "recommended_caps": {
+    "job_memory_limit_mb": 3000,
+    "cpu_rate_percent": 50,
+    "io_cap_mb_s": 50,
+    "runner_child_rss_mb": 2600,
+    "timeout_sec": 7200
+  }
+}

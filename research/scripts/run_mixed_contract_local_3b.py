@@ -60,6 +60,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max-prompt-chars", type=int, default=5000)
     parser.add_argument("--max-child-rss-mb", type=float, default=2600.0)
     parser.add_argument("--cooldown-sec", type=float, default=0.5)
+    parser.add_argument("--run-title", default="Local Qwen2.5-3B Mixed Contract Run")
+    parser.add_argument(
+        "--run-note",
+        default="This run replaces deterministic candidates with local 3B completions for the supplied row IDs and validators. Interpret it according to the study claim audit.",
+    )
     return parser.parse_args()
 
 
@@ -398,7 +403,7 @@ def summarize(evaluated: list[dict[str, Any]]) -> dict[str, Any]:
 def render_md(payload: dict[str, Any]) -> str:
     summary = payload["summary"]
     lines = [
-        "# Local Qwen2.5-3B Mixed Contract Smoke",
+        f"# {payload.get('run_title', 'Local Qwen2.5-3B Mixed Contract Run')}",
         "",
         f"Generated: `{payload['generated_at_utc']}`",
         "",
@@ -408,7 +413,7 @@ def render_md(payload: dict[str, Any]) -> str:
         f"llama.cpp completion: `{payload['llama_completion_path']}`",
         f"Peak child RSS: `{summary['peak_child_ram_mb']:.2f} MB`",
         "",
-        "This run replaces deterministic seed candidates with local 3B completions for the same row IDs and validators. It is a smoke, not the full 50-row held-out suite.",
+        str(payload.get("run_note", "")),
         "",
         "## Arm Summary",
         "",
@@ -430,8 +435,8 @@ def render_md(payload: dict[str, Any]) -> str:
             "",
             "## Claim Audit",
             "",
-            "- Allowed: this is a live local 3B smoke against frozen validators.",
-            "- Not allowed: do not report this as the final mixed-contract benchmark; the row count is intentionally small.",
+            "- Allowed: this is a live local 3B result against frozen validators.",
+            "- Not allowed: do not call this trained TRM lift; interpret benchmark status according to the study claim audit and row-suite scope.",
             "- Not allowed: do not call `metta_runtime_repair` learned TRM lift; it is a repair-prompt arm using the same 3B model plus public validator feedback.",
         ]
     )
@@ -552,7 +557,11 @@ def main() -> int:
             "timeout_sec": args.timeout_sec,
             "gpu_layers": args.gpu_layers,
             "max_child_rss_mb": args.max_child_rss_mb,
+            "run_title": args.run_title,
+            "run_note": args.run_note,
         },
+        "run_title": args.run_title,
+        "run_note": args.run_note,
         "summary": summarize(evaluated),
         "evaluated": evaluated,
     }
