@@ -30,6 +30,7 @@ This skill is for:
 - `scripts/build_filesystem_example.py`
 - `scripts/build_github_example.py`
 - `scripts/build_postgres_example.py`
+- `scripts/build_primehub_schema_example.py`
 - `scripts/build_example_matrix.py`
 
 ## Core idea
@@ -126,5 +127,7 @@ Use `scripts/build_filesystem_example.py --out-dir ...` when you need a concrete
 Use `scripts/build_github_example.py --out-dir ...` when you need a concrete, popular `github` MCP example pack with issue, PR, and code-search retrieval rows.
 
 Use `scripts/build_postgres_example.py --out-dir ...` when you need a concrete, popular `postgres` MCP example pack with schema, table, and query-template retrieval rows.
+
+Use `scripts/build_primehub_schema_example.py --out-dir ...` when you need a Primehub-specific schema lookup pack for structured-map tasks such as `psycho_bench`, `ascii_tree`, and `pydantic_adherence`.
 
 Use `scripts/build_example_matrix.py --out-dir ...` when you want all bundled popular examples built together plus one merged TRM-MCP corpus.

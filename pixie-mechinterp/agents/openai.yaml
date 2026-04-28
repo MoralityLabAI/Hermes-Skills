@@ -1,0 +1,4 @@
+interface:
+  display_name: "Pixie Mechinterp"
+  short_description: "Run Pixie fae ablation loops"
+  default_prompt: "Use $pixie-mechinterp to run the Pixie mechinterp ablation harness and report trigger-vs-drift results."
