@@ -1,0 +1,632 @@
+{
+  "summary": {
+    "evidence_class": "no_model_validator_smoke",
+    "rows": 30,
+    "arms": {
+      "canonical_target": {
+        "rows": 30,
+        "contract_valid": 30,
+        "semantic_valid": 30,
+        "exact_success": 30,
+        "contract_rate": 1.0,
+        "semantic_rate": 1.0,
+        "exact_rate": 1.0
+      }
+    },
+    "by_family": {
+      "canonical_target": {
+        "computed_json_schema": {
+          "rows": 6,
+          "exact_success": 6,
+          "exact_rate": 1.0
+        },
+        "deep_ascii_tree": {
+          "rows": 4,
+          "exact_success": 4,
+          "exact_rate": 1.0
+        },
+        "logic_label_contract": {
+          "rows": 7,
+          "exact_success": 7,
+          "exact_rate": 1.0
+        },
+        "math_numeric_contract": {
+          "rows": 8,
+          "exact_success": 8,
+          "exact_rate": 1.0
+        },
+        "state_sequence_array": {
+          "rows": 5,
+          "exact_success": 5,
+          "exact_rate": 1.0
+        }
+      }
+    },
+    "note": "This is a deterministic validator smoke, not a model benchmark."
+  },
+  "evaluated": [
+    {
+      "row_id": "hard_math_001_mod",
+      "arm": "canonical_target",
+      "output": "5",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:27:39.730877+00:00",
+      "env_family": "math_numeric_contract",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "numeric_answer",
+        "stripped": "5",
+        "integer_ok": true
+      }
+    },
+    {
+      "row_id": "hard_math_002_polynomial",
+      "arm": "canonical_target",
+      "output": "39",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:27:39.730877+00:00",
+      "env_family": "math_numeric_contract",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "numeric_answer",
+        "stripped": "39",
+        "integer_ok": true
+      }
+    },
+    {
+      "row_id": "hard_math_003_filter",
+      "arm": "canonical_target",
+      "output": "6",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:27:39.730877+00:00",
+      "env_family": "math_numeric_contract",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "numeric_answer",
+        "stripped": "6",
+        "integer_ok": true
+      }
+    },
+    {
+      "row_id": "hard_math_004_boolean_sum",
+      "arm": "canonical_target",
+      "output": "2",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:27:39.730877+00:00",
+      "env_family": "math_numeric_contract",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "numeric_answer",
+        "stripped": "2",
+        "integer_ok": true
+      }
+    },
+    {
+      "row_id": "hard_math_005_day",
+      "arm": "canonical_target",
+      "output": "13",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:27:39.730877+00:00",
+      "env_family": "math_numeric_contract",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "numeric_answer",
+        "stripped": "13",
+        "integer_ok": true
+      }
+    },
+    {
+      "row_id": "hard_math_006_grid",
+      "arm": "canonical_target",
+      "output": "17",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:27:39.730877+00:00",
+      "env_family": "math_numeric_contract",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "numeric_answer",
+        "stripped": "17",
+        "integer_ok": true
+      }
+    },
+    {
+      "row_id": "hard_math_007_majority",
+      "arm": "canonical_target",
+      "output": "1",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:27:39.730877+00:00",
+      "env_family": "math_numeric_contract",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "numeric_answer",
+        "stripped": "1",
+        "integer_ok": true
+      }
+    },
+    {
+      "row_id": "hard_math_008_prime_count",
+      "arm": "canonical_target",
+      "output": "3",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:27:39.730877+00:00",
+      "env_family": "math_numeric_contract",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "numeric_answer",
+        "stripped": "3",
+        "integer_ok": true
+      }
+    },
+    {
+      "row_id": "hard_logic_001_router_schema",
+      "arm": "canonical_target",
+      "output": "B",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:27:39.730877+00:00",
+      "env_family": "logic_label_contract",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_label",
+        "stripped": "B",
+        "allowed": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    },
+    {
+      "row_id": "hard_logic_002_commit_gate",
+      "arm": "canonical_target",
+      "output": "B",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:27:39.730877+00:00",
+      "env_family": "logic_label_contract",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_label",
+        "stripped": "B",
+        "allowed": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      }
+    },
+    {
+      "row_id": "hard_logic_003_xor",
+      "arm": "canonical_target",
+      "output": "B",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:27:39.730877+00:00",
+      "env_family": "logic_label_contract",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_label",
+        "stripped": "B",
+        "allowed": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    {
+      "row_id": "hard_logic_004_failed_parse",
+      "arm": "canonical_target",
+      "output": "B",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:27:39.730877+00:00",
+      "env_family": "logic_label_contract",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_label",
+        "stripped": "B",
+        "allowed": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      }
+    },
+    {
+      "row_id": "hard_logic_005_transitive",
+      "arm": "canonical_target",
+      "output": "true",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:27:39.730877+00:00",
+      "env_family": "logic_label_contract",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_label",
+        "stripped": "true",
+        "allowed": [
+          "true",
+          "false"
+        ]
+      }
+    },
+    {
+      "row_id": "hard_logic_006_pass2",
+      "arm": "canonical_target",
+      "output": "PASS2",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:27:39.730877+00:00",
+      "env_family": "logic_label_contract",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_label",
+        "stripped": "PASS2",
+        "allowed": [
+          "PASS2",
+          "OTHER"
+        ]
+      }
+    },
+    {
+      "row_id": "hard_logic_007_cycle",
+      "arm": "canonical_target",
+      "output": "false",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:27:39.730877+00:00",
+      "env_family": "logic_label_contract",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_label",
+        "stripped": "false",
+        "allowed": [
+          "true",
+          "false"
+        ]
+      }
+    },
+    {
+      "row_id": "hard_schema_001_repair_route",
+      "arm": "canonical_target",
+      "output": "{\"route\":\"repair\",\"priority\":\"high\",\"retry_count\":2,\"safe\":true}",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:27:39.730877+00:00",
+      "env_family": "computed_json_schema",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_object",
+        "parse_error": null,
+        "type_ok": true,
+        "values_ok": true,
+        "no_extra": true,
+        "keys": [
+          "priority",
+          "retry_count",
+          "route",
+          "safe"
+        ]
+      }
+    },
+    {
+      "row_id": "hard_schema_002_commit_route",
+      "arm": "canonical_target",
+      "output": "{\"route\":\"commit\",\"priority\":\"low\",\"retry_count\":0,\"safe\":true}",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:27:39.730877+00:00",
+      "env_family": "computed_json_schema",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_object",
+        "parse_error": null,
+        "type_ok": true,
+        "values_ok": true,
+        "no_extra": true,
+        "keys": [
+          "priority",
+          "retry_count",
+          "route",
+          "safe"
+        ]
+      }
+    },
+    {
+      "row_id": "hard_schema_003_reject_route",
+      "arm": "canonical_target",
+      "output": "{\"route\":\"reject\",\"priority\":\"high\",\"retry_count\":0,\"safe\":false}",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:27:39.730877+00:00",
+      "env_family": "computed_json_schema",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_object",
+        "parse_error": null,
+        "type_ok": true,
+        "values_ok": true,
+        "no_extra": true,
+        "keys": [
+          "priority",
+          "retry_count",
+          "route",
+          "safe"
+        ]
+      }
+    },
+    {
+      "row_id": "hard_schema_004_window",
+      "arm": "canonical_target",
+      "output": "{\"batch_id\":\"batch-7\",\"passed\":7,\"failed\":5,\"start_date\":\"2026-05-11\"}",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:27:39.730877+00:00",
+      "env_family": "computed_json_schema",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_object",
+        "parse_error": null,
+        "type_ok": true,
+        "values_ok": true,
+        "no_extra": true,
+        "keys": [
+          "batch_id",
+          "failed",
+          "passed",
+          "start_date"
+        ]
+      }
+    },
+    {
+      "row_id": "hard_schema_005_skill",
+      "arm": "canonical_target",
+      "output": "{\"name\":\"metta_router\",\"version\":3,\"active\":true}",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:27:39.730877+00:00",
+      "env_family": "computed_json_schema",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_object",
+        "parse_error": null,
+        "type_ok": true,
+        "values_ok": true,
+        "no_extra": true,
+        "keys": [
+          "active",
+          "name",
+          "version"
+        ]
+      }
+    },
+    {
+      "row_id": "hard_schema_006_score",
+      "arm": "canonical_target",
+      "output": "{\"contract\":2,\"semantic\":3,\"total\":5,\"exact\":true}",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:27:39.730877+00:00",
+      "env_family": "computed_json_schema",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_object",
+        "parse_error": null,
+        "type_ok": true,
+        "values_ok": true,
+        "no_extra": true,
+        "keys": [
+          "contract",
+          "exact",
+          "semantic",
+          "total"
+        ]
+      }
+    },
+    {
+      "row_id": "hard_state_001_repair",
+      "arm": "canonical_target",
+      "output": "[\"draft\",\"parsed\",\"repair\",\"commit\"]",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:27:39.730877+00:00",
+      "env_family": "state_sequence_array",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_array",
+        "parse_error": null,
+        "length_ok": true,
+        "lowercase_ok": true,
+        "values_ok": true
+      }
+    },
+    {
+      "row_id": "hard_state_002_reject",
+      "arm": "canonical_target",
+      "output": "[\"draft\",\"parsed\",\"reject\"]",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:27:39.730877+00:00",
+      "env_family": "state_sequence_array",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_array",
+        "parse_error": null,
+        "length_ok": true,
+        "lowercase_ok": true,
+        "values_ok": true
+      }
+    },
+    {
+      "row_id": "hard_state_003_retry",
+      "arm": "canonical_target",
+      "output": "[\"collect\",\"score\",\"retry\",\"score\",\"commit\"]",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:27:39.730877+00:00",
+      "env_family": "state_sequence_array",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_array",
+        "parse_error": null,
+        "length_ok": true,
+        "lowercase_ok": true,
+        "values_ok": true
+      }
+    },
+    {
+      "row_id": "hard_state_004_branch",
+      "arm": "canonical_target",
+      "output": "[\"parse\",\"route\",\"tool\",\"validate\",\"commit\"]",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:27:39.730877+00:00",
+      "env_family": "state_sequence_array",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_array",
+        "parse_error": null,
+        "length_ok": true,
+        "lowercase_ok": true,
+        "values_ok": true
+      }
+    },
+    {
+      "row_id": "hard_state_005_abort",
+      "arm": "canonical_target",
+      "output": "[\"load\",\"check\",\"abort\"]",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:27:39.730877+00:00",
+      "env_family": "state_sequence_array",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_array",
+        "parse_error": null,
+        "length_ok": true,
+        "lowercase_ok": true,
+        "values_ok": true
+      }
+    },
+    {
+      "row_id": "hard_tree_001_skill",
+      "arm": "canonical_target",
+      "output": "skill\n|-- parse\n|   |-- schema\n|   `-- prompt\n`-- commit",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:27:39.730877+00:00",
+      "env_family": "deep_ascii_tree",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "ascii_tree_exact",
+        "actual_lines": [
+          "skill",
+          "|-- parse",
+          "|   |-- schema",
+          "|   `-- prompt",
+          "`-- commit"
+        ]
+      }
+    },
+    {
+      "row_id": "hard_tree_002_eval",
+      "arm": "canonical_target",
+      "output": "eval\n|-- rows\n|   |-- hard\n|   `-- holdout\n`-- claims",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:27:39.730877+00:00",
+      "env_family": "deep_ascii_tree",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "ascii_tree_exact",
+        "actual_lines": [
+          "eval",
+          "|-- rows",
+          "|   |-- hard",
+          "|   `-- holdout",
+          "`-- claims"
+        ]
+      }
+    },
+    {
+      "row_id": "hard_tree_003_gate",
+      "arm": "canonical_target",
+      "output": "gate\n|-- metta\n|   `-- select\n|-- trm\n`-- repair",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:27:39.730877+00:00",
+      "env_family": "deep_ascii_tree",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "ascii_tree_exact",
+        "actual_lines": [
+          "gate",
+          "|-- metta",
+          "|   `-- select",
+          "|-- trm",
+          "`-- repair"
+        ]
+      }
+    },
+    {
+      "row_id": "hard_tree_004_data",
+      "arm": "canonical_target",
+      "output": "data\n|-- raw\n|-- labels\n|   `-- failures\n`-- audit",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T17:27:39.730877+00:00",
+      "env_family": "deep_ascii_tree",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "ascii_tree_exact",
+        "actual_lines": [
+          "data",
+          "|-- raw",
+          "|-- labels",
+          "|   `-- failures",
+          "`-- audit"
+        ]
+      }
+    }
+  ]
+}

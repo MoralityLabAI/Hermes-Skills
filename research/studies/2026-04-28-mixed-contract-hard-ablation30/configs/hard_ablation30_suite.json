@@ -1,0 +1,22 @@
+{
+  "generated_at_utc": "2026-04-28T17:27:39.730877+00:00",
+  "route_id": "paper_main_claim_extension",
+  "project_id": "mixed_contract_hard_ablation",
+  "row_count": 30,
+  "family_counts": {
+    "math_numeric_contract": 8,
+    "logic_label_contract": 7,
+    "computed_json_schema": 6,
+    "state_sequence_array": 5,
+    "deep_ascii_tree": 4
+  },
+  "validator": "research\\studies\\2026-04-28-mixed-contract-hard-ablation30\\validators\\validate_mixed_contracts.py",
+  "recommended_caps": {
+    "job_memory_limit_mb": 3000,
+    "cpu_rate_percent": 50,
+    "io_cap_mb_s": 50,
+    "runner_child_rss_mb": 2600,
+    "timeout_sec": 7200
+  },
+  "required_runner_flag": "--include-blind-repair"
+}

@@ -33,7 +33,9 @@ DEFAULT_MODEL = Path(r"D:\research_engine\models\Qwen2.5-3B-Instruct-GGUF\qwen2.
 DEFAULT_LLAMA_COMPLETION = Path(r"D:\research_engine\tools\llama.cpp-b8922-cuda12.4\llama-completion.exe")
 
 PROMPT_ARMS = ("baseline", "pure_trm", "metta_runtime")
-ALL_ARMS = (*PROMPT_ARMS, "metta_runtime_repair")
+BLIND_REPAIR_ARM = "metta_runtime_blind_repair"
+FEEDBACK_REPAIR_ARM = "metta_runtime_repair"
+ALL_ARMS = (*PROMPT_ARMS, BLIND_REPAIR_ARM, FEEDBACK_REPAIR_ARM)
 STOP_MARKERS = ("[end of text]", "<|im_end|>", "</s>")
 
 
@@ -64,6 +66,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--run-note",
         default="This run replaces deterministic candidates with local 3B completions for the supplied row IDs and validators. Interpret it according to the study claim audit.",
+    )
+    parser.add_argument(
+        "--include-blind-repair",
+        action="store_true",
+        help="Add a repair arm that receives the prior output but not validator feedback.",
     )
     return parser.parse_args()
 
@@ -223,6 +230,28 @@ def repair_prompt(row: dict[str, Any], previous_output: str, verdict: dict[str, 
                 f"Public validator contract:\n{row_contract(row)}\n\n"
                 f"Previous output:\n{previous_output}\n\n"
                 f"Validator feedback:\n{json.dumps(feedback, ensure_ascii=True, sort_keys=True)}"
+            ),
+        },
+    ]
+
+
+def blind_repair_prompt(row: dict[str, Any], previous_output: str) -> list[dict[str, str]]:
+    return [
+        {
+            "role": "system",
+            "content": (
+                "You are the blind repair gate in a MeTTa/TRM circuit. The previous output failed a hidden check, "
+                "but you may not inspect validator feedback. Use only the prompt, public contract, and previous "
+                "output. Emit only the repaired final answer."
+            ),
+        },
+        {
+            "role": "user",
+            "content": (
+                f"Prompt:\n{row['prompt']}\n\n"
+                f"Public validator contract:\n{row_contract(row)}\n\n"
+                f"Previous output:\n{previous_output}\n\n"
+                "Return one corrected final output. No explanation."
             ),
         },
     ]
@@ -390,11 +419,31 @@ def summarize(evaluated: list[dict[str, Any]]) -> dict[str, Any]:
         (float(row.get("diagnostics", {}).get("peak_child_ram_mb", 0.0)) for row in evaluated),
         default=0.0,
     )
+    by_key = {(row["row_id"], row["arm"]): row for row in evaluated}
+    metta_fail_ids = sorted(
+        {
+            row["row_id"]
+            for row in evaluated
+            if row["arm"] == "metta_runtime" and not row["exact_success"]
+        }
+    )
+    repair_opportunities: dict[str, Any] = {"metta_runtime_failed_rows": len(metta_fail_ids), "arms": {}}
+    for arm in (BLIND_REPAIR_ARM, FEEDBACK_REPAIR_ARM):
+        arm_rows = [by_key[(row_id, arm)] for row_id in metta_fail_ids if (row_id, arm) in by_key]
+        if arm_rows:
+            repair_opportunities["arms"][arm] = {
+                "rows": len(arm_rows),
+                "exact_success": sum(row["exact_success"] for row in arm_rows),
+                "exact_rate": sum(row["exact_success"] for row in arm_rows) / len(arm_rows),
+                "contract_valid": sum(row["contract_valid"] for row in arm_rows),
+                "semantic_valid": sum(row["semantic_valid"] for row in arm_rows),
+            }
     return {
         "evidence_class": "live_model_local_3b",
         "rows": len({row["row_id"] for row in evaluated}),
         "arms": by_arm,
         "by_family": by_family,
+        "repair_opportunities": repair_opportunities,
         "peak_child_ram_mb": peak_child_ram_mb,
         "note": "Local Qwen2.5-3B Q4 smoke. Keep separate from deterministic validator smoke.",
     }
@@ -424,6 +473,23 @@ def render_md(payload: dict[str, Any]) -> str:
         lines.append(
             f"| `{arm}` | {metrics['rows']} | {metrics['contract_valid']} | {metrics['semantic_valid']} | {metrics['exact_success']} | {metrics['exact_rate']:.4f} |"
         )
+    repair_opportunities = summary.get("repair_opportunities", {})
+    if repair_opportunities.get("arms"):
+        lines.extend(
+            [
+                "",
+                "## Repair Opportunity Summary",
+                "",
+                f"Rows where `metta_runtime` failed exactly: `{repair_opportunities.get('metta_runtime_failed_rows', 0)}`",
+                "",
+                "| Repair arm | Rows | Contract valid | Semantic valid | Exact success | Exact rate |",
+                "| --- | ---: | ---: | ---: | ---: | ---: |",
+            ]
+        )
+        for arm, metrics in repair_opportunities["arms"].items():
+            lines.append(
+                f"| `{arm}` | {metrics['rows']} | {metrics['contract_valid']} | {metrics['semantic_valid']} | {metrics['exact_success']} | {metrics['exact_rate']:.4f} |"
+            )
     lines.extend(["", "## Case Detail", "", "| Row | Family | Arm | Exact | Contract | Semantic | Output |", "| --- | --- | --- | ---: | ---: | ---: | --- |"])
     for row in payload["evaluated"]:
         output = html.escape(str(row["output"]).replace("\n", "\\n")).replace("|", "\\|")
@@ -438,6 +504,7 @@ def render_md(payload: dict[str, Any]) -> str:
             "- Allowed: this is a live local 3B result against frozen validators.",
             "- Not allowed: do not call this trained TRM lift; interpret benchmark status according to the study claim audit and row-suite scope.",
             "- Not allowed: do not call `metta_runtime_repair` learned TRM lift; it is a repair-prompt arm using the same 3B model plus public validator feedback.",
+            "- Not allowed: do not conflate `metta_runtime_blind_repair` with validator-feedback repair; blind repair receives no validator verdict details.",
         ]
     )
     return "\n".join(lines) + "\n"
@@ -506,39 +573,54 @@ def main() -> int:
 
         if metta_verdict is None:
             continue
-        if metta_verdict["exact_success"]:
-            repair_result = evaluate_candidate(
-                validator,
-                row,
-                metta_output,
-                "metta_runtime_repair",
-                {"repair_source": "metta_runtime_already_exact", "elapsed_sec": 0.0, "peak_child_ram_mb": 0.0},
-            )
-        elif "child_rss_cap_exceeded" in str(metta_verdict.get("diagnostics", {}).get("error", "")):
-            repair_result = error_candidate(row, "metta_runtime_repair", "skipped_after_child_rss_cap_exceeded")
-        else:
-            try:
-                output, diagnostics = run_llama_completion(
-                    llama_completion=llama_completion,
-                    model_path=model_path,
-                    messages=repair_prompt(row, metta_output, metta_verdict),
-                    ctx=args.ctx,
-                    threads=args.threads,
-                    batch_size=args.batch_size,
-                    ubatch_size=args.ubatch_size,
-                    gpu_layers=args.gpu_layers,
-                    max_tokens=args.max_tokens,
-                    timeout_sec=args.timeout_sec,
-                    max_prompt_chars=args.max_prompt_chars,
-                    max_child_rss_mb=args.max_child_rss_mb,
+        repair_arms = []
+        if args.include_blind_repair:
+            repair_arms.append(BLIND_REPAIR_ARM)
+        repair_arms.append(FEEDBACK_REPAIR_ARM)
+        for repair_arm in repair_arms:
+            if metta_verdict["exact_success"]:
+                repair_result = evaluate_candidate(
+                    validator,
+                    row,
+                    metta_output,
+                    repair_arm,
+                    {"repair_source": "metta_runtime_already_exact", "elapsed_sec": 0.0, "peak_child_ram_mb": 0.0},
                 )
-                repair_result = evaluate_candidate(validator, row, output, "metta_runtime_repair", diagnostics)
-            except RuntimeError as exc:
-                repair_result = error_candidate(row, "metta_runtime_repair", str(exc))
-        evaluated.append(repair_result)
-        append_jsonl(events_path, repair_result)
-        time.sleep(args.cooldown_sec)
-        if "child_rss_cap_exceeded" in str(repair_result.get("diagnostics", {}).get("error", "")):
+            elif "child_rss_cap_exceeded" in str(metta_verdict.get("diagnostics", {}).get("error", "")):
+                repair_result = error_candidate(row, repair_arm, "skipped_after_child_rss_cap_exceeded")
+            else:
+                try:
+                    messages = (
+                        blind_repair_prompt(row, metta_output)
+                        if repair_arm == BLIND_REPAIR_ARM
+                        else repair_prompt(row, metta_output, metta_verdict)
+                    )
+                    output, diagnostics = run_llama_completion(
+                        llama_completion=llama_completion,
+                        model_path=model_path,
+                        messages=messages,
+                        ctx=args.ctx,
+                        threads=args.threads,
+                        batch_size=args.batch_size,
+                        ubatch_size=args.ubatch_size,
+                        gpu_layers=args.gpu_layers,
+                        max_tokens=args.max_tokens,
+                        timeout_sec=args.timeout_sec,
+                        max_prompt_chars=args.max_prompt_chars,
+                        max_child_rss_mb=args.max_child_rss_mb,
+                    )
+                    repair_result = evaluate_candidate(validator, row, output, repair_arm, diagnostics)
+                except RuntimeError as exc:
+                    repair_result = error_candidate(row, repair_arm, str(exc))
+            evaluated.append(repair_result)
+            append_jsonl(events_path, repair_result)
+            time.sleep(args.cooldown_sec)
+            if "child_rss_cap_exceeded" in str(repair_result.get("diagnostics", {}).get("error", "")):
+                break
+        if any(
+            "child_rss_cap_exceeded" in str(result.get("diagnostics", {}).get("error", ""))
+            for result in evaluated[-len(repair_arms) :]
+        ):
             break
 
     payload = {
@@ -559,6 +641,7 @@ def main() -> int:
             "max_child_rss_mb": args.max_child_rss_mb,
             "run_title": args.run_title,
             "run_note": args.run_note,
+            "include_blind_repair": args.include_blind_repair,
         },
         "run_title": args.run_title,
         "run_note": args.run_note,
