@@ -1,0 +1,266 @@
+{
+  "generated_at_utc": "2026-04-28T14:56:48.100134+00:00",
+  "purpose": "Agent-facing router for navigating MeTTa/TRM paper extensions and follow-on experiments.",
+  "source_inputs": {
+    "project_menu": "research\\generated\\metta_project_menu.json",
+    "paper_data_campaign_plan": "research\\generated\\paper_latex\\metta_trm_repair_addendum\\data_campaign_plan.md",
+    "benchmark_crossref": "research\\generated\\trm_infused_baseline_crossref.md"
+  },
+  "routes": [
+    {
+      "route_id": "paper_main_claim_extension",
+      "user_intent": "Extend the current MeTTa/TRM paper with the cleanest next positive evidence.",
+      "choose_projects": [
+        "mixed_contract_compactification",
+        "real_tool_contract_router"
+      ],
+      "evidence_class": "live_or_replay_with_exact_validators",
+      "why": "These projects keep the claim near the paper's strongest result: explicit symbolic gates expose verifier-visible state and improve small-model control-plane reliability.",
+      "first_action": "Create held-out rows and exact validators before adding model runs.",
+      "paper_section": "Main results extension or short addendum.",
+      "overclaim_risk": "Do not describe format or tool-contract wins as broad reasoning gains.",
+      "projects": [
+        {
+          "id": "mixed_contract_compactification",
+          "priority": 2,
+          "title": "Mixed Contract Compactification Suite",
+          "first_artifact": "A 50-row held-out mixed-contract dataset with explicit failure labels, exact validators, and near-miss cases.",
+          "success_metric": "Runtime+repair wins on exact contract validity without reducing semantic correctness on choice or summary rows.",
+          "paper_claim": "Small LLMs can act as proposal engines when explicit symbolic gates own observable output contracts."
+        },
+        {
+          "id": "real_tool_contract_router",
+          "priority": 1,
+          "title": "Real Tool-Contract Router",
+          "first_artifact": "A 30-60 row real-tool trace suite covering repo search, file lookup, shell-safe commands, calendar-like scheduling, weather-like queries, and JSON argument traps.",
+          "success_metric": "At least +0.20 absolute exact tool-call validity over baseline with zero schema-invalid commits on held-out tools.",
+          "paper_claim": "MeTTa/TRM improves control-plane tool-use reliability when tool schemas and arguments are verifier-visible."
+        }
+      ]
+    },
+    {
+      "route_id": "hard_env_boundary",
+      "user_intent": "Show whether the method transfers to hard logic and where it fails.",
+      "choose_projects": [
+        "logic_signature_camp_gate",
+        "live_symbolic_closure_threshold"
+      ],
+      "evidence_class": "leakage_audited_hard_env_probe",
+      "why": "Logic is the plausible hard positive target, but only if prompt-derived constraints, not answer signatures, drive projection.",
+      "first_action": "Write the leakage audit and proposal-tier labels before scoring improvements.",
+      "paper_section": "Boundary and generalization appendix.",
+      "overclaim_risk": "Post-hoc projection can look strong while leaking target information; require a prompt-derived signature audit.",
+      "projects": [
+        {
+          "id": "logic_signature_camp_gate",
+          "priority": 3,
+          "title": "Leakage-Safe Logic Signature Gate",
+          "first_artifact": "A tiny Campsite-style micro-suite with puzzle constraints, row/column signatures derivable from the prompt, and proposal-tier labels.",
+          "success_metric": "Improved cell accuracy and exactness over raw proposals, with an audit column proving no target answer signatures were imported.",
+          "paper_claim": "Symbolic amplification can help hard logic only after the model emits enough verifier-visible state."
+        },
+        {
+          "id": "live_symbolic_closure_threshold",
+          "priority": 8,
+          "title": "Live Symbolic Closure Threshold",
+          "first_artifact": "A proposal-tier classifier applied to local 3B logs across tool routing, contracts, ASCII tree, camp-gate, and math.",
+          "success_metric": "A clear threshold curve showing where the LLM becomes mostly a proposal generator and where it still needs scale.",
+          "paper_claim": "The compactification threshold is measurable as the amount of verifier-visible state emitted before symbolic execution takes over."
+        }
+      ]
+    },
+    {
+      "route_id": "negative_control",
+      "user_intent": "Make the paper more credible by showing where MeTTa/TRM does not replace scale.",
+      "choose_projects": [
+        "math_teacher_candidate_auditor"
+      ],
+      "evidence_class": "negative_control_or_teacher_candidate_audit",
+      "why": "Hard math separates protocol/candidate-auditing gains from missing base-model solving competence.",
+      "first_action": "Build or import a teacher-candidate bank with numeric validators and error archetypes.",
+      "paper_section": "Limitations or scale-boundary appendix.",
+      "overclaim_risk": "Do not claim small-model math solving unless the model produced the correct candidate unaided.",
+      "projects": [
+        {
+          "id": "math_teacher_candidate_auditor",
+          "priority": 5,
+          "title": "Math Teacher-Candidate Auditor",
+          "first_artifact": "A teacher-candidate bank with multiple proposed answers per item, numeric error archetypes, boxed-answer validators, and abstain labels.",
+          "success_metric": "Better candidate selection than keyword or always-first baselines while preserving a clear no-small-model-solve claim boundary.",
+          "paper_claim": "For hard math, MeTTa/TRM is useful as an auditor and protocol gate, not as a substitute solver."
+        }
+      ]
+    },
+    {
+      "route_id": "nuanced_metric_extension",
+      "user_intent": "Develop the psychometric/nuanced benchmark line rather than chase tiny scalar reward lifts.",
+      "choose_projects": [
+        "psycho_item_vector_stability"
+      ],
+      "evidence_class": "multi_signal_interpretability_probe",
+      "why": "PsychoBench needs item-vector, subscale, and stability analysis; scalar reward alone hides the interesting effect.",
+      "first_action": "Run repeated probes and emit item vectors, subscale deltas, and stability bands.",
+      "paper_section": "Nuanced benchmark appendix.",
+      "overclaim_risk": "Variance reduction can be over-regularization if the gate collapses personality signal.",
+      "projects": [
+        {
+          "id": "psycho_item_vector_stability",
+          "priority": 4,
+          "title": "PsychoBench Item-Vector Stability",
+          "first_artifact": "Repeated profile probes with item vectors, BFI subscale deltas, stability bands, and repair provenance.",
+          "success_metric": "Lower profile variance or clearer target-profile adherence without merely clipping every response to a safe midpoint.",
+          "paper_claim": "MeTTa/TRM can expose and control psychometric response geometry even when scalar reward barely moves."
+        }
+      ]
+    },
+    {
+      "route_id": "tooling_infrastructure",
+      "user_intent": "Build reusable infrastructure for future skills and agents.",
+      "choose_projects": [
+        "mcp_lookup_efficiency",
+        "real_tool_contract_router"
+      ],
+      "evidence_class": "infrastructure_efficiency_benchmark",
+      "why": "MCP/tool lookup is a broad substrate where TRMs can optimize stable handles, call count, and token load.",
+      "first_action": "Define first-useful-hit, token-load, and call-count metrics before collecting traces.",
+      "paper_section": "Future work or systems appendix.",
+      "overclaim_risk": "If the resource surface is tiny, direct scanning is the right baseline and TRM overhead is not justified.",
+      "projects": [
+        {
+          "id": "mcp_lookup_efficiency",
+          "priority": 7,
+          "title": "TRM-MCP Lookup Efficiency",
+          "first_artifact": "A benchmark over filesystem, GitHub, Postgres, and PrimeHub-schema MCP examples with call-count and token-load metrics.",
+          "success_metric": "Fewer calls and fewer loaded tokens before first useful answer at equal or better answer correctness.",
+          "paper_claim": "TRM rows can compactify tool/resource lookup when the target is stable handles rather than raw memorized answers."
+        },
+        {
+          "id": "real_tool_contract_router",
+          "priority": 1,
+          "title": "Real Tool-Contract Router",
+          "first_artifact": "A 30-60 row real-tool trace suite covering repo search, file lookup, shell-safe commands, calendar-like scheduling, weather-like queries, and JSON argument traps.",
+          "success_metric": "At least +0.20 absolute exact tool-call validity over baseline with zero schema-invalid commits on held-out tools.",
+          "paper_claim": "MeTTa/TRM improves control-plane tool-use reliability when tool schemas and arguments are verifier-visible."
+        }
+      ]
+    },
+    {
+      "route_id": "scale_campaign",
+      "user_intent": "Prepare for Snacksack or equivalent 9B/27B matched runs.",
+      "choose_projects": [
+        "mixed_contract_compactification",
+        "logic_signature_camp_gate",
+        "math_teacher_candidate_auditor"
+      ],
+      "evidence_class": "matched_scale_matrix",
+      "why": "The paper becomes stronger when the same row schema is run at 3B, 9B, and 27B with the same validators.",
+      "first_action": "Freeze row IDs, prompt construction, output schema, and validator code before changing models.",
+      "paper_section": "Full experiment campaign.",
+      "overclaim_risk": "Changing row selection or validators between scales makes the trend uninterpretable.",
+      "projects": [
+        {
+          "id": "mixed_contract_compactification",
+          "priority": 2,
+          "title": "Mixed Contract Compactification Suite",
+          "first_artifact": "A 50-row held-out mixed-contract dataset with explicit failure labels, exact validators, and near-miss cases.",
+          "success_metric": "Runtime+repair wins on exact contract validity without reducing semantic correctness on choice or summary rows.",
+          "paper_claim": "Small LLMs can act as proposal engines when explicit symbolic gates own observable output contracts."
+        },
+        {
+          "id": "logic_signature_camp_gate",
+          "priority": 3,
+          "title": "Leakage-Safe Logic Signature Gate",
+          "first_artifact": "A tiny Campsite-style micro-suite with puzzle constraints, row/column signatures derivable from the prompt, and proposal-tier labels.",
+          "success_metric": "Improved cell accuracy and exactness over raw proposals, with an audit column proving no target answer signatures were imported.",
+          "paper_claim": "Symbolic amplification can help hard logic only after the model emits enough verifier-visible state."
+        },
+        {
+          "id": "math_teacher_candidate_auditor",
+          "priority": 5,
+          "title": "Math Teacher-Candidate Auditor",
+          "first_artifact": "A teacher-candidate bank with multiple proposed answers per item, numeric error archetypes, boxed-answer validators, and abstain labels.",
+          "success_metric": "Better candidate selection than keyword or always-first baselines while preserving a clear no-small-model-solve claim boundary.",
+          "paper_claim": "For hard math, MeTTa/TRM is useful as an auditor and protocol gate, not as a substitute solver."
+        }
+      ]
+    }
+  ],
+  "agent_loop": [
+    {
+      "step": "1",
+      "name": "Classify the requested claim",
+      "output": "Select one route_id and one primary project_id.",
+      "check": "The selected project must have an evidence class that matches the requested paper claim."
+    },
+    {
+      "step": "2",
+      "name": "Open the source spine",
+      "output": "Read the project menu row, scale-transfer row, fork plan, and composition plan for the selected project.",
+      "check": "Record source paths in the new study README so later agents can reproduce the reasoning."
+    },
+    {
+      "step": "3",
+      "name": "Create a study folder",
+      "output": "Use `research/studies/YYYY-MM-DD-<project_id>/` or a project subfolder under the active MeTTa study if it is clearly an extension.",
+      "check": "Do not dump large model artifacts into Git unless they are small, interpretable result files."
+    },
+    {
+      "step": "4",
+      "name": "Freeze rows and validators first",
+      "output": "Emit row JSONL, validator code, and a row manifest before running models.",
+      "check": "Rows must include split, env_family, expected observable state, and failure labels."
+    },
+    {
+      "step": "5",
+      "name": "Run the smallest meaningful arms",
+      "output": "Start with baseline, pure_trm, metta_runtime, and metta_runtime_repair unless the project defines a different matrix.",
+      "check": "For local models, keep memory caps explicit and preserve prompt/output schemas for later 9B/27B runs."
+    },
+    {
+      "step": "6",
+      "name": "Separate evidence classes",
+      "output": "Mark each result as live model, deterministic replay, post-hoc projection, no-model verifier sweep, or control-plane simulation.",
+      "check": "Never mix post-hoc projection with live benchmark columns."
+    },
+    {
+      "step": "7",
+      "name": "Write the paper hook",
+      "output": "Add a short findings.md with claim, limitation, metric table, and next run command.",
+      "check": "Every positive claim must name the exact verifier-visible state that MeTTa/TRM controlled."
+    }
+  ],
+  "study_artifacts": [
+    {
+      "path": "README.md",
+      "purpose": "One-page study index: route, project, source inputs, active claim, and artifact links."
+    },
+    {
+      "path": "study_plan.md",
+      "purpose": "Hypothesis, arms, validators, splits, stop rules, and paper claim boundary."
+    },
+    {
+      "path": "rows/*.jsonl",
+      "purpose": "Frozen benchmark rows or proposal traces with stable IDs and split labels."
+    },
+    {
+      "path": "validators/*.py",
+      "purpose": "Exact validators or metric extractors used before model results are interpreted."
+    },
+    {
+      "path": "configs/*.json",
+      "purpose": "Prompt, model, memory, and arm configuration with enough detail for 9B/27B reruns."
+    },
+    {
+      "path": "results/*.json",
+      "purpose": "Machine-readable result table with per-row arm scores and evidence_class."
+    },
+    {
+      "path": "results/*.md",
+      "purpose": "Human-readable finding with metric table, failure breakdown, and paper-ready claim."
+    },
+    {
+      "path": "claim_audit.md",
+      "purpose": "Explicit separation of live, deterministic, post-hoc, and control-plane evidence."
+    }
+  ]
+}
