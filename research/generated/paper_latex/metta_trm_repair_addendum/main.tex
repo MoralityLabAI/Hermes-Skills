@@ -143,6 +143,47 @@ We then normalized C-signature rows, symbolic-closure threshold rows, and local 
 
 The generalization is nuanced. Env-specific symbolic adapters are sufficient for tool routing, choice extraction, ASCII formatting once nodes are present, and several safety/schema lanes. They are not sufficient for C-signature commit control because no-gain repairs can pass repaired signatures. Exact-only validation is safe but loses partial improvements. The reusable method is therefore to expose post-repair multi-signal state to the TRM: exactness, reward delta, and env-specific structural checks. Math remains the negative-control boundary; in the threshold suite it has zero average reward lift until an exact candidate is already present.
 
+\section{Environment-Dependent Compactification}
+
+We added two April 28 local Qwen2.5-3B Q4 suites to test whether the compactification claim survives beyond the original repair-rudder rows. The first, \texttt{mixed\_contract\_heldout50}, is a 50-row held-out suite over observable output contracts: summaries with exact word counts, JSON objects, ASCII trees, literal lists, choice labels, and pipe-delimited records. The second, \texttt{mixed\_contract\_hard\_ablation30}, shifts the mix toward numeric micro-math, logic labels, computed JSON, state sequences, and deeper trees. Both runs used frozen exact validators and the same local job-cap discipline: 3 GB wrapper cap, 2.6 GB runner child-RSS cap, and structured receipts.
+
+\begin{table}[t]
+  \centering
+  \small
+  \begin{tabular}{lrrrrrr}
+    \toprule
+    Suite & Rows & Baseline & Pure TRM & MeTTa runtime & Blind repair & Feedback repair \\
+    \midrule
+    Mixed-contract heldout & 50 & 23 & 27 & 32 & -- & 37 \\
+    Hard ablation & 30 & 12 & 11 & 9 & 12 & 13 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Local 3B exact-success counts for mixed-contract compactification. The heldout suite shows strong prompt/repair-gate lift; the hard ablation shows the boundary where the lift shrinks.}
+  \label{tab:mixed-contract-boundary}
+\end{table}
+
+Table~\ref{tab:mixed-contract-boundary} gives the main boundary result. On the heldout suite, feedback repair improves exact success from 23/50 to 37/50, with prompt-only MeTTa runtime at 32/50. This is the strongest local evidence that a compact model can serve as a proposal engine when MeTTa/TRM gates own observable output contracts. On the harder suite, the same pattern does not scale cleanly: MeTTa runtime drops to 9/30 and feedback repair reaches only 13/30 versus 12/30 baseline. The blind-repair ablation also reaches 12/30, so the public-validator feedback edge on hard rows is small.
+
+\begin{table}[t]
+  \centering
+  \small
+  \begin{tabular}{lrrrrrr}
+    \toprule
+    Hard family & Rows & Baseline & Pure TRM & Runtime & Blind repair & Feedback repair \\
+    \midrule
+    Computed JSON schema & 6 & 3 & 5 & 5 & 5 & 5 \\
+    Deep ASCII tree & 4 & 0 & 0 & 1 & 1 & 1 \\
+    Logic label contract & 7 & 4 & 5 & 3 & 5 & 5 \\
+    Math numeric contract & 8 & 4 & 1 & 0 & 1 & 2 \\
+    State sequence array & 5 & 1 & 0 & 0 & 0 & 0 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Hard-ablation family breakdown. Schema and label contracts remain tractable; numeric and state-sequence rows expose the boundary where symbolic framing does not replace missing reasoning.}
+  \label{tab:hard-family-boundary}
+\end{table}
+
+The repair-opportunity subset sharpens the interpretation. In \texttt{mixed\_contract\_hard\_ablation30}, \texttt{metta\_runtime} failed exactly on 21 rows. Blind repair fixed 3 of those rows, while public-validator feedback repair fixed 4. This supports an environment-dependent claim rather than a universal compactification claim: MeTTa/TRM scaffolding is most useful when failure state is verifier-visible and repair is structurally constrained; it is not a substitute for the missing arithmetic, state-transition, or candidate-generation work needed by harder rows.
+
 \section{Interpretation}
 
 This supports a staged architecture. First, MeTTa and skill metadata should narrow the valid action space by environment family and verifier label. Second, static MeTTa gates should commit or veto obvious exact/no-gain states. Third, a small LLM or trained commit/veto TRM can choose ambiguous cases. Fourth, post-repair validation should be used as the final commit gate when available.

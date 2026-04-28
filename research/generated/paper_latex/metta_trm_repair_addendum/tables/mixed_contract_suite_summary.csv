@@ -1,0 +1,3 @@
+suite,rows,baseline_exact,baseline_rate,pure_trm_exact,pure_trm_rate,metta_runtime_exact,metta_runtime_rate,blind_repair_exact,blind_repair_rate,feedback_repair_exact,feedback_repair_rate,peak_child_ram_mb,jobcap_status
+mixed_contract_heldout50,50,23,0.4600,27,0.5400,32,0.6400,,,37,0.7400,2359.3008,success
+mixed_contract_hard_ablation30,30,12,0.4000,11,0.3667,9,0.3000,12,0.4000,13,0.4333,2370.9141,success

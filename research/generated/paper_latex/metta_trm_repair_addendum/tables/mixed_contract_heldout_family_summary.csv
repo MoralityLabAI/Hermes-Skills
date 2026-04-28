@@ -1,0 +1,8 @@
+family,rows,baseline_exact,pure_trm_exact,metta_runtime_exact,feedback_repair_exact
+ascii_tree,8,0,0,3,4
+boolq_choice_contract,3,0,3,3,3
+choice_contract,2,2,1,2,2
+if_summarize_judge,10,3,5,4,8
+ifeval_contract_family,14,14,13,13,13
+pydantic_adherence,10,1,5,4,4
+structured_contract,3,3,0,3,3

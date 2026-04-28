@@ -1,0 +1,77 @@
+{
+  "generated_at_utc": "2026-04-28T21:02:09.755980+00:00",
+  "route_id": "new_metta_project",
+  "project_id": "real_tool_contract_router",
+  "row_count": 36,
+  "family_counts": {
+    "repo_search": 6,
+    "file_lookup": 6,
+    "shell_safe_command": 6,
+    "scheduling_query": 6,
+    "weather_query": 6,
+    "json_argument_trap": 6
+  },
+  "validator": "research\\studies\\2026-04-28-real-tool-contract-router-seed\\validators\\validate_tool_contracts.py",
+  "tool_schemas": {
+    "repo.search": {
+      "query": "str",
+      "path": "str",
+      "case_sensitive": "bool"
+    },
+    "repo.find_files": {
+      "glob": "str",
+      "path": "str"
+    },
+    "git.log": {
+      "limit": "int",
+      "include_stat": "bool"
+    },
+    "file.read": {
+      "path": "str",
+      "max_chars": "int"
+    },
+    "shell.plan": {
+      "command": "str",
+      "purpose": "str",
+      "dry_run": "bool"
+    },
+    "calendar.create_event": {
+      "title": "str",
+      "date": "date",
+      "time": "time",
+      "duration_min": "int",
+      "timezone": "str"
+    },
+    "calendar.query": {
+      "date": "date",
+      "timezone": "str",
+      "scope": "enum:day|week"
+    },
+    "calendar.reminder": {
+      "title": "str",
+      "date": "date",
+      "time": "time",
+      "timezone": "str"
+    },
+    "weather.lookup": {
+      "location": "str",
+      "date": "date",
+      "units": "enum:metric|imperial"
+    },
+    "tool.ask_clarification": {
+      "question": "str",
+      "field": "str"
+    },
+    "tool.reject": {
+      "reason": "str",
+      "policy": "enum:destructive_shell|ambiguous_time|unsafe_advice"
+    }
+  },
+  "recommended_arms": [
+    "baseline",
+    "pure_trm",
+    "metta_runtime",
+    "metta_runtime_repair"
+  ],
+  "claim_boundary": "No live model lift yet; canonical validator smoke only."
+}

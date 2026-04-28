@@ -17,6 +17,8 @@ The full paper should wait for matched `3B`, `9B`, and `27B` benches. The curren
 | C-signature commit TRM pack | Complete locally: `122` rows, `86/16/20` train/val/holdout | Next trained TRM target for false-commit reduction |
 | C-signature post-repair verifier sweep | Complete locally with no model calls: `postrepair_exact_or_gain_gt_0` gets `1.0000` validation and holdout accuracy with `0.0000` false-commit rate | Defines the evaluator-backed multi-signal target for the commit/veto TRM |
 | Multi-env methodology lift matrix | Complete locally with no model calls: `148` rows across `9` env families; `post_multi_signal` target gets `1.0000` separability, while symbolic-only still has false-commit `0.6562` | Generalizes the C-signature result into a reusable env-adapter methodology |
+| Mixed-contract heldout50 | Complete locally with Qwen2.5-3B Q4: baseline `23/50`, pure TRM `27/50`, MeTTa runtime `32/50`, feedback repair `37/50`; job cap success | Positive compactification evidence for verifier-visible output contracts |
+| Hard mixed-contract ablation30 | Complete locally with Qwen2.5-3B Q4: baseline `12/30`, pure TRM `11/30`, MeTTa runtime `9/30`, blind repair `12/30`, feedback repair `13/30`; job cap success | Boundary evidence showing the lift shrinks on math/state/deeper-logic rows |
 | Intellect-3 logic C-signature replay | Complete post-hoc: `0.3028 -> 0.6789` exact under C-only projection | Motivation for repair/verifier gates |
 | Symbolic closure threshold suite | Complete deterministic control-plane eval | Defines compactification threshold |
 | 9B repair-training rudder | Pending Snacksack or equivalent GPU | Required before full claim |
@@ -60,6 +62,8 @@ A visible-feature policy sweep is now available at `research/studies/2026-04-22-
 A post-repair verifier sweep is now available at `research/studies/2026-04-22-metta-trm-hermes-pipeline/artifacts/c_signature_postrepair_verifier_sweep`. It shows why the verifier TRM should consume multi-signal post-repair state rather than pre-repair hints: signature completion alone still false-commits no-gain repairs, exact-only validation is too conservative, and `after_exact OR reward_delta > 0` cleanly preserves partial improvements while eliminating false commits on the current train/val/holdout split.
 
 A multi-env methodology matrix is now available at `research/studies/2026-04-22-metta-trm-hermes-pipeline/artifacts/metta_trm_methodology_lift_matrix`. It should be the bridge from "C-signature success" to paper methodology: the same before/after verifier-state schema covers tool routing, choice contracts, ASCII trees, camp-gate logic, schema JSON, literal-count IFEval, safety routing, and math as a negative control. The matrix separates score lift from target separability so math does not get overclaimed.
+
+The April 28 mixed-contract compactification results should be used as the environment-dependent bridge. `mixed_contract_heldout50` gives the positive local result: feedback repair improves exact success from `23/50` to `37/50`. `mixed_contract_hard_ablation30` gives the boundary result: feedback repair improves only from `12/30` to `13/30`, while blind repair already reaches `12/30`. The paper-safe wording is that MeTTa/TRM scaffolding helps most when observable contracts expose the failure state; it does not replace missing arithmetic, state-transition, or candidate-generation capability.
 
 The desired publishable result is not simply "MeTTa improves scores." The stronger claim is:
 

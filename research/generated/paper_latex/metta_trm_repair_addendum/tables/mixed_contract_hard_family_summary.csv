@@ -1,0 +1,6 @@
+family,rows,baseline_exact,pure_trm_exact,metta_runtime_exact,blind_repair_exact,feedback_repair_exact
+computed_json_schema,6,3,5,5,5,5
+deep_ascii_tree,4,0,0,1,1,1
+logic_label_contract,7,4,5,3,5,5
+math_numeric_contract,8,4,1,0,1,2
+state_sequence_array,5,1,0,0,0,0
