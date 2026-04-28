@@ -1,0 +1,1123 @@
+{
+  "summary": {
+    "evidence_class": "no_model_validator_smoke",
+    "rows": 12,
+    "arms": {
+      "baseline": {
+        "rows": 12,
+        "contract_valid": 2,
+        "semantic_valid": 7,
+        "exact_success": 2,
+        "contract_rate": 0.16666666666666666,
+        "semantic_rate": 0.5833333333333334,
+        "exact_rate": 0.16666666666666666
+      },
+      "metta_runtime": {
+        "rows": 12,
+        "contract_valid": 11,
+        "semantic_valid": 11,
+        "exact_success": 11,
+        "contract_rate": 0.9166666666666666,
+        "semantic_rate": 0.9166666666666666,
+        "exact_rate": 0.9166666666666666
+      },
+      "metta_runtime_repair": {
+        "rows": 12,
+        "contract_valid": 12,
+        "semantic_valid": 12,
+        "exact_success": 12,
+        "contract_rate": 1.0,
+        "semantic_rate": 1.0,
+        "exact_rate": 1.0
+      },
+      "pure_trm": {
+        "rows": 12,
+        "contract_valid": 8,
+        "semantic_valid": 10,
+        "exact_success": 8,
+        "contract_rate": 0.6666666666666666,
+        "semantic_rate": 0.8333333333333334,
+        "exact_rate": 0.6666666666666666
+      }
+    },
+    "by_family": {
+      "baseline": {
+        "ascii_tree": {
+          "rows": 2,
+          "exact_success": 0,
+          "exact_rate": 0.0
+        },
+        "boolq_choice_contract": {
+          "rows": 2,
+          "exact_success": 1,
+          "exact_rate": 0.5
+        },
+        "choice_contract": {
+          "rows": 1,
+          "exact_success": 1,
+          "exact_rate": 1.0
+        },
+        "if_summarize_judge": {
+          "rows": 2,
+          "exact_success": 0,
+          "exact_rate": 0.0
+        },
+        "ifeval_contract_family": {
+          "rows": 2,
+          "exact_success": 0,
+          "exact_rate": 0.0
+        },
+        "pydantic_adherence": {
+          "rows": 2,
+          "exact_success": 0,
+          "exact_rate": 0.0
+        },
+        "structured_contract": {
+          "rows": 1,
+          "exact_success": 0,
+          "exact_rate": 0.0
+        }
+      },
+      "metta_runtime": {
+        "ascii_tree": {
+          "rows": 2,
+          "exact_success": 2,
+          "exact_rate": 1.0
+        },
+        "boolq_choice_contract": {
+          "rows": 2,
+          "exact_success": 2,
+          "exact_rate": 1.0
+        },
+        "choice_contract": {
+          "rows": 1,
+          "exact_success": 1,
+          "exact_rate": 1.0
+        },
+        "if_summarize_judge": {
+          "rows": 2,
+          "exact_success": 1,
+          "exact_rate": 0.5
+        },
+        "ifeval_contract_family": {
+          "rows": 2,
+          "exact_success": 2,
+          "exact_rate": 1.0
+        },
+        "pydantic_adherence": {
+          "rows": 2,
+          "exact_success": 2,
+          "exact_rate": 1.0
+        },
+        "structured_contract": {
+          "rows": 1,
+          "exact_success": 1,
+          "exact_rate": 1.0
+        }
+      },
+      "metta_runtime_repair": {
+        "ascii_tree": {
+          "rows": 2,
+          "exact_success": 2,
+          "exact_rate": 1.0
+        },
+        "boolq_choice_contract": {
+          "rows": 2,
+          "exact_success": 2,
+          "exact_rate": 1.0
+        },
+        "choice_contract": {
+          "rows": 1,
+          "exact_success": 1,
+          "exact_rate": 1.0
+        },
+        "if_summarize_judge": {
+          "rows": 2,
+          "exact_success": 2,
+          "exact_rate": 1.0
+        },
+        "ifeval_contract_family": {
+          "rows": 2,
+          "exact_success": 2,
+          "exact_rate": 1.0
+        },
+        "pydantic_adherence": {
+          "rows": 2,
+          "exact_success": 2,
+          "exact_rate": 1.0
+        },
+        "structured_contract": {
+          "rows": 1,
+          "exact_success": 1,
+          "exact_rate": 1.0
+        }
+      },
+      "pure_trm": {
+        "ascii_tree": {
+          "rows": 2,
+          "exact_success": 1,
+          "exact_rate": 0.5
+        },
+        "boolq_choice_contract": {
+          "rows": 2,
+          "exact_success": 2,
+          "exact_rate": 1.0
+        },
+        "choice_contract": {
+          "rows": 1,
+          "exact_success": 0,
+          "exact_rate": 0.0
+        },
+        "if_summarize_judge": {
+          "rows": 2,
+          "exact_success": 1,
+          "exact_rate": 0.5
+        },
+        "ifeval_contract_family": {
+          "rows": 2,
+          "exact_success": 2,
+          "exact_rate": 1.0
+        },
+        "pydantic_adherence": {
+          "rows": 2,
+          "exact_success": 1,
+          "exact_rate": 0.5
+        },
+        "structured_contract": {
+          "rows": 1,
+          "exact_success": 1,
+          "exact_rate": 1.0
+        }
+      }
+    },
+    "note": "This is a deterministic validator smoke, not a model benchmark."
+  },
+  "evaluated": [
+    {
+      "row_id": "ifsum_lakebed_001",
+      "arm": "baseline",
+      "output": "Mars rover samples show ancient lakebed.",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "if_summarize_judge",
+      "contract_valid": false,
+      "semantic_valid": true,
+      "exact_success": false,
+      "details": {
+        "kind": "exact_word_count",
+        "word_count": 6,
+        "suffix_ok": true,
+        "punctuation_ok": false
+      }
+    },
+    {
+      "row_id": "ifsum_lakebed_001",
+      "arm": "pure_trm",
+      "output": "Mars rover samples reveal ancient lakebed",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "if_summarize_judge",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_word_count",
+        "word_count": 6,
+        "suffix_ok": true,
+        "punctuation_ok": true
+      }
+    },
+    {
+      "row_id": "ifsum_lakebed_001",
+      "arm": "metta_runtime",
+      "output": "Mars rover samples reveal ancient lakebed",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "if_summarize_judge",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_word_count",
+        "word_count": 6,
+        "suffix_ok": true,
+        "punctuation_ok": true
+      }
+    },
+    {
+      "row_id": "ifsum_lakebed_001",
+      "arm": "metta_runtime_repair",
+      "output": "Mars rover samples reveal ancient lakebed",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "if_summarize_judge",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_word_count",
+        "word_count": 6,
+        "suffix_ok": true,
+        "punctuation_ok": true
+      }
+    },
+    {
+      "row_id": "ifsum_gate_question_002",
+      "arm": "baseline",
+      "output": "Symbolic gates reduce invalid contract commits.",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "if_summarize_judge",
+      "contract_valid": false,
+      "semantic_valid": true,
+      "exact_success": false,
+      "details": {
+        "kind": "exact_word_count",
+        "word_count": 6,
+        "suffix_ok": false,
+        "punctuation_ok": true
+      }
+    },
+    {
+      "row_id": "ifsum_gate_question_002",
+      "arm": "pure_trm",
+      "output": "Can symbolic gates reduce invalid contract commits?",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "if_summarize_judge",
+      "contract_valid": false,
+      "semantic_valid": true,
+      "exact_success": false,
+      "details": {
+        "kind": "exact_word_count",
+        "word_count": 7,
+        "suffix_ok": true,
+        "punctuation_ok": true
+      }
+    },
+    {
+      "row_id": "ifsum_gate_question_002",
+      "arm": "metta_runtime",
+      "output": "Could symbolic gates reduce invalid commits today?",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "if_summarize_judge",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "details": {
+        "kind": "exact_word_count",
+        "word_count": 7,
+        "suffix_ok": true,
+        "punctuation_ok": true
+      }
+    },
+    {
+      "row_id": "ifsum_gate_question_002",
+      "arm": "metta_runtime_repair",
+      "output": "Could symbolic gates prevent invalid contract commits today?",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "if_summarize_judge",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_word_count",
+        "word_count": 8,
+        "suffix_ok": true,
+        "punctuation_ok": true
+      }
+    },
+    {
+      "row_id": "pyd_task_003",
+      "arm": "baseline",
+      "output": "{task: collect rows, priority: urgent, due_date: May 2, blocked: no}",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "pydantic_adherence",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "details": {
+        "kind": "json_object",
+        "parse_error": "Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
+      }
+    },
+    {
+      "row_id": "pyd_task_003",
+      "arm": "pure_trm",
+      "output": "{\"task\":\"collect rows\",\"priority\":\"high\",\"due_date\":\"2026-05-02\"}",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "pydantic_adherence",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "details": {
+        "kind": "json_object",
+        "parse_error": null,
+        "type_ok": false,
+        "values_ok": false,
+        "no_extra": true,
+        "keys": [
+          "due_date",
+          "priority",
+          "task"
+        ]
+      }
+    },
+    {
+      "row_id": "pyd_task_003",
+      "arm": "metta_runtime",
+      "output": "{\"task\":\"collect rows\",\"priority\":\"high\",\"due_date\":\"2026-05-02\",\"blocked\":false}",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "pydantic_adherence",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_object",
+        "parse_error": null,
+        "type_ok": true,
+        "values_ok": true,
+        "no_extra": true,
+        "keys": [
+          "blocked",
+          "due_date",
+          "priority",
+          "task"
+        ]
+      }
+    },
+    {
+      "row_id": "pyd_task_003",
+      "arm": "metta_runtime_repair",
+      "output": "{\"task\":\"collect rows\",\"priority\":\"high\",\"due_date\":\"2026-05-02\",\"blocked\":false}",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "pydantic_adherence",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_object",
+        "parse_error": null,
+        "type_ok": true,
+        "values_ok": true,
+        "no_extra": true,
+        "keys": [
+          "blocked",
+          "due_date",
+          "priority",
+          "task"
+        ]
+      }
+    },
+    {
+      "row_id": "pyd_verifier_004",
+      "arm": "baseline",
+      "output": "{\"name\":\"verifier\",\"retries\":\"two\",\"safe\":\"yes\"}",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "pydantic_adherence",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "details": {
+        "kind": "json_object",
+        "parse_error": null,
+        "type_ok": false,
+        "values_ok": false,
+        "no_extra": true,
+        "keys": [
+          "name",
+          "retries",
+          "safe"
+        ]
+      }
+    },
+    {
+      "row_id": "pyd_verifier_004",
+      "arm": "pure_trm",
+      "output": "{\"name\":\"verifier\",\"retries\":2,\"safe\":true}",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "pydantic_adherence",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_object",
+        "parse_error": null,
+        "type_ok": true,
+        "values_ok": true,
+        "no_extra": true,
+        "keys": [
+          "name",
+          "retries",
+          "safe"
+        ]
+      }
+    },
+    {
+      "row_id": "pyd_verifier_004",
+      "arm": "metta_runtime",
+      "output": "{\"name\":\"verifier\",\"retries\":2,\"safe\":true}",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "pydantic_adherence",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_object",
+        "parse_error": null,
+        "type_ok": true,
+        "values_ok": true,
+        "no_extra": true,
+        "keys": [
+          "name",
+          "retries",
+          "safe"
+        ]
+      }
+    },
+    {
+      "row_id": "pyd_verifier_004",
+      "arm": "metta_runtime_repair",
+      "output": "{\"name\":\"verifier\",\"retries\":2,\"safe\":true}",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "pydantic_adherence",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_object",
+        "parse_error": null,
+        "type_ok": true,
+        "values_ok": true,
+        "no_extra": true,
+        "keys": [
+          "name",
+          "retries",
+          "safe"
+        ]
+      }
+    },
+    {
+      "row_id": "ascii_flat_005",
+      "arm": "baseline",
+      "output": "root: rows, validators, results",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "ascii_tree",
+      "contract_valid": false,
+      "semantic_valid": true,
+      "exact_success": false,
+      "details": {
+        "kind": "ascii_tree_exact",
+        "actual_lines": [
+          "root: rows, validators, results"
+        ]
+      }
+    },
+    {
+      "row_id": "ascii_flat_005",
+      "arm": "pure_trm",
+      "output": "root\n|-- rows\n|-- validators\n`-- results",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "ascii_tree",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "ascii_tree_exact",
+        "actual_lines": [
+          "root",
+          "|-- rows",
+          "|-- validators",
+          "`-- results"
+        ]
+      }
+    },
+    {
+      "row_id": "ascii_flat_005",
+      "arm": "metta_runtime",
+      "output": "root\n|-- rows\n|-- validators\n`-- results",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "ascii_tree",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "ascii_tree_exact",
+        "actual_lines": [
+          "root",
+          "|-- rows",
+          "|-- validators",
+          "`-- results"
+        ]
+      }
+    },
+    {
+      "row_id": "ascii_flat_005",
+      "arm": "metta_runtime_repair",
+      "output": "root\n|-- rows\n|-- validators\n`-- results",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "ascii_tree",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "ascii_tree_exact",
+        "actual_lines": [
+          "root",
+          "|-- rows",
+          "|-- validators",
+          "`-- results"
+        ]
+      }
+    },
+    {
+      "row_id": "ascii_nested_006",
+      "arm": "baseline",
+      "output": "pipeline\n- parse\n- classify\n- commit",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "ascii_tree",
+      "contract_valid": false,
+      "semantic_valid": true,
+      "exact_success": false,
+      "details": {
+        "kind": "ascii_tree_exact",
+        "actual_lines": [
+          "pipeline",
+          "- parse",
+          "- classify",
+          "- commit"
+        ]
+      }
+    },
+    {
+      "row_id": "ascii_nested_006",
+      "arm": "pure_trm",
+      "output": "pipeline\n|-- parse\n|-- classify\n`-- commit",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "ascii_tree",
+      "contract_valid": false,
+      "semantic_valid": true,
+      "exact_success": false,
+      "details": {
+        "kind": "ascii_tree_exact",
+        "actual_lines": [
+          "pipeline",
+          "|-- parse",
+          "|-- classify",
+          "`-- commit"
+        ]
+      }
+    },
+    {
+      "row_id": "ascii_nested_006",
+      "arm": "metta_runtime",
+      "output": "pipeline\n|-- parse\n|   `-- classify\n`-- commit",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "ascii_tree",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "ascii_tree_exact",
+        "actual_lines": [
+          "pipeline",
+          "|-- parse",
+          "|   `-- classify",
+          "`-- commit"
+        ]
+      }
+    },
+    {
+      "row_id": "ascii_nested_006",
+      "arm": "metta_runtime_repair",
+      "output": "pipeline\n|-- parse\n|   `-- classify\n`-- commit",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "ascii_tree",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "ascii_tree_exact",
+        "actual_lines": [
+          "pipeline",
+          "|-- parse",
+          "|   `-- classify",
+          "`-- commit"
+        ]
+      }
+    },
+    {
+      "row_id": "ifeval_bullets_007",
+      "arm": "baseline",
+      "output": "The steps are parse, validate, and commit.",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "ifeval_contract_family",
+      "contract_valid": false,
+      "semantic_valid": true,
+      "exact_success": false,
+      "details": {
+        "kind": "bullet_list",
+        "line_count": 1,
+        "lines": [
+          "The steps are parse, validate, and commit."
+        ]
+      }
+    },
+    {
+      "row_id": "ifeval_bullets_007",
+      "arm": "pure_trm",
+      "output": "- parse\n- validate\n- commit",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "ifeval_contract_family",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "bullet_list",
+        "line_count": 3,
+        "lines": [
+          "- parse",
+          "- validate",
+          "- commit"
+        ]
+      }
+    },
+    {
+      "row_id": "ifeval_bullets_007",
+      "arm": "metta_runtime",
+      "output": "- parse\n- validate\n- commit",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "ifeval_contract_family",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "bullet_list",
+        "line_count": 3,
+        "lines": [
+          "- parse",
+          "- validate",
+          "- commit"
+        ]
+      }
+    },
+    {
+      "row_id": "ifeval_bullets_007",
+      "arm": "metta_runtime_repair",
+      "output": "- parse\n- validate\n- commit",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "ifeval_contract_family",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "bullet_list",
+        "line_count": 3,
+        "lines": [
+          "- parse",
+          "- validate",
+          "- commit"
+        ]
+      }
+    },
+    {
+      "row_id": "ifeval_json_array_008",
+      "arm": "baseline",
+      "output": "Route, Repair, Commit",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "ifeval_contract_family",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "details": {
+        "kind": "json_array",
+        "parse_error": "Expecting value: line 1 column 1 (char 0)"
+      }
+    },
+    {
+      "row_id": "ifeval_json_array_008",
+      "arm": "pure_trm",
+      "output": "[\"route\",\"repair\",\"commit\"]",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "ifeval_contract_family",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_array",
+        "parse_error": null,
+        "length_ok": true,
+        "lowercase_ok": true,
+        "values_ok": true
+      }
+    },
+    {
+      "row_id": "ifeval_json_array_008",
+      "arm": "metta_runtime",
+      "output": "[\"route\",\"repair\",\"commit\"]",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "ifeval_contract_family",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_array",
+        "parse_error": null,
+        "length_ok": true,
+        "lowercase_ok": true,
+        "values_ok": true
+      }
+    },
+    {
+      "row_id": "ifeval_json_array_008",
+      "arm": "metta_runtime_repair",
+      "output": "[\"route\",\"repair\",\"commit\"]",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "ifeval_contract_family",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "json_array",
+        "parse_error": null,
+        "length_ok": true,
+        "lowercase_ok": true,
+        "values_ok": true
+      }
+    },
+    {
+      "row_id": "boolq_nile_009",
+      "arm": "baseline",
+      "output": "Yes, true.",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "boolq_choice_contract",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "details": {
+        "kind": "exact_label",
+        "stripped": "Yes, true.",
+        "allowed": [
+          "true",
+          "false"
+        ]
+      }
+    },
+    {
+      "row_id": "boolq_nile_009",
+      "arm": "pure_trm",
+      "output": "true",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "boolq_choice_contract",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_label",
+        "stripped": "true",
+        "allowed": [
+          "true",
+          "false"
+        ]
+      }
+    },
+    {
+      "row_id": "boolq_nile_009",
+      "arm": "metta_runtime",
+      "output": "true",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "boolq_choice_contract",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_label",
+        "stripped": "true",
+        "allowed": [
+          "true",
+          "false"
+        ]
+      }
+    },
+    {
+      "row_id": "boolq_nile_009",
+      "arm": "metta_runtime_repair",
+      "output": "true",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "boolq_choice_contract",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_label",
+        "stripped": "true",
+        "allowed": [
+          "true",
+          "false"
+        ]
+      }
+    },
+    {
+      "row_id": "boolq_sky_010",
+      "arm": "baseline",
+      "output": "false",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "boolq_choice_contract",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_label",
+        "stripped": "false",
+        "allowed": [
+          "true",
+          "false"
+        ]
+      }
+    },
+    {
+      "row_id": "boolq_sky_010",
+      "arm": "pure_trm",
+      "output": "false",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "boolq_choice_contract",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_label",
+        "stripped": "false",
+        "allowed": [
+          "true",
+          "false"
+        ]
+      }
+    },
+    {
+      "row_id": "boolq_sky_010",
+      "arm": "metta_runtime",
+      "output": "false",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "boolq_choice_contract",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_label",
+        "stripped": "false",
+        "allowed": [
+          "true",
+          "false"
+        ]
+      }
+    },
+    {
+      "row_id": "boolq_sky_010",
+      "arm": "metta_runtime_repair",
+      "output": "false",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "boolq_choice_contract",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_label",
+        "stripped": "false",
+        "allowed": [
+          "true",
+          "false"
+        ]
+      }
+    },
+    {
+      "row_id": "choice_letter_011",
+      "arm": "baseline",
+      "output": "B",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "choice_contract",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_label",
+        "stripped": "B",
+        "allowed": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    },
+    {
+      "row_id": "choice_letter_011",
+      "arm": "pure_trm",
+      "output": "Commit: B",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "choice_contract",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "details": {
+        "kind": "exact_label",
+        "stripped": "Commit: B",
+        "allowed": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    },
+    {
+      "row_id": "choice_letter_011",
+      "arm": "metta_runtime",
+      "output": "B",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "choice_contract",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_label",
+        "stripped": "B",
+        "allowed": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    },
+    {
+      "row_id": "choice_letter_011",
+      "arm": "metta_runtime_repair",
+      "output": "B",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "choice_contract",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "exact_label",
+        "stripped": "B",
+        "allowed": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    },
+    {
+      "row_id": "pipe_triplet_012",
+      "arm": "baseline",
+      "output": "2026/04/28 | trm | ready",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "structured_contract",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "details": {
+        "kind": "pipe_triplet",
+        "parts": [
+          "2026/04/28 ",
+          " trm ",
+          " ready"
+        ]
+      }
+    },
+    {
+      "row_id": "pipe_triplet_012",
+      "arm": "pure_trm",
+      "output": "2026-04-28|trm|ready",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "structured_contract",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "pipe_triplet",
+        "parts": [
+          "2026-04-28",
+          "trm",
+          "ready"
+        ]
+      }
+    },
+    {
+      "row_id": "pipe_triplet_012",
+      "arm": "metta_runtime",
+      "output": "2026-04-28|trm|ready",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "structured_contract",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "pipe_triplet",
+        "parts": [
+          "2026-04-28",
+          "trm",
+          "ready"
+        ]
+      }
+    },
+    {
+      "row_id": "pipe_triplet_012",
+      "arm": "metta_runtime_repair",
+      "output": "2026-04-28|trm|ready",
+      "evidence_class": "no_model_validator_smoke",
+      "generated_at_utc": "2026-04-28T15:06:47.748880+00:00",
+      "env_family": "structured_contract",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "details": {
+        "kind": "pipe_triplet",
+        "parts": [
+          "2026-04-28",
+          "trm",
+          "ready"
+        ]
+      }
+    }
+  ]
+}

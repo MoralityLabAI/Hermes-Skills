@@ -1,0 +1,15 @@
+{
+  "generated_at_utc": "2026-04-28T15:06:47.751322+00:00",
+  "route_id": "paper_main_claim_extension",
+  "project_id": "mixed_contract_compactification",
+  "evidence_class": "no_model_validator_smoke",
+  "arms": [
+    "baseline",
+    "pure_trm",
+    "metta_runtime",
+    "metta_runtime_repair"
+  ],
+  "row_count": 12,
+  "model_calls": 0,
+  "next_live_model_requirement": "Preserve row_id, prompt, validator, and arm schema for local 3B/9B/27B comparison."
+}
