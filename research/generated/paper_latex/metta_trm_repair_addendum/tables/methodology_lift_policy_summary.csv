@@ -1,0 +1,6 @@
+policy,rows,accuracy,false_commit_rate,false_reject_rate,expected_delta_if_committed
+naive_commit_all,148,0.7838,1.0,0.0,19.634998
+pre_reward_ge_0p8,148,0.6351,0.4688,0.3362,6.976666
+post_symbolic_adapter,148,0.8581,0.6562,0.0,19.634998
+post_exact_only,148,0.8649,0.0,0.1724,18.623332
+post_multi_signal,148,1.0,0.0,0.0,20.294998

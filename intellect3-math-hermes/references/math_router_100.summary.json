@@ -1,0 +1,57 @@
+{
+  "rows": 100,
+  "gate": {
+    "exact_match_rate": 0.09,
+    "route_choice_accuracy": 0.98,
+    "avg_confidence": 1.0
+  },
+  "feature_gate": {
+    "exact_match_rate": 0.11,
+    "route_choice_accuracy": 1.0,
+    "route_sources": {
+      "math_skill": 98,
+      "math_skill_trm": 2
+    }
+  },
+  "support_gate": {
+    "exact_match_rate": 0.11,
+    "route_choice_accuracy": 1.0,
+    "route_sources": {
+      "math_skill": 98,
+      "math_skill_trm": 2
+    },
+    "selected_phrases": [
+      "with consecutive integers",
+      "two marked cells"
+    ],
+    "training_stats": {
+      "positive_rows": 2,
+      "negative_rows": 98,
+      "candidate_count": 59,
+      "selected_count": 2
+    }
+  },
+  "oracle": {
+    "exact_match_rate": 0.11,
+    "regret_rate": 0.02
+  },
+  "baselines": {
+    "math_skill_exact_match_rate": 0.09,
+    "trm_skill_exact_match_rate": 0.11
+  },
+  "route_sources": {
+    "math_skill": 100
+  },
+  "feature_route_sources": {
+    "math_skill": 98,
+    "math_skill_trm": 2
+  },
+  "support_route_sources": {
+    "math_skill": 98,
+    "math_skill_trm": 2
+  },
+  "feature_misroutes": [],
+  "support_misroutes": [],
+  "model_example_count": 100,
+  "top_k": 5
+}

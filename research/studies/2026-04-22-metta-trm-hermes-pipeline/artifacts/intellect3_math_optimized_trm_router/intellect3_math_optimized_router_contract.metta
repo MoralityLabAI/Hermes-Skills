@@ -1,0 +1,11 @@
+;; Intellect-3 math optimized TRM router contract.
+(= env_id intellect3_math_optimized_trm_router)
+(= stage_order (parse_candidates compare_trm_candidate route_commit audit_regret))
+(= metric_exact_rate answer_exact_match_rate)
+(= metric_relative_distance abs_error_div_max_abs_expected)
+(= gate_candidate_parse TRM_PARSE_INTEGER_CANDIDATES)
+(= gate_route_policy TRM_ROUTE_TRM_CANDIDATE)
+(= recommended_policy always_trm)
+(= optional_policy generic_retrieval_guard)
+(= fallback_policy retrieval_similarity_threshold)
+(= failure_taxonomy (bad_math_candidate bad_trm_candidate route_regret retrieval_overfit numeric_scale_error))

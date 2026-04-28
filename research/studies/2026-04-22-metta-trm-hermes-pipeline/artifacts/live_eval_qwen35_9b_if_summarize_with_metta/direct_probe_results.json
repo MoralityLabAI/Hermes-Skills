@@ -1,0 +1,23 @@
+{
+  "observation_excerpt": "USER: Write a one-sentence summary of the following text that contains exactly one comma. Write only the sentence, nothing else.\n\n---\n\n# Welschbillig Castle\n\nType: lowland castle\nCode: DE-RP\nCondition: ruin\nCoordinates: ",
+  "results": [
+    {
+      "action": "Welschbillig Castle is a ruin of a water castle in the municipality of Welschbillig, Germany.",
+      "reward": 0.0,
+      "done": true,
+      "failure_type": null
+    },
+    {
+      "action": "Welschbillig Castle rose over Roman remains, and later wars left it a ruin.",
+      "reward": 0.0,
+      "done": true,
+      "failure_type": null
+    },
+    {
+      "action": "Built over a Roman villa, Welschbillig Castle now survives as ruined moated fortifications.",
+      "reward": 0.0,
+      "done": true,
+      "failure_type": null
+    }
+  ]
+}

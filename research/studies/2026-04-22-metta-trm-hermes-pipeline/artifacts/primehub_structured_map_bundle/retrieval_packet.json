@@ -1,0 +1,138 @@
+{
+  "envs": {
+    "psycho_bench": {
+      "query_cues": [
+        "reply numbers from 1 to 5",
+        "index: score",
+        "BFI subscale",
+        "plain text lines only"
+      ],
+      "answer_shape": "indexed_mapping_lines",
+      "answer_shapes": [
+        "indexed_mapping_lines"
+      ],
+      "summary": "Exact plain-text lines in the form `index: score`, integer scores only, and no wrapper prose.",
+      "constraints": [
+        "emit only `index: score` lines",
+        "scores must be integers in the range 1 to 5"
+      ],
+      "forbids": [
+        "bullets, wrappers, or commentary"
+      ],
+      "minimal_example": "31: 2\n39: 3",
+      "minimal_examples": [
+        "31: 2\n39: 3"
+      ],
+      "example_status": "validated_minimal_example",
+      "validator_notes": [],
+      "validation_path": "",
+      "known_verifier_gaps": [],
+      "failure_modes": [
+        "refusal text instead of numbered lines",
+        "extra commentary around scores",
+        "non-integer values or out-of-range scores"
+      ],
+      "repair_hints": [
+        "strip all prose and emit only numbered score lines"
+      ],
+      "trace_labels": [
+        "schema_drift"
+      ],
+      "retrieval_priorities": [
+        "contract"
+      ]
+    },
+    "ascii_tree": {
+      "query_cues": [
+        "ASCII tree",
+        "<ascii_formatted>",
+        "directory hierarchy",
+        "plain ASCII structure"
+      ],
+      "answer_shape": "ascii_formatted_tree",
+      "answer_shapes": [
+        "ascii_formatted_tree"
+      ],
+      "summary": "Exact ASCII tree structure wrapped in <ascii_formatted> tags with no surrounding prose.",
+      "constraints": [
+        "wrap answer in <ascii_formatted> tags",
+        "preserve a valid ASCII tree branch structure"
+      ],
+      "forbids": [
+        "markdown fences or malformed closing tags"
+      ],
+      "minimal_example": "<ascii_formatted>\nmain\n `--child\n</ascii_formatted>",
+      "minimal_examples": [
+        "<ascii_formatted>\nmain\n `--child\n</ascii_formatted>"
+      ],
+      "example_status": "validated_minimal_example",
+      "validator_notes": [],
+      "validation_path": "",
+      "known_verifier_gaps": [],
+      "failure_modes": [
+        "missing closing </ascii_formatted> tag",
+        "extra prose before or after the tree",
+        "markdown fence leaked into final answer",
+        "wrong branch glyphs or unstable indentation"
+      ],
+      "repair_hints": [
+        "close with </ascii_formatted> and remove markdown fences"
+      ],
+      "trace_labels": [
+        "wrapper_failure"
+      ],
+      "retrieval_priorities": [
+        "output_wrapper"
+      ]
+    },
+    "pydantic_adherence": {
+      "query_cues": [
+        "return the json and nothing else",
+        "pydantic model",
+        "compatible with the model",
+        "strict JSON only"
+      ],
+      "answer_shape": "strict_json_object",
+      "answer_shapes": [
+        "strict_json_object"
+      ],
+      "summary": "Return one JSON object compatible with the provided pydantic model and nothing else. The live community verifier extracts the last JSON object and validates it with JSON-native semantics via `model_validate_json(..., strict=False)`.",
+      "constraints": [
+        "return one JSON object and nothing else",
+        "cooldown must use integer day counts or numeric strings"
+      ],
+      "forbids": [],
+      "minimal_example": "{\"policy_id\":\"11111111-1111-1111-1111-111111111111\",\"name\":\"Main\",\"max_books\":3,\"periods\":[],\"fine_policy\":{\"per_day\":1.0,\"max_total\":5.0},\"renewal_policy\":{\"max_renewals\":1,\"cooldown\":\"1\"},\"exceptions\":{},\"created_at\":\"2026-01-01T00:00:00\"}",
+      "minimal_examples": [
+        "{\"policy_id\":\"11111111-1111-1111-1111-111111111111\",\"name\":\"Main\",\"max_books\":3,\"periods\":[],\"fine_policy\":{\"per_day\":1.0,\"max_total\":5.0},\"renewal_policy\":{\"max_renewals\":1,\"cooldown\":\"1\"},\"exceptions\":{},\"created_at\":\"2026-01-01T00:00:00\"}"
+      ],
+      "example_status": "validated_minimal_example",
+      "validator_notes": [
+        "period genres must be unique",
+        "reference genre cannot exceed 7 days",
+        "fine_policy.max_total must be greater than or equal to fine_policy.per_day",
+        "renewal_policy.cooldown accepts integer day counts or numeric strings before timedelta coercion",
+        "the live scorer validates JSON-native payloads with model_validate_json(..., strict=False)"
+      ],
+      "validation_path": "extract_last_json -> json.dumps(parsed_dict) -> model.model_validate_json(serialized_payload, strict=False)",
+      "known_verifier_gaps": [
+        "historical note: before 2026-04-22, the live scorer validated the parsed Python dict directly and made UUID/datetime fields unsatisfiable from plain JSON"
+      ],
+      "failure_modes": [
+        "empty output or fallback action",
+        "markdown fences around JSON",
+        "cooldown supplied as natural language instead of integer day count",
+        "schema-violating field types or missing required keys"
+      ],
+      "repair_hints": [
+        "coerce cooldown to integer day count and re-check required fields"
+      ],
+      "trace_labels": [
+        "validator_failure"
+      ],
+      "retrieval_priorities": [
+        "validator_contract"
+      ]
+    }
+  }
+}

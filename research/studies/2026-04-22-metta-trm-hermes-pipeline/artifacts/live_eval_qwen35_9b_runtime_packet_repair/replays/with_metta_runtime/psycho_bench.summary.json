@@ -1,0 +1,34 @@
+{
+  "steps": 1,
+  "episodes": 1,
+  "per_env_steps": {
+    "psycho_bench": 1
+  },
+  "failure_types": {},
+  "model_client_fallbacks": {},
+  "bridge_fallbacks": {},
+  "trm_repairs": {},
+  "raw_invalid_actions": {},
+  "repaired_successes": {},
+  "reward_totals": {
+    "psycho_bench": 3.3483333333333336
+  },
+  "token_usage": {
+    "prompt_tokens": 1187,
+    "completion_tokens": 255,
+    "total_tokens": 1442
+  },
+  "output_statuses": {
+    "completed": 1
+  },
+  "reasoning_modes": {
+    "off": 1
+  },
+  "visible_output_emitted": {
+    "true": 1
+  },
+  "run_token_total": 1442,
+  "token_budget": null,
+  "run_id": null,
+  "export_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_runtime_packet_repair\\replays\\with_metta_runtime\\psycho_bench.jsonl"
+}

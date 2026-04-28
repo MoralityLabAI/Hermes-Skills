@@ -1,0 +1,64 @@
+{
+  "rows": 13,
+  "bucket_accuracy": 0.8462,
+  "avg_bucket_abs_error": 0.4615,
+  "visible_output_accuracy": 1.0,
+  "avg_grid_cell_accuracy_abs_error": null,
+  "per_family": {
+    "primehub_structured_map__transport_visible_output": {
+      "rows": 3,
+      "bucket_accuracy": 1.0,
+      "avg_bucket_abs_error": 0.0,
+      "visible_output_accuracy": 1.0,
+      "avg_grid_cell_accuracy_abs_error": null
+    },
+    "primehub_structured_map__task_success": {
+      "rows": 1,
+      "bucket_accuracy": 0.0,
+      "avg_bucket_abs_error": 3.0,
+      "visible_output_accuracy": 1.0,
+      "avg_grid_cell_accuracy_abs_error": null
+    },
+    "primehub_structured_map__contract_validity": {
+      "rows": 1,
+      "bucket_accuracy": 0.0,
+      "avg_bucket_abs_error": 3.0,
+      "visible_output_accuracy": 1.0,
+      "avg_grid_cell_accuracy_abs_error": null
+    },
+    "primehub_structured_map__critic_verdict_agreement": {
+      "rows": 1,
+      "bucket_accuracy": 1.0,
+      "avg_bucket_abs_error": 0.0,
+      "visible_output_accuracy": 1.0,
+      "avg_grid_cell_accuracy_abs_error": null
+    },
+    "primehub_structured_map__failure_localization": {
+      "rows": 3,
+      "bucket_accuracy": 1.0,
+      "avg_bucket_abs_error": 0.0,
+      "visible_output_accuracy": 1.0,
+      "avg_grid_cell_accuracy_abs_error": null
+    },
+    "primehub_structured_map__transport_no_fallback": {
+      "rows": 3,
+      "bucket_accuracy": 1.0,
+      "avg_bucket_abs_error": 0.0,
+      "visible_output_accuracy": 1.0,
+      "avg_grid_cell_accuracy_abs_error": null
+    },
+    "primehub_structured_map__retrieval_selection_correctness": {
+      "rows": 1,
+      "bucket_accuracy": 1.0,
+      "avg_bucket_abs_error": 0.0,
+      "visible_output_accuracy": 1.0,
+      "avg_grid_cell_accuracy_abs_error": null
+    }
+  },
+  "model_example_count": 50,
+  "train_rows": 50,
+  "eval_rows": 13,
+  "holdout_ratio": 0.2,
+  "leave_one_out": false,
+  "k": 3
+}

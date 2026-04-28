@@ -1,0 +1,12 @@
+{
+  "env_id": "if_summarize_judge",
+  "status": "repaired",
+  "original_text": "Welschbillig Castle rose over Roman remains, and later, and later wars left it a ruin.",
+  "repaired_text": "Welschbillig Castle rose over Roman remains, and later wars left it a ruin.",
+  "applied_repairs": [
+    "replaced candidate with canonical profile-shaped answer"
+  ],
+  "detected_failures": [
+    "wrong comma count"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "package_id": "if_summarize_judge_constraints",
+  "title": "IF Summarize Judge Constraint Profiles",
+  "base_skill": "primehub-constraint-summarize-hermes",
+  "trm_overlay": "trm-observability-workflow",
+  "infusion_type": "retrieve",
+  "target_envs": [
+    "if_summarize_judge"
+  ],
+  "source_files": [
+    "contracts.metta",
+    "failure_modes.metta",
+    "package.metta",
+    "profiles.metta",
+    "retrieval_policy.metta"
+  ],
+  "atom_counts": {
+    "answer-shape": 1,
+    "base-skill": 1,
+    "constraint": 3,
+    "env": 1,
+    "example-status": 1,
+    "failure-mode": 5,
+    "forbid": 2,
+    "goal": 1,
+    "minimal-example": 1,
+    "overlay": 1,
+    "owner": 1,
+    "package-id": 1,
+    "profile-constraint": 26,
+    "profile-forbid": 17,
+    "profile-minimal-example": 17,
+    "profile-query-cue": 20,
+    "profile-repair-hint": 17,
+    "profile-summary": 17,
+    "profile-trace-label": 17,
+    "query-cue": 3,
+    "repair-hint": 2,
+    "retrieval-priority": 1,
+    "summary": 1,
+    "trace-label": 1,
+    "validation-path": 1,
+    "validator-note": 3
+  },
+  "generated_at": "2026-04-23T01:44:09.246499+00:00",
+  "notes": "Profile-aware MeTTa package for constraint-family selection, verification, and deterministic repair on if_summarize_judge."
+}

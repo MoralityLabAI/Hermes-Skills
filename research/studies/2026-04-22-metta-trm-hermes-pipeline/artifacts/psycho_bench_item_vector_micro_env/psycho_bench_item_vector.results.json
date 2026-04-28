@@ -1,0 +1,87 @@
+{
+  "env_id": "psycho_bench_item_vector_micro_env",
+  "source_paths": {
+    "without_metta": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_with_vs_without_metta_richer_packet\\replays\\without_metta\\psycho_bench.jsonl",
+    "with_metta": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_with_vs_without_metta_richer_packet\\replays\\with_metta\\psycho_bench.jsonl"
+  },
+  "generated_at_utc": "2026-04-26T01:05:47.986396+00:00",
+  "expected_items": 44,
+  "without_metta": {
+    "reward": 3.328333333333333,
+    "valid_action": true,
+    "item_count": 44,
+    "missing_items": [],
+    "extra_items": [],
+    "format_pass": true,
+    "mean_score": 3.204545,
+    "score_histogram": {
+      "3": 25,
+      "4": 14,
+      "2": 5
+    }
+  },
+  "with_metta": {
+    "reward": 3.331111111111111,
+    "valid_action": true,
+    "item_count": 44,
+    "missing_items": [],
+    "extra_items": [],
+    "format_pass": true,
+    "mean_score": 3.113636,
+    "score_histogram": {
+      "3": 29,
+      "4": 10,
+      "2": 5
+    }
+  },
+  "reward_delta": 0.002778,
+  "changed_item_count": 4,
+  "changed_items": [
+    {
+      "index": 22,
+      "without_metta": 4,
+      "with_metta": 3,
+      "delta": -1
+    },
+    {
+      "index": 9,
+      "without_metta": 4,
+      "with_metta": 3,
+      "delta": -1
+    },
+    {
+      "index": 24,
+      "without_metta": 4,
+      "with_metta": 3,
+      "delta": -1
+    },
+    {
+      "index": 11,
+      "without_metta": 4,
+      "with_metta": 3,
+      "delta": -1
+    }
+  ],
+  "without_subscales": {
+    "extraversion": 3.125,
+    "agreeableness": 4.0,
+    "conscientiousness": 3.666667,
+    "neuroticism": 2.75,
+    "openness": 3.1
+  },
+  "with_subscales": {
+    "extraversion": 3.0,
+    "agreeableness": 3.888889,
+    "conscientiousness": 3.666667,
+    "neuroticism": 3.0,
+    "openness": 3.1
+  },
+  "subscale_deltas": {
+    "agreeableness": -0.111111,
+    "conscientiousness": 0.0,
+    "extraversion": -0.125,
+    "neuroticism": 0.25,
+    "openness": 0.0
+  },
+  "read": "This env turns a tiny aggregate PsychoBench reward shift into contract checks plus item/subscale deltas. It is useful for studying whether MeTTa changes stable latent-profile structure or just nudges individual answers."
+}

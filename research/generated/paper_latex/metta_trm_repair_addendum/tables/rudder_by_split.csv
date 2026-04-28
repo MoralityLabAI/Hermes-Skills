@@ -1,0 +1,7 @@
+arm,split,n,target_action_accuracy,repair_action_accuracy,joint_accuracy
+raw_3b_rudder,holdout_seen,36,0.7222,0.5556,0.5
+raw_3b_rudder,holdout_unseen_family,18,0.5,0.0,0.0
+raw_3b_rudder,val_seen,34,0.8235,0.4706,0.4118
+repair_training_rudder,holdout_seen,36,0.7222,0.4444,0.4167
+repair_training_rudder,holdout_unseen_family,18,0.8889,0.0,0.0
+repair_training_rudder,val_seen,34,0.8235,0.4118,0.3824

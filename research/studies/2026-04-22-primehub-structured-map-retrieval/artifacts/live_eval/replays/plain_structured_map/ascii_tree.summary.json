@@ -1,0 +1,33 @@
+{
+  "steps": 1,
+  "episodes": 1,
+  "per_env_steps": {
+    "ascii_tree": 1
+  },
+  "failure_types": {},
+  "model_client_fallbacks": {
+    "total": 1,
+    "ascii_tree": 1
+  },
+  "bridge_fallbacks": {},
+  "trm_repairs": {},
+  "raw_invalid_actions": {},
+  "repaired_successes": {},
+  "reward_totals": {
+    "ascii_tree": 0.0
+  },
+  "token_usage": {},
+  "output_statuses": {
+    "openai_request_error: timed out": 1
+  },
+  "reasoning_modes": {
+    "off": 1
+  },
+  "visible_output_emitted": {
+    "false": 1
+  },
+  "run_token_total": 0,
+  "token_budget": null,
+  "run_id": null,
+  "export_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-primehub-structured-map-retrieval\\artifacts\\live_eval\\replays\\plain_structured_map\\ascii_tree.jsonl"
+}

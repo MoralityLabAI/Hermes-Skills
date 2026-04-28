@@ -1,0 +1,45 @@
+{
+  "envs": {
+    "psycho_bench": {
+      "failure_modes": [
+        "refusal text instead of numbered lines",
+        "extra commentary around scores",
+        "non-integer values or out-of-range scores"
+      ],
+      "trace_labels": [
+        "schema_drift"
+      ],
+      "repair_hints": [
+        "strip all prose and emit only numbered score lines"
+      ]
+    },
+    "ascii_tree": {
+      "failure_modes": [
+        "missing closing </ascii_formatted> tag",
+        "extra prose before or after the tree",
+        "markdown fence leaked into final answer",
+        "wrong branch glyphs or unstable indentation"
+      ],
+      "trace_labels": [
+        "wrapper_failure"
+      ],
+      "repair_hints": [
+        "close with </ascii_formatted> and remove markdown fences"
+      ]
+    },
+    "pydantic_adherence": {
+      "failure_modes": [
+        "empty output or fallback action",
+        "markdown fences around JSON",
+        "cooldown supplied as natural language instead of integer day count",
+        "schema-violating field types or missing required keys"
+      ],
+      "trace_labels": [
+        "validator_failure"
+      ],
+      "repair_hints": [
+        "coerce cooldown to integer day count and re-check required fields"
+      ]
+    }
+  }
+}

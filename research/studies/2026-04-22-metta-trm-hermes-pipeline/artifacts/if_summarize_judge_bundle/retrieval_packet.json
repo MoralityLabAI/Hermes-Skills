@@ -1,0 +1,442 @@
+{
+  "envs": {
+    "if_summarize_judge": {
+      "query_cues": [
+        "classify exact structural family first",
+        "word count sentence count punctuation casing wrappers",
+        "headline hashtags xml bullets question answer"
+      ],
+      "answer_shape": "constraint_conditioned_summary",
+      "answer_shapes": [
+        "constraint_conditioned_summary"
+      ],
+      "summary": "Infer the requested structural family from the instruction, then emit only a structure-conforming summary with no extra prose.",
+      "constraints": [
+        "classify the active constraint family before writing the answer",
+        "satisfy exact counts, delimiters, wrappers, and casing literally",
+        "emit only the constrained summary text"
+      ],
+      "forbids": [
+        "prefaces, explanations, or code fences",
+        "extra lines outside the requested family"
+      ],
+      "minimal_example": "Welschbillig Castle rose over Roman remains, and later wars left it a ruin.",
+      "minimal_examples": [
+        "Welschbillig Castle rose over Roman remains, and later wars left it a ruin."
+      ],
+      "example_status": "validated_minimal_example",
+      "validator_notes": [
+        "the judge is strict on structure and lenient on content quality",
+        "exactly N means exact word, sentence, bullet, or hashtag counts",
+        "or fewer means less than or equal to the stated limit"
+      ],
+      "validation_path": "infer constraint family from observation -> enforce exact structural rules -> remote judge checks compliance and is lenient on content quality",
+      "known_verifier_gaps": [],
+      "failure_modes": [
+        "empty output or fallback action",
+        "correct topic but wrong structural family",
+        "wrong exact count for words, sentences, bullets, or hashtags",
+        "wrong punctuation, casing, or wrapper tags",
+        "extra explanation around an otherwise valid constrained answer"
+      ],
+      "repair_hints": [
+        "classify the family first, then rewrite to the canonical minimal structure for that family",
+        "prefer the smallest structurally valid answer over verbose content preservation"
+      ],
+      "trace_labels": [
+        "constraint_family_failure"
+      ],
+      "retrieval_priorities": [
+        "constraint_profile"
+      ],
+      "profiles": {
+        "exact_5_words": {
+          "query_cues": [
+            "exactly 5 words"
+          ],
+          "summary": "Return exactly five words and nothing else.",
+          "constraints": [
+            "output exactly five words"
+          ],
+          "forbids": [
+            "extra sixth word or trailing punctuation commentary"
+          ],
+          "minimal_example": "Castle ruins mark Roman past",
+          "minimal_examples": [
+            "Castle ruins mark Roman past"
+          ],
+          "repair_hints": [
+            "trim or pad to exactly five words"
+          ],
+          "trace_labels": [
+            "exact_word_count_failure"
+          ]
+        },
+        "single_question": {
+          "query_cues": [
+            "single question"
+          ],
+          "summary": "Return one question sentence only.",
+          "constraints": [
+            "end with exactly one question mark"
+          ],
+          "forbids": [
+            "answer sentence after the question"
+          ],
+          "minimal_example": "How did a Roman villa become castle ruins?",
+          "minimal_examples": [
+            "How did a Roman villa become castle ruins?"
+          ],
+          "repair_hints": [
+            "collapse to one question sentence"
+          ],
+          "trace_labels": [
+            "question_wrapper_failure"
+          ]
+        },
+        "alpha_start_3sent": {
+          "query_cues": [
+            "different letter of the alphabet"
+          ],
+          "summary": "Return exactly three sentences, each starting with a different letter.",
+          "constraints": [
+            "emit exactly three sentences",
+            "start the three sentences with different letters"
+          ],
+          "forbids": [
+            "two-sentence or same-letter output"
+          ],
+          "minimal_example": "Ancient Roman roots shaped the site. Bold walls later strengthened the castle. Conflict finally left ruins.",
+          "minimal_examples": [
+            "Ancient Roman roots shaped the site. Bold walls later strengthened the castle. Conflict finally left ruins."
+          ],
+          "repair_hints": [
+            "normalize to three short sentences with distinct starting letters"
+          ],
+          "trace_labels": [
+            "alpha_sentence_family_failure"
+          ]
+        },
+        "exact_10w_bullets": {
+          "query_cues": [
+            "exactly 2 bullet points",
+            "each bullet must be exactly 10 words"
+          ],
+          "summary": "Return exactly two bullet points and make each bullet exactly ten words.",
+          "constraints": [
+            "emit exactly two bullet lines",
+            "make each bullet exactly ten words"
+          ],
+          "forbids": [
+            "paragraph text instead of bullets"
+          ],
+          "minimal_example": "- Roman villa roots later supported a fortified regional castle complex.\n- French attacks destroyed defenses, leaving moats, towers, and ruins visible.",
+          "minimal_examples": [
+            "- Roman villa roots later supported a fortified regional castle complex.\n- French attacks destroyed defenses, leaving moats, towers, and ruins visible."
+          ],
+          "repair_hints": [
+            "repair to two bullets with ten words each"
+          ],
+          "trace_labels": [
+            "bullet_word_count_failure"
+          ]
+        },
+        "exclamation_ends": {
+          "query_cues": [
+            "every sentence ends with an exclamation mark"
+          ],
+          "summary": "Return two or three sentences and end every sentence with an exclamation mark.",
+          "constraints": [
+            "use only two or three sentences",
+            "end every sentence with !"
+          ],
+          "forbids": [
+            "period or question ending"
+          ],
+          "minimal_example": "Roman villa roots shaped this castle! Later wars left the site in ruins!",
+          "minimal_examples": [
+            "Roman villa roots shaped this castle! Later wars left the site in ruins!"
+          ],
+          "repair_hints": [
+            "normalize sentence endings to !"
+          ],
+          "trace_labels": [
+            "sentence_ending_failure"
+          ]
+        },
+        "exact_15_words": {
+          "query_cues": [
+            "exactly 15 words"
+          ],
+          "summary": "Return one sentence of exactly fifteen words.",
+          "constraints": [
+            "emit exactly fifteen words"
+          ],
+          "forbids": [
+            "wrong exact word count"
+          ],
+          "minimal_example": "Roman villa remains beneath Welschbillig Castle reveal centuries of fortification, war, rebuilding, and eventual ruin.",
+          "minimal_examples": [
+            "Roman villa remains beneath Welschbillig Castle reveal centuries of fortification, war, rebuilding, and eventual ruin."
+          ],
+          "repair_hints": [
+            "trim or pad to exactly fifteen words"
+          ],
+          "trace_labels": [
+            "exact_word_count_failure"
+          ]
+        },
+        "3_keywords": {
+          "query_cues": [
+            "exactly 3 keywords or key phrases"
+          ],
+          "summary": "Return exactly three keywords or key phrases separated by commas.",
+          "constraints": [
+            "emit exactly three comma-separated keywords or short key phrases"
+          ],
+          "forbids": [
+            "sentence or list with more than three items"
+          ],
+          "minimal_example": "Roman villa, fortified castle, ruins",
+          "minimal_examples": [
+            "Roman villa, fortified castle, ruins"
+          ],
+          "repair_hints": [
+            "compress to three comma-separated keywords"
+          ],
+          "trace_labels": [
+            "keyword_count_failure"
+          ]
+        },
+        "dictionary_def": {
+          "query_cues": [
+            "dictionary definition",
+            "subject name in bold"
+          ],
+          "summary": "Return a bolded subject, a colon, and one dictionary-style definition sentence.",
+          "constraints": [
+            "start with a bolded subject name followed by a colon",
+            "use one sentence only"
+          ],
+          "forbids": [
+            "missing bold subject or colon"
+          ],
+          "minimal_example": "**Welschbillig Castle**: a ruined fortified site built over a former Roman villa in Rhineland-Palatinate.",
+          "minimal_examples": [
+            "**Welschbillig Castle**: a ruined fortified site built over a former Roman villa in Rhineland-Palatinate."
+          ],
+          "repair_hints": [
+            "restore bold subject + colon definition wrapper"
+          ],
+          "trace_labels": [
+            "definition_wrapper_failure"
+          ]
+        },
+        "question_answer": {
+          "query_cues": [
+            "first sentence must be a question and the second must answer it"
+          ],
+          "summary": "Return exactly two sentences: first a question, then its answer.",
+          "constraints": [
+            "emit exactly two sentences",
+            "make the first sentence a question"
+          ],
+          "forbids": [
+            "single sentence or wrong question-answer order"
+          ],
+          "minimal_example": "What is Welschbillig Castle? It is a ruined fortified site built over a former Roman villa.",
+          "minimal_examples": [
+            "What is Welschbillig Castle? It is a ruined fortified site built over a former Roman villa."
+          ],
+          "repair_hints": [
+            "normalize to a question sentence followed by one answer sentence"
+          ],
+          "trace_labels": [
+            "question_answer_family_failure"
+          ]
+        },
+        "simple_syllables": {
+          "query_cues": [
+            "only words of 2 syllables or fewer"
+          ],
+          "summary": "Return one short summary under forty words using simple low-syllable wording.",
+          "constraints": [
+            "keep the summary under forty words"
+          ],
+          "forbids": [
+            "long technical wording"
+          ],
+          "minimal_example": "Old fort rose on Roman land and now stands as a moat ringed ruin.",
+          "minimal_examples": [
+            "Old fort rose on Roman land and now stands as a moat ringed ruin."
+          ],
+          "repair_hints": [
+            "rewrite with short simple words under forty total words"
+          ],
+          "trace_labels": [
+            "simple_wording_failure"
+          ]
+        },
+        "if_then": {
+          "query_cues": [
+            "\"If... then...\" statement"
+          ],
+          "summary": "Return one sentence in explicit If... then... form.",
+          "constraints": [
+            "start with If and include then"
+          ],
+          "forbids": [
+            "missing if-then structure"
+          ],
+          "minimal_example": "If rulers strengthened the castle for defense, then later wars left the site in ruins.",
+          "minimal_examples": [
+            "If rulers strengthened the castle for defense, then later wars left the site in ruins."
+          ],
+          "repair_hints": [
+            "restore explicit If... then... sentence form"
+          ],
+          "trace_labels": [
+            "if_then_structure_failure"
+          ]
+        },
+        "4_hashtags": {
+          "query_cues": [
+            "exactly 4 hashtags"
+          ],
+          "summary": "Return exactly four hashtags separated by spaces.",
+          "constraints": [
+            "emit exactly four space-separated hashtags"
+          ],
+          "forbids": [
+            "plain words instead of hashtags"
+          ],
+          "minimal_example": "#RomanVilla #CastleRuins #MoatedFort #FrenchWar",
+          "minimal_examples": [
+            "#RomanVilla #CastleRuins #MoatedFort #FrenchWar"
+          ],
+          "repair_hints": [
+            "compress to exactly four hashtags"
+          ],
+          "trace_labels": [
+            "hashtag_count_failure"
+          ]
+        },
+        "one_comma": {
+          "query_cues": [
+            "exactly one comma"
+          ],
+          "summary": "Return one sentence containing exactly one comma.",
+          "constraints": [
+            "emit exactly one sentence",
+            "use exactly one comma"
+          ],
+          "forbids": [
+            "zero commas or multiple commas"
+          ],
+          "minimal_example": "Welschbillig Castle rose over Roman remains, and later wars left it a ruin.",
+          "minimal_examples": [
+            "Welschbillig Castle rose over Roman remains, and later wars left it a ruin."
+          ],
+          "repair_hints": [
+            "normalize to one sentence with exactly one comma"
+          ],
+          "trace_labels": [
+            "comma_count_failure"
+          ]
+        },
+        "decreasing_length": {
+          "query_cues": [
+            "each sentence must be shorter than the previous one"
+          ],
+          "summary": "Return exactly three sentences, each shorter than the previous one.",
+          "constraints": [
+            "emit exactly three sentences",
+            "make each sentence shorter than the one before it"
+          ],
+          "forbids": [
+            "flat or increasing sentence lengths"
+          ],
+          "minimal_example": "Roman villa remains later supported a fortified castle. Wars shattered the defenses. Ruins remain.",
+          "minimal_examples": [
+            "Roman villa remains later supported a fortified castle. Wars shattered the defenses. Ruins remain."
+          ],
+          "repair_hints": [
+            "rebuild three sentences in strictly decreasing lengths"
+          ],
+          "trace_labels": [
+            "sentence_length_order_failure"
+          ]
+        },
+        "newspaper_headline": {
+          "query_cues": [
+            "newspaper headline",
+            "ALL CAPS, no period, under 12 words"
+          ],
+          "summary": "Return an ALL-CAPS headline under twelve words with no period.",
+          "constraints": [
+            "emit one ALL-CAPS headline",
+            "keep it under twelve words and omit the final period"
+          ],
+          "forbids": [
+            "lowercase headline or trailing period"
+          ],
+          "minimal_example": "ROMAN ROOTS SHAPE WELSCHBILLIG CASTLE RUINS",
+          "minimal_examples": [
+            "ROMAN ROOTS SHAPE WELSCHBILLIG CASTLE RUINS"
+          ],
+          "repair_hints": [
+            "uppercase the headline and remove the final period"
+          ],
+          "trace_labels": [
+            "headline_wrapper_failure"
+          ]
+        },
+        "increasing_length": {
+          "query_cues": [
+            "each sentence must be longer than the previous one"
+          ],
+          "summary": "Return exactly three sentences, each longer than the previous one.",
+          "constraints": [
+            "emit exactly three sentences",
+            "make each sentence longer than the one before it"
+          ],
+          "forbids": [
+            "flat or decreasing sentence lengths"
+          ],
+          "minimal_example": "Ruins remain. Roman villa roots shaped the castle. Later wars shattered its defenses and left moats and towers behind.",
+          "minimal_examples": [
+            "Ruins remain. Roman villa roots shaped the castle. Later wars shattered its defenses and left moats and towers behind."
+          ],
+          "repair_hints": [
+            "rebuild three sentences in strictly increasing lengths"
+          ],
+          "trace_labels": [
+            "sentence_length_order_failure"
+          ]
+        },
+        "xml_word_tags": {
+          "query_cues": [
+            "wrap every word in XML tags numbered sequentially"
+          ],
+          "summary": "Return one sentence and wrap every word in numbered XML word tags.",
+          "constraints": [
+            "wrap every word as <wN>word</wN>"
+          ],
+          "forbids": [
+            "plain sentence without numbered XML tags"
+          ],
+          "minimal_example": "<w1>Roman</w1> <w2>villa</w2> <w3>roots</w3> <w4>later</w4> <w5>supported</w5> <w6>the</w6> <w7>castle</w7> <w8>ruins.</w8>",
+          "minimal_examples": [
+            "<w1>Roman</w1> <w2>villa</w2> <w3>roots</w3> <w4>later</w4> <w5>supported</w5> <w6>the</w6> <w7>castle</w7> <w8>ruins.</w8>"
+          ],
+          "repair_hints": [
+            "rewrap the sentence so every word has a numbered XML tag"
+          ],
+          "trace_labels": [
+            "xml_wrapper_failure"
+          ]
+        }
+      }
+    }
+  }
+}

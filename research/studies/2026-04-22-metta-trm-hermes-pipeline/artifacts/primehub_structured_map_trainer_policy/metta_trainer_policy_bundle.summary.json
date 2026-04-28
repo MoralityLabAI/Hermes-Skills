@@ -1,0 +1,97 @@
+{
+  "bundle_dir": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_structured_map_bundle",
+  "scorecard_dir": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_structured_map_multisignal",
+  "cluster_id": "structured_map",
+  "trainer_policy": {
+    "policy_name": "format_support_trainer_policy",
+    "support_tier": "format_support",
+    "routing_strength": "moderate",
+    "exact_positive_weight": 2.2,
+    "near_miss_weight": 1.75,
+    "weak_positive_weight": 1.0,
+    "negative_weight": 0.15,
+    "min_supervision_weight": 0.35,
+    "top_k": 4,
+    "enabled_signals": [
+      "contract_family_match",
+      "contract_validity",
+      "critic_verdict_agreement",
+      "failure_localization",
+      "profile_selection_correctness",
+      "repair_success",
+      "retrieval_selection_correctness",
+      "task_success",
+      "transport_no_fallback",
+      "transport_visible_output"
+    ],
+    "signal_weights": {
+      "contract_family_match": 1.25,
+      "contract_validity": 1.5,
+      "critic_verdict_agreement": 1.0,
+      "failure_localization": 1.1,
+      "profile_selection_correctness": 1.35,
+      "repair_success": 1.55,
+      "retrieval_selection_correctness": 1.35,
+      "task_success": 1.15,
+      "transport_no_fallback": 0.8,
+      "transport_visible_output": 0.8
+    }
+  },
+  "row_count": 63,
+  "avg_supervision_weight": 1.5195,
+  "bucket_counts": {
+    "exact_positive": 18,
+    "weak_positive": 33,
+    "negative": 6,
+    "near_miss": 6
+  },
+  "task_family_counts": {
+    "primehub_structured_map__retrieval_selection_correctness": 3,
+    "primehub_structured_map__contract_family_match": 3,
+    "primehub_structured_map__transport_visible_output": 12,
+    "primehub_structured_map__transport_no_fallback": 12,
+    "primehub_structured_map__task_success": 9,
+    "primehub_structured_map__contract_validity": 9,
+    "primehub_structured_map__critic_verdict_agreement": 6,
+    "primehub_structured_map__failure_localization": 6,
+    "primehub_structured_map__repair_success": 3
+  },
+  "signal_counts": {
+    "retrieval_selection_correctness": 3,
+    "contract_family_match": 3,
+    "transport_visible_output": 12,
+    "transport_no_fallback": 12,
+    "task_success": 9,
+    "contract_validity": 9,
+    "critic_verdict_agreement": 6,
+    "failure_localization": 6,
+    "repair_success": 3
+  },
+  "signal_positive_counts": {
+    "retrieval_selection_correctness": 3,
+    "contract_family_match": 3,
+    "transport_visible_output": 12,
+    "transport_no_fallback": 12,
+    "task_success": 6,
+    "contract_validity": 6,
+    "critic_verdict_agreement": 6,
+    "failure_localization": 6,
+    "repair_success": 3
+  },
+  "signal_negative_counts": {
+    "task_success": 3,
+    "contract_validity": 3
+  },
+  "channel_counts": {
+    "selection": 6,
+    "transport": 24,
+    "success": 18,
+    "critic": 6,
+    "repair": 9
+  },
+  "support_role_counts": {
+    "selection_support": 12,
+    "critic_verify": 33,
+    "repair_support": 18
+  }
+}

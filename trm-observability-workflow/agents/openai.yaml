@@ -1,0 +1,4 @@
+interface:
+  display_name: "TRM Observability Workflow"
+  short_description: "Harness sync and TRM data loop"
+  default_prompt: "Use $trm-observability-workflow to sync the harness, collect teacher traces, build TRM rows, merge corpora, and benchmark logic/math loops."

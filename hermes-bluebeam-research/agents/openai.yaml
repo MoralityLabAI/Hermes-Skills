@@ -1,0 +1,4 @@
+interface:
+  display_name: "Hermes BlueBeam Research"
+  short_description: "Local BlueBeam research loop runner"
+  default_prompt: "Use $hermes-bluebeam-research to resume the local BlueBeam-Research loop, inspect current artifacts, and continue budgeted experiments."

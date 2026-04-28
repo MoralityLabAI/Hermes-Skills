@@ -1,0 +1,69 @@
+{
+  "rows": 13,
+  "exact_match_rate": 0.6154,
+  "nonempty_prediction_rate": 1.0,
+  "avg_similarity": 0.8099,
+  "avg_grid_cell_accuracy": null,
+  "per_family": {
+    "primehub_structured_map__transport_visible_output": {
+      "rows": 3,
+      "exact_match_rate": 1.0,
+      "nonempty_prediction_rate": 1.0,
+      "avg_similarity": 0.6907,
+      "avg_grid_cell_accuracy": null
+    },
+    "primehub_structured_map__task_success": {
+      "rows": 1,
+      "exact_match_rate": 0.0,
+      "nonempty_prediction_rate": 1.0,
+      "avg_similarity": 1.1205,
+      "avg_grid_cell_accuracy": null
+    },
+    "primehub_structured_map__contract_validity": {
+      "rows": 1,
+      "exact_match_rate": 0.0,
+      "nonempty_prediction_rate": 1.0,
+      "avg_similarity": 1.2124,
+      "avg_grid_cell_accuracy": null
+    },
+    "primehub_structured_map__critic_verdict_agreement": {
+      "rows": 1,
+      "exact_match_rate": 1.0,
+      "nonempty_prediction_rate": 1.0,
+      "avg_similarity": 0.9885,
+      "avg_grid_cell_accuracy": null
+    },
+    "primehub_structured_map__failure_localization": {
+      "rows": 3,
+      "exact_match_rate": 0.3333,
+      "nonempty_prediction_rate": 1.0,
+      "avg_similarity": 0.6012,
+      "avg_grid_cell_accuracy": null
+    },
+    "primehub_structured_map__transport_no_fallback": {
+      "rows": 3,
+      "exact_match_rate": 1.0,
+      "nonempty_prediction_rate": 1.0,
+      "avg_similarity": 0.8693,
+      "avg_grid_cell_accuracy": null
+    },
+    "primehub_structured_map__retrieval_selection_correctness": {
+      "rows": 1,
+      "exact_match_rate": 0.0,
+      "nonempty_prediction_rate": 1.0,
+      "avg_similarity": 0.7236,
+      "avg_grid_cell_accuracy": null
+    }
+  },
+  "model_example_count": 46,
+  "train_rows": 50,
+  "eval_rows": 13,
+  "holdout_ratio": 0.2,
+  "leave_one_out": false,
+  "include_buckets": [
+    "exact_positive",
+    "near_miss",
+    "weak_positive"
+  ],
+  "min_supervision_weight": 0.2
+}

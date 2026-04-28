@@ -1,0 +1,16 @@
+{
+  "package_id": "if_summarize_judge_constraints",
+  "title": "IF Summarize Judge Constraint Profiles",
+  "base_skill": "primehub-constraint-summarize-hermes",
+  "trm_overlay": "trm-observability-workflow",
+  "infusion_type": "retrieve",
+  "target_envs": [
+    "if_summarize_judge"
+  ],
+  "bundle_outputs": [
+    "retrieval_packet",
+    "critic_hints",
+    "trace_labels"
+  ],
+  "notes": "Profile-aware MeTTa package for constraint-family selection, verification, and deterministic repair on if_summarize_judge."
+}

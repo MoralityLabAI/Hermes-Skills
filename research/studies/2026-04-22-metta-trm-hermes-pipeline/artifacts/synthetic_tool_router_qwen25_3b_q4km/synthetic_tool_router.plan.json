@@ -1,0 +1,13 @@
+{
+  "training_task_id": "synthetic-tool-router-metta-trm-gates",
+  "checkpoint_interval": "per_case_arm",
+  "chunk_strategy": "three cases; model call for raw/runtime; deterministic MeTTa/TRM repair gate",
+  "caps_expected": {
+    "ram_mb": 2048,
+    "cpu_pct": 50,
+    "io_mb_s": 50
+  },
+  "model_path": "D:\\Research_Engine\\models\\Qwen2.5-3B-Instruct-GGUF\\qwen2.5-3b-instruct-q4_k_m.gguf",
+  "llama_completion": "D:\\Research_Engine\\tools\\llama.cpp-b8922-cuda12.4\\llama-completion.exe",
+  "created_at_utc": "2026-04-25T21:34:14.355881+00:00"
+}

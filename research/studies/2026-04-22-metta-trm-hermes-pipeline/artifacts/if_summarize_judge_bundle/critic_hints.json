@@ -1,0 +1,202 @@
+{
+  "envs": {
+    "if_summarize_judge": {
+      "required_shape": "constraint_conditioned_summary",
+      "checks": [
+        "classify the active constraint family before writing the answer",
+        "satisfy exact counts, delimiters, wrappers, and casing literally",
+        "emit only the constrained summary text",
+        "prefaces, explanations, or code fences",
+        "extra lines outside the requested family",
+        "the judge is strict on structure and lenient on content quality",
+        "exactly N means exact word, sentence, bullet, or hashtag counts",
+        "or fewer means less than or equal to the stated limit"
+      ],
+      "repair_hints": [
+        "classify the family first, then rewrite to the canonical minimal structure for that family",
+        "prefer the smallest structurally valid answer over verbose content preservation"
+      ],
+      "profiles": {
+        "exact_5_words": {
+          "checks": [
+            "output exactly five words",
+            "extra sixth word or trailing punctuation commentary"
+          ],
+          "repair_hints": [
+            "trim or pad to exactly five words"
+          ],
+          "summary": "Return exactly five words and nothing else."
+        },
+        "single_question": {
+          "checks": [
+            "end with exactly one question mark",
+            "answer sentence after the question"
+          ],
+          "repair_hints": [
+            "collapse to one question sentence"
+          ],
+          "summary": "Return one question sentence only."
+        },
+        "alpha_start_3sent": {
+          "checks": [
+            "emit exactly three sentences",
+            "start the three sentences with different letters",
+            "two-sentence or same-letter output"
+          ],
+          "repair_hints": [
+            "normalize to three short sentences with distinct starting letters"
+          ],
+          "summary": "Return exactly three sentences, each starting with a different letter."
+        },
+        "exact_10w_bullets": {
+          "checks": [
+            "emit exactly two bullet lines",
+            "make each bullet exactly ten words",
+            "paragraph text instead of bullets"
+          ],
+          "repair_hints": [
+            "repair to two bullets with ten words each"
+          ],
+          "summary": "Return exactly two bullet points and make each bullet exactly ten words."
+        },
+        "exclamation_ends": {
+          "checks": [
+            "use only two or three sentences",
+            "end every sentence with !",
+            "period or question ending"
+          ],
+          "repair_hints": [
+            "normalize sentence endings to !"
+          ],
+          "summary": "Return two or three sentences and end every sentence with an exclamation mark."
+        },
+        "exact_15_words": {
+          "checks": [
+            "emit exactly fifteen words",
+            "wrong exact word count"
+          ],
+          "repair_hints": [
+            "trim or pad to exactly fifteen words"
+          ],
+          "summary": "Return one sentence of exactly fifteen words."
+        },
+        "3_keywords": {
+          "checks": [
+            "emit exactly three comma-separated keywords or short key phrases",
+            "sentence or list with more than three items"
+          ],
+          "repair_hints": [
+            "compress to three comma-separated keywords"
+          ],
+          "summary": "Return exactly three keywords or key phrases separated by commas."
+        },
+        "dictionary_def": {
+          "checks": [
+            "start with a bolded subject name followed by a colon",
+            "use one sentence only",
+            "missing bold subject or colon"
+          ],
+          "repair_hints": [
+            "restore bold subject + colon definition wrapper"
+          ],
+          "summary": "Return a bolded subject, a colon, and one dictionary-style definition sentence."
+        },
+        "question_answer": {
+          "checks": [
+            "emit exactly two sentences",
+            "make the first sentence a question",
+            "single sentence or wrong question-answer order"
+          ],
+          "repair_hints": [
+            "normalize to a question sentence followed by one answer sentence"
+          ],
+          "summary": "Return exactly two sentences: first a question, then its answer."
+        },
+        "simple_syllables": {
+          "checks": [
+            "keep the summary under forty words",
+            "long technical wording"
+          ],
+          "repair_hints": [
+            "rewrite with short simple words under forty total words"
+          ],
+          "summary": "Return one short summary under forty words using simple low-syllable wording."
+        },
+        "if_then": {
+          "checks": [
+            "start with If and include then",
+            "missing if-then structure"
+          ],
+          "repair_hints": [
+            "restore explicit If... then... sentence form"
+          ],
+          "summary": "Return one sentence in explicit If... then... form."
+        },
+        "4_hashtags": {
+          "checks": [
+            "emit exactly four space-separated hashtags",
+            "plain words instead of hashtags"
+          ],
+          "repair_hints": [
+            "compress to exactly four hashtags"
+          ],
+          "summary": "Return exactly four hashtags separated by spaces."
+        },
+        "one_comma": {
+          "checks": [
+            "emit exactly one sentence",
+            "use exactly one comma",
+            "zero commas or multiple commas"
+          ],
+          "repair_hints": [
+            "normalize to one sentence with exactly one comma"
+          ],
+          "summary": "Return one sentence containing exactly one comma."
+        },
+        "decreasing_length": {
+          "checks": [
+            "emit exactly three sentences",
+            "make each sentence shorter than the one before it",
+            "flat or increasing sentence lengths"
+          ],
+          "repair_hints": [
+            "rebuild three sentences in strictly decreasing lengths"
+          ],
+          "summary": "Return exactly three sentences, each shorter than the previous one."
+        },
+        "newspaper_headline": {
+          "checks": [
+            "emit one ALL-CAPS headline",
+            "keep it under twelve words and omit the final period",
+            "lowercase headline or trailing period"
+          ],
+          "repair_hints": [
+            "uppercase the headline and remove the final period"
+          ],
+          "summary": "Return an ALL-CAPS headline under twelve words with no period."
+        },
+        "increasing_length": {
+          "checks": [
+            "emit exactly three sentences",
+            "make each sentence longer than the one before it",
+            "flat or decreasing sentence lengths"
+          ],
+          "repair_hints": [
+            "rebuild three sentences in strictly increasing lengths"
+          ],
+          "summary": "Return exactly three sentences, each longer than the previous one."
+        },
+        "xml_word_tags": {
+          "checks": [
+            "wrap every word as <wN>word</wN>",
+            "plain sentence without numbered XML tags"
+          ],
+          "repair_hints": [
+            "rewrap the sentence so every word has a numbered XML tag"
+          ],
+          "summary": "Return one sentence and wrap every word in numbered XML word tags."
+        }
+      }
+    }
+  }
+}

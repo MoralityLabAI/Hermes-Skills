@@ -1,0 +1,15 @@
+{
+  "env_id": "ascii_tree",
+  "status": "repaired",
+  "original_text": "```text\nmain\n `--child\n```\nThis is the tree.",
+  "repaired_text": "<ascii_formatted>\nmain\n `--child\n</ascii_formatted>",
+  "applied_repairs": [
+    "removed markdown fences",
+    "dropped prose outside tree body",
+    "rewrapped ascii tree in canonical tags"
+  ],
+  "detected_failures": [
+    "missing wrapper tags",
+    "markdown fence leaked into final answer"
+  ]
+}

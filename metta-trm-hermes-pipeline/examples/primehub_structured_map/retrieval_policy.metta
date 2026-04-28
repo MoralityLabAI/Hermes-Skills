@@ -1,0 +1,17 @@
+(query-cue "psycho_bench" "reply numbers from 1 to 5")
+(query-cue "psycho_bench" "index: score")
+(query-cue "psycho_bench" "BFI subscale")
+(query-cue "psycho_bench" "plain text lines only")
+(retrieval-priority "psycho_bench" "contract")
+
+(query-cue "ascii_tree" "ASCII tree")
+(query-cue "ascii_tree" "<ascii_formatted>")
+(query-cue "ascii_tree" "directory hierarchy")
+(query-cue "ascii_tree" "plain ASCII structure")
+(retrieval-priority "ascii_tree" "output_wrapper")
+
+(query-cue "pydantic_adherence" "return the json and nothing else")
+(query-cue "pydantic_adherence" "pydantic model")
+(query-cue "pydantic_adherence" "compatible with the model")
+(query-cue "pydantic_adherence" "strict JSON only")
+(retrieval-priority "pydantic_adherence" "validator_contract")

@@ -1,0 +1,65 @@
+{
+  "bundle_dir": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_structured_map_bundle",
+  "out_dir": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_structured_map_multisignal",
+  "unit_count": 12,
+  "signal_target_count": 63,
+  "avg_signals_per_unit": 5.25,
+  "label_density_vs_single_reward": 5.25,
+  "avg_observation_chars": 538.9166666666666,
+  "unique_signal_count": 9,
+  "signal_counts": {
+    "retrieval_selection_correctness": 3,
+    "contract_family_match": 3,
+    "transport_visible_output": 12,
+    "transport_no_fallback": 12,
+    "task_success": 9,
+    "contract_validity": 9,
+    "critic_verdict_agreement": 6,
+    "failure_localization": 6,
+    "repair_success": 3
+  },
+  "signal_positive_counts": {
+    "retrieval_selection_correctness": 3,
+    "contract_family_match": 3,
+    "transport_visible_output": 12,
+    "transport_no_fallback": 12,
+    "task_success": 6,
+    "contract_validity": 6,
+    "critic_verdict_agreement": 6,
+    "failure_localization": 6,
+    "repair_success": 3
+  },
+  "signal_negative_counts": {
+    "task_success": 3,
+    "contract_validity": 3
+  },
+  "channel_counts": {
+    "selection": 6,
+    "transport": 24,
+    "success": 18,
+    "critic": 6,
+    "repair": 9
+  },
+  "env_counts": {
+    "ascii_tree": 4,
+    "psycho_bench": 4,
+    "pydantic_adherence": 4
+  },
+  "profile_counts": {},
+  "unit_kind_counts": {
+    "contract_select": 3,
+    "contract_verify_positive": 3,
+    "contract_verify_negative": 3,
+    "contract_repair": 3
+  },
+  "support_role_counts": {
+    "selection_support": 3,
+    "critic_verify": 6,
+    "repair_support": 3
+  },
+  "prompt_pressure_counts": {
+    "low": 2,
+    "medium": 8,
+    "high": 2
+  }
+}

@@ -1,0 +1,325 @@
+{
+  "model": {
+    "model_id": "qwen35_9b",
+    "base_url": "http://snacksack-ms-7d32.tail3156cd.ts.net:8082/v1",
+    "model_name": "Qwen_Qwen3.5-9B-Q4_K_M.gguf"
+  },
+  "env_id": "if_summarize_judge",
+  "seeds": [
+    7,
+    11,
+    19
+  ],
+  "results": [
+    {
+      "arm_id": "without_metta",
+      "env_id": "if_summarize_judge",
+      "seeds": [
+        7,
+        11,
+        19
+      ],
+      "status": "success",
+      "episodes": 3,
+      "reward_total": 1.0,
+      "avg_reward": 0.3333333333333333,
+      "token_usage": {
+        "prompt_tokens": 2636,
+        "completion_tokens": 87,
+        "total_tokens": 2723
+      },
+      "output_statuses": {
+        "completed": 3
+      },
+      "visible_output_emitted": {
+        "true": 3
+      },
+      "action_types": {
+        "direct_answer": 3
+      },
+      "profile_counts": {
+        "exact_10w_bullets": 1,
+        "one_comma": 1,
+        "single_question": 1
+      },
+      "sample_actions": [
+        "Welschbillig Castle is the ruin of a water castle in the municipality of Welschbillig in the county of Trier-Saarburg in the German state of Rhineland-Palatinate.",
+        "What is the main point of the text about Gudme?",
+        "- Munich Literary Prize awards ten thousand euros to winners. - Winners include authors like Erich K\u00e4stner and Lion Feuchtwanger."
+      ],
+      "per_seed": [
+        {
+          "arm_id": "without_metta",
+          "env_id": "if_summarize_judge",
+          "seed": 7,
+          "status": "success",
+          "returncode": 0,
+          "episodes": 1,
+          "reward_total": 0.0,
+          "avg_reward": 0.0,
+          "token_usage": {
+            "prompt_tokens": 942,
+            "completion_tokens": 44,
+            "total_tokens": 986
+          },
+          "output_statuses": {
+            "completed": 1
+          },
+          "visible_output_emitted": {
+            "true": 1
+          },
+          "action_types": {
+            "direct_answer": 1
+          },
+          "profile_counts": {
+            "one_comma": 1
+          },
+          "sample_actions": [
+            "Welschbillig Castle is the ruin of a water castle in the municipality of Welschbillig in the county of Trier-Saarburg in the German state of Rhineland-Palatinate."
+          ],
+          "last_action_excerpt": "Welschbillig Castle is the ruin of a water castle in the municipality of Welschbillig in the county of Trier-Saarburg in the German state of Rhineland-Palatinate.",
+          "episode_metrics": {
+            "reward": 0.0,
+            "num_turns": 1.0
+          },
+          "export_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_if_summarize_with_metta_seed_sweep\\replays\\without_metta\\if_summarize_judge.seed_7.jsonl",
+          "summary_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_if_summarize_with_metta_seed_sweep\\replays\\without_metta\\if_summarize_judge.seed_7.summary.json",
+          "success": true
+        },
+        {
+          "arm_id": "without_metta",
+          "env_id": "if_summarize_judge",
+          "seed": 11,
+          "status": "success",
+          "returncode": 0,
+          "episodes": 1,
+          "reward_total": 1.0,
+          "avg_reward": 1.0,
+          "token_usage": {
+            "prompt_tokens": 736,
+            "completion_tokens": 13,
+            "total_tokens": 749
+          },
+          "output_statuses": {
+            "completed": 1
+          },
+          "visible_output_emitted": {
+            "true": 1
+          },
+          "action_types": {
+            "direct_answer": 1
+          },
+          "profile_counts": {
+            "single_question": 1
+          },
+          "sample_actions": [
+            "What is the main point of the text about Gudme?"
+          ],
+          "last_action_excerpt": "What is the main point of the text about Gudme?",
+          "episode_metrics": {
+            "reward": 1.0,
+            "num_turns": 1.0
+          },
+          "export_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_if_summarize_with_metta_seed_sweep\\replays\\without_metta\\if_summarize_judge.seed_11.jsonl",
+          "summary_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_if_summarize_with_metta_seed_sweep\\replays\\without_metta\\if_summarize_judge.seed_11.summary.json",
+          "success": true
+        },
+        {
+          "arm_id": "without_metta",
+          "env_id": "if_summarize_judge",
+          "seed": 19,
+          "status": "success",
+          "returncode": 0,
+          "episodes": 1,
+          "reward_total": 0.0,
+          "avg_reward": 0.0,
+          "token_usage": {
+            "prompt_tokens": 958,
+            "completion_tokens": 30,
+            "total_tokens": 988
+          },
+          "output_statuses": {
+            "completed": 1
+          },
+          "visible_output_emitted": {
+            "true": 1
+          },
+          "action_types": {
+            "direct_answer": 1
+          },
+          "profile_counts": {
+            "exact_10w_bullets": 1
+          },
+          "sample_actions": [
+            "- Munich Literary Prize awards ten thousand euros to winners. - Winners include authors like Erich K\u00e4stner and Lion Feuchtwanger."
+          ],
+          "last_action_excerpt": "- Munich Literary Prize awards ten thousand euros to winners. - Winners include authors like Erich K\u00e4stner and Lion Feuchtwanger.",
+          "episode_metrics": {
+            "reward": 0.0,
+            "num_turns": 1.0
+          },
+          "export_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_if_summarize_with_metta_seed_sweep\\replays\\without_metta\\if_summarize_judge.seed_19.jsonl",
+          "summary_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_if_summarize_with_metta_seed_sweep\\replays\\without_metta\\if_summarize_judge.seed_19.summary.json",
+          "success": true
+        }
+      ],
+      "env_info_samples": [],
+      "success": true
+    },
+    {
+      "arm_id": "with_metta_runtime",
+      "env_id": "if_summarize_judge",
+      "seeds": [
+        7,
+        11,
+        19
+      ],
+      "status": "success",
+      "episodes": 3,
+      "reward_total": 2.0,
+      "avg_reward": 0.6666666666666666,
+      "token_usage": {
+        "prompt_tokens": 4973,
+        "completion_tokens": 75,
+        "total_tokens": 5048
+      },
+      "output_statuses": {
+        "completed": 3
+      },
+      "visible_output_emitted": {
+        "true": 3
+      },
+      "action_types": {
+        "direct_answer": 3
+      },
+      "profile_counts": {
+        "exact_10w_bullets": 1,
+        "one_comma": 1,
+        "single_question": 1
+      },
+      "sample_actions": [
+        "Welschbillig Castle is a ruin of a water castle in the municipality of Welschbillig, Germany.",
+        "What is the main point of the text about Gudme?",
+        "- The Munich Literature Prize awards ten thousand euros to Bavarian authors annually. - Winners include Hans Carossa in nineteen twenty-eight and Janosch in nineteen seventy-five."
+      ],
+      "per_seed": [
+        {
+          "arm_id": "with_metta_runtime",
+          "env_id": "if_summarize_judge",
+          "seed": 7,
+          "status": "success",
+          "returncode": 0,
+          "episodes": 1,
+          "reward_total": 1.0,
+          "avg_reward": 1.0,
+          "token_usage": {
+            "prompt_tokens": 1721,
+            "completion_tokens": 26,
+            "total_tokens": 1747
+          },
+          "output_statuses": {
+            "completed": 1
+          },
+          "visible_output_emitted": {
+            "true": 1
+          },
+          "action_types": {
+            "direct_answer": 1
+          },
+          "profile_counts": {
+            "one_comma": 1
+          },
+          "sample_actions": [
+            "Welschbillig Castle is a ruin of a water castle in the municipality of Welschbillig, Germany."
+          ],
+          "last_action_excerpt": "Welschbillig Castle is a ruin of a water castle in the municipality of Welschbillig, Germany.",
+          "episode_metrics": {
+            "reward": 1.0,
+            "num_turns": 1.0
+          },
+          "export_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_if_summarize_with_metta_seed_sweep\\replays\\with_metta_runtime\\if_summarize_judge.seed_7.jsonl",
+          "summary_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_if_summarize_with_metta_seed_sweep\\replays\\with_metta_runtime\\if_summarize_judge.seed_7.summary.json",
+          "success": true
+        },
+        {
+          "arm_id": "with_metta_runtime",
+          "env_id": "if_summarize_judge",
+          "seed": 11,
+          "status": "success",
+          "returncode": 0,
+          "episodes": 1,
+          "reward_total": 1.0,
+          "avg_reward": 1.0,
+          "token_usage": {
+            "prompt_tokens": 1515,
+            "completion_tokens": 13,
+            "total_tokens": 1528
+          },
+          "output_statuses": {
+            "completed": 1
+          },
+          "visible_output_emitted": {
+            "true": 1
+          },
+          "action_types": {
+            "direct_answer": 1
+          },
+          "profile_counts": {
+            "single_question": 1
+          },
+          "sample_actions": [
+            "What is the main point of the text about Gudme?"
+          ],
+          "last_action_excerpt": "What is the main point of the text about Gudme?",
+          "episode_metrics": {
+            "reward": 1.0,
+            "num_turns": 1.0
+          },
+          "export_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_if_summarize_with_metta_seed_sweep\\replays\\with_metta_runtime\\if_summarize_judge.seed_11.jsonl",
+          "summary_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_if_summarize_with_metta_seed_sweep\\replays\\with_metta_runtime\\if_summarize_judge.seed_11.summary.json",
+          "success": true
+        },
+        {
+          "arm_id": "with_metta_runtime",
+          "env_id": "if_summarize_judge",
+          "seed": 19,
+          "status": "success",
+          "returncode": 0,
+          "episodes": 1,
+          "reward_total": 0.0,
+          "avg_reward": 0.0,
+          "token_usage": {
+            "prompt_tokens": 1737,
+            "completion_tokens": 36,
+            "total_tokens": 1773
+          },
+          "output_statuses": {
+            "completed": 1
+          },
+          "visible_output_emitted": {
+            "true": 1
+          },
+          "action_types": {
+            "direct_answer": 1
+          },
+          "profile_counts": {
+            "exact_10w_bullets": 1
+          },
+          "sample_actions": [
+            "- The Munich Literature Prize awards ten thousand euros to Bavarian authors annually. - Winners include Hans Carossa in nineteen twenty-eight and Janosch in nineteen seventy-five."
+          ],
+          "last_action_excerpt": "- The Munich Literature Prize awards ten thousand euros to Bavarian authors annually. - Winners include Hans Carossa in nineteen twenty-eight and Janosch in nineteen seventy-five.",
+          "episode_metrics": {
+            "reward": 0.0,
+            "num_turns": 1.0
+          },
+          "export_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_if_summarize_with_metta_seed_sweep\\replays\\with_metta_runtime\\if_summarize_judge.seed_19.jsonl",
+          "summary_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_if_summarize_with_metta_seed_sweep\\replays\\with_metta_runtime\\if_summarize_judge.seed_19.summary.json",
+          "success": true
+        }
+      ],
+      "env_info_samples": [],
+      "success": true
+    }
+  ]
+}

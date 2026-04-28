@@ -1,0 +1,6 @@
+{
+  "envs": [
+    "psycho_bench",
+    "if_summarize_judge"
+  ]
+}

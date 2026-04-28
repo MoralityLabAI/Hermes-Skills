@@ -1,0 +1,22 @@
+{
+  "base_corpus": "C:\\projects\\Hermes Skills\\data\\primehub_trm_autoresearch\\cycle_12\\primehub_trm_merged.jsonl",
+  "holdout_ratio": 0.2,
+  "copies_per_family": 6,
+  "replay_roots": [
+    "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2",
+    "C:\\projects\\Hermes Skills\\data\\primehub_overnight_all"
+  ],
+  "row_count": 6,
+  "family_counts": {
+    "aime2026_binomial_mod503_boxed39": 6
+  },
+  "env_counts": {
+    "aime2026": 6
+  },
+  "anchor_counts": {
+    "0": 6
+  },
+  "origin_type_counts": {
+    "ExternalPrimeHubEnvReplay": 6
+  }
+}

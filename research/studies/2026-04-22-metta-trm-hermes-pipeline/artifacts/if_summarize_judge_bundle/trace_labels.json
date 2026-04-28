@@ -1,0 +1,158 @@
+{
+  "envs": {
+    "if_summarize_judge": {
+      "failure_modes": [
+        "empty output or fallback action",
+        "correct topic but wrong structural family",
+        "wrong exact count for words, sentences, bullets, or hashtags",
+        "wrong punctuation, casing, or wrapper tags",
+        "extra explanation around an otherwise valid constrained answer"
+      ],
+      "trace_labels": [
+        "constraint_family_failure"
+      ],
+      "repair_hints": [
+        "classify the family first, then rewrite to the canonical minimal structure for that family",
+        "prefer the smallest structurally valid answer over verbose content preservation"
+      ],
+      "profiles": {
+        "exact_5_words": {
+          "trace_labels": [
+            "exact_word_count_failure"
+          ],
+          "repair_hints": [
+            "trim or pad to exactly five words"
+          ]
+        },
+        "single_question": {
+          "trace_labels": [
+            "question_wrapper_failure"
+          ],
+          "repair_hints": [
+            "collapse to one question sentence"
+          ]
+        },
+        "alpha_start_3sent": {
+          "trace_labels": [
+            "alpha_sentence_family_failure"
+          ],
+          "repair_hints": [
+            "normalize to three short sentences with distinct starting letters"
+          ]
+        },
+        "exact_10w_bullets": {
+          "trace_labels": [
+            "bullet_word_count_failure"
+          ],
+          "repair_hints": [
+            "repair to two bullets with ten words each"
+          ]
+        },
+        "exclamation_ends": {
+          "trace_labels": [
+            "sentence_ending_failure"
+          ],
+          "repair_hints": [
+            "normalize sentence endings to !"
+          ]
+        },
+        "exact_15_words": {
+          "trace_labels": [
+            "exact_word_count_failure"
+          ],
+          "repair_hints": [
+            "trim or pad to exactly fifteen words"
+          ]
+        },
+        "3_keywords": {
+          "trace_labels": [
+            "keyword_count_failure"
+          ],
+          "repair_hints": [
+            "compress to three comma-separated keywords"
+          ]
+        },
+        "dictionary_def": {
+          "trace_labels": [
+            "definition_wrapper_failure"
+          ],
+          "repair_hints": [
+            "restore bold subject + colon definition wrapper"
+          ]
+        },
+        "question_answer": {
+          "trace_labels": [
+            "question_answer_family_failure"
+          ],
+          "repair_hints": [
+            "normalize to a question sentence followed by one answer sentence"
+          ]
+        },
+        "simple_syllables": {
+          "trace_labels": [
+            "simple_wording_failure"
+          ],
+          "repair_hints": [
+            "rewrite with short simple words under forty total words"
+          ]
+        },
+        "if_then": {
+          "trace_labels": [
+            "if_then_structure_failure"
+          ],
+          "repair_hints": [
+            "restore explicit If... then... sentence form"
+          ]
+        },
+        "4_hashtags": {
+          "trace_labels": [
+            "hashtag_count_failure"
+          ],
+          "repair_hints": [
+            "compress to exactly four hashtags"
+          ]
+        },
+        "one_comma": {
+          "trace_labels": [
+            "comma_count_failure"
+          ],
+          "repair_hints": [
+            "normalize to one sentence with exactly one comma"
+          ]
+        },
+        "decreasing_length": {
+          "trace_labels": [
+            "sentence_length_order_failure"
+          ],
+          "repair_hints": [
+            "rebuild three sentences in strictly decreasing lengths"
+          ]
+        },
+        "newspaper_headline": {
+          "trace_labels": [
+            "headline_wrapper_failure"
+          ],
+          "repair_hints": [
+            "uppercase the headline and remove the final period"
+          ]
+        },
+        "increasing_length": {
+          "trace_labels": [
+            "sentence_length_order_failure"
+          ],
+          "repair_hints": [
+            "rebuild three sentences in strictly increasing lengths"
+          ]
+        },
+        "xml_word_tags": {
+          "trace_labels": [
+            "xml_wrapper_failure"
+          ],
+          "repair_hints": [
+            "rewrap the sentence so every word has a numbered XML tag"
+          ]
+        }
+      }
+    }
+  }
+}

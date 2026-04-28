@@ -1,0 +1,20 @@
+{
+  "bundle_dir": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\if_summarize_judge_bundle",
+  "out_dir": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\if_summarize_judge_rows",
+  "row_count": 72,
+  "task_family_counts": {
+    "metta_contract_select": 1,
+    "metta_contract_verify": 2,
+    "metta_contract_repair": 1,
+    "metta_profile_select": 17,
+    "metta_profile_verify": 34,
+    "metta_profile_repair": 17
+  },
+  "bucket_counts": {
+    "exact_positive": 54,
+    "negative": 18
+  },
+  "env_counts": {
+    "if_summarize_judge": 72
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "env_id": "psycho_bench",
+  "status": "repaired",
+  "original_text": "Here are the scores:\n31 -  2\n39 -  3",
+  "repaired_text": "31: 2\n39: 3",
+  "applied_repairs": [
+    "canonicalized score line separators"
+  ],
+  "detected_failures": [
+    "extra commentary around scores"
+  ]
+}

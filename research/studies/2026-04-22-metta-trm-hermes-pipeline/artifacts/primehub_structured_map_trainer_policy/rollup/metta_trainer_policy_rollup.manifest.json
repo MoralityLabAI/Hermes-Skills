@@ -1,0 +1,211 @@
+{
+  "input": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_structured_map_trainer_policy\\metta_trainer_policy_bundle.jsonl",
+  "out_dir": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_structured_map_trainer_policy\\rollup",
+  "top_k": 3,
+  "holdout_ratio": 0.2,
+  "min_supervision_weight": 0.2,
+  "critic_summary": {
+    "input": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_structured_map_trainer_policy\\metta_trainer_policy_bundle.jsonl",
+    "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_structured_map_trainer_policy\\rollup\\models\\trm_critic.json",
+    "example_count": 63,
+    "task_family_counts": {
+      "primehub_structured_map__retrieval_selection_correctness": 3,
+      "primehub_structured_map__contract_family_match": 3,
+      "primehub_structured_map__transport_visible_output": 12,
+      "primehub_structured_map__transport_no_fallback": 12,
+      "primehub_structured_map__task_success": 9,
+      "primehub_structured_map__contract_validity": 9,
+      "primehub_structured_map__critic_verdict_agreement": 6,
+      "primehub_structured_map__failure_localization": 6,
+      "primehub_structured_map__repair_success": 3
+    },
+    "bucket_counts": {
+      "exact_positive": 18,
+      "weak_positive": 33,
+      "negative": 6,
+      "near_miss": 6
+    },
+    "k": 3
+  },
+  "critic_bench_summary": {
+    "rows": 13,
+    "bucket_accuracy": 0.8462,
+    "avg_bucket_abs_error": 0.4615,
+    "visible_output_accuracy": 1.0,
+    "avg_grid_cell_accuracy_abs_error": null,
+    "per_family": {
+      "primehub_structured_map__transport_visible_output": {
+        "rows": 3,
+        "bucket_accuracy": 1.0,
+        "avg_bucket_abs_error": 0.0,
+        "visible_output_accuracy": 1.0,
+        "avg_grid_cell_accuracy_abs_error": null
+      },
+      "primehub_structured_map__task_success": {
+        "rows": 1,
+        "bucket_accuracy": 0.0,
+        "avg_bucket_abs_error": 3.0,
+        "visible_output_accuracy": 1.0,
+        "avg_grid_cell_accuracy_abs_error": null
+      },
+      "primehub_structured_map__contract_validity": {
+        "rows": 1,
+        "bucket_accuracy": 0.0,
+        "avg_bucket_abs_error": 3.0,
+        "visible_output_accuracy": 1.0,
+        "avg_grid_cell_accuracy_abs_error": null
+      },
+      "primehub_structured_map__critic_verdict_agreement": {
+        "rows": 1,
+        "bucket_accuracy": 1.0,
+        "avg_bucket_abs_error": 0.0,
+        "visible_output_accuracy": 1.0,
+        "avg_grid_cell_accuracy_abs_error": null
+      },
+      "primehub_structured_map__failure_localization": {
+        "rows": 3,
+        "bucket_accuracy": 1.0,
+        "avg_bucket_abs_error": 0.0,
+        "visible_output_accuracy": 1.0,
+        "avg_grid_cell_accuracy_abs_error": null
+      },
+      "primehub_structured_map__transport_no_fallback": {
+        "rows": 3,
+        "bucket_accuracy": 1.0,
+        "avg_bucket_abs_error": 0.0,
+        "visible_output_accuracy": 1.0,
+        "avg_grid_cell_accuracy_abs_error": null
+      },
+      "primehub_structured_map__retrieval_selection_correctness": {
+        "rows": 1,
+        "bucket_accuracy": 1.0,
+        "avg_bucket_abs_error": 0.0,
+        "visible_output_accuracy": 1.0,
+        "avg_grid_cell_accuracy_abs_error": null
+      }
+    },
+    "model_example_count": 50,
+    "train_rows": 50,
+    "eval_rows": 13,
+    "holdout_ratio": 0.2,
+    "leave_one_out": false,
+    "k": 3
+  },
+  "retriever_summary": {
+    "input": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_structured_map_trainer_policy\\metta_trainer_policy_bundle.jsonl",
+    "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_structured_map_trainer_policy\\rollup\\models\\trm_retriever.json",
+    "example_count": 57,
+    "task_family_counts": {
+      "primehub_structured_map__retrieval_selection_correctness": 3,
+      "primehub_structured_map__contract_family_match": 3,
+      "primehub_structured_map__transport_visible_output": 12,
+      "primehub_structured_map__transport_no_fallback": 12,
+      "primehub_structured_map__task_success": 6,
+      "primehub_structured_map__contract_validity": 6,
+      "primehub_structured_map__critic_verdict_agreement": 6,
+      "primehub_structured_map__failure_localization": 6,
+      "primehub_structured_map__repair_success": 3
+    },
+    "bucket_counts": {
+      "exact_positive": 18,
+      "weak_positive": 33,
+      "near_miss": 6
+    },
+    "include_buckets": [
+      "exact_positive",
+      "near_miss",
+      "weak_positive"
+    ],
+    "min_supervision_weight": 0.2
+  },
+  "retriever_bench_summary": {
+    "rows": 13,
+    "exact_match_rate": 0.6154,
+    "nonempty_prediction_rate": 1.0,
+    "avg_similarity": 0.8099,
+    "avg_grid_cell_accuracy": null,
+    "per_family": {
+      "primehub_structured_map__transport_visible_output": {
+        "rows": 3,
+        "exact_match_rate": 1.0,
+        "nonempty_prediction_rate": 1.0,
+        "avg_similarity": 0.6907,
+        "avg_grid_cell_accuracy": null
+      },
+      "primehub_structured_map__task_success": {
+        "rows": 1,
+        "exact_match_rate": 0.0,
+        "nonempty_prediction_rate": 1.0,
+        "avg_similarity": 1.1205,
+        "avg_grid_cell_accuracy": null
+      },
+      "primehub_structured_map__contract_validity": {
+        "rows": 1,
+        "exact_match_rate": 0.0,
+        "nonempty_prediction_rate": 1.0,
+        "avg_similarity": 1.2124,
+        "avg_grid_cell_accuracy": null
+      },
+      "primehub_structured_map__critic_verdict_agreement": {
+        "rows": 1,
+        "exact_match_rate": 1.0,
+        "nonempty_prediction_rate": 1.0,
+        "avg_similarity": 0.9885,
+        "avg_grid_cell_accuracy": null
+      },
+      "primehub_structured_map__failure_localization": {
+        "rows": 3,
+        "exact_match_rate": 0.3333,
+        "nonempty_prediction_rate": 1.0,
+        "avg_similarity": 0.6012,
+        "avg_grid_cell_accuracy": null
+      },
+      "primehub_structured_map__transport_no_fallback": {
+        "rows": 3,
+        "exact_match_rate": 1.0,
+        "nonempty_prediction_rate": 1.0,
+        "avg_similarity": 0.8693,
+        "avg_grid_cell_accuracy": null
+      },
+      "primehub_structured_map__retrieval_selection_correctness": {
+        "rows": 1,
+        "exact_match_rate": 0.0,
+        "nonempty_prediction_rate": 1.0,
+        "avg_similarity": 0.7236,
+        "avg_grid_cell_accuracy": null
+      }
+    },
+    "model_example_count": 46,
+    "train_rows": 50,
+    "eval_rows": 13,
+    "holdout_ratio": 0.2,
+    "leave_one_out": false,
+    "include_buckets": [
+      "exact_positive",
+      "near_miss",
+      "weak_positive"
+    ],
+    "min_supervision_weight": 0.2
+  },
+  "router_bench_summary": {
+    "rows": 13,
+    "top_k": 3,
+    "retrieval_only": {
+      "exact_match_rate": 0.6154,
+      "nonempty_prediction_rate": 1.0,
+      "avg_grid_cell_accuracy": null
+    },
+    "critic_gated": {
+      "exact_match_rate": 0.6154,
+      "nonempty_prediction_rate": 1.0,
+      "route_abstain_rate": 0.0,
+      "avg_grid_cell_accuracy": null
+    },
+    "train_rows": 50,
+    "eval_rows": 13,
+    "retriever_example_count": 46,
+    "critic_example_count": 50,
+    "holdout_ratio": 0.2,
+    "min_supervision_weight": 0.2
+  }
+}

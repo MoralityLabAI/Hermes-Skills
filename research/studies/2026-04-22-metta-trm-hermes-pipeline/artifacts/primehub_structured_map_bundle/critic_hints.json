@@ -1,0 +1,41 @@
+{
+  "envs": {
+    "psycho_bench": {
+      "required_shape": "indexed_mapping_lines",
+      "checks": [
+        "emit only `index: score` lines",
+        "scores must be integers in the range 1 to 5",
+        "bullets, wrappers, or commentary"
+      ],
+      "repair_hints": [
+        "strip all prose and emit only numbered score lines"
+      ]
+    },
+    "ascii_tree": {
+      "required_shape": "ascii_formatted_tree",
+      "checks": [
+        "wrap answer in <ascii_formatted> tags",
+        "preserve a valid ASCII tree branch structure",
+        "markdown fences or malformed closing tags"
+      ],
+      "repair_hints": [
+        "close with </ascii_formatted> and remove markdown fences"
+      ]
+    },
+    "pydantic_adherence": {
+      "required_shape": "strict_json_object",
+      "checks": [
+        "return one JSON object and nothing else",
+        "cooldown must use integer day counts or numeric strings",
+        "period genres must be unique",
+        "reference genre cannot exceed 7 days",
+        "fine_policy.max_total must be greater than or equal to fine_policy.per_day",
+        "renewal_policy.cooldown accepts integer day counts or numeric strings before timedelta coercion",
+        "the live scorer validates JSON-native payloads with model_validate_json(..., strict=False)"
+      ],
+      "repair_hints": [
+        "coerce cooldown to integer day count and re-check required fields"
+      ]
+    }
+  }
+}

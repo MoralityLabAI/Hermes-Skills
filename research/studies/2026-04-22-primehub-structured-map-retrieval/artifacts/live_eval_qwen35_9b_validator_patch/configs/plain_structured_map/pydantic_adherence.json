@@ -1,0 +1,70 @@
+﻿{
+  "run_name": "overnight-qwen35_9b-structured-map-plain-pydantic_adherence",
+  "max_episodes": 1,
+  "max_steps_per_episode": 1,
+  "export_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-primehub-structured-map-retrieval\\artifacts\\live_eval_qwen35_9b_validator_patch\\replays\\plain_structured_map\\pydantic_adherence.jsonl",
+  "model": {
+    "provider": "openai_compatible",
+    "base_url": "http://snacksack-ms-7d32.tail3156cd.ts.net:8082/v1",
+    "model_name": "Qwen_Qwen3.5-9B-Q4_K_M.gguf",
+    "max_new_tokens": 320,
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "request_timeout": 180
+  },
+  "metadata": {
+    "variant_id": "structured-map-plain",
+    "skill_name": "primehub-structured-map-hermes",
+    "skill_cluster": "structured_map",
+    "role_mode": "critic_only",
+    "role_support_tier": "format_support",
+    "role_gate_applied": true,
+    "role_gate_downgraded": false,
+    "role_gate_reason": "",
+    "requested_max_new_tokens": 320,
+    "max_new_tokens": 320,
+    "reasoning_mode": "off"
+  },
+  "envs": [
+    {
+      "type": "primehub_external",
+      "name": "pydantic_adherence",
+      "command_template": [
+        "C:\\Python311\\python.exe",
+        "C:/projects/Hermes-Skills/Hermes Skills/scripts/remote_prime_env_bridge.py",
+        "--source",
+        "community",
+        "--host",
+        "snacksack-ms-7d32.tail3156cd.ts.net",
+        "--user",
+        "snacksack",
+        "--identity-file",
+        "C:/Users/patri/.ssh/id_ed25519",
+        "--ssh-timeout-seconds",
+        "120",
+        "--research-root",
+        "/home/snacksack/prime_repos_tmp/research-environments/environments",
+        "--community-root",
+        "/home/snacksack/prime_repos_tmp/community-environments/environments",
+        "--remote-site-packages",
+        "/tmp/prime_env_bridge_site_plain_structured_map_pydantic_adherence",
+        "--remote-cache-root",
+        "/tmp/prime_env_bridge_cache_plain_structured_map_pydantic_adherence",
+        "pydantic_adherence"
+      ],
+      "reset_args": [
+        "--reset"
+      ],
+      "trace_profile_overrides": {
+        "reasoning_mode": "off",
+        "skill_name": "primehub-structured-map-hermes",
+        "skill_prompt": "You are operating as Hermes skill Primehub-Structured-Map-v1.\nUse the stage order TRM_PARSE -> TRM_INDEX_PLAN -> TRM_FORMATTER -> TRM_VERIFY -> FINAL.\nReturn only the required structure, with no explanations or wrapper prose.\nEmit only the exact schema-conforming payload requested by the task.\nReject malformed lines before final output.\nPrime/TRM role imprint:\n- This TRM role is formatter-friendly: use it to preserve strict line shape, field order, and schema compliance, then reject malformed structure before final output.\n- When structure and semantics disagree, prioritize structurally valid output that still preserves the intended answer content.\n- Runtime gate: stay critic-only and do not force structural imitation from weak support.",
+        "skill_cluster": "structured_map",
+        "role_mode": "critic_only",
+        "role_support_tier": "format_support",
+        "role_gate_applied": true,
+        "variant_id": "structured-map-plain"
+      }
+    }
+  ]
+}

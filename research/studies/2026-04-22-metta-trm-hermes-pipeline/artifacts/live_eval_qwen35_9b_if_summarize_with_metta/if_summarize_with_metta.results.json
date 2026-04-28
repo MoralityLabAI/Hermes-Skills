@@ -1,0 +1,89 @@
+{
+  "model": {
+    "model_id": "qwen35_9b",
+    "base_url": "http://snacksack-ms-7d32.tail3156cd.ts.net:8082/v1",
+    "model_name": "Qwen_Qwen3.5-9B-Q4_K_M.gguf"
+  },
+  "env_id": "if_summarize_judge",
+  "episodes": 3,
+  "results": [
+    {
+      "arm_id": "without_metta",
+      "env_id": "if_summarize_judge",
+      "status": "success",
+      "returncode": 0,
+      "episodes": 3,
+      "reward_total": 0.0,
+      "avg_reward": 0.0,
+      "token_usage": {
+        "prompt_tokens": 2826,
+        "completion_tokens": 132,
+        "total_tokens": 2958
+      },
+      "output_statuses": {
+        "completed": 3
+      },
+      "visible_output_emitted": {
+        "true": 3
+      },
+      "action_types": {
+        "direct_answer": 3
+      },
+      "profile_counts": {
+        "one_comma": 3
+      },
+      "sample_actions": [
+        "Welschbillig Castle is the ruin of a water castle in the municipality of Welschbillig in the county of Trier-Saarburg in the German state of Rhineland-Palatinate.",
+        "Welschbillig Castle is the ruin of a water castle in the municipality of Welschbillig in the county of Trier-Saarburg in the German state of Rhineland-Palatinate.",
+        "Welschbillig Castle is the ruin of a water castle in the municipality of Welschbillig in the county of Trier-Saarburg in the German state of Rhineland-Palatinate."
+      ],
+      "last_action_excerpt": "Welschbillig Castle is the ruin of a water castle in the municipality of Welschbillig in the county of Trier-Saarburg in the German state of Rhineland-Palatinate.",
+      "episode_metrics": {
+        "reward": 0.0,
+        "num_turns": 1.0
+      },
+      "export_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_if_summarize_with_metta\\replays\\without_metta\\if_summarize_judge.jsonl",
+      "summary_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_if_summarize_with_metta\\replays\\without_metta\\if_summarize_judge.summary.json",
+      "success": true
+    },
+    {
+      "arm_id": "with_metta_runtime",
+      "env_id": "if_summarize_judge",
+      "status": "success",
+      "returncode": 0,
+      "episodes": 3,
+      "reward_total": 0.0,
+      "avg_reward": 0.0,
+      "token_usage": {
+        "prompt_tokens": 5163,
+        "completion_tokens": 85,
+        "total_tokens": 5248
+      },
+      "output_statuses": {
+        "completed": 3
+      },
+      "visible_output_emitted": {
+        "true": 3
+      },
+      "action_types": {
+        "direct_answer": 3
+      },
+      "profile_counts": {
+        "one_comma": 3
+      },
+      "sample_actions": [
+        "Welschbillig Castle is a ruin of a water castle in the municipality of Welschbillig in the county of Trier-Saarburg.",
+        "Welschbillig Castle is a ruin of a water castle in the municipality of Welschbillig, Germany.",
+        "Welschbillig Castle is a ruin of a water castle in the municipality of Welschbillig, Germany."
+      ],
+      "last_action_excerpt": "Welschbillig Castle is a ruin of a water castle in the municipality of Welschbillig, Germany.",
+      "episode_metrics": {
+        "reward": 0.0,
+        "num_turns": 1.0
+      },
+      "export_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_if_summarize_with_metta\\replays\\with_metta_runtime\\if_summarize_judge.jsonl",
+      "summary_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_if_summarize_with_metta\\replays\\with_metta_runtime\\if_summarize_judge.summary.json",
+      "success": true
+    }
+  ]
+}

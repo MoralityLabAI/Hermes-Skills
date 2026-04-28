@@ -1,0 +1,78 @@
+{
+  "generated_at_utc": "2026-04-28T11:50:45.091072+00:00",
+  "model_name": "Qwen2.5-3B-Instruct-Q4_K_M-GGUF-llama.cpp-CUDA",
+  "model_path": "D:\\Research_Engine\\models\\Qwen2.5-3B-Instruct-GGUF\\qwen2.5-3b-instruct-q4_k_m.gguf",
+  "llama_completion_path": "D:\\Research_Engine\\tools\\llama.cpp-b8922-cuda12.4\\llama-completion.exe",
+  "split_dir": "C:\\projects\\Hermes Skills\\research\\generated\\near_miss_repair_curriculum\\splits",
+  "eval_splits": [
+    "val_seen",
+    "holdout_seen",
+    "holdout_unseen_family"
+  ],
+  "max_cases": 0,
+  "shots": 4,
+  "arms": [
+    "metta_action_space_rudder",
+    "metta_action_space_training_rudder",
+    "metta_static_gate_rudder",
+    "metta_validator_gate"
+  ],
+  "summary_by_arm": {
+    "metta_action_space_rudder": {
+      "n": 88,
+      "split_counts": {
+        "val_seen": 34,
+        "holdout_seen": 36,
+        "holdout_unseen_family": 18
+      },
+      "target_action_accuracy": 0.75,
+      "repair_action_accuracy": 1.0,
+      "joint_accuracy": 0.75,
+      "json_parse_rate": 1.0,
+      "avg_elapsed_sec": 2.8964,
+      "max_peak_child_ram_mb": 2361.2422
+    },
+    "metta_action_space_training_rudder": {
+      "n": 88,
+      "split_counts": {
+        "val_seen": 34,
+        "holdout_seen": 36,
+        "holdout_unseen_family": 18
+      },
+      "target_action_accuracy": 0.6932,
+      "repair_action_accuracy": 1.0,
+      "joint_accuracy": 0.6932,
+      "json_parse_rate": 1.0,
+      "avg_elapsed_sec": 3.1732,
+      "max_peak_child_ram_mb": 2381.043
+    },
+    "metta_static_gate_rudder": {
+      "n": 88,
+      "split_counts": {
+        "val_seen": 34,
+        "holdout_seen": 36,
+        "holdout_unseen_family": 18
+      },
+      "target_action_accuracy": 0.9545,
+      "repair_action_accuracy": 1.0,
+      "joint_accuracy": 0.9545,
+      "json_parse_rate": 1.0,
+      "avg_elapsed_sec": 1.4761,
+      "max_peak_child_ram_mb": 2361.293
+    },
+    "metta_validator_gate": {
+      "n": 88,
+      "split_counts": {
+        "val_seen": 34,
+        "holdout_seen": 36,
+        "holdout_unseen_family": 18
+      },
+      "target_action_accuracy": 1.0,
+      "repair_action_accuracy": 1.0,
+      "joint_accuracy": 1.0,
+      "json_parse_rate": 1.0,
+      "avg_elapsed_sec": 0.0,
+      "max_peak_child_ram_mb": 0.0
+    }
+  }
+}

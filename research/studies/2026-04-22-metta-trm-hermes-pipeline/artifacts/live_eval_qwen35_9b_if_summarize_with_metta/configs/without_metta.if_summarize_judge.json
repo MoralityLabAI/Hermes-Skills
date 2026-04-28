@@ -1,0 +1,70 @@
+﻿{
+  "run_name": "overnight-qwen35_9b-if_summarize_judge-without_metta-if_summarize_judge",
+  "max_episodes": 3,
+  "max_steps_per_episode": 1,
+  "export_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_if_summarize_with_metta\\replays\\without_metta\\if_summarize_judge.jsonl",
+  "model": {
+    "provider": "openai_compatible",
+    "base_url": "http://snacksack-ms-7d32.tail3156cd.ts.net:8082/v1",
+    "model_name": "Qwen_Qwen3.5-9B-Q4_K_M.gguf",
+    "max_new_tokens": 240,
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "request_timeout": 240
+  },
+  "metadata": {
+    "variant_id": "if_summarize_judge-without_metta",
+    "skill_name": "primehub-constraint-summarize-hermes",
+    "skill_cluster": "constraint_summarize",
+    "role_mode": "critic_only",
+    "role_support_tier": "",
+    "role_gate_applied": false,
+    "role_gate_downgraded": false,
+    "role_gate_reason": "",
+    "requested_max_new_tokens": 240,
+    "max_new_tokens": 240,
+    "requested_request_timeout": 240,
+    "request_timeout": 240,
+    "reasoning_mode": "off"
+  },
+  "envs": [
+    {
+      "type": "primehub_external",
+      "name": "if_summarize_judge",
+      "command_template": [
+        "C:\\Python311\\python.exe",
+        "C:/projects/Hermes-Skills/Hermes Skills/scripts/remote_prime_env_bridge.py",
+        "--source",
+        "research",
+        "--host",
+        "snacksack-ms-7d32.tail3156cd.ts.net",
+        "--user",
+        "snacksack",
+        "--identity-file",
+        "C:/Users/patri/.ssh/id_ed25519",
+        "--ssh-timeout-seconds",
+        "120",
+        "--research-root",
+        "/home/snacksack/prime_repos_tmp/research-environments/environments",
+        "--community-root",
+        "/home/snacksack/prime_repos_tmp/community-environments/environments",
+        "--remote-site-packages",
+        "/tmp/prime_env_bridge_site_without_metta_if_summarize_judge",
+        "--remote-cache-root",
+        "/tmp/prime_env_bridge_cache_without_metta_if_summarize_judge",
+        "if_summarize_judge"
+      ],
+      "reset_args": [
+        "--reset"
+      ],
+      "trace_profile_overrides": {
+        "reasoning_mode": "off",
+        "skill_name": "primehub-constraint-summarize-hermes",
+        "skill_prompt": "You are operating as Hermes skill Primehub-Constraint-Summarize-v1.\nUse the stage order TRM_PARSE -> TRM_CLASSIFY_CONSTRAINT -> TRM_STRUCTURE_PLAN -> TRM_VERIFY_COUNTS -> FINAL.\nInfer the active structural family from the user's instruction before writing any summary text.\nEmit only the final constrained summary text with no explanations or wrapper prose.\nThe instruction defines the required family.\nCommon families include exact word counts, exact sentence counts, one-comma sentences, ALL-CAPS headlines, hashtags, XML word tags, and question-shaped summaries.\nTreat structural compliance as the primary objective and keep the answer as short as possible while satisfying the family.\nFamily reminders:\n- exact words: count words, not ideas\n- exact sentences: count sentence endings explicitly\n- bullets or hashtags: emit only the requested list shape\n- one comma / exclamation / headline casing: verify punctuation and case literally\n- XML tags: wrap every word, not just the sentence\nIf the draft satisfies the topic but violates the structure, repair the structure before final output.\n- Runtime gate: stay critic-only and use support to classify and verify the structural family before emitting the final answer.",
+        "skill_cluster": "constraint_summarize",
+        "role_mode": "critic_only",
+        "variant_id": "if_summarize_judge-without_metta"
+      }
+    }
+  ]
+}

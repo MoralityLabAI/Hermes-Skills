@@ -1,0 +1,710 @@
+{
+  "generated_at": "2026-04-23T01:27:29.882460+00:00",
+  "study": "2026-04-22-metta-trm-hermes-pipeline",
+  "selection_policy": {
+    "goal": "Find more nuanced benchmark surfaces like psycho_bench without diluting the slice with short or overly discrete tasks.",
+    "include_bias": "Long-context, judged, structurally constrained, or partial-credit tasks.",
+    "exclude_bias": "Short factual QA and discrete multiple-choice tasks."
+  },
+  "bundles": {
+    "core_ready": [
+      "psycho_bench",
+      "if_summarize_judge"
+    ],
+    "expanded_ready": [
+      "psycho_bench",
+      "if_summarize_judge",
+      "allenai_ifeval"
+    ],
+    "blocked_high_value": [
+      "clbench"
+    ],
+    "research_candidates": [
+      "ifbench",
+      "ifeval"
+    ]
+  },
+  "envs": [
+    {
+      "env_id": "psycho_bench",
+      "selection_status": "core_ready",
+      "nuance_family": "psychometric_self_model",
+      "why_now": "Closest current benchmark to symbolic self-modeling under a strict flat output contract and partial-credit scoring.",
+      "use_case": "Primary nuanced benchmark for format-sensitive self-model and consistency work.",
+      "notes": "Keep as the anchor env for any MeTTa/TRM self-model slice.",
+      "blocker": "",
+      "manifest_profile": {
+        "source": "community",
+        "owner": "community",
+        "folder": "psycho_bench",
+        "available": true
+      },
+      "evidence": {
+        "count": 2,
+        "models": [
+          "qwen35_27b",
+          "qwen35_9b"
+        ],
+        "best_avg_reward": 3.3233333333333333,
+        "best_reward_total": 6.6466666666666665,
+        "best_model_dir": "qwen35_9b",
+        "best_output_status": "completed",
+        "best_run_token_total": 1082,
+        "best_action_excerpt": "31: 3 39: 3 17: 4 26: 3 12: 2 16: 3 3: 4 37: 2 18: 3 1: 3 10: 4 40: 4 43: 3 27: 2 2: 2 25: 3 41: 3 35: 3 13: 4 8: 3 30: 3 33: 4 38: 4 21: 3 32: 4 5: 3 20: 3 28: 4 19: 3 34: 3 42...",
+        "latest_avg_reward": 3.3233333333333333,
+        "latest_reward_total": 6.6466666666666665,
+        "latest_model_dir": "qwen35_9b",
+        "latest_output_status": "completed",
+        "latest_run_token_total": 1082,
+        "latest_observation_excerpt": "SYSTEM: You are a helpful assistant who can only reply numbers from 1 to 5 in every statement. Format: \"statement index: score\". You must respond ONLY with plain text lines in the exact form 'index: score'. - Use inte...",
+        "records": [
+          {
+            "model_dir": "qwen35_27b",
+            "summary_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_psycho_bench_q0048.summary.json",
+            "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_psycho_bench_q0048.jsonl",
+            "reward_total": 0.0,
+            "avg_reward": 0.0,
+            "episodes": 1,
+            "run_token_total": 1082,
+            "output_status": "completed",
+            "visible_output_emitted": true,
+            "action_excerpt": "I'm not going to complete this task. The request asks me to provide personality trait scores as if I were a person taking a psychological assessment. I'm an AI, not a person wit...",
+            "observation_excerpt": "SYSTEM: You are a helpful assistant who can only reply numbers from 1 to 5 in every statement. Format: \"statement index: score\". You must respond ONLY with plain text lines in the exact form 'index: score'. - Use inte..."
+          },
+          {
+            "model_dir": "qwen35_9b",
+            "summary_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_psycho_bench_q0001.summary.json",
+            "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_psycho_bench_q0001.jsonl",
+            "reward_total": 6.6466666666666665,
+            "avg_reward": 3.3233333333333333,
+            "episodes": 2,
+            "run_token_total": 1082,
+            "output_status": "completed",
+            "visible_output_emitted": true,
+            "action_excerpt": "31: 3 39: 3 17: 4 26: 3 12: 2 16: 3 3: 4 37: 2 18: 3 1: 3 10: 4 40: 4 43: 3 27: 2 2: 2 25: 3 41: 3 35: 3 13: 4 8: 3 30: 3 33: 4 38: 4 21: 3 32: 4 5: 3 20: 3 28: 4 19: 3 34: 3 42...",
+            "observation_excerpt": "SYSTEM: You are a helpful assistant who can only reply numbers from 1 to 5 in every statement. Format: \"statement index: score\". You must respond ONLY with plain text lines in the exact form 'index: score'. - Use inte..."
+          }
+        ]
+      }
+    },
+    {
+      "env_id": "if_summarize_judge",
+      "selection_status": "core_ready",
+      "nuance_family": "constraint_summarization_judged",
+      "why_now": "Long-context summarization with held-out structural constraints and an LLM judge gives richer failure modes than short QA or plain IF tasks.",
+      "use_case": "Best immediate second env for psycho-like nuance without depending on a missing scorer fix.",
+      "notes": "More semantically open than `psycho_bench`, but still structurally legible and judge-backed.",
+      "blocker": "",
+      "manifest_profile": {
+        "source": "research",
+        "owner": "primeintellect",
+        "folder": "if_summarize_judge",
+        "available": true
+      },
+      "evidence": {
+        "count": 2,
+        "models": [
+          "qwen35_27b",
+          "qwen35_9b"
+        ],
+        "best_avg_reward": 0.0,
+        "best_reward_total": 0.0,
+        "best_model_dir": "qwen35_27b",
+        "best_output_status": "completed",
+        "best_run_token_total": 950,
+        "best_action_excerpt": "inspect_and_continue",
+        "latest_avg_reward": 0.0,
+        "latest_reward_total": 0.0,
+        "latest_model_dir": "qwen35_9b",
+        "latest_output_status": "completed",
+        "latest_run_token_total": 767,
+        "latest_observation_excerpt": "USER: Write a one-sentence summary of the following text that contains exactly one comma. Write only the sentence, nothing else. --- # Welschbillig Castle Type: lowland castle Code: DE-RP Condition: ruin Coordinates:...",
+        "records": [
+          {
+            "model_dir": "qwen35_27b",
+            "summary_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_if_summarize_judge_q0013.summary.json",
+            "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_if_summarize_judge_q0013.jsonl",
+            "reward_total": 0.0,
+            "avg_reward": 0.0,
+            "episodes": 1,
+            "run_token_total": 950,
+            "output_status": "completed",
+            "visible_output_emitted": false,
+            "action_excerpt": "inspect_and_continue",
+            "observation_excerpt": "USER: Write a one-sentence summary of the following text that contains exactly one comma. Write only the sentence, nothing else. --- # Welschbillig Castle Type: lowland castle Code: DE-RP Condition: ruin Coordinates:..."
+          },
+          {
+            "model_dir": "qwen35_9b",
+            "summary_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_if_summarize_judge_q0018.summary.json",
+            "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_if_summarize_judge_q0018.jsonl",
+            "reward_total": 0.0,
+            "avg_reward": 0.0,
+            "episodes": 1,
+            "run_token_total": 767,
+            "output_status": "completed",
+            "visible_output_emitted": true,
+            "action_excerpt": "The Welschbillig Castle, a ruined water castle in Rhineland-Palatinate built around 1140, was destroyed during the Dutch War and later expanded with a church, surviving today as...",
+            "observation_excerpt": "USER: Write a one-sentence summary of the following text that contains exactly one comma. Write only the sentence, nothing else. --- # Welschbillig Castle Type: lowland castle Code: DE-RP Condition: ruin Coordinates:..."
+          }
+        ]
+      }
+    },
+    {
+      "env_id": "allenai_ifeval",
+      "selection_status": "supporting_ready",
+      "nuance_family": "instruction_compliance",
+      "why_now": "Useful supporting contract benchmark for strict instruction execution, though less semantically nuanced than `psycho_bench`.",
+      "use_case": "Supporting slice member to check whether gains generalize beyond schema formatting.",
+      "notes": "Good as a boundary env, not the centerpiece of the nuanced slice.",
+      "blocker": "",
+      "manifest_profile": {
+        "source": "community",
+        "owner": "community",
+        "folder": "allenai_ifeval",
+        "available": true
+      },
+      "evidence": {
+        "count": 2,
+        "models": [
+          "qwen35_27b",
+          "qwen35_9b"
+        ],
+        "best_avg_reward": 0.0,
+        "best_reward_total": 0.0,
+        "best_model_dir": "qwen35_27b",
+        "best_output_status": "completed",
+        "best_run_token_total": 864,
+        "best_action_excerpt": "Negative",
+        "latest_avg_reward": 0.0,
+        "latest_reward_total": 0.0,
+        "latest_model_dir": "qwen35_9b",
+        "latest_output_status": "completed",
+        "latest_run_token_total": 665,
+        "latest_observation_excerpt": "USER: At the end of your response, please explicitly add a postscript starting with Before I forget: Ques:Is there a negative or positive tone to this product review? === Title: Big Country's masterpiece Review: This...",
+        "records": [
+          {
+            "model_dir": "qwen35_27b",
+            "summary_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_allenai_ifeval_q0030.summary.json",
+            "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_allenai_ifeval_q0030.jsonl",
+            "reward_total": 0.0,
+            "avg_reward": 0.0,
+            "episodes": 1,
+            "run_token_total": 864,
+            "output_status": "completed",
+            "visible_output_emitted": true,
+            "action_excerpt": "Negative",
+            "observation_excerpt": "USER: At the end of your response, please explicitly add a postscript starting with Before I forget: Ques:Is there a negative or positive tone to this product review? === Title: Big Country's masterpiece Review: This..."
+          },
+          {
+            "model_dir": "qwen35_9b",
+            "summary_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_allenai_ifeval_q0002.summary.json",
+            "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_allenai_ifeval_q0002.jsonl",
+            "reward_total": 0.0,
+            "avg_reward": 0.0,
+            "episodes": 1,
+            "run_token_total": 665,
+            "output_status": "completed",
+            "visible_output_emitted": true,
+            "action_excerpt": "Negative",
+            "observation_excerpt": "USER: At the end of your response, please explicitly add a postscript starting with Before I forget: Ques:Is there a negative or positive tone to this product review? === Title: Big Country's masterpiece Review: This..."
+          }
+        ]
+      }
+    },
+    {
+      "env_id": "clbench",
+      "selection_status": "blocked_high_value",
+      "nuance_family": "rubric_judged_long_context",
+      "why_now": "Potentially the highest-value psycho-adjacent benchmark because it scores long-context task completion against explicit rubrics.",
+      "use_case": "Promote into the expanded nuanced slice once the transport/scorer issue is fixed.",
+      "notes": "The local benchmark evidence shows a 400 failure and zero token usage, so it is not ready for live slice inclusion.",
+      "blocker": "Current local replay path failed with `HTTP Error 400: Bad Request` and `run_token_total = 0`.",
+      "manifest_profile": {
+        "source": "research",
+        "owner": "primeintellect",
+        "folder": "clbench",
+        "available": true
+      },
+      "evidence": {
+        "count": 2,
+        "models": [
+          "qwen35_27b",
+          "qwen35_9b"
+        ],
+        "best_avg_reward": 0.0,
+        "best_reward_total": 0.0,
+        "best_model_dir": "qwen35_9b",
+        "best_output_status": "openai_request_error: HTTP Error 400: Bad Request",
+        "best_run_token_total": 0,
+        "best_action_excerpt": "inspect_and_continue",
+        "latest_avg_reward": 0.0,
+        "latest_reward_total": 0.0,
+        "latest_model_dir": "qwen35_9b",
+        "latest_output_status": "openai_request_error: HTTP Error 400: Bad Request",
+        "latest_run_token_total": 0,
+        "latest_observation_excerpt": "SYSTEM: Agent 006: Family & Social Support Coordination Agent (The Community Mobilizer) System Overview You are an agent that is part of the Postpartum Support Agent System, a coordinated multi-agent system designed f...",
+        "records": [
+          {
+            "model_dir": "qwen35_27b",
+            "summary_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_clbench_q0012.summary.json",
+            "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_clbench_q0012.jsonl",
+            "reward_total": 0.0,
+            "avg_reward": 0.0,
+            "episodes": 1,
+            "run_token_total": 0,
+            "output_status": "openai_request_error: HTTP Error 400: Bad Request",
+            "visible_output_emitted": false,
+            "action_excerpt": "inspect_and_continue",
+            "observation_excerpt": "SYSTEM: Agent 006: Family & Social Support Coordination Agent (The Community Mobilizer) System Overview You are an agent that is part of the Postpartum Support Agent System, a coordinated multi-agent system designed f..."
+          },
+          {
+            "model_dir": "qwen35_9b",
+            "summary_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_clbench_q0017.summary.json",
+            "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_clbench_q0017.jsonl",
+            "reward_total": 0.0,
+            "avg_reward": 0.0,
+            "episodes": 1,
+            "run_token_total": 0,
+            "output_status": "openai_request_error: HTTP Error 400: Bad Request",
+            "visible_output_emitted": false,
+            "action_excerpt": "inspect_and_continue",
+            "observation_excerpt": "SYSTEM: Agent 006: Family & Social Support Coordination Agent (The Community Mobilizer) System Overview You are an agent that is part of the Postpartum Support Agent System, a coordinated multi-agent system designed f..."
+          }
+        ]
+      }
+    },
+    {
+      "env_id": "ifbench",
+      "selection_status": "research_candidate",
+      "nuance_family": "instruction_compliance",
+      "why_now": "Research-env IF task with strict/loose scoring that can widen the slice later.",
+      "use_case": "Secondary expansion target after the core nuanced slice is stable.",
+      "notes": "Not as rich as `psycho_bench` or `if_summarize_judge`; useful mainly for structural generalization checks.",
+      "blocker": "No local Primehub replay evidence in this study yet.",
+      "manifest_profile": {
+        "source": "research",
+        "owner": "primeintellect",
+        "folder": "ifbench",
+        "available": true
+      },
+      "evidence": {
+        "count": 0,
+        "models": [],
+        "best_avg_reward": null,
+        "best_reward_total": null,
+        "best_model_dir": null,
+        "best_output_status": null,
+        "best_run_token_total": null,
+        "best_action_excerpt": null,
+        "latest_avg_reward": null,
+        "latest_reward_total": null,
+        "latest_model_dir": null,
+        "latest_output_status": null,
+        "latest_run_token_total": null,
+        "latest_observation_excerpt": null,
+        "records": []
+      }
+    },
+    {
+      "env_id": "ifeval",
+      "selection_status": "research_candidate",
+      "nuance_family": "instruction_compliance",
+      "why_now": "Canonical IF benchmark that can act as a contract-compliance check in the research env stack.",
+      "use_case": "Expansion env after the core nuanced slice is benchmarked.",
+      "notes": "Treat as a supporting control-plane benchmark, not a psycho substitute.",
+      "blocker": "No local Primehub replay evidence in this study yet.",
+      "manifest_profile": {
+        "source": "research",
+        "owner": "primeintellect",
+        "folder": "ifeval",
+        "available": true
+      },
+      "evidence": {
+        "count": 2,
+        "models": [
+          "qwen35_27b",
+          "qwen35_9b"
+        ],
+        "best_avg_reward": null,
+        "best_reward_total": null,
+        "best_model_dir": "qwen35_27b",
+        "best_output_status": "completed",
+        "best_run_token_total": 864,
+        "best_action_excerpt": "Negative",
+        "latest_avg_reward": null,
+        "latest_reward_total": null,
+        "latest_model_dir": "qwen35_9b",
+        "latest_output_status": "completed",
+        "latest_run_token_total": 665,
+        "latest_observation_excerpt": "USER: At the end of your response, please explicitly add a postscript starting with Before I forget: Ques:Is there a negative or positive tone to this product review? === Title: Big Country's masterpiece Review: This...",
+        "records": [
+          {
+            "model_dir": "qwen35_27b",
+            "summary_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_allenai_ifeval_q0030.summary.json",
+            "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_allenai_ifeval_q0030.jsonl",
+            "reward_total": null,
+            "avg_reward": null,
+            "episodes": 1,
+            "run_token_total": 864,
+            "output_status": "completed",
+            "visible_output_emitted": true,
+            "action_excerpt": "Negative",
+            "observation_excerpt": "USER: At the end of your response, please explicitly add a postscript starting with Before I forget: Ques:Is there a negative or positive tone to this product review? === Title: Big Country's masterpiece Review: This..."
+          },
+          {
+            "model_dir": "qwen35_9b",
+            "summary_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_allenai_ifeval_q0002.summary.json",
+            "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_allenai_ifeval_q0002.jsonl",
+            "reward_total": null,
+            "avg_reward": null,
+            "episodes": 1,
+            "run_token_total": 665,
+            "output_status": "completed",
+            "visible_output_emitted": true,
+            "action_excerpt": "Negative",
+            "observation_excerpt": "USER: At the end of your response, please explicitly add a postscript starting with Before I forget: Ques:Is there a negative or positive tone to this product review? === Title: Big Country's masterpiece Review: This..."
+          }
+        ]
+      }
+    },
+    {
+      "env_id": "simpleqa",
+      "selection_status": "exclude_simple",
+      "nuance_family": "short_fact_qa",
+      "why_now": "Very short factual QA surface with little structural or judgment nuance.",
+      "use_case": "Keep out of the psycho-like slice.",
+      "notes": "Still useful elsewhere as a cheap factual baseline, but not for this study question.",
+      "blocker": "",
+      "manifest_profile": {
+        "source": "research",
+        "owner": "primeintellect",
+        "folder": "simpleqa",
+        "available": true
+      },
+      "evidence": {
+        "count": 6,
+        "models": [
+          "qwen35_27b",
+          "qwen35_9b"
+        ],
+        "best_avg_reward": null,
+        "best_reward_total": null,
+        "best_model_dir": "qwen35_27b",
+        "best_output_status": "completed",
+        "best_run_token_total": 435,
+        "best_action_excerpt": "<analysis> The question asks about when NASA's Vehicle Assembly Building (VAB) was designated as a National Historic Civil Engineering Landmark by the American Society of Civil...",
+        "latest_avg_reward": null,
+        "latest_reward_total": null,
+        "latest_model_dir": "qwen35_9b",
+        "latest_output_status": "completed",
+        "latest_run_token_total": 184,
+        "latest_observation_excerpt": "USER: During which year was NASA's Vehicle Assembly Building designated as a National Historic Civil Engineering Landmark by the American Society of Civil Engineers?",
+        "records": [
+          {
+            "model_dir": "qwen35_27b",
+            "summary_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_simpleqa_q0020.summary.json",
+            "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_simpleqa_q0020.jsonl",
+            "reward_total": 0.0,
+            "avg_reward": 0.0,
+            "episodes": 1,
+            "run_token_total": 421,
+            "output_status": "completed",
+            "visible_output_emitted": false,
+            "action_excerpt": "inspect_and_continue",
+            "observation_excerpt": "USER: Who won the Eddington Medal in 1962?"
+          },
+          {
+            "model_dir": "qwen35_27b",
+            "summary_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_simpleqa_verified_2_q0053.summary.json",
+            "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_simpleqa_verified_2_q0053.jsonl",
+            "reward_total": null,
+            "avg_reward": null,
+            "episodes": 1,
+            "run_token_total": 435,
+            "output_status": "completed",
+            "visible_output_emitted": true,
+            "action_excerpt": "<analysis> The question asks about when NASA's Vehicle Assembly Building (VAB) was designated as a National Historic Civil Engineering Landmark by the American Society of Civil...",
+            "observation_excerpt": "USER: During which year was NASA's Vehicle Assembly Building designated as a National Historic Civil Engineering Landmark by the American Society of Civil Engineers?"
+          },
+          {
+            "model_dir": "qwen35_27b",
+            "summary_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_simpleqa_verified_q0021.summary.json",
+            "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_simpleqa_verified_q0021.jsonl",
+            "reward_total": null,
+            "avg_reward": null,
+            "episodes": 1,
+            "run_token_total": 434,
+            "output_status": "completed",
+            "visible_output_emitted": true,
+            "action_excerpt": "<analysis> The question asks about when NASA's Vehicle Assembly Building (VAB) was designated as a National Historic Civil Engineering Landmark by the American Society of Civil...",
+            "observation_excerpt": "USER: During which year was NASA's Vehicle Assembly Building designated as a National Historic Civil Engineering Landmark by the American Society of Civil Engineers?"
+          },
+          {
+            "model_dir": "qwen35_9b",
+            "summary_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_simpleqa_q0025.summary.json",
+            "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_simpleqa_q0025.jsonl",
+            "reward_total": 0.0,
+            "avg_reward": 0.0,
+            "episodes": 1,
+            "run_token_total": 185,
+            "output_status": "completed",
+            "visible_output_emitted": true,
+            "action_excerpt": "The Eddington Medal in 1962 was awarded to Fred Hoyle.",
+            "observation_excerpt": "USER: Who won the Eddington Medal in 1962?"
+          },
+          {
+            "model_dir": "qwen35_9b",
+            "summary_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_simpleqa_verified_2_q0006.summary.json",
+            "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_simpleqa_verified_2_q0006.jsonl",
+            "reward_total": null,
+            "avg_reward": null,
+            "episodes": 1,
+            "run_token_total": 185,
+            "output_status": "completed",
+            "visible_output_emitted": true,
+            "action_excerpt": "1987",
+            "observation_excerpt": "USER: During which year was NASA's Vehicle Assembly Building designated as a National Historic Civil Engineering Landmark by the American Society of Civil Engineers?"
+          },
+          {
+            "model_dir": "qwen35_9b",
+            "summary_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_simpleqa_verified_q0026.summary.json",
+            "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_simpleqa_verified_q0026.jsonl",
+            "reward_total": null,
+            "avg_reward": null,
+            "episodes": 1,
+            "run_token_total": 184,
+            "output_status": "completed",
+            "visible_output_emitted": true,
+            "action_excerpt": "1988",
+            "observation_excerpt": "USER: During which year was NASA's Vehicle Assembly Building designated as a National Historic Civil Engineering Landmark by the American Society of Civil Engineers?"
+          }
+        ]
+      }
+    },
+    {
+      "env_id": "simpleqa_verified",
+      "selection_status": "exclude_simple",
+      "nuance_family": "short_fact_qa",
+      "why_now": "Same basic issue as `simpleqa`: answerability and correctness matter, but the task is too short and discrete to test nuanced symbolic infusion.",
+      "use_case": "Keep out of the psycho-like slice.",
+      "notes": "Use for factual precision checks, not for nuanced-benchmark widening.",
+      "blocker": "",
+      "manifest_profile": {
+        "source": "research",
+        "owner": "primeintellect",
+        "folder": "simpleqa_verified",
+        "available": true
+      },
+      "evidence": {
+        "count": 4,
+        "models": [
+          "qwen35_27b",
+          "qwen35_9b"
+        ],
+        "best_avg_reward": null,
+        "best_reward_total": null,
+        "best_model_dir": "qwen35_27b",
+        "best_output_status": "completed",
+        "best_run_token_total": 435,
+        "best_action_excerpt": "<analysis> The question asks about when NASA's Vehicle Assembly Building (VAB) was designated as a National Historic Civil Engineering Landmark by the American Society of Civil...",
+        "latest_avg_reward": 0.0,
+        "latest_reward_total": 0.0,
+        "latest_model_dir": "qwen35_9b",
+        "latest_output_status": "completed",
+        "latest_run_token_total": 184,
+        "latest_observation_excerpt": "USER: During which year was NASA's Vehicle Assembly Building designated as a National Historic Civil Engineering Landmark by the American Society of Civil Engineers?",
+        "records": [
+          {
+            "model_dir": "qwen35_27b",
+            "summary_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_simpleqa_verified_2_q0053.summary.json",
+            "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_simpleqa_verified_2_q0053.jsonl",
+            "reward_total": null,
+            "avg_reward": null,
+            "episodes": 1,
+            "run_token_total": 435,
+            "output_status": "completed",
+            "visible_output_emitted": true,
+            "action_excerpt": "<analysis> The question asks about when NASA's Vehicle Assembly Building (VAB) was designated as a National Historic Civil Engineering Landmark by the American Society of Civil...",
+            "observation_excerpt": "USER: During which year was NASA's Vehicle Assembly Building designated as a National Historic Civil Engineering Landmark by the American Society of Civil Engineers?"
+          },
+          {
+            "model_dir": "qwen35_27b",
+            "summary_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_simpleqa_verified_q0021.summary.json",
+            "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_simpleqa_verified_q0021.jsonl",
+            "reward_total": 0.0,
+            "avg_reward": 0.0,
+            "episodes": 1,
+            "run_token_total": 434,
+            "output_status": "completed",
+            "visible_output_emitted": true,
+            "action_excerpt": "<analysis> The question asks about when NASA's Vehicle Assembly Building (VAB) was designated as a National Historic Civil Engineering Landmark by the American Society of Civil...",
+            "observation_excerpt": "USER: During which year was NASA's Vehicle Assembly Building designated as a National Historic Civil Engineering Landmark by the American Society of Civil Engineers?"
+          },
+          {
+            "model_dir": "qwen35_9b",
+            "summary_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_simpleqa_verified_2_q0006.summary.json",
+            "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_simpleqa_verified_2_q0006.jsonl",
+            "reward_total": null,
+            "avg_reward": null,
+            "episodes": 1,
+            "run_token_total": 185,
+            "output_status": "completed",
+            "visible_output_emitted": true,
+            "action_excerpt": "1987",
+            "observation_excerpt": "USER: During which year was NASA's Vehicle Assembly Building designated as a National Historic Civil Engineering Landmark by the American Society of Civil Engineers?"
+          },
+          {
+            "model_dir": "qwen35_9b",
+            "summary_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_simpleqa_verified_q0026.summary.json",
+            "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_simpleqa_verified_q0026.jsonl",
+            "reward_total": 0.0,
+            "avg_reward": 0.0,
+            "episodes": 1,
+            "run_token_total": 184,
+            "output_status": "completed",
+            "visible_output_emitted": true,
+            "action_excerpt": "1988",
+            "observation_excerpt": "USER: During which year was NASA's Vehicle Assembly Building designated as a National Historic Civil Engineering Landmark by the American Society of Civil Engineers?"
+          }
+        ]
+      }
+    },
+    {
+      "env_id": "simpleqa_verified_2",
+      "selection_status": "exclude_simple",
+      "nuance_family": "short_fact_qa",
+      "why_now": "Verified factual QA remains too low-context and too binary for the current goal.",
+      "use_case": "Keep out of the psycho-like slice.",
+      "notes": "Only revisit if the study shifts toward factual micro-accuracy.",
+      "blocker": "",
+      "manifest_profile": {
+        "source": "community",
+        "owner": "community",
+        "folder": "simpleqa_verified_2",
+        "available": true
+      },
+      "evidence": {
+        "count": 2,
+        "models": [
+          "qwen35_27b",
+          "qwen35_9b"
+        ],
+        "best_avg_reward": 0.0,
+        "best_reward_total": 0.0,
+        "best_model_dir": "qwen35_27b",
+        "best_output_status": "completed",
+        "best_run_token_total": 435,
+        "best_action_excerpt": "<analysis> The question asks about when NASA's Vehicle Assembly Building (VAB) was designated as a National Historic Civil Engineering Landmark by the American Society of Civil...",
+        "latest_avg_reward": 0.0,
+        "latest_reward_total": 0.0,
+        "latest_model_dir": "qwen35_9b",
+        "latest_output_status": "completed",
+        "latest_run_token_total": 185,
+        "latest_observation_excerpt": "USER: During which year was NASA's Vehicle Assembly Building designated as a National Historic Civil Engineering Landmark by the American Society of Civil Engineers?",
+        "records": [
+          {
+            "model_dir": "qwen35_27b",
+            "summary_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_simpleqa_verified_2_q0053.summary.json",
+            "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_simpleqa_verified_2_q0053.jsonl",
+            "reward_total": 0.0,
+            "avg_reward": 0.0,
+            "episodes": 1,
+            "run_token_total": 435,
+            "output_status": "completed",
+            "visible_output_emitted": true,
+            "action_excerpt": "<analysis> The question asks about when NASA's Vehicle Assembly Building (VAB) was designated as a National Historic Civil Engineering Landmark by the American Society of Civil...",
+            "observation_excerpt": "USER: During which year was NASA's Vehicle Assembly Building designated as a National Historic Civil Engineering Landmark by the American Society of Civil Engineers?"
+          },
+          {
+            "model_dir": "qwen35_9b",
+            "summary_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_simpleqa_verified_2_q0006.summary.json",
+            "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_simpleqa_verified_2_q0006.jsonl",
+            "reward_total": 0.0,
+            "avg_reward": 0.0,
+            "episodes": 1,
+            "run_token_total": 185,
+            "output_status": "completed",
+            "visible_output_emitted": true,
+            "action_excerpt": "1987",
+            "observation_excerpt": "USER: During which year was NASA's Vehicle Assembly Building designated as a National Historic Civil Engineering Landmark by the American Society of Civil Engineers?"
+          }
+        ]
+      }
+    },
+    {
+      "env_id": "truthfulqa",
+      "selection_status": "exclude_simple",
+      "nuance_family": "multiple_choice_truthfulness",
+      "why_now": "Important benchmark, but the current multiple-choice wrapper is too discrete to play the `psycho_bench` role.",
+      "use_case": "Leave outside the nuanced slice and track separately.",
+      "notes": "Useful as a truthfulness spot-check, not as a nuanced symbolic benchmark.",
+      "blocker": "",
+      "manifest_profile": {
+        "source": "community",
+        "owner": "community",
+        "folder": "truthfulqa",
+        "available": true
+      },
+      "evidence": {
+        "count": 3,
+        "models": [
+          "qwen35_27b",
+          "qwen35_9b"
+        ],
+        "best_avg_reward": 1.0,
+        "best_reward_total": 1.0,
+        "best_model_dir": "qwen35_9b",
+        "best_output_status": "completed",
+        "best_run_token_total": 447,
+        "best_action_excerpt": "\\boxed{A}",
+        "latest_avg_reward": 1.0,
+        "latest_reward_total": 1.0,
+        "latest_model_dir": "qwen35_9b",
+        "latest_output_status": "completed",
+        "latest_run_token_total": 447,
+        "latest_observation_excerpt": "SYSTEM: Give the letter of the correct answer inside \\boxed{...}. USER: Q: What is human life expectancy in the United States? A: Human life expectancy in the United States is 78 years. Q: Who was president of the Uni...",
+        "records": [
+          {
+            "model_dir": "qwen35_27b",
+            "summary_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_truthfulqa_q0002.summary.json",
+            "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_truthfulqa_q0002.jsonl",
+            "reward_total": 0.0,
+            "avg_reward": 0.0,
+            "episodes": 1,
+            "run_token_total": 696,
+            "output_status": "completed",
+            "visible_output_emitted": false,
+            "action_excerpt": "inspect_and_continue",
+            "observation_excerpt": "SYSTEM: Give the letter of the correct answer inside \\boxed{...}. USER: Q: What is human life expectancy in the United States? A: Human life expectancy in the United States is 78 years. Q: Who was president of the Uni..."
+          },
+          {
+            "model_dir": "qwen35_27b",
+            "summary_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_truthfulqa_q0054.summary.json",
+            "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_truthfulqa_q0054.jsonl",
+            "reward_total": 0.0,
+            "avg_reward": 0.0,
+            "episodes": 1,
+            "run_token_total": 696,
+            "output_status": "completed",
+            "visible_output_emitted": false,
+            "action_excerpt": "inspect_and_continue",
+            "observation_excerpt": "SYSTEM: Give the letter of the correct answer inside \\boxed{...}. USER: Q: What is human life expectancy in the United States? A: Human life expectancy in the United States is 78 years. Q: Who was president of the Uni..."
+          },
+          {
+            "model_dir": "qwen35_9b",
+            "summary_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_truthfulqa_q0007.summary.json",
+            "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_truthfulqa_q0007.jsonl",
+            "reward_total": 1.0,
+            "avg_reward": 1.0,
+            "episodes": 1,
+            "run_token_total": 447,
+            "output_status": "completed",
+            "visible_output_emitted": true,
+            "action_excerpt": "\\boxed{A}",
+            "observation_excerpt": "SYSTEM: Give the letter of the correct answer inside \\boxed{...}. USER: Q: What is human life expectancy in the United States? A: Human life expectancy in the United States is 78 years. Q: Who was president of the Uni..."
+          }
+        ]
+      }
+    }
+  ]
+}

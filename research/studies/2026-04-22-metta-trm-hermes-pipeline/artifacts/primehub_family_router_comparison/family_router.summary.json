@@ -1,0 +1,707 @@
+{
+  "generated_at_utc": "2026-04-24T01:18:09.150173+00:00",
+  "trainer_plan": {
+    "training_task_id": "metta-primehub-family-router-comparison-20260423",
+    "checkpoint_interval": "variant_complete",
+    "chunk_strategy": "router_variant_per_run",
+    "holdout_ratio": 0.2,
+    "top_k": 5,
+    "min_supervision_weight": 0.4,
+    "base_corpus": "C:\\projects\\Hermes Skills\\data\\primehub_trm_autoresearch\\cycle_12\\primehub_trm_merged.jsonl",
+    "router_bundle": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_family_router_bundle\\primehub_family_router_bundle.json",
+    "external_abstraction": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_bundle\\primehub_external_abstraction_bundle.jsonl",
+    "external_critic_support": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_critic_support_bundle\\primehub_external_critic_support_bundle.jsonl"
+  },
+  "routed_envs": [
+    "allenai_ifeval",
+    "aime2026"
+  ],
+  "router_bundle": {
+    "bundle_type": "primehub_family_router",
+    "version": "router_profiles_v1",
+    "profiles": [
+      {
+        "source_env_name": "allenai_ifeval",
+        "router_profile": "exact_contract_instruction_wrapper",
+        "cluster": "choice_contract",
+        "primary_metric": "gated_contract_success_rate",
+        "abstraction_bundle": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_ifeval_bundle\\primehub_external_ifeval_bundle.jsonl",
+        "critic_support_bundle": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_ifeval_critic_support_bundle\\primehub_external_ifeval_critic_support_bundle.jsonl",
+        "abstraction_rows": 6,
+        "critic_support_rows": 6,
+        "promotion_guardrail": "preserve unrelated-family critic and gated-router metrics while improving wrapper contract success",
+        "route_mode": "family_specialist"
+      },
+      {
+        "source_env_name": "aime2026",
+        "router_profile": "hard_numeric_verification",
+        "cluster": "hard_reasoning_numeric",
+        "primary_metric": "gated_boxed_exact_rate",
+        "abstraction_bundle": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_aime2026_bundle\\primehub_external_aime2026_bundle.jsonl",
+        "critic_support_bundle": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_aime2026_critic_support_bundle\\primehub_external_aime2026_critic_support_bundle.jsonl",
+        "abstraction_rows": 6,
+        "critic_support_rows": 6,
+        "promotion_guardrail": "preserve unrelated-family critic calibration while improving boxed exactness and visible output",
+        "route_mode": "family_specialist"
+      }
+    ],
+    "interference_metrics": [
+      "target_family_lift",
+      "unrelated_critic_drift",
+      "unrelated_gated_router_regression",
+      "whole_holdout_critic_drift",
+      "net_interference_score"
+    ]
+  },
+  "variants": {
+    "control": {
+      "variant": "control",
+      "original_external_primehub_eval": {
+        "rows": 32,
+        "critic_bucket_accuracy": 0.75,
+        "retriever_exact_match_rate": 0.0625,
+        "router_critic_gated_exact_match_rate": 0.0,
+        "router_critic_gated_route_abstain_rate": 0.9062
+      },
+      "target_family_eval": {
+        "rows": 9,
+        "critic_bucket_accuracy": 1.0,
+        "retriever_exact_match_rate": 0.0,
+        "router_critic_gated_exact_match_rate": 0.0,
+        "router_critic_gated_route_abstain_rate": 1.0
+      },
+      "unrelated_external_eval": {
+        "rows": 23,
+        "critic_bucket_accuracy": 0.6522,
+        "retriever_exact_match_rate": 0.087,
+        "router_critic_gated_exact_match_rate": 0.0,
+        "router_critic_gated_route_abstain_rate": 0.8696
+      },
+      "ifeval_contract_eval": {
+        "rows": 3,
+        "retrieval_contract_success_rate": 0.0,
+        "gated_contract_success_rate": 0.0
+      },
+      "aime_numeric_eval": {
+        "rows": 6,
+        "retrieval_boxed_exact_rate": 0.0,
+        "gated_boxed_exact_rate": 0.0,
+        "gated_action_nonempty_rate": 0.0
+      },
+      "per_env": {
+        "aime2026": {
+          "rows": 6,
+          "critic_bucket_accuracy": 1.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 1.0
+        },
+        "allenai_ifeval": {
+          "rows": 3,
+          "critic_bucket_accuracy": 1.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 1.0
+        },
+        "colf": {
+          "rows": 3,
+          "critic_bucket_accuracy": 1.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 1.0
+        },
+        "jailbreak_bench": {
+          "rows": 3,
+          "critic_bucket_accuracy": 1.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 1.0
+        },
+        "math_env": {
+          "rows": 3,
+          "critic_bucket_accuracy": 0.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 1.0
+        },
+        "misguided_attn": {
+          "rows": 5,
+          "critic_bucket_accuracy": 1.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 1.0
+        },
+        "psycho_bench": {
+          "rows": 3,
+          "critic_bucket_accuracy": 0.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 0.0
+        },
+        "truthfulqa": {
+          "rows": 2,
+          "critic_bucket_accuracy": 0.0,
+          "retriever_exact_match_rate": 1.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 1.0
+        },
+        "uq": {
+          "rows": 4,
+          "critic_bucket_accuracy": 1.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 1.0
+        }
+      }
+    },
+    "global_common": {
+      "variant": "global_common",
+      "original_external_primehub_eval": {
+        "rows": 32,
+        "critic_bucket_accuracy": 0.75,
+        "retriever_exact_match_rate": 0.1562,
+        "router_critic_gated_exact_match_rate": 0.1562,
+        "router_critic_gated_route_abstain_rate": 0.5938
+      },
+      "target_family_eval": {
+        "rows": 9,
+        "critic_bucket_accuracy": 1.0,
+        "retriever_exact_match_rate": 0.0,
+        "router_critic_gated_exact_match_rate": 0.0,
+        "router_critic_gated_route_abstain_rate": 1.0
+      },
+      "unrelated_external_eval": {
+        "rows": 23,
+        "critic_bucket_accuracy": 0.6522,
+        "retriever_exact_match_rate": 0.2174,
+        "router_critic_gated_exact_match_rate": 0.2174,
+        "router_critic_gated_route_abstain_rate": 0.4348
+      },
+      "ifeval_contract_eval": {
+        "rows": 3,
+        "retrieval_contract_success_rate": 0.0,
+        "gated_contract_success_rate": 0.0
+      },
+      "aime_numeric_eval": {
+        "rows": 6,
+        "retrieval_boxed_exact_rate": 0.0,
+        "gated_boxed_exact_rate": 0.0,
+        "gated_action_nonempty_rate": 0.0
+      },
+      "per_env": {
+        "aime2026": {
+          "rows": 6,
+          "critic_bucket_accuracy": 1.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 1.0
+        },
+        "allenai_ifeval": {
+          "rows": 3,
+          "critic_bucket_accuracy": 1.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 1.0
+        },
+        "colf": {
+          "rows": 3,
+          "critic_bucket_accuracy": 1.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 1.0
+        },
+        "jailbreak_bench": {
+          "rows": 3,
+          "critic_bucket_accuracy": 1.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 1.0
+        },
+        "math_env": {
+          "rows": 3,
+          "critic_bucket_accuracy": 1.0,
+          "retriever_exact_match_rate": 1.0,
+          "router_critic_gated_exact_match_rate": 1.0,
+          "router_critic_gated_route_abstain_rate": 0.0
+        },
+        "misguided_attn": {
+          "rows": 5,
+          "critic_bucket_accuracy": 0.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 0.0
+        },
+        "psycho_bench": {
+          "rows": 3,
+          "critic_bucket_accuracy": 0.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 0.0
+        },
+        "truthfulqa": {
+          "rows": 2,
+          "critic_bucket_accuracy": 1.0,
+          "retriever_exact_match_rate": 1.0,
+          "router_critic_gated_exact_match_rate": 1.0,
+          "router_critic_gated_route_abstain_rate": 0.0
+        },
+        "uq": {
+          "rows": 4,
+          "critic_bucket_accuracy": 1.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 1.0
+        }
+      }
+    },
+    "global_all_abstractions": {
+      "variant": "global_all_abstractions",
+      "original_external_primehub_eval": {
+        "rows": 32,
+        "critic_bucket_accuracy": 0.4688,
+        "retriever_exact_match_rate": 0.1562,
+        "router_critic_gated_exact_match_rate": 0.1562,
+        "router_critic_gated_route_abstain_rate": 0.3125
+      },
+      "target_family_eval": {
+        "rows": 9,
+        "critic_bucket_accuracy": 0.0,
+        "retriever_exact_match_rate": 0.0,
+        "router_critic_gated_exact_match_rate": 0.0,
+        "router_critic_gated_route_abstain_rate": 0.0
+      },
+      "unrelated_external_eval": {
+        "rows": 23,
+        "critic_bucket_accuracy": 0.6522,
+        "retriever_exact_match_rate": 0.2174,
+        "router_critic_gated_exact_match_rate": 0.2174,
+        "router_critic_gated_route_abstain_rate": 0.4348
+      },
+      "ifeval_contract_eval": {
+        "rows": 3,
+        "retrieval_contract_success_rate": 1.0,
+        "gated_contract_success_rate": 1.0
+      },
+      "aime_numeric_eval": {
+        "rows": 6,
+        "retrieval_boxed_exact_rate": 1.0,
+        "gated_boxed_exact_rate": 1.0,
+        "gated_action_nonempty_rate": 1.0
+      },
+      "per_env": {
+        "aime2026": {
+          "rows": 6,
+          "critic_bucket_accuracy": 0.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 0.0
+        },
+        "allenai_ifeval": {
+          "rows": 3,
+          "critic_bucket_accuracy": 0.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 0.0
+        },
+        "colf": {
+          "rows": 3,
+          "critic_bucket_accuracy": 1.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 1.0
+        },
+        "jailbreak_bench": {
+          "rows": 3,
+          "critic_bucket_accuracy": 1.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 1.0
+        },
+        "math_env": {
+          "rows": 3,
+          "critic_bucket_accuracy": 1.0,
+          "retriever_exact_match_rate": 1.0,
+          "router_critic_gated_exact_match_rate": 1.0,
+          "router_critic_gated_route_abstain_rate": 0.0
+        },
+        "misguided_attn": {
+          "rows": 5,
+          "critic_bucket_accuracy": 0.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 0.0
+        },
+        "psycho_bench": {
+          "rows": 3,
+          "critic_bucket_accuracy": 0.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 0.0
+        },
+        "truthfulqa": {
+          "rows": 2,
+          "critic_bucket_accuracy": 1.0,
+          "retriever_exact_match_rate": 1.0,
+          "router_critic_gated_exact_match_rate": 1.0,
+          "router_critic_gated_route_abstain_rate": 0.0
+        },
+        "uq": {
+          "rows": 4,
+          "critic_bucket_accuracy": 1.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 1.0
+        }
+      }
+    },
+    "global_all_stacks": {
+      "variant": "global_all_stacks",
+      "original_external_primehub_eval": {
+        "rows": 32,
+        "critic_bucket_accuracy": 0.4688,
+        "retriever_exact_match_rate": 0.1562,
+        "router_critic_gated_exact_match_rate": 0.1562,
+        "router_critic_gated_route_abstain_rate": 0.3125
+      },
+      "target_family_eval": {
+        "rows": 9,
+        "critic_bucket_accuracy": 0.0,
+        "retriever_exact_match_rate": 0.0,
+        "router_critic_gated_exact_match_rate": 0.0,
+        "router_critic_gated_route_abstain_rate": 0.0
+      },
+      "unrelated_external_eval": {
+        "rows": 23,
+        "critic_bucket_accuracy": 0.6522,
+        "retriever_exact_match_rate": 0.2174,
+        "router_critic_gated_exact_match_rate": 0.2174,
+        "router_critic_gated_route_abstain_rate": 0.4348
+      },
+      "ifeval_contract_eval": {
+        "rows": 3,
+        "retrieval_contract_success_rate": 1.0,
+        "gated_contract_success_rate": 1.0
+      },
+      "aime_numeric_eval": {
+        "rows": 6,
+        "retrieval_boxed_exact_rate": 1.0,
+        "gated_boxed_exact_rate": 1.0,
+        "gated_action_nonempty_rate": 1.0
+      },
+      "per_env": {
+        "aime2026": {
+          "rows": 6,
+          "critic_bucket_accuracy": 0.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 0.0
+        },
+        "allenai_ifeval": {
+          "rows": 3,
+          "critic_bucket_accuracy": 0.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 0.0
+        },
+        "colf": {
+          "rows": 3,
+          "critic_bucket_accuracy": 1.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 1.0
+        },
+        "jailbreak_bench": {
+          "rows": 3,
+          "critic_bucket_accuracy": 1.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 1.0
+        },
+        "math_env": {
+          "rows": 3,
+          "critic_bucket_accuracy": 1.0,
+          "retriever_exact_match_rate": 1.0,
+          "router_critic_gated_exact_match_rate": 1.0,
+          "router_critic_gated_route_abstain_rate": 0.0
+        },
+        "misguided_attn": {
+          "rows": 5,
+          "critic_bucket_accuracy": 0.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 0.0
+        },
+        "psycho_bench": {
+          "rows": 3,
+          "critic_bucket_accuracy": 0.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 0.0
+        },
+        "truthfulqa": {
+          "rows": 2,
+          "critic_bucket_accuracy": 1.0,
+          "retriever_exact_match_rate": 1.0,
+          "router_critic_gated_exact_match_rate": 1.0,
+          "router_critic_gated_route_abstain_rate": 0.0
+        },
+        "uq": {
+          "rows": 4,
+          "critic_bucket_accuracy": 1.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 1.0
+        }
+      }
+    },
+    "routed_abstractions": {
+      "variant": "routed_abstractions",
+      "original_external_primehub_eval": {
+        "rows": 32,
+        "critic_bucket_accuracy": 0.4688,
+        "retriever_exact_match_rate": 0.1562,
+        "router_critic_gated_exact_match_rate": 0.1562,
+        "router_critic_gated_route_abstain_rate": 0.3125
+      },
+      "target_family_eval": {
+        "rows": 9,
+        "critic_bucket_accuracy": 0.0,
+        "retriever_exact_match_rate": 0.0,
+        "router_critic_gated_exact_match_rate": 0.0,
+        "router_critic_gated_route_abstain_rate": 0.0
+      },
+      "unrelated_external_eval": {
+        "rows": 23,
+        "critic_bucket_accuracy": 0.6522,
+        "retriever_exact_match_rate": 0.2174,
+        "router_critic_gated_exact_match_rate": 0.2174,
+        "router_critic_gated_route_abstain_rate": 0.4348
+      },
+      "ifeval_contract_eval": {
+        "rows": 3,
+        "retrieval_contract_success_rate": 1.0,
+        "gated_contract_success_rate": 1.0
+      },
+      "aime_numeric_eval": {
+        "rows": 6,
+        "retrieval_boxed_exact_rate": 1.0,
+        "gated_boxed_exact_rate": 1.0,
+        "gated_action_nonempty_rate": 1.0
+      },
+      "per_env": {
+        "aime2026": {
+          "rows": 6,
+          "critic_bucket_accuracy": 0.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 0.0
+        },
+        "allenai_ifeval": {
+          "rows": 3,
+          "critic_bucket_accuracy": 0.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 0.0
+        },
+        "colf": {
+          "rows": 3,
+          "critic_bucket_accuracy": 1.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 1.0
+        },
+        "jailbreak_bench": {
+          "rows": 3,
+          "critic_bucket_accuracy": 1.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 1.0
+        },
+        "math_env": {
+          "rows": 3,
+          "critic_bucket_accuracy": 1.0,
+          "retriever_exact_match_rate": 1.0,
+          "router_critic_gated_exact_match_rate": 1.0,
+          "router_critic_gated_route_abstain_rate": 0.0
+        },
+        "misguided_attn": {
+          "rows": 5,
+          "critic_bucket_accuracy": 0.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 0.0
+        },
+        "psycho_bench": {
+          "rows": 3,
+          "critic_bucket_accuracy": 0.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 0.0
+        },
+        "truthfulqa": {
+          "rows": 2,
+          "critic_bucket_accuracy": 1.0,
+          "retriever_exact_match_rate": 1.0,
+          "router_critic_gated_exact_match_rate": 1.0,
+          "router_critic_gated_route_abstain_rate": 0.0
+        },
+        "uq": {
+          "rows": 4,
+          "critic_bucket_accuracy": 1.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 1.0
+        }
+      }
+    },
+    "routed_stacks": {
+      "variant": "routed_stacks",
+      "original_external_primehub_eval": {
+        "rows": 32,
+        "critic_bucket_accuracy": 0.4688,
+        "retriever_exact_match_rate": 0.1562,
+        "router_critic_gated_exact_match_rate": 0.1562,
+        "router_critic_gated_route_abstain_rate": 0.3125
+      },
+      "target_family_eval": {
+        "rows": 9,
+        "critic_bucket_accuracy": 0.0,
+        "retriever_exact_match_rate": 0.0,
+        "router_critic_gated_exact_match_rate": 0.0,
+        "router_critic_gated_route_abstain_rate": 0.0
+      },
+      "unrelated_external_eval": {
+        "rows": 23,
+        "critic_bucket_accuracy": 0.6522,
+        "retriever_exact_match_rate": 0.2174,
+        "router_critic_gated_exact_match_rate": 0.2174,
+        "router_critic_gated_route_abstain_rate": 0.4348
+      },
+      "ifeval_contract_eval": {
+        "rows": 3,
+        "retrieval_contract_success_rate": 1.0,
+        "gated_contract_success_rate": 1.0
+      },
+      "aime_numeric_eval": {
+        "rows": 6,
+        "retrieval_boxed_exact_rate": 1.0,
+        "gated_boxed_exact_rate": 1.0,
+        "gated_action_nonempty_rate": 1.0
+      },
+      "per_env": {
+        "aime2026": {
+          "rows": 6,
+          "critic_bucket_accuracy": 0.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 0.0
+        },
+        "allenai_ifeval": {
+          "rows": 3,
+          "critic_bucket_accuracy": 0.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 0.0
+        },
+        "colf": {
+          "rows": 3,
+          "critic_bucket_accuracy": 1.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 1.0
+        },
+        "jailbreak_bench": {
+          "rows": 3,
+          "critic_bucket_accuracy": 1.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 1.0
+        },
+        "math_env": {
+          "rows": 3,
+          "critic_bucket_accuracy": 1.0,
+          "retriever_exact_match_rate": 1.0,
+          "router_critic_gated_exact_match_rate": 1.0,
+          "router_critic_gated_route_abstain_rate": 0.0
+        },
+        "misguided_attn": {
+          "rows": 5,
+          "critic_bucket_accuracy": 0.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 0.0
+        },
+        "psycho_bench": {
+          "rows": 3,
+          "critic_bucket_accuracy": 0.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 0.0
+        },
+        "truthfulqa": {
+          "rows": 2,
+          "critic_bucket_accuracy": 1.0,
+          "retriever_exact_match_rate": 1.0,
+          "router_critic_gated_exact_match_rate": 1.0,
+          "router_critic_gated_route_abstain_rate": 0.0
+        },
+        "uq": {
+          "rows": 4,
+          "critic_bucket_accuracy": 1.0,
+          "retriever_exact_match_rate": 0.0,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 1.0
+        }
+      }
+    }
+  },
+  "interference": {
+    "control": {
+      "ifeval_gated_contract_lift": 0.0,
+      "aime_gated_boxed_exact_lift": 0.0,
+      "target_family_lift": 0.0,
+      "unrelated_critic_drift": 0.0,
+      "unrelated_gated_router_regression": 0.2174,
+      "whole_holdout_critic_drift": 0.0,
+      "net_interference_score": -0.2174
+    },
+    "global_all_abstractions": {
+      "ifeval_gated_contract_lift": 1.0,
+      "aime_gated_boxed_exact_lift": 1.0,
+      "target_family_lift": 2.0,
+      "unrelated_critic_drift": 0.0,
+      "unrelated_gated_router_regression": 0.0,
+      "whole_holdout_critic_drift": 0.2812,
+      "net_interference_score": 2.0
+    },
+    "global_all_stacks": {
+      "ifeval_gated_contract_lift": 1.0,
+      "aime_gated_boxed_exact_lift": 1.0,
+      "target_family_lift": 2.0,
+      "unrelated_critic_drift": 0.0,
+      "unrelated_gated_router_regression": 0.0,
+      "whole_holdout_critic_drift": 0.2812,
+      "net_interference_score": 2.0
+    },
+    "routed_abstractions": {
+      "ifeval_gated_contract_lift": 1.0,
+      "aime_gated_boxed_exact_lift": 1.0,
+      "target_family_lift": 2.0,
+      "unrelated_critic_drift": 0.0,
+      "unrelated_gated_router_regression": 0.0,
+      "whole_holdout_critic_drift": 0.2812,
+      "net_interference_score": 2.0
+    },
+    "routed_stacks": {
+      "ifeval_gated_contract_lift": 1.0,
+      "aime_gated_boxed_exact_lift": 1.0,
+      "target_family_lift": 2.0,
+      "unrelated_critic_drift": 0.0,
+      "unrelated_gated_router_regression": 0.0,
+      "whole_holdout_critic_drift": 0.2812,
+      "net_interference_score": 2.0
+    }
+  },
+  "best_net_variant": "global_all_abstractions",
+  "best_target_lift_variant": "global_all_abstractions"
+}

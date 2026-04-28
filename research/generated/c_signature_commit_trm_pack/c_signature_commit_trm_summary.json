@@ -1,0 +1,29 @@
+{
+  "generated_at_utc": "2026-04-28T14:01:59.131092+00:00",
+  "row_count": 122,
+  "by_split": {
+    "holdout_seen": 20,
+    "train": 86,
+    "val_seen": 16
+  },
+  "by_split_target": {
+    "holdout_seen": {
+      "commit": 18,
+      "reject_or_abstain": 2
+    },
+    "train": {
+      "reject_or_abstain": 17,
+      "commit": 69
+    },
+    "val_seen": {
+      "reject_or_abstain": 2,
+      "commit": 14
+    }
+  },
+  "by_bucket": {
+    "repair_failure_or_no_gain": 21,
+    "repair_success": 81,
+    "partial_repair_improvement": 20
+  },
+  "purpose": "Train a post-repair verifier/commit TRM for c_signature_fail rows where MeTTa can select the repair action but pre-repair 3B over-commits no-gain repairs."
+}

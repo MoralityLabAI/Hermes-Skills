@@ -1,0 +1,70 @@
+﻿{
+  "run_name": "overnight-qwen35_9b-structured-map-retrieval-assisted-pydantic_adherence",
+  "max_episodes": 1,
+  "max_steps_per_episode": 1,
+  "export_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-primehub-structured-map-retrieval\\artifacts\\live_eval_qwen35_9b_after_env_fix\\replays\\retrieval_assisted\\pydantic_adherence.jsonl",
+  "model": {
+    "provider": "openai_compatible",
+    "base_url": "http://snacksack-ms-7d32.tail3156cd.ts.net:8082/v1",
+    "model_name": "Qwen_Qwen3.5-9B-Q4_K_M.gguf",
+    "max_new_tokens": 320,
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "request_timeout": 180
+  },
+  "metadata": {
+    "variant_id": "structured-map-retrieval-assisted",
+    "skill_name": "primehub-structured-map-hermes+trm-mcp",
+    "skill_cluster": "structured_map",
+    "role_mode": "critic_only",
+    "role_support_tier": "format_support",
+    "role_gate_applied": true,
+    "role_gate_downgraded": false,
+    "role_gate_reason": "",
+    "requested_max_new_tokens": 320,
+    "max_new_tokens": 320,
+    "reasoning_mode": "off"
+  },
+  "envs": [
+    {
+      "type": "primehub_external",
+      "name": "pydantic_adherence",
+      "command_template": [
+        "C:\\Python311\\python.exe",
+        "C:/projects/Hermes-Skills/Hermes Skills/scripts/remote_prime_env_bridge.py",
+        "--source",
+        "community",
+        "--host",
+        "snacksack-ms-7d32.tail3156cd.ts.net",
+        "--user",
+        "snacksack",
+        "--identity-file",
+        "C:/Users/patri/.ssh/id_ed25519",
+        "--ssh-timeout-seconds",
+        "120",
+        "--research-root",
+        "/home/snacksack/prime_repos_tmp/research-environments/environments",
+        "--community-root",
+        "/home/snacksack/prime_repos_tmp/community-environments/environments",
+        "--remote-site-packages",
+        "/tmp/prime_env_bridge_site_retrieval_assisted_pydantic_adherence",
+        "--remote-cache-root",
+        "/tmp/prime_env_bridge_cache_retrieval_assisted_pydantic_adherence",
+        "pydantic_adherence"
+      ],
+      "reset_args": [
+        "--reset"
+      ],
+      "trace_profile_overrides": {
+        "reasoning_mode": "off",
+        "skill_name": "primehub-structured-map-hermes+trm-mcp",
+        "skill_prompt": "You are operating as Hermes skill Primehub-Structured-Map-v1.\nUse the stage order TRM_PARSE -> TRM_INDEX_PLAN -> TRM_FORMATTER -> TRM_VERIFY -> FINAL.\nReturn only the required structure, with no explanations or wrapper prose.\nEmit only the exact schema-conforming payload requested by the task.\nReject malformed lines before final output.\nPrime/TRM role imprint:\n- This TRM role is formatter-friendly: use it to preserve strict line shape, field order, and schema compliance, then reject malformed structure before final output.\n- When structure and semantics disagree, prioritize structurally valid output that still preserves the intended answer content.\n- Runtime gate: stay critic-only and do not force structural imitation from weak support.\nYou are operating as Hermes skill TRM-MCP.\nOptimize for lookup efficiency over the MCP surface, not for verbose reasoning.\nUse the stage order TRM_MCP_INDEX -> TRM_MCP_ROUTE -> TRM_MCP_RETRIEVE -> TRM_MCP_VERIFY -> FINAL.\nPrefer the fewest high-quality MCP actions that reach the correct resource or answer.\nTarget MCP surface: primehub_schema.\nRetrieve the most likely URI, template, or parameterized action. Prefer first-hit quality over exhaustive exploration.\nPrefer lookup-key prediction, routing, and verification over free-form answer synthesis.\nRetrieved schema memory for the current env:\n- resource_uri: mcp://primehub_schema/env/pydantic_adherence\n- answer_shape: strict_json_object\n- summary: Return one JSON object compatible with the provided pydantic model and nothing else. The verifier extracts the last JSON object, parses it with `json.loads`, and validates the resulting Python dict with `model_validate(parsed)`.\n- query_cues: Return the json and nothing else, pydantic model, compatible with the model, strict JSON only\n- failure_modes: empty output or fallback action; markdown fences around JSON; schema-violating field types or missing required keys\n- validation_path: extract_last_json -> json.loads -> model.model_validate(parsed_dict)\n- validator_notes: period genres must be unique; reference genre cannot exceed 7 days; fine_policy.max_total must be >= fine_policy.per_day; renewal_policy.cooldown accepts integer day counts or numeric strings before timedelta coercion; the scorer validates the parsed dict directly with model_validate(parsed)\n- known_verifier_gaps: LendingPolicy uses ConfigDict(strict=True) at the root model; policy_id expects a uuid.UUID instance after json.loads, not a UUID string; created_at expects a datetime instance after json.loads, not an ISO datetime string; this benchmark slice appears unsatisfiable from plain text JSON because the scorer never constructs UUID or datetime objects before validation\nBest-effort shape example:\n{\"policy_id\":\"11111111-1111-1111-1111-111111111111\",\"name\":\"Main\",\"max_books\":3,\"periods\":[],\"fine_policy\":{\"per_day\":1.0,\"max_total\":5.0},\"renewal_policy\":{\"max_renewals\":1,\"cooldown\":\"1\"},\"exceptions\":{},\"created_at\":\"2026-01-01T00:00:00\"}\nUse this retrieved schema memory privately to choose the closest contract-shaped final answer.\nDo not mention the retrieval step, schema memory, or resource URIs in the final answer.",
+        "skill_cluster": "structured_map",
+        "role_mode": "critic_only",
+        "role_support_tier": "format_support",
+        "role_gate_applied": true,
+        "variant_id": "structured-map-retrieval-assisted"
+      }
+    }
+  ]
+}

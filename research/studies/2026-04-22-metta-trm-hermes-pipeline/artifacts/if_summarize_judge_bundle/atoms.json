@@ -1,0 +1,1585 @@
+[
+  {
+    "head": "answer-shape",
+    "args": [
+      "if_summarize_judge",
+      "constraint_conditioned_summary"
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 1
+  },
+  {
+    "head": "summary",
+    "args": [
+      "if_summarize_judge",
+      "Infer the requested structural family from the instruction, then emit only a structure-conforming summary with no extra prose."
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 2
+  },
+  {
+    "head": "constraint",
+    "args": [
+      "if_summarize_judge",
+      "classify the active constraint family before writing the answer"
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 3
+  },
+  {
+    "head": "constraint",
+    "args": [
+      "if_summarize_judge",
+      "satisfy exact counts, delimiters, wrappers, and casing literally"
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 4
+  },
+  {
+    "head": "constraint",
+    "args": [
+      "if_summarize_judge",
+      "emit only the constrained summary text"
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 5
+  },
+  {
+    "head": "forbid",
+    "args": [
+      "if_summarize_judge",
+      "prefaces, explanations, or code fences"
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 6
+  },
+  {
+    "head": "forbid",
+    "args": [
+      "if_summarize_judge",
+      "extra lines outside the requested family"
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 7
+  },
+  {
+    "head": "validation-path",
+    "args": [
+      "if_summarize_judge",
+      "infer constraint family from observation -> enforce exact structural rules -> remote judge checks compliance and is lenient on content quality"
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 8
+  },
+  {
+    "head": "validator-note",
+    "args": [
+      "if_summarize_judge",
+      "the judge is strict on structure and lenient on content quality"
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 9
+  },
+  {
+    "head": "validator-note",
+    "args": [
+      "if_summarize_judge",
+      "exactly N means exact word, sentence, bullet, or hashtag counts"
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 10
+  },
+  {
+    "head": "validator-note",
+    "args": [
+      "if_summarize_judge",
+      "or fewer means less than or equal to the stated limit"
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 11
+  },
+  {
+    "head": "minimal-example",
+    "args": [
+      "if_summarize_judge",
+      "Welschbillig Castle rose over Roman remains, and later wars left it a ruin."
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 12
+  },
+  {
+    "head": "example-status",
+    "args": [
+      "if_summarize_judge",
+      "validated_minimal_example"
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 13
+  },
+  {
+    "head": "failure-mode",
+    "args": [
+      "if_summarize_judge",
+      "empty output or fallback action"
+    ],
+    "source_file": "failure_modes.metta",
+    "line_no": 1
+  },
+  {
+    "head": "failure-mode",
+    "args": [
+      "if_summarize_judge",
+      "correct topic but wrong structural family"
+    ],
+    "source_file": "failure_modes.metta",
+    "line_no": 2
+  },
+  {
+    "head": "failure-mode",
+    "args": [
+      "if_summarize_judge",
+      "wrong exact count for words, sentences, bullets, or hashtags"
+    ],
+    "source_file": "failure_modes.metta",
+    "line_no": 3
+  },
+  {
+    "head": "failure-mode",
+    "args": [
+      "if_summarize_judge",
+      "wrong punctuation, casing, or wrapper tags"
+    ],
+    "source_file": "failure_modes.metta",
+    "line_no": 4
+  },
+  {
+    "head": "failure-mode",
+    "args": [
+      "if_summarize_judge",
+      "extra explanation around an otherwise valid constrained answer"
+    ],
+    "source_file": "failure_modes.metta",
+    "line_no": 5
+  },
+  {
+    "head": "repair-hint",
+    "args": [
+      "if_summarize_judge",
+      "classify the family first, then rewrite to the canonical minimal structure for that family"
+    ],
+    "source_file": "failure_modes.metta",
+    "line_no": 6
+  },
+  {
+    "head": "repair-hint",
+    "args": [
+      "if_summarize_judge",
+      "prefer the smallest structurally valid answer over verbose content preservation"
+    ],
+    "source_file": "failure_modes.metta",
+    "line_no": 7
+  },
+  {
+    "head": "trace-label",
+    "args": [
+      "if_summarize_judge",
+      "constraint_family_failure"
+    ],
+    "source_file": "failure_modes.metta",
+    "line_no": 8
+  },
+  {
+    "head": "package-id",
+    "args": [
+      "if_summarize_judge_constraints"
+    ],
+    "source_file": "package.metta",
+    "line_no": 1
+  },
+  {
+    "head": "base-skill",
+    "args": [
+      "primehub-constraint-summarize-hermes"
+    ],
+    "source_file": "package.metta",
+    "line_no": 2
+  },
+  {
+    "head": "overlay",
+    "args": [
+      "trm-observability-workflow"
+    ],
+    "source_file": "package.metta",
+    "line_no": 3
+  },
+  {
+    "head": "owner",
+    "args": [
+      "Hermes Skills research"
+    ],
+    "source_file": "package.metta",
+    "line_no": 4
+  },
+  {
+    "head": "env",
+    "args": [
+      "if_summarize_judge"
+    ],
+    "source_file": "package.metta",
+    "line_no": 5
+  },
+  {
+    "head": "goal",
+    "args": [
+      "compile constraint-family summaries into runtime packets, verifier hints, profile rows, and deterministic repair templates"
+    ],
+    "source_file": "package.metta",
+    "line_no": 6
+  },
+  {
+    "head": "profile-summary",
+    "args": [
+      "if_summarize_judge",
+      "exact_5_words",
+      "Return exactly five words and nothing else."
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 1
+  },
+  {
+    "head": "profile-query-cue",
+    "args": [
+      "if_summarize_judge",
+      "exact_5_words",
+      "exactly 5 words"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 2
+  },
+  {
+    "head": "profile-constraint",
+    "args": [
+      "if_summarize_judge",
+      "exact_5_words",
+      "output exactly five words"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 3
+  },
+  {
+    "head": "profile-forbid",
+    "args": [
+      "if_summarize_judge",
+      "exact_5_words",
+      "extra sixth word or trailing punctuation commentary"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 4
+  },
+  {
+    "head": "profile-minimal-example",
+    "args": [
+      "if_summarize_judge",
+      "exact_5_words",
+      "Castle ruins mark Roman past"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 5
+  },
+  {
+    "head": "profile-repair-hint",
+    "args": [
+      "if_summarize_judge",
+      "exact_5_words",
+      "trim or pad to exactly five words"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 6
+  },
+  {
+    "head": "profile-trace-label",
+    "args": [
+      "if_summarize_judge",
+      "exact_5_words",
+      "exact_word_count_failure"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 7
+  },
+  {
+    "head": "profile-summary",
+    "args": [
+      "if_summarize_judge",
+      "single_question",
+      "Return one question sentence only."
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 9
+  },
+  {
+    "head": "profile-query-cue",
+    "args": [
+      "if_summarize_judge",
+      "single_question",
+      "single question"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 10
+  },
+  {
+    "head": "profile-constraint",
+    "args": [
+      "if_summarize_judge",
+      "single_question",
+      "end with exactly one question mark"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 11
+  },
+  {
+    "head": "profile-forbid",
+    "args": [
+      "if_summarize_judge",
+      "single_question",
+      "answer sentence after the question"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 12
+  },
+  {
+    "head": "profile-minimal-example",
+    "args": [
+      "if_summarize_judge",
+      "single_question",
+      "How did a Roman villa become castle ruins?"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 13
+  },
+  {
+    "head": "profile-repair-hint",
+    "args": [
+      "if_summarize_judge",
+      "single_question",
+      "collapse to one question sentence"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 14
+  },
+  {
+    "head": "profile-trace-label",
+    "args": [
+      "if_summarize_judge",
+      "single_question",
+      "question_wrapper_failure"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 15
+  },
+  {
+    "head": "profile-summary",
+    "args": [
+      "if_summarize_judge",
+      "alpha_start_3sent",
+      "Return exactly three sentences, each starting with a different letter."
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 17
+  },
+  {
+    "head": "profile-query-cue",
+    "args": [
+      "if_summarize_judge",
+      "alpha_start_3sent",
+      "different letter of the alphabet"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 18
+  },
+  {
+    "head": "profile-constraint",
+    "args": [
+      "if_summarize_judge",
+      "alpha_start_3sent",
+      "emit exactly three sentences"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 19
+  },
+  {
+    "head": "profile-constraint",
+    "args": [
+      "if_summarize_judge",
+      "alpha_start_3sent",
+      "start the three sentences with different letters"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 20
+  },
+  {
+    "head": "profile-forbid",
+    "args": [
+      "if_summarize_judge",
+      "alpha_start_3sent",
+      "two-sentence or same-letter output"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 21
+  },
+  {
+    "head": "profile-minimal-example",
+    "args": [
+      "if_summarize_judge",
+      "alpha_start_3sent",
+      "Ancient Roman roots shaped the site. Bold walls later strengthened the castle. Conflict finally left ruins."
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 22
+  },
+  {
+    "head": "profile-repair-hint",
+    "args": [
+      "if_summarize_judge",
+      "alpha_start_3sent",
+      "normalize to three short sentences with distinct starting letters"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 23
+  },
+  {
+    "head": "profile-trace-label",
+    "args": [
+      "if_summarize_judge",
+      "alpha_start_3sent",
+      "alpha_sentence_family_failure"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 24
+  },
+  {
+    "head": "profile-summary",
+    "args": [
+      "if_summarize_judge",
+      "exact_10w_bullets",
+      "Return exactly two bullet points and make each bullet exactly ten words."
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 26
+  },
+  {
+    "head": "profile-query-cue",
+    "args": [
+      "if_summarize_judge",
+      "exact_10w_bullets",
+      "exactly 2 bullet points"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 27
+  },
+  {
+    "head": "profile-query-cue",
+    "args": [
+      "if_summarize_judge",
+      "exact_10w_bullets",
+      "each bullet must be exactly 10 words"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 28
+  },
+  {
+    "head": "profile-constraint",
+    "args": [
+      "if_summarize_judge",
+      "exact_10w_bullets",
+      "emit exactly two bullet lines"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 29
+  },
+  {
+    "head": "profile-constraint",
+    "args": [
+      "if_summarize_judge",
+      "exact_10w_bullets",
+      "make each bullet exactly ten words"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 30
+  },
+  {
+    "head": "profile-forbid",
+    "args": [
+      "if_summarize_judge",
+      "exact_10w_bullets",
+      "paragraph text instead of bullets"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 31
+  },
+  {
+    "head": "profile-minimal-example",
+    "args": [
+      "if_summarize_judge",
+      "exact_10w_bullets",
+      "- Roman villa roots later supported a fortified regional castle complex.\n- French attacks destroyed defenses, leaving moats, towers, and ruins visible."
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 32
+  },
+  {
+    "head": "profile-repair-hint",
+    "args": [
+      "if_summarize_judge",
+      "exact_10w_bullets",
+      "repair to two bullets with ten words each"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 33
+  },
+  {
+    "head": "profile-trace-label",
+    "args": [
+      "if_summarize_judge",
+      "exact_10w_bullets",
+      "bullet_word_count_failure"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 34
+  },
+  {
+    "head": "profile-summary",
+    "args": [
+      "if_summarize_judge",
+      "exclamation_ends",
+      "Return two or three sentences and end every sentence with an exclamation mark."
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 36
+  },
+  {
+    "head": "profile-query-cue",
+    "args": [
+      "if_summarize_judge",
+      "exclamation_ends",
+      "every sentence ends with an exclamation mark"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 37
+  },
+  {
+    "head": "profile-constraint",
+    "args": [
+      "if_summarize_judge",
+      "exclamation_ends",
+      "use only two or three sentences"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 38
+  },
+  {
+    "head": "profile-constraint",
+    "args": [
+      "if_summarize_judge",
+      "exclamation_ends",
+      "end every sentence with !"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 39
+  },
+  {
+    "head": "profile-forbid",
+    "args": [
+      "if_summarize_judge",
+      "exclamation_ends",
+      "period or question ending"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 40
+  },
+  {
+    "head": "profile-minimal-example",
+    "args": [
+      "if_summarize_judge",
+      "exclamation_ends",
+      "Roman villa roots shaped this castle! Later wars left the site in ruins!"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 41
+  },
+  {
+    "head": "profile-repair-hint",
+    "args": [
+      "if_summarize_judge",
+      "exclamation_ends",
+      "normalize sentence endings to !"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 42
+  },
+  {
+    "head": "profile-trace-label",
+    "args": [
+      "if_summarize_judge",
+      "exclamation_ends",
+      "sentence_ending_failure"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 43
+  },
+  {
+    "head": "profile-summary",
+    "args": [
+      "if_summarize_judge",
+      "exact_15_words",
+      "Return one sentence of exactly fifteen words."
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 45
+  },
+  {
+    "head": "profile-query-cue",
+    "args": [
+      "if_summarize_judge",
+      "exact_15_words",
+      "exactly 15 words"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 46
+  },
+  {
+    "head": "profile-constraint",
+    "args": [
+      "if_summarize_judge",
+      "exact_15_words",
+      "emit exactly fifteen words"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 47
+  },
+  {
+    "head": "profile-forbid",
+    "args": [
+      "if_summarize_judge",
+      "exact_15_words",
+      "wrong exact word count"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 48
+  },
+  {
+    "head": "profile-minimal-example",
+    "args": [
+      "if_summarize_judge",
+      "exact_15_words",
+      "Roman villa remains beneath Welschbillig Castle reveal centuries of fortification, war, rebuilding, and eventual ruin."
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 49
+  },
+  {
+    "head": "profile-repair-hint",
+    "args": [
+      "if_summarize_judge",
+      "exact_15_words",
+      "trim or pad to exactly fifteen words"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 50
+  },
+  {
+    "head": "profile-trace-label",
+    "args": [
+      "if_summarize_judge",
+      "exact_15_words",
+      "exact_word_count_failure"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 51
+  },
+  {
+    "head": "profile-summary",
+    "args": [
+      "if_summarize_judge",
+      "3_keywords",
+      "Return exactly three keywords or key phrases separated by commas."
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 53
+  },
+  {
+    "head": "profile-query-cue",
+    "args": [
+      "if_summarize_judge",
+      "3_keywords",
+      "exactly 3 keywords or key phrases"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 54
+  },
+  {
+    "head": "profile-constraint",
+    "args": [
+      "if_summarize_judge",
+      "3_keywords",
+      "emit exactly three comma-separated keywords or short key phrases"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 55
+  },
+  {
+    "head": "profile-forbid",
+    "args": [
+      "if_summarize_judge",
+      "3_keywords",
+      "sentence or list with more than three items"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 56
+  },
+  {
+    "head": "profile-minimal-example",
+    "args": [
+      "if_summarize_judge",
+      "3_keywords",
+      "Roman villa, fortified castle, ruins"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 57
+  },
+  {
+    "head": "profile-repair-hint",
+    "args": [
+      "if_summarize_judge",
+      "3_keywords",
+      "compress to three comma-separated keywords"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 58
+  },
+  {
+    "head": "profile-trace-label",
+    "args": [
+      "if_summarize_judge",
+      "3_keywords",
+      "keyword_count_failure"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 59
+  },
+  {
+    "head": "profile-summary",
+    "args": [
+      "if_summarize_judge",
+      "dictionary_def",
+      "Return a bolded subject, a colon, and one dictionary-style definition sentence."
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 61
+  },
+  {
+    "head": "profile-query-cue",
+    "args": [
+      "if_summarize_judge",
+      "dictionary_def",
+      "dictionary definition"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 62
+  },
+  {
+    "head": "profile-query-cue",
+    "args": [
+      "if_summarize_judge",
+      "dictionary_def",
+      "subject name in bold"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 63
+  },
+  {
+    "head": "profile-constraint",
+    "args": [
+      "if_summarize_judge",
+      "dictionary_def",
+      "start with a bolded subject name followed by a colon"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 64
+  },
+  {
+    "head": "profile-constraint",
+    "args": [
+      "if_summarize_judge",
+      "dictionary_def",
+      "use one sentence only"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 65
+  },
+  {
+    "head": "profile-forbid",
+    "args": [
+      "if_summarize_judge",
+      "dictionary_def",
+      "missing bold subject or colon"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 66
+  },
+  {
+    "head": "profile-minimal-example",
+    "args": [
+      "if_summarize_judge",
+      "dictionary_def",
+      "**Welschbillig Castle**: a ruined fortified site built over a former Roman villa in Rhineland-Palatinate."
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 67
+  },
+  {
+    "head": "profile-repair-hint",
+    "args": [
+      "if_summarize_judge",
+      "dictionary_def",
+      "restore bold subject + colon definition wrapper"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 68
+  },
+  {
+    "head": "profile-trace-label",
+    "args": [
+      "if_summarize_judge",
+      "dictionary_def",
+      "definition_wrapper_failure"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 69
+  },
+  {
+    "head": "profile-summary",
+    "args": [
+      "if_summarize_judge",
+      "question_answer",
+      "Return exactly two sentences: first a question, then its answer."
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 71
+  },
+  {
+    "head": "profile-query-cue",
+    "args": [
+      "if_summarize_judge",
+      "question_answer",
+      "first sentence must be a question and the second must answer it"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 72
+  },
+  {
+    "head": "profile-constraint",
+    "args": [
+      "if_summarize_judge",
+      "question_answer",
+      "emit exactly two sentences"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 73
+  },
+  {
+    "head": "profile-constraint",
+    "args": [
+      "if_summarize_judge",
+      "question_answer",
+      "make the first sentence a question"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 74
+  },
+  {
+    "head": "profile-forbid",
+    "args": [
+      "if_summarize_judge",
+      "question_answer",
+      "single sentence or wrong question-answer order"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 75
+  },
+  {
+    "head": "profile-minimal-example",
+    "args": [
+      "if_summarize_judge",
+      "question_answer",
+      "What is Welschbillig Castle? It is a ruined fortified site built over a former Roman villa."
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 76
+  },
+  {
+    "head": "profile-repair-hint",
+    "args": [
+      "if_summarize_judge",
+      "question_answer",
+      "normalize to a question sentence followed by one answer sentence"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 77
+  },
+  {
+    "head": "profile-trace-label",
+    "args": [
+      "if_summarize_judge",
+      "question_answer",
+      "question_answer_family_failure"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 78
+  },
+  {
+    "head": "profile-summary",
+    "args": [
+      "if_summarize_judge",
+      "simple_syllables",
+      "Return one short summary under forty words using simple low-syllable wording."
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 80
+  },
+  {
+    "head": "profile-query-cue",
+    "args": [
+      "if_summarize_judge",
+      "simple_syllables",
+      "only words of 2 syllables or fewer"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 81
+  },
+  {
+    "head": "profile-constraint",
+    "args": [
+      "if_summarize_judge",
+      "simple_syllables",
+      "keep the summary under forty words"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 82
+  },
+  {
+    "head": "profile-forbid",
+    "args": [
+      "if_summarize_judge",
+      "simple_syllables",
+      "long technical wording"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 83
+  },
+  {
+    "head": "profile-minimal-example",
+    "args": [
+      "if_summarize_judge",
+      "simple_syllables",
+      "Old fort rose on Roman land and now stands as a moat ringed ruin."
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 84
+  },
+  {
+    "head": "profile-repair-hint",
+    "args": [
+      "if_summarize_judge",
+      "simple_syllables",
+      "rewrite with short simple words under forty total words"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 85
+  },
+  {
+    "head": "profile-trace-label",
+    "args": [
+      "if_summarize_judge",
+      "simple_syllables",
+      "simple_wording_failure"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 86
+  },
+  {
+    "head": "profile-summary",
+    "args": [
+      "if_summarize_judge",
+      "if_then",
+      "Return one sentence in explicit If... then... form."
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 88
+  },
+  {
+    "head": "profile-query-cue",
+    "args": [
+      "if_summarize_judge",
+      "if_then",
+      "\"If... then...\" statement"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 89
+  },
+  {
+    "head": "profile-constraint",
+    "args": [
+      "if_summarize_judge",
+      "if_then",
+      "start with If and include then"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 90
+  },
+  {
+    "head": "profile-forbid",
+    "args": [
+      "if_summarize_judge",
+      "if_then",
+      "missing if-then structure"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 91
+  },
+  {
+    "head": "profile-minimal-example",
+    "args": [
+      "if_summarize_judge",
+      "if_then",
+      "If rulers strengthened the castle for defense, then later wars left the site in ruins."
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 92
+  },
+  {
+    "head": "profile-repair-hint",
+    "args": [
+      "if_summarize_judge",
+      "if_then",
+      "restore explicit If... then... sentence form"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 93
+  },
+  {
+    "head": "profile-trace-label",
+    "args": [
+      "if_summarize_judge",
+      "if_then",
+      "if_then_structure_failure"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 94
+  },
+  {
+    "head": "profile-summary",
+    "args": [
+      "if_summarize_judge",
+      "4_hashtags",
+      "Return exactly four hashtags separated by spaces."
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 96
+  },
+  {
+    "head": "profile-query-cue",
+    "args": [
+      "if_summarize_judge",
+      "4_hashtags",
+      "exactly 4 hashtags"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 97
+  },
+  {
+    "head": "profile-constraint",
+    "args": [
+      "if_summarize_judge",
+      "4_hashtags",
+      "emit exactly four space-separated hashtags"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 98
+  },
+  {
+    "head": "profile-forbid",
+    "args": [
+      "if_summarize_judge",
+      "4_hashtags",
+      "plain words instead of hashtags"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 99
+  },
+  {
+    "head": "profile-minimal-example",
+    "args": [
+      "if_summarize_judge",
+      "4_hashtags",
+      "#RomanVilla #CastleRuins #MoatedFort #FrenchWar"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 100
+  },
+  {
+    "head": "profile-repair-hint",
+    "args": [
+      "if_summarize_judge",
+      "4_hashtags",
+      "compress to exactly four hashtags"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 101
+  },
+  {
+    "head": "profile-trace-label",
+    "args": [
+      "if_summarize_judge",
+      "4_hashtags",
+      "hashtag_count_failure"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 102
+  },
+  {
+    "head": "profile-summary",
+    "args": [
+      "if_summarize_judge",
+      "one_comma",
+      "Return one sentence containing exactly one comma."
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 104
+  },
+  {
+    "head": "profile-query-cue",
+    "args": [
+      "if_summarize_judge",
+      "one_comma",
+      "exactly one comma"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 105
+  },
+  {
+    "head": "profile-constraint",
+    "args": [
+      "if_summarize_judge",
+      "one_comma",
+      "emit exactly one sentence"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 106
+  },
+  {
+    "head": "profile-constraint",
+    "args": [
+      "if_summarize_judge",
+      "one_comma",
+      "use exactly one comma"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 107
+  },
+  {
+    "head": "profile-forbid",
+    "args": [
+      "if_summarize_judge",
+      "one_comma",
+      "zero commas or multiple commas"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 108
+  },
+  {
+    "head": "profile-minimal-example",
+    "args": [
+      "if_summarize_judge",
+      "one_comma",
+      "Welschbillig Castle rose over Roman remains, and later wars left it a ruin."
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 109
+  },
+  {
+    "head": "profile-repair-hint",
+    "args": [
+      "if_summarize_judge",
+      "one_comma",
+      "normalize to one sentence with exactly one comma"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 110
+  },
+  {
+    "head": "profile-trace-label",
+    "args": [
+      "if_summarize_judge",
+      "one_comma",
+      "comma_count_failure"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 111
+  },
+  {
+    "head": "profile-summary",
+    "args": [
+      "if_summarize_judge",
+      "decreasing_length",
+      "Return exactly three sentences, each shorter than the previous one."
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 113
+  },
+  {
+    "head": "profile-query-cue",
+    "args": [
+      "if_summarize_judge",
+      "decreasing_length",
+      "each sentence must be shorter than the previous one"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 114
+  },
+  {
+    "head": "profile-constraint",
+    "args": [
+      "if_summarize_judge",
+      "decreasing_length",
+      "emit exactly three sentences"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 115
+  },
+  {
+    "head": "profile-constraint",
+    "args": [
+      "if_summarize_judge",
+      "decreasing_length",
+      "make each sentence shorter than the one before it"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 116
+  },
+  {
+    "head": "profile-forbid",
+    "args": [
+      "if_summarize_judge",
+      "decreasing_length",
+      "flat or increasing sentence lengths"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 117
+  },
+  {
+    "head": "profile-minimal-example",
+    "args": [
+      "if_summarize_judge",
+      "decreasing_length",
+      "Roman villa remains later supported a fortified castle. Wars shattered the defenses. Ruins remain."
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 118
+  },
+  {
+    "head": "profile-repair-hint",
+    "args": [
+      "if_summarize_judge",
+      "decreasing_length",
+      "rebuild three sentences in strictly decreasing lengths"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 119
+  },
+  {
+    "head": "profile-trace-label",
+    "args": [
+      "if_summarize_judge",
+      "decreasing_length",
+      "sentence_length_order_failure"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 120
+  },
+  {
+    "head": "profile-summary",
+    "args": [
+      "if_summarize_judge",
+      "newspaper_headline",
+      "Return an ALL-CAPS headline under twelve words with no period."
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 122
+  },
+  {
+    "head": "profile-query-cue",
+    "args": [
+      "if_summarize_judge",
+      "newspaper_headline",
+      "newspaper headline"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 123
+  },
+  {
+    "head": "profile-query-cue",
+    "args": [
+      "if_summarize_judge",
+      "newspaper_headline",
+      "ALL CAPS, no period, under 12 words"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 124
+  },
+  {
+    "head": "profile-constraint",
+    "args": [
+      "if_summarize_judge",
+      "newspaper_headline",
+      "emit one ALL-CAPS headline"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 125
+  },
+  {
+    "head": "profile-constraint",
+    "args": [
+      "if_summarize_judge",
+      "newspaper_headline",
+      "keep it under twelve words and omit the final period"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 126
+  },
+  {
+    "head": "profile-forbid",
+    "args": [
+      "if_summarize_judge",
+      "newspaper_headline",
+      "lowercase headline or trailing period"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 127
+  },
+  {
+    "head": "profile-minimal-example",
+    "args": [
+      "if_summarize_judge",
+      "newspaper_headline",
+      "ROMAN ROOTS SHAPE WELSCHBILLIG CASTLE RUINS"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 128
+  },
+  {
+    "head": "profile-repair-hint",
+    "args": [
+      "if_summarize_judge",
+      "newspaper_headline",
+      "uppercase the headline and remove the final period"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 129
+  },
+  {
+    "head": "profile-trace-label",
+    "args": [
+      "if_summarize_judge",
+      "newspaper_headline",
+      "headline_wrapper_failure"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 130
+  },
+  {
+    "head": "profile-summary",
+    "args": [
+      "if_summarize_judge",
+      "increasing_length",
+      "Return exactly three sentences, each longer than the previous one."
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 132
+  },
+  {
+    "head": "profile-query-cue",
+    "args": [
+      "if_summarize_judge",
+      "increasing_length",
+      "each sentence must be longer than the previous one"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 133
+  },
+  {
+    "head": "profile-constraint",
+    "args": [
+      "if_summarize_judge",
+      "increasing_length",
+      "emit exactly three sentences"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 134
+  },
+  {
+    "head": "profile-constraint",
+    "args": [
+      "if_summarize_judge",
+      "increasing_length",
+      "make each sentence longer than the one before it"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 135
+  },
+  {
+    "head": "profile-forbid",
+    "args": [
+      "if_summarize_judge",
+      "increasing_length",
+      "flat or decreasing sentence lengths"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 136
+  },
+  {
+    "head": "profile-minimal-example",
+    "args": [
+      "if_summarize_judge",
+      "increasing_length",
+      "Ruins remain. Roman villa roots shaped the castle. Later wars shattered its defenses and left moats and towers behind."
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 137
+  },
+  {
+    "head": "profile-repair-hint",
+    "args": [
+      "if_summarize_judge",
+      "increasing_length",
+      "rebuild three sentences in strictly increasing lengths"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 138
+  },
+  {
+    "head": "profile-trace-label",
+    "args": [
+      "if_summarize_judge",
+      "increasing_length",
+      "sentence_length_order_failure"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 139
+  },
+  {
+    "head": "profile-summary",
+    "args": [
+      "if_summarize_judge",
+      "xml_word_tags",
+      "Return one sentence and wrap every word in numbered XML word tags."
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 141
+  },
+  {
+    "head": "profile-query-cue",
+    "args": [
+      "if_summarize_judge",
+      "xml_word_tags",
+      "wrap every word in XML tags numbered sequentially"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 142
+  },
+  {
+    "head": "profile-constraint",
+    "args": [
+      "if_summarize_judge",
+      "xml_word_tags",
+      "wrap every word as <wN>word</wN>"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 143
+  },
+  {
+    "head": "profile-forbid",
+    "args": [
+      "if_summarize_judge",
+      "xml_word_tags",
+      "plain sentence without numbered XML tags"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 144
+  },
+  {
+    "head": "profile-minimal-example",
+    "args": [
+      "if_summarize_judge",
+      "xml_word_tags",
+      "<w1>Roman</w1> <w2>villa</w2> <w3>roots</w3> <w4>later</w4> <w5>supported</w5> <w6>the</w6> <w7>castle</w7> <w8>ruins.</w8>"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 145
+  },
+  {
+    "head": "profile-repair-hint",
+    "args": [
+      "if_summarize_judge",
+      "xml_word_tags",
+      "rewrap the sentence so every word has a numbered XML tag"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 146
+  },
+  {
+    "head": "profile-trace-label",
+    "args": [
+      "if_summarize_judge",
+      "xml_word_tags",
+      "xml_wrapper_failure"
+    ],
+    "source_file": "profiles.metta",
+    "line_no": 147
+  },
+  {
+    "head": "query-cue",
+    "args": [
+      "if_summarize_judge",
+      "classify exact structural family first"
+    ],
+    "source_file": "retrieval_policy.metta",
+    "line_no": 1
+  },
+  {
+    "head": "query-cue",
+    "args": [
+      "if_summarize_judge",
+      "word count sentence count punctuation casing wrappers"
+    ],
+    "source_file": "retrieval_policy.metta",
+    "line_no": 2
+  },
+  {
+    "head": "query-cue",
+    "args": [
+      "if_summarize_judge",
+      "headline hashtags xml bullets question answer"
+    ],
+    "source_file": "retrieval_policy.metta",
+    "line_no": 3
+  },
+  {
+    "head": "retrieval-priority",
+    "args": [
+      "if_summarize_judge",
+      "constraint_profile"
+    ],
+    "source_file": "retrieval_policy.metta",
+    "line_no": 4
+  }
+]

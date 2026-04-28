@@ -1,0 +1,252 @@
+{
+  "source_path": "C:\\projects\\Hermes Skills\\data\\qwen35_4b_intellect3_logic_hybrid_10_no_trm\\predictions.jsonl",
+  "run_id": "qwen35_4b_intellect3_logic_hybrid_10_no_trm",
+  "generated_at_utc": "2026-04-25T21:55:42.628629+00:00",
+  "arms": {
+    "logic_skill": {
+      "rows": 10,
+      "exact_match_rate": 0.0,
+      "failed_rows": 10,
+      "avg_grid_cell_accuracy": 0.7809999999999999,
+      "avg_wrong_cells_on_failed": 5.0,
+      "failure_tag_counts": {
+        "camp_count_mismatch": 10,
+        "camp_signature_mismatch": 10,
+        "cell_mismatch": 10,
+        "tent_count_mismatch": 1,
+        "tent_signature_mismatch": 1
+      },
+      "symbol_confusion_counts": {
+        "C->X": 43,
+        "X->C": 6,
+        "X->T": 1
+      }
+    },
+    "vanilla": {
+      "rows": 10,
+      "exact_match_rate": 0.0,
+      "failed_rows": 10,
+      "avg_grid_cell_accuracy": 0.7879999999999999,
+      "avg_wrong_cells_on_failed": 4.9,
+      "failure_tag_counts": {
+        "camp_count_mismatch": 10,
+        "camp_signature_mismatch": 10,
+        "cell_mismatch": 10
+      },
+      "symbol_confusion_counts": {
+        "C->X": 44,
+        "X->C": 5
+      }
+    }
+  },
+  "baseline_arm": "vanilla",
+  "compare_arm": "vanilla",
+  "problem_status_counts": {
+    "unfixed": 10
+  },
+  "problem_rows": [
+    {
+      "row_id": "intellect_3_logic_0",
+      "baseline_arm": "vanilla",
+      "compare_arm": "vanilla",
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_accuracy": 0.72,
+      "compare_accuracy": 0.72,
+      "accuracy_delta": 0.0,
+      "status": "unfixed",
+      "compare_wrong_cells": 7,
+      "compare_failure_tags": [
+        "camp_count_mismatch",
+        "camp_signature_mismatch",
+        "cell_mismatch"
+      ],
+      "compare_symbol_confusions": {
+        "C->X": 5,
+        "X->C": 2
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_1",
+      "baseline_arm": "vanilla",
+      "compare_arm": "vanilla",
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_accuracy": 0.75,
+      "compare_accuracy": 0.75,
+      "accuracy_delta": 0.0,
+      "status": "unfixed",
+      "compare_wrong_cells": 5,
+      "compare_failure_tags": [
+        "camp_count_mismatch",
+        "camp_signature_mismatch",
+        "cell_mismatch"
+      ],
+      "compare_symbol_confusions": {
+        "C->X": 4,
+        "X->C": 1
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_2",
+      "baseline_arm": "vanilla",
+      "compare_arm": "vanilla",
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_accuracy": 0.8,
+      "compare_accuracy": 0.8,
+      "accuracy_delta": 0.0,
+      "status": "unfixed",
+      "compare_wrong_cells": 5,
+      "compare_failure_tags": [
+        "camp_count_mismatch",
+        "camp_signature_mismatch",
+        "cell_mismatch"
+      ],
+      "compare_symbol_confusions": {
+        "C->X": 5
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_3",
+      "baseline_arm": "vanilla",
+      "compare_arm": "vanilla",
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_accuracy": 0.8,
+      "compare_accuracy": 0.8,
+      "accuracy_delta": 0.0,
+      "status": "unfixed",
+      "compare_wrong_cells": 4,
+      "compare_failure_tags": [
+        "camp_count_mismatch",
+        "camp_signature_mismatch",
+        "cell_mismatch"
+      ],
+      "compare_symbol_confusions": {
+        "C->X": 4
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_4",
+      "baseline_arm": "vanilla",
+      "compare_arm": "vanilla",
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_accuracy": 0.8,
+      "compare_accuracy": 0.8,
+      "accuracy_delta": 0.0,
+      "status": "unfixed",
+      "compare_wrong_cells": 5,
+      "compare_failure_tags": [
+        "camp_count_mismatch",
+        "camp_signature_mismatch",
+        "cell_mismatch"
+      ],
+      "compare_symbol_confusions": {
+        "C->X": 5
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_5",
+      "baseline_arm": "vanilla",
+      "compare_arm": "vanilla",
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_accuracy": 0.76,
+      "compare_accuracy": 0.76,
+      "accuracy_delta": 0.0,
+      "status": "unfixed",
+      "compare_wrong_cells": 6,
+      "compare_failure_tags": [
+        "camp_count_mismatch",
+        "camp_signature_mismatch",
+        "cell_mismatch"
+      ],
+      "compare_symbol_confusions": {
+        "C->X": 4,
+        "X->C": 2
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_6",
+      "baseline_arm": "vanilla",
+      "compare_arm": "vanilla",
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_accuracy": 0.8,
+      "compare_accuracy": 0.8,
+      "accuracy_delta": 0.0,
+      "status": "unfixed",
+      "compare_wrong_cells": 5,
+      "compare_failure_tags": [
+        "camp_count_mismatch",
+        "camp_signature_mismatch",
+        "cell_mismatch"
+      ],
+      "compare_symbol_confusions": {
+        "C->X": 5
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_7",
+      "baseline_arm": "vanilla",
+      "compare_arm": "vanilla",
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_accuracy": 0.8,
+      "compare_accuracy": 0.8,
+      "accuracy_delta": 0.0,
+      "status": "unfixed",
+      "compare_wrong_cells": 5,
+      "compare_failure_tags": [
+        "camp_count_mismatch",
+        "camp_signature_mismatch",
+        "cell_mismatch"
+      ],
+      "compare_symbol_confusions": {
+        "C->X": 5
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_8",
+      "baseline_arm": "vanilla",
+      "compare_arm": "vanilla",
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_accuracy": 0.85,
+      "compare_accuracy": 0.85,
+      "accuracy_delta": 0.0,
+      "status": "unfixed",
+      "compare_wrong_cells": 3,
+      "compare_failure_tags": [
+        "camp_count_mismatch",
+        "camp_signature_mismatch",
+        "cell_mismatch"
+      ],
+      "compare_symbol_confusions": {
+        "C->X": 3
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_9",
+      "baseline_arm": "vanilla",
+      "compare_arm": "vanilla",
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_accuracy": 0.8,
+      "compare_accuracy": 0.8,
+      "accuracy_delta": 0.0,
+      "status": "unfixed",
+      "compare_wrong_cells": 4,
+      "compare_failure_tags": [
+        "camp_count_mismatch",
+        "camp_signature_mismatch",
+        "cell_mismatch"
+      ],
+      "compare_symbol_confusions": {
+        "C->X": 4
+      }
+    }
+  ]
+}

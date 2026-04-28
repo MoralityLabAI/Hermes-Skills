@@ -1,0 +1,18 @@
+{
+  "bundle_dir": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\if_summarize_judge_bundle",
+  "out_dir": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\if_summarize_judge_bundle",
+  "packet_type": "metta_runtime_packet_v1",
+  "package_id": "if_summarize_judge_constraints",
+  "env_count": 1,
+  "env_summaries": {
+    "if_summarize_judge": {
+      "query_cue_count": 3,
+      "must_do_count": 5,
+      "avoid_count": 5,
+      "repair_focus_count": 2,
+      "profile_count": 17,
+      "summary_chars": 126,
+      "minimal_example_chars": 75
+    }
+  }
+}

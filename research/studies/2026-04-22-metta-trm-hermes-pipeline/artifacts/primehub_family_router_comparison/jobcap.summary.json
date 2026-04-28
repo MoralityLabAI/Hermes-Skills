@@ -1,0 +1,36 @@
+﻿{
+    "avg_ram_mb":  145.7994,
+    "stdout_path":  "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_family_router_comparison\\child.stdout.log",
+    "child_args":  [
+                       "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\run_primehub_family_router_comparison.py",
+                       "--out-dir",
+                       "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_family_router_comparison",
+                       "--summary-path",
+                       "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_family_router_comparison\\family_router.summary.json",
+                       "--events-path",
+                       "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_family_router_comparison\\family_router.events.jsonl"
+                   ],
+    "checkpoint_strategy":  "variant_complete",
+    "duration_sec":  724.5793,
+    "steps_completed":  709,
+    "exit_code":  0,
+    "started_at_utc":  "2026-04-24T01:06:04.7469387Z",
+    "peak_io_mb_s":  0,
+    "abort_reason":  null,
+    "peak_ram_mb":  160.3867,
+    "finished_at_utc":  "2026-04-24T01:18:09.3262356Z",
+    "working_directory":  "C:\\projects\\Hermes Skills",
+    "status":  "success",
+    "stderr_path":  "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_family_router_comparison\\child.stderr.log",
+    "caps":  {
+                 "ram_mb":  2048,
+                 "io_mb_s":  50,
+                 "cpu_pct":  50,
+                 "timeout_sec":  1800
+             },
+    "child_arg_string":  "\"C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\run_primehub_family_router_comparison.py\" --out-dir \"C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_family_router_comparison\" --summary-path \"C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_family_router_comparison\\family_router.summary.json\" --events-path \"C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_family_router_comparison\\family_router.events.jsonl\"",
+    "cpu_pct":  8.0939,
+    "event_log_path":  "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_family_router_comparison\\jobcap.events.jsonl",
+    "script_path":  "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\run_primehub_family_router_comparison.py",
+    "run_id":  "metta-primehub-family-router-comparison-20260423"
+}

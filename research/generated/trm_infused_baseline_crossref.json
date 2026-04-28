@@ -1,0 +1,818 @@
+{
+  "source_chat": {
+    "session_path": "C:\\Users\\patri\\.codex\\sessions\\2026\\04\\19\\rollout-2026-04-19T22-45-11-019da8c7-1000-7920-8a73-f020962d546d.jsonl",
+    "message_timestamp": "2026-04-22T20:29:34.748Z",
+    "message_excerpt": "Keep the main research line in **TRM-infusion**. Do not go all-in on MeTTa yet.\n\nThe reason is straightforward: the measurable benchmark evidence from **April 16, 2026 through April 22, 2026** is on the TRM side, while the MeTTa work is currently a promising symbolic packaging/compiler layer, not yet a demonstrated benchmark-improving intervention. The local MeTTa study says exactly that: it successfully compiled one structured-map bundle, and the next phase is wiring it into a live Hermes path, not claiming lift yet. See [metta-trm-hermes-pipeline/README.md](</C:/projects/Hermes-Skills/Hermes Skills/metta-trm-hermes-pipeline/README.md>) and [research/studies/2026-04-22-metta-trm-hermes-pipeline/experiment_log.md](</C:/projects/Hermes-Skills/Hermes Skills/research/studies/2026-04-22-metta-trm-hermes-pipeline/experiment_log.md>).\n\n**What We Learned**\n- **April 16:** the finished BlueBeam benchmark handoff was real and clean: `90/90` tasks completed, `20` new positive replays, with `14` positives from `qwen35_9b` and `6` from `qwen35_27b`. The TRM read at that point was already \u201ccritic/control-plane stronger than action imitation.\u201d Source: [data/handoffs/bluebeam_mechinterp_2026-04-16/README.md](</C:/projects/H",
+    "link_count": 11,
+    "links": [
+      {
+        "label": "metta-trm-hermes-pipeline/README.md",
+        "target": "C:/projects/Hermes-Skills/Hermes Skills/metta-trm-hermes-pipeline/README.md",
+        "exists": true
+      },
+      {
+        "label": "research/studies/2026-04-22-metta-trm-hermes-pipeline/experiment_log.md",
+        "target": "C:/projects/Hermes-Skills/Hermes Skills/research/studies/2026-04-22-metta-trm-hermes-pipeline/experiment_log.md",
+        "exists": true
+      },
+      {
+        "label": "data/handoffs/bluebeam_mechinterp_2026-04-16/README.md",
+        "target": "C:/projects/Hermes-Skills/Hermes Skills/data/handoffs/bluebeam_mechinterp_2026-04-16/README.md",
+        "exists": true
+      },
+      {
+        "label": "primehub-missing-envs-rerun-20260420.summary.json",
+        "target": "C:/projects/Hermes-Skills/Hermes Skills/data/job_limited_runs/primehub-missing-envs-rerun-20260420.summary.json",
+        "exists": true
+      },
+      {
+        "label": "primehub_final_eligible_gapfill_20260420/overnight_primehub_benchmark.stout.jsonl",
+        "target": "C:/projects/Hermes-Skills/Hermes Skills/data/primehub_final_eligible_gapfill_20260420/overnight_primehub_benchmark.stout.jsonl",
+        "exists": true
+      },
+      {
+        "label": "data/primehub_skill_trm_matrix/latest/role_based_imprint.md",
+        "target": "C:/projects/Hermes-Skills/Hermes Skills/data/primehub_skill_trm_matrix/latest/role_based_imprint.md",
+        "exists": true
+      },
+      {
+        "label": "primehub_trainer_policy_baseline_rerun_20260421/ledger.jsonl",
+        "target": "C:/projects/Hermes-Skills/Hermes Skills/data/primehub_trainer_policy_baseline_rerun_20260421/ledger.jsonl",
+        "exists": true
+      },
+      {
+        "label": "primehub_trainer_policy_mining_rerun_20260421/ledger.jsonl",
+        "target": "C:/projects/Hermes-Skills/Hermes Skills/data/primehub_trainer_policy_mining_rerun_20260421/ledger.jsonl",
+        "exists": true
+      },
+      {
+        "label": "primehub_choice_contract_pressure_20260421/ledger.jsonl",
+        "target": "C:/projects/Hermes-Skills/Hermes Skills/data/primehub_choice_contract_pressure_20260421/ledger.jsonl",
+        "exists": true
+      },
+      {
+        "label": "primehub-simpleqa-verified-proof-20260422.summary.json",
+        "target": "C:/projects/Hermes-Skills/Hermes Skills/data/job_limited_runs/primehub-simpleqa-verified-proof-20260422.summary.json",
+        "exists": true
+      },
+      {
+        "label": "primehub_simpleqa_verified_proof_20260422",
+        "target": "C:/projects/Hermes-Skills/Hermes Skills/data/primehub_simpleqa_verified_proof_20260422",
+        "exists": true
+      }
+    ]
+  },
+  "bluebeam_handoff": {
+    "readme_path": "C:\\projects\\Hermes Skills\\data\\handoffs\\bluebeam_mechinterp_2026-04-16\\README.md",
+    "benchmark_completed": "90/90",
+    "failed": 0,
+    "skipped": 0,
+    "new_positive_replays": 20,
+    "qwen35_9b_positive_count": 14,
+    "qwen35_9b_reward_sum": 26.385,
+    "qwen35_27b_positive_count": 6,
+    "qwen35_27b_reward_sum": 14.9259,
+    "trm_rows": 195,
+    "trm_exact_positive": 24,
+    "trm_weak_positive": 5,
+    "trm_negative": 166,
+    "target_action_coverage": 0.1231,
+    "critic_bucket_accuracy": 0.75,
+    "retriever_exact_match": 0.0625,
+    "router_abstain_rate": 0.9062
+  },
+  "missing_env_rerun": {
+    "summary_path": "C:\\projects\\Hermes Skills\\data\\job_limited_runs\\primehub-missing-envs-rerun-20260420.summary.json",
+    "event_log": "C:\\projects\\Hermes Skills\\data\\job_limited_runs\\primehub-missing-envs-rerun-20260420.events.jsonl",
+    "status": "completed",
+    "selected_envs": 0,
+    "selected_variants": [],
+    "task_complete_count": 32,
+    "success_count": 32,
+    "failure_count": 0,
+    "model_ids": [],
+    "env_ids": [],
+    "env_count": 16,
+    "steps_completed": 787,
+    "source": "chat_message_fallback",
+    "claimed_model_count": 2
+  },
+  "final_gapfill": {
+    "stout_path": "C:\\projects\\Hermes Skills\\data\\primehub_final_eligible_gapfill_20260420\\overnight_primehub_benchmark.stout.jsonl",
+    "task_count": 4,
+    "per_task": [
+      {
+        "model_id": "qwen35_9b",
+        "env_id": "passthrough",
+        "variant_id": "single-model-baseline",
+        "status": "execution_failure",
+        "reward": null,
+        "failure_types": {
+          "bridge_failure": 1
+        }
+      },
+      {
+        "model_id": "qwen35_9b",
+        "env_id": "verbatim_copy",
+        "variant_id": "single-model-baseline",
+        "status": "success",
+        "reward": 0.0,
+        "failure_types": {}
+      },
+      {
+        "model_id": "qwen35_27b",
+        "env_id": "passthrough",
+        "variant_id": "single-model-baseline",
+        "status": "execution_failure",
+        "reward": null,
+        "failure_types": {
+          "bridge_failure": 1
+        }
+      },
+      {
+        "model_id": "qwen35_27b",
+        "env_id": "verbatim_copy",
+        "variant_id": "single-model-baseline",
+        "status": "success",
+        "reward": 0.0,
+        "failure_types": {}
+      }
+    ]
+  },
+  "role_imprint": {
+    "json_path": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\latest\\role_based_imprint.json",
+    "global_prompt_lines": [
+      "Role split: action-bearing TRM support currently lives mainly in internal_action, choice_contract, structured_map.",
+      "Keep hard reasoning and guarded safety roles critic-first until their exact-positive banks grow: abstain_guard, hard_reasoning_numeric, hard_reasoning_logic."
+    ],
+    "clusters": [
+      {
+        "cluster_id": "abstain_guard",
+        "role_name": "guarded_critic",
+        "support_tier": "critic_guard",
+        "rows": 17,
+        "exact_positive_rows": 2,
+        "weak_positive_rows": 2,
+        "target_action_coverage": 0.1176,
+        "critic_bucket_accuracy": 1.0,
+        "retriever_exact_match_rate": 0.0,
+        "route_abstain_rate": 1.0
+      },
+      {
+        "cluster_id": "choice_contract",
+        "role_name": "contract_formatter",
+        "support_tier": "action_support",
+        "rows": 81,
+        "exact_positive_rows": 35,
+        "weak_positive_rows": 30,
+        "target_action_coverage": 0.4321,
+        "critic_bucket_accuracy": 0.3077,
+        "retriever_exact_match_rate": 0.0,
+        "route_abstain_rate": 0.3077
+      },
+      {
+        "cluster_id": "hard_reasoning_logic",
+        "role_name": "critic_verify_logic",
+        "support_tier": "critic_verify_sparse",
+        "rows": 20,
+        "exact_positive_rows": 3,
+        "weak_positive_rows": 2,
+        "target_action_coverage": 0.15,
+        "critic_bucket_accuracy": 0.5714,
+        "retriever_exact_match_rate": 0.0,
+        "route_abstain_rate": 0.5714
+      },
+      {
+        "cluster_id": "hard_reasoning_numeric",
+        "role_name": "critic_verify_numeric",
+        "support_tier": "critic_verify_sparse",
+        "rows": 35,
+        "exact_positive_rows": 3,
+        "weak_positive_rows": 8,
+        "target_action_coverage": 0.0857,
+        "critic_bucket_accuracy": 0.6,
+        "retriever_exact_match_rate": 0.0,
+        "route_abstain_rate": 0.6
+      },
+      {
+        "cluster_id": "internal_action",
+        "role_name": "latent_action_retriever",
+        "support_tier": "narrow_action_support",
+        "rows": 2,
+        "exact_positive_rows": 2,
+        "weak_positive_rows": 0,
+        "target_action_coverage": 1.0,
+        "critic_bucket_accuracy": 1.0,
+        "retriever_exact_match_rate": 0.0,
+        "route_abstain_rate": 0.0
+      },
+      {
+        "cluster_id": "structured_map",
+        "role_name": "schema_formatter",
+        "support_tier": "format_support",
+        "rows": 16,
+        "exact_positive_rows": 4,
+        "weak_positive_rows": 2,
+        "target_action_coverage": 0.25,
+        "critic_bucket_accuracy": 0.0,
+        "retriever_exact_match_rate": 0.0,
+        "route_abstain_rate": 0.0
+      }
+    ]
+  },
+  "baseline_vs_mining": {
+    "baseline_ledger": "C:\\projects\\Hermes Skills\\data\\primehub_trainer_policy_baseline_rerun_20260421\\ledger.jsonl",
+    "mining_ledger": "C:\\projects\\Hermes Skills\\data\\primehub_trainer_policy_mining_rerun_20260421\\ledger.jsonl",
+    "comparison_count": 26,
+    "positive_delta_count": 2,
+    "positive_deltas": [
+      {
+        "model_id": "qwen35_27b",
+        "env_id": "boolq",
+        "variant_id": "two-model-abstain-guard-v1",
+        "skill_name": "primehub-choice-contract-hermes",
+        "skill_cluster": "choice_contract",
+        "baseline_reward": 0.0,
+        "mining_reward": 1.0,
+        "delta": 1.0
+      },
+      {
+        "model_id": "qwen35_27b",
+        "env_id": "boolq",
+        "variant_id": "two-model-contract-repair-v1",
+        "skill_name": "primehub-choice-contract-hermes",
+        "skill_cluster": "choice_contract",
+        "baseline_reward": 0.0,
+        "mining_reward": 1.0,
+        "delta": 1.0
+      }
+    ],
+    "comparison_rows": [
+      {
+        "model_id": "qwen35_27b",
+        "env_id": "antislop",
+        "variant_id": "single-model-baseline",
+        "skill_name": "",
+        "skill_cluster": "",
+        "baseline_reward": 12.0,
+        "mining_reward": 12.0,
+        "delta": 0.0
+      },
+      {
+        "model_id": "qwen35_27b",
+        "env_id": "antislop",
+        "variant_id": "two-model-contract-repair-v1",
+        "skill_name": "primehub-internal-action-hermes",
+        "skill_cluster": "internal_action",
+        "baseline_reward": 12.0,
+        "mining_reward": 12.0,
+        "delta": 0.0
+      },
+      {
+        "model_id": "qwen35_27b",
+        "env_id": "boolq",
+        "variant_id": "single-model-baseline",
+        "skill_name": "",
+        "skill_cluster": "",
+        "baseline_reward": 0.0,
+        "mining_reward": 0.0,
+        "delta": 0.0
+      },
+      {
+        "model_id": "qwen35_27b",
+        "env_id": "boolq",
+        "variant_id": "two-model-abstain-guard-v1",
+        "skill_name": "primehub-choice-contract-hermes",
+        "skill_cluster": "choice_contract",
+        "baseline_reward": 0.0,
+        "mining_reward": 1.0,
+        "delta": 1.0
+      },
+      {
+        "model_id": "qwen35_27b",
+        "env_id": "boolq",
+        "variant_id": "two-model-contract-repair-v1",
+        "skill_name": "primehub-choice-contract-hermes",
+        "skill_cluster": "choice_contract",
+        "baseline_reward": 0.0,
+        "mining_reward": 1.0,
+        "delta": 1.0
+      },
+      {
+        "model_id": "qwen35_27b",
+        "env_id": "lisanbench",
+        "variant_id": "single-model-baseline",
+        "skill_name": "",
+        "skill_cluster": "",
+        "baseline_reward": 0.0,
+        "mining_reward": 0.0,
+        "delta": 0.0
+      },
+      {
+        "model_id": "qwen35_27b",
+        "env_id": "lisanbench",
+        "variant_id": "two-model-hard-reasoning-v1",
+        "skill_name": "primehub-hard-reasoning-logic-hermes",
+        "skill_cluster": "hard_reasoning_logic",
+        "baseline_reward": 0.0,
+        "mining_reward": 0.0,
+        "delta": 0.0
+      },
+      {
+        "model_id": "qwen35_27b",
+        "env_id": "math500",
+        "variant_id": "single-model-baseline",
+        "skill_name": "",
+        "skill_cluster": "",
+        "baseline_reward": 0.0,
+        "mining_reward": 0.0,
+        "delta": 0.0
+      },
+      {
+        "model_id": "qwen35_27b",
+        "env_id": "math500",
+        "variant_id": "two-model-hard-reasoning-v1",
+        "skill_name": "primehub-hard-reasoning-numeric-hermes",
+        "skill_cluster": "hard_reasoning_numeric",
+        "baseline_reward": 0.0,
+        "mining_reward": 0.0,
+        "delta": 0.0
+      },
+      {
+        "model_id": "qwen35_27b",
+        "env_id": "psycho_bench",
+        "variant_id": "single-model-baseline",
+        "skill_name": "",
+        "skill_cluster": "",
+        "baseline_reward": 0.0,
+        "mining_reward": 0.0,
+        "delta": 0.0
+      },
+      {
+        "model_id": "qwen35_27b",
+        "env_id": "psycho_bench",
+        "variant_id": "two-model-contract-repair-v1",
+        "skill_name": "primehub-structured-map-hermes",
+        "skill_cluster": "structured_map",
+        "baseline_reward": 0.0,
+        "mining_reward": 0.0,
+        "delta": 0.0
+      },
+      {
+        "model_id": "qwen35_27b",
+        "env_id": "wmdp",
+        "variant_id": "single-model-baseline",
+        "skill_name": "",
+        "skill_cluster": "",
+        "baseline_reward": 0.0,
+        "mining_reward": 0.0,
+        "delta": 0.0
+      },
+      {
+        "model_id": "qwen35_27b",
+        "env_id": "wmdp",
+        "variant_id": "two-model-abstain-guard-v1",
+        "skill_name": "primehub-abstain-guard-hermes",
+        "skill_cluster": "abstain_guard",
+        "baseline_reward": 0.0,
+        "mining_reward": 0.0,
+        "delta": 0.0
+      },
+      {
+        "model_id": "qwen35_9b",
+        "env_id": "antislop",
+        "variant_id": "single-model-baseline",
+        "skill_name": "",
+        "skill_cluster": "",
+        "baseline_reward": 12.0,
+        "mining_reward": 12.0,
+        "delta": 0.0
+      },
+      {
+        "model_id": "qwen35_9b",
+        "env_id": "antislop",
+        "variant_id": "two-model-contract-repair-v1",
+        "skill_name": "primehub-internal-action-hermes",
+        "skill_cluster": "internal_action",
+        "baseline_reward": 12.0,
+        "mining_reward": 12.0,
+        "delta": 0.0
+      },
+      {
+        "model_id": "qwen35_9b",
+        "env_id": "boolq",
+        "variant_id": "single-model-baseline",
+        "skill_name": "",
+        "skill_cluster": "",
+        "baseline_reward": 0.0,
+        "mining_reward": 0.0,
+        "delta": 0.0
+      },
+      {
+        "model_id": "qwen35_9b",
+        "env_id": "boolq",
+        "variant_id": "two-model-abstain-guard-v1",
+        "skill_name": "primehub-choice-contract-hermes",
+        "skill_cluster": "choice_contract",
+        "baseline_reward": 0.0,
+        "mining_reward": 0.0,
+        "delta": 0.0
+      },
+      {
+        "model_id": "qwen35_9b",
+        "env_id": "boolq",
+        "variant_id": "two-model-contract-repair-v1",
+        "skill_name": "primehub-choice-contract-hermes",
+        "skill_cluster": "choice_contract",
+        "baseline_reward": 0.0,
+        "mining_reward": 0.0,
+        "delta": 0.0
+      },
+      {
+        "model_id": "qwen35_9b",
+        "env_id": "lisanbench",
+        "variant_id": "single-model-baseline",
+        "skill_name": "",
+        "skill_cluster": "",
+        "baseline_reward": 0.0,
+        "mining_reward": 0.0,
+        "delta": 0.0
+      },
+      {
+        "model_id": "qwen35_9b",
+        "env_id": "lisanbench",
+        "variant_id": "two-model-hard-reasoning-v1",
+        "skill_name": "primehub-hard-reasoning-logic-hermes",
+        "skill_cluster": "hard_reasoning_logic",
+        "baseline_reward": 0.0,
+        "mining_reward": 0.0,
+        "delta": 0.0
+      },
+      {
+        "model_id": "qwen35_9b",
+        "env_id": "math500",
+        "variant_id": "single-model-baseline",
+        "skill_name": "",
+        "skill_cluster": "",
+        "baseline_reward": 0.0,
+        "mining_reward": 0.0,
+        "delta": 0.0
+      },
+      {
+        "model_id": "qwen35_9b",
+        "env_id": "math500",
+        "variant_id": "two-model-hard-reasoning-v1",
+        "skill_name": "primehub-hard-reasoning-numeric-hermes",
+        "skill_cluster": "hard_reasoning_numeric",
+        "baseline_reward": 0.0,
+        "mining_reward": 0.0,
+        "delta": 0.0
+      },
+      {
+        "model_id": "qwen35_9b",
+        "env_id": "psycho_bench",
+        "variant_id": "single-model-baseline",
+        "skill_name": "",
+        "skill_cluster": "",
+        "baseline_reward": 0.0,
+        "mining_reward": 0.0,
+        "delta": 0.0
+      },
+      {
+        "model_id": "qwen35_9b",
+        "env_id": "psycho_bench",
+        "variant_id": "two-model-contract-repair-v1",
+        "skill_name": "primehub-structured-map-hermes",
+        "skill_cluster": "structured_map",
+        "baseline_reward": 0.0,
+        "mining_reward": 0.0,
+        "delta": 0.0
+      },
+      {
+        "model_id": "qwen35_9b",
+        "env_id": "wmdp",
+        "variant_id": "single-model-baseline",
+        "skill_name": "",
+        "skill_cluster": "",
+        "baseline_reward": 0.0,
+        "mining_reward": 0.0,
+        "delta": 0.0
+      },
+      {
+        "model_id": "qwen35_9b",
+        "env_id": "wmdp",
+        "variant_id": "two-model-abstain-guard-v1",
+        "skill_name": "primehub-abstain-guard-hermes",
+        "skill_cluster": "abstain_guard",
+        "baseline_reward": 0.0,
+        "mining_reward": 0.0,
+        "delta": 0.0
+      }
+    ]
+  },
+  "choice_contract_pressure": {
+    "ledger_path": "C:\\projects\\Hermes Skills\\data\\primehub_choice_contract_pressure_20260421\\ledger.jsonl",
+    "comparison_count": 22,
+    "counts": {
+      "contract_eq_baseline": 21,
+      "contract_gt_baseline": 1
+    },
+    "rows": [
+      {
+        "model_id": "qwen35_27b",
+        "env_id": "allenai_ifeval",
+        "baseline_reward": 0.0,
+        "contract_reward": 0.0,
+        "abstain_reward": 0.0,
+        "contract_delta": 0.0
+      },
+      {
+        "model_id": "qwen35_27b",
+        "env_id": "arc",
+        "baseline_reward": 0.0,
+        "contract_reward": 0.0,
+        "abstain_reward": 0.0,
+        "contract_delta": 0.0
+      },
+      {
+        "model_id": "qwen35_27b",
+        "env_id": "boolq",
+        "baseline_reward": 0.0,
+        "contract_reward": 1.0,
+        "abstain_reward": 1.0,
+        "contract_delta": 1.0
+      },
+      {
+        "model_id": "qwen35_27b",
+        "env_id": "hellaswag",
+        "baseline_reward": 0.0,
+        "contract_reward": 0.0,
+        "abstain_reward": 0.0,
+        "contract_delta": 0.0
+      },
+      {
+        "model_id": "qwen35_27b",
+        "env_id": "mmlu_pro",
+        "baseline_reward": 0.0,
+        "contract_reward": 0.0,
+        "abstain_reward": 0.0,
+        "contract_delta": 0.0
+      },
+      {
+        "model_id": "qwen35_27b",
+        "env_id": "simple_bench",
+        "baseline_reward": 0.0,
+        "contract_reward": 0.0,
+        "abstain_reward": 0.0,
+        "contract_delta": 0.0
+      },
+      {
+        "model_id": "qwen35_27b",
+        "env_id": "simpleqa",
+        "baseline_reward": 0.0,
+        "contract_reward": 0.0,
+        "abstain_reward": 0.0,
+        "contract_delta": 0.0
+      },
+      {
+        "model_id": "qwen35_27b",
+        "env_id": "simpleqa_verified",
+        "baseline_reward": 0.0,
+        "contract_reward": 0.0,
+        "abstain_reward": 0.0,
+        "contract_delta": 0.0
+      },
+      {
+        "model_id": "qwen35_27b",
+        "env_id": "simpleqa_verified_2",
+        "baseline_reward": 0.0,
+        "contract_reward": 0.0,
+        "abstain_reward": 0.0,
+        "contract_delta": 0.0
+      },
+      {
+        "model_id": "qwen35_27b",
+        "env_id": "truthfulqa",
+        "baseline_reward": 0.0,
+        "contract_reward": 0.0,
+        "abstain_reward": 0.0,
+        "contract_delta": 0.0
+      },
+      {
+        "model_id": "qwen35_27b",
+        "env_id": "winogrande",
+        "baseline_reward": 1.0,
+        "contract_reward": 1.0,
+        "abstain_reward": 1.0,
+        "contract_delta": 0.0
+      },
+      {
+        "model_id": "qwen35_9b",
+        "env_id": "allenai_ifeval",
+        "baseline_reward": 0.0,
+        "contract_reward": 0.0,
+        "abstain_reward": 0.0,
+        "contract_delta": 0.0
+      },
+      {
+        "model_id": "qwen35_9b",
+        "env_id": "arc",
+        "baseline_reward": 0.0,
+        "contract_reward": 0.0,
+        "abstain_reward": 0.0,
+        "contract_delta": 0.0
+      },
+      {
+        "model_id": "qwen35_9b",
+        "env_id": "boolq",
+        "baseline_reward": 0.0,
+        "contract_reward": 0.0,
+        "abstain_reward": 0.0,
+        "contract_delta": 0.0
+      },
+      {
+        "model_id": "qwen35_9b",
+        "env_id": "hellaswag",
+        "baseline_reward": 0.0,
+        "contract_reward": 0.0,
+        "abstain_reward": 0.0,
+        "contract_delta": 0.0
+      },
+      {
+        "model_id": "qwen35_9b",
+        "env_id": "mmlu_pro",
+        "baseline_reward": 0.0,
+        "contract_reward": 0.0,
+        "abstain_reward": 0.0,
+        "contract_delta": 0.0
+      },
+      {
+        "model_id": "qwen35_9b",
+        "env_id": "simple_bench",
+        "baseline_reward": 0.0,
+        "contract_reward": 0.0,
+        "abstain_reward": 0.0,
+        "contract_delta": 0.0
+      },
+      {
+        "model_id": "qwen35_9b",
+        "env_id": "simpleqa",
+        "baseline_reward": 0.0,
+        "contract_reward": 0.0,
+        "abstain_reward": 0.0,
+        "contract_delta": 0.0
+      },
+      {
+        "model_id": "qwen35_9b",
+        "env_id": "simpleqa_verified",
+        "baseline_reward": 0.0,
+        "contract_reward": 0.0,
+        "abstain_reward": 0.0,
+        "contract_delta": 0.0
+      },
+      {
+        "model_id": "qwen35_9b",
+        "env_id": "simpleqa_verified_2",
+        "baseline_reward": 0.0,
+        "contract_reward": 0.0,
+        "abstain_reward": 0.0,
+        "contract_delta": 0.0
+      },
+      {
+        "model_id": "qwen35_9b",
+        "env_id": "truthfulqa",
+        "baseline_reward": 0.0,
+        "contract_reward": 0.0,
+        "abstain_reward": 0.0,
+        "contract_delta": 0.0
+      },
+      {
+        "model_id": "qwen35_9b",
+        "env_id": "winogrande",
+        "baseline_reward": 0.0,
+        "contract_reward": 0.0,
+        "abstain_reward": 0.0,
+        "contract_delta": 0.0
+      }
+    ]
+  },
+  "simpleqa_verified_proof": {
+    "root": "C:\\projects\\Hermes Skills\\data\\primehub_simpleqa_verified_proof_20260422",
+    "ledger_path": "C:\\projects\\Hermes Skills\\data\\primehub_simpleqa_verified_proof_20260422\\ledger.jsonl",
+    "task_count": 4,
+    "visible_output_true_total": 4,
+    "visible_output_false_total": 0,
+    "model_client_fallbacks_total": 0,
+    "task_rows": [
+      {
+        "model_id": "qwen35_27b",
+        "env_id": "simpleqa_verified_2",
+        "variant_id": "single-model-baseline",
+        "skill_cluster": "",
+        "reward": 0.0,
+        "visible_output_true": 1,
+        "visible_output_false": 0,
+        "model_client_fallbacks_total": 0
+      },
+      {
+        "model_id": "qwen35_27b",
+        "env_id": "simpleqa_verified_2",
+        "variant_id": "two-model-contract-repair-v1",
+        "skill_cluster": "choice_contract",
+        "reward": 0.0,
+        "visible_output_true": 1,
+        "visible_output_false": 0,
+        "model_client_fallbacks_total": 0
+      },
+      {
+        "model_id": "qwen35_27b",
+        "env_id": "simpleqa_verified",
+        "variant_id": "single-model-baseline",
+        "skill_cluster": "",
+        "reward": 0.0,
+        "visible_output_true": 1,
+        "visible_output_false": 0,
+        "model_client_fallbacks_total": 0
+      },
+      {
+        "model_id": "qwen35_27b",
+        "env_id": "simpleqa_verified",
+        "variant_id": "two-model-contract-repair-v1",
+        "skill_cluster": "choice_contract",
+        "reward": 0.0,
+        "visible_output_true": 1,
+        "visible_output_false": 0,
+        "model_client_fallbacks_total": 0
+      }
+    ]
+  },
+  "c_signature_postrepair_verifier": {
+    "results_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\c_signature_postrepair_verifier_sweep\\c_signature_postrepair_verifier.results.md",
+    "contract_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\c_signature_postrepair_verifier_sweep\\c_signature_postrepair_verifier_contract.metta",
+    "training_plan_path": "C:\\projects\\Hermes Skills\\research\\generated\\c_signature_commit_trm_pack\\c_signature_commit_trm_training_plan.md",
+    "jobcap_wrapper_path": "C:\\projects\\Hermes Skills\\research\\scripts\\run_c_signature_commit_trm_jobcap.ps1",
+    "selected_policy": "postrepair_exact_or_gain_gt_0",
+    "val_seen_accuracy": 1.0,
+    "val_seen_false_commit_rate": 0.0,
+    "holdout_seen_accuracy": 1.0,
+    "holdout_seen_false_commit_rate": 0.0,
+    "claim_boundary": "No model calls and no neural training. Evaluator-backed policies are verifier ceilings and training targets."
+  },
+  "metta_trm_methodology_lift_matrix": {
+    "results_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\metta_trm_methodology_lift_matrix\\methodology_lift.results.md",
+    "contract_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\metta_trm_methodology_lift_matrix\\methodology_lift_contracts.metta",
+    "paper_addendum_path": "C:\\projects\\Hermes Skills\\research\\generated\\paper_drafts\\2026-04-28-metta-trm-methodology-lift-matrix-addendum.md",
+    "row_count": 148,
+    "env_family_count": 9,
+    "policy_summary": {
+      "naive_commit_all": {"accuracy": 0.7838, "false_commit_rate": 1.0, "false_reject_rate": 0.0},
+      "pre_reward_ge_0p8": {"accuracy": 0.6351, "false_commit_rate": 0.4688, "false_reject_rate": 0.3362},
+      "post_symbolic_adapter": {"accuracy": 0.8581, "false_commit_rate": 0.6562, "false_reject_rate": 0.0},
+      "post_exact_only": {"accuracy": 0.8649, "false_commit_rate": 0.0, "false_reject_rate": 0.1724},
+      "post_multi_signal": {"accuracy": 1.0, "false_commit_rate": 0.0, "false_reject_rate": 0.0}
+    },
+    "claim_boundary": "Separability and target-definition artifact, not trained TRM-weight performance."
+  },
+  "linked_studies": [
+    {
+      "path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-primehub-structured-map-retrieval\\README.md",
+      "exists": true
+    },
+    {
+      "path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\README.md",
+      "exists": true
+    },
+    {
+      "path": "C:\\projects\\Hermes Skills\\research\\generated\\paper_drafts\\2026-04-22-hermes-trm-weekly-draft.md",
+      "exists": true
+    },
+    {
+      "path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\c_signature_postrepair_verifier_sweep\\c_signature_postrepair_verifier.results.md",
+      "exists": true
+    },
+    {
+      "path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\c_signature_postrepair_verifier_sweep\\c_signature_postrepair_verifier_contract.metta",
+      "exists": true
+    },
+    {
+      "path": "C:\\projects\\Hermes Skills\\research\\generated\\c_signature_commit_trm_pack\\c_signature_commit_trm_training_plan.md",
+      "exists": true
+    },
+    {
+      "path": "C:\\projects\\Hermes Skills\\research\\scripts\\run_c_signature_commit_trm_jobcap.ps1",
+      "exists": true
+    },
+    {
+      "path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\metta_trm_methodology_lift_matrix\\methodology_lift.results.md",
+      "exists": true
+    },
+    {
+      "path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\metta_trm_methodology_lift_matrix\\methodology_lift_contracts.metta",
+      "exists": true
+    },
+    {
+      "path": "C:\\projects\\Hermes Skills\\research\\generated\\paper_drafts\\2026-04-28-metta-trm-methodology-lift-matrix-addendum.md",
+      "exists": true
+    }
+  ]
+}

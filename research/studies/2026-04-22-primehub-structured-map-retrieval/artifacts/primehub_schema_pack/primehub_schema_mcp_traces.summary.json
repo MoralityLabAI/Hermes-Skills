@@ -1,0 +1,18 @@
+{
+  "trace_count": 6,
+  "mcp_name": "primehub_schema",
+  "scenario_ids": [
+    "primehub_psycho_schema_exact",
+    "primehub_ascii_schema_exact",
+    "primehub_pydantic_schema_exact",
+    "primehub_psycho_template_exact",
+    "primehub_ascii_near_miss",
+    "primehub_pydantic_wrong_route"
+  ],
+  "sample_replays": {
+    "psycho_bench": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_psycho_bench_q0048.jsonl",
+    "ascii_tree": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_ascii_tree_q0033.jsonl",
+    "pydantic_adherence": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_pydantic_adherence_q0049.jsonl"
+  },
+  "notes": "Primehub-specific schema lookup example for structured-map retrieval over psycho_bench, ascii_tree, and pydantic_adherence."
+}

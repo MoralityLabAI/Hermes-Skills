@@ -1,0 +1,18 @@
+{
+  "package_id": "primehub_structured_map",
+  "title": "Primehub Structured Map Symbolic Contract",
+  "base_skill": "primehub-structured-map-hermes",
+  "trm_overlay": "trm-mcp",
+  "infusion_type": "retrieve",
+  "target_envs": [
+    "psycho_bench",
+    "ascii_tree",
+    "pydantic_adherence"
+  ],
+  "bundle_outputs": [
+    "retrieval_packet",
+    "critic_hints",
+    "trace_labels"
+  ],
+  "notes": "Prototype symbolic package showing how MeTTa-authored env rules compile into Hermes-ready TRM artifacts."
+}

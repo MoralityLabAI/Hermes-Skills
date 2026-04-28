@@ -1,0 +1,18 @@
+{
+  "input": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-primehub-structured-map-retrieval\\artifacts\\mcp_example_matrix\\filesystem\\filesystem_mcp_traces.jsonl",
+  "rows_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-primehub-structured-map-retrieval\\artifacts\\mcp_example_matrix\\filesystem\\rows\\mcp_trm_rows.jsonl",
+  "trace_count": 5,
+  "row_count": 14,
+  "task_family_counts": {
+    "mcp_route": 5,
+    "mcp_retrieve": 4,
+    "mcp_verify": 5
+  },
+  "bucket_counts": {
+    "exact_positive": 12,
+    "negative": 2
+  },
+  "mcp_counts": {
+    "filesystem": 14
+  }
+}

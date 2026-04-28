@@ -1,0 +1,20 @@
+[
+  {
+    "run_id": "qwen35_4b_intellect3_logic_hybrid_25",
+    "json": "C:\\projects\\Hermes Skills\\research\\generated\\intellect3_logic_failure_breakdown\\qwen35_4b_intellect3_logic_hybrid_25.failure_breakdown.json",
+    "markdown": "C:\\projects\\Hermes Skills\\research\\generated\\intellect3_logic_failure_breakdown\\qwen35_4b_intellect3_logic_hybrid_25.failure_breakdown.md",
+    "source": "C:\\projects\\trm_observability_harness\\data\\qwen35_4b_intellect3_logic_hybrid_25\\predictions.jsonl"
+  },
+  {
+    "run_id": "qwen27b_intellect3_logic_hybrid_200",
+    "json": "C:\\projects\\Hermes Skills\\research\\generated\\intellect3_logic_failure_breakdown\\qwen27b_intellect3_logic_hybrid_200.failure_breakdown.json",
+    "markdown": "C:\\projects\\Hermes Skills\\research\\generated\\intellect3_logic_failure_breakdown\\qwen27b_intellect3_logic_hybrid_200.failure_breakdown.md",
+    "source": "C:\\projects\\trm_observability_harness\\data\\qwen27b_intellect3_logic_hybrid_200\\predictions.jsonl"
+  },
+  {
+    "run_id": "qwen35_4b_intellect3_logic_hybrid_10_no_trm",
+    "json": "C:\\projects\\Hermes Skills\\research\\generated\\intellect3_logic_failure_breakdown\\qwen35_4b_intellect3_logic_hybrid_10_no_trm.failure_breakdown.json",
+    "markdown": "C:\\projects\\Hermes Skills\\research\\generated\\intellect3_logic_failure_breakdown\\qwen35_4b_intellect3_logic_hybrid_10_no_trm.failure_breakdown.md",
+    "source": "C:\\projects\\Hermes Skills\\data\\qwen35_4b_intellect3_logic_hybrid_10_no_trm\\predictions.jsonl"
+  }
+]

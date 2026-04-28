@@ -1,0 +1,93 @@
+{
+  "model": {
+    "model_id": "qwen35_9b",
+    "base_url": "http://snacksack-ms-7d32.tail3156cd.ts.net:8082/v1",
+    "model_name": "Qwen_Qwen3.5-9B-Q4_K_M.gguf"
+  },
+  "envs": [
+    "ascii_tree"
+  ],
+  "results": [
+    {
+      "arm_id": "baseline",
+      "env_id": "ascii_tree",
+      "status": "success",
+      "returncode": 0,
+      "reward": 0.0,
+      "token_usage": {
+        "prompt_tokens": 436,
+        "completion_tokens": 61,
+        "total_tokens": 497
+      },
+      "failure_types": {},
+      "visible_output_emitted": true,
+      "output_status": "completed",
+      "valid_action": true,
+      "action_type": "direct_answer",
+      "action_excerpt": "<ascii_formatted> packaging +--brew +--linux-arch +--linux-centos +--linux-debian +--linux-fedora +--mac-ports +--snapcraft +--windows-chocolatey `--tools ```",
+      "short_justification": "Returned direct action-only output.",
+      "episode_metrics": {
+        "ascii_tree_similarity_reward": 0.0,
+        "ascii_tree_continuous_reward": 0.0,
+        "num_turns": 1.0
+      },
+      "export_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-primehub-structured-map-retrieval\\artifacts\\live_eval_qwen35_9b_ascii_threaded\\replays\\baseline\\ascii_tree.jsonl",
+      "summary_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-primehub-structured-map-retrieval\\artifacts\\live_eval_qwen35_9b_ascii_threaded\\replays\\baseline\\ascii_tree.summary.json",
+      "success": true
+    },
+    {
+      "arm_id": "plain_structured_map",
+      "env_id": "ascii_tree",
+      "status": "success",
+      "returncode": 0,
+      "reward": 0.0,
+      "token_usage": {
+        "prompt_tokens": 595,
+        "completion_tokens": 61,
+        "total_tokens": 656
+      },
+      "failure_types": {},
+      "visible_output_emitted": true,
+      "output_status": "completed",
+      "valid_action": true,
+      "action_type": "direct_answer",
+      "action_excerpt": "<ascii_formatted> packaging +--brew +--linux-arch +--linux-centos +--linux-debian +--linux-fedora +--mac-ports +--snapcraft +--windows-chocolatey `--tools ```",
+      "short_justification": "Returned direct action-only output.",
+      "episode_metrics": {
+        "ascii_tree_similarity_reward": 0.0,
+        "ascii_tree_continuous_reward": 0.0,
+        "num_turns": 1.0
+      },
+      "export_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-primehub-structured-map-retrieval\\artifacts\\live_eval_qwen35_9b_ascii_threaded\\replays\\plain_structured_map\\ascii_tree.jsonl",
+      "summary_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-primehub-structured-map-retrieval\\artifacts\\live_eval_qwen35_9b_ascii_threaded\\replays\\plain_structured_map\\ascii_tree.summary.json",
+      "success": true
+    },
+    {
+      "arm_id": "retrieval_assisted",
+      "env_id": "ascii_tree",
+      "status": "success",
+      "returncode": 0,
+      "reward": 0.7999999999999999,
+      "token_usage": {
+        "prompt_tokens": 875,
+        "completion_tokens": 64,
+        "total_tokens": 939
+      },
+      "failure_types": {},
+      "visible_output_emitted": true,
+      "output_status": "completed",
+      "valid_action": true,
+      "action_type": "direct_answer",
+      "action_excerpt": "<ascii_formatted> packaging +--brew +--linux-arch +--linux-centos +--linux-debian +--linux-fedora +--mac-ports +--snapcraft +--windows-chocolatey +--tools </ascii_formatted>",
+      "short_justification": "Returned direct action-only output.",
+      "episode_metrics": {
+        "ascii_tree_similarity_reward": 0.8,
+        "ascii_tree_continuous_reward": 0.8,
+        "num_turns": 1.0
+      },
+      "export_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-primehub-structured-map-retrieval\\artifacts\\live_eval_qwen35_9b_ascii_threaded\\replays\\retrieval_assisted\\ascii_tree.jsonl",
+      "summary_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-primehub-structured-map-retrieval\\artifacts\\live_eval_qwen35_9b_ascii_threaded\\replays\\retrieval_assisted\\ascii_tree.summary.json",
+      "success": true
+    }
+  ]
+}

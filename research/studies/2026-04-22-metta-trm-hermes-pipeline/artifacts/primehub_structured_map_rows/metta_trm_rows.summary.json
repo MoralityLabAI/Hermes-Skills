@@ -1,0 +1,19 @@
+{
+  "bundle_dir": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_structured_map_bundle",
+  "out_dir": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_structured_map_rows",
+  "row_count": 12,
+  "task_family_counts": {
+    "metta_contract_select": 3,
+    "metta_contract_verify": 6,
+    "metta_contract_repair": 3
+  },
+  "bucket_counts": {
+    "exact_positive": 9,
+    "negative": 3
+  },
+  "env_counts": {
+    "ascii_tree": 4,
+    "psycho_bench": 4,
+    "pydantic_adherence": 4
+  }
+}

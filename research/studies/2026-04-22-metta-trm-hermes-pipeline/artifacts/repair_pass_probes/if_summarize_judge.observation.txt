@@ -1,0 +1,25 @@
+﻿USER: Write a one-sentence summary of the following text that contains exactly one comma. Write only the sentence, nothing else.
+
+---
+
+# Welschbillig Castle
+
+Type: lowland castle
+Code: DE-RP
+Condition: ruin
+Coordinates: 49Â°51â€²12â€³N 6Â°34â€²07â€³Eï»¿ / ï»¿49.853278Â°N 6.568694Â°E
+Height: 290 m above sea level (NHN)
+Built: around 1140
+Occupants: clergy
+
+Welschbillig Castle (German: Burg Welschbillig) is the ruin of a water castle in the municipality of Welschbillig in the county of Trier-Saarburg in the German state of Rhineland-Palatinate.
+
+As early as the 12th century there was a small predecessor castle on the site of a former Roman villa rustica from the 2nd to 4th century in the present village of Welschbillig.
+
+From 1242 to 1299 the fortifications of the castle were significantly strengthened by the Prince-Elector of Trier, Arnold II of Isenburg and, later, the Landesburg was further expanded by his successors. During the so-called Dutch War the castle was destroyed in 1673/74 by troops of the French "sun king" Louis XIV and from 1889 to 1891 the southern side was demolished to build a church.
+
+The castle built over the remains of the Roman villa survive today as the remains of a large, quadrangular castle with moats. Still visible are the gateway with its two round towers, a stone bridge over the moat and the remains of the northwest tower.
+
+The Roman villa was built in the shape of the letter "U" next to a 58.3 by 17.8 metre water basin, which was originally surrounded 112 hermas. 71 of the hermas may be seen in the Rheinisches Landesmuseum Trier.
+
+- Bernhard Gondorf (1984). Die Burgen der Eifel und ihrer Randgebiete. Ein Lexikon der "festen HÃ¤user" [The castles of the Eifel and its outskirts. A dictionary of "solid houses"] (in German). Cologne: J. P. Bachem. p. 176. ISBN 3-7616-0723-7.

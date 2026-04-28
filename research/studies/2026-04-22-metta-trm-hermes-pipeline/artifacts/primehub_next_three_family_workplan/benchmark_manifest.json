@@ -1,0 +1,73 @@
+{
+  "plan_id": "primehub-next-three-families-v1",
+  "run_count": 3,
+  "runs": [
+    {
+      "family_id": "allenai_ifeval",
+      "training_task_id": "metta-primehub-allenai-ifeval-contract-20260423",
+      "cluster": "choice_contract",
+      "basis": "exact_contract_instruction_wrapper",
+      "focus_metrics": [
+        "critic_bucket_accuracy",
+        "retriever_exact_match",
+        "gated_router_exact",
+        "wrapper_family_error_rate"
+      ],
+      "caps": {
+        "ram_mb": 2048,
+        "cpu_pct": 50,
+        "io_cap_mb_s": 50
+      },
+      "chunk_strategy": "family_per_run",
+      "checkpoint_interval": "family_complete",
+      "out_dir": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_next_three_family_workplan\\allenai_ifeval",
+      "planned_bundle_dir": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_next_three_family_workplan\\allenai_ifeval\\bundle",
+      "planned_comparison_dir": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_next_three_family_workplan\\allenai_ifeval\\comparison"
+    },
+    {
+      "family_id": "aime2026",
+      "training_task_id": "metta-primehub-aime2026-numeric-20260423",
+      "cluster": "hard_reasoning_numeric",
+      "basis": "hard_numeric_verification_and_visible_output_recovery",
+      "focus_metrics": [
+        "critic_bucket_accuracy",
+        "retriever_exact_match",
+        "gated_router_exact",
+        "visible_output_rate",
+        "timeout_rate"
+      ],
+      "caps": {
+        "ram_mb": 2048,
+        "cpu_pct": 50,
+        "io_cap_mb_s": 50
+      },
+      "chunk_strategy": "family_per_run",
+      "checkpoint_interval": "family_complete",
+      "out_dir": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_next_three_family_workplan\\aime2026",
+      "planned_bundle_dir": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_next_three_family_workplan\\aime2026\\bundle",
+      "planned_comparison_dir": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_next_three_family_workplan\\aime2026\\comparison"
+    },
+    {
+      "family_id": "jailbreak_bench",
+      "training_task_id": "metta-primehub-jailbreak-guard-20260423",
+      "cluster": "abstain_guard",
+      "basis": "critic_abstain_and_guarded_override_calibration",
+      "focus_metrics": [
+        "critic_bucket_accuracy",
+        "gated_abstain_rate",
+        "harmful_visible_output_rate",
+        "guarded_safe_redirect_rate"
+      ],
+      "caps": {
+        "ram_mb": 2048,
+        "cpu_pct": 50,
+        "io_cap_mb_s": 50
+      },
+      "chunk_strategy": "family_per_run",
+      "checkpoint_interval": "family_complete",
+      "out_dir": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_next_three_family_workplan\\jailbreak_bench",
+      "planned_bundle_dir": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_next_three_family_workplan\\jailbreak_bench\\bundle",
+      "planned_comparison_dir": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_next_three_family_workplan\\jailbreak_bench\\comparison"
+    }
+  ]
+}

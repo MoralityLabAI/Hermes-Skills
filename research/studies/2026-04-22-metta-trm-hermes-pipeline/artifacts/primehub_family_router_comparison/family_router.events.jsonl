@@ -1,0 +1,14 @@
+{"ts": "2026-04-24T01:06:04.929527+00:00", "event": "trainer_plan", "training_task_id": "metta-primehub-family-router-comparison-20260423", "routed_envs": ["allenai_ifeval", "aime2026"]}
+{"ts": "2026-04-24T01:06:13.508982+00:00", "event": "variant_start", "variant": "control"}
+{"ts": "2026-04-24T01:07:55.603605+00:00", "event": "checkpoint", "variant": "control", "checkpoint": "evaluated"}
+{"ts": "2026-04-24T01:07:55.604605+00:00", "event": "variant_start", "variant": "global_common"}
+{"ts": "2026-04-24T01:09:25.613210+00:00", "event": "checkpoint", "variant": "global_common", "checkpoint": "evaluated"}
+{"ts": "2026-04-24T01:09:25.613210+00:00", "event": "variant_start", "variant": "global_all_abstractions"}
+{"ts": "2026-04-24T01:11:01.264359+00:00", "event": "checkpoint", "variant": "global_all_abstractions", "checkpoint": "evaluated"}
+{"ts": "2026-04-24T01:11:01.265351+00:00", "event": "variant_start", "variant": "global_all_stacks"}
+{"ts": "2026-04-24T01:12:47.220642+00:00", "event": "checkpoint", "variant": "global_all_stacks", "checkpoint": "evaluated"}
+{"ts": "2026-04-24T01:12:47.220642+00:00", "event": "variant_start", "variant": "routed_abstractions"}
+{"ts": "2026-04-24T01:16:15.057692+00:00", "event": "checkpoint", "variant": "routed_abstractions", "checkpoint": "evaluated"}
+{"ts": "2026-04-24T01:16:15.058709+00:00", "event": "variant_start", "variant": "routed_stacks"}
+{"ts": "2026-04-24T01:18:09.150173+00:00", "event": "checkpoint", "variant": "routed_stacks", "checkpoint": "evaluated"}
+{"ts": "2026-04-24T01:18:09.154174+00:00", "event": "done", "summary_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_family_router_comparison\\family_router.summary.json"}

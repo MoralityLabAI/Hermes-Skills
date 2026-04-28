@@ -1,0 +1,11 @@
+policy,signal_class,val_accuracy,val_false_commit_rate,val_false_reject_rate,holdout_accuracy,holdout_false_commit_rate,holdout_false_reject_rate
+postrepair_exact_or_gain_gt_0,post_evaluator_multi_signal,1.0,0.0,0.0,1.0,0.0,0.0
+postrepair_gain_ge_0p02,post_evaluator_delta,1.0,0.0,0.0,1.0,0.0,0.0
+postrepair_gain_ge_0p05,post_evaluator_delta,1.0,0.0,0.0,0.8,0.0,0.2222
+postrepair_gain_gt_0,post_evaluator_delta,1.0,0.0,0.0,1.0,0.0,0.0
+postrepair_signature_and_gain_gt_0,post_symbolic_plus_delta,1.0,0.0,0.0,1.0,0.0,0.0
+after_exact_only,post_evaluator_exact,0.875,0.0,0.1429,0.7,0.0,0.3333
+after_signature_and_exact,post_symbolic_plus_exact,0.875,0.0,0.1429,0.7,0.0,0.3333
+after_signature_complete_only,post_symbolic,0.875,1.0,0.0,0.9,1.0,0.0
+always_commit,control,0.875,1.0,0.0,0.9,1.0,0.0
+postrepair_non_regression,post_evaluator_delta,0.875,1.0,0.0,0.9,1.0,0.0

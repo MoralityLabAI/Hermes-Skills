@@ -1,0 +1,15 @@
+{
+  "env_id": "pydantic_adherence",
+  "status": "repaired",
+  "original_text": "```json\n{\n  \"policy_id\": \"11111111-1111-1111-1111-111111111111\",\n  \"name\": \"Main\",\n  \"max_books\": 3,\n  \"periods\": [],\n  \"fine_policy\": {\n    \"per_day\": 1.0,\n    \"max_total\": 5.0\n  },\n  \"renewal_policy\": {\n    \"max_renewals\": 1,\n    \"cooldown\": \"14 days\"\n  },\n  \"exceptions\": {}\n}\n```\n",
+  "repaired_text": "{\"policy_id\":\"11111111-1111-1111-1111-111111111111\",\"name\":\"Main\",\"max_books\":3,\"periods\":[],\"fine_policy\":{\"per_day\":1.0,\"max_total\":5.0},\"renewal_policy\":{\"max_renewals\":1,\"cooldown\":\"14\"},\"exceptions\":{},\"created_at\":\"2026-01-01T00:00:00\"}",
+  "applied_repairs": [
+    "removed markdown fences",
+    "coerced cooldown to integer day count string",
+    "defaulted created_at"
+  ],
+  "detected_failures": [
+    "markdown fences around JSON",
+    "cooldown supplied as natural language instead of integer day count"
+  ]
+}

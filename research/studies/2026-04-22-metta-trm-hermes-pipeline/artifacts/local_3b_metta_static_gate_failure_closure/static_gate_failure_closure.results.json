@@ -1,0 +1,61 @@
+{
+  "generated_at_utc": "2026-04-28T12:24:27.742171+00:00",
+  "source_rows": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\local_3b_metta_static_gate_oom_safe\\local_3b_repair_training_rudder.rows.jsonl",
+  "summaries": {
+    "metta_static_gate_rudder_oom_safe": {
+      "n": 88,
+      "target_action_accuracy": 0.9432,
+      "repair_action_accuracy": 1.0,
+      "joint_accuracy": 0.9432,
+      "by_split_joint": {
+        "holdout_seen": 0.9444,
+        "holdout_unseen_family": 0.9444,
+        "val_seen": 0.9412
+      },
+      "by_failure_joint": {
+        "bullet_word_count_failure": 1.0,
+        "c_signature_fail": 0.8889,
+        "exact_grid": 1.0,
+        "exact_json": 1.0,
+        "exact_positive": 1.0,
+        "exact_tree": 1.0,
+        "grid_shape_failure": 1.0,
+        "hashtag_contract_failure": 1.0,
+        "json_parse_failure": 1.0,
+        "json_value_mismatch": 0.6667,
+        "partial_grid": 1.0,
+        "partial_tree": 1.0,
+        "signature_pass_cell_fail": 1.0
+      }
+    },
+    "metta_static_gate_v2_replay": {
+      "n": 88,
+      "target_action_accuracy": 0.9545,
+      "repair_action_accuracy": 1.0,
+      "joint_accuracy": 0.9545,
+      "by_split_joint": {
+        "holdout_seen": 0.9444,
+        "holdout_unseen_family": 1.0,
+        "val_seen": 0.9412
+      },
+      "by_failure_joint": {
+        "bullet_word_count_failure": 1.0,
+        "c_signature_fail": 0.8889,
+        "exact_grid": 1.0,
+        "exact_json": 1.0,
+        "exact_positive": 1.0,
+        "exact_tree": 1.0,
+        "grid_shape_failure": 1.0,
+        "hashtag_contract_failure": 1.0,
+        "json_parse_failure": 1.0,
+        "json_value_mismatch": 1.0,
+        "partial_grid": 1.0,
+        "partial_tree": 1.0,
+        "signature_pass_cell_fail": 1.0
+      }
+    }
+  },
+  "remaining_miss_classes_v2": {
+    "requires_post_repair_verifier": 4
+  }
+}

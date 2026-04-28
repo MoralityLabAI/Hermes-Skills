@@ -1,0 +1,10 @@
+env,rows,avg_reward_lift,exact_count_lift,pre_scalar_accuracy,symbolic_accuracy,multi_signal_accuracy,false_commit_reduction_vs_pre_scalar,symbolic_gap_to_multi_signal
+ascii_tree_deep,5,0.14,2,0.6,1.0,1.0,0.0,0.0
+choice_contract,4,0.25,1,0.75,1.0,1.0,0.0,0.0
+ifeval_contract_subset,2,1.0,2,0.0,1.0,1.0,0.0,0.0
+intellect3_camp_gate,4,0.03125,1,1.0,1.0,1.0,0.0,0.0
+intellect3_logic_c_signature,122,0.096803,81,0.6311,0.8279,1.0,0.7143,0.1721
+math_answer_search,4,0.0,0,1.0,1.0,1.0,0.0,0.0
+pydantic_hard_schema,1,1.0,1,0.0,1.0,1.0,0.0,0.0
+safety_abstain_router,2,1.0,2,0.0,1.0,1.0,0.0,0.0
+tool_contract_router,4,0.25,1,0.75,1.0,1.0,0.0,0.0

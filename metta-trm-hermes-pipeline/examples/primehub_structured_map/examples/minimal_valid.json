@@ -1,0 +1,33 @@
+{
+  "policy_id": "11111111-1111-1111-1111-111111111111",
+  "name": "Main",
+  "max_books": 3,
+  "periods": [
+    {
+      "genre": "fiction",
+      "days": 14
+    },
+    {
+      "genre": "non-fiction",
+      "days": 14
+    },
+    {
+      "genre": "children",
+      "days": 14
+    },
+    {
+      "genre": "reference",
+      "days": 7
+    }
+  ],
+  "fine_policy": {
+    "per_day": 1.0,
+    "max_total": 5.0
+  },
+  "renewal_policy": {
+    "max_renewals": 1,
+    "cooldown": "1"
+  },
+  "exceptions": {},
+  "created_at": "2026-01-01T00:00:00"
+}

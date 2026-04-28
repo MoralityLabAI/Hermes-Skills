@@ -1,0 +1,6 @@
+(package-id "if_summarize_judge_constraints")
+(base-skill "primehub-constraint-summarize-hermes")
+(overlay "trm-observability-workflow")
+(owner "Hermes Skills research")
+(env "if_summarize_judge")
+(goal "compile constraint-family summaries into runtime packets, verifier hints, profile rows, and deterministic repair templates")

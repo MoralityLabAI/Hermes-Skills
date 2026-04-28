@@ -1,0 +1,624 @@
+{
+  "workspace_root": "C:\\projects\\Hermes Skills",
+  "skill_count": 17,
+  "skills": [
+    {
+      "name": "hermes-bluebeam-research",
+      "slug": "hermes-bluebeam-research",
+      "description": "Continue the local BlueBeam-Research loop: inspect SAE/autoresearch artifacts, resume budgeted runs, and package handoff state when plan budget is tight.",
+      "track": "domain-research",
+      "family": "bluebeam",
+      "maturity_stage": "exploratory",
+      "trm_infusion_role": "domain-probe-surface",
+      "recommended_pairings": [
+        "trm-observability-workflow"
+      ],
+      "primary_research_question": "What domain-specific contract is stable enough to benchmark and later infuse with TRM?",
+      "next_artifact": "contract stabilization brief",
+      "next_artifact_rationale": "Exploratory surfaces need a fixed answer contract and benchmark slice before TRM infusion results will be comparable.",
+      "paths": {
+        "root": "C:\\projects\\Hermes Skills\\hermes-bluebeam-research",
+        "skill": "C:\\projects\\Hermes Skills\\hermes-bluebeam-research\\SKILL.md",
+        "references": "C:\\projects\\Hermes Skills\\hermes-bluebeam-research\\references",
+        "scripts": "C:\\projects\\Hermes Skills\\hermes-bluebeam-research\\scripts"
+      },
+      "asset_counts": {
+        "references": 1,
+        "scripts": 1
+      },
+      "assets": {
+        "references": [
+          "research_loop.md"
+        ],
+        "scripts": [
+          "bluebeam_research_status.py"
+        ]
+      }
+    },
+    {
+      "name": "intellect3-logic-hermes",
+      "slug": "intellect3-logic-hermes",
+      "description": "Use for Campsite / Intellect-3-Logic work, including the Hermes skill contract, TRM-augmented routing, local benchmark receipts, and prompt generation.",
+      "track": "task-skill",
+      "family": "intellect3",
+      "maturity_stage": "benchmarkable",
+      "trm_infusion_role": "candidate-for-routing-or-observability",
+      "recommended_pairings": [
+        "trm-observability-workflow",
+        "trm-public-rationale-chain"
+      ],
+      "primary_research_question": "Does the Hermes contract or TRM routing beat the plain path on held Intellect-3 evidence?",
+      "next_artifact": "baseline brief plus public-trace ablation",
+      "next_artifact_rationale": "The logic and math contracts are stable enough to test whether visible bounded traces help or hurt held performance.",
+      "paths": {
+        "root": "C:\\projects\\Hermes Skills\\intellect3-logic-hermes",
+        "skill": "C:\\projects\\Hermes Skills\\intellect3-logic-hermes\\SKILL.md",
+        "references": "C:\\projects\\Hermes Skills\\intellect3-logic-hermes\\references",
+        "scripts": "C:\\projects\\Hermes Skills\\intellect3-logic-hermes\\scripts"
+      },
+      "asset_counts": {
+        "references": 8,
+        "scripts": 4
+      },
+      "assets": {
+        "references": [
+          "contract.md",
+          "imprints",
+          "learnings-3-27.md",
+          "logic_hybrid_200.summary.json",
+          "logic_router_200.summary.json",
+          "primehub_skill_imprint.latest.json",
+          "primehub_skill_imprint.latest.md",
+          "receipts.md"
+        ],
+        "scripts": [
+          "__pycache__",
+          "build_skill_prompt.py",
+          "check_signature_gate.py",
+          "show_receipts.py"
+        ]
+      }
+    },
+    {
+      "name": "intellect3-math-hermes",
+      "slug": "intellect3-math-hermes",
+      "description": "Use for Intellect-3-Math work, including the Hermes math contract, TRM-augmented routing, local benchmark receipts, and prompt generation.",
+      "track": "task-skill",
+      "family": "intellect3",
+      "maturity_stage": "benchmarkable",
+      "trm_infusion_role": "candidate-for-routing-or-observability",
+      "recommended_pairings": [
+        "trm-observability-workflow",
+        "trm-public-rationale-chain"
+      ],
+      "primary_research_question": "Does the Hermes contract or TRM routing beat the plain path on held Intellect-3 evidence?",
+      "next_artifact": "baseline brief plus public-trace ablation",
+      "next_artifact_rationale": "The logic and math contracts are stable enough to test whether visible bounded traces help or hurt held performance.",
+      "paths": {
+        "root": "C:\\projects\\Hermes Skills\\intellect3-math-hermes",
+        "skill": "C:\\projects\\Hermes Skills\\intellect3-math-hermes\\SKILL.md",
+        "references": "C:\\projects\\Hermes Skills\\intellect3-math-hermes\\references",
+        "scripts": "C:\\projects\\Hermes Skills\\intellect3-math-hermes\\scripts"
+      },
+      "asset_counts": {
+        "references": 8,
+        "scripts": 4
+      },
+      "assets": {
+        "references": [
+          "contract.md",
+          "imprints",
+          "learnings-3-27.md",
+          "math_hybrid_200.summary.json",
+          "math_router_100.summary.json",
+          "primehub_skill_imprint.latest.json",
+          "primehub_skill_imprint.latest.md",
+          "receipts.md"
+        ],
+        "scripts": [
+          "__pycache__",
+          "build_skill_prompt.py",
+          "check_support_pattern.py",
+          "show_receipts.py"
+        ]
+      }
+    },
+    {
+      "name": "metta-composition-hermes",
+      "slug": "metta-composition-hermes",
+      "description": "Use when composing Hermes task skills into MeTTa gate circuits that are aware of TRM-infused skill roles, role-based TRM support tiers, and compatible PrimeHub/Intellect skill pairings.",
+      "track": "meta-skill",
+      "family": "metta-trm",
+      "maturity_stage": "meta-orchestration",
+      "trm_infusion_role": "trm-aware-skill-composition",
+      "recommended_pairings": [
+        "metta-eval-optimizer-hermes",
+        "trm-observability-workflow",
+        "trm-mcp"
+      ],
+      "primary_research_question": "Can TRM-infused Hermes skills be safely composed into MeTTa circuits without confusing critic, formatter, verifier, and action roles?",
+      "next_artifact": "TRM-aware MeTTa composition plan",
+      "next_artifact_rationale": "This skill maps existing Hermes task skills and TRM role cards into safe gate circuits with explicit claim boundaries.",
+      "paths": {
+        "root": "C:\\projects\\Hermes Skills\\metta-composition-hermes",
+        "skill": "C:\\projects\\Hermes Skills\\metta-composition-hermes\\SKILL.md",
+        "references": "C:\\projects\\Hermes Skills\\metta-composition-hermes\\references",
+        "scripts": "C:\\projects\\Hermes Skills\\metta-composition-hermes\\scripts"
+      },
+      "asset_counts": {
+        "references": 1,
+        "scripts": 1
+      },
+      "assets": {
+        "references": [
+          "composition_contract.md"
+        ],
+        "scripts": [
+          "build_metta_composition_plan.py"
+        ]
+      }
+    },
+    {
+      "name": "metta-eval-optimizer-hermes",
+      "slug": "metta-eval-optimizer-hermes",
+      "description": "Use for designing MeTTa-scaffolded meta-skills that optimize Hermes/PrimeHub/Intellect evals, fork task skills into gate-circuit variants, and route artifacts into Pure-TRM-Trainer or PrimeLab without mixing their responsibilities.",
+      "track": "meta-skill",
+      "family": "metta-trm",
+      "maturity_stage": "meta-orchestration",
+      "trm_infusion_role": "gate-circuit-eval-optimizer",
+      "recommended_pairings": [
+        "trm-observability-workflow",
+        "trm-mcp"
+      ],
+      "primary_research_question": "Can MeTTa gate circuits turn task-skill forks into better eval, curation, and TRM-training pipelines?",
+      "next_artifact": "meta-skill fork plan plus paper addendum",
+      "next_artifact_rationale": "This layer decides which MeTTa gates, TRM exports, and PrimeLab env artifacts each new skill fork should produce.",
+      "paths": {
+        "root": "C:\\projects\\Hermes Skills\\metta-eval-optimizer-hermes",
+        "skill": "C:\\projects\\Hermes Skills\\metta-eval-optimizer-hermes\\SKILL.md",
+        "references": "C:\\projects\\Hermes Skills\\metta-eval-optimizer-hermes\\references",
+        "scripts": "C:\\projects\\Hermes Skills\\metta-eval-optimizer-hermes\\scripts"
+      },
+      "asset_counts": {
+        "references": 1,
+        "scripts": 1
+      },
+      "assets": {
+        "references": [
+          "meta_skill_contract.md"
+        ],
+        "scripts": [
+          "build_metta_eval_fork_plan.py"
+        ]
+      }
+    },
+    {
+      "name": "metta-trm-hermes-pipeline",
+      "slug": "metta-trm-hermes-pipeline",
+      "description": "Use for compiling MeTTa skill contracts into TRM retrieval packets, critic hints, and trace labels for Hermes skills.",
+      "track": "domain-research",
+      "family": "hermes",
+      "maturity_stage": "exploratory",
+      "trm_infusion_role": "general-hermes-research",
+      "recommended_pairings": [
+        "trm-observability-workflow"
+      ],
+      "primary_research_question": "What measurable gain justifies the current general-hermes-research design?",
+      "next_artifact": "contract stabilization brief",
+      "next_artifact_rationale": "Exploratory surfaces need a fixed answer contract and benchmark slice before TRM infusion results will be comparable.",
+      "paths": {
+        "root": "C:\\projects\\Hermes Skills\\metta-trm-hermes-pipeline",
+        "skill": "C:\\projects\\Hermes Skills\\metta-trm-hermes-pipeline\\SKILL.md",
+        "references": "",
+        "scripts": "C:\\projects\\Hermes Skills\\metta-trm-hermes-pipeline\\scripts"
+      },
+      "asset_counts": {
+        "references": 0,
+        "scripts": 18
+      },
+      "assets": {
+        "references": [],
+        "scripts": [
+          "__pycache__",
+          "build_primehub_next_three_family_workplan.py",
+          "compile_metta_package.py",
+          "compile_metta_primehub_transfer_bundle.py",
+          "compile_metta_rows.py",
+          "compile_metta_runtime_packet.py",
+          "compile_metta_trainer_policy_bundle.py",
+          "compile_primehub_external_abstraction_bundle.py",
+          "compile_primehub_external_aime2026_bundle.py",
+          "compile_primehub_external_aime2026_critic_support_bundle.py",
+          "compile_primehub_external_critic_support_bundle.py",
+          "compile_primehub_external_ifeval_bundle.py",
+          "compile_primehub_external_ifeval_critic_support_bundle.py",
+          "compile_primehub_family_router_bundle.py",
+          "metta_multi_signal_scorecard.py",
+          "metta_repair_pass.py",
+          "run_metta_trainer_policy_rollup.py",
+          "test_metta_repair_pass.py"
+        ]
+      }
+    },
+    {
+      "name": "pixie-mechinterp",
+      "slug": "pixie-mechinterp",
+      "description": "Use for Pixie / fae mechinterp and tiny-LoRA ablation work, including overnight sweep status, constitution runs, and trigger-vs-drift reporting.",
+      "track": "domain-research",
+      "family": "mechinterp",
+      "maturity_stage": "exploratory",
+      "trm_infusion_role": "domain-probe-surface",
+      "recommended_pairings": [
+        "trm-observability-workflow"
+      ],
+      "primary_research_question": "What observable structure can this skill surface before a stronger benchmark contract exists?",
+      "next_artifact": "contract stabilization brief",
+      "next_artifact_rationale": "Exploratory surfaces need a fixed answer contract and benchmark slice before TRM infusion results will be comparable.",
+      "paths": {
+        "root": "C:\\projects\\Hermes Skills\\pixie-mechinterp",
+        "skill": "C:\\projects\\Hermes Skills\\pixie-mechinterp\\SKILL.md",
+        "references": "C:\\projects\\Hermes Skills\\pixie-mechinterp\\references",
+        "scripts": ""
+      },
+      "asset_counts": {
+        "references": 1,
+        "scripts": 0
+      },
+      "assets": {
+        "references": [
+          "paths.md"
+        ],
+        "scripts": []
+      }
+    },
+    {
+      "name": "primehub-abstain-guard-hermes",
+      "slug": "primehub-abstain-guard-hermes",
+      "description": "Use for PrimeIntellect envs where a negative critic decision may need one guarded override pass before final abstention, especially truthfulqa, wmdp, agency_bench, jailbreak_bench, and related honesty or safety tasks.",
+      "track": "task-skill",
+      "family": "primehub",
+      "maturity_stage": "benchmarkable",
+      "trm_infusion_role": "candidate-for-trm-observability",
+      "recommended_pairings": [
+        "trm-observability-workflow"
+      ],
+      "primary_research_question": "Does the Hermes contract improve exactness or stability on the named Primehub slice?",
+      "next_artifact": "baseline brief plus observability pack",
+      "next_artifact_rationale": "Primehub task skills should first prove row quality, benchmark stability, and reproducible receipts before extra overlays are stacked.",
+      "paths": {
+        "root": "C:\\projects\\Hermes Skills\\primehub-abstain-guard-hermes",
+        "skill": "C:\\projects\\Hermes Skills\\primehub-abstain-guard-hermes\\SKILL.md",
+        "references": "C:\\projects\\Hermes Skills\\primehub-abstain-guard-hermes\\references",
+        "scripts": "C:\\projects\\Hermes Skills\\primehub-abstain-guard-hermes\\scripts"
+      },
+      "asset_counts": {
+        "references": 1,
+        "scripts": 2
+      },
+      "assets": {
+        "references": [
+          "contract.md"
+        ],
+        "scripts": [
+          "__pycache__",
+          "build_skill_prompt.py"
+        ]
+      }
+    },
+    {
+      "name": "primehub-choice-contract-hermes",
+      "slug": "primehub-choice-contract-hermes",
+      "description": "Use for PrimeIntellect envs with strict answer wrappers or fixed small answer sets, especially truthfulqa, boolq, simple_bench, arc, hellaswag, winogrande, and instruction-following evals where exact contract repair beats a raw generalized TRM.",
+      "track": "task-skill",
+      "family": "primehub",
+      "maturity_stage": "benchmarkable",
+      "trm_infusion_role": "candidate-for-trm-observability",
+      "recommended_pairings": [
+        "trm-observability-workflow"
+      ],
+      "primary_research_question": "Does the Hermes contract improve exactness or stability on the named Primehub slice?",
+      "next_artifact": "baseline brief plus observability pack",
+      "next_artifact_rationale": "Primehub task skills should first prove row quality, benchmark stability, and reproducible receipts before extra overlays are stacked.",
+      "paths": {
+        "root": "C:\\projects\\Hermes Skills\\primehub-choice-contract-hermes",
+        "skill": "C:\\projects\\Hermes Skills\\primehub-choice-contract-hermes\\SKILL.md",
+        "references": "C:\\projects\\Hermes Skills\\primehub-choice-contract-hermes\\references",
+        "scripts": "C:\\projects\\Hermes Skills\\primehub-choice-contract-hermes\\scripts"
+      },
+      "asset_counts": {
+        "references": 1,
+        "scripts": 2
+      },
+      "assets": {
+        "references": [
+          "contract.md"
+        ],
+        "scripts": [
+          "__pycache__",
+          "build_skill_prompt.py"
+        ]
+      }
+    },
+    {
+      "name": "primehub-constraint-summarize-hermes",
+      "slug": "primehub-constraint-summarize-hermes",
+      "description": "Use for PrimeIntellect constrained summarization envs where the model must infer a structural family from the instruction and satisfy it exactly, especially if_summarize_judge.",
+      "track": "task-skill",
+      "family": "primehub",
+      "maturity_stage": "benchmarkable",
+      "trm_infusion_role": "candidate-for-trm-observability",
+      "recommended_pairings": [
+        "trm-observability-workflow"
+      ],
+      "primary_research_question": "Does the Hermes contract improve exactness or stability on the named Primehub slice?",
+      "next_artifact": "baseline brief plus observability pack",
+      "next_artifact_rationale": "Primehub task skills should first prove row quality, benchmark stability, and reproducible receipts before extra overlays are stacked.",
+      "paths": {
+        "root": "C:\\projects\\Hermes Skills\\primehub-constraint-summarize-hermes",
+        "skill": "C:\\projects\\Hermes Skills\\primehub-constraint-summarize-hermes\\SKILL.md",
+        "references": "C:\\projects\\Hermes Skills\\primehub-constraint-summarize-hermes\\references",
+        "scripts": "C:\\projects\\Hermes Skills\\primehub-constraint-summarize-hermes\\scripts"
+      },
+      "asset_counts": {
+        "references": 1,
+        "scripts": 2
+      },
+      "assets": {
+        "references": [
+          "contract.md"
+        ],
+        "scripts": [
+          "__pycache__",
+          "build_skill_prompt.py"
+        ]
+      }
+    },
+    {
+      "name": "primehub-hard-reasoning-logic-hermes",
+      "slug": "primehub-hard-reasoning-logic-hermes",
+      "description": "Use for PrimeIntellect logic-heavy reasoning envs where the gain comes from explicit state tracking and elimination, especially logic_env, science_env, lisanbench, mmlu_pro, and related exact-answer reasoning tasks.",
+      "track": "task-skill",
+      "family": "primehub",
+      "maturity_stage": "benchmarkable",
+      "trm_infusion_role": "candidate-for-trm-observability",
+      "recommended_pairings": [
+        "trm-observability-workflow",
+        "trm-public-rationale-chain"
+      ],
+      "primary_research_question": "Does the Hermes contract improve exactness or stability on the named Primehub slice?",
+      "next_artifact": "baseline brief plus observability and public-trace comparison",
+      "next_artifact_rationale": "The logic slice can evaluate both teacher-trace collection and bounded rationale exposure on exact-answer tasks.",
+      "paths": {
+        "root": "C:\\projects\\Hermes Skills\\primehub-hard-reasoning-logic-hermes",
+        "skill": "C:\\projects\\Hermes Skills\\primehub-hard-reasoning-logic-hermes\\SKILL.md",
+        "references": "C:\\projects\\Hermes Skills\\primehub-hard-reasoning-logic-hermes\\references",
+        "scripts": "C:\\projects\\Hermes Skills\\primehub-hard-reasoning-logic-hermes\\scripts"
+      },
+      "asset_counts": {
+        "references": 1,
+        "scripts": 2
+      },
+      "assets": {
+        "references": [
+          "contract.md"
+        ],
+        "scripts": [
+          "__pycache__",
+          "build_skill_prompt.py"
+        ]
+      }
+    },
+    {
+      "name": "primehub-hard-reasoning-numeric-hermes",
+      "slug": "primehub-hard-reasoning-numeric-hermes",
+      "description": "Use for PrimeIntellect numeric reasoning envs where correctness comes from decomposition and exact arithmetic verification, especially math_env, math500, gauss, and aime2024-2026.",
+      "track": "task-skill",
+      "family": "primehub",
+      "maturity_stage": "benchmarkable",
+      "trm_infusion_role": "candidate-for-trm-observability",
+      "recommended_pairings": [
+        "trm-observability-workflow"
+      ],
+      "primary_research_question": "Does the Hermes contract improve exactness or stability on the named Primehub slice?",
+      "next_artifact": "baseline brief plus observability pack",
+      "next_artifact_rationale": "Primehub task skills should first prove row quality, benchmark stability, and reproducible receipts before extra overlays are stacked.",
+      "paths": {
+        "root": "C:\\projects\\Hermes Skills\\primehub-hard-reasoning-numeric-hermes",
+        "skill": "C:\\projects\\Hermes Skills\\primehub-hard-reasoning-numeric-hermes\\SKILL.md",
+        "references": "C:\\projects\\Hermes Skills\\primehub-hard-reasoning-numeric-hermes\\references",
+        "scripts": "C:\\projects\\Hermes Skills\\primehub-hard-reasoning-numeric-hermes\\scripts"
+      },
+      "asset_counts": {
+        "references": 1,
+        "scripts": 2
+      },
+      "assets": {
+        "references": [
+          "contract.md"
+        ],
+        "scripts": [
+          "__pycache__",
+          "build_skill_prompt.py"
+        ]
+      }
+    },
+    {
+      "name": "primehub-internal-action-hermes",
+      "slug": "primehub-internal-action-hermes",
+      "description": "Use for PrimeIntellect envs where the correct move may be an internal or deferred action such as inspect_and_continue rather than immediate visible output, especially antislop-style tasks.",
+      "track": "task-skill",
+      "family": "primehub",
+      "maturity_stage": "benchmarkable",
+      "trm_infusion_role": "candidate-for-trm-observability",
+      "recommended_pairings": [
+        "trm-observability-workflow"
+      ],
+      "primary_research_question": "Does the Hermes contract improve exactness or stability on the named Primehub slice?",
+      "next_artifact": "baseline brief plus observability pack",
+      "next_artifact_rationale": "Primehub task skills should first prove row quality, benchmark stability, and reproducible receipts before extra overlays are stacked.",
+      "paths": {
+        "root": "C:\\projects\\Hermes Skills\\primehub-internal-action-hermes",
+        "skill": "C:\\projects\\Hermes Skills\\primehub-internal-action-hermes\\SKILL.md",
+        "references": "C:\\projects\\Hermes Skills\\primehub-internal-action-hermes\\references",
+        "scripts": "C:\\projects\\Hermes Skills\\primehub-internal-action-hermes\\scripts"
+      },
+      "asset_counts": {
+        "references": 1,
+        "scripts": 2
+      },
+      "assets": {
+        "references": [
+          "contract.md"
+        ],
+        "scripts": [
+          "__pycache__",
+          "build_skill_prompt.py"
+        ]
+      }
+    },
+    {
+      "name": "primehub-structured-map-hermes",
+      "slug": "primehub-structured-map-hermes",
+      "description": "Use for PrimeIntellect envs that require rigid line-structured or indexed outputs, especially psycho_bench and similar tasks where the model must preserve a schema rather than explain.",
+      "track": "task-skill",
+      "family": "primehub",
+      "maturity_stage": "benchmarkable",
+      "trm_infusion_role": "candidate-for-trm-observability",
+      "recommended_pairings": [
+        "trm-observability-workflow",
+        "trm-mcp"
+      ],
+      "primary_research_question": "Does the Hermes contract improve exactness or stability on the named Primehub slice?",
+      "next_artifact": "baseline brief plus retrieval ablation",
+      "next_artifact_rationale": "This contract is the strongest candidate for testing TRM retrieval and routing on top of observability.",
+      "paths": {
+        "root": "C:\\projects\\Hermes Skills\\primehub-structured-map-hermes",
+        "skill": "C:\\projects\\Hermes Skills\\primehub-structured-map-hermes\\SKILL.md",
+        "references": "C:\\projects\\Hermes Skills\\primehub-structured-map-hermes\\references",
+        "scripts": "C:\\projects\\Hermes Skills\\primehub-structured-map-hermes\\scripts"
+      },
+      "asset_counts": {
+        "references": 1,
+        "scripts": 2
+      },
+      "assets": {
+        "references": [
+          "contract.md"
+        ],
+        "scripts": [
+          "__pycache__",
+          "build_skill_prompt.py"
+        ]
+      }
+    },
+    {
+      "name": "trm-mcp",
+      "slug": "trm-mcp",
+      "description": "Use when designing or applying TRM workflows over any MCP server or resource set, especially to optimize lookup efficiency, index quality, routing, and low-token retrieval over large MCP surfaces instead of relying on raw long-context reasoning.",
+      "track": "trm-overlay",
+      "family": "trm",
+      "maturity_stage": "overlay",
+      "trm_infusion_role": "retrieval-routing-layer",
+      "recommended_pairings": [],
+      "primary_research_question": "Does TRM routing improve first useful MCP hit quality at lower token and call cost?",
+      "next_artifact": "overlay benchmark with lookup-heavy skills",
+      "next_artifact_rationale": "Measure first useful hit quality, tool-call count, and token cost against a plain retrieval path.",
+      "paths": {
+        "root": "C:\\projects\\Hermes Skills\\trm-mcp",
+        "skill": "C:\\projects\\Hermes Skills\\trm-mcp\\SKILL.md",
+        "references": "C:\\projects\\Hermes Skills\\trm-mcp\\references",
+        "scripts": "C:\\projects\\Hermes Skills\\trm-mcp\\scripts"
+      },
+      "asset_counts": {
+        "references": 4,
+        "scripts": 9
+      },
+      "assets": {
+        "references": [
+          "design.md",
+          "filesystem_example.md",
+          "github_example.md",
+          "postgres_example.md"
+        ],
+        "scripts": [
+          "__pycache__",
+          "build_example_matrix.py",
+          "build_filesystem_example.py",
+          "build_github_example.py",
+          "build_mcp_trm_rows.py",
+          "build_postgres_example.py",
+          "build_primehub_schema_example.py",
+          "build_skill_prompt.py",
+          "extract_codex_mcp_traces.py"
+        ]
+      }
+    },
+    {
+      "name": "trm-observability-workflow",
+      "slug": "trm-observability-workflow",
+      "description": "Use when you need to bootstrap the harness repo, collect teacher traces, turn them into TRM rows, merge corpora, or rerun logic/math TRM training and benchmarks.",
+      "track": "trm-operations",
+      "family": "trm",
+      "maturity_stage": "infrastructure",
+      "trm_infusion_role": "teacher-trace-to-training-loop",
+      "recommended_pairings": [],
+      "primary_research_question": "Are the collected traces and row families strong enough to support training and benchmarking?",
+      "next_artifact": "shared corpus audit",
+      "next_artifact_rationale": "The workflow itself should be evaluated as infrastructure by checking row quality, benchmark coverage, and promotion reproducibility.",
+      "paths": {
+        "root": "C:\\projects\\Hermes Skills\\trm-observability-workflow",
+        "skill": "C:\\projects\\Hermes Skills\\trm-observability-workflow\\SKILL.md",
+        "references": "C:\\projects\\Hermes Skills\\trm-observability-workflow\\references",
+        "scripts": "C:\\projects\\Hermes Skills\\trm-observability-workflow\\scripts"
+      },
+      "asset_counts": {
+        "references": 5,
+        "scripts": 2
+      },
+      "assets": {
+        "references": [
+          "bench_matrix.md",
+          "harness_notes.md",
+          "row_format.md",
+          "snapshot_manifest.json",
+          "workflow.md"
+        ],
+        "scripts": [
+          "bootstrap_harness.py",
+          "show_workflow.py"
+        ]
+      }
+    },
+    {
+      "name": "trm-public-rationale-chain",
+      "slug": "trm-public-rationale-chain",
+      "description": "Use when you want a bounded public rationale trace layered on top of Hermes/TRM skills, especially for small-model experiments that need observable reasoning without claiming hidden chain-of-thought extraction.",
+      "track": "trm-overlay",
+      "family": "trm",
+      "maturity_stage": "overlay",
+      "trm_infusion_role": "bounded-public-trace-layer",
+      "recommended_pairings": [],
+      "primary_research_question": "Does a bounded public rationale help small-model quality without violating the task contract?",
+      "next_artifact": "overlay benchmark with logic and math skills",
+      "next_artifact_rationale": "This layer should be justified only where public traces help without weakening the base exact-answer contract.",
+      "paths": {
+        "root": "C:\\projects\\Hermes Skills\\trm-public-rationale-chain",
+        "skill": "C:\\projects\\Hermes Skills\\trm-public-rationale-chain\\SKILL.md",
+        "references": "C:\\projects\\Hermes Skills\\trm-public-rationale-chain\\references",
+        "scripts": "C:\\projects\\Hermes Skills\\trm-public-rationale-chain\\scripts"
+      },
+      "asset_counts": {
+        "references": 1,
+        "scripts": 1
+      },
+      "assets": {
+        "references": [
+          "public_trace_contract.md"
+        ],
+        "scripts": [
+          "build_skill_prompt.py"
+        ]
+      }
+    }
+  ]
+}

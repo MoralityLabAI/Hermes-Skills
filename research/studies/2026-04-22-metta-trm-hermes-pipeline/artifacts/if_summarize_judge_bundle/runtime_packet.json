@@ -1,0 +1,342 @@
+{
+  "packet_type": "metta_runtime_packet_v1",
+  "generated_at": "2026-04-23T01:44:09.885455+00:00",
+  "package_id": "if_summarize_judge_constraints",
+  "base_skill": "primehub-constraint-summarize-hermes",
+  "trm_overlay": "trm-observability-workflow",
+  "envs": {
+    "if_summarize_judge": {
+      "answer_shape": "constraint_conditioned_summary",
+      "summary": "Infer the requested structural family from the instruction, then emit only a structure-conforming summary with no extra prose.",
+      "query_cues": [
+        "classify exact structural family first",
+        "word count sentence count punctuation casing wrappers",
+        "headline hashtags xml bullets question answer"
+      ],
+      "must_do": [
+        "classify the active constraint family before writing the answer",
+        "satisfy exact counts, delimiters, wrappers, and casing literally",
+        "emit only the constrained summary text",
+        "the judge is strict on structure and lenient on content quality",
+        "exactly N means exact word, sentence, bullet, or hashtag counts"
+      ],
+      "avoid": [
+        "prefaces, explanations, or code fences",
+        "extra lines outside the requested family",
+        "empty output or fallback action",
+        "correct topic but wrong structural family",
+        "wrong exact count for words, sentences, bullets, or hashtags"
+      ],
+      "minimal_example": "Welschbillig Castle rose over Roman remains, and later wars left it a ruin.",
+      "repair_focus": [
+        "classify the family first, then rewrite to the canonical minimal structure for that family",
+        "prefer the smallest structurally valid answer over verbose content preservation"
+      ],
+      "contract_priority": "constraint_profile",
+      "validation_path": "infer constraint family from observation -> enforce exact structural rules -> remote judge checks compliance and is lenient on content quality",
+      "profiles": {
+        "exact_5_words": {
+          "summary": "Return exactly five words and nothing else.",
+          "query_cues": [
+            "exactly 5 words"
+          ],
+          "must_do": [
+            "output exactly five words",
+            "extra sixth word or trailing punctuation commentary"
+          ],
+          "avoid": [
+            "extra sixth word or trailing punctuation commentary"
+          ],
+          "minimal_example": "Castle ruins mark Roman past",
+          "repair_focus": [
+            "trim or pad to exactly five words"
+          ]
+        },
+        "single_question": {
+          "summary": "Return one question sentence only.",
+          "query_cues": [
+            "single question"
+          ],
+          "must_do": [
+            "end with exactly one question mark",
+            "answer sentence after the question"
+          ],
+          "avoid": [
+            "answer sentence after the question"
+          ],
+          "minimal_example": "How did a Roman villa become castle ruins?",
+          "repair_focus": [
+            "collapse to one question sentence"
+          ]
+        },
+        "alpha_start_3sent": {
+          "summary": "Return exactly three sentences, each starting with a different letter.",
+          "query_cues": [
+            "different letter of the alphabet"
+          ],
+          "must_do": [
+            "emit exactly three sentences",
+            "start the three sentences with different letters",
+            "two-sentence or same-letter output"
+          ],
+          "avoid": [
+            "two-sentence or same-letter output"
+          ],
+          "minimal_example": "Ancient Roman roots shaped the site. Bold walls later strengthened the castle. Conflict finally left ruins.",
+          "repair_focus": [
+            "normalize to three short sentences with distinct starting letters"
+          ]
+        },
+        "exact_10w_bullets": {
+          "summary": "Return exactly two bullet points and make each bullet exactly ten words.",
+          "query_cues": [
+            "exactly 2 bullet points",
+            "each bullet must be exactly 10 words"
+          ],
+          "must_do": [
+            "emit exactly two bullet lines",
+            "make each bullet exactly ten words",
+            "paragraph text instead of bullets"
+          ],
+          "avoid": [
+            "paragraph text instead of bullets"
+          ],
+          "minimal_example": "- Roman villa roots later supported a fortified regional castle complex.\n- French attacks destroyed defenses, leaving moats, towers, and ruins visible.",
+          "repair_focus": [
+            "repair to two bullets with ten words each"
+          ]
+        },
+        "exclamation_ends": {
+          "summary": "Return two or three sentences and end every sentence with an exclamation mark.",
+          "query_cues": [
+            "every sentence ends with an exclamation mark"
+          ],
+          "must_do": [
+            "use only two or three sentences",
+            "end every sentence with !",
+            "period or question ending"
+          ],
+          "avoid": [
+            "period or question ending"
+          ],
+          "minimal_example": "Roman villa roots shaped this castle! Later wars left the site in ruins!",
+          "repair_focus": [
+            "normalize sentence endings to !"
+          ]
+        },
+        "exact_15_words": {
+          "summary": "Return one sentence of exactly fifteen words.",
+          "query_cues": [
+            "exactly 15 words"
+          ],
+          "must_do": [
+            "emit exactly fifteen words",
+            "wrong exact word count"
+          ],
+          "avoid": [
+            "wrong exact word count"
+          ],
+          "minimal_example": "Roman villa remains beneath Welschbillig Castle reveal centuries of fortification, war, rebuilding, and eventual ruin.",
+          "repair_focus": [
+            "trim or pad to exactly fifteen words"
+          ]
+        },
+        "3_keywords": {
+          "summary": "Return exactly three keywords or key phrases separated by commas.",
+          "query_cues": [
+            "exactly 3 keywords or key phrases"
+          ],
+          "must_do": [
+            "emit exactly three comma-separated keywords or short key phrases",
+            "sentence or list with more than three items"
+          ],
+          "avoid": [
+            "sentence or list with more than three items"
+          ],
+          "minimal_example": "Roman villa, fortified castle, ruins",
+          "repair_focus": [
+            "compress to three comma-separated keywords"
+          ]
+        },
+        "dictionary_def": {
+          "summary": "Return a bolded subject, a colon, and one dictionary-style definition sentence.",
+          "query_cues": [
+            "dictionary definition",
+            "subject name in bold"
+          ],
+          "must_do": [
+            "start with a bolded subject name followed by a colon",
+            "use one sentence only",
+            "missing bold subject or colon"
+          ],
+          "avoid": [
+            "missing bold subject or colon"
+          ],
+          "minimal_example": "**Welschbillig Castle**: a ruined fortified site built over a former Roman villa in Rhineland-Palatinate.",
+          "repair_focus": [
+            "restore bold subject + colon definition wrapper"
+          ]
+        },
+        "question_answer": {
+          "summary": "Return exactly two sentences: first a question, then its answer.",
+          "query_cues": [
+            "first sentence must be a question and the second must answer it"
+          ],
+          "must_do": [
+            "emit exactly two sentences",
+            "make the first sentence a question",
+            "single sentence or wrong question-answer order"
+          ],
+          "avoid": [
+            "single sentence or wrong question-answer order"
+          ],
+          "minimal_example": "What is Welschbillig Castle? It is a ruined fortified site built over a former Roman villa.",
+          "repair_focus": [
+            "normalize to a question sentence followed by one answer sentence"
+          ]
+        },
+        "simple_syllables": {
+          "summary": "Return one short summary under forty words using simple low-syllable wording.",
+          "query_cues": [
+            "only words of 2 syllables or fewer"
+          ],
+          "must_do": [
+            "keep the summary under forty words",
+            "long technical wording"
+          ],
+          "avoid": [
+            "long technical wording"
+          ],
+          "minimal_example": "Old fort rose on Roman land and now stands as a moat ringed ruin.",
+          "repair_focus": [
+            "rewrite with short simple words under forty total words"
+          ]
+        },
+        "if_then": {
+          "summary": "Return one sentence in explicit If... then... form.",
+          "query_cues": [
+            "\"If... then...\" statement"
+          ],
+          "must_do": [
+            "start with If and include then",
+            "missing if-then structure"
+          ],
+          "avoid": [
+            "missing if-then structure"
+          ],
+          "minimal_example": "If rulers strengthened the castle for defense, then later wars left the site in ruins.",
+          "repair_focus": [
+            "restore explicit If... then... sentence form"
+          ]
+        },
+        "4_hashtags": {
+          "summary": "Return exactly four hashtags separated by spaces.",
+          "query_cues": [
+            "exactly 4 hashtags"
+          ],
+          "must_do": [
+            "emit exactly four space-separated hashtags",
+            "plain words instead of hashtags"
+          ],
+          "avoid": [
+            "plain words instead of hashtags"
+          ],
+          "minimal_example": "#RomanVilla #CastleRuins #MoatedFort #FrenchWar",
+          "repair_focus": [
+            "compress to exactly four hashtags"
+          ]
+        },
+        "one_comma": {
+          "summary": "Return one sentence containing exactly one comma.",
+          "query_cues": [
+            "exactly one comma"
+          ],
+          "must_do": [
+            "emit exactly one sentence",
+            "use exactly one comma",
+            "zero commas or multiple commas"
+          ],
+          "avoid": [
+            "zero commas or multiple commas"
+          ],
+          "minimal_example": "Welschbillig Castle rose over Roman remains, and later wars left it a ruin.",
+          "repair_focus": [
+            "normalize to one sentence with exactly one comma"
+          ]
+        },
+        "decreasing_length": {
+          "summary": "Return exactly three sentences, each shorter than the previous one.",
+          "query_cues": [
+            "each sentence must be shorter than the previous one"
+          ],
+          "must_do": [
+            "emit exactly three sentences",
+            "make each sentence shorter than the one before it",
+            "flat or increasing sentence lengths"
+          ],
+          "avoid": [
+            "flat or increasing sentence lengths"
+          ],
+          "minimal_example": "Roman villa remains later supported a fortified castle. Wars shattered the defenses. Ruins remain.",
+          "repair_focus": [
+            "rebuild three sentences in strictly decreasing lengths"
+          ]
+        },
+        "newspaper_headline": {
+          "summary": "Return an ALL-CAPS headline under twelve words with no period.",
+          "query_cues": [
+            "newspaper headline",
+            "ALL CAPS, no period, under 12 words"
+          ],
+          "must_do": [
+            "emit one ALL-CAPS headline",
+            "keep it under twelve words and omit the final period",
+            "lowercase headline or trailing period"
+          ],
+          "avoid": [
+            "lowercase headline or trailing period"
+          ],
+          "minimal_example": "ROMAN ROOTS SHAPE WELSCHBILLIG CASTLE RUINS",
+          "repair_focus": [
+            "uppercase the headline and remove the final period"
+          ]
+        },
+        "increasing_length": {
+          "summary": "Return exactly three sentences, each longer than the previous one.",
+          "query_cues": [
+            "each sentence must be longer than the previous one"
+          ],
+          "must_do": [
+            "emit exactly three sentences",
+            "make each sentence longer than the one before it",
+            "flat or decreasing sentence lengths"
+          ],
+          "avoid": [
+            "flat or decreasing sentence lengths"
+          ],
+          "minimal_example": "Ruins remain. Roman villa roots shaped the castle. Later wars shattered its defenses and left moats and towers behind.",
+          "repair_focus": [
+            "rebuild three sentences in strictly increasing lengths"
+          ]
+        },
+        "xml_word_tags": {
+          "summary": "Return one sentence and wrap every word in numbered XML word tags.",
+          "query_cues": [
+            "wrap every word in XML tags numbered sequentially"
+          ],
+          "must_do": [
+            "wrap every word as <wN>word</wN>",
+            "plain sentence without numbered XML tags"
+          ],
+          "avoid": [
+            "plain sentence without numbered XML tags"
+          ],
+          "minimal_example": "<w1>Roman</w1> <w2>villa</w2> <w3>roots</w3> <w4>later</w4> <w5>supported</w5> <w6>the</w6> <w7>castle</w7> <w8>ruins.</w8>",
+          "repair_focus": [
+            "rewrap the sentence so every word has a numbered XML tag"
+          ]
+        }
+      }
+    }
+  }
+}

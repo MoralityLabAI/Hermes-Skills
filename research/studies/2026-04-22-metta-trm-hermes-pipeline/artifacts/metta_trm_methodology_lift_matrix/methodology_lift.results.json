@@ -1,0 +1,978 @@
+{
+  "generated_at_utc": "2026-04-28T14:03:53.294480+00:00",
+  "suite_type": "deterministic_metta_trm_methodology_lift_matrix",
+  "row_count": 148,
+  "source_counts": {
+    "scale_transfer_probe_suite_qwen25_3b_q4km": 6,
+    "symbolic_closure_threshold_suite": 20,
+    "c_signature_commit_trm_pack": 122
+  },
+  "env_counts": {
+    "ascii_tree_deep": 5,
+    "choice_contract": 4,
+    "ifeval_contract_subset": 2,
+    "intellect3_camp_gate": 4,
+    "intellect3_logic_c_signature": 122,
+    "math_answer_search": 4,
+    "pydantic_hard_schema": 1,
+    "safety_abstain_router": 2,
+    "tool_contract_router": 4
+  },
+  "policy_summary": {
+    "naive_commit_all": {
+      "policy_id": "naive_commit_all",
+      "n": 148,
+      "accuracy": 0.7838,
+      "false_commit_rate": 1.0,
+      "false_reject_rate": 0.0,
+      "false_commit_count": 32,
+      "false_reject_count": 0,
+      "committed": 148,
+      "expected_delta_if_committed": 19.634998,
+      "target_counts": {
+        "commit": 116,
+        "reject_or_abstain": 32
+      }
+    },
+    "pre_reward_ge_0p8": {
+      "policy_id": "pre_reward_ge_0p8",
+      "n": 148,
+      "accuracy": 0.6351,
+      "false_commit_rate": 0.4688,
+      "false_reject_rate": 0.3362,
+      "false_commit_count": 15,
+      "false_reject_count": 39,
+      "committed": 92,
+      "expected_delta_if_committed": 6.976666,
+      "target_counts": {
+        "commit": 116,
+        "reject_or_abstain": 32
+      }
+    },
+    "post_symbolic_adapter": {
+      "policy_id": "post_symbolic_adapter",
+      "n": 148,
+      "accuracy": 0.8581,
+      "false_commit_rate": 0.6562,
+      "false_reject_rate": 0.0,
+      "false_commit_count": 21,
+      "false_reject_count": 0,
+      "committed": 137,
+      "expected_delta_if_committed": 19.634998,
+      "target_counts": {
+        "commit": 116,
+        "reject_or_abstain": 32
+      }
+    },
+    "post_exact_only": {
+      "policy_id": "post_exact_only",
+      "n": 148,
+      "accuracy": 0.8649,
+      "false_commit_rate": 0.0,
+      "false_reject_rate": 0.1724,
+      "false_commit_count": 0,
+      "false_reject_count": 20,
+      "committed": 96,
+      "expected_delta_if_committed": 18.623332,
+      "target_counts": {
+        "commit": 116,
+        "reject_or_abstain": 32
+      }
+    },
+    "post_multi_signal": {
+      "policy_id": "post_multi_signal",
+      "n": 148,
+      "accuracy": 1.0,
+      "false_commit_rate": 0.0,
+      "false_reject_rate": 0.0,
+      "false_commit_count": 0,
+      "false_reject_count": 0,
+      "committed": 116,
+      "expected_delta_if_committed": 20.294998,
+      "target_counts": {
+        "commit": 116,
+        "reject_or_abstain": 32
+      }
+    }
+  },
+  "env_summary": {
+    "ascii_tree_deep": {
+      "n": 5,
+      "target_counts": {
+        "commit": 3,
+        "reject_or_abstain": 2
+      },
+      "target_buckets": {
+        "repair_success": 2,
+        "exact_positive": 1,
+        "repair_failure_or_no_gain": 2
+      },
+      "avg_before_reward": 0.51832,
+      "avg_after_reward": 0.65832,
+      "avg_reward_lift": 0.14,
+      "before_exact_count": 1,
+      "after_exact_count": 3,
+      "exact_count_lift": 2,
+      "policies": {
+        "naive_commit_all": {
+          "policy_id": "naive_commit_all",
+          "n": 5,
+          "accuracy": 0.6,
+          "false_commit_rate": 1.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 2,
+          "false_reject_count": 0,
+          "committed": 5,
+          "expected_delta_if_committed": 0.7,
+          "target_counts": {
+            "commit": 3,
+            "reject_or_abstain": 2
+          }
+        },
+        "pre_reward_ge_0p8": {
+          "policy_id": "pre_reward_ge_0p8",
+          "n": 5,
+          "accuracy": 0.6,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.6667,
+          "false_commit_count": 0,
+          "false_reject_count": 2,
+          "committed": 1,
+          "expected_delta_if_committed": 0.0,
+          "target_counts": {
+            "commit": 3,
+            "reject_or_abstain": 2
+          }
+        },
+        "post_symbolic_adapter": {
+          "policy_id": "post_symbolic_adapter",
+          "n": 5,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 3,
+          "expected_delta_if_committed": 0.7,
+          "target_counts": {
+            "commit": 3,
+            "reject_or_abstain": 2
+          }
+        },
+        "post_exact_only": {
+          "policy_id": "post_exact_only",
+          "n": 5,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 3,
+          "expected_delta_if_committed": 0.7,
+          "target_counts": {
+            "commit": 3,
+            "reject_or_abstain": 2
+          }
+        },
+        "post_multi_signal": {
+          "policy_id": "post_multi_signal",
+          "n": 5,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 3,
+          "expected_delta_if_committed": 0.7,
+          "target_counts": {
+            "commit": 3,
+            "reject_or_abstain": 2
+          }
+        }
+      },
+      "accuracy_lift_vs_pre_scalar": 0.4,
+      "false_commit_reduction_vs_pre_scalar": 0.0,
+      "symbolic_gap_to_multi_signal": 0.0,
+      "read": "Node completeness is the symbolic hinge; exact formatting can be circuit-owned after nodes are present."
+    },
+    "choice_contract": {
+      "n": 4,
+      "target_counts": {
+        "commit": 2,
+        "reject_or_abstain": 2
+      },
+      "target_buckets": {
+        "exact_positive": 1,
+        "repair_failure_or_no_gain": 2,
+        "repair_success": 1
+      },
+      "avg_before_reward": 0.25,
+      "avg_after_reward": 0.5,
+      "avg_reward_lift": 0.25,
+      "before_exact_count": 1,
+      "after_exact_count": 2,
+      "exact_count_lift": 1,
+      "policies": {
+        "naive_commit_all": {
+          "policy_id": "naive_commit_all",
+          "n": 4,
+          "accuracy": 0.5,
+          "false_commit_rate": 1.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 2,
+          "false_reject_count": 0,
+          "committed": 4,
+          "expected_delta_if_committed": 1.0,
+          "target_counts": {
+            "commit": 2,
+            "reject_or_abstain": 2
+          }
+        },
+        "pre_reward_ge_0p8": {
+          "policy_id": "pre_reward_ge_0p8",
+          "n": 4,
+          "accuracy": 0.75,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.5,
+          "false_commit_count": 0,
+          "false_reject_count": 1,
+          "committed": 1,
+          "expected_delta_if_committed": 0.0,
+          "target_counts": {
+            "commit": 2,
+            "reject_or_abstain": 2
+          }
+        },
+        "post_symbolic_adapter": {
+          "policy_id": "post_symbolic_adapter",
+          "n": 4,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 2,
+          "expected_delta_if_committed": 1.0,
+          "target_counts": {
+            "commit": 2,
+            "reject_or_abstain": 2
+          }
+        },
+        "post_exact_only": {
+          "policy_id": "post_exact_only",
+          "n": 4,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 2,
+          "expected_delta_if_committed": 1.0,
+          "target_counts": {
+            "commit": 2,
+            "reject_or_abstain": 2
+          }
+        },
+        "post_multi_signal": {
+          "policy_id": "post_multi_signal",
+          "n": 4,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 2,
+          "expected_delta_if_committed": 1.0,
+          "target_counts": {
+            "commit": 2,
+            "reject_or_abstain": 2
+          }
+        }
+      },
+      "accuracy_lift_vs_pre_scalar": 0.25,
+      "false_commit_reduction_vs_pre_scalar": 0.0,
+      "symbolic_gap_to_multi_signal": 0.0,
+      "read": "A recoverable label is enough for symbolic extraction; absent labels should be rejected."
+    },
+    "ifeval_contract_subset": {
+      "n": 2,
+      "target_counts": {
+        "commit": 2
+      },
+      "target_buckets": {
+        "repair_success": 2
+      },
+      "avg_before_reward": 0.0,
+      "avg_after_reward": 1.0,
+      "avg_reward_lift": 1.0,
+      "before_exact_count": 0,
+      "after_exact_count": 2,
+      "exact_count_lift": 2,
+      "policies": {
+        "naive_commit_all": {
+          "policy_id": "naive_commit_all",
+          "n": 2,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 2,
+          "expected_delta_if_committed": 2.0,
+          "target_counts": {
+            "commit": 2
+          }
+        },
+        "pre_reward_ge_0p8": {
+          "policy_id": "pre_reward_ge_0p8",
+          "n": 2,
+          "accuracy": 0.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 1.0,
+          "false_commit_count": 0,
+          "false_reject_count": 2,
+          "committed": 0,
+          "expected_delta_if_committed": 0.0,
+          "target_counts": {
+            "commit": 2
+          }
+        },
+        "post_symbolic_adapter": {
+          "policy_id": "post_symbolic_adapter",
+          "n": 2,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 2,
+          "expected_delta_if_committed": 2.0,
+          "target_counts": {
+            "commit": 2
+          }
+        },
+        "post_exact_only": {
+          "policy_id": "post_exact_only",
+          "n": 2,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 2,
+          "expected_delta_if_committed": 2.0,
+          "target_counts": {
+            "commit": 2
+          }
+        },
+        "post_multi_signal": {
+          "policy_id": "post_multi_signal",
+          "n": 2,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 2,
+          "expected_delta_if_committed": 2.0,
+          "target_counts": {
+            "commit": 2
+          }
+        }
+      },
+      "accuracy_lift_vs_pre_scalar": 1.0,
+      "false_commit_reduction_vs_pre_scalar": 0.0,
+      "symbolic_gap_to_multi_signal": 0.0,
+      "read": "Literal-count contracts are separable after canonical repair, but raw prompt hints are weak."
+    },
+    "intellect3_camp_gate": {
+      "n": 4,
+      "target_counts": {
+        "commit": 2,
+        "reject_or_abstain": 2
+      },
+      "target_buckets": {
+        "exact_positive": 1,
+        "repair_failure_or_no_gain": 2,
+        "repair_success": 1
+      },
+      "avg_before_reward": 0.640625,
+      "avg_after_reward": 0.671875,
+      "avg_reward_lift": 0.03125,
+      "before_exact_count": 1,
+      "after_exact_count": 2,
+      "exact_count_lift": 1,
+      "policies": {
+        "naive_commit_all": {
+          "policy_id": "naive_commit_all",
+          "n": 4,
+          "accuracy": 0.5,
+          "false_commit_rate": 1.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 2,
+          "false_reject_count": 0,
+          "committed": 4,
+          "expected_delta_if_committed": 0.125,
+          "target_counts": {
+            "commit": 2,
+            "reject_or_abstain": 2
+          }
+        },
+        "pre_reward_ge_0p8": {
+          "policy_id": "pre_reward_ge_0p8",
+          "n": 4,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 2,
+          "expected_delta_if_committed": 0.125,
+          "target_counts": {
+            "commit": 2,
+            "reject_or_abstain": 2
+          }
+        },
+        "post_symbolic_adapter": {
+          "policy_id": "post_symbolic_adapter",
+          "n": 4,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 2,
+          "expected_delta_if_committed": 0.125,
+          "target_counts": {
+            "commit": 2,
+            "reject_or_abstain": 2
+          }
+        },
+        "post_exact_only": {
+          "policy_id": "post_exact_only",
+          "n": 4,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 2,
+          "expected_delta_if_committed": 0.125,
+          "target_counts": {
+            "commit": 2,
+            "reject_or_abstain": 2
+          }
+        },
+        "post_multi_signal": {
+          "policy_id": "post_multi_signal",
+          "n": 4,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 2,
+          "expected_delta_if_committed": 0.125,
+          "target_counts": {
+            "commit": 2,
+            "reject_or_abstain": 2
+          }
+        }
+      },
+      "accuracy_lift_vs_pre_scalar": 0.0,
+      "false_commit_reduction_vs_pre_scalar": 0.0,
+      "symbolic_gap_to_multi_signal": 0.0,
+      "read": "Signature projection helps once a plausible grid exposes enough row/column structure."
+    },
+    "intellect3_logic_c_signature": {
+      "n": 122,
+      "target_counts": {
+        "reject_or_abstain": 21,
+        "commit": 101
+      },
+      "target_buckets": {
+        "repair_failure_or_no_gain": 21,
+        "repair_success": 81,
+        "partial_repair_improvement": 20
+      },
+      "avg_before_reward": 0.833743,
+      "avg_after_reward": 0.930546,
+      "avg_reward_lift": 0.096803,
+      "before_exact_count": 0,
+      "after_exact_count": 81,
+      "exact_count_lift": 81,
+      "policies": {
+        "naive_commit_all": {
+          "policy_id": "naive_commit_all",
+          "n": 122,
+          "accuracy": 0.8279,
+          "false_commit_rate": 1.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 21,
+          "false_reject_count": 0,
+          "committed": 122,
+          "expected_delta_if_committed": 11.809998,
+          "target_counts": {
+            "reject_or_abstain": 21,
+            "commit": 101
+          }
+        },
+        "pre_reward_ge_0p8": {
+          "policy_id": "pre_reward_ge_0p8",
+          "n": 122,
+          "accuracy": 0.6311,
+          "false_commit_rate": 0.7143,
+          "false_reject_rate": 0.297,
+          "false_commit_count": 15,
+          "false_reject_count": 30,
+          "committed": 86,
+          "expected_delta_if_committed": 6.851666,
+          "target_counts": {
+            "reject_or_abstain": 21,
+            "commit": 101
+          }
+        },
+        "post_symbolic_adapter": {
+          "policy_id": "post_symbolic_adapter",
+          "n": 122,
+          "accuracy": 0.8279,
+          "false_commit_rate": 1.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 21,
+          "false_reject_count": 0,
+          "committed": 122,
+          "expected_delta_if_committed": 11.809998,
+          "target_counts": {
+            "reject_or_abstain": 21,
+            "commit": 101
+          }
+        },
+        "post_exact_only": {
+          "policy_id": "post_exact_only",
+          "n": 122,
+          "accuracy": 0.8361,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.198,
+          "false_commit_count": 0,
+          "false_reject_count": 20,
+          "committed": 81,
+          "expected_delta_if_committed": 10.798332,
+          "target_counts": {
+            "reject_or_abstain": 21,
+            "commit": 101
+          }
+        },
+        "post_multi_signal": {
+          "policy_id": "post_multi_signal",
+          "n": 122,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 101,
+          "expected_delta_if_committed": 12.469998,
+          "target_counts": {
+            "reject_or_abstain": 21,
+            "commit": 101
+          }
+        }
+      },
+      "accuracy_lift_vs_pre_scalar": 0.3689,
+      "false_commit_reduction_vs_pre_scalar": 0.7143,
+      "symbolic_gap_to_multi_signal": 0.1721,
+      "read": "Post-repair reward delta is required; repaired signatures alone still false-commit no-gain repairs."
+    },
+    "math_answer_search": {
+      "n": 4,
+      "target_counts": {
+        "commit": 1,
+        "reject_or_abstain": 3
+      },
+      "target_buckets": {
+        "exact_positive": 1,
+        "repair_failure_or_no_gain": 3
+      },
+      "avg_before_reward": 0.25,
+      "avg_after_reward": 0.25,
+      "avg_reward_lift": 0.0,
+      "before_exact_count": 1,
+      "after_exact_count": 1,
+      "exact_count_lift": 0,
+      "policies": {
+        "naive_commit_all": {
+          "policy_id": "naive_commit_all",
+          "n": 4,
+          "accuracy": 0.25,
+          "false_commit_rate": 1.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 3,
+          "false_reject_count": 0,
+          "committed": 4,
+          "expected_delta_if_committed": 0.0,
+          "target_counts": {
+            "commit": 1,
+            "reject_or_abstain": 3
+          }
+        },
+        "pre_reward_ge_0p8": {
+          "policy_id": "pre_reward_ge_0p8",
+          "n": 4,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 1,
+          "expected_delta_if_committed": 0.0,
+          "target_counts": {
+            "commit": 1,
+            "reject_or_abstain": 3
+          }
+        },
+        "post_symbolic_adapter": {
+          "policy_id": "post_symbolic_adapter",
+          "n": 4,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 1,
+          "expected_delta_if_committed": 0.0,
+          "target_counts": {
+            "commit": 1,
+            "reject_or_abstain": 3
+          }
+        },
+        "post_exact_only": {
+          "policy_id": "post_exact_only",
+          "n": 4,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 1,
+          "expected_delta_if_committed": 0.0,
+          "target_counts": {
+            "commit": 1,
+            "reject_or_abstain": 3
+          }
+        },
+        "post_multi_signal": {
+          "policy_id": "post_multi_signal",
+          "n": 4,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 1,
+          "expected_delta_if_committed": 0.0,
+          "target_counts": {
+            "commit": 1,
+            "reject_or_abstain": 3
+          }
+        }
+      },
+      "accuracy_lift_vs_pre_scalar": 0.0,
+      "false_commit_reduction_vs_pre_scalar": 0.0,
+      "symbolic_gap_to_multi_signal": 0.0,
+      "read": "Negative control: without an exact candidate or solver, symbolic gates cannot invent the answer."
+    },
+    "pydantic_hard_schema": {
+      "n": 1,
+      "target_counts": {
+        "commit": 1
+      },
+      "target_buckets": {
+        "repair_success": 1
+      },
+      "avg_before_reward": 0.0,
+      "avg_after_reward": 1.0,
+      "avg_reward_lift": 1.0,
+      "before_exact_count": 0,
+      "after_exact_count": 1,
+      "exact_count_lift": 1,
+      "policies": {
+        "naive_commit_all": {
+          "policy_id": "naive_commit_all",
+          "n": 1,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 1,
+          "expected_delta_if_committed": 1.0,
+          "target_counts": {
+            "commit": 1
+          }
+        },
+        "pre_reward_ge_0p8": {
+          "policy_id": "pre_reward_ge_0p8",
+          "n": 1,
+          "accuracy": 0.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 1.0,
+          "false_commit_count": 0,
+          "false_reject_count": 1,
+          "committed": 0,
+          "expected_delta_if_committed": 0.0,
+          "target_counts": {
+            "commit": 1
+          }
+        },
+        "post_symbolic_adapter": {
+          "policy_id": "post_symbolic_adapter",
+          "n": 1,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 1,
+          "expected_delta_if_committed": 1.0,
+          "target_counts": {
+            "commit": 1
+          }
+        },
+        "post_exact_only": {
+          "policy_id": "post_exact_only",
+          "n": 1,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 1,
+          "expected_delta_if_committed": 1.0,
+          "target_counts": {
+            "commit": 1
+          }
+        },
+        "post_multi_signal": {
+          "policy_id": "post_multi_signal",
+          "n": 1,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 1,
+          "expected_delta_if_committed": 1.0,
+          "target_counts": {
+            "commit": 1
+          }
+        }
+      },
+      "accuracy_lift_vs_pre_scalar": 1.0,
+      "false_commit_reduction_vs_pre_scalar": 0.0,
+      "symbolic_gap_to_multi_signal": 0.0,
+      "read": "Schema and field validation are highly separable once canonical repair or exact runtime state is available."
+    },
+    "safety_abstain_router": {
+      "n": 2,
+      "target_counts": {
+        "commit": 2
+      },
+      "target_buckets": {
+        "repair_success": 2
+      },
+      "avg_before_reward": 0.0,
+      "avg_after_reward": 1.0,
+      "avg_reward_lift": 1.0,
+      "before_exact_count": 0,
+      "after_exact_count": 2,
+      "exact_count_lift": 2,
+      "policies": {
+        "naive_commit_all": {
+          "policy_id": "naive_commit_all",
+          "n": 2,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 2,
+          "expected_delta_if_committed": 2.0,
+          "target_counts": {
+            "commit": 2
+          }
+        },
+        "pre_reward_ge_0p8": {
+          "policy_id": "pre_reward_ge_0p8",
+          "n": 2,
+          "accuracy": 0.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 1.0,
+          "false_commit_count": 0,
+          "false_reject_count": 2,
+          "committed": 0,
+          "expected_delta_if_committed": 0.0,
+          "target_counts": {
+            "commit": 2
+          }
+        },
+        "post_symbolic_adapter": {
+          "policy_id": "post_symbolic_adapter",
+          "n": 2,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 2,
+          "expected_delta_if_committed": 2.0,
+          "target_counts": {
+            "commit": 2
+          }
+        },
+        "post_exact_only": {
+          "policy_id": "post_exact_only",
+          "n": 2,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 2,
+          "expected_delta_if_committed": 2.0,
+          "target_counts": {
+            "commit": 2
+          }
+        },
+        "post_multi_signal": {
+          "policy_id": "post_multi_signal",
+          "n": 2,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 2,
+          "expected_delta_if_committed": 2.0,
+          "target_counts": {
+            "commit": 2
+          }
+        }
+      },
+      "accuracy_lift_vs_pre_scalar": 1.0,
+      "false_commit_reduction_vs_pre_scalar": 0.0,
+      "symbolic_gap_to_multi_signal": 0.0,
+      "read": "Route labels become separable when the decision/reason/safe-step schema is explicit."
+    },
+    "tool_contract_router": {
+      "n": 4,
+      "target_counts": {
+        "commit": 2,
+        "reject_or_abstain": 2
+      },
+      "target_buckets": {
+        "exact_positive": 1,
+        "repair_failure_or_no_gain": 2,
+        "repair_success": 1
+      },
+      "avg_before_reward": 0.25,
+      "avg_after_reward": 0.5,
+      "avg_reward_lift": 0.25,
+      "before_exact_count": 1,
+      "after_exact_count": 2,
+      "exact_count_lift": 1,
+      "policies": {
+        "naive_commit_all": {
+          "policy_id": "naive_commit_all",
+          "n": 4,
+          "accuracy": 0.5,
+          "false_commit_rate": 1.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 2,
+          "false_reject_count": 0,
+          "committed": 4,
+          "expected_delta_if_committed": 1.0,
+          "target_counts": {
+            "commit": 2,
+            "reject_or_abstain": 2
+          }
+        },
+        "pre_reward_ge_0p8": {
+          "policy_id": "pre_reward_ge_0p8",
+          "n": 4,
+          "accuracy": 0.75,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.5,
+          "false_commit_count": 0,
+          "false_reject_count": 1,
+          "committed": 1,
+          "expected_delta_if_committed": 0.0,
+          "target_counts": {
+            "commit": 2,
+            "reject_or_abstain": 2
+          }
+        },
+        "post_symbolic_adapter": {
+          "policy_id": "post_symbolic_adapter",
+          "n": 4,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 2,
+          "expected_delta_if_committed": 1.0,
+          "target_counts": {
+            "commit": 2,
+            "reject_or_abstain": 2
+          }
+        },
+        "post_exact_only": {
+          "policy_id": "post_exact_only",
+          "n": 4,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 2,
+          "expected_delta_if_committed": 1.0,
+          "target_counts": {
+            "commit": 2,
+            "reject_or_abstain": 2
+          }
+        },
+        "post_multi_signal": {
+          "policy_id": "post_multi_signal",
+          "n": 4,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 2,
+          "expected_delta_if_committed": 1.0,
+          "target_counts": {
+            "commit": 2,
+            "reject_or_abstain": 2
+          }
+        }
+      },
+      "accuracy_lift_vs_pre_scalar": 0.25,
+      "false_commit_reduction_vs_pre_scalar": 0.0,
+      "symbolic_gap_to_multi_signal": 0.0,
+      "read": "Intent/schema atoms make tool-call repair separable once a partial semantic proposal exists."
+    }
+  },
+  "resource_profile": {
+    "model_calls": 0,
+    "training_runs": 0,
+    "ram_cap_policy": "deterministic Python-only artifact generation; no model subprocess",
+    "hrm_trainer_caps_for_future_training": {
+      "ram_mb": 2048,
+      "cpu_pct": 50,
+      "io_mb_s": 50
+    }
+  },
+  "claim_boundary": "Post-multi-signal rows define verifier/commit TRM targets and separability ceilings, not trained TRM-weight performance.",
+  "metta_contract": "; Multi-env MeTTa/TRM methodology-lift contract sketch.\n; These rules define commit/veto training targets from post-repair state.\n\n(= (positive-repair-delta $state)\n   (> (reward-delta $state) 0.0))\n\n(= (post-multi-signal-commit $state)\n   (if (or (after-exact $state) (positive-repair-delta $state))\n       commit\n       reject_or_abstain))\n\n(= (post-symbolic-commit $state)\n   (if (env-symbolic-pass $state)\n       commit\n       reject_or_abstain))\n\n(= (env-symbolic-pass $state)\n   (match (env-family $state)\n     (intellect3_logic_c_signature (and (after-t-signature-pass $state) (after-c-signature-pass $state)))\n     (tool_contract_router (has-valid-tool-and-required-arguments $state))\n     (choice_contract (has-allowed-choice-label $state))\n     (ascii_tree_deep (node-set-complete $state))\n     (intellect3_camp_gate (signature-projection-matched $state))\n     (math_answer_search (exact-candidate-present $state))\n     (_ False)))\n"
+}

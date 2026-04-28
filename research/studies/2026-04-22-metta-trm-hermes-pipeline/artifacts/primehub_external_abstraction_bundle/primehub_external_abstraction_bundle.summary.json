@@ -1,0 +1,17 @@
+{
+  "base_corpus": "C:\\projects\\Hermes Skills\\data\\primehub_trm_autoresearch\\cycle_12\\primehub_trm_merged.jsonl",
+  "holdout_ratio": 0.2,
+  "row_count": 7,
+  "projection_counts": {
+    "math_difference_zero_invariant": 4,
+    "truthfulqa_unknown_future_abstain": 3
+  },
+  "env_counts": {
+    "math_env": 4,
+    "truthfulqa": 3
+  },
+  "anchor_counts": {
+    "0": 4,
+    "1": 3
+  }
+}

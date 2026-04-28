@@ -1,0 +1,4 @@
+interface:
+  display_name: "Intellect-3 Math Hermes"
+  short_description: "Math skill with conservative TRM routing"
+  default_prompt: "Use $intellect3-math-hermes to solve Intellect-3-Math tasks with the shared contract and conservative TRM routing."

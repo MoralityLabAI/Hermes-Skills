@@ -1,0 +1,48 @@
+{
+  "generated_at_utc": "2026-04-26T16:08:44.858285+00:00",
+  "row_count": 244,
+  "by_role": {
+    "hard_reasoning_logic": 222,
+    "abstain_guard": 2,
+    "choice_contract": 6,
+    "structured_map": 10,
+    "hard_reasoning_numeric": 4
+  },
+  "by_bucket": {
+    "repair_failure_or_no_gain": 62,
+    "exact_positive": 71,
+    "repair_success": 91,
+    "partial_repair_improvement": 20
+  },
+  "by_source": {
+    "intellect3_logic_flow_policy_sweep": 218,
+    "scale_transfer_probe_suite_qwen25_3b_q4km": 6,
+    "symbolic_closure_threshold_suite": 20
+  },
+  "role_bucket": {
+    "abstain_guard": {
+      "repair_success": 2
+    },
+    "choice_contract": {
+      "repair_success": 3,
+      "exact_positive": 1,
+      "repair_failure_or_no_gain": 2
+    },
+    "hard_reasoning_logic": {
+      "repair_failure_or_no_gain": 53,
+      "exact_positive": 67,
+      "repair_success": 82,
+      "partial_repair_improvement": 20
+    },
+    "hard_reasoning_numeric": {
+      "exact_positive": 1,
+      "repair_failure_or_no_gain": 3
+    },
+    "structured_map": {
+      "repair_success": 4,
+      "exact_positive": 2,
+      "repair_failure_or_no_gain": 4
+    }
+  },
+  "avg_positive_delta": 0.083176
+}

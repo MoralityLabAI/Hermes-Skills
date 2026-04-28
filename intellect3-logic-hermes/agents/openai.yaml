@@ -1,0 +1,4 @@
+interface:
+  display_name: "Intellect-3 Logic Hermes"
+  short_description: "Campsite skill with exact-signature TRM routing"
+  default_prompt: "Use $intellect3-logic-hermes to solve Campsite / Intellect-3-Logic tasks with the shared contract and exact-signature TRM routing."

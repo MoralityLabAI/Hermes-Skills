@@ -1,0 +1,77 @@
+{
+  "run_name": "qwen27b_intellect3_logic_hybrid_200",
+  "config_path": "C:\\projects\\trm_observability_harness\\configs\\qwen27b_intellect3_logic_hybrid_200.yaml",
+  "source_path": "C:\\projects\\Tesseract\\Tesseract\\data\\normalized_trajectories\\intellect_3_logic.jsonl",
+  "rows": 109,
+  "arms": {
+    "vanilla": {
+      "rows": 109,
+      "exact_match_rate": 0.0,
+      "visible_output_rate": 1.0,
+      "avg_token_total": 275.72,
+      "avg_model_calls": 1.0,
+      "avg_latency_seconds": 3.0595,
+      "avg_grid_cell_accuracy": 0.8061
+    },
+    "generic_skill": {
+      "rows": 109,
+      "exact_match_rate": 0.0092,
+      "visible_output_rate": 1.0,
+      "avg_token_total": 294.0,
+      "avg_model_calls": 1.0,
+      "avg_latency_seconds": 3.1903,
+      "avg_grid_cell_accuracy": 0.8079
+    },
+    "logic_skill": {
+      "rows": 109,
+      "exact_match_rate": 0.0,
+      "visible_output_rate": 1.0,
+      "avg_token_total": 303.07,
+      "avg_model_calls": 1.0,
+      "avg_latency_seconds": 3.1644,
+      "avg_grid_cell_accuracy": 0.8076
+    },
+    "logic_skill_trm": {
+      "rows": 109,
+      "exact_match_rate": 0.3028,
+      "visible_output_rate": 1.0,
+      "avg_token_total": 404.21,
+      "avg_model_calls": 1.0,
+      "avg_latency_seconds": 3.5036,
+      "avg_grid_cell_accuracy": 0.8787,
+      "heuristic_correction_exact_match_rate": 0.3028,
+      "critic_negative_rate": 0.0,
+      "retrieval_present_rate": 1.0
+    }
+  },
+  "baseline_arm": "vanilla",
+  "deltas_vs_baseline": {
+    "vanilla": {
+      "exact_match_rate_delta": 0.0,
+      "avg_token_total_delta": 0.0
+    },
+    "generic_skill": {
+      "exact_match_rate_delta": 0.0092,
+      "avg_token_total_delta": 18.28
+    },
+    "logic_skill": {
+      "exact_match_rate_delta": 0.0,
+      "avg_token_total_delta": 27.35
+    },
+    "logic_skill_trm": {
+      "exact_match_rate_delta": 0.3028,
+      "avg_token_total_delta": 128.49
+    }
+  },
+  "artifacts": {
+    "predictions": "C:\\projects\\trm_observability_harness\\data\\qwen27b_intellect3_logic_hybrid_200\\predictions.jsonl",
+    "summary": "C:\\projects\\trm_observability_harness\\data\\qwen27b_intellect3_logic_hybrid_200\\summary.json"
+  },
+  "trm": {
+    "source_input": "C:\\projects\\trm_observability_harness\\data\\trm_logic_math_augmented_214rows.jsonl",
+    "retriever_examples": 77,
+    "critic_examples": 100,
+    "top_k": 5,
+    "max_passes": 8
+  }
+}

@@ -1,0 +1,3105 @@
+{
+  "env_id": "intellect3_math_answer_manifold_micro_env",
+  "source_path": "C:\\projects\\trm_observability_harness\\data\\qwen27b_intellect3_math_hybrid_200\\predictions.jsonl",
+  "generated_at_utc": "2026-04-26T01:05:47.962150+00:00",
+  "arms": {
+    "generic_skill": {
+      "rows": 200,
+      "exact_rate": 0.07,
+      "avg_relative_distance": 1895.26335,
+      "median_relative_distance": 0.96,
+      "failure_tag_counts": {
+        "same_last_digit": 33,
+        "double": 12,
+        "order_of_magnitude": 54,
+        "off_by_small": 14,
+        "off_by_one": 17,
+        "wrong_integer": 71,
+        "half": 5
+      },
+      "route_sources": {}
+    },
+    "math_skill": {
+      "rows": 200,
+      "exact_rate": 0.06,
+      "avg_relative_distance": 1902.851523,
+      "median_relative_distance": 0.977993,
+      "failure_tag_counts": {
+        "same_last_digit": 35,
+        "order_of_magnitude": 54,
+        "off_by_small": 17,
+        "wrong_integer": 77,
+        "half": 5,
+        "double": 10,
+        "off_by_one": 11
+      },
+      "route_sources": {}
+    },
+    "math_skill_trm": {
+      "rows": 200,
+      "exact_rate": 0.07,
+      "avg_relative_distance": 1903.172439,
+      "median_relative_distance": 0.989045,
+      "failure_tag_counts": {
+        "same_last_digit": 35,
+        "order_of_magnitude": 54,
+        "wrong_integer": 78,
+        "half": 5,
+        "off_by_small": 14,
+        "double": 9,
+        "off_by_one": 11
+      },
+      "route_sources": {
+        "math_skill": 191,
+        "math_skill_trm": 9
+      }
+    },
+    "vanilla": {
+      "rows": 200,
+      "exact_rate": 0.085,
+      "avg_relative_distance": 1667.433688,
+      "median_relative_distance": 0.875,
+      "failure_tag_counts": {
+        "wrong_integer": 77,
+        "double": 10,
+        "order_of_magnitude": 47,
+        "off_by_small": 16,
+        "same_last_digit": 33,
+        "half": 4,
+        "off_by_one": 14
+      },
+      "route_sources": {}
+    }
+  },
+  "problem_status_counts": {
+    "partial_improvement": 24,
+    "fixed_by_compare": 4,
+    "unfixed": 105,
+    "regressed_by_compare": 7,
+    "partial_regression": 50,
+    "same": 10
+  },
+  "problem_rows": [
+    {
+      "row_id": "intellect_3_math_0",
+      "status": "partial_improvement",
+      "baseline_expected": 34,
+      "baseline_predicted": 12,
+      "compare_predicted": 14,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.647059,
+      "compare_relative_distance": 0.588235,
+      "compare_tags": [
+        "same_last_digit"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_1",
+      "status": "fixed_by_compare",
+      "baseline_expected": 1007,
+      "baseline_predicted": 2014,
+      "compare_predicted": 1007,
+      "baseline_exact": false,
+      "compare_exact": true,
+      "baseline_relative_distance": 1.0,
+      "compare_relative_distance": 0.0,
+      "compare_tags": [
+        "exact"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_10",
+      "status": "unfixed",
+      "baseline_expected": 4,
+      "baseline_predicted": 2,
+      "compare_predicted": 2,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.5,
+      "compare_relative_distance": 0.5,
+      "compare_tags": [
+        "half",
+        "off_by_small"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_100",
+      "status": "unfixed",
+      "baseline_expected": 18,
+      "baseline_predicted": 11,
+      "compare_predicted": 11,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.388889,
+      "compare_relative_distance": 0.388889,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_101",
+      "status": "unfixed",
+      "baseline_expected": 6,
+      "baseline_predicted": 2,
+      "compare_predicted": 2,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.666667,
+      "compare_relative_distance": 0.666667,
+      "compare_tags": [
+        "off_by_small"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_102",
+      "status": "unfixed",
+      "baseline_expected": 16,
+      "baseline_predicted": 160,
+      "compare_predicted": 160,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 9.0,
+      "compare_relative_distance": 9.0,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_103",
+      "status": "regressed_by_compare",
+      "baseline_expected": 16,
+      "baseline_predicted": 16,
+      "compare_predicted": 120,
+      "baseline_exact": true,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.0,
+      "compare_relative_distance": 6.5,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_104",
+      "status": "partial_improvement",
+      "baseline_expected": 67,
+      "baseline_predicted": 11,
+      "compare_predicted": 115,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.835821,
+      "compare_relative_distance": 0.716418,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_105",
+      "status": "unfixed",
+      "baseline_expected": 126,
+      "baseline_predicted": 18,
+      "compare_predicted": 18,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.857143,
+      "compare_relative_distance": 0.857143,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_106",
+      "status": "unfixed",
+      "baseline_expected": 24,
+      "baseline_predicted": 11,
+      "compare_predicted": 11,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.541667,
+      "compare_relative_distance": 0.541667,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_107",
+      "status": "partial_regression",
+      "baseline_expected": 20,
+      "baseline_predicted": 21,
+      "compare_predicted": 16,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.05,
+      "compare_relative_distance": 0.2,
+      "compare_tags": [
+        "off_by_small"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_108",
+      "status": "unfixed",
+      "baseline_expected": 1234,
+      "baseline_predicted": 1,
+      "compare_predicted": 1,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.99919,
+      "compare_relative_distance": 0.99919,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_109",
+      "status": "unfixed",
+      "baseline_expected": 8,
+      "baseline_predicted": 1999,
+      "compare_predicted": 1999,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 248.875,
+      "compare_relative_distance": 248.875,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_11",
+      "status": "partial_improvement",
+      "baseline_expected": 64,
+      "baseline_predicted": 120,
+      "compare_predicted": 11,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.875,
+      "compare_relative_distance": 0.828125,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_110",
+      "status": "partial_regression",
+      "baseline_expected": 89,
+      "baseline_predicted": 148,
+      "compare_predicted": 28,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.662921,
+      "compare_relative_distance": 0.685393,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_111",
+      "status": "partial_improvement",
+      "baseline_expected": 5300,
+      "baseline_predicted": 1009,
+      "compare_predicted": 2025,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.809623,
+      "compare_relative_distance": 0.617925,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_112",
+      "status": "unfixed",
+      "baseline_expected": 8,
+      "baseline_predicted": 10,
+      "compare_predicted": 10,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.25,
+      "compare_relative_distance": 0.25,
+      "compare_tags": [
+        "off_by_small"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_113",
+      "status": "unfixed",
+      "baseline_expected": 1,
+      "baseline_predicted": 2,
+      "compare_predicted": 2,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 1.0,
+      "compare_relative_distance": 1.0,
+      "compare_tags": [
+        "double",
+        "off_by_one"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_114",
+      "status": "unfixed",
+      "baseline_expected": 232,
+      "baseline_predicted": 1200,
+      "compare_predicted": 1200,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 4.172414,
+      "compare_relative_distance": 4.172414,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_115",
+      "status": "unfixed",
+      "baseline_expected": 28,
+      "baseline_predicted": 14,
+      "compare_predicted": 14,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.5,
+      "compare_relative_distance": 0.5,
+      "compare_tags": [
+        "half"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_116",
+      "status": "unfixed",
+      "baseline_expected": 0,
+      "baseline_predicted": 1,
+      "compare_predicted": -1,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 1.0,
+      "compare_relative_distance": 1.0,
+      "compare_tags": [
+        "off_by_one"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_117",
+      "status": "unfixed",
+      "baseline_expected": 1100,
+      "baseline_predicted": 2013,
+      "compare_predicted": 2013,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.83,
+      "compare_relative_distance": 0.83,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_118",
+      "status": "unfixed",
+      "baseline_expected": 1225,
+      "baseline_predicted": 120000,
+      "compare_predicted": 120000,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 96.959184,
+      "compare_relative_distance": 96.959184,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_119",
+      "status": "unfixed",
+      "baseline_expected": 4,
+      "baseline_predicted": 3,
+      "compare_predicted": 3,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.25,
+      "compare_relative_distance": 0.25,
+      "compare_tags": [
+        "off_by_one"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_12",
+      "status": "unfixed",
+      "baseline_expected": 12,
+      "baseline_predicted": 172,
+      "compare_predicted": 172,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 13.333333,
+      "compare_relative_distance": 13.333333,
+      "compare_tags": [
+        "order_of_magnitude",
+        "same_last_digit"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_120",
+      "status": "partial_improvement",
+      "baseline_expected": 288,
+      "baseline_predicted": 194400,
+      "compare_predicted": 108000,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 674.0,
+      "compare_relative_distance": 374.0,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_121",
+      "status": "partial_regression",
+      "baseline_expected": 8,
+      "baseline_predicted": 12,
+      "compare_predicted": 2,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.5,
+      "compare_relative_distance": 0.75,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_122",
+      "status": "unfixed",
+      "baseline_expected": 1360,
+      "baseline_predicted": 100000,
+      "compare_predicted": 100000,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 72.529412,
+      "compare_relative_distance": 72.529412,
+      "compare_tags": [
+        "order_of_magnitude",
+        "same_last_digit"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_123",
+      "status": "partial_regression",
+      "baseline_expected": 503,
+      "baseline_predicted": 1008,
+      "compare_predicted": 2010,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 1.003976,
+      "compare_relative_distance": 2.996024,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_124",
+      "status": "unfixed",
+      "baseline_expected": 114,
+      "baseline_predicted": 18,
+      "compare_predicted": 18,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.842105,
+      "compare_relative_distance": 0.842105,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_125",
+      "status": "unfixed",
+      "baseline_expected": 90,
+      "baseline_predicted": 10,
+      "compare_predicted": 10,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.888889,
+      "compare_relative_distance": 0.888889,
+      "compare_tags": [
+        "same_last_digit"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_126",
+      "status": "same",
+      "baseline_expected": 2,
+      "baseline_predicted": 2,
+      "compare_predicted": 2,
+      "baseline_exact": true,
+      "compare_exact": true,
+      "baseline_relative_distance": 0.0,
+      "compare_relative_distance": 0.0,
+      "compare_tags": [
+        "exact"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_127",
+      "status": "partial_regression",
+      "baseline_expected": 67,
+      "baseline_predicted": 100,
+      "compare_predicted": 1999,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.492537,
+      "compare_relative_distance": 28.835821,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_128",
+      "status": "unfixed",
+      "baseline_expected": 4,
+      "baseline_predicted": 3,
+      "compare_predicted": 3,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.25,
+      "compare_relative_distance": 0.25,
+      "compare_tags": [
+        "off_by_one"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_129",
+      "status": "regressed_by_compare",
+      "baseline_expected": 2018,
+      "baseline_predicted": 2018,
+      "compare_predicted": 2028,
+      "baseline_exact": true,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.0,
+      "compare_relative_distance": 0.004955,
+      "compare_tags": [
+        "same_last_digit"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_13",
+      "status": "unfixed",
+      "baseline_expected": 1,
+      "baseline_predicted": 1009,
+      "compare_predicted": 1009,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 1008.0,
+      "compare_relative_distance": 1008.0,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_130",
+      "status": "unfixed",
+      "baseline_expected": 5,
+      "baseline_predicted": 20,
+      "compare_predicted": 20,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 3.0,
+      "compare_relative_distance": 3.0,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_131",
+      "status": "partial_regression",
+      "baseline_expected": 60,
+      "baseline_predicted": 100,
+      "compare_predicted": 160,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.666667,
+      "compare_relative_distance": 1.666667,
+      "compare_tags": [
+        "same_last_digit"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_132",
+      "status": "unfixed",
+      "baseline_expected": 7993,
+      "baseline_predicted": 2022,
+      "compare_predicted": 2022,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.747029,
+      "compare_relative_distance": 0.747029,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_133",
+      "status": "partial_regression",
+      "baseline_expected": 4,
+      "baseline_predicted": 100,
+      "compare_predicted": 169,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 24.0,
+      "compare_relative_distance": 41.25,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_134",
+      "status": "partial_regression",
+      "baseline_expected": 27,
+      "baseline_predicted": 17,
+      "compare_predicted": 130,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.37037,
+      "compare_relative_distance": 3.814815,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_135",
+      "status": "unfixed",
+      "baseline_expected": 3,
+      "baseline_predicted": 11,
+      "compare_predicted": 11,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 2.666667,
+      "compare_relative_distance": 2.666667,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_136",
+      "status": "unfixed",
+      "baseline_expected": 44,
+      "baseline_predicted": 2014,
+      "compare_predicted": 2014,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 44.772727,
+      "compare_relative_distance": 44.772727,
+      "compare_tags": [
+        "order_of_magnitude",
+        "same_last_digit"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_137",
+      "status": "partial_improvement",
+      "baseline_expected": 71622400,
+      "baseline_predicted": 11,
+      "compare_predicted": 130,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 1.0,
+      "compare_relative_distance": 0.999998,
+      "compare_tags": [
+        "order_of_magnitude",
+        "same_last_digit"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_138",
+      "status": "unfixed",
+      "baseline_expected": 75,
+      "baseline_predicted": 108,
+      "compare_predicted": 108,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.44,
+      "compare_relative_distance": 0.44,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_139",
+      "status": "unfixed",
+      "baseline_expected": 60,
+      "baseline_predicted": 120,
+      "compare_predicted": 120,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 1.0,
+      "compare_relative_distance": 1.0,
+      "compare_tags": [
+        "double",
+        "same_last_digit"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_14",
+      "status": "unfixed",
+      "baseline_expected": 3,
+      "baseline_predicted": 10,
+      "compare_predicted": 10,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 2.333333,
+      "compare_relative_distance": 2.333333,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_140",
+      "status": "partial_regression",
+      "baseline_expected": 1278,
+      "baseline_predicted": 180,
+      "compare_predicted": 14,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.859155,
+      "compare_relative_distance": 0.989045,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill_trm"
+    },
+    {
+      "row_id": "intellect_3_math_141",
+      "status": "partial_regression",
+      "baseline_expected": 457,
+      "baseline_predicted": 195,
+      "compare_predicted": 12096,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.573304,
+      "compare_relative_distance": 25.468271,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_142",
+      "status": "partial_regression",
+      "baseline_expected": 9,
+      "baseline_predicted": 3,
+      "compare_predicted": 2,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.666667,
+      "compare_relative_distance": 0.777778,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_143",
+      "status": "unfixed",
+      "baseline_expected": 23,
+      "baseline_predicted": 13,
+      "compare_predicted": 13,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.434783,
+      "compare_relative_distance": 0.434783,
+      "compare_tags": [
+        "same_last_digit"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_144",
+      "status": "unfixed",
+      "baseline_expected": 105263157894736848,
+      "baseline_predicted": 105263,
+      "compare_predicted": 105263,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 1.0,
+      "compare_relative_distance": 1.0,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_145",
+      "status": "partial_regression",
+      "baseline_expected": 167,
+      "baseline_predicted": 100,
+      "compare_predicted": 1592,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.401198,
+      "compare_relative_distance": 8.532934,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_146",
+      "status": "unfixed",
+      "baseline_expected": 2,
+      "baseline_predicted": 1008,
+      "compare_predicted": 1008,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 503.0,
+      "compare_relative_distance": 503.0,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_147",
+      "status": "unfixed",
+      "baseline_expected": 171,
+      "baseline_predicted": 198,
+      "compare_predicted": 198,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.157895,
+      "compare_relative_distance": 0.157895,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_148",
+      "status": "unfixed",
+      "baseline_expected": 15,
+      "baseline_predicted": 10,
+      "compare_predicted": 10,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.333333,
+      "compare_relative_distance": 0.333333,
+      "compare_tags": [
+        "off_by_small"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_149",
+      "status": "unfixed",
+      "baseline_expected": 4,
+      "baseline_predicted": 3,
+      "compare_predicted": 3,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.25,
+      "compare_relative_distance": 0.25,
+      "compare_tags": [
+        "off_by_one"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_15",
+      "status": "unfixed",
+      "baseline_expected": 50,
+      "baseline_predicted": 10000,
+      "compare_predicted": 10000,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 199.0,
+      "compare_relative_distance": 199.0,
+      "compare_tags": [
+        "order_of_magnitude",
+        "same_last_digit"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_150",
+      "status": "unfixed",
+      "baseline_expected": 9,
+      "baseline_predicted": 17,
+      "compare_predicted": 17,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.888889,
+      "compare_relative_distance": 0.888889,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_151",
+      "status": "partial_regression",
+      "baseline_expected": 6,
+      "baseline_predicted": 12,
+      "compare_predicted": 18,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 1.0,
+      "compare_relative_distance": 2.0,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill_trm"
+    },
+    {
+      "row_id": "intellect_3_math_152",
+      "status": "partial_improvement",
+      "baseline_expected": 1820,
+      "baseline_predicted": 100,
+      "compare_predicted": 1919,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.945055,
+      "compare_relative_distance": 0.054396,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_153",
+      "status": "partial_improvement",
+      "baseline_expected": 45,
+      "baseline_predicted": 150,
+      "compare_predicted": 10,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 2.333333,
+      "compare_relative_distance": 0.777778,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_154",
+      "status": "unfixed",
+      "baseline_expected": 10091,
+      "baseline_predicted": 1009,
+      "compare_predicted": 1009,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.90001,
+      "compare_relative_distance": 0.90001,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_155",
+      "status": "fixed_by_compare",
+      "baseline_expected": 256,
+      "baseline_predicted": 299376,
+      "compare_predicted": 256,
+      "baseline_exact": false,
+      "compare_exact": true,
+      "baseline_relative_distance": 1168.4375,
+      "compare_relative_distance": 0.0,
+      "compare_tags": [
+        "exact"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_156",
+      "status": "partial_regression",
+      "baseline_expected": 9,
+      "baseline_predicted": 19,
+      "compare_predicted": 149,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 1.111111,
+      "compare_relative_distance": 15.555556,
+      "compare_tags": [
+        "order_of_magnitude",
+        "same_last_digit"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_157",
+      "status": "unfixed",
+      "baseline_expected": 5,
+      "baseline_predicted": 10,
+      "compare_predicted": 10,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 1.0,
+      "compare_relative_distance": 1.0,
+      "compare_tags": [
+        "double",
+        "off_by_small"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_158",
+      "status": "unfixed",
+      "baseline_expected": 62,
+      "baseline_predicted": 118,
+      "compare_predicted": 118,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.903226,
+      "compare_relative_distance": 0.903226,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_159",
+      "status": "unfixed",
+      "baseline_expected": 960,
+      "baseline_predicted": 1296,
+      "compare_predicted": 1296,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.35,
+      "compare_relative_distance": 0.35,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_16",
+      "status": "unfixed",
+      "baseline_expected": 45,
+      "baseline_predicted": 128,
+      "compare_predicted": 128,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 1.844444,
+      "compare_relative_distance": 1.844444,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_160",
+      "status": "unfixed",
+      "baseline_expected": 18,
+      "baseline_predicted": 184467,
+      "compare_predicted": 184467,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 10247.166667,
+      "compare_relative_distance": 10247.166667,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_161",
+      "status": "unfixed",
+      "baseline_expected": 0,
+      "baseline_predicted": 196830,
+      "compare_predicted": 196830,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 196830.0,
+      "compare_relative_distance": 196830.0,
+      "compare_tags": [
+        "same_last_digit"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_162",
+      "status": "unfixed",
+      "baseline_expected": 28,
+      "baseline_predicted": 100,
+      "compare_predicted": 100,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 2.571429,
+      "compare_relative_distance": 2.571429,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_163",
+      "status": "partial_regression",
+      "baseline_expected": 3,
+      "baseline_predicted": 191,
+      "compare_predicted": 2023,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 62.666667,
+      "compare_relative_distance": 673.333333,
+      "compare_tags": [
+        "order_of_magnitude",
+        "same_last_digit"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_164",
+      "status": "unfixed",
+      "baseline_expected": 2400,
+      "baseline_predicted": 120000,
+      "compare_predicted": 120000,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 49.0,
+      "compare_relative_distance": 49.0,
+      "compare_tags": [
+        "order_of_magnitude",
+        "same_last_digit"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_165",
+      "status": "unfixed",
+      "baseline_expected": 31,
+      "baseline_predicted": 1994,
+      "compare_predicted": 1994,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 63.322581,
+      "compare_relative_distance": 63.322581,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_166",
+      "status": "unfixed",
+      "baseline_expected": 70,
+      "baseline_predicted": 120,
+      "compare_predicted": 120,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.714286,
+      "compare_relative_distance": 0.714286,
+      "compare_tags": [
+        "same_last_digit"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_167",
+      "status": "partial_regression",
+      "baseline_expected": 2016,
+      "baseline_predicted": 120,
+      "compare_predicted": 12,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.940476,
+      "compare_relative_distance": 0.994048,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_168",
+      "status": "unfixed",
+      "baseline_expected": 40,
+      "baseline_predicted": 120,
+      "compare_predicted": 120,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 2.0,
+      "compare_relative_distance": 2.0,
+      "compare_tags": [
+        "same_last_digit"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_169",
+      "status": "partial_regression",
+      "baseline_expected": 256,
+      "baseline_predicted": 128,
+      "compare_predicted": 19683,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.5,
+      "compare_relative_distance": 75.886719,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_17",
+      "status": "same",
+      "baseline_expected": 2,
+      "baseline_predicted": 2,
+      "compare_predicted": 2,
+      "baseline_exact": true,
+      "compare_exact": true,
+      "baseline_relative_distance": 0.0,
+      "compare_relative_distance": 0.0,
+      "compare_tags": [
+        "exact"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_170",
+      "status": "partial_regression",
+      "baseline_expected": 32,
+      "baseline_predicted": 120,
+      "compare_predicted": 1364,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 2.75,
+      "compare_relative_distance": 41.625,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_171",
+      "status": "unfixed",
+      "baseline_expected": 503,
+      "baseline_predicted": 1009,
+      "compare_predicted": 1009,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 1.005964,
+      "compare_relative_distance": 1.005964,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_172",
+      "status": "same",
+      "baseline_expected": 169,
+      "baseline_predicted": 169,
+      "compare_predicted": 169,
+      "baseline_exact": true,
+      "compare_exact": true,
+      "baseline_relative_distance": 0.0,
+      "compare_relative_distance": 0.0,
+      "compare_tags": [
+        "exact"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_173",
+      "status": "partial_improvement",
+      "baseline_expected": 2500,
+      "baseline_predicted": 1156,
+      "compare_predicted": 2025,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.5376,
+      "compare_relative_distance": 0.19,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_174",
+      "status": "partial_regression",
+      "baseline_expected": 1996,
+      "baseline_predicted": 1001,
+      "compare_predicted": 251,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.498497,
+      "compare_relative_distance": 0.874248,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_175",
+      "status": "partial_regression",
+      "baseline_expected": 60,
+      "baseline_predicted": 120,
+      "compare_predicted": 132,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 1.0,
+      "compare_relative_distance": 1.2,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_176",
+      "status": "unfixed",
+      "baseline_expected": 180,
+      "baseline_predicted": 198,
+      "compare_predicted": 198,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.1,
+      "compare_relative_distance": 0.1,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_177",
+      "status": "partial_regression",
+      "baseline_expected": 10613,
+      "baseline_predicted": 10007,
+      "compare_predicted": 104060,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.0571,
+      "compare_relative_distance": 8.804956,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_178",
+      "status": "partial_regression",
+      "baseline_expected": 92,
+      "baseline_predicted": 120,
+      "compare_predicted": 288,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.304348,
+      "compare_relative_distance": 2.130435,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_179",
+      "status": "partial_regression",
+      "baseline_expected": 4,
+      "baseline_predicted": 3,
+      "compare_predicted": 2,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.25,
+      "compare_relative_distance": 0.5,
+      "compare_tags": [
+        "half",
+        "off_by_small"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_18",
+      "status": "unfixed",
+      "baseline_expected": 1,
+      "baseline_predicted": 180,
+      "compare_predicted": 180,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 179.0,
+      "compare_relative_distance": 179.0,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill_trm"
+    },
+    {
+      "row_id": "intellect_3_math_180",
+      "status": "unfixed",
+      "baseline_expected": 2,
+      "baseline_predicted": 4,
+      "compare_predicted": 4,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 1.0,
+      "compare_relative_distance": 1.0,
+      "compare_tags": [
+        "double",
+        "off_by_small"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_181",
+      "status": "unfixed",
+      "baseline_expected": 10,
+      "baseline_predicted": 20,
+      "compare_predicted": 20,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 1.0,
+      "compare_relative_distance": 1.0,
+      "compare_tags": [
+        "double",
+        "same_last_digit"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_182",
+      "status": "partial_regression",
+      "baseline_expected": 50,
+      "baseline_predicted": 32,
+      "compare_predicted": 16,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.36,
+      "compare_relative_distance": 0.68,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_183",
+      "status": "partial_regression",
+      "baseline_expected": 100,
+      "baseline_predicted": 74,
+      "compare_predicted": 149,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.26,
+      "compare_relative_distance": 0.49,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_184",
+      "status": "partial_regression",
+      "baseline_expected": 92,
+      "baseline_predicted": 1985,
+      "compare_predicted": 1988,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 20.576087,
+      "compare_relative_distance": 20.608696,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_185",
+      "status": "unfixed",
+      "baseline_expected": 2,
+      "baseline_predicted": 1024,
+      "compare_predicted": 1024,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 511.0,
+      "compare_relative_distance": 511.0,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_186",
+      "status": "partial_regression",
+      "baseline_expected": 3,
+      "baseline_predicted": 1,
+      "compare_predicted": 120000,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.666667,
+      "compare_relative_distance": 39999.0,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_187",
+      "status": "unfixed",
+      "baseline_expected": 4,
+      "baseline_predicted": 143,
+      "compare_predicted": 143,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 34.75,
+      "compare_relative_distance": 34.75,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_188",
+      "status": "unfixed",
+      "baseline_expected": 504,
+      "baseline_predicted": 2014,
+      "compare_predicted": 2014,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 2.996032,
+      "compare_relative_distance": 2.996032,
+      "compare_tags": [
+        "same_last_digit"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_189",
+      "status": "same",
+      "baseline_expected": 12,
+      "baseline_predicted": 12,
+      "compare_predicted": 12,
+      "baseline_exact": true,
+      "compare_exact": true,
+      "baseline_relative_distance": 0.0,
+      "compare_relative_distance": 0.0,
+      "compare_tags": [
+        "exact"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_19",
+      "status": "partial_improvement",
+      "baseline_expected": 8,
+      "baseline_predicted": 3,
+      "compare_predicted": 10,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.625,
+      "compare_relative_distance": 0.25,
+      "compare_tags": [
+        "off_by_small"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_190",
+      "status": "partial_regression",
+      "baseline_expected": 600,
+      "baseline_predicted": 1000,
+      "compare_predicted": 250000,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.666667,
+      "compare_relative_distance": 415.666667,
+      "compare_tags": [
+        "order_of_magnitude",
+        "same_last_digit"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_191",
+      "status": "partial_regression",
+      "baseline_expected": 62,
+      "baseline_predicted": 120,
+      "compare_predicted": 128,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.935484,
+      "compare_relative_distance": 1.064516,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_192",
+      "status": "unfixed",
+      "baseline_expected": 12,
+      "baseline_predicted": 13,
+      "compare_predicted": 13,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.083333,
+      "compare_relative_distance": 0.083333,
+      "compare_tags": [
+        "off_by_one"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_193",
+      "status": "unfixed",
+      "baseline_expected": 9,
+      "baseline_predicted": 10,
+      "compare_predicted": 10,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.111111,
+      "compare_relative_distance": 0.111111,
+      "compare_tags": [
+        "off_by_one"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_194",
+      "status": "unfixed",
+      "baseline_expected": 652400,
+      "baseline_predicted": 193740,
+      "compare_predicted": 193740,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.703035,
+      "compare_relative_distance": 0.703035,
+      "compare_tags": [
+        "same_last_digit"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_195",
+      "status": "partial_regression",
+      "baseline_expected": 1006,
+      "baseline_predicted": 1007,
+      "compare_predicted": 2014,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.000994,
+      "compare_relative_distance": 1.001988,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_196",
+      "status": "unfixed",
+      "baseline_expected": 85,
+      "baseline_predicted": 12,
+      "compare_predicted": 12,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.858824,
+      "compare_relative_distance": 0.858824,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_197",
+      "status": "partial_regression",
+      "baseline_expected": 39,
+      "baseline_predicted": 27,
+      "compare_predicted": 12,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.307692,
+      "compare_relative_distance": 0.692308,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_198",
+      "status": "partial_regression",
+      "baseline_expected": 8,
+      "baseline_predicted": 10,
+      "compare_predicted": 12,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.25,
+      "compare_relative_distance": 0.5,
+      "compare_tags": [
+        "off_by_small"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_199",
+      "status": "partial_improvement",
+      "baseline_expected": 89,
+      "baseline_predicted": 11,
+      "compare_predicted": 101,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.876404,
+      "compare_relative_distance": 0.134831,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_2",
+      "status": "partial_regression",
+      "baseline_expected": 5,
+      "baseline_predicted": 100000,
+      "compare_predicted": 120000,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 19999.0,
+      "compare_relative_distance": 23999.0,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_20",
+      "status": "fixed_by_compare",
+      "baseline_expected": 18,
+      "baseline_predicted": 180,
+      "compare_predicted": 18,
+      "baseline_exact": false,
+      "compare_exact": true,
+      "baseline_relative_distance": 9.0,
+      "compare_relative_distance": 0.0,
+      "compare_tags": [
+        "exact"
+      ],
+      "compare_route_source": "math_skill_trm"
+    },
+    {
+      "row_id": "intellect_3_math_21",
+      "status": "same",
+      "baseline_expected": 100,
+      "baseline_predicted": 100,
+      "compare_predicted": 100,
+      "baseline_exact": true,
+      "compare_exact": true,
+      "baseline_relative_distance": 0.0,
+      "compare_relative_distance": 0.0,
+      "compare_tags": [
+        "exact"
+      ],
+      "compare_route_source": "math_skill_trm"
+    },
+    {
+      "row_id": "intellect_3_math_22",
+      "status": "unfixed",
+      "baseline_expected": 102,
+      "baseline_predicted": 132,
+      "compare_predicted": 132,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.294118,
+      "compare_relative_distance": 0.294118,
+      "compare_tags": [
+        "same_last_digit"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_23",
+      "status": "unfixed",
+      "baseline_expected": 1,
+      "baseline_predicted": 30,
+      "compare_predicted": 30,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 29.0,
+      "compare_relative_distance": 29.0,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_24",
+      "status": "unfixed",
+      "baseline_expected": 6,
+      "baseline_predicted": 16,
+      "compare_predicted": 16,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 1.666667,
+      "compare_relative_distance": 1.666667,
+      "compare_tags": [
+        "same_last_digit"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_25",
+      "status": "unfixed",
+      "baseline_expected": 828,
+      "baseline_predicted": 1008,
+      "compare_predicted": 1008,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.217391,
+      "compare_relative_distance": 0.217391,
+      "compare_tags": [
+        "same_last_digit"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_26",
+      "status": "unfixed",
+      "baseline_expected": 8,
+      "baseline_predicted": 13,
+      "compare_predicted": 13,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.625,
+      "compare_relative_distance": 0.625,
+      "compare_tags": [
+        "off_by_small"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_27",
+      "status": "partial_improvement",
+      "baseline_expected": 8,
+      "baseline_predicted": 2024,
+      "compare_predicted": 1200,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 252.0,
+      "compare_relative_distance": 149.0,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_28",
+      "status": "unfixed",
+      "baseline_expected": 8,
+      "baseline_predicted": 16,
+      "compare_predicted": 16,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 1.0,
+      "compare_relative_distance": 1.0,
+      "compare_tags": [
+        "double"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_29",
+      "status": "unfixed",
+      "baseline_expected": 6,
+      "baseline_predicted": 7,
+      "compare_predicted": 5,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.166667,
+      "compare_relative_distance": 0.166667,
+      "compare_tags": [
+        "off_by_one"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_3",
+      "status": "partial_regression",
+      "baseline_expected": 10,
+      "baseline_predicted": 12,
+      "compare_predicted": 1,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.2,
+      "compare_relative_distance": 0.9,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill_trm"
+    },
+    {
+      "row_id": "intellect_3_math_30",
+      "status": "unfixed",
+      "baseline_expected": 2500,
+      "baseline_predicted": 10000,
+      "compare_predicted": 10000,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 3.0,
+      "compare_relative_distance": 3.0,
+      "compare_tags": [
+        "same_last_digit"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_31",
+      "status": "partial_improvement",
+      "baseline_expected": 50,
+      "baseline_predicted": 2500,
+      "compare_predicted": 49,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 49.0,
+      "compare_relative_distance": 0.02,
+      "compare_tags": [
+        "off_by_one"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_32",
+      "status": "regressed_by_compare",
+      "baseline_expected": 2000,
+      "baseline_predicted": 2000,
+      "compare_predicted": 1500,
+      "baseline_exact": true,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.0,
+      "compare_relative_distance": 0.25,
+      "compare_tags": [
+        "same_last_digit"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_33",
+      "status": "partial_regression",
+      "baseline_expected": 50,
+      "baseline_predicted": 49,
+      "compare_predicted": 19,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.02,
+      "compare_relative_distance": 0.62,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_34",
+      "status": "same",
+      "baseline_expected": 23,
+      "baseline_predicted": 23,
+      "compare_predicted": 23,
+      "baseline_exact": true,
+      "compare_exact": true,
+      "baseline_relative_distance": 0.0,
+      "compare_relative_distance": 0.0,
+      "compare_tags": [
+        "exact"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_35",
+      "status": "regressed_by_compare",
+      "baseline_expected": 20,
+      "baseline_predicted": 20,
+      "compare_predicted": 10,
+      "baseline_exact": true,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.0,
+      "compare_relative_distance": 0.5,
+      "compare_tags": [
+        "half",
+        "same_last_digit"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_36",
+      "status": "unfixed",
+      "baseline_expected": 2179,
+      "baseline_predicted": 2023,
+      "compare_predicted": 2023,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.071592,
+      "compare_relative_distance": 0.071592,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_37",
+      "status": "unfixed",
+      "baseline_expected": 25,
+      "baseline_predicted": 17,
+      "compare_predicted": 17,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.32,
+      "compare_relative_distance": 0.32,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_38",
+      "status": "unfixed",
+      "baseline_expected": 0,
+      "baseline_predicted": 1,
+      "compare_predicted": 1,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 1.0,
+      "compare_relative_distance": 1.0,
+      "compare_tags": [
+        "off_by_one"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_39",
+      "status": "partial_improvement",
+      "baseline_expected": 21,
+      "baseline_predicted": 129,
+      "compare_predicted": 120,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 5.142857,
+      "compare_relative_distance": 4.714286,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_4",
+      "status": "unfixed",
+      "baseline_expected": 7,
+      "baseline_predicted": 1009,
+      "compare_predicted": 1009,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 143.142857,
+      "compare_relative_distance": 143.142857,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_40",
+      "status": "partial_improvement",
+      "baseline_expected": 32,
+      "baseline_predicted": 1997,
+      "compare_predicted": 1996,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 61.40625,
+      "compare_relative_distance": 61.375,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_41",
+      "status": "unfixed",
+      "baseline_expected": 100902018,
+      "baseline_predicted": 201802,
+      "compare_predicted": 201802,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.998,
+      "compare_relative_distance": 0.998,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_42",
+      "status": "unfixed",
+      "baseline_expected": 3780,
+      "baseline_predicted": 10800,
+      "compare_predicted": 10800,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 1.857143,
+      "compare_relative_distance": 1.857143,
+      "compare_tags": [
+        "same_last_digit"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_43",
+      "status": "partial_regression",
+      "baseline_expected": 50,
+      "baseline_predicted": 1250,
+      "compare_predicted": 100000,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 24.0,
+      "compare_relative_distance": 1999.0,
+      "compare_tags": [
+        "order_of_magnitude",
+        "same_last_digit"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_44",
+      "status": "partial_regression",
+      "baseline_expected": 4016,
+      "baseline_predicted": 3015,
+      "compare_predicted": 2011,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.249253,
+      "compare_relative_distance": 0.499253,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_45",
+      "status": "partial_regression",
+      "baseline_expected": 243,
+      "baseline_predicted": 288,
+      "compare_predicted": 48,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.185185,
+      "compare_relative_distance": 0.802469,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_46",
+      "status": "unfixed",
+      "baseline_expected": 35,
+      "baseline_predicted": 120,
+      "compare_predicted": 120,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 2.428571,
+      "compare_relative_distance": 2.428571,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_47",
+      "status": "partial_improvement",
+      "baseline_expected": 1374,
+      "baseline_predicted": 176400,
+      "compare_predicted": 1050,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 127.384279,
+      "compare_relative_distance": 0.235808,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_48",
+      "status": "partial_regression",
+      "baseline_expected": 1,
+      "baseline_predicted": 100100,
+      "compare_predicted": -100100,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 100099.0,
+      "compare_relative_distance": 100101.0,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_49",
+      "status": "unfixed",
+      "baseline_expected": 261,
+      "baseline_predicted": 17,
+      "compare_predicted": 17,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.934866,
+      "compare_relative_distance": 0.934866,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_5",
+      "status": "same",
+      "baseline_expected": 1,
+      "baseline_predicted": 1,
+      "compare_predicted": 1,
+      "baseline_exact": true,
+      "compare_exact": true,
+      "baseline_relative_distance": 0.0,
+      "compare_relative_distance": 0.0,
+      "compare_tags": [
+        "exact"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_50",
+      "status": "partial_improvement",
+      "baseline_expected": 2025,
+      "baseline_predicted": 8092,
+      "compare_predicted": 8088,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 2.996049,
+      "compare_relative_distance": 2.994074,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill_trm"
+    },
+    {
+      "row_id": "intellect_3_math_51",
+      "status": "partial_improvement",
+      "baseline_expected": 7,
+      "baseline_predicted": 1310,
+      "compare_predicted": 13,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 186.142857,
+      "compare_relative_distance": 0.857143,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_52",
+      "status": "unfixed",
+      "baseline_expected": 1018,
+      "baseline_predicted": 2007,
+      "compare_predicted": 2007,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.971513,
+      "compare_relative_distance": 0.971513,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_53",
+      "status": "unfixed",
+      "baseline_expected": 15,
+      "baseline_predicted": 24,
+      "compare_predicted": 24,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.6,
+      "compare_relative_distance": 0.6,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_54",
+      "status": "unfixed",
+      "baseline_expected": 6,
+      "baseline_predicted": 12,
+      "compare_predicted": 12,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 1.0,
+      "compare_relative_distance": 1.0,
+      "compare_tags": [
+        "double"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_55",
+      "status": "regressed_by_compare",
+      "baseline_expected": 13,
+      "baseline_predicted": 13,
+      "compare_predicted": 25,
+      "baseline_exact": true,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.0,
+      "compare_relative_distance": 0.923077,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_56",
+      "status": "unfixed",
+      "baseline_expected": 6,
+      "baseline_predicted": 24,
+      "compare_predicted": 24,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 3.0,
+      "compare_relative_distance": 3.0,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_57",
+      "status": "same",
+      "baseline_expected": 15,
+      "baseline_predicted": 15,
+      "compare_predicted": 15,
+      "baseline_exact": true,
+      "compare_exact": true,
+      "baseline_relative_distance": 0.0,
+      "compare_relative_distance": 0.0,
+      "compare_tags": [
+        "exact"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_58",
+      "status": "partial_regression",
+      "baseline_expected": 1,
+      "baseline_predicted": 10,
+      "compare_predicted": 11,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 9.0,
+      "compare_relative_distance": 10.0,
+      "compare_tags": [
+        "order_of_magnitude",
+        "same_last_digit"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_59",
+      "status": "partial_regression",
+      "baseline_expected": 1382,
+      "baseline_predicted": 1009,
+      "compare_predicted": -1,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.269899,
+      "compare_relative_distance": 1.000724,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_6",
+      "status": "unfixed",
+      "baseline_expected": 8556,
+      "baseline_predicted": 2020,
+      "compare_predicted": 2020,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.763908,
+      "compare_relative_distance": 0.763908,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_60",
+      "status": "same",
+      "baseline_expected": 111,
+      "baseline_predicted": 111,
+      "compare_predicted": 111,
+      "baseline_exact": true,
+      "compare_exact": true,
+      "baseline_relative_distance": 0.0,
+      "compare_relative_distance": 0.0,
+      "compare_tags": [
+        "exact"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_61",
+      "status": "unfixed",
+      "baseline_expected": 2,
+      "baseline_predicted": 1,
+      "compare_predicted": 1,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.5,
+      "compare_relative_distance": 0.5,
+      "compare_tags": [
+        "half",
+        "off_by_one"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_62",
+      "status": "unfixed",
+      "baseline_expected": 154,
+      "baseline_predicted": 1003,
+      "compare_predicted": 1003,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 5.512987,
+      "compare_relative_distance": 5.512987,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_63",
+      "status": "partial_regression",
+      "baseline_expected": 1289,
+      "baseline_predicted": 1000,
+      "compare_predicted": 199,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.224205,
+      "compare_relative_distance": 0.845617,
+      "compare_tags": [
+        "same_last_digit"
+      ],
+      "compare_route_source": "math_skill_trm"
+    },
+    {
+      "row_id": "intellect_3_math_64",
+      "status": "unfixed",
+      "baseline_expected": 48,
+      "baseline_predicted": 144,
+      "compare_predicted": 144,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 2.0,
+      "compare_relative_distance": 2.0,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_65",
+      "status": "partial_regression",
+      "baseline_expected": 625,
+      "baseline_predicted": 1000,
+      "compare_predicted": 100000,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.6,
+      "compare_relative_distance": 159.0,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_66",
+      "status": "unfixed",
+      "baseline_expected": 578,
+      "baseline_predicted": 4042,
+      "compare_predicted": 4042,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 5.99308,
+      "compare_relative_distance": 5.99308,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_67",
+      "status": "partial_improvement",
+      "baseline_expected": 9,
+      "baseline_predicted": 13,
+      "compare_predicted": 12,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.444444,
+      "compare_relative_distance": 0.333333,
+      "compare_tags": [
+        "off_by_small"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_68",
+      "status": "unfixed",
+      "baseline_expected": 5940,
+      "baseline_predicted": 5994,
+      "compare_predicted": 5994,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.009091,
+      "compare_relative_distance": 0.009091,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_69",
+      "status": "unfixed",
+      "baseline_expected": 49,
+      "baseline_predicted": 13,
+      "compare_predicted": 13,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.734694,
+      "compare_relative_distance": 0.734694,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_7",
+      "status": "fixed_by_compare",
+      "baseline_expected": 14,
+      "baseline_predicted": 12,
+      "compare_predicted": 14,
+      "baseline_exact": false,
+      "compare_exact": true,
+      "baseline_relative_distance": 0.142857,
+      "compare_relative_distance": 0.0,
+      "compare_tags": [
+        "exact"
+      ],
+      "compare_route_source": "math_skill_trm"
+    },
+    {
+      "row_id": "intellect_3_math_70",
+      "status": "partial_improvement",
+      "baseline_expected": 2016,
+      "baseline_predicted": 12768,
+      "compare_predicted": 12752,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 5.333333,
+      "compare_relative_distance": 5.325397,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_71",
+      "status": "unfixed",
+      "baseline_expected": 1033,
+      "baseline_predicted": 1012,
+      "compare_predicted": 1012,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.020329,
+      "compare_relative_distance": 0.020329,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_72",
+      "status": "unfixed",
+      "baseline_expected": -12,
+      "baseline_predicted": -18,
+      "compare_predicted": -18,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.5,
+      "compare_relative_distance": 0.5,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_73",
+      "status": "unfixed",
+      "baseline_expected": 25,
+      "baseline_predicted": 10,
+      "compare_predicted": 10,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.6,
+      "compare_relative_distance": 0.6,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_74",
+      "status": "partial_regression",
+      "baseline_expected": 9089,
+      "baseline_predicted": 100000,
+      "compare_predicted": 179017,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 10.00231,
+      "compare_relative_distance": 18.696006,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_75",
+      "status": "unfixed",
+      "baseline_expected": 4033,
+      "baseline_predicted": 2017,
+      "compare_predicted": 2017,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.499876,
+      "compare_relative_distance": 0.499876,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_76",
+      "status": "partial_improvement",
+      "baseline_expected": 622,
+      "baseline_predicted": 1999,
+      "compare_predicted": 242,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 2.213826,
+      "compare_relative_distance": 0.610932,
+      "compare_tags": [
+        "same_last_digit"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_77",
+      "status": "regressed_by_compare",
+      "baseline_expected": 1005,
+      "baseline_predicted": 1005,
+      "compare_predicted": 2010,
+      "baseline_exact": true,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.0,
+      "compare_relative_distance": 1.0,
+      "compare_tags": [
+        "double"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_78",
+      "status": "partial_regression",
+      "baseline_expected": 96,
+      "baseline_predicted": 112,
+      "compare_predicted": 200,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.166667,
+      "compare_relative_distance": 1.083333,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_79",
+      "status": "unfixed",
+      "baseline_expected": 7,
+      "baseline_predicted": 4,
+      "compare_predicted": 4,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.428571,
+      "compare_relative_distance": 0.428571,
+      "compare_tags": [
+        "off_by_small"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_8",
+      "status": "unfixed",
+      "baseline_expected": 1010,
+      "baseline_predicted": 1347,
+      "compare_predicted": 1347,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.333663,
+      "compare_relative_distance": 0.333663,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_80",
+      "status": "same",
+      "baseline_expected": 1010,
+      "baseline_predicted": 1010,
+      "compare_predicted": 1010,
+      "baseline_exact": true,
+      "compare_exact": true,
+      "baseline_relative_distance": 0.0,
+      "compare_relative_distance": 0.0,
+      "compare_tags": [
+        "exact"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_81",
+      "status": "partial_regression",
+      "baseline_expected": 61,
+      "baseline_predicted": 1301,
+      "compare_predicted": 100000,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 20.327869,
+      "compare_relative_distance": 1638.344262,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_82",
+      "status": "unfixed",
+      "baseline_expected": 3,
+      "baseline_predicted": 1,
+      "compare_predicted": 1,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.666667,
+      "compare_relative_distance": 0.666667,
+      "compare_tags": [
+        "off_by_small"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_83",
+      "status": "unfixed",
+      "baseline_expected": 1008,
+      "baseline_predicted": 2018,
+      "compare_predicted": 2018,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 1.001984,
+      "compare_relative_distance": 1.001984,
+      "compare_tags": [
+        "same_last_digit"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_84",
+      "status": "unfixed",
+      "baseline_expected": 1023,
+      "baseline_predicted": 1,
+      "compare_predicted": 1,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.999022,
+      "compare_relative_distance": 0.999022,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_85",
+      "status": "partial_improvement",
+      "baseline_expected": 102,
+      "baseline_predicted": 2500,
+      "compare_predicted": 1,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 23.509804,
+      "compare_relative_distance": 0.990196,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_86",
+      "status": "unfixed",
+      "baseline_expected": 17,
+      "baseline_predicted": 1,
+      "compare_predicted": 1,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.941176,
+      "compare_relative_distance": 0.941176,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_87",
+      "status": "regressed_by_compare",
+      "baseline_expected": 1024,
+      "baseline_predicted": 1024,
+      "compare_predicted": 2048,
+      "baseline_exact": true,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.0,
+      "compare_relative_distance": 1.0,
+      "compare_tags": [
+        "double"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_88",
+      "status": "unfixed",
+      "baseline_expected": 1991,
+      "baseline_predicted": 1999,
+      "compare_predicted": 1999,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.004018,
+      "compare_relative_distance": 0.004018,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_89",
+      "status": "partial_regression",
+      "baseline_expected": 8128,
+      "baseline_predicted": 12500,
+      "compare_predicted": 400000,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.537894,
+      "compare_relative_distance": 48.212598,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_9",
+      "status": "partial_regression",
+      "baseline_expected": 40,
+      "baseline_predicted": 120,
+      "compare_predicted": 192,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 2.0,
+      "compare_relative_distance": 3.8,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_90",
+      "status": "partial_regression",
+      "baseline_expected": 5,
+      "baseline_predicted": 1000,
+      "compare_predicted": 1200,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 199.0,
+      "compare_relative_distance": 239.0,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_91",
+      "status": "partial_improvement",
+      "baseline_expected": 12,
+      "baseline_predicted": 120,
+      "compare_predicted": 108,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 9.0,
+      "compare_relative_distance": 8.0,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_92",
+      "status": "partial_improvement",
+      "baseline_expected": 62208,
+      "baseline_predicted": 130000,
+      "compare_predicted": 1369,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 1.089763,
+      "compare_relative_distance": 0.977993,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_93",
+      "status": "unfixed",
+      "baseline_expected": 10053,
+      "baseline_predicted": 202305,
+      "compare_predicted": 202305,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 19.123844,
+      "compare_relative_distance": 19.123844,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_94",
+      "status": "unfixed",
+      "baseline_expected": 14,
+      "baseline_predicted": 55,
+      "compare_predicted": 55,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 2.928571,
+      "compare_relative_distance": 2.928571,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_95",
+      "status": "unfixed",
+      "baseline_expected": 80,
+      "baseline_predicted": 20,
+      "compare_predicted": 20,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.75,
+      "compare_relative_distance": 0.75,
+      "compare_tags": [
+        "same_last_digit"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_96",
+      "status": "partial_regression",
+      "baseline_expected": 91,
+      "baseline_predicted": 133,
+      "compare_predicted": 175,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 0.461538,
+      "compare_relative_distance": 0.923077,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_97",
+      "status": "unfixed",
+      "baseline_expected": 6423,
+      "baseline_predicted": 100000,
+      "compare_predicted": 100000,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 14.569049,
+      "compare_relative_distance": 14.569049,
+      "compare_tags": [
+        "order_of_magnitude"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_98",
+      "status": "unfixed",
+      "baseline_expected": 999,
+      "baseline_predicted": 1999,
+      "compare_predicted": 1999,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 1.001001,
+      "compare_relative_distance": 1.001001,
+      "compare_tags": [
+        "same_last_digit"
+      ],
+      "compare_route_source": "math_skill"
+    },
+    {
+      "row_id": "intellect_3_math_99",
+      "status": "unfixed",
+      "baseline_expected": 60,
+      "baseline_predicted": 132,
+      "compare_predicted": 132,
+      "baseline_exact": false,
+      "compare_exact": false,
+      "baseline_relative_distance": 1.2,
+      "compare_relative_distance": 1.2,
+      "compare_tags": [
+        "wrong_integer"
+      ],
+      "compare_route_source": "math_skill"
+    }
+  ],
+  "read": "The current math TRM route is weak as a solver, but this env exposes whether future MeTTa gates should target answer parsing, small arithmetic slips, scaling errors, or route selection."
+}

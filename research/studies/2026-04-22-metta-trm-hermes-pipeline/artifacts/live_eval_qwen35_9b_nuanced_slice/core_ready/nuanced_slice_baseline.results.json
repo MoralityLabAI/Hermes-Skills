@@ -1,0 +1,26 @@
+{
+  "bundle": "core_ready",
+  "dry_run": true,
+  "results": [
+    {
+      "env_id": "psycho_bench",
+      "selection_status": "core_ready",
+      "env_source": "community",
+      "status": "dry_run",
+      "reward": null,
+      "output_status": "",
+      "action_type": "",
+      "action_excerpt": "Closest current benchmark to symbolic self-modeling under a strict flat output contract and partial-credit scoring."
+    },
+    {
+      "env_id": "if_summarize_judge",
+      "selection_status": "core_ready",
+      "env_source": "research",
+      "status": "dry_run",
+      "reward": null,
+      "output_status": "",
+      "action_type": "",
+      "action_excerpt": "Long-context summarization with held-out structural constraints and an LLM judge gives richer failure modes than short QA or plain IF tasks."
+    }
+  ]
+}

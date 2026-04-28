@@ -1,0 +1,675 @@
+{
+  "generated_at_utc": "2026-04-28T14:03:18.178724+00:00",
+  "source_rows": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\generated\\c_signature_commit_trm_pack\\c_signature_commit_trm_rows.jsonl",
+  "selected_policy": "postrepair_exact_or_gain_gt_0",
+  "selected_summary": {
+    "train": {
+      "policy_id": "postrepair_exact_or_gain_gt_0",
+      "signal_class": "post_evaluator_multi_signal",
+      "description": "Commit exact repairs or non-exact repairs with positive reward delta.",
+      "n": 86,
+      "accuracy": 1.0,
+      "false_commit_rate": 0.0,
+      "false_reject_rate": 0.0,
+      "false_commit_count": 0,
+      "false_reject_count": 0,
+      "committed": 69,
+      "committed_negative_delta": 0,
+      "expected_delta_if_committed": 8.798332,
+      "target_counts": {
+        "reject_or_abstain": 17,
+        "commit": 69
+      }
+    },
+    "val_seen": {
+      "policy_id": "postrepair_exact_or_gain_gt_0",
+      "signal_class": "post_evaluator_multi_signal",
+      "description": "Commit exact repairs or non-exact repairs with positive reward delta.",
+      "n": 16,
+      "accuracy": 1.0,
+      "false_commit_rate": 0.0,
+      "false_reject_rate": 0.0,
+      "false_commit_count": 0,
+      "false_reject_count": 0,
+      "committed": 14,
+      "committed_negative_delta": 0,
+      "expected_delta_if_committed": 1.911666,
+      "target_counts": {
+        "reject_or_abstain": 2,
+        "commit": 14
+      }
+    },
+    "holdout_seen": {
+      "policy_id": "postrepair_exact_or_gain_gt_0",
+      "signal_class": "post_evaluator_multi_signal",
+      "description": "Commit exact repairs or non-exact repairs with positive reward delta.",
+      "n": 20,
+      "accuracy": 1.0,
+      "false_commit_rate": 0.0,
+      "false_reject_rate": 0.0,
+      "false_commit_count": 0,
+      "false_reject_count": 0,
+      "committed": 18,
+      "committed_negative_delta": 0,
+      "expected_delta_if_committed": 1.76,
+      "target_counts": {
+        "commit": 18,
+        "reject_or_abstain": 2
+      }
+    }
+  },
+  "ranked_policies": [
+    {
+      "policy_id": "postrepair_exact_or_gain_gt_0",
+      "signal_class": "post_evaluator_multi_signal",
+      "description": "Commit exact repairs or non-exact repairs with positive reward delta.",
+      "summaries": {
+        "train": {
+          "policy_id": "postrepair_exact_or_gain_gt_0",
+          "signal_class": "post_evaluator_multi_signal",
+          "description": "Commit exact repairs or non-exact repairs with positive reward delta.",
+          "n": 86,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 69,
+          "committed_negative_delta": 0,
+          "expected_delta_if_committed": 8.798332,
+          "target_counts": {
+            "reject_or_abstain": 17,
+            "commit": 69
+          }
+        },
+        "val_seen": {
+          "policy_id": "postrepair_exact_or_gain_gt_0",
+          "signal_class": "post_evaluator_multi_signal",
+          "description": "Commit exact repairs or non-exact repairs with positive reward delta.",
+          "n": 16,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 14,
+          "committed_negative_delta": 0,
+          "expected_delta_if_committed": 1.911666,
+          "target_counts": {
+            "reject_or_abstain": 2,
+            "commit": 14
+          }
+        },
+        "holdout_seen": {
+          "policy_id": "postrepair_exact_or_gain_gt_0",
+          "signal_class": "post_evaluator_multi_signal",
+          "description": "Commit exact repairs or non-exact repairs with positive reward delta.",
+          "n": 20,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 18,
+          "committed_negative_delta": 0,
+          "expected_delta_if_committed": 1.76,
+          "target_counts": {
+            "commit": 18,
+            "reject_or_abstain": 2
+          }
+        }
+      }
+    },
+    {
+      "policy_id": "postrepair_gain_ge_0p02",
+      "signal_class": "post_evaluator_delta",
+      "description": "Commit only when repaired reward improves by at least 0.02.",
+      "summaries": {
+        "train": {
+          "policy_id": "postrepair_gain_ge_0p02",
+          "signal_class": "post_evaluator_delta",
+          "description": "Commit only when repaired reward improves by at least 0.02.",
+          "n": 86,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 69,
+          "committed_negative_delta": 0,
+          "expected_delta_if_committed": 8.798332,
+          "target_counts": {
+            "reject_or_abstain": 17,
+            "commit": 69
+          }
+        },
+        "val_seen": {
+          "policy_id": "postrepair_gain_ge_0p02",
+          "signal_class": "post_evaluator_delta",
+          "description": "Commit only when repaired reward improves by at least 0.02.",
+          "n": 16,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 14,
+          "committed_negative_delta": 0,
+          "expected_delta_if_committed": 1.911666,
+          "target_counts": {
+            "reject_or_abstain": 2,
+            "commit": 14
+          }
+        },
+        "holdout_seen": {
+          "policy_id": "postrepair_gain_ge_0p02",
+          "signal_class": "post_evaluator_delta",
+          "description": "Commit only when repaired reward improves by at least 0.02.",
+          "n": 20,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 18,
+          "committed_negative_delta": 0,
+          "expected_delta_if_committed": 1.76,
+          "target_counts": {
+            "commit": 18,
+            "reject_or_abstain": 2
+          }
+        }
+      }
+    },
+    {
+      "policy_id": "postrepair_gain_ge_0p05",
+      "signal_class": "post_evaluator_delta",
+      "description": "Commit only when repaired reward improves by at least 0.05.",
+      "summaries": {
+        "train": {
+          "policy_id": "postrepair_gain_ge_0p05",
+          "signal_class": "post_evaluator_delta",
+          "description": "Commit only when repaired reward improves by at least 0.05.",
+          "n": 86,
+          "accuracy": 0.907,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.1159,
+          "false_commit_count": 0,
+          "false_reject_count": 8,
+          "committed": 61,
+          "committed_negative_delta": 0,
+          "expected_delta_if_committed": 8.478332,
+          "target_counts": {
+            "reject_or_abstain": 17,
+            "commit": 69
+          }
+        },
+        "val_seen": {
+          "policy_id": "postrepair_gain_ge_0p05",
+          "signal_class": "post_evaluator_delta",
+          "description": "Commit only when repaired reward improves by at least 0.05.",
+          "n": 16,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 14,
+          "committed_negative_delta": 0,
+          "expected_delta_if_committed": 1.911666,
+          "target_counts": {
+            "reject_or_abstain": 2,
+            "commit": 14
+          }
+        },
+        "holdout_seen": {
+          "policy_id": "postrepair_gain_ge_0p05",
+          "signal_class": "post_evaluator_delta",
+          "description": "Commit only when repaired reward improves by at least 0.05.",
+          "n": 20,
+          "accuracy": 0.8,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.2222,
+          "false_commit_count": 0,
+          "false_reject_count": 4,
+          "committed": 14,
+          "committed_negative_delta": 0,
+          "expected_delta_if_committed": 1.6,
+          "target_counts": {
+            "commit": 18,
+            "reject_or_abstain": 2
+          }
+        }
+      }
+    },
+    {
+      "policy_id": "postrepair_gain_gt_0",
+      "signal_class": "post_evaluator_delta",
+      "description": "Commit only when repaired reward improves over the pre-repair candidate.",
+      "summaries": {
+        "train": {
+          "policy_id": "postrepair_gain_gt_0",
+          "signal_class": "post_evaluator_delta",
+          "description": "Commit only when repaired reward improves over the pre-repair candidate.",
+          "n": 86,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 69,
+          "committed_negative_delta": 0,
+          "expected_delta_if_committed": 8.798332,
+          "target_counts": {
+            "reject_or_abstain": 17,
+            "commit": 69
+          }
+        },
+        "val_seen": {
+          "policy_id": "postrepair_gain_gt_0",
+          "signal_class": "post_evaluator_delta",
+          "description": "Commit only when repaired reward improves over the pre-repair candidate.",
+          "n": 16,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 14,
+          "committed_negative_delta": 0,
+          "expected_delta_if_committed": 1.911666,
+          "target_counts": {
+            "reject_or_abstain": 2,
+            "commit": 14
+          }
+        },
+        "holdout_seen": {
+          "policy_id": "postrepair_gain_gt_0",
+          "signal_class": "post_evaluator_delta",
+          "description": "Commit only when repaired reward improves over the pre-repair candidate.",
+          "n": 20,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 18,
+          "committed_negative_delta": 0,
+          "expected_delta_if_committed": 1.76,
+          "target_counts": {
+            "commit": 18,
+            "reject_or_abstain": 2
+          }
+        }
+      }
+    },
+    {
+      "policy_id": "postrepair_signature_and_gain_gt_0",
+      "signal_class": "post_symbolic_plus_delta",
+      "description": "Commit only when signatures pass and reward delta is positive.",
+      "summaries": {
+        "train": {
+          "policy_id": "postrepair_signature_and_gain_gt_0",
+          "signal_class": "post_symbolic_plus_delta",
+          "description": "Commit only when signatures pass and reward delta is positive.",
+          "n": 86,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 69,
+          "committed_negative_delta": 0,
+          "expected_delta_if_committed": 8.798332,
+          "target_counts": {
+            "reject_or_abstain": 17,
+            "commit": 69
+          }
+        },
+        "val_seen": {
+          "policy_id": "postrepair_signature_and_gain_gt_0",
+          "signal_class": "post_symbolic_plus_delta",
+          "description": "Commit only when signatures pass and reward delta is positive.",
+          "n": 16,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 14,
+          "committed_negative_delta": 0,
+          "expected_delta_if_committed": 1.911666,
+          "target_counts": {
+            "reject_or_abstain": 2,
+            "commit": 14
+          }
+        },
+        "holdout_seen": {
+          "policy_id": "postrepair_signature_and_gain_gt_0",
+          "signal_class": "post_symbolic_plus_delta",
+          "description": "Commit only when signatures pass and reward delta is positive.",
+          "n": 20,
+          "accuracy": 1.0,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 0,
+          "false_reject_count": 0,
+          "committed": 18,
+          "committed_negative_delta": 0,
+          "expected_delta_if_committed": 1.76,
+          "target_counts": {
+            "commit": 18,
+            "reject_or_abstain": 2
+          }
+        }
+      }
+    },
+    {
+      "policy_id": "after_exact_only",
+      "signal_class": "post_evaluator_exact",
+      "description": "Commit only exact repaired candidates.",
+      "summaries": {
+        "train": {
+          "policy_id": "after_exact_only",
+          "signal_class": "post_evaluator_exact",
+          "description": "Commit only exact repaired candidates.",
+          "n": 86,
+          "accuracy": 0.8605,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.1739,
+          "false_commit_count": 0,
+          "false_reject_count": 12,
+          "committed": 57,
+          "committed_negative_delta": 0,
+          "expected_delta_if_committed": 7.766666,
+          "target_counts": {
+            "reject_or_abstain": 17,
+            "commit": 69
+          }
+        },
+        "val_seen": {
+          "policy_id": "after_exact_only",
+          "signal_class": "post_evaluator_exact",
+          "description": "Commit only exact repaired candidates.",
+          "n": 16,
+          "accuracy": 0.875,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.1429,
+          "false_commit_count": 0,
+          "false_reject_count": 2,
+          "committed": 12,
+          "committed_negative_delta": 0,
+          "expected_delta_if_committed": 1.751666,
+          "target_counts": {
+            "reject_or_abstain": 2,
+            "commit": 14
+          }
+        },
+        "holdout_seen": {
+          "policy_id": "after_exact_only",
+          "signal_class": "post_evaluator_exact",
+          "description": "Commit only exact repaired candidates.",
+          "n": 20,
+          "accuracy": 0.7,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.3333,
+          "false_commit_count": 0,
+          "false_reject_count": 6,
+          "committed": 12,
+          "committed_negative_delta": 0,
+          "expected_delta_if_committed": 1.28,
+          "target_counts": {
+            "commit": 18,
+            "reject_or_abstain": 2
+          }
+        }
+      }
+    },
+    {
+      "policy_id": "after_signature_and_exact",
+      "signal_class": "post_symbolic_plus_exact",
+      "description": "Commit only repaired candidates that pass signatures and exact check.",
+      "summaries": {
+        "train": {
+          "policy_id": "after_signature_and_exact",
+          "signal_class": "post_symbolic_plus_exact",
+          "description": "Commit only repaired candidates that pass signatures and exact check.",
+          "n": 86,
+          "accuracy": 0.8605,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.1739,
+          "false_commit_count": 0,
+          "false_reject_count": 12,
+          "committed": 57,
+          "committed_negative_delta": 0,
+          "expected_delta_if_committed": 7.766666,
+          "target_counts": {
+            "reject_or_abstain": 17,
+            "commit": 69
+          }
+        },
+        "val_seen": {
+          "policy_id": "after_signature_and_exact",
+          "signal_class": "post_symbolic_plus_exact",
+          "description": "Commit only repaired candidates that pass signatures and exact check.",
+          "n": 16,
+          "accuracy": 0.875,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.1429,
+          "false_commit_count": 0,
+          "false_reject_count": 2,
+          "committed": 12,
+          "committed_negative_delta": 0,
+          "expected_delta_if_committed": 1.751666,
+          "target_counts": {
+            "reject_or_abstain": 2,
+            "commit": 14
+          }
+        },
+        "holdout_seen": {
+          "policy_id": "after_signature_and_exact",
+          "signal_class": "post_symbolic_plus_exact",
+          "description": "Commit only repaired candidates that pass signatures and exact check.",
+          "n": 20,
+          "accuracy": 0.7,
+          "false_commit_rate": 0.0,
+          "false_reject_rate": 0.3333,
+          "false_commit_count": 0,
+          "false_reject_count": 6,
+          "committed": 12,
+          "committed_negative_delta": 0,
+          "expected_delta_if_committed": 1.28,
+          "target_counts": {
+            "commit": 18,
+            "reject_or_abstain": 2
+          }
+        }
+      }
+    },
+    {
+      "policy_id": "after_signature_complete_only",
+      "signal_class": "post_symbolic",
+      "description": "Commit when repaired T and C signatures both pass.",
+      "summaries": {
+        "train": {
+          "policy_id": "after_signature_complete_only",
+          "signal_class": "post_symbolic",
+          "description": "Commit when repaired T and C signatures both pass.",
+          "n": 86,
+          "accuracy": 0.8023,
+          "false_commit_rate": 1.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 17,
+          "false_reject_count": 0,
+          "committed": 86,
+          "committed_negative_delta": 17,
+          "expected_delta_if_committed": 8.138332,
+          "target_counts": {
+            "reject_or_abstain": 17,
+            "commit": 69
+          }
+        },
+        "val_seen": {
+          "policy_id": "after_signature_complete_only",
+          "signal_class": "post_symbolic",
+          "description": "Commit when repaired T and C signatures both pass.",
+          "n": 16,
+          "accuracy": 0.875,
+          "false_commit_rate": 1.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 2,
+          "false_reject_count": 0,
+          "committed": 16,
+          "committed_negative_delta": 2,
+          "expected_delta_if_committed": 1.911666,
+          "target_counts": {
+            "reject_or_abstain": 2,
+            "commit": 14
+          }
+        },
+        "holdout_seen": {
+          "policy_id": "after_signature_complete_only",
+          "signal_class": "post_symbolic",
+          "description": "Commit when repaired T and C signatures both pass.",
+          "n": 20,
+          "accuracy": 0.9,
+          "false_commit_rate": 1.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 2,
+          "false_reject_count": 0,
+          "committed": 20,
+          "committed_negative_delta": 2,
+          "expected_delta_if_committed": 1.76,
+          "target_counts": {
+            "commit": 18,
+            "reject_or_abstain": 2
+          }
+        }
+      }
+    },
+    {
+      "policy_id": "always_commit",
+      "signal_class": "control",
+      "description": "Commit every proposed C-signature repair.",
+      "summaries": {
+        "train": {
+          "policy_id": "always_commit",
+          "signal_class": "control",
+          "description": "Commit every proposed C-signature repair.",
+          "n": 86,
+          "accuracy": 0.8023,
+          "false_commit_rate": 1.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 17,
+          "false_reject_count": 0,
+          "committed": 86,
+          "committed_negative_delta": 17,
+          "expected_delta_if_committed": 8.138332,
+          "target_counts": {
+            "reject_or_abstain": 17,
+            "commit": 69
+          }
+        },
+        "val_seen": {
+          "policy_id": "always_commit",
+          "signal_class": "control",
+          "description": "Commit every proposed C-signature repair.",
+          "n": 16,
+          "accuracy": 0.875,
+          "false_commit_rate": 1.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 2,
+          "false_reject_count": 0,
+          "committed": 16,
+          "committed_negative_delta": 2,
+          "expected_delta_if_committed": 1.911666,
+          "target_counts": {
+            "reject_or_abstain": 2,
+            "commit": 14
+          }
+        },
+        "holdout_seen": {
+          "policy_id": "always_commit",
+          "signal_class": "control",
+          "description": "Commit every proposed C-signature repair.",
+          "n": 20,
+          "accuracy": 0.9,
+          "false_commit_rate": 1.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 2,
+          "false_reject_count": 0,
+          "committed": 20,
+          "committed_negative_delta": 2,
+          "expected_delta_if_committed": 1.76,
+          "target_counts": {
+            "commit": 18,
+            "reject_or_abstain": 2
+          }
+        }
+      }
+    },
+    {
+      "policy_id": "postrepair_non_regression",
+      "signal_class": "post_evaluator_delta",
+      "description": "Commit when repair does not regress reward.",
+      "summaries": {
+        "train": {
+          "policy_id": "postrepair_non_regression",
+          "signal_class": "post_evaluator_delta",
+          "description": "Commit when repair does not regress reward.",
+          "n": 86,
+          "accuracy": 0.907,
+          "false_commit_rate": 0.4706,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 8,
+          "false_reject_count": 0,
+          "committed": 77,
+          "committed_negative_delta": 8,
+          "expected_delta_if_committed": 8.798332,
+          "target_counts": {
+            "reject_or_abstain": 17,
+            "commit": 69
+          }
+        },
+        "val_seen": {
+          "policy_id": "postrepair_non_regression",
+          "signal_class": "post_evaluator_delta",
+          "description": "Commit when repair does not regress reward.",
+          "n": 16,
+          "accuracy": 0.875,
+          "false_commit_rate": 1.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 2,
+          "false_reject_count": 0,
+          "committed": 16,
+          "committed_negative_delta": 2,
+          "expected_delta_if_committed": 1.911666,
+          "target_counts": {
+            "reject_or_abstain": 2,
+            "commit": 14
+          }
+        },
+        "holdout_seen": {
+          "policy_id": "postrepair_non_regression",
+          "signal_class": "post_evaluator_delta",
+          "description": "Commit when repair does not regress reward.",
+          "n": 20,
+          "accuracy": 0.9,
+          "false_commit_rate": 1.0,
+          "false_reject_rate": 0.0,
+          "false_commit_count": 2,
+          "false_reject_count": 0,
+          "committed": 20,
+          "committed_negative_delta": 2,
+          "expected_delta_if_committed": 1.76,
+          "target_counts": {
+            "commit": 18,
+            "reject_or_abstain": 2
+          }
+        }
+      }
+    }
+  ],
+  "metta_contract": "; C-signature post-repair verifier sketch.\n; This is an evaluator-backed training target, not a prompt-only LLM result.\n\n(= (signature-complete $state)\n   (and (after-t-signature-pass $state) (after-c-signature-pass $state)))\n\n(= (positive-repair-delta $state)\n   (> (reward-delta $state) 0.0))\n\n(= (c-signature-commit-action $state)\n   (if (or (after-exact $state) (positive-repair-delta $state))\n       commit\n       reject_or_abstain))\n\n(= (c-signature-training-signals $state)\n   (list (after-exact $state)\n         (signature-complete $state)\n         (reward-delta $state)\n         (c-signature-commit-action $state)))\n",
+  "claim_boundary": "No model calls and no neural training. Evaluator-backed policies are verifier ceilings and training targets."
+}

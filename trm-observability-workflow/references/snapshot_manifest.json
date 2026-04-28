@@ -1,0 +1,14 @@
+{
+  "snapshot_root": "D:\\Research_Engine\\trmObservabilityLogs\\trm_observability_harness_snapshot",
+  "contents": [
+    "data",
+    "docs",
+    "scripts",
+    "harness",
+    "envs",
+    "configs",
+    "README.md",
+    "handoff.md",
+    "docs/repo_map.md"
+  ]
+}

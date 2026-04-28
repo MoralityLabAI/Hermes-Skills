@@ -1,0 +1,5 @@
+split,rows
+train,156
+val_seen,34
+holdout_seen,36
+holdout_unseen_family,18

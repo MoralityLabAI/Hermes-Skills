@@ -1,0 +1,7 @@
+arm,target_action_accuracy,repair_action_accuracy,joint_accuracy
+raw_3b_rudder,0.7159,0.4091,0.3636
+repair_training_rudder,0.7955,0.3409,0.3182
+metta_action_space_rudder,0.75,1.0,0.75
+metta_action_space_training_rudder,0.6932,1.0,0.6932
+metta_static_gate_rudder,0.9545,1.0,0.9545
+metta_validator_gate,1.0,1.0,1.0

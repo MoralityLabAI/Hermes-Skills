@@ -1,0 +1,19 @@
+{
+  "package_id": "primehub_structured_map",
+  "bundle_outputs": [
+    "bundle.manifest.json",
+    "atoms.json",
+    "retrieval_packet.json",
+    "critic_hints.json",
+    "trace_labels.json",
+    "artifact_contract.json",
+    "compiler_summary.md"
+  ],
+  "out_dir": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_structured_map_bundle",
+  "runtime_consumers": [
+    "retrieval overlay",
+    "critic prompt builder",
+    "trace labeler",
+    "future row builder"
+  ]
+}

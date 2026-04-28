@@ -1,0 +1,234 @@
+{
+  "generated_at_utc": "2026-04-26T15:39:48.318889+00:00",
+  "skill_registry": "C:\\projects\\Hermes Skills\\research\\generated\\skill_registry.json",
+  "role_imprint": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\latest\\role_based_imprint.md",
+  "compositions": [
+    {
+      "name": "contract_compactification_circuit",
+      "source_skills": [
+        "primehub-choice-contract-hermes",
+        "primehub-structured-map-hermes",
+        "primehub-constraint-summarize-hermes"
+      ],
+      "trm_roles": [
+        "choice_contract",
+        "structured_map"
+      ],
+      "composition_class": "compactifiable",
+      "metta_gates": [
+        "route_gate",
+        "contract_select_gate",
+        "validate_gate",
+        "repair_gate",
+        "commit_gate",
+        "learning_gate"
+      ],
+      "pure_trm_exports": [
+        "constraint_error",
+        "repair_success",
+        "format_vs_semantics_split",
+        "commit_error"
+      ],
+      "primelab_exports": [
+        "hard schema env variants",
+        "literal-count rubric traps",
+        "baseline eval receipts"
+      ],
+      "benchmark_arms": [
+        "baseline",
+        "pure_trm",
+        "metta_runtime",
+        "metta_runtime_repair"
+      ],
+      "claim_boundary": "Good compactification target; supports control-plane capability, not latent reasoning gain.",
+      "missing_source_skills": [],
+      "status": "ready"
+    },
+    {
+      "name": "tool_schema_composition_circuit",
+      "source_skills": [
+        "trm-mcp",
+        "primehub-structured-map-hermes",
+        "primehub-choice-contract-hermes"
+      ],
+      "trm_roles": [
+        "structured_map",
+        "choice_contract"
+      ],
+      "composition_class": "compactifiable",
+      "metta_gates": [
+        "tool_route_gate",
+        "schema_memory_gate",
+        "argument_validate_gate",
+        "json_repair_gate",
+        "commit_gate"
+      ],
+      "pure_trm_exports": [
+        "route_error",
+        "retrieval_miss",
+        "json_repair_success",
+        "tool_commit_error"
+      ],
+      "primelab_exports": [
+        "tool-use env receipt",
+        "argument rubric failure clusters"
+      ],
+      "benchmark_arms": [
+        "baseline",
+        "pure_trm",
+        "metta_runtime",
+        "metta_runtime_repair"
+      ],
+      "claim_boundary": "Tool calls can compactify when schemas and arguments are verifier-visible.",
+      "missing_source_skills": [],
+      "status": "ready"
+    },
+    {
+      "name": "intellect3_logic_signature_circuit",
+      "source_skills": [
+        "intellect3-logic-hermes",
+        "primehub-hard-reasoning-logic-hermes",
+        "trm-public-rationale-chain"
+      ],
+      "trm_roles": [
+        "hard_reasoning_logic",
+        "structured_map"
+      ],
+      "composition_class": "symbolically_amplifiable",
+      "metta_gates": [
+        "proposal_gate",
+        "constraint_parse_gate",
+        "signature_validate_gate",
+        "min_edit_projection_gate",
+        "commit_gate"
+      ],
+      "pure_trm_exports": [
+        "grid_candidate",
+        "signature_mismatch",
+        "projection_success",
+        "critic_false_positive"
+      ],
+      "primelab_exports": [
+        "logic rollout trace",
+        "cell-accuracy metric",
+        "signature rubric"
+      ],
+      "benchmark_arms": [
+        "baseline",
+        "pure_trm",
+        "metta_runtime_repair"
+      ],
+      "claim_boundary": "Hard positive target; projection must use puzzle constraints rather than leaked target grids.",
+      "missing_source_skills": [],
+      "status": "ready"
+    },
+    {
+      "name": "intellect3_math_teacher_auditor_circuit",
+      "source_skills": [
+        "intellect3-math-hermes",
+        "primehub-hard-reasoning-numeric-hermes"
+      ],
+      "trm_roles": [
+        "hard_reasoning_numeric"
+      ],
+      "composition_class": "scale_sensitive",
+      "metta_gates": [
+        "candidate_parse_gate",
+        "invariant_validate_gate",
+        "numeric_error_gate",
+        "teacher_candidate_commit_gate"
+      ],
+      "pure_trm_exports": [
+        "numeric_error_archetype",
+        "candidate_selection",
+        "verifier_false_positive",
+        "abstain_correct"
+      ],
+      "primelab_exports": [
+        "teacher candidate receipt",
+        "math hosted eval receipt",
+        "QLoRA candidate-auditor manifest"
+      ],
+      "benchmark_arms": [
+        "baseline",
+        "pure_trm",
+        "teacher_candidate_metta"
+      ],
+      "claim_boundary": "Use as boundary case; MeTTa/TRM audits candidates but does not replace high-scale solving.",
+      "missing_source_skills": [],
+      "status": "ready"
+    },
+    {
+      "name": "safety_abstain_veto_circuit",
+      "source_skills": [
+        "primehub-abstain-guard-hermes",
+        "primehub-structured-map-hermes"
+      ],
+      "trm_roles": [
+        "abstain_guard",
+        "structured_map"
+      ],
+      "composition_class": "compactifiable_with_domain_boundary",
+      "metta_gates": [
+        "risk_route_gate",
+        "policy_validate_gate",
+        "abstain_or_answer_gate",
+        "safe_format_gate",
+        "commit_gate"
+      ],
+      "pure_trm_exports": [
+        "risk_route_error",
+        "critic_false_positive",
+        "critic_false_negative",
+        "safe_format_repair"
+      ],
+      "primelab_exports": [
+        "borderline safety env receipt",
+        "advice-quality rubric split"
+      ],
+      "benchmark_arms": [
+        "baseline",
+        "pure_trm",
+        "metta_runtime"
+      ],
+      "claim_boundary": "Can test routing and refusal format; not evidence of high-stakes advice quality.",
+      "missing_source_skills": [],
+      "status": "ready"
+    },
+    {
+      "name": "psycho_item_vector_composition_circuit",
+      "source_skills": [
+        "primehub-structured-map-hermes"
+      ],
+      "trm_roles": [
+        "structured_map"
+      ],
+      "composition_class": "interpretability_only",
+      "metta_gates": [
+        "item_vector_validate_gate",
+        "subscale_project_gate",
+        "profile_delta_audit_gate",
+        "stability_commit_gate"
+      ],
+      "pure_trm_exports": [
+        "item_changed",
+        "subscale_drift",
+        "stability_pass",
+        "profile_regression"
+      ],
+      "primelab_exports": [
+        "repeated profile eval receipts",
+        "variance report",
+        "item-vector rollout table"
+      ],
+      "benchmark_arms": [
+        "baseline",
+        "pure_trm",
+        "metta_runtime"
+      ],
+      "claim_boundary": "Profile stability and interpretability lane; scalar gain alone is not enough.",
+      "missing_source_skills": [],
+      "status": "ready"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "package_id": "primehub_structured_map",
+  "title": "Primehub Structured Map Symbolic Contract",
+  "base_skill": "primehub-structured-map-hermes",
+  "trm_overlay": "trm-mcp",
+  "infusion_type": "retrieve",
+  "target_envs": [
+    "psycho_bench",
+    "ascii_tree",
+    "pydantic_adherence"
+  ],
+  "source_files": [
+    "contracts.metta",
+    "failure_modes.metta",
+    "package.metta",
+    "retrieval_policy.metta"
+  ],
+  "atom_counts": {
+    "answer-shape": 3,
+    "base-skill": 1,
+    "constraint": 6,
+    "env": 3,
+    "example-status": 3,
+    "failure-mode": 11,
+    "forbid": 2,
+    "goal": 1,
+    "minimal-example": 3,
+    "overlay": 1,
+    "owner": 1,
+    "package-id": 1,
+    "query-cue": 12,
+    "repair-hint": 3,
+    "retrieval-priority": 3,
+    "summary": 3,
+    "trace-label": 3,
+    "validation-path": 1,
+    "validator-note": 5,
+    "verifier-caveat": 1
+  },
+  "generated_at": "2026-04-22T21:14:35.080185+00:00",
+  "notes": "Prototype symbolic package showing how MeTTa-authored env rules compile into Hermes-ready TRM artifacts."
+}

@@ -1,0 +1,7 @@
+{
+  "envs": [
+    "psycho_bench",
+    "if_summarize_judge",
+    "allenai_ifeval"
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "bundle_dir": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\if_summarize_judge_bundle",
+  "out_dir": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\if_summarize_judge_multisignal",
+  "unit_count": 72,
+  "signal_target_count": 446,
+  "avg_signals_per_unit": 6.194444444444445,
+  "label_density_vs_single_reward": 6.194444444444445,
+  "avg_observation_chars": 411.7361111111111,
+  "unique_signal_count": 10,
+  "signal_counts": {
+    "retrieval_selection_correctness": 18,
+    "contract_family_match": 69,
+    "transport_visible_output": 72,
+    "transport_no_fallback": 72,
+    "task_success": 54,
+    "contract_validity": 54,
+    "critic_verdict_agreement": 36,
+    "failure_localization": 36,
+    "repair_success": 18,
+    "profile_selection_correctness": 17
+  },
+  "signal_positive_counts": {
+    "retrieval_selection_correctness": 18,
+    "contract_family_match": 69,
+    "transport_visible_output": 72,
+    "transport_no_fallback": 72,
+    "task_success": 36,
+    "contract_validity": 36,
+    "critic_verdict_agreement": 36,
+    "failure_localization": 30,
+    "repair_success": 18,
+    "profile_selection_correctness": 17
+  },
+  "signal_negative_counts": {
+    "task_success": 18,
+    "contract_validity": 18,
+    "failure_localization": 6
+  },
+  "channel_counts": {
+    "selection": 104,
+    "transport": 144,
+    "success": 108,
+    "critic": 36,
+    "repair": 54
+  },
+  "env_counts": {
+    "if_summarize_judge": 72
+  },
+  "profile_counts": {
+    "3_keywords": 4,
+    "4_hashtags": 4,
+    "alpha_start_3sent": 4,
+    "decreasing_length": 4,
+    "dictionary_def": 4,
+    "exact_10w_bullets": 4,
+    "exact_15_words": 4,
+    "exact_5_words": 4,
+    "exclamation_ends": 4,
+    "if_then": 4,
+    "increasing_length": 4,
+    "newspaper_headline": 4,
+    "one_comma": 4,
+    "question_answer": 4,
+    "simple_syllables": 4,
+    "single_question": 4,
+    "xml_word_tags": 4
+  },
+  "unit_kind_counts": {
+    "contract_select": 1,
+    "contract_verify_positive": 1,
+    "contract_verify_negative": 1,
+    "contract_repair": 1,
+    "profile_select": 17,
+    "profile_verify_positive": 17,
+    "profile_verify_negative": 17,
+    "profile_repair": 17
+  },
+  "support_role_counts": {
+    "selection_support": 18,
+    "critic_verify": 36,
+    "repair_support": 18
+  },
+  "prompt_pressure_counts": {
+    "medium": 54,
+    "high": 2,
+    "low": 16
+  }
+}

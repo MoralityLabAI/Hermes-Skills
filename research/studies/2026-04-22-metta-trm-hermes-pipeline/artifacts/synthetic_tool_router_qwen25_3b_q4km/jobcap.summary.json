@@ -1,0 +1,40 @@
+﻿{
+    "avg_ram_mb":  19.8674,
+    "stdout_path":  "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\synthetic_tool_router_qwen25_3b_q4km\\child.stdout.log",
+    "child_args":  [
+                       "C:\\projects\\Hermes Skills\\research\\scripts\\run_synthetic_tool_router_metta_ablation.py",
+                       "--out-dir",
+                       "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\synthetic_tool_router_qwen25_3b_q4km",
+                       "--max-tokens",
+                       "96",
+                       "--ctx",
+                       "2048",
+                       "--threads",
+                       "4",
+                       "--timeout-sec",
+                       "180"
+                   ],
+    "checkpoint_strategy":  "variant_complete",
+    "duration_sec":  88.966,
+    "steps_completed":  83,
+    "exit_code":  0,
+    "started_at_utc":  "2026-04-25T21:34:13.7508730Z",
+    "peak_io_mb_s":  0,
+    "abort_reason":  null,
+    "peak_ram_mb":  20.3359,
+    "finished_at_utc":  "2026-04-25T21:35:42.7169093Z",
+    "working_directory":  "C:\\projects\\Hermes Skills",
+    "status":  "success",
+    "stderr_path":  "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\synthetic_tool_router_qwen25_3b_q4km\\child.stderr.log",
+    "caps":  {
+                 "ram_mb":  2048,
+                 "io_mb_s":  50,
+                 "cpu_pct":  50,
+                 "timeout_sec":  1200
+             },
+    "child_arg_string":  "\"C:\\projects\\Hermes Skills\\research\\scripts\\run_synthetic_tool_router_metta_ablation.py\" --out-dir \"C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\synthetic_tool_router_qwen25_3b_q4km\" --max-tokens 96 --ctx 2048 --threads 4 --timeout-sec 180",
+    "cpu_pct":  0.0031,
+    "event_log_path":  "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\synthetic_tool_router_qwen25_3b_q4km\\jobcap.events.jsonl",
+    "script_path":  "C:\\projects\\Hermes Skills\\research\\scripts\\run_synthetic_tool_router_metta_ablation.py",
+    "run_id":  "jobcap-c5a0886b3bd042c5a3d85215e288907d"
+}

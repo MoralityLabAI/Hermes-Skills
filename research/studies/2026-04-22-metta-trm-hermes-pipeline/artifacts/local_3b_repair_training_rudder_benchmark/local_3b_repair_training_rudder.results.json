@@ -1,0 +1,44 @@
+{
+  "generated_at_utc": "2026-04-26T16:49:31.660412+00:00",
+  "model_name": "Qwen2.5-3B-Instruct-Q4_K_M-GGUF-llama.cpp-CUDA",
+  "model_path": "D:\\Research_Engine\\models\\Qwen2.5-3B-Instruct-GGUF\\qwen2.5-3b-instruct-q4_k_m.gguf",
+  "llama_completion_path": "D:\\Research_Engine\\tools\\llama.cpp-b8922-cuda12.4\\llama-completion.exe",
+  "split_dir": "C:\\projects\\Hermes Skills\\research\\generated\\near_miss_repair_curriculum\\splits",
+  "eval_splits": [
+    "val_seen",
+    "holdout_seen",
+    "holdout_unseen_family"
+  ],
+  "max_cases": 0,
+  "shots": 4,
+  "summary_by_arm": {
+    "raw_3b_rudder": {
+      "n": 88,
+      "split_counts": {
+        "val_seen": 34,
+        "holdout_seen": 36,
+        "holdout_unseen_family": 18
+      },
+      "target_action_accuracy": 0.7159,
+      "repair_action_accuracy": 0.4091,
+      "joint_accuracy": 0.3636,
+      "json_parse_rate": 1.0,
+      "avg_elapsed_sec": 3.2433,
+      "max_peak_child_ram_mb": 2360.8008
+    },
+    "repair_training_rudder": {
+      "n": 88,
+      "split_counts": {
+        "val_seen": 34,
+        "holdout_seen": 36,
+        "holdout_unseen_family": 18
+      },
+      "target_action_accuracy": 0.7955,
+      "repair_action_accuracy": 0.3409,
+      "joint_accuracy": 0.3182,
+      "json_parse_rate": 1.0,
+      "avg_elapsed_sec": 3.4816,
+      "max_peak_child_ram_mb": 2375.3984
+    }
+  }
+}

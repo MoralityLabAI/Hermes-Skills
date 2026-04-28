@@ -1,0 +1,275 @@
+{
+  "model": {
+    "model_id": "qwen35_9b",
+    "base_url": "http://snacksack-ms-7d32.tail3156cd.ts.net:8082/v1",
+    "model_name": "Qwen_Qwen3.5-9B-Q4_K_M.gguf"
+  },
+  "envs": [
+    "psycho_bench",
+    "ascii_tree",
+    "pydantic_adherence"
+  ],
+  "results": [
+    {
+      "arm_id": "without_metta",
+      "env_id": "psycho_bench",
+      "status": "success",
+      "returncode": 0,
+      "reward": 3.328333333333333,
+      "token_usage": {
+        "prompt_tokens": 1138,
+        "completion_tokens": 255,
+        "total_tokens": 1393
+      },
+      "failure_types": {},
+      "visible_output_emitted": true,
+      "output_status": "completed",
+      "valid_action": true,
+      "action_type": "direct_answer",
+      "action_text": "31: 3\n39: 3\n17: 4\n26: 3\n12: 2\n16: 3\n3: 4\n37: 2\n18: 3\n1: 3\n10: 4\n40: 3\n43: 3\n27: 2\n2: 2\n25: 3\n41: 3\n35: 3\n13: 4\n8: 3\n30: 3\n33: 4\n38: 4\n21: 3\n32: 4\n5: 3\n20: 3\n28: 4\n19: 3\n34: 3\n42: 4\n44: 3\n29: 3\n6: 3\n22: 4\n9: 4\n23: 2\n4: 3\n36: 3\n7: 4\n15: 3\n24: 4\n11: 4\n14: 3",
+      "action_excerpt": "31: 3 39: 3 17: 4 26: 3 12: 2 16: 3 3: 4 37: 2 18: 3 1: 3 10: 4 40: 3 43: 3 27: 2 2: 2 25: 3 41: 3 35: 3 13: 4 8: 3 30: 3 33: 4 38: 4 21: 3 32: 4 5: 3 20: 3 28: 4 19: 3 34: 3 42: 4 44: 3 29: 3 6: 3 22: 4 9: 4 23: 2 4:...",
+      "short_justification": "Returned direct action-only output.",
+      "episode_metrics": {
+        "raw_reward": 3.328333333333333,
+        "num_turns": 1.0
+      },
+      "export_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_runtime_packet_repair\\replays\\without_metta\\psycho_bench.jsonl",
+      "summary_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_runtime_packet_repair\\replays\\without_metta\\psycho_bench.summary.json",
+      "success": true
+    },
+    {
+      "arm_id": "without_metta",
+      "env_id": "ascii_tree",
+      "status": "success",
+      "returncode": 0,
+      "reward": 0.7999999999999999,
+      "token_usage": {
+        "prompt_tokens": 736,
+        "completion_tokens": 64,
+        "total_tokens": 800
+      },
+      "failure_types": {},
+      "visible_output_emitted": true,
+      "output_status": "completed",
+      "valid_action": true,
+      "action_type": "direct_answer",
+      "action_text": "<ascii_formatted>\npackaging\n +--brew\n +--linux-arch\n +--linux-centos\n +--linux-debian\n +--linux-fedora\n +--mac-ports\n +--snapcraft\n +--windows-chocolatey\n     +--tools\n</ascii_formatted>",
+      "action_excerpt": "<ascii_formatted> packaging +--brew +--linux-arch +--linux-centos +--linux-debian +--linux-fedora +--mac-ports +--snapcraft +--windows-chocolatey +--tools </ascii_formatted>",
+      "short_justification": "Returned direct action-only output.",
+      "episode_metrics": {
+        "ascii_tree_similarity_reward": 0.8,
+        "ascii_tree_continuous_reward": 0.8,
+        "num_turns": 1.0
+      },
+      "export_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_runtime_packet_repair\\replays\\without_metta\\ascii_tree.jsonl",
+      "summary_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_runtime_packet_repair\\replays\\without_metta\\ascii_tree.summary.json",
+      "success": true
+    },
+    {
+      "arm_id": "without_metta",
+      "env_id": "pydantic_adherence",
+      "status": "success",
+      "returncode": 0,
+      "reward": 1.0,
+      "token_usage": {
+        "prompt_tokens": 1557,
+        "completion_tokens": 163,
+        "total_tokens": 1720
+      },
+      "failure_types": {},
+      "visible_output_emitted": true,
+      "output_status": "completed",
+      "valid_action": true,
+      "action_type": "direct_answer",
+      "action_text": "{\"policy_id\":\"11111111-1111-1111-1111-111111111111\",\"name\":\"Main\",\"max_books\":3,\"periods\":[{\"genre\":\"fiction\",\"days\":14,\"allow_renewal\":true},{\"genre\":\"non-fiction\",\"days\":21,\"allow_renewal\":true},{\"genre\":\"children\",\"days\":7,\"allow_renewal\":true}],\"fine_policy\":{\"per_day\":1.0,\"max_total\":5.0},\"renewal_policy\":{\"max_renewals\":1,\"cooldown\":\"1\"},\"exceptions\":{},\"created_at\":\"2026-01-01T00:00:00\"}",
+      "action_excerpt": "{\"policy_id\":\"11111111-1111-1111-1111-111111111111\",\"name\":\"Main\",\"max_books\":3,\"periods\":[{\"genre\":\"fiction\",\"days\":14,\"allow_renewal\":true},{\"genre\":\"non-fiction\",\"days\":21,\"allow_renewal\":true},{\"genre\":\"children\",...",
+      "short_justification": "Returned direct action-only output.",
+      "episode_metrics": {
+        "pydantic_adherence_reward_func": 1.0,
+        "num_turns": 1.0
+      },
+      "export_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_runtime_packet_repair\\replays\\without_metta\\pydantic_adherence.jsonl",
+      "summary_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_runtime_packet_repair\\replays\\without_metta\\pydantic_adherence.summary.json",
+      "success": true
+    },
+    {
+      "arm_id": "with_metta_runtime",
+      "env_id": "psycho_bench",
+      "status": "success",
+      "returncode": 0,
+      "reward": 3.3483333333333336,
+      "token_usage": {
+        "prompt_tokens": 1187,
+        "completion_tokens": 255,
+        "total_tokens": 1442
+      },
+      "failure_types": {},
+      "visible_output_emitted": true,
+      "output_status": "completed",
+      "valid_action": true,
+      "action_type": "direct_answer",
+      "action_text": "31: 3\n39: 3\n17: 4\n26: 3\n12: 2\n16: 3\n3: 4\n37: 2\n18: 3\n1: 3\n10: 4\n40: 4\n43: 3\n27: 2\n2: 2\n25: 3\n41: 3\n35: 3\n13: 4\n8: 3\n30: 3\n33: 4\n38: 4\n21: 3\n32: 4\n5: 3\n20: 3\n28: 4\n19: 3\n34: 3\n42: 4\n44: 3\n29: 3\n6: 3\n22: 4\n9: 4\n23: 2\n4: 3\n36: 3\n7: 4\n15: 3\n24: 4\n11: 4\n14: 3",
+      "action_excerpt": "31: 3 39: 3 17: 4 26: 3 12: 2 16: 3 3: 4 37: 2 18: 3 1: 3 10: 4 40: 4 43: 3 27: 2 2: 2 25: 3 41: 3 35: 3 13: 4 8: 3 30: 3 33: 4 38: 4 21: 3 32: 4 5: 3 20: 3 28: 4 19: 3 34: 3 42: 4 44: 3 29: 3 6: 3 22: 4 9: 4 23: 2 4:...",
+      "short_justification": "Returned direct action-only output.",
+      "episode_metrics": {
+        "raw_reward": 3.3483333333333336,
+        "num_turns": 1.0
+      },
+      "export_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_runtime_packet_repair\\replays\\with_metta_runtime\\psycho_bench.jsonl",
+      "summary_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_runtime_packet_repair\\replays\\with_metta_runtime\\psycho_bench.summary.json",
+      "success": true
+    },
+    {
+      "arm_id": "with_metta_runtime",
+      "env_id": "ascii_tree",
+      "status": "success",
+      "returncode": 0,
+      "reward": 0.7999999999999999,
+      "token_usage": {
+        "prompt_tokens": 794,
+        "completion_tokens": 64,
+        "total_tokens": 858
+      },
+      "failure_types": {},
+      "visible_output_emitted": true,
+      "output_status": "completed",
+      "valid_action": true,
+      "action_type": "direct_answer",
+      "action_text": "<ascii_formatted>\npackaging\n +--brew\n +--linux-arch\n +--linux-centos\n +--linux-debian\n +--linux-fedora\n +--mac-ports\n +--snapcraft\n +--windows-chocolatey\n     +--tools\n</ascii_formatted>",
+      "action_excerpt": "<ascii_formatted> packaging +--brew +--linux-arch +--linux-centos +--linux-debian +--linux-fedora +--mac-ports +--snapcraft +--windows-chocolatey +--tools </ascii_formatted>",
+      "short_justification": "Returned direct action-only output.",
+      "episode_metrics": {
+        "ascii_tree_similarity_reward": 0.8,
+        "ascii_tree_continuous_reward": 0.8,
+        "num_turns": 1.0
+      },
+      "export_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_runtime_packet_repair\\replays\\with_metta_runtime\\ascii_tree.jsonl",
+      "summary_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_runtime_packet_repair\\replays\\with_metta_runtime\\ascii_tree.summary.json",
+      "success": true
+    },
+    {
+      "arm_id": "with_metta_runtime",
+      "env_id": "pydantic_adherence",
+      "status": "success",
+      "returncode": 0,
+      "reward": 1.0,
+      "token_usage": {
+        "prompt_tokens": 1522,
+        "completion_tokens": 178,
+        "total_tokens": 1700
+      },
+      "failure_types": {},
+      "visible_output_emitted": true,
+      "output_status": "completed",
+      "valid_action": true,
+      "action_type": "direct_answer",
+      "action_text": "{\"policy_id\":\"11111111-1111-1111-1111-111111111111\",\"name\":\"Main\",\"max_books\":3,\"periods\":[{\"genre\":\"fiction\",\"days\":14,\"allow_renewal\":true},{\"genre\":\"non-fiction\",\"days\":21,\"allow_renewal\":true},{\"genre\":\"children\",\"days\":7,\"allow_renewal\":true},{\"genre\":\"reference\",\"days\":5,\"allow_renewal\":false}],\"fine_policy\":{\"per_day\":1.0,\"max_total\":5.0},\"renewal_policy\":{\"max_renewals\":1,\"cooldown\":\"1\"},\"exceptions\":{},\"created_at\":\"2026-01-01T00:00:00\"}",
+      "action_excerpt": "{\"policy_id\":\"11111111-1111-1111-1111-111111111111\",\"name\":\"Main\",\"max_books\":3,\"periods\":[{\"genre\":\"fiction\",\"days\":14,\"allow_renewal\":true},{\"genre\":\"non-fiction\",\"days\":21,\"allow_renewal\":true},{\"genre\":\"children\",...",
+      "short_justification": "Returned direct action-only output.",
+      "episode_metrics": {
+        "pydantic_adherence_reward_func": 1.0,
+        "num_turns": 1.0
+      },
+      "export_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_runtime_packet_repair\\replays\\with_metta_runtime\\pydantic_adherence.jsonl",
+      "summary_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_runtime_packet_repair\\replays\\with_metta_runtime\\pydantic_adherence.summary.json",
+      "success": true
+    },
+    {
+      "arm_id": "with_metta_runtime_repair",
+      "env_id": "psycho_bench",
+      "status": "success",
+      "returncode": 0,
+      "reward": 3.3483333333333336,
+      "token_usage": {
+        "prompt_tokens": 1187,
+        "completion_tokens": 255,
+        "total_tokens": 1442
+      },
+      "failure_types": {},
+      "visible_output_emitted": true,
+      "output_status": "completed",
+      "valid_action": true,
+      "action_type": "direct_answer_repaired",
+      "action_text": "31: 3\n39: 3\n17: 4\n26: 3\n12: 2\n16: 3\n3: 4\n37: 2\n18: 3\n1: 3\n10: 4\n40: 4\n43: 3\n27: 2\n2: 2\n25: 3\n41: 3\n35: 3\n13: 4\n8: 3\n30: 3\n33: 4\n38: 4\n21: 3\n32: 4\n5: 3\n20: 3\n28: 4\n19: 3\n34: 3\n42: 4\n44: 3\n29: 3\n6: 3\n22: 4\n9: 4\n23: 2\n4: 3\n36: 3\n7: 4\n15: 3\n24: 4\n11: 4\n14: 3",
+      "action_excerpt": "31: 3 39: 3 17: 4 26: 3 12: 2 16: 3 3: 4 37: 2 18: 3 1: 3 10: 4 40: 4 43: 3 27: 2 2: 2 25: 3 41: 3 35: 3 13: 4 8: 3 30: 3 33: 4 38: 4 21: 3 32: 4 5: 3 20: 3 28: 4 19: 3 34: 3 42: 4 44: 3 29: 3 6: 3 22: 4 9: 4 23: 2 4:...",
+      "short_justification": "Deterministic MeTTa repair pass applied before verifier scoring.",
+      "episode_metrics": {
+        "raw_reward": 3.3483333333333336,
+        "num_turns": 1.0
+      },
+      "export_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_runtime_packet_repair\\replays\\with_metta_runtime\\psycho_bench.jsonl",
+      "summary_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_runtime_packet_repair\\replays\\with_metta_runtime\\psycho_bench.summary.json",
+      "repair_applied": false,
+      "repair_report": {
+        "status": "unchanged",
+        "applied_repairs": [],
+        "detected_failures": []
+      }
+    },
+    {
+      "arm_id": "with_metta_runtime_repair",
+      "env_id": "ascii_tree",
+      "status": "success",
+      "returncode": 0,
+      "reward": 0.7999999999999999,
+      "token_usage": {
+        "prompt_tokens": 794,
+        "completion_tokens": 64,
+        "total_tokens": 858
+      },
+      "failure_types": {},
+      "visible_output_emitted": true,
+      "output_status": "completed",
+      "valid_action": true,
+      "action_type": "direct_answer_repaired",
+      "action_text": "<ascii_formatted>\npackaging\n +--brew\n +--linux-arch\n +--linux-centos\n +--linux-debian\n +--linux-fedora\n +--mac-ports\n +--snapcraft\n +--windows-chocolatey\n     +--tools\n</ascii_formatted>",
+      "action_excerpt": "<ascii_formatted> packaging +--brew +--linux-arch +--linux-centos +--linux-debian +--linux-fedora +--mac-ports +--snapcraft +--windows-chocolatey +--tools </ascii_formatted>",
+      "short_justification": "Deterministic MeTTa repair pass applied before verifier scoring.",
+      "episode_metrics": {
+        "ascii_tree_similarity_reward": 0.8,
+        "ascii_tree_continuous_reward": 0.8,
+        "num_turns": 1.0
+      },
+      "export_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_runtime_packet_repair\\replays\\with_metta_runtime\\ascii_tree.jsonl",
+      "summary_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_runtime_packet_repair\\replays\\with_metta_runtime\\ascii_tree.summary.json",
+      "repair_applied": false,
+      "repair_report": {
+        "status": "unchanged",
+        "applied_repairs": [],
+        "detected_failures": []
+      }
+    },
+    {
+      "arm_id": "with_metta_runtime_repair",
+      "env_id": "pydantic_adherence",
+      "status": "success",
+      "returncode": 0,
+      "reward": 1.0,
+      "token_usage": {
+        "prompt_tokens": 1522,
+        "completion_tokens": 178,
+        "total_tokens": 1700
+      },
+      "failure_types": {},
+      "visible_output_emitted": true,
+      "output_status": "completed",
+      "valid_action": true,
+      "action_type": "direct_answer_repaired",
+      "action_text": "{\"policy_id\":\"11111111-1111-1111-1111-111111111111\",\"name\":\"Main\",\"max_books\":3,\"periods\":[{\"genre\":\"fiction\",\"days\":14,\"allow_renewal\":true},{\"genre\":\"non-fiction\",\"days\":21,\"allow_renewal\":true},{\"genre\":\"children\",\"days\":7,\"allow_renewal\":true},{\"genre\":\"reference\",\"days\":5,\"allow_renewal\":false}],\"fine_policy\":{\"per_day\":1.0,\"max_total\":5.0},\"renewal_policy\":{\"max_renewals\":1,\"cooldown\":\"1\"},\"exceptions\":{},\"created_at\":\"2026-01-01T00:00:00\"}",
+      "action_excerpt": "{\"policy_id\":\"11111111-1111-1111-1111-111111111111\",\"name\":\"Main\",\"max_books\":3,\"periods\":[{\"genre\":\"fiction\",\"days\":14,\"allow_renewal\":true},{\"genre\":\"non-fiction\",\"days\":21,\"allow_renewal\":true},{\"genre\":\"children\",...",
+      "short_justification": "Deterministic MeTTa repair pass applied before verifier scoring.",
+      "episode_metrics": {
+        "pydantic_adherence_reward_func": 1.0,
+        "num_turns": 1.0
+      },
+      "export_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_runtime_packet_repair\\replays\\with_metta_runtime\\pydantic_adherence.jsonl",
+      "summary_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_runtime_packet_repair\\replays\\with_metta_runtime\\pydantic_adherence.summary.json",
+      "repair_applied": false,
+      "repair_report": {
+        "status": "unchanged",
+        "applied_repairs": [],
+        "detected_failures": []
+      }
+    }
+  ]
+}

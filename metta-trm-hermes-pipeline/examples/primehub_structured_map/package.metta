@@ -1,0 +1,8 @@
+(package-id "primehub_structured_map")
+(base-skill "primehub-structured-map-hermes")
+(overlay "trm-mcp")
+(owner "Hermes Skills research")
+(env "psycho_bench")
+(env "ascii_tree")
+(env "pydantic_adherence")
+(goal "compile symbolic task rules into retrieval packets, critic hints, and trace labels")

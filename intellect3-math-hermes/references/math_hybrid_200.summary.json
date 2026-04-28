@@ -1,0 +1,73 @@
+{
+  "run_name": "qwen27b_intellect3_math_hybrid_200",
+  "config_path": "C:\\projects\\trm_observability_harness\\configs\\qwen27b_intellect3_math_hybrid_200.yaml",
+  "source_path": "C:\\projects\\Tesseract\\Tesseract\\data\\normalized_trajectories\\intellect_3_math.jsonl",
+  "rows": 200,
+  "arms": {
+    "vanilla": {
+      "rows": 200,
+      "exact_match_rate": 0.085,
+      "visible_output_rate": 1.0,
+      "avg_token_total": 156.01,
+      "avg_latency_seconds": 1.9869
+    },
+    "generic_skill": {
+      "rows": 200,
+      "exact_match_rate": 0.07,
+      "visible_output_rate": 1.0,
+      "avg_token_total": 171.89,
+      "avg_latency_seconds": 2.0269
+    },
+    "math_skill": {
+      "rows": 200,
+      "exact_match_rate": 0.06,
+      "visible_output_rate": 1.0,
+      "avg_token_total": 178.03,
+      "avg_latency_seconds": 2.0586
+    },
+    "math_skill_trm": {
+      "rows": 200,
+      "exact_match_rate": 0.07,
+      "visible_output_rate": 1.0,
+      "avg_token_total": 179.78,
+      "avg_latency_seconds": 1.537,
+      "math_skill_exact_match_rate": 0.06,
+      "trm_skill_exact_match_rate": 0.105,
+      "critic_negative_rate": 0.0,
+      "retrieval_present_rate": 1.0,
+      "route_sources": {
+        "math_skill": 191,
+        "math_skill_trm": 9
+      }
+    }
+  },
+  "baseline_arm": "vanilla",
+  "deltas_vs_baseline": {
+    "vanilla": {
+      "exact_match_rate_delta": 0.0,
+      "avg_token_total_delta": 0.0
+    },
+    "generic_skill": {
+      "exact_match_rate_delta": -0.015,
+      "avg_token_total_delta": 15.88
+    },
+    "math_skill": {
+      "exact_match_rate_delta": -0.025,
+      "avg_token_total_delta": 22.02
+    },
+    "math_skill_trm": {
+      "exact_match_rate_delta": -0.015,
+      "avg_token_total_delta": 23.77
+    }
+  },
+  "artifacts": {
+    "predictions": "C:\\projects\\trm_observability_harness\\data\\qwen27b_intellect3_math_hybrid_200\\predictions.jsonl",
+    "summary": "C:\\projects\\trm_observability_harness\\data\\qwen27b_intellect3_math_hybrid_200\\summary.json"
+  },
+  "trm": {
+    "source_input": "C:\\projects\\trm_observability_harness\\data\\trm_math_intellect3_math_hybrid_support_posonly.jsonl",
+    "retriever_examples": 6,
+    "critic_examples": 6,
+    "top_k": 5
+  }
+}

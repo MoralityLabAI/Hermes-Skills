@@ -1,0 +1,8 @@
+(failure-mode "if_summarize_judge" "empty output or fallback action")
+(failure-mode "if_summarize_judge" "correct topic but wrong structural family")
+(failure-mode "if_summarize_judge" "wrong exact count for words, sentences, bullets, or hashtags")
+(failure-mode "if_summarize_judge" "wrong punctuation, casing, or wrapper tags")
+(failure-mode "if_summarize_judge" "extra explanation around an otherwise valid constrained answer")
+(repair-hint "if_summarize_judge" "classify the family first, then rewrite to the canonical minimal structure for that family")
+(repair-hint "if_summarize_judge" "prefer the smallest structurally valid answer over verbose content preservation")
+(trace-label "if_summarize_judge" "constraint_family_failure")

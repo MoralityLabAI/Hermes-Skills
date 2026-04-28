@@ -1,0 +1,3350 @@
+{
+  "rows": 109,
+  "gate": {
+    "exact_match_rate": 0.0183,
+    "route_choice_accuracy": 0.6055,
+    "avg_confidence": 0.7516
+  },
+  "feature_gate": {
+    "exact_match_rate": 0.0826,
+    "route_choice_accuracy": 0.5688,
+    "route_sources": {
+      "logic_skill_trm": 32,
+      "logic_skill": 77
+    }
+  },
+  "support_gate": {
+    "exact_match_rate": 0.0826,
+    "route_choice_accuracy": 0.5688,
+    "route_sources": {
+      "logic_skill_trm": 32,
+      "logic_skill": 77
+    },
+    "selected_phrases": [
+      "row constraints",
+      "col constraints",
+      "adjacent tents",
+      "tree neighbor",
+      "tent neighbor"
+    ],
+    "training_stats": {
+      "positive_rows": 33,
+      "negative_rows": 76,
+      "candidate_count": 0,
+      "selected_count": 5
+    }
+  },
+  "structural_gate": {
+    "exact_match_rate": 0.1927,
+    "route_choice_accuracy": 0.3761,
+    "route_sources": {
+      "logic_skill_trm": 77,
+      "logic_skill": 32
+    }
+  },
+  "signature_gate": {
+    "exact_match_rate": 0.3028,
+    "route_choice_accuracy": 0.9266,
+    "route_sources": {
+      "logic_skill": 68,
+      "logic_skill_trm": 41
+    },
+    "selected_signatures": [
+      "{\"row_constraints\":[2,0,2,0,1],\"col_constraints\":[1,1,0,2,1]}",
+      "{\"row_constraints\":[0,1,1,1,1],\"col_constraints\":[2,0,0,2]}",
+      "{\"row_constraints\":[2,1,1,0,1],\"col_constraints\":[1,0,2,0,2]}",
+      "{\"row_constraints\":[2,0,2,0,1],\"col_constraints\":[2,0,0,1,2]}",
+      "{\"row_constraints\":[2,0,2,0],\"col_constraints\":[1,1,1,0,1]}",
+      "{\"row_constraints\":[2,0,1,1,1],\"col_constraints\":[1,2,1,0,1]}",
+      "{\"row_constraints\":[2,0,1,1,0],\"col_constraints\":[2,0,2,0]}",
+      "{\"row_constraints\":[2,0,1],\"col_constraints\":[2,0,0,1,0]}",
+      "{\"row_constraints\":[2,0,1],\"col_constraints\":[1,1,1,0,0]}",
+      "{\"row_constraints\":[1,1,1,1,1],\"col_constraints\":[0,1,2,0,2]}",
+      "{\"row_constraints\":[1,1,1,1,0],\"col_constraints\":[2,0,1,1]}",
+      "{\"row_constraints\":[1,1,1,1,0],\"col_constraints\":[1,1,0,2]}",
+      "{\"row_constraints\":[1,1,1,1],\"col_constraints\":[2,0,2,0,0]}",
+      "{\"row_constraints\":[1,1,0,3,0],\"col_constraints\":[1,0,2,0,2]}",
+      "{\"row_constraints\":[1,1,0,2,0],\"col_constraints\":[1,1,1,1]}",
+      "{\"row_constraints\":[1,1,0,2],\"col_constraints\":[1,0,2,0,1]}",
+      "{\"row_constraints\":[1,0,3,0],\"col_constraints\":[1,1,1,0,1]}",
+      "{\"row_constraints\":[1,0,2,0,2],\"col_constraints\":[2,0,0,3,0]}",
+      "{\"row_constraints\":[1,0,2,0,2],\"col_constraints\":[1,1,0,3,0]}",
+      "{\"row_constraints\":[1,0,1,2],\"col_constraints\":[1,1,1,0,1]}",
+      "{\"row_constraints\":[1,0,1,1,1],\"col_constraints\":[1,0,2,1]}",
+      "{\"row_constraints\":[1,0,0,0,2],\"col_constraints\":[1,1,1]}",
+      "{\"row_constraints\":[0,2,0,2],\"col_constraints\":[0,2,0,0,2]}",
+      "{\"row_constraints\":[0,2,0,2],\"col_constraints\":[0,1,1,0,2]}",
+      "{\"row_constraints\":[0,1,2,0,2],\"col_constraints\":[1,0,2,0,2]}",
+      "{\"row_constraints\":[0,1,1,2],\"col_constraints\":[1,0,1,1,1]}",
+      "{\"row_constraints\":[0,1,1,0,2],\"col_constraints\":[2,0,2,0]}",
+      "{\"row_constraints\":[0,1,1,0,2],\"col_constraints\":[0,2,0,2]}",
+      "{\"row_constraints\":[0,1,0,2],\"col_constraints\":[0,1,1,1]}",
+      "{\"row_constraints\":[0,0,2,0,3],\"col_constraints\":[1,1,1,1,1]}",
+      "{\"row_constraints\":[0,0,2,0,2],\"col_constraints\":[1,1,1,1]}"
+    ],
+    "training_stats": {
+      "positive_signatures": 31,
+      "negative_signatures": 73,
+      "selected_count": 31
+    }
+  },
+  "oracle": {
+    "exact_match_rate": 0.3028,
+    "regret_rate": 0.2844
+  },
+  "baselines": {
+    "logic_skill_exact_match_rate": 0.0,
+    "trm_skill_exact_match_rate": 0.3028
+  },
+  "route_sources": {
+    "logic_skill": 95,
+    "logic_skill_trm": 14
+  },
+  "feature_route_sources": {
+    "logic_skill_trm": 32,
+    "logic_skill": 77
+  },
+  "support_route_sources": {
+    "logic_skill_trm": 32,
+    "logic_skill": 77
+  },
+  "structural_route_sources": {
+    "logic_skill_trm": 77,
+    "logic_skill": 32
+  },
+  "feature_misroutes": [
+    {
+      "row_id": "intellect_3_logic_0",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "feature_confidence": 1.0,
+      "feature_parts": {
+        "trm_score": 1,
+        "math_score": 0,
+        "trm_hits": [
+          "row constraints"
+        ],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_102",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "feature_confidence": 1.0,
+      "feature_parts": {
+        "trm_score": 1,
+        "math_score": 0,
+        "trm_hits": [
+          "row constraints"
+        ],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_104",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "feature_confidence": 1.0,
+      "feature_parts": {
+        "trm_score": 1,
+        "math_score": 0,
+        "trm_hits": [
+          "row constraints"
+        ],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_105",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "feature_confidence": 0.0,
+      "feature_parts": {
+        "trm_score": 0,
+        "math_score": 0,
+        "trm_hits": [],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_106",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "feature_confidence": 1.0,
+      "feature_parts": {
+        "trm_score": 1,
+        "math_score": 0,
+        "trm_hits": [
+          "row constraints"
+        ],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_11",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "feature_confidence": 1.0,
+      "feature_parts": {
+        "trm_score": 1,
+        "math_score": 0,
+        "trm_hits": [
+          "row constraints"
+        ],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_12",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "feature_confidence": 0.0,
+      "feature_parts": {
+        "trm_score": 0,
+        "math_score": 0,
+        "trm_hits": [],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_13",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "feature_confidence": 0.0,
+      "feature_parts": {
+        "trm_score": 0,
+        "math_score": 0,
+        "trm_hits": [],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_17",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "feature_confidence": 1.0,
+      "feature_parts": {
+        "trm_score": 1,
+        "math_score": 0,
+        "trm_hits": [
+          "row constraints"
+        ],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_2",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "feature_confidence": 0.0,
+      "feature_parts": {
+        "trm_score": 0,
+        "math_score": 0,
+        "trm_hits": [],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_21",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "feature_confidence": 1.0,
+      "feature_parts": {
+        "trm_score": 1,
+        "math_score": 0,
+        "trm_hits": [
+          "row constraints"
+        ],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_22",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "feature_confidence": 1.0,
+      "feature_parts": {
+        "trm_score": 1,
+        "math_score": 0,
+        "trm_hits": [
+          "row constraints"
+        ],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_26",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "feature_confidence": 0.0,
+      "feature_parts": {
+        "trm_score": 0,
+        "math_score": 0,
+        "trm_hits": [],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_27",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "feature_confidence": 1.0,
+      "feature_parts": {
+        "trm_score": 1,
+        "math_score": 0,
+        "trm_hits": [
+          "row constraints"
+        ],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_3",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "feature_confidence": 0.0,
+      "feature_parts": {
+        "trm_score": 0,
+        "math_score": 0,
+        "trm_hits": [],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_32",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "feature_confidence": 0.0,
+      "feature_parts": {
+        "trm_score": 0,
+        "math_score": 0,
+        "trm_hits": [],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_33",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "feature_confidence": 0.0,
+      "feature_parts": {
+        "trm_score": 0,
+        "math_score": 0,
+        "trm_hits": [],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_35",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "feature_confidence": 0.0,
+      "feature_parts": {
+        "trm_score": 0,
+        "math_score": 0,
+        "trm_hits": [],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_37",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "feature_confidence": 1.0,
+      "feature_parts": {
+        "trm_score": 1,
+        "math_score": 0,
+        "trm_hits": [
+          "row constraints"
+        ],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_38",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "feature_confidence": 1.0,
+      "feature_parts": {
+        "trm_score": 1,
+        "math_score": 0,
+        "trm_hits": [
+          "row constraints"
+        ],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_39",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "feature_confidence": 0.0,
+      "feature_parts": {
+        "trm_score": 0,
+        "math_score": 0,
+        "trm_hits": [],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_40",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "feature_confidence": 1.0,
+      "feature_parts": {
+        "trm_score": 1,
+        "math_score": 0,
+        "trm_hits": [
+          "row constraints"
+        ],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_41",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "feature_confidence": 1.0,
+      "feature_parts": {
+        "trm_score": 1,
+        "math_score": 0,
+        "trm_hits": [
+          "row constraints"
+        ],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_46",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "feature_confidence": 0.0,
+      "feature_parts": {
+        "trm_score": 0,
+        "math_score": 0,
+        "trm_hits": [],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_5",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "feature_confidence": 1.0,
+      "feature_parts": {
+        "trm_score": 1,
+        "math_score": 0,
+        "trm_hits": [
+          "row constraints"
+        ],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_50",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "feature_confidence": 0.0,
+      "feature_parts": {
+        "trm_score": 0,
+        "math_score": 0,
+        "trm_hits": [],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_53",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "feature_confidence": 0.0,
+      "feature_parts": {
+        "trm_score": 0,
+        "math_score": 0,
+        "trm_hits": [],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_54",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "feature_confidence": 1.0,
+      "feature_parts": {
+        "trm_score": 1,
+        "math_score": 0,
+        "trm_hits": [
+          "row constraints"
+        ],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_56",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "feature_confidence": 1.0,
+      "feature_parts": {
+        "trm_score": 1,
+        "math_score": 0,
+        "trm_hits": [
+          "row constraints"
+        ],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_59",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "feature_confidence": 1.0,
+      "feature_parts": {
+        "trm_score": 1,
+        "math_score": 0,
+        "trm_hits": [
+          "row constraints"
+        ],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_6",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "feature_confidence": 1.0,
+      "feature_parts": {
+        "trm_score": 1,
+        "math_score": 0,
+        "trm_hits": [
+          "row constraints"
+        ],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_62",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "feature_confidence": 0.0,
+      "feature_parts": {
+        "trm_score": 0,
+        "math_score": 0,
+        "trm_hits": [],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_63",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "feature_confidence": 1.0,
+      "feature_parts": {
+        "trm_score": 1,
+        "math_score": 0,
+        "trm_hits": [
+          "row constraints"
+        ],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_64",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "feature_confidence": 0.0,
+      "feature_parts": {
+        "trm_score": 0,
+        "math_score": 0,
+        "trm_hits": [],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_66",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "feature_confidence": 0.0,
+      "feature_parts": {
+        "trm_score": 0,
+        "math_score": 0,
+        "trm_hits": [],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_70",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "feature_confidence": 0.0,
+      "feature_parts": {
+        "trm_score": 0,
+        "math_score": 0,
+        "trm_hits": [],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_73",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "feature_confidence": 0.0,
+      "feature_parts": {
+        "trm_score": 0,
+        "math_score": 0,
+        "trm_hits": [],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_74",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "feature_confidence": 1.0,
+      "feature_parts": {
+        "trm_score": 1,
+        "math_score": 0,
+        "trm_hits": [
+          "row constraints"
+        ],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_75",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "feature_confidence": 0.0,
+      "feature_parts": {
+        "trm_score": 0,
+        "math_score": 0,
+        "trm_hits": [],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_76",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "feature_confidence": 0.0,
+      "feature_parts": {
+        "trm_score": 0,
+        "math_score": 0,
+        "trm_hits": [],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_79",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "feature_confidence": 0.0,
+      "feature_parts": {
+        "trm_score": 0,
+        "math_score": 0,
+        "trm_hits": [],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_85",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "feature_confidence": 1.0,
+      "feature_parts": {
+        "trm_score": 1,
+        "math_score": 0,
+        "trm_hits": [
+          "row constraints"
+        ],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_87",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "feature_confidence": 0.0,
+      "feature_parts": {
+        "trm_score": 0,
+        "math_score": 0,
+        "trm_hits": [],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_89",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "feature_confidence": 0.0,
+      "feature_parts": {
+        "trm_score": 0,
+        "math_score": 0,
+        "trm_hits": [],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_91",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "feature_confidence": 0.0,
+      "feature_parts": {
+        "trm_score": 0,
+        "math_score": 0,
+        "trm_hits": [],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_93",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "feature_confidence": 1.0,
+      "feature_parts": {
+        "trm_score": 1,
+        "math_score": 0,
+        "trm_hits": [
+          "row constraints"
+        ],
+        "math_hits": []
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_95",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "feature_confidence": 1.0,
+      "feature_parts": {
+        "trm_score": 1,
+        "math_score": 0,
+        "trm_hits": [
+          "row constraints"
+        ],
+        "math_hits": []
+      }
+    }
+  ],
+  "support_misroutes": [
+    {
+      "row_id": "intellect_3_logic_0",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "support_confidence": 1.0,
+      "support_parts": {
+        "hits": [
+          "row constraints"
+        ],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_102",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "support_confidence": 1.0,
+      "support_parts": {
+        "hits": [
+          "row constraints"
+        ],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_104",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "support_confidence": 1.0,
+      "support_parts": {
+        "hits": [
+          "row constraints"
+        ],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_105",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "support_confidence": 0.0,
+      "support_parts": {
+        "hits": [],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_106",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "support_confidence": 1.0,
+      "support_parts": {
+        "hits": [
+          "row constraints"
+        ],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_11",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "support_confidence": 1.0,
+      "support_parts": {
+        "hits": [
+          "row constraints"
+        ],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_12",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "support_confidence": 0.0,
+      "support_parts": {
+        "hits": [],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_13",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "support_confidence": 0.0,
+      "support_parts": {
+        "hits": [],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_17",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "support_confidence": 1.0,
+      "support_parts": {
+        "hits": [
+          "row constraints"
+        ],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_2",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "support_confidence": 0.0,
+      "support_parts": {
+        "hits": [],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_21",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "support_confidence": 1.0,
+      "support_parts": {
+        "hits": [
+          "row constraints"
+        ],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_22",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "support_confidence": 1.0,
+      "support_parts": {
+        "hits": [
+          "row constraints"
+        ],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_26",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "support_confidence": 0.0,
+      "support_parts": {
+        "hits": [],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_27",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "support_confidence": 1.0,
+      "support_parts": {
+        "hits": [
+          "row constraints"
+        ],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_3",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "support_confidence": 0.0,
+      "support_parts": {
+        "hits": [],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_32",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "support_confidence": 0.0,
+      "support_parts": {
+        "hits": [],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_33",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "support_confidence": 0.0,
+      "support_parts": {
+        "hits": [],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_35",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "support_confidence": 0.0,
+      "support_parts": {
+        "hits": [],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_37",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "support_confidence": 1.0,
+      "support_parts": {
+        "hits": [
+          "row constraints"
+        ],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_38",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "support_confidence": 1.0,
+      "support_parts": {
+        "hits": [
+          "row constraints"
+        ],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_39",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "support_confidence": 0.0,
+      "support_parts": {
+        "hits": [],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_40",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "support_confidence": 1.0,
+      "support_parts": {
+        "hits": [
+          "row constraints"
+        ],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_41",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "support_confidence": 1.0,
+      "support_parts": {
+        "hits": [
+          "row constraints"
+        ],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_46",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "support_confidence": 0.0,
+      "support_parts": {
+        "hits": [],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_5",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "support_confidence": 1.0,
+      "support_parts": {
+        "hits": [
+          "row constraints"
+        ],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_50",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "support_confidence": 0.0,
+      "support_parts": {
+        "hits": [],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_53",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "support_confidence": 0.0,
+      "support_parts": {
+        "hits": [],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_54",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "support_confidence": 1.0,
+      "support_parts": {
+        "hits": [
+          "row constraints"
+        ],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_56",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "support_confidence": 1.0,
+      "support_parts": {
+        "hits": [
+          "row constraints"
+        ],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_59",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "support_confidence": 1.0,
+      "support_parts": {
+        "hits": [
+          "row constraints"
+        ],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_6",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "support_confidence": 1.0,
+      "support_parts": {
+        "hits": [
+          "row constraints"
+        ],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_62",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "support_confidence": 0.0,
+      "support_parts": {
+        "hits": [],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_63",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "support_confidence": 1.0,
+      "support_parts": {
+        "hits": [
+          "row constraints"
+        ],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_64",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "support_confidence": 0.0,
+      "support_parts": {
+        "hits": [],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_66",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "support_confidence": 0.0,
+      "support_parts": {
+        "hits": [],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_70",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "support_confidence": 0.0,
+      "support_parts": {
+        "hits": [],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_73",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "support_confidence": 0.0,
+      "support_parts": {
+        "hits": [],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_74",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "support_confidence": 1.0,
+      "support_parts": {
+        "hits": [
+          "row constraints"
+        ],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_75",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "support_confidence": 0.0,
+      "support_parts": {
+        "hits": [],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_76",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "support_confidence": 0.0,
+      "support_parts": {
+        "hits": [],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_79",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "support_confidence": 0.0,
+      "support_parts": {
+        "hits": [],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_85",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "support_confidence": 1.0,
+      "support_parts": {
+        "hits": [
+          "row constraints"
+        ],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_87",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "support_confidence": 0.0,
+      "support_parts": {
+        "hits": [],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_89",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "support_confidence": 0.0,
+      "support_parts": {
+        "hits": [],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_91",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "support_confidence": 0.0,
+      "support_parts": {
+        "hits": [],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_93",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "support_confidence": 1.0,
+      "support_parts": {
+        "hits": [
+          "row constraints"
+        ],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_95",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "support_confidence": 1.0,
+      "support_parts": {
+        "hits": [
+          "row constraints"
+        ],
+        "selected_phrases": [
+          "row constraints",
+          "col constraints",
+          "adjacent tents",
+          "tree neighbor",
+          "tent neighbor"
+        ],
+        "min_hits": 1,
+        "training_stats": {
+          "positive_rows": 33,
+          "negative_rows": 76,
+          "candidate_count": 0,
+          "selected_count": 5
+        }
+      }
+    }
+  ],
+  "structural_misroutes": [
+    {
+      "row_id": "intellect_3_logic_0",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_1",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 4,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_10",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 4,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_100",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "structural_confidence": 0.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 4,
+        "route_trm": false
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_102",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 4,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_104",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 4,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_105",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "structural_confidence": 0.0,
+      "structural_parts": {
+        "row_len": 4,
+        "col_len": 4,
+        "route_trm": false
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_106",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 4,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_107",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_108",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_11",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_14",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_16",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 4,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_17",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 4,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_18",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_19",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_20",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 4,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_21",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_22",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_25",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_28",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_29",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 3,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_30",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_31",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 4,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_34",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 3,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_36",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_37",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_40",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 3,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_42",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_43",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_44",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 4,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_45",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_48",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 4,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_49",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_5",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_52",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_53",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "structural_confidence": 0.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 4,
+        "route_trm": false
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_56",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 3,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_57",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 4,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_58",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "structural_confidence": 0.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 4,
+        "route_trm": false
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_59",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_6",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_61",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_62",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "structural_confidence": 0.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 4,
+        "route_trm": false
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_63",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_66",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "structural_confidence": 0.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 4,
+        "route_trm": false
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_7",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_72",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_74",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 4,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_75",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "structural_confidence": 0.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 3,
+        "route_trm": false
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_77",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "structural_confidence": 0.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 4,
+        "route_trm": false
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_78",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_79",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "structural_confidence": 0.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 4,
+        "route_trm": false
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_8",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 4,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_81",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_83",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 4,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_84",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_85",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_87",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "structural_confidence": 0.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 4,
+        "route_trm": false
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_89",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "structural_confidence": 0.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 4,
+        "route_trm": false
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_9",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 4,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_90",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_91",
+      "route_label": "logic_skill",
+      "oracle_route_label": "logic_skill_trm",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": true,
+      "structural_confidence": 0.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 4,
+        "route_trm": false
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_92",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_95",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_96",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_98",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 5,
+        "col_len": 5,
+        "route_trm": true
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_99",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "structural_confidence": 1.0,
+      "structural_parts": {
+        "row_len": 3,
+        "col_len": 5,
+        "route_trm": true
+      }
+    }
+  ],
+  "signature_misroutes": [
+    {
+      "row_id": "intellect_3_logic_31",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "signature_confidence": 1.0,
+      "signature_parts": {
+        "signature": "{\"row_constraints\":[0,2,0,2],\"col_constraints\":[0,1,1,0,2]}",
+        "hits": [
+          "{\"row_constraints\":[0,2,0,2],\"col_constraints\":[0,1,1,0,2]}"
+        ],
+        "selected_signatures": [
+          "{\"row_constraints\":[2,0,2,0,1],\"col_constraints\":[1,1,0,2,1]}",
+          "{\"row_constraints\":[0,1,1,1,1],\"col_constraints\":[2,0,0,2]}",
+          "{\"row_constraints\":[2,1,1,0,1],\"col_constraints\":[1,0,2,0,2]}",
+          "{\"row_constraints\":[2,0,2,0,1],\"col_constraints\":[2,0,0,1,2]}",
+          "{\"row_constraints\":[2,0,2,0],\"col_constraints\":[1,1,1,0,1]}",
+          "{\"row_constraints\":[2,0,1,1,1],\"col_constraints\":[1,2,1,0,1]}",
+          "{\"row_constraints\":[2,0,1,1,0],\"col_constraints\":[2,0,2,0]}",
+          "{\"row_constraints\":[2,0,1],\"col_constraints\":[2,0,0,1,0]}",
+          "{\"row_constraints\":[2,0,1],\"col_constraints\":[1,1,1,0,0]}",
+          "{\"row_constraints\":[1,1,1,1,1],\"col_constraints\":[0,1,2,0,2]}",
+          "{\"row_constraints\":[1,1,1,1,0],\"col_constraints\":[2,0,1,1]}",
+          "{\"row_constraints\":[1,1,1,1,0],\"col_constraints\":[1,1,0,2]}",
+          "{\"row_constraints\":[1,1,1,1],\"col_constraints\":[2,0,2,0,0]}",
+          "{\"row_constraints\":[1,1,0,3,0],\"col_constraints\":[1,0,2,0,2]}",
+          "{\"row_constraints\":[1,1,0,2,0],\"col_constraints\":[1,1,1,1]}",
+          "{\"row_constraints\":[1,1,0,2],\"col_constraints\":[1,0,2,0,1]}",
+          "{\"row_constraints\":[1,0,3,0],\"col_constraints\":[1,1,1,0,1]}",
+          "{\"row_constraints\":[1,0,2,0,2],\"col_constraints\":[2,0,0,3,0]}",
+          "{\"row_constraints\":[1,0,2,0,2],\"col_constraints\":[1,1,0,3,0]}",
+          "{\"row_constraints\":[1,0,1,2],\"col_constraints\":[1,1,1,0,1]}",
+          "{\"row_constraints\":[1,0,1,1,1],\"col_constraints\":[1,0,2,1]}",
+          "{\"row_constraints\":[1,0,0,0,2],\"col_constraints\":[1,1,1]}",
+          "{\"row_constraints\":[0,2,0,2],\"col_constraints\":[0,2,0,0,2]}",
+          "{\"row_constraints\":[0,2,0,2],\"col_constraints\":[0,1,1,0,2]}",
+          "{\"row_constraints\":[0,1,2,0,2],\"col_constraints\":[1,0,2,0,2]}",
+          "{\"row_constraints\":[0,1,1,2],\"col_constraints\":[1,0,1,1,1]}",
+          "{\"row_constraints\":[0,1,1,0,2],\"col_constraints\":[2,0,2,0]}",
+          "{\"row_constraints\":[0,1,1,0,2],\"col_constraints\":[0,2,0,2]}",
+          "{\"row_constraints\":[0,1,0,2],\"col_constraints\":[0,1,1,1]}",
+          "{\"row_constraints\":[0,0,2,0,3],\"col_constraints\":[1,1,1,1,1]}",
+          "{\"row_constraints\":[0,0,2,0,2],\"col_constraints\":[1,1,1,1]}"
+        ],
+        "training_stats": {
+          "positive_signatures": 31,
+          "negative_signatures": 73,
+          "selected_count": 31
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_44",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "signature_confidence": 1.0,
+      "signature_parts": {
+        "signature": "{\"row_constraints\":[1,0,1,2],\"col_constraints\":[1,1,1,0,1]}",
+        "hits": [
+          "{\"row_constraints\":[1,0,1,2],\"col_constraints\":[1,1,1,0,1]}"
+        ],
+        "selected_signatures": [
+          "{\"row_constraints\":[2,0,2,0,1],\"col_constraints\":[1,1,0,2,1]}",
+          "{\"row_constraints\":[0,1,1,1,1],\"col_constraints\":[2,0,0,2]}",
+          "{\"row_constraints\":[2,1,1,0,1],\"col_constraints\":[1,0,2,0,2]}",
+          "{\"row_constraints\":[2,0,2,0,1],\"col_constraints\":[2,0,0,1,2]}",
+          "{\"row_constraints\":[2,0,2,0],\"col_constraints\":[1,1,1,0,1]}",
+          "{\"row_constraints\":[2,0,1,1,1],\"col_constraints\":[1,2,1,0,1]}",
+          "{\"row_constraints\":[2,0,1,1,0],\"col_constraints\":[2,0,2,0]}",
+          "{\"row_constraints\":[2,0,1],\"col_constraints\":[2,0,0,1,0]}",
+          "{\"row_constraints\":[2,0,1],\"col_constraints\":[1,1,1,0,0]}",
+          "{\"row_constraints\":[1,1,1,1,1],\"col_constraints\":[0,1,2,0,2]}",
+          "{\"row_constraints\":[1,1,1,1,0],\"col_constraints\":[2,0,1,1]}",
+          "{\"row_constraints\":[1,1,1,1,0],\"col_constraints\":[1,1,0,2]}",
+          "{\"row_constraints\":[1,1,1,1],\"col_constraints\":[2,0,2,0,0]}",
+          "{\"row_constraints\":[1,1,0,3,0],\"col_constraints\":[1,0,2,0,2]}",
+          "{\"row_constraints\":[1,1,0,2,0],\"col_constraints\":[1,1,1,1]}",
+          "{\"row_constraints\":[1,1,0,2],\"col_constraints\":[1,0,2,0,1]}",
+          "{\"row_constraints\":[1,0,3,0],\"col_constraints\":[1,1,1,0,1]}",
+          "{\"row_constraints\":[1,0,2,0,2],\"col_constraints\":[2,0,0,3,0]}",
+          "{\"row_constraints\":[1,0,2,0,2],\"col_constraints\":[1,1,0,3,0]}",
+          "{\"row_constraints\":[1,0,1,2],\"col_constraints\":[1,1,1,0,1]}",
+          "{\"row_constraints\":[1,0,1,1,1],\"col_constraints\":[1,0,2,1]}",
+          "{\"row_constraints\":[1,0,0,0,2],\"col_constraints\":[1,1,1]}",
+          "{\"row_constraints\":[0,2,0,2],\"col_constraints\":[0,2,0,0,2]}",
+          "{\"row_constraints\":[0,2,0,2],\"col_constraints\":[0,1,1,0,2]}",
+          "{\"row_constraints\":[0,1,2,0,2],\"col_constraints\":[1,0,2,0,2]}",
+          "{\"row_constraints\":[0,1,1,2],\"col_constraints\":[1,0,1,1,1]}",
+          "{\"row_constraints\":[0,1,1,0,2],\"col_constraints\":[2,0,2,0]}",
+          "{\"row_constraints\":[0,1,1,0,2],\"col_constraints\":[0,2,0,2]}",
+          "{\"row_constraints\":[0,1,0,2],\"col_constraints\":[0,1,1,1]}",
+          "{\"row_constraints\":[0,0,2,0,3],\"col_constraints\":[1,1,1,1,1]}",
+          "{\"row_constraints\":[0,0,2,0,2],\"col_constraints\":[1,1,1,1]}"
+        ],
+        "training_stats": {
+          "positive_signatures": 31,
+          "negative_signatures": 73,
+          "selected_count": 31
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_49",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "signature_confidence": 1.0,
+      "signature_parts": {
+        "signature": "{\"row_constraints\":[1,1,1,1,1],\"col_constraints\":[0,1,2,0,2]}",
+        "hits": [
+          "{\"row_constraints\":[1,1,1,1,1],\"col_constraints\":[0,1,2,0,2]}"
+        ],
+        "selected_signatures": [
+          "{\"row_constraints\":[2,0,2,0,1],\"col_constraints\":[1,1,0,2,1]}",
+          "{\"row_constraints\":[0,1,1,1,1],\"col_constraints\":[2,0,0,2]}",
+          "{\"row_constraints\":[2,1,1,0,1],\"col_constraints\":[1,0,2,0,2]}",
+          "{\"row_constraints\":[2,0,2,0,1],\"col_constraints\":[2,0,0,1,2]}",
+          "{\"row_constraints\":[2,0,2,0],\"col_constraints\":[1,1,1,0,1]}",
+          "{\"row_constraints\":[2,0,1,1,1],\"col_constraints\":[1,2,1,0,1]}",
+          "{\"row_constraints\":[2,0,1,1,0],\"col_constraints\":[2,0,2,0]}",
+          "{\"row_constraints\":[2,0,1],\"col_constraints\":[2,0,0,1,0]}",
+          "{\"row_constraints\":[2,0,1],\"col_constraints\":[1,1,1,0,0]}",
+          "{\"row_constraints\":[1,1,1,1,1],\"col_constraints\":[0,1,2,0,2]}",
+          "{\"row_constraints\":[1,1,1,1,0],\"col_constraints\":[2,0,1,1]}",
+          "{\"row_constraints\":[1,1,1,1,0],\"col_constraints\":[1,1,0,2]}",
+          "{\"row_constraints\":[1,1,1,1],\"col_constraints\":[2,0,2,0,0]}",
+          "{\"row_constraints\":[1,1,0,3,0],\"col_constraints\":[1,0,2,0,2]}",
+          "{\"row_constraints\":[1,1,0,2,0],\"col_constraints\":[1,1,1,1]}",
+          "{\"row_constraints\":[1,1,0,2],\"col_constraints\":[1,0,2,0,1]}",
+          "{\"row_constraints\":[1,0,3,0],\"col_constraints\":[1,1,1,0,1]}",
+          "{\"row_constraints\":[1,0,2,0,2],\"col_constraints\":[2,0,0,3,0]}",
+          "{\"row_constraints\":[1,0,2,0,2],\"col_constraints\":[1,1,0,3,0]}",
+          "{\"row_constraints\":[1,0,1,2],\"col_constraints\":[1,1,1,0,1]}",
+          "{\"row_constraints\":[1,0,1,1,1],\"col_constraints\":[1,0,2,1]}",
+          "{\"row_constraints\":[1,0,0,0,2],\"col_constraints\":[1,1,1]}",
+          "{\"row_constraints\":[0,2,0,2],\"col_constraints\":[0,2,0,0,2]}",
+          "{\"row_constraints\":[0,2,0,2],\"col_constraints\":[0,1,1,0,2]}",
+          "{\"row_constraints\":[0,1,2,0,2],\"col_constraints\":[1,0,2,0,2]}",
+          "{\"row_constraints\":[0,1,1,2],\"col_constraints\":[1,0,1,1,1]}",
+          "{\"row_constraints\":[0,1,1,0,2],\"col_constraints\":[2,0,2,0]}",
+          "{\"row_constraints\":[0,1,1,0,2],\"col_constraints\":[0,2,0,2]}",
+          "{\"row_constraints\":[0,1,0,2],\"col_constraints\":[0,1,1,1]}",
+          "{\"row_constraints\":[0,0,2,0,3],\"col_constraints\":[1,1,1,1,1]}",
+          "{\"row_constraints\":[0,0,2,0,2],\"col_constraints\":[1,1,1,1]}"
+        ],
+        "training_stats": {
+          "positive_signatures": 31,
+          "negative_signatures": 73,
+          "selected_count": 31
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_61",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "signature_confidence": 1.0,
+      "signature_parts": {
+        "signature": "{\"row_constraints\":[1,1,1,1,1],\"col_constraints\":[0,1,2,0,2]}",
+        "hits": [
+          "{\"row_constraints\":[1,1,1,1,1],\"col_constraints\":[0,1,2,0,2]}"
+        ],
+        "selected_signatures": [
+          "{\"row_constraints\":[2,0,2,0,1],\"col_constraints\":[1,1,0,2,1]}",
+          "{\"row_constraints\":[0,1,1,1,1],\"col_constraints\":[2,0,0,2]}",
+          "{\"row_constraints\":[2,1,1,0,1],\"col_constraints\":[1,0,2,0,2]}",
+          "{\"row_constraints\":[2,0,2,0,1],\"col_constraints\":[2,0,0,1,2]}",
+          "{\"row_constraints\":[2,0,2,0],\"col_constraints\":[1,1,1,0,1]}",
+          "{\"row_constraints\":[2,0,1,1,1],\"col_constraints\":[1,2,1,0,1]}",
+          "{\"row_constraints\":[2,0,1,1,0],\"col_constraints\":[2,0,2,0]}",
+          "{\"row_constraints\":[2,0,1],\"col_constraints\":[2,0,0,1,0]}",
+          "{\"row_constraints\":[2,0,1],\"col_constraints\":[1,1,1,0,0]}",
+          "{\"row_constraints\":[1,1,1,1,1],\"col_constraints\":[0,1,2,0,2]}",
+          "{\"row_constraints\":[1,1,1,1,0],\"col_constraints\":[2,0,1,1]}",
+          "{\"row_constraints\":[1,1,1,1,0],\"col_constraints\":[1,1,0,2]}",
+          "{\"row_constraints\":[1,1,1,1],\"col_constraints\":[2,0,2,0,0]}",
+          "{\"row_constraints\":[1,1,0,3,0],\"col_constraints\":[1,0,2,0,2]}",
+          "{\"row_constraints\":[1,1,0,2,0],\"col_constraints\":[1,1,1,1]}",
+          "{\"row_constraints\":[1,1,0,2],\"col_constraints\":[1,0,2,0,1]}",
+          "{\"row_constraints\":[1,0,3,0],\"col_constraints\":[1,1,1,0,1]}",
+          "{\"row_constraints\":[1,0,2,0,2],\"col_constraints\":[2,0,0,3,0]}",
+          "{\"row_constraints\":[1,0,2,0,2],\"col_constraints\":[1,1,0,3,0]}",
+          "{\"row_constraints\":[1,0,1,2],\"col_constraints\":[1,1,1,0,1]}",
+          "{\"row_constraints\":[1,0,1,1,1],\"col_constraints\":[1,0,2,1]}",
+          "{\"row_constraints\":[1,0,0,0,2],\"col_constraints\":[1,1,1]}",
+          "{\"row_constraints\":[0,2,0,2],\"col_constraints\":[0,2,0,0,2]}",
+          "{\"row_constraints\":[0,2,0,2],\"col_constraints\":[0,1,1,0,2]}",
+          "{\"row_constraints\":[0,1,2,0,2],\"col_constraints\":[1,0,2,0,2]}",
+          "{\"row_constraints\":[0,1,1,2],\"col_constraints\":[1,0,1,1,1]}",
+          "{\"row_constraints\":[0,1,1,0,2],\"col_constraints\":[2,0,2,0]}",
+          "{\"row_constraints\":[0,1,1,0,2],\"col_constraints\":[0,2,0,2]}",
+          "{\"row_constraints\":[0,1,0,2],\"col_constraints\":[0,1,1,1]}",
+          "{\"row_constraints\":[0,0,2,0,3],\"col_constraints\":[1,1,1,1,1]}",
+          "{\"row_constraints\":[0,0,2,0,2],\"col_constraints\":[1,1,1,1]}"
+        ],
+        "training_stats": {
+          "positive_signatures": 31,
+          "negative_signatures": 73,
+          "selected_count": 31
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_74",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "signature_confidence": 1.0,
+      "signature_parts": {
+        "signature": "{\"row_constraints\":[1,0,3,0],\"col_constraints\":[1,1,1,0,1]}",
+        "hits": [
+          "{\"row_constraints\":[1,0,3,0],\"col_constraints\":[1,1,1,0,1]}"
+        ],
+        "selected_signatures": [
+          "{\"row_constraints\":[2,0,2,0,1],\"col_constraints\":[1,1,0,2,1]}",
+          "{\"row_constraints\":[0,1,1,1,1],\"col_constraints\":[2,0,0,2]}",
+          "{\"row_constraints\":[2,1,1,0,1],\"col_constraints\":[1,0,2,0,2]}",
+          "{\"row_constraints\":[2,0,2,0,1],\"col_constraints\":[2,0,0,1,2]}",
+          "{\"row_constraints\":[2,0,2,0],\"col_constraints\":[1,1,1,0,1]}",
+          "{\"row_constraints\":[2,0,1,1,1],\"col_constraints\":[1,2,1,0,1]}",
+          "{\"row_constraints\":[2,0,1,1,0],\"col_constraints\":[2,0,2,0]}",
+          "{\"row_constraints\":[2,0,1],\"col_constraints\":[2,0,0,1,0]}",
+          "{\"row_constraints\":[2,0,1],\"col_constraints\":[1,1,1,0,0]}",
+          "{\"row_constraints\":[1,1,1,1,1],\"col_constraints\":[0,1,2,0,2]}",
+          "{\"row_constraints\":[1,1,1,1,0],\"col_constraints\":[2,0,1,1]}",
+          "{\"row_constraints\":[1,1,1,1,0],\"col_constraints\":[1,1,0,2]}",
+          "{\"row_constraints\":[1,1,1,1],\"col_constraints\":[2,0,2,0,0]}",
+          "{\"row_constraints\":[1,1,0,3,0],\"col_constraints\":[1,0,2,0,2]}",
+          "{\"row_constraints\":[1,1,0,2,0],\"col_constraints\":[1,1,1,1]}",
+          "{\"row_constraints\":[1,1,0,2],\"col_constraints\":[1,0,2,0,1]}",
+          "{\"row_constraints\":[1,0,3,0],\"col_constraints\":[1,1,1,0,1]}",
+          "{\"row_constraints\":[1,0,2,0,2],\"col_constraints\":[2,0,0,3,0]}",
+          "{\"row_constraints\":[1,0,2,0,2],\"col_constraints\":[1,1,0,3,0]}",
+          "{\"row_constraints\":[1,0,1,2],\"col_constraints\":[1,1,1,0,1]}",
+          "{\"row_constraints\":[1,0,1,1,1],\"col_constraints\":[1,0,2,1]}",
+          "{\"row_constraints\":[1,0,0,0,2],\"col_constraints\":[1,1,1]}",
+          "{\"row_constraints\":[0,2,0,2],\"col_constraints\":[0,2,0,0,2]}",
+          "{\"row_constraints\":[0,2,0,2],\"col_constraints\":[0,1,1,0,2]}",
+          "{\"row_constraints\":[0,1,2,0,2],\"col_constraints\":[1,0,2,0,2]}",
+          "{\"row_constraints\":[0,1,1,2],\"col_constraints\":[1,0,1,1,1]}",
+          "{\"row_constraints\":[0,1,1,0,2],\"col_constraints\":[2,0,2,0]}",
+          "{\"row_constraints\":[0,1,1,0,2],\"col_constraints\":[0,2,0,2]}",
+          "{\"row_constraints\":[0,1,0,2],\"col_constraints\":[0,1,1,1]}",
+          "{\"row_constraints\":[0,0,2,0,3],\"col_constraints\":[1,1,1,1,1]}",
+          "{\"row_constraints\":[0,0,2,0,2],\"col_constraints\":[1,1,1,1]}"
+        ],
+        "training_stats": {
+          "positive_signatures": 31,
+          "negative_signatures": 73,
+          "selected_count": 31
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_8",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "signature_confidence": 1.0,
+      "signature_parts": {
+        "signature": "{\"row_constraints\":[2,0,2,0],\"col_constraints\":[1,1,1,0,1]}",
+        "hits": [
+          "{\"row_constraints\":[2,0,2,0],\"col_constraints\":[1,1,1,0,1]}"
+        ],
+        "selected_signatures": [
+          "{\"row_constraints\":[2,0,2,0,1],\"col_constraints\":[1,1,0,2,1]}",
+          "{\"row_constraints\":[0,1,1,1,1],\"col_constraints\":[2,0,0,2]}",
+          "{\"row_constraints\":[2,1,1,0,1],\"col_constraints\":[1,0,2,0,2]}",
+          "{\"row_constraints\":[2,0,2,0,1],\"col_constraints\":[2,0,0,1,2]}",
+          "{\"row_constraints\":[2,0,2,0],\"col_constraints\":[1,1,1,0,1]}",
+          "{\"row_constraints\":[2,0,1,1,1],\"col_constraints\":[1,2,1,0,1]}",
+          "{\"row_constraints\":[2,0,1,1,0],\"col_constraints\":[2,0,2,0]}",
+          "{\"row_constraints\":[2,0,1],\"col_constraints\":[2,0,0,1,0]}",
+          "{\"row_constraints\":[2,0,1],\"col_constraints\":[1,1,1,0,0]}",
+          "{\"row_constraints\":[1,1,1,1,1],\"col_constraints\":[0,1,2,0,2]}",
+          "{\"row_constraints\":[1,1,1,1,0],\"col_constraints\":[2,0,1,1]}",
+          "{\"row_constraints\":[1,1,1,1,0],\"col_constraints\":[1,1,0,2]}",
+          "{\"row_constraints\":[1,1,1,1],\"col_constraints\":[2,0,2,0,0]}",
+          "{\"row_constraints\":[1,1,0,3,0],\"col_constraints\":[1,0,2,0,2]}",
+          "{\"row_constraints\":[1,1,0,2,0],\"col_constraints\":[1,1,1,1]}",
+          "{\"row_constraints\":[1,1,0,2],\"col_constraints\":[1,0,2,0,1]}",
+          "{\"row_constraints\":[1,0,3,0],\"col_constraints\":[1,1,1,0,1]}",
+          "{\"row_constraints\":[1,0,2,0,2],\"col_constraints\":[2,0,0,3,0]}",
+          "{\"row_constraints\":[1,0,2,0,2],\"col_constraints\":[1,1,0,3,0]}",
+          "{\"row_constraints\":[1,0,1,2],\"col_constraints\":[1,1,1,0,1]}",
+          "{\"row_constraints\":[1,0,1,1,1],\"col_constraints\":[1,0,2,1]}",
+          "{\"row_constraints\":[1,0,0,0,2],\"col_constraints\":[1,1,1]}",
+          "{\"row_constraints\":[0,2,0,2],\"col_constraints\":[0,2,0,0,2]}",
+          "{\"row_constraints\":[0,2,0,2],\"col_constraints\":[0,1,1,0,2]}",
+          "{\"row_constraints\":[0,1,2,0,2],\"col_constraints\":[1,0,2,0,2]}",
+          "{\"row_constraints\":[0,1,1,2],\"col_constraints\":[1,0,1,1,1]}",
+          "{\"row_constraints\":[0,1,1,0,2],\"col_constraints\":[2,0,2,0]}",
+          "{\"row_constraints\":[0,1,1,0,2],\"col_constraints\":[0,2,0,2]}",
+          "{\"row_constraints\":[0,1,0,2],\"col_constraints\":[0,1,1,1]}",
+          "{\"row_constraints\":[0,0,2,0,3],\"col_constraints\":[1,1,1,1,1]}",
+          "{\"row_constraints\":[0,0,2,0,2],\"col_constraints\":[1,1,1,1]}"
+        ],
+        "training_stats": {
+          "positive_signatures": 31,
+          "negative_signatures": 73,
+          "selected_count": 31
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_88",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "signature_confidence": 1.0,
+      "signature_parts": {
+        "signature": "{\"row_constraints\":[1,0,1,1,1],\"col_constraints\":[1,0,2,1]}",
+        "hits": [
+          "{\"row_constraints\":[1,0,1,1,1],\"col_constraints\":[1,0,2,1]}"
+        ],
+        "selected_signatures": [
+          "{\"row_constraints\":[2,0,2,0,1],\"col_constraints\":[1,1,0,2,1]}",
+          "{\"row_constraints\":[0,1,1,1,1],\"col_constraints\":[2,0,0,2]}",
+          "{\"row_constraints\":[2,1,1,0,1],\"col_constraints\":[1,0,2,0,2]}",
+          "{\"row_constraints\":[2,0,2,0,1],\"col_constraints\":[2,0,0,1,2]}",
+          "{\"row_constraints\":[2,0,2,0],\"col_constraints\":[1,1,1,0,1]}",
+          "{\"row_constraints\":[2,0,1,1,1],\"col_constraints\":[1,2,1,0,1]}",
+          "{\"row_constraints\":[2,0,1,1,0],\"col_constraints\":[2,0,2,0]}",
+          "{\"row_constraints\":[2,0,1],\"col_constraints\":[2,0,0,1,0]}",
+          "{\"row_constraints\":[2,0,1],\"col_constraints\":[1,1,1,0,0]}",
+          "{\"row_constraints\":[1,1,1,1,1],\"col_constraints\":[0,1,2,0,2]}",
+          "{\"row_constraints\":[1,1,1,1,0],\"col_constraints\":[2,0,1,1]}",
+          "{\"row_constraints\":[1,1,1,1,0],\"col_constraints\":[1,1,0,2]}",
+          "{\"row_constraints\":[1,1,1,1],\"col_constraints\":[2,0,2,0,0]}",
+          "{\"row_constraints\":[1,1,0,3,0],\"col_constraints\":[1,0,2,0,2]}",
+          "{\"row_constraints\":[1,1,0,2,0],\"col_constraints\":[1,1,1,1]}",
+          "{\"row_constraints\":[1,1,0,2],\"col_constraints\":[1,0,2,0,1]}",
+          "{\"row_constraints\":[1,0,3,0],\"col_constraints\":[1,1,1,0,1]}",
+          "{\"row_constraints\":[1,0,2,0,2],\"col_constraints\":[2,0,0,3,0]}",
+          "{\"row_constraints\":[1,0,2,0,2],\"col_constraints\":[1,1,0,3,0]}",
+          "{\"row_constraints\":[1,0,1,2],\"col_constraints\":[1,1,1,0,1]}",
+          "{\"row_constraints\":[1,0,1,1,1],\"col_constraints\":[1,0,2,1]}",
+          "{\"row_constraints\":[1,0,0,0,2],\"col_constraints\":[1,1,1]}",
+          "{\"row_constraints\":[0,2,0,2],\"col_constraints\":[0,2,0,0,2]}",
+          "{\"row_constraints\":[0,2,0,2],\"col_constraints\":[0,1,1,0,2]}",
+          "{\"row_constraints\":[0,1,2,0,2],\"col_constraints\":[1,0,2,0,2]}",
+          "{\"row_constraints\":[0,1,1,2],\"col_constraints\":[1,0,1,1,1]}",
+          "{\"row_constraints\":[0,1,1,0,2],\"col_constraints\":[2,0,2,0]}",
+          "{\"row_constraints\":[0,1,1,0,2],\"col_constraints\":[0,2,0,2]}",
+          "{\"row_constraints\":[0,1,0,2],\"col_constraints\":[0,1,1,1]}",
+          "{\"row_constraints\":[0,0,2,0,3],\"col_constraints\":[1,1,1,1,1]}",
+          "{\"row_constraints\":[0,0,2,0,2],\"col_constraints\":[1,1,1,1]}"
+        ],
+        "training_stats": {
+          "positive_signatures": 31,
+          "negative_signatures": 73,
+          "selected_count": 31
+        }
+      }
+    },
+    {
+      "row_id": "intellect_3_logic_92",
+      "route_label": "logic_skill_trm",
+      "oracle_route_label": "logic_skill",
+      "logic_skill_exact_match": false,
+      "trm_skill_exact_match": false,
+      "signature_confidence": 1.0,
+      "signature_parts": {
+        "signature": "{\"row_constraints\":[1,1,1,1,1],\"col_constraints\":[0,1,2,0,2]}",
+        "hits": [
+          "{\"row_constraints\":[1,1,1,1,1],\"col_constraints\":[0,1,2,0,2]}"
+        ],
+        "selected_signatures": [
+          "{\"row_constraints\":[2,0,2,0,1],\"col_constraints\":[1,1,0,2,1]}",
+          "{\"row_constraints\":[0,1,1,1,1],\"col_constraints\":[2,0,0,2]}",
+          "{\"row_constraints\":[2,1,1,0,1],\"col_constraints\":[1,0,2,0,2]}",
+          "{\"row_constraints\":[2,0,2,0,1],\"col_constraints\":[2,0,0,1,2]}",
+          "{\"row_constraints\":[2,0,2,0],\"col_constraints\":[1,1,1,0,1]}",
+          "{\"row_constraints\":[2,0,1,1,1],\"col_constraints\":[1,2,1,0,1]}",
+          "{\"row_constraints\":[2,0,1,1,0],\"col_constraints\":[2,0,2,0]}",
+          "{\"row_constraints\":[2,0,1],\"col_constraints\":[2,0,0,1,0]}",
+          "{\"row_constraints\":[2,0,1],\"col_constraints\":[1,1,1,0,0]}",
+          "{\"row_constraints\":[1,1,1,1,1],\"col_constraints\":[0,1,2,0,2]}",
+          "{\"row_constraints\":[1,1,1,1,0],\"col_constraints\":[2,0,1,1]}",
+          "{\"row_constraints\":[1,1,1,1,0],\"col_constraints\":[1,1,0,2]}",
+          "{\"row_constraints\":[1,1,1,1],\"col_constraints\":[2,0,2,0,0]}",
+          "{\"row_constraints\":[1,1,0,3,0],\"col_constraints\":[1,0,2,0,2]}",
+          "{\"row_constraints\":[1,1,0,2,0],\"col_constraints\":[1,1,1,1]}",
+          "{\"row_constraints\":[1,1,0,2],\"col_constraints\":[1,0,2,0,1]}",
+          "{\"row_constraints\":[1,0,3,0],\"col_constraints\":[1,1,1,0,1]}",
+          "{\"row_constraints\":[1,0,2,0,2],\"col_constraints\":[2,0,0,3,0]}",
+          "{\"row_constraints\":[1,0,2,0,2],\"col_constraints\":[1,1,0,3,0]}",
+          "{\"row_constraints\":[1,0,1,2],\"col_constraints\":[1,1,1,0,1]}",
+          "{\"row_constraints\":[1,0,1,1,1],\"col_constraints\":[1,0,2,1]}",
+          "{\"row_constraints\":[1,0,0,0,2],\"col_constraints\":[1,1,1]}",
+          "{\"row_constraints\":[0,2,0,2],\"col_constraints\":[0,2,0,0,2]}",
+          "{\"row_constraints\":[0,2,0,2],\"col_constraints\":[0,1,1,0,2]}",
+          "{\"row_constraints\":[0,1,2,0,2],\"col_constraints\":[1,0,2,0,2]}",
+          "{\"row_constraints\":[0,1,1,2],\"col_constraints\":[1,0,1,1,1]}",
+          "{\"row_constraints\":[0,1,1,0,2],\"col_constraints\":[2,0,2,0]}",
+          "{\"row_constraints\":[0,1,1,0,2],\"col_constraints\":[0,2,0,2]}",
+          "{\"row_constraints\":[0,1,0,2],\"col_constraints\":[0,1,1,1]}",
+          "{\"row_constraints\":[0,0,2,0,3],\"col_constraints\":[1,1,1,1,1]}",
+          "{\"row_constraints\":[0,0,2,0,2],\"col_constraints\":[1,1,1,1]}"
+        ],
+        "training_stats": {
+          "positive_signatures": 31,
+          "negative_signatures": 73,
+          "selected_count": 31
+        }
+      }
+    }
+  ],
+  "model_example_count": 109,
+  "top_k": 5
+}

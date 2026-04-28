@@ -1,0 +1,597 @@
+[
+  {
+    "head": "answer-shape",
+    "args": [
+      "psycho_bench",
+      "indexed_mapping_lines"
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 1
+  },
+  {
+    "head": "summary",
+    "args": [
+      "psycho_bench",
+      "Exact plain-text lines in the form `index: score`, integer scores only, and no wrapper prose."
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 2
+  },
+  {
+    "head": "constraint",
+    "args": [
+      "psycho_bench",
+      "emit only `index: score` lines"
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 3
+  },
+  {
+    "head": "constraint",
+    "args": [
+      "psycho_bench",
+      "scores must be integers in the range 1 to 5"
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 4
+  },
+  {
+    "head": "forbid",
+    "args": [
+      "psycho_bench",
+      "bullets, wrappers, or commentary"
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 5
+  },
+  {
+    "head": "minimal-example",
+    "args": [
+      "psycho_bench",
+      "31: 2\n39: 3"
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 6
+  },
+  {
+    "head": "example-status",
+    "args": [
+      "psycho_bench",
+      "validated_minimal_example"
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 7
+  },
+  {
+    "head": "answer-shape",
+    "args": [
+      "ascii_tree",
+      "ascii_formatted_tree"
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 9
+  },
+  {
+    "head": "summary",
+    "args": [
+      "ascii_tree",
+      "Exact ASCII tree structure wrapped in <ascii_formatted> tags with no surrounding prose."
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 10
+  },
+  {
+    "head": "constraint",
+    "args": [
+      "ascii_tree",
+      "wrap answer in <ascii_formatted> tags"
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 11
+  },
+  {
+    "head": "constraint",
+    "args": [
+      "ascii_tree",
+      "preserve a valid ASCII tree branch structure"
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 12
+  },
+  {
+    "head": "forbid",
+    "args": [
+      "ascii_tree",
+      "markdown fences or malformed closing tags"
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 13
+  },
+  {
+    "head": "minimal-example",
+    "args": [
+      "ascii_tree",
+      "<ascii_formatted>\nmain\n `--child\n</ascii_formatted>"
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 14
+  },
+  {
+    "head": "example-status",
+    "args": [
+      "ascii_tree",
+      "validated_minimal_example"
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 15
+  },
+  {
+    "head": "answer-shape",
+    "args": [
+      "pydantic_adherence",
+      "strict_json_object"
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 17
+  },
+  {
+    "head": "summary",
+    "args": [
+      "pydantic_adherence",
+      "Return one JSON object compatible with the provided pydantic model and nothing else. The live community verifier extracts the last JSON object and validates it with JSON-native semantics via `model_validate_json(..., strict=False)`."
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 18
+  },
+  {
+    "head": "constraint",
+    "args": [
+      "pydantic_adherence",
+      "return one JSON object and nothing else"
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 19
+  },
+  {
+    "head": "constraint",
+    "args": [
+      "pydantic_adherence",
+      "cooldown must use integer day counts or numeric strings"
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 20
+  },
+  {
+    "head": "validation-path",
+    "args": [
+      "pydantic_adherence",
+      "extract_last_json -> json.dumps(parsed_dict) -> model.model_validate_json(serialized_payload, strict=False)"
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 21
+  },
+  {
+    "head": "validator-note",
+    "args": [
+      "pydantic_adherence",
+      "period genres must be unique"
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 22
+  },
+  {
+    "head": "validator-note",
+    "args": [
+      "pydantic_adherence",
+      "reference genre cannot exceed 7 days"
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 23
+  },
+  {
+    "head": "validator-note",
+    "args": [
+      "pydantic_adherence",
+      "fine_policy.max_total must be greater than or equal to fine_policy.per_day"
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 24
+  },
+  {
+    "head": "validator-note",
+    "args": [
+      "pydantic_adherence",
+      "renewal_policy.cooldown accepts integer day counts or numeric strings before timedelta coercion"
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 25
+  },
+  {
+    "head": "validator-note",
+    "args": [
+      "pydantic_adherence",
+      "the live scorer validates JSON-native payloads with model_validate_json(..., strict=False)"
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 26
+  },
+  {
+    "head": "minimal-example",
+    "args": [
+      "pydantic_adherence",
+      "{\"policy_id\":\"11111111-1111-1111-1111-111111111111\",\"name\":\"Main\",\"max_books\":3,\"periods\":[],\"fine_policy\":{\"per_day\":1.0,\"max_total\":5.0},\"renewal_policy\":{\"max_renewals\":1,\"cooldown\":\"1\"},\"exceptions\":{},\"created_at\":\"2026-01-01T00:00:00\"}"
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 27
+  },
+  {
+    "head": "example-status",
+    "args": [
+      "pydantic_adherence",
+      "validated_minimal_example"
+    ],
+    "source_file": "contracts.metta",
+    "line_no": 28
+  },
+  {
+    "head": "failure-mode",
+    "args": [
+      "psycho_bench",
+      "refusal text instead of numbered lines"
+    ],
+    "source_file": "failure_modes.metta",
+    "line_no": 1
+  },
+  {
+    "head": "failure-mode",
+    "args": [
+      "psycho_bench",
+      "extra commentary around scores"
+    ],
+    "source_file": "failure_modes.metta",
+    "line_no": 2
+  },
+  {
+    "head": "failure-mode",
+    "args": [
+      "psycho_bench",
+      "non-integer values or out-of-range scores"
+    ],
+    "source_file": "failure_modes.metta",
+    "line_no": 3
+  },
+  {
+    "head": "repair-hint",
+    "args": [
+      "psycho_bench",
+      "strip all prose and emit only numbered score lines"
+    ],
+    "source_file": "failure_modes.metta",
+    "line_no": 4
+  },
+  {
+    "head": "trace-label",
+    "args": [
+      "psycho_bench",
+      "schema_drift"
+    ],
+    "source_file": "failure_modes.metta",
+    "line_no": 5
+  },
+  {
+    "head": "failure-mode",
+    "args": [
+      "ascii_tree",
+      "missing closing </ascii_formatted> tag"
+    ],
+    "source_file": "failure_modes.metta",
+    "line_no": 7
+  },
+  {
+    "head": "failure-mode",
+    "args": [
+      "ascii_tree",
+      "extra prose before or after the tree"
+    ],
+    "source_file": "failure_modes.metta",
+    "line_no": 8
+  },
+  {
+    "head": "failure-mode",
+    "args": [
+      "ascii_tree",
+      "markdown fence leaked into final answer"
+    ],
+    "source_file": "failure_modes.metta",
+    "line_no": 9
+  },
+  {
+    "head": "failure-mode",
+    "args": [
+      "ascii_tree",
+      "wrong branch glyphs or unstable indentation"
+    ],
+    "source_file": "failure_modes.metta",
+    "line_no": 10
+  },
+  {
+    "head": "repair-hint",
+    "args": [
+      "ascii_tree",
+      "close with </ascii_formatted> and remove markdown fences"
+    ],
+    "source_file": "failure_modes.metta",
+    "line_no": 11
+  },
+  {
+    "head": "trace-label",
+    "args": [
+      "ascii_tree",
+      "wrapper_failure"
+    ],
+    "source_file": "failure_modes.metta",
+    "line_no": 12
+  },
+  {
+    "head": "failure-mode",
+    "args": [
+      "pydantic_adherence",
+      "empty output or fallback action"
+    ],
+    "source_file": "failure_modes.metta",
+    "line_no": 14
+  },
+  {
+    "head": "failure-mode",
+    "args": [
+      "pydantic_adherence",
+      "markdown fences around JSON"
+    ],
+    "source_file": "failure_modes.metta",
+    "line_no": 15
+  },
+  {
+    "head": "failure-mode",
+    "args": [
+      "pydantic_adherence",
+      "cooldown supplied as natural language instead of integer day count"
+    ],
+    "source_file": "failure_modes.metta",
+    "line_no": 16
+  },
+  {
+    "head": "failure-mode",
+    "args": [
+      "pydantic_adherence",
+      "schema-violating field types or missing required keys"
+    ],
+    "source_file": "failure_modes.metta",
+    "line_no": 17
+  },
+  {
+    "head": "verifier-caveat",
+    "args": [
+      "pydantic_adherence",
+      "historical note: before 2026-04-22, the live scorer validated the parsed Python dict directly and made UUID/datetime fields unsatisfiable from plain JSON"
+    ],
+    "source_file": "failure_modes.metta",
+    "line_no": 18
+  },
+  {
+    "head": "repair-hint",
+    "args": [
+      "pydantic_adherence",
+      "coerce cooldown to integer day count and re-check required fields"
+    ],
+    "source_file": "failure_modes.metta",
+    "line_no": 19
+  },
+  {
+    "head": "trace-label",
+    "args": [
+      "pydantic_adherence",
+      "validator_failure"
+    ],
+    "source_file": "failure_modes.metta",
+    "line_no": 20
+  },
+  {
+    "head": "package-id",
+    "args": [
+      "primehub_structured_map"
+    ],
+    "source_file": "package.metta",
+    "line_no": 1
+  },
+  {
+    "head": "base-skill",
+    "args": [
+      "primehub-structured-map-hermes"
+    ],
+    "source_file": "package.metta",
+    "line_no": 2
+  },
+  {
+    "head": "overlay",
+    "args": [
+      "trm-mcp"
+    ],
+    "source_file": "package.metta",
+    "line_no": 3
+  },
+  {
+    "head": "owner",
+    "args": [
+      "Hermes Skills research"
+    ],
+    "source_file": "package.metta",
+    "line_no": 4
+  },
+  {
+    "head": "env",
+    "args": [
+      "psycho_bench"
+    ],
+    "source_file": "package.metta",
+    "line_no": 5
+  },
+  {
+    "head": "env",
+    "args": [
+      "ascii_tree"
+    ],
+    "source_file": "package.metta",
+    "line_no": 6
+  },
+  {
+    "head": "env",
+    "args": [
+      "pydantic_adherence"
+    ],
+    "source_file": "package.metta",
+    "line_no": 7
+  },
+  {
+    "head": "goal",
+    "args": [
+      "compile symbolic task rules into retrieval packets, critic hints, and trace labels"
+    ],
+    "source_file": "package.metta",
+    "line_no": 8
+  },
+  {
+    "head": "query-cue",
+    "args": [
+      "psycho_bench",
+      "reply numbers from 1 to 5"
+    ],
+    "source_file": "retrieval_policy.metta",
+    "line_no": 1
+  },
+  {
+    "head": "query-cue",
+    "args": [
+      "psycho_bench",
+      "index: score"
+    ],
+    "source_file": "retrieval_policy.metta",
+    "line_no": 2
+  },
+  {
+    "head": "query-cue",
+    "args": [
+      "psycho_bench",
+      "BFI subscale"
+    ],
+    "source_file": "retrieval_policy.metta",
+    "line_no": 3
+  },
+  {
+    "head": "query-cue",
+    "args": [
+      "psycho_bench",
+      "plain text lines only"
+    ],
+    "source_file": "retrieval_policy.metta",
+    "line_no": 4
+  },
+  {
+    "head": "retrieval-priority",
+    "args": [
+      "psycho_bench",
+      "contract"
+    ],
+    "source_file": "retrieval_policy.metta",
+    "line_no": 5
+  },
+  {
+    "head": "query-cue",
+    "args": [
+      "ascii_tree",
+      "ASCII tree"
+    ],
+    "source_file": "retrieval_policy.metta",
+    "line_no": 7
+  },
+  {
+    "head": "query-cue",
+    "args": [
+      "ascii_tree",
+      "<ascii_formatted>"
+    ],
+    "source_file": "retrieval_policy.metta",
+    "line_no": 8
+  },
+  {
+    "head": "query-cue",
+    "args": [
+      "ascii_tree",
+      "directory hierarchy"
+    ],
+    "source_file": "retrieval_policy.metta",
+    "line_no": 9
+  },
+  {
+    "head": "query-cue",
+    "args": [
+      "ascii_tree",
+      "plain ASCII structure"
+    ],
+    "source_file": "retrieval_policy.metta",
+    "line_no": 10
+  },
+  {
+    "head": "retrieval-priority",
+    "args": [
+      "ascii_tree",
+      "output_wrapper"
+    ],
+    "source_file": "retrieval_policy.metta",
+    "line_no": 11
+  },
+  {
+    "head": "query-cue",
+    "args": [
+      "pydantic_adherence",
+      "return the json and nothing else"
+    ],
+    "source_file": "retrieval_policy.metta",
+    "line_no": 13
+  },
+  {
+    "head": "query-cue",
+    "args": [
+      "pydantic_adherence",
+      "pydantic model"
+    ],
+    "source_file": "retrieval_policy.metta",
+    "line_no": 14
+  },
+  {
+    "head": "query-cue",
+    "args": [
+      "pydantic_adherence",
+      "compatible with the model"
+    ],
+    "source_file": "retrieval_policy.metta",
+    "line_no": 15
+  },
+  {
+    "head": "query-cue",
+    "args": [
+      "pydantic_adherence",
+      "strict JSON only"
+    ],
+    "source_file": "retrieval_policy.metta",
+    "line_no": 16
+  },
+  {
+    "head": "retrieval-priority",
+    "args": [
+      "pydantic_adherence",
+      "validator_contract"
+    ],
+    "source_file": "retrieval_policy.metta",
+    "line_no": 17
+  }
+]

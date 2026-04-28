@@ -1,0 +1,76 @@
+﻿{
+  "run_name": "overnight-qwen35_9b-if_summarize_judge-with_metta_runtime-seed-7-if_summarize_judge",
+  "max_episodes": 1,
+  "max_steps_per_episode": 1,
+  "export_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\live_eval_qwen35_9b_if_summarize_with_metta_repair\\replays\\with_metta_runtime\\if_summarize_judge.seed_7.jsonl",
+  "model": {
+    "provider": "openai_compatible",
+    "base_url": "http://snacksack-ms-7d32.tail3156cd.ts.net:8082/v1",
+    "model_name": "Qwen_Qwen3.5-9B-Q4_K_M.gguf",
+    "max_new_tokens": 240,
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "request_timeout": 240
+  },
+  "metadata": {
+    "variant_id": "if_summarize_judge-with_metta_runtime-seed-7",
+    "skill_name": "primehub-constraint-summarize-hermes",
+    "skill_cluster": "constraint_summarize",
+    "role_mode": "critic_only",
+    "role_support_tier": "",
+    "role_gate_applied": false,
+    "role_gate_downgraded": false,
+    "role_gate_reason": "",
+    "requested_max_new_tokens": 240,
+    "max_new_tokens": 240,
+    "requested_request_timeout": 240,
+    "request_timeout": 240,
+    "reasoning_mode": "off"
+  },
+  "envs": [
+    {
+      "type": "primehub_external",
+      "name": "if_summarize_judge",
+      "command_template": [
+        "C:\\Python311\\python.exe",
+        "C:/projects/Hermes-Skills/Hermes Skills/scripts/remote_prime_env_bridge.py",
+        "--source",
+        "research",
+        "--host",
+        "snacksack-ms-7d32.tail3156cd.ts.net",
+        "--user",
+        "snacksack",
+        "--identity-file",
+        "C:/Users/patri/.ssh/id_ed25519",
+        "--ssh-timeout-seconds",
+        "300",
+        "--seed",
+        "7",
+        "--judge-base-url",
+        "http://snacksack-ms-7d32.tail3156cd.ts.net:8082/v1",
+        "--judge-model",
+        "Qwen_Qwen3.5-9B-Q4_K_M.gguf",
+        "--research-root",
+        "/home/snacksack/prime_repos_tmp/research-environments/environments",
+        "--community-root",
+        "/home/snacksack/prime_repos_tmp/community-environments/environments",
+        "--remote-site-packages",
+        "/tmp/prime_env_bridge_site_with_metta_runtime_7_if_summarize_judge",
+        "--remote-cache-root",
+        "/tmp/prime_env_bridge_cache_with_metta_runtime_7_if_summarize_judge",
+        "if_summarize_judge"
+      ],
+      "reset_args": [
+        "--reset"
+      ],
+      "trace_profile_overrides": {
+        "reasoning_mode": "off",
+        "skill_name": "primehub-constraint-summarize-hermes",
+        "skill_prompt": "You are operating as Hermes skill Primehub-Constraint-Summarize-v1.\nUse the stage order TRM_PARSE -> TRM_CLASSIFY_CONSTRAINT -> TRM_STRUCTURE_PLAN -> TRM_VERIFY_COUNTS -> FINAL.\nInfer the active structural family from the user's instruction before writing any summary text.\nEmit only the final constrained summary text with no explanations or wrapper prose.\nThe instruction defines the required family.\nCommon families include exact word counts, exact sentence counts, one-comma sentences, ALL-CAPS headlines, hashtags, XML word tags, and question-shaped summaries.\nTreat structural compliance as the primary objective and keep the answer as short as possible while satisfying the family.\nFamily reminders:\n- exact words: count words, not ideas\n- exact sentences: count sentence endings explicitly\n- bullets or hashtags: emit only the requested list shape\n- one comma / exclamation / headline casing: verify punctuation and case literally\n- XML tags: wrap every word, not just the sentence\nIf the draft satisfies the topic but violates the structure, repair the structure before final output.\n- Runtime gate: stay critic-only and use support to classify and verify the structural family before emitting the final answer.\n\nRetrieved MeTTa contract memory for the current env:\n- answer_shape: constraint_conditioned_summary\n- summary: Infer the requested structural family from the instruction, then emit only a structure-conforming summary with no extra prose.\n- query_cues: classify exact structural family first; word count sentence count punctuation casing wrappers; headline hashtags xml bullets question answer\n- must_do: classify the active constraint family before writing the answer; satisfy exact counts, delimiters, wrappers, and casing literally; emit only the constrained summary text; the judge is strict on structure and lenient on content quality; exactly N means exact word, sentence, bullet, or hashtag counts\n- avoid: prefaces, explanations, or code fences; extra lines outside the requested family; empty output or fallback action; correct topic but wrong structural family; wrong exact count for words, sentences, bullets, or hashtags\n- validation_path: infer constraint family from observation -> enforce exact structural rules -> remote judge checks compliance and is lenient on content quality\n- repair_focus: classify the family first, then rewrite to the canonical minimal structure for that family; prefer the smallest structurally valid answer over verbose content preservation\n- contract_priority: constraint_profile\nProfile lookup table:\n- 3_keywords: Return exactly three keywords or key phrases separated by commas. | cues: exactly 3 keywords or key phrases\n- 4_hashtags: Return exactly four hashtags separated by spaces. | cues: exactly 4 hashtags\n- alpha_start_3sent: Return exactly three sentences, each starting with a different letter. | cues: different letter of the alphabet\n- decreasing_length: Return exactly three sentences, each shorter than the previous one. | cues: each sentence must be shorter than the previous one\n- dictionary_def: Return a bolded subject, a colon, and one dictionary-style definition sentence. | cues: dictionary definition; subject name in bold\n- exact_10w_bullets: Return exactly two bullet points and make each bullet exactly ten words. | cues: exactly 2 bullet points; each bullet must be exactly 10 words\n- exact_15_words: Return one sentence of exactly fifteen words. | cues: exactly 15 words\n- exact_5_words: Return exactly five words and nothing else. | cues: exactly 5 words\n- exclamation_ends: Return two or three sentences and end every sentence with an exclamation mark. | cues: every sentence ends with an exclamation mark\n- if_then: Return one sentence in explicit If... then... form. | cues: \"If... then...\" statement\n- increasing_length: Return exactly three sentences, each longer than the previous one. | cues: each sentence must be longer than the previous one\n- newspaper_headline: Return an ALL-CAPS headline under twelve words with no period. | cues: newspaper headline; ALL CAPS, no period, under 12 words\n- one_comma: Return one sentence containing exactly one comma. | cues: exactly one comma\n- question_answer: Return exactly two sentences: first a question, then its answer. | cues: first sentence must be a question and the second must answer it\n- simple_syllables: Return one short summary under forty words using simple low-syllable wording. | cues: only words of 2 syllables or fewer\n- single_question: Return one question sentence only. | cues: single question\n- xml_word_tags: Return one sentence and wrap every word in numbered XML word tags. | cues: wrap every word in XML tags numbered sequentially\nUse this contract memory privately to classify the active structural family from the user's instruction.\nThen satisfy that family exactly and emit only the final constrained summary text.\nDo not mention the contract memory or profile catalog in the final answer.",
+        "skill_cluster": "constraint_summarize",
+        "role_mode": "critic_only",
+        "variant_id": "if_summarize_judge-with_metta_runtime-seed-7"
+      }
+    }
+  ]
+}

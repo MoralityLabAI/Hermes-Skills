@@ -1,0 +1,121 @@
+{
+  "repair_verifier_logic_c_signature": {
+    "purpose": "Train the logic repair/verifier circuit around C-signature failure, exact positives, and signature-pass cell failures.",
+    "roles": [
+      "hard_reasoning_logic"
+    ],
+    "failure_labels": [
+      "c_signature_fail",
+      "signature_pass_cell_fail",
+      "exact_positive"
+    ],
+    "target_gates": [
+      "validate_gate",
+      "repair_gate",
+      "commit_gate"
+    ],
+    "eval_metrics": [
+      "exact_delta",
+      "cell_accuracy_delta",
+      "false_commit_rate",
+      "repair_regression_rate"
+    ],
+    "row_counts": {
+      "train": 148,
+      "val_seen": 34,
+      "holdout_seen": 36,
+      "holdout_unseen_family": 0
+    }
+  },
+  "commit_veto_multirole": {
+    "purpose": "Train commit/veto policy to accept repairs and positives while rejecting no-gain repairs.",
+    "roles": [
+      "abstain_guard",
+      "choice_contract",
+      "hard_reasoning_logic",
+      "hard_reasoning_numeric",
+      "structured_map"
+    ],
+    "failure_labels": null,
+    "target_gates": [
+      "commit_gate"
+    ],
+    "eval_metrics": [
+      "false_commit_rate",
+      "false_reject_rate",
+      "expected_reward_delta"
+    ],
+    "row_counts": {
+      "train": 156,
+      "val_seen": 34,
+      "holdout_seen": 36,
+      "holdout_unseen_family": 18
+    }
+  },
+  "structured_contract_repair": {
+    "purpose": "Train schema, tree, and choice-contract repair gates where symbolic closure is available.",
+    "roles": [
+      "choice_contract",
+      "structured_map"
+    ],
+    "failure_labels": null,
+    "target_gates": [
+      "validate_gate",
+      "repair_gate",
+      "commit_gate"
+    ],
+    "eval_metrics": [
+      "contract_validity",
+      "canonical_exact",
+      "repair_regression_rate"
+    ],
+    "row_counts": {
+      "train": 4,
+      "val_seen": 0,
+      "holdout_seen": 0,
+      "holdout_unseen_family": 12
+    }
+  },
+  "numeric_teacher_auditor": {
+    "purpose": "Keep hard numeric rows as teacher-candidate audit and veto data, not standalone solver training.",
+    "roles": [
+      "hard_reasoning_numeric"
+    ],
+    "failure_labels": null,
+    "target_gates": [
+      "validate_gate",
+      "commit_gate"
+    ],
+    "eval_metrics": [
+      "candidate_selection_accuracy",
+      "false_commit_rate"
+    ],
+    "row_counts": {
+      "train": 4,
+      "val_seen": 0,
+      "holdout_seen": 0,
+      "holdout_unseen_family": 0
+    }
+  },
+  "abstain_guard": {
+    "purpose": "Train abstain/route guard rows where a malformed or unsafe candidate should be rejected.",
+    "roles": [
+      "abstain_guard"
+    ],
+    "failure_labels": null,
+    "target_gates": [
+      "route_gate",
+      "commit_gate"
+    ],
+    "eval_metrics": [
+      "reject_accuracy",
+      "false_accept_rate"
+    ],
+    "row_counts": {
+      "train": 0,
+      "val_seen": 0,
+      "holdout_seen": 0,
+      "holdout_unseen_family": 2
+    }
+  }
+}

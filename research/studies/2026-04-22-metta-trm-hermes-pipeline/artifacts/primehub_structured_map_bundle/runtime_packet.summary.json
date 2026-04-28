@@ -1,0 +1,33 @@
+{
+  "bundle_dir": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_structured_map_bundle",
+  "out_dir": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_structured_map_bundle",
+  "packet_type": "metta_runtime_packet_v1",
+  "package_id": "primehub_structured_map",
+  "env_count": 3,
+  "env_summaries": {
+    "psycho_bench": {
+      "query_cue_count": 3,
+      "must_do_count": 2,
+      "avoid_count": 4,
+      "repair_focus_count": 1,
+      "summary_chars": 93,
+      "minimal_example_chars": 11
+    },
+    "ascii_tree": {
+      "query_cue_count": 3,
+      "must_do_count": 2,
+      "avoid_count": 5,
+      "repair_focus_count": 1,
+      "summary_chars": 87,
+      "minimal_example_chars": 51
+    },
+    "pydantic_adherence": {
+      "query_cue_count": 3,
+      "must_do_count": 5,
+      "avoid_count": 4,
+      "repair_focus_count": 1,
+      "summary_chars": 232,
+      "minimal_example_chars": 241
+    }
+  }
+}
