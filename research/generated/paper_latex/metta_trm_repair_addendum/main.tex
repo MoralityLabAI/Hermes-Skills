@@ -12,13 +12,13 @@
 \title{MeTTa-Scaffolded Repair Curricula for TRM-Infused Hermes Skills\\
 \large Provisional Addendum and Data Campaign Plan}
 \author{Hermes Skills Research}
-\date{April 26, 2026}
+\date{April 29, 2026}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-This addendum describes a methodology for improving TRM-infused Hermes skills using MeTTa-style symbolic scaffolds as a data-curation and control-plane layer. The central observation is that many benchmark failures are not opaque failures of latent reasoning; they are semi-failed outputs with typed, verifier-visible defects. We therefore construct a near-miss repair curriculum that turns those outputs into repair, verifier, and commit/veto training rows. A local Qwen2.5-3B Q4 benchmark suggests that retrieved repair-training context improves commit/veto decisions, but does not yet solve repair-action selection. We treat this as a provisional scale-floor result and defer the full paper claim until matched 9B and 27B benchmarks are run.
+This addendum describes a methodology for improving TRM-infused Hermes skills using MeTTa-style symbolic scaffolds as a data-curation and control-plane layer. The central observation is that many benchmark failures are not opaque failures of latent reasoning; they are semi-failed outputs with typed, verifier-visible defects. We therefore construct a near-miss repair curriculum that turns those outputs into repair, verifier, and commit/veto training rows. A local Qwen2.5-3B Q4 benchmark suggests that retrieved repair-training context improves commit/veto decisions, but does not yet solve repair-action selection. The April 29 camp-gate follow-up sharpens the interpretation: MeTTa's main role is to expose a task graph that allocates subtasks among scripts, TRM gates, symbolic solvers, and the LLM. We treat this as a provisional scale-floor result and defer the full paper claim until matched 9B and 27B benchmarks are run.
 \end{abstract}
 
 \section{Motivation}
@@ -184,11 +184,37 @@ Table~\ref{tab:mixed-contract-boundary} gives the main boundary result. On the h
 
 The repair-opportunity subset sharpens the interpretation. In \texttt{mixed\_contract\_hard\_ablation30}, \texttt{metta\_runtime} failed exactly on 21 rows. Blind repair fixed 3 of those rows, while public-validator feedback repair fixed 4. This supports an environment-dependent claim rather than a universal compactification claim: MeTTa/TRM scaffolding is most useful when failure state is verifier-visible and repair is structurally constrained; it is not a substitute for the missing arithmetic, state-transition, or candidate-generation work needed by harder rows.
 
+\section{Task-Graph Allocation}
+
+The lesson from the newer camp-gate experiments is that the measurable gain is better described as \emph{task allocation} than as prompt improvement. A MeTTa scaffold is useful because it names the gates in a skill circuit: dimension extraction, anchor extraction, quota extraction, schema commit, symbolic solve, repair, and final commit/veto. Once those gates are explicit, each subtask can be assigned to the cheapest executor that is reliable for that gate. Stable and syntactic gates should usually be scripts. Ambiguous verifier-facing gates are candidates for TRM training. Symbolic solvers and validators should own closure when public constraints are complete. The LLM is then demoted from executor to proposal source and ambiguity resolver.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.92\linewidth]{figures/fig_task_graph_allocation_schema.pdf}
+  \caption{Task-graph allocation schema. MeTTa names the control graph; scripts own stable parsing, TRMs target uncertain verifier-facing gates, symbolic solvers own closure, and the LLM supplies proposals or handles ambiguous surfaces.}
+  \label{fig:task-graph-allocation}
+\end{figure}
+
+Figure~\ref{fig:task-graph-allocation} is the architectural claim in compact form. The MeTTa layer is not merely a natural-language prompt prefix. It is a control-plane representation that makes the skill decomposable. This matters for TRM training because it prevents us from training one opaque ``reasoning'' target when the data actually contains several distinct targets: field transcription, schema repair, candidate preservation, false-commit avoidance, and symbolic closure acceptance.
+
+The April 29 leakage-safe camp-gate suite tests this idea on a small but diagnostic environment. The rows expose only public puzzle constraints: dimensions, fixed anchors, row/column camp counts, and adjacency rules. The target grid is absent from the prompt. A local Qwen2.5-3B Q4 model cannot solve the raw grid in the earlier run, but when constraints are machine-visible, the public solver closes all 12 rows. The noisy follow-up paraphrases the constraint surface to test extraction rather than grid execution.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.86\linewidth]{figures/fig_camp_gate_task_allocation.pdf}
+  \caption{Noisy camp-gate task-allocation ladder. Baseline extraction solves 0/12 after repair; MeTTa schema framing reaches 6/12; explicit graph-gated extraction reaches 9/12; script-owned graph routing reaches 12/12 using only prompt-visible constraints.}
+  \label{fig:camp-gate-task-allocation}
+\end{figure}
+
+Figure~\ref{fig:camp-gate-task-allocation} shows the allocation boundary. A baseline extraction prompt gives 0/12 repaired solves. A MeTTa schema framing gives 6/12. A graph-gated prompt that separately names dimension, anchor, row-quota, and column-quota gates gives 9/12. A no-model script-owned graph router gives 12/12, because the controlled paraphrases remain parseable by typed extraction gates and the public solver owns final execution. The residual model failures are not failures of camp-grid reasoning; they are field-transcription errors such as copying column counts into row counts, losing anchors, or shifting coordinates.
+
+This result should be reported with a strict claim boundary. It is not evidence that MeTTa made the 3B model reason like a larger model. It is evidence that MeTTa exposed a better decomposition of the skill. In this decomposition, the LLM becomes optional whenever all public constraints can be captured by stable scripts and a symbolic solver. The TRM training target should move to the gates that scripts do not robustly own: paraphrased field transcription, schema repair accept/reject, and ambiguous commit/veto decisions. This is the concrete compactification mechanism: reducing the LLM footprint by moving deterministic or trainable subgraphs out of the LLM.
+
 \section{Interpretation}
 
 This supports a staged architecture. First, MeTTa and skill metadata should narrow the valid action space by environment family and verifier label. Second, static MeTTa gates should commit or veto obvious exact/no-gain states. Third, a small LLM or trained commit/veto TRM can choose ambiguous cases. Fourth, post-repair validation should be used as the final commit gate when available.
 
-This distinction matters for the compactification claim. The local 3B can become useful once the symbolic scaffold exposes the right control variables, but the LLM does not become irrelevant everywhere. It becomes less central where the circuit owns validation, repair, and commit semantics; it remains a weak link where the repair action itself is under-specified.
+This distinction matters for the compactification claim. The local 3B can become useful once the symbolic scaffold exposes the right control variables, but the LLM does not become irrelevant everywhere. It becomes less central where the circuit owns validation, repair, extraction, and commit semantics; it remains a weak link where the repair action itself is under-specified or where the candidate must be generated by nontrivial arithmetic, state transition, or search.
 
 \section{Data Campaign}
 
@@ -213,7 +239,7 @@ The required reporting metrics are target-action accuracy, repair-action accurac
 
 \section{Conclusion}
 
-The current evidence suggests that MeTTa improves the TRM training pipeline most directly by structuring data: it turns semi-failed outputs into typed supervision for validators, repair gates, and commit/veto policies. The provisional 3B result sharpens the architecture: small LLMs can help as control-plane rudders, but repair-action selection needs narrower symbolic action spaces or trained TRM specialization. The next decisive experiment is a matched 9B/27B benchmark followed by trained repair/verifier TRM evaluation on the same held-out splits.
+The current evidence suggests that MeTTa improves the TRM training pipeline most directly by structuring data: it turns semi-failed outputs into typed supervision for validators, repair gates, extraction gates, and commit/veto policies. The provisional 3B result sharpens the architecture: small LLMs can help as control-plane rudders, but repair-action selection and noisy field transcription need narrower symbolic action spaces, script gates, or trained TRM specialization. The next decisive experiment is a matched 9B/27B benchmark followed by trained repair/verifier TRM evaluation on the same held-out splits.
 
 \bibliographystyle{plainnat}
 \bibliography{references}

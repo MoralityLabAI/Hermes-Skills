@@ -1,7 +1,7 @@
 ﻿# Data and Experiment Campaign Plan
 
 Status: provisional paper plan  
-Date: 2026-04-26
+Date: 2026-04-29
 
 ## Purpose
 
@@ -19,6 +19,7 @@ The full paper should wait for matched `3B`, `9B`, and `27B` benches. The curren
 | Multi-env methodology lift matrix | Complete locally with no model calls: `148` rows across `9` env families; `post_multi_signal` target gets `1.0000` separability, while symbolic-only still has false-commit `0.6562` | Generalizes the C-signature result into a reusable env-adapter methodology |
 | Mixed-contract heldout50 | Complete locally with Qwen2.5-3B Q4: baseline `23/50`, pure TRM `27/50`, MeTTa runtime `32/50`, feedback repair `37/50`; job cap success | Positive compactification evidence for verifier-visible output contracts |
 | Hard mixed-contract ablation30 | Complete locally with Qwen2.5-3B Q4: baseline `12/30`, pure TRM `11/30`, MeTTa runtime `9/30`, blind repair `12/30`, feedback repair `13/30`; job cap success | Boundary evidence showing the lift shrinks on math/state/deeper-logic rows |
+| Noisy camp-gate task allocation | Complete locally with Qwen2.5-3B Q4 and no-model graph router: baseline extraction `0/12`, MeTTa schema `6/12`, MeTTa graph `9/12`, script graph router `12/12` | Shows that MeTTa's strongest role is exposing a task graph so subtasks can move to scripts, TRM gates, symbolic solvers, or LLM proposal |
 | Intellect-3 logic C-signature replay | Complete post-hoc: `0.3028 -> 0.6789` exact under C-only projection | Motivation for repair/verifier gates |
 | Symbolic closure threshold suite | Complete deterministic control-plane eval | Defines compactification threshold |
 | 9B repair-training rudder | Pending Snacksack or equivalent GPU | Required before full claim |
@@ -65,9 +66,11 @@ A multi-env methodology matrix is now available at `research/studies/2026-04-22-
 
 The April 28 mixed-contract compactification results should be used as the environment-dependent bridge. `mixed_contract_heldout50` gives the positive local result: feedback repair improves exact success from `23/50` to `37/50`. `mixed_contract_hard_ablation30` gives the boundary result: feedback repair improves only from `12/30` to `13/30`, while blind repair already reaches `12/30`. The paper-safe wording is that MeTTa/TRM scaffolding helps most when observable contracts expose the failure state; it does not replace missing arithmetic, state-transition, or candidate-generation capability.
 
+The April 29 noisy camp-gate result should be used as the task-allocation bridge. It shows a ladder from prompt extraction to graph extraction to script-owned graph routing: `0/12 -> 6/12 -> 9/12 -> 12/12`. The paper-safe wording is that the MeTTa scaffold identifies which subtasks belong to which executor. Stable parsing gates can be scripts, ambiguous paraphrase gates can become TRM data, symbolic solvers can own closure, and the LLM can remain a proposal or ambiguity-resolution component.
+
 The desired publishable result is not simply "MeTTa improves scores." The stronger claim is:
 
-> MeTTa improves TRM training and deployment by converting semi-failed LLM outputs into typed repair/verifier/commit examples. Small LLMs can serve as commit rudders once the symbolic scaffold exposes failure state, while repair-action selection itself requires either deterministic action-space narrowing or trained TRM specialization.
+> MeTTa improves TRM training and deployment by converting semi-failed LLM outputs into typed repair/verifier/commit examples and by exposing a skill-level task graph. Small LLMs can serve as proposal sources or commit rudders once the symbolic scaffold exposes failure state, while stable gates should move to scripts/solvers and uncertain verifier-facing gates should become trained TRM specializations.
 
 ## Next Run Commands
 

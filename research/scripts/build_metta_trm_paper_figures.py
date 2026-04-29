@@ -61,10 +61,28 @@ METHODOLOGY_LIFT_JSON = (
     / "metta_trm_methodology_lift_matrix"
     / "methodology_lift.results.json"
 )
+CAMP_GATE_NOISY_JSON = (
+    ROOT
+    / "research"
+    / "studies"
+    / "2026-04-29-logic-signature-camp-gate-leakage-safe"
+    / "results"
+    / "local_qwen25_3b_noisy_graph_constraint_extract"
+    / "local_qwen25_3b_constraint_extract.results.json"
+)
+CAMP_GATE_GRAPH_ROUTER_JSON = (
+    ROOT
+    / "research"
+    / "studies"
+    / "2026-04-29-logic-signature-camp-gate-leakage-safe"
+    / "results"
+    / "noisy_graph_router_script"
+    / "noisy_graph_router.results.json"
+)
 
 
 def load_json(path: Path) -> dict[str, Any]:
-    return json.loads(path.read_text(encoding="utf-8"))
+    return json.loads(path.read_text(encoding="utf-8-sig"))
 
 
 def load_jsonl(path: Path) -> list[dict[str, Any]]:
@@ -271,6 +289,119 @@ def build_methodology_lift_summary() -> None:
     )
 
 
+def build_camp_gate_noisy_summary() -> None:
+    if not CAMP_GATE_NOISY_JSON.exists() or not CAMP_GATE_GRAPH_ROUTER_JSON.exists():
+        return
+    noisy = load_json(CAMP_GATE_NOISY_JSON)
+    router = load_json(CAMP_GATE_GRAPH_ROUTER_JSON)
+    noisy_arms = noisy["summary"]["arms"]
+    router_arm = router["summary"]["arms"]["metta_graph_router_script"]
+    rows = [
+        {
+            "arm": "baseline_extract",
+            "executor": "3B extraction",
+            "strict_solve_exact": noisy_arms["baseline_extract"]["solve_exact"],
+            "repair_solve_exact": noisy_arms["baseline_extract"]["repair_solve_exact"],
+            "rows": noisy_arms["baseline_extract"]["rows"],
+            "repair_solve_rate": noisy_arms["baseline_extract"]["repair_solve_exact_rate"],
+        },
+        {
+            "arm": "metta_schema_extract",
+            "executor": "3B plus schema",
+            "strict_solve_exact": noisy_arms["metta_schema_extract"]["solve_exact"],
+            "repair_solve_exact": noisy_arms["metta_schema_extract"]["repair_solve_exact"],
+            "rows": noisy_arms["metta_schema_extract"]["rows"],
+            "repair_solve_rate": noisy_arms["metta_schema_extract"]["repair_solve_exact_rate"],
+        },
+        {
+            "arm": "metta_graph_extract",
+            "executor": "3B plus graph gates",
+            "strict_solve_exact": noisy_arms["metta_graph_extract"]["solve_exact"],
+            "repair_solve_exact": noisy_arms["metta_graph_extract"]["repair_solve_exact"],
+            "rows": noisy_arms["metta_graph_extract"]["rows"],
+            "repair_solve_rate": noisy_arms["metta_graph_extract"]["repair_solve_exact_rate"],
+        },
+        {
+            "arm": "metta_graph_router_script",
+            "executor": "script gates plus solver",
+            "strict_solve_exact": router_arm["solve_exact"],
+            "repair_solve_exact": router_arm["solve_exact"],
+            "rows": router_arm["rows"],
+            "repair_solve_rate": router_arm["solve_exact_rate"],
+        },
+    ]
+    write_csv(
+        OUT_DIR / "tables" / "camp_gate_noisy_task_allocation.csv",
+        rows,
+        ["arm", "executor", "strict_solve_exact", "repair_solve_exact", "rows", "repair_solve_rate"],
+    )
+
+    labels = ["baseline\nextract", "schema\nextract", "graph\nextract", "script graph\nrouter"]
+    values = [row["repair_solve_exact"] for row in rows]
+    totals = [row["rows"] for row in rows]
+    colors = ["#8b8b8b", "#5577aa", "#2f8a5b", "#bf7f2f"]
+
+    plt.figure(figsize=(8.6, 4.4))
+    bars = plt.bar(labels, values, color=colors)
+    plt.ylim(0, max(totals) + 1.2)
+    plt.ylabel("exact solves after repair / routing")
+    plt.title("Noisy camp-gate task allocation ladder")
+    plt.grid(axis="y", alpha=0.25)
+    for bar, value, total in zip(bars, values, totals):
+        plt.text(
+            bar.get_x() + bar.get_width() / 2,
+            value + 0.25,
+            f"{value}/{total}",
+            ha="center",
+            fontsize=10,
+        )
+    plt.tight_layout()
+    plt.savefig(FIG_DIR / "fig_camp_gate_task_allocation.pdf")
+    plt.savefig(FIG_DIR / "fig_camp_gate_task_allocation.png", dpi=180)
+    plt.close()
+
+
+def build_task_graph_diagram() -> None:
+    fig, ax = plt.subplots(figsize=(10.2, 5.2))
+    ax.axis("off")
+    ax.set_xlim(0, 10)
+    ax.set_ylim(0, 6)
+
+    def box(x: float, y: float, w: float, h: float, text: str, color: str) -> None:
+        rect = plt.Rectangle((x, y), w, h, facecolor=color, edgecolor="#222222", linewidth=1.3)
+        ax.add_patch(rect)
+        ax.text(x + w / 2, y + h / 2, text, ha="center", va="center", fontsize=9, wrap=True)
+
+    def arrow(x1: float, y1: float, x2: float, y2: float) -> None:
+        ax.annotate(
+            "",
+            xy=(x2, y2),
+            xytext=(x1, y1),
+            arrowprops={"arrowstyle": "->", "lw": 1.4, "color": "#222222"},
+        )
+
+    box(0.35, 4.25, 1.8, 0.85, "LLM\nproposal / ambiguity", "#d7e6f5")
+    box(3.0, 4.25, 2.0, 0.85, "MeTTa task graph\nfield contracts", "#e7dfef")
+    box(6.0, 4.25, 1.8, 0.85, "Script gates\nstable parsing", "#dcebd5")
+    box(6.0, 2.65, 1.8, 0.85, "TRM gates\nlearned uncertain gates", "#f3e0c5")
+    box(6.0, 1.05, 1.8, 0.85, "Symbolic solver /\nvalidator", "#ead7d4")
+    box(8.55, 2.65, 1.1, 0.85, "commit /\nveto", "#eeeeee")
+
+    arrow(2.15, 4.68, 3.0, 4.68)
+    arrow(5.0, 4.68, 6.0, 4.68)
+    arrow(5.0, 4.45, 6.0, 3.08)
+    arrow(5.0, 4.35, 6.0, 1.48)
+    arrow(7.8, 4.68, 8.55, 3.08)
+    arrow(7.8, 3.08, 8.55, 3.08)
+    arrow(7.8, 1.48, 8.55, 3.08)
+
+    ax.text(0.35, 0.35, "Principle: route each subtask to the cheapest reliable executor; train TRMs on gates that are neither stable scripts nor safe LLM-only decisions.", fontsize=10)
+    plt.tight_layout()
+    plt.savefig(FIG_DIR / "fig_task_graph_allocation_schema.pdf")
+    plt.savefig(FIG_DIR / "fig_task_graph_allocation_schema.png", dpi=180)
+    plt.close()
+
+
 def main() -> int:
     FIG_DIR.mkdir(parents=True, exist_ok=True)
     (OUT_DIR / "tables").mkdir(parents=True, exist_ok=True)
@@ -279,8 +410,12 @@ def main() -> int:
     build_rudder_breakdown()
     build_c_signature_verifier_summary()
     build_methodology_lift_summary()
+    build_camp_gate_noisy_summary()
+    build_task_graph_diagram()
     print(FIG_DIR / "fig_rudder_summary.pdf")
     print(FIG_DIR / "fig_split_counts.pdf")
+    print(FIG_DIR / "fig_camp_gate_task_allocation.pdf")
+    print(FIG_DIR / "fig_task_graph_allocation_schema.pdf")
     print(OUT_DIR / "tables" / "rudder_summary.csv")
     return 0
 

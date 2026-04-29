@@ -1,0 +1,5 @@
+arm,executor,strict_solve_exact,repair_solve_exact,rows,repair_solve_rate
+baseline_extract,3B extraction,0,0,12,0.0
+metta_schema_extract,3B plus schema,5,6,12,0.5
+metta_graph_extract,3B plus graph gates,7,9,12,0.75
+metta_graph_router_script,script gates plus solver,12,12,12,1.0
