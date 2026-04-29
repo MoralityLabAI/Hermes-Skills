@@ -1,0 +1,2682 @@
+{
+  "generated_at_utc": "2026-04-29T19:04:35.887491+00:00",
+  "rows_path": "research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\rows\\logic_signature_camp_gate_noisy_extract_rows.jsonl",
+  "summary": {
+    "evidence_class": "no_model_prompt_constraint_graph_router",
+    "rows": 12,
+    "arms": {
+      "canonical_packet_solver": {
+        "rows": 12,
+        "packet_valid": 12,
+        "packet_exact": 12,
+        "solver_unique": 12,
+        "solve_exact": 12,
+        "solve_exact_rate": 1.0,
+        "avg_solve_cell_accuracy": 1.0
+      },
+      "metta_graph_router_script": {
+        "rows": 12,
+        "packet_valid": 12,
+        "packet_exact": 12,
+        "solver_unique": 12,
+        "solve_exact": 12,
+        "solve_exact_rate": 1.0,
+        "avg_solve_cell_accuracy": 1.0
+      }
+    },
+    "failures_by_gate": {}
+  },
+  "evaluated": [
+    {
+      "ts": "2026-04-29T19:04:35.880479+00:00",
+      "row_id": "camp_gate_001_5x4_4c_noisy",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_graph_router_script",
+      "evidence_class": "no_model_prompt_constraint_graph_router",
+      "packet_valid": true,
+      "packet_exact": true,
+      "solver_unique": true,
+      "solve_exact": true,
+      "solve_cell_accuracy": 1.0,
+      "packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            3
+          ]
+        ],
+        "row_c_counts": [
+          0,
+          2,
+          0,
+          1,
+          1
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          1,
+          1
+        ]
+      },
+      "canonical_packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            3
+          ]
+        ],
+        "row_c_counts": [
+          0,
+          2,
+          0,
+          1,
+          1
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          1,
+          1
+        ]
+      },
+      "solved_output": "TXTX\nCXCX\nXXXX\nCTXX\nXXTC",
+      "solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "diagnostics": {
+        "target_grid_used_by_router": false,
+        "gates": {
+          "dimension_gate": true,
+          "anchor_gate": true,
+          "row_quota_gate": true,
+          "column_quota_gate": true
+        },
+        "raw_packet": {
+          "height": 5,
+          "width": 4,
+          "fixed_tents": [
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              5,
+              3
+            ]
+          ],
+          "row_c_counts": [
+            0,
+            2,
+            0,
+            1,
+            1
+          ],
+          "col_c_counts": [
+            2,
+            0,
+            1,
+            1
+          ]
+        },
+        "normalized": true
+      }
+    },
+    {
+      "ts": "2026-04-29T19:04:35.880479+00:00",
+      "row_id": "camp_gate_001_5x4_4c_noisy",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "canonical_packet_solver",
+      "evidence_class": "no_model_prompt_constraint_graph_router",
+      "packet_valid": true,
+      "packet_exact": true,
+      "solver_unique": true,
+      "solve_exact": true,
+      "solve_cell_accuracy": 1.0,
+      "packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            3
+          ]
+        ],
+        "row_c_counts": [
+          0,
+          2,
+          0,
+          1,
+          1
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          1,
+          1
+        ]
+      },
+      "canonical_packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            3
+          ]
+        ],
+        "row_c_counts": [
+          0,
+          2,
+          0,
+          1,
+          1
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          1,
+          1
+        ]
+      },
+      "solved_output": "TXTX\nCXCX\nXXXX\nCTXX\nXXTC",
+      "solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "diagnostics": {
+        "target_grid_used_by_router": false,
+        "source": "row_validator_upper_bound"
+      }
+    },
+    {
+      "ts": "2026-04-29T19:04:35.881904+00:00",
+      "row_id": "camp_gate_002_4x4_3c_noisy",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_graph_router_script",
+      "evidence_class": "no_model_prompt_constraint_graph_router",
+      "packet_valid": true,
+      "packet_exact": true,
+      "solver_unique": true,
+      "solve_exact": true,
+      "solve_cell_accuracy": 1.0,
+      "packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "row_c_counts": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          0,
+          2
+        ]
+      },
+      "canonical_packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "row_c_counts": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          0,
+          2
+        ]
+      },
+      "solved_output": "XXXX\nXXTC\nCXXX\nTXTC",
+      "solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "diagnostics": {
+        "target_grid_used_by_router": false,
+        "gates": {
+          "dimension_gate": true,
+          "anchor_gate": true,
+          "row_quota_gate": true,
+          "column_quota_gate": true
+        },
+        "raw_packet": {
+          "height": 4,
+          "width": 4,
+          "fixed_tents": [
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              4,
+              3
+            ]
+          ],
+          "row_c_counts": [
+            0,
+            1,
+            1,
+            1
+          ],
+          "col_c_counts": [
+            1,
+            0,
+            0,
+            2
+          ]
+        },
+        "normalized": true
+      }
+    },
+    {
+      "ts": "2026-04-29T19:04:35.881904+00:00",
+      "row_id": "camp_gate_002_4x4_3c_noisy",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "canonical_packet_solver",
+      "evidence_class": "no_model_prompt_constraint_graph_router",
+      "packet_valid": true,
+      "packet_exact": true,
+      "solver_unique": true,
+      "solve_exact": true,
+      "solve_cell_accuracy": 1.0,
+      "packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "row_c_counts": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          0,
+          2
+        ]
+      },
+      "canonical_packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "row_c_counts": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          0,
+          2
+        ]
+      },
+      "solved_output": "XXXX\nXXTC\nCXXX\nTXTC",
+      "solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "diagnostics": {
+        "target_grid_used_by_router": false,
+        "source": "row_validator_upper_bound"
+      }
+    },
+    {
+      "ts": "2026-04-29T19:04:35.882928+00:00",
+      "row_id": "camp_gate_003_4x5_4c_noisy",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_graph_router_script",
+      "evidence_class": "no_model_prompt_constraint_graph_router",
+      "packet_valid": true,
+      "packet_exact": true,
+      "solver_unique": true,
+      "solve_exact": true,
+      "solve_cell_accuracy": 1.0,
+      "packet": {
+        "height": 4,
+        "width": 5,
+        "fixed_tents": [
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          1,
+          0,
+          2
+        ]
+      },
+      "canonical_packet": {
+        "height": 4,
+        "width": 5,
+        "fixed_tents": [
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          1,
+          0,
+          2
+        ]
+      },
+      "solved_output": "XXCTT\nXXXXC\nXXXXX\nCTXTC",
+      "solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "diagnostics": {
+        "target_grid_used_by_router": false,
+        "gates": {
+          "dimension_gate": true,
+          "anchor_gate": true,
+          "row_quota_gate": true,
+          "column_quota_gate": true
+        },
+        "raw_packet": {
+          "height": 4,
+          "width": 5,
+          "fixed_tents": [
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              4,
+              4
+            ]
+          ],
+          "row_c_counts": [
+            1,
+            1,
+            0,
+            2
+          ],
+          "col_c_counts": [
+            1,
+            0,
+            1,
+            0,
+            2
+          ]
+        },
+        "normalized": true
+      }
+    },
+    {
+      "ts": "2026-04-29T19:04:35.883433+00:00",
+      "row_id": "camp_gate_003_4x5_4c_noisy",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "canonical_packet_solver",
+      "evidence_class": "no_model_prompt_constraint_graph_router",
+      "packet_valid": true,
+      "packet_exact": true,
+      "solver_unique": true,
+      "solve_exact": true,
+      "solve_cell_accuracy": 1.0,
+      "packet": {
+        "height": 4,
+        "width": 5,
+        "fixed_tents": [
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          1,
+          0,
+          2
+        ]
+      },
+      "canonical_packet": {
+        "height": 4,
+        "width": 5,
+        "fixed_tents": [
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          1,
+          0,
+          2
+        ]
+      },
+      "solved_output": "XXCTT\nXXXXC\nXXXXX\nCTXTC",
+      "solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "diagnostics": {
+        "target_grid_used_by_router": false,
+        "source": "row_validator_upper_bound"
+      }
+    },
+    {
+      "ts": "2026-04-29T19:04:35.883947+00:00",
+      "row_id": "camp_gate_004_5x4_4c_noisy",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_graph_router_script",
+      "evidence_class": "no_model_prompt_constraint_graph_router",
+      "packet_valid": true,
+      "packet_exact": true,
+      "solver_unique": true,
+      "solve_exact": true,
+      "solve_cell_accuracy": 1.0,
+      "packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            1
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          0,
+          2,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "canonical_packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            1
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          0,
+          2,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "solved_output": "XXTC\nTXXX\nCXCT\nXXXX\nTCXX",
+      "solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "diagnostics": {
+        "target_grid_used_by_router": false,
+        "gates": {
+          "dimension_gate": true,
+          "anchor_gate": true,
+          "row_quota_gate": true,
+          "column_quota_gate": true
+        },
+        "raw_packet": {
+          "height": 5,
+          "width": 4,
+          "fixed_tents": [
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              5,
+              1
+            ]
+          ],
+          "row_c_counts": [
+            1,
+            0,
+            2,
+            0,
+            1
+          ],
+          "col_c_counts": [
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "normalized": true
+      }
+    },
+    {
+      "ts": "2026-04-29T19:04:35.883947+00:00",
+      "row_id": "camp_gate_004_5x4_4c_noisy",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "canonical_packet_solver",
+      "evidence_class": "no_model_prompt_constraint_graph_router",
+      "packet_valid": true,
+      "packet_exact": true,
+      "solver_unique": true,
+      "solve_exact": true,
+      "solve_cell_accuracy": 1.0,
+      "packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            1
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          0,
+          2,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "canonical_packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            1
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          0,
+          2,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "solved_output": "XXTC\nTXXX\nCXCT\nXXXX\nTCXX",
+      "solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "diagnostics": {
+        "target_grid_used_by_router": false,
+        "source": "row_validator_upper_bound"
+      }
+    },
+    {
+      "ts": "2026-04-29T19:04:35.883947+00:00",
+      "row_id": "camp_gate_005_5x5_5c_noisy",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_graph_router_script",
+      "evidence_class": "no_model_prompt_constraint_graph_router",
+      "packet_valid": true,
+      "packet_exact": true,
+      "solver_unique": true,
+      "solve_exact": true,
+      "solve_cell_accuracy": 1.0,
+      "packet": {
+        "height": 5,
+        "width": 5,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          2,
+          0,
+          2,
+          0
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          1,
+          0,
+          2
+        ]
+      },
+      "canonical_packet": {
+        "height": 5,
+        "width": 5,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          2,
+          0,
+          2,
+          0
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          1,
+          0,
+          2
+        ]
+      },
+      "solved_output": "TTCXT\nCXXXC\nXXXXX\nCTXTC\nXXXXX",
+      "solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "diagnostics": {
+        "target_grid_used_by_router": false,
+        "gates": {
+          "dimension_gate": true,
+          "anchor_gate": true,
+          "row_quota_gate": true,
+          "column_quota_gate": true
+        },
+        "raw_packet": {
+          "height": 5,
+          "width": 5,
+          "fixed_tents": [
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              4,
+              4
+            ]
+          ],
+          "row_c_counts": [
+            1,
+            2,
+            0,
+            2,
+            0
+          ],
+          "col_c_counts": [
+            2,
+            0,
+            1,
+            0,
+            2
+          ]
+        },
+        "normalized": true
+      }
+    },
+    {
+      "ts": "2026-04-29T19:04:35.883947+00:00",
+      "row_id": "camp_gate_005_5x5_5c_noisy",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "canonical_packet_solver",
+      "evidence_class": "no_model_prompt_constraint_graph_router",
+      "packet_valid": true,
+      "packet_exact": true,
+      "solver_unique": true,
+      "solve_exact": true,
+      "solve_cell_accuracy": 1.0,
+      "packet": {
+        "height": 5,
+        "width": 5,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          2,
+          0,
+          2,
+          0
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          1,
+          0,
+          2
+        ]
+      },
+      "canonical_packet": {
+        "height": 5,
+        "width": 5,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          2,
+          0,
+          2,
+          0
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          1,
+          0,
+          2
+        ]
+      },
+      "solved_output": "TTCXT\nCXXXC\nXXXXX\nCTXTC\nXXXXX",
+      "solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "diagnostics": {
+        "target_grid_used_by_router": false,
+        "source": "row_validator_upper_bound"
+      }
+    },
+    {
+      "ts": "2026-04-29T19:04:35.884958+00:00",
+      "row_id": "camp_gate_006_4x4_3c_noisy",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_graph_router_script",
+      "evidence_class": "no_model_prompt_constraint_graph_router",
+      "packet_valid": true,
+      "packet_exact": true,
+      "solver_unique": true,
+      "solve_exact": true,
+      "solve_cell_accuracy": 1.0,
+      "packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ]
+      },
+      "canonical_packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ]
+      },
+      "solved_output": "TCXX\nXXXC\nTXXT\nCXXX",
+      "solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "diagnostics": {
+        "target_grid_used_by_router": false,
+        "gates": {
+          "dimension_gate": true,
+          "anchor_gate": true,
+          "row_quota_gate": true,
+          "column_quota_gate": true
+        },
+        "raw_packet": {
+          "height": 4,
+          "width": 4,
+          "fixed_tents": [
+            [
+              1,
+              1
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "row_c_counts": [
+            1,
+            1,
+            0,
+            1
+          ],
+          "col_c_counts": [
+            1,
+            1,
+            0,
+            1
+          ]
+        },
+        "normalized": true
+      }
+    },
+    {
+      "ts": "2026-04-29T19:04:35.884958+00:00",
+      "row_id": "camp_gate_006_4x4_3c_noisy",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "canonical_packet_solver",
+      "evidence_class": "no_model_prompt_constraint_graph_router",
+      "packet_valid": true,
+      "packet_exact": true,
+      "solver_unique": true,
+      "solve_exact": true,
+      "solve_cell_accuracy": 1.0,
+      "packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ]
+      },
+      "canonical_packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ]
+      },
+      "solved_output": "TCXX\nXXXC\nTXXT\nCXXX",
+      "solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "diagnostics": {
+        "target_grid_used_by_router": false,
+        "source": "row_validator_upper_bound"
+      }
+    },
+    {
+      "ts": "2026-04-29T19:04:35.885466+00:00",
+      "row_id": "camp_gate_007_5x4_4c_noisy",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_graph_router_script",
+      "evidence_class": "no_model_prompt_constraint_graph_router",
+      "packet_valid": true,
+      "packet_exact": true,
+      "solver_unique": true,
+      "solve_exact": true,
+      "solve_cell_accuracy": 1.0,
+      "packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            2
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          2,
+          1
+        ]
+      },
+      "canonical_packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            2
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          2,
+          1
+        ]
+      },
+      "solved_output": "XXTC\nXXTX\nXXCX\nCTXX\nXTCX",
+      "solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "diagnostics": {
+        "target_grid_used_by_router": false,
+        "gates": {
+          "dimension_gate": true,
+          "anchor_gate": true,
+          "row_quota_gate": true,
+          "column_quota_gate": true
+        },
+        "raw_packet": {
+          "height": 5,
+          "width": 4,
+          "fixed_tents": [
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              5,
+              2
+            ]
+          ],
+          "row_c_counts": [
+            1,
+            0,
+            1,
+            1,
+            1
+          ],
+          "col_c_counts": [
+            1,
+            0,
+            2,
+            1
+          ]
+        },
+        "normalized": true
+      }
+    },
+    {
+      "ts": "2026-04-29T19:04:35.885466+00:00",
+      "row_id": "camp_gate_007_5x4_4c_noisy",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "canonical_packet_solver",
+      "evidence_class": "no_model_prompt_constraint_graph_router",
+      "packet_valid": true,
+      "packet_exact": true,
+      "solver_unique": true,
+      "solve_exact": true,
+      "solve_cell_accuracy": 1.0,
+      "packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            2
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          2,
+          1
+        ]
+      },
+      "canonical_packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            2
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          2,
+          1
+        ]
+      },
+      "solved_output": "XXTC\nXXTX\nXXCX\nCTXX\nXTCX",
+      "solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "diagnostics": {
+        "target_grid_used_by_router": false,
+        "source": "row_validator_upper_bound"
+      }
+    },
+    {
+      "ts": "2026-04-29T19:04:35.885971+00:00",
+      "row_id": "camp_gate_008_4x4_3c_noisy",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_graph_router_script",
+      "evidence_class": "no_model_prompt_constraint_graph_router",
+      "packet_valid": true,
+      "packet_exact": true,
+      "solver_unique": true,
+      "solve_exact": true,
+      "solve_cell_accuracy": 1.0,
+      "packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ]
+      },
+      "canonical_packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ]
+      },
+      "solved_output": "XCXX\nXTTC\nXXXX\nCTXX",
+      "solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "diagnostics": {
+        "target_grid_used_by_router": false,
+        "gates": {
+          "dimension_gate": true,
+          "anchor_gate": true,
+          "row_quota_gate": true,
+          "column_quota_gate": true
+        },
+        "raw_packet": {
+          "height": 4,
+          "width": 4,
+          "fixed_tents": [
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              2
+            ]
+          ],
+          "row_c_counts": [
+            1,
+            1,
+            0,
+            1
+          ],
+          "col_c_counts": [
+            1,
+            1,
+            0,
+            1
+          ]
+        },
+        "normalized": true
+      }
+    },
+    {
+      "ts": "2026-04-29T19:04:35.885971+00:00",
+      "row_id": "camp_gate_008_4x4_3c_noisy",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "canonical_packet_solver",
+      "evidence_class": "no_model_prompt_constraint_graph_router",
+      "packet_valid": true,
+      "packet_exact": true,
+      "solver_unique": true,
+      "solve_exact": true,
+      "solve_cell_accuracy": 1.0,
+      "packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ]
+      },
+      "canonical_packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ]
+      },
+      "solved_output": "XCXX\nXTTC\nXXXX\nCTXX",
+      "solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "diagnostics": {
+        "target_grid_used_by_router": false,
+        "source": "row_validator_upper_bound"
+      }
+    },
+    {
+      "ts": "2026-04-29T19:04:35.885971+00:00",
+      "row_id": "camp_gate_009_4x5_4c_noisy",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_graph_router_script",
+      "evidence_class": "no_model_prompt_constraint_graph_router",
+      "packet_valid": true,
+      "packet_exact": true,
+      "solver_unique": true,
+      "solve_exact": true,
+      "solve_cell_accuracy": 1.0,
+      "packet": {
+        "height": 4,
+        "width": 5,
+        "fixed_tents": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          1,
+          1,
+          0
+        ]
+      },
+      "canonical_packet": {
+        "height": 4,
+        "width": 5,
+        "fixed_tents": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          1,
+          1,
+          0
+        ]
+      },
+      "solved_output": "CXTXX\nTXCXX\nXXXTX\nCTXCX",
+      "solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "diagnostics": {
+        "target_grid_used_by_router": false,
+        "gates": {
+          "dimension_gate": true,
+          "anchor_gate": true,
+          "row_quota_gate": true,
+          "column_quota_gate": true
+        },
+        "raw_packet": {
+          "height": 4,
+          "width": 5,
+          "fixed_tents": [
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              2
+            ]
+          ],
+          "row_c_counts": [
+            1,
+            1,
+            0,
+            2
+          ],
+          "col_c_counts": [
+            2,
+            0,
+            1,
+            1,
+            0
+          ]
+        },
+        "normalized": true
+      }
+    },
+    {
+      "ts": "2026-04-29T19:04:35.885971+00:00",
+      "row_id": "camp_gate_009_4x5_4c_noisy",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "canonical_packet_solver",
+      "evidence_class": "no_model_prompt_constraint_graph_router",
+      "packet_valid": true,
+      "packet_exact": true,
+      "solver_unique": true,
+      "solve_exact": true,
+      "solve_cell_accuracy": 1.0,
+      "packet": {
+        "height": 4,
+        "width": 5,
+        "fixed_tents": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          1,
+          1,
+          0
+        ]
+      },
+      "canonical_packet": {
+        "height": 4,
+        "width": 5,
+        "fixed_tents": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          1,
+          1,
+          0
+        ]
+      },
+      "solved_output": "CXTXX\nTXCXX\nXXXTX\nCTXCX",
+      "solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "diagnostics": {
+        "target_grid_used_by_router": false,
+        "source": "row_validator_upper_bound"
+      }
+    },
+    {
+      "ts": "2026-04-29T19:04:35.885971+00:00",
+      "row_id": "camp_gate_010_5x4_4c_noisy",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_graph_router_script",
+      "evidence_class": "no_model_prompt_constraint_graph_router",
+      "packet_valid": true,
+      "packet_exact": true,
+      "solver_unique": true,
+      "solve_exact": true,
+      "solve_cell_accuracy": 1.0,
+      "packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          2,
+          0
+        ]
+      },
+      "canonical_packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          2,
+          0
+        ]
+      },
+      "solved_output": "CTTX\nXXCX\nXXXX\nTXXX\nCXCT",
+      "solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "diagnostics": {
+        "target_grid_used_by_router": false,
+        "gates": {
+          "dimension_gate": true,
+          "anchor_gate": true,
+          "row_quota_gate": true,
+          "column_quota_gate": true
+        },
+        "raw_packet": {
+          "height": 5,
+          "width": 4,
+          "fixed_tents": [
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              5,
+              4
+            ]
+          ],
+          "row_c_counts": [
+            1,
+            1,
+            0,
+            0,
+            2
+          ],
+          "col_c_counts": [
+            2,
+            0,
+            2,
+            0
+          ]
+        },
+        "normalized": true
+      }
+    },
+    {
+      "ts": "2026-04-29T19:04:35.886981+00:00",
+      "row_id": "camp_gate_010_5x4_4c_noisy",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "canonical_packet_solver",
+      "evidence_class": "no_model_prompt_constraint_graph_router",
+      "packet_valid": true,
+      "packet_exact": true,
+      "solver_unique": true,
+      "solve_exact": true,
+      "solve_cell_accuracy": 1.0,
+      "packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          2,
+          0
+        ]
+      },
+      "canonical_packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          2,
+          0
+        ]
+      },
+      "solved_output": "CTTX\nXXCX\nXXXX\nTXXX\nCXCT",
+      "solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "diagnostics": {
+        "target_grid_used_by_router": false,
+        "source": "row_validator_upper_bound"
+      }
+    },
+    {
+      "ts": "2026-04-29T19:04:35.886981+00:00",
+      "row_id": "camp_gate_011_5x5_5c_noisy",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_graph_router_script",
+      "evidence_class": "no_model_prompt_constraint_graph_router",
+      "packet_valid": true,
+      "packet_exact": true,
+      "solver_unique": true,
+      "solve_exact": true,
+      "solve_cell_accuracy": 1.0,
+      "packet": {
+        "height": 5,
+        "width": 5,
+        "fixed_tents": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          0,
+          2,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          2,
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      "canonical_packet": {
+        "height": 5,
+        "width": 5,
+        "fixed_tents": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          0,
+          2,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          2,
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      "solved_output": "CXXXX\nTXXXX\nTCXTC\nXXXXX\nCTXCT",
+      "solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "diagnostics": {
+        "target_grid_used_by_router": false,
+        "gates": {
+          "dimension_gate": true,
+          "anchor_gate": true,
+          "row_quota_gate": true,
+          "column_quota_gate": true
+        },
+        "raw_packet": {
+          "height": 5,
+          "width": 5,
+          "fixed_tents": [
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              5,
+              5
+            ]
+          ],
+          "row_c_counts": [
+            1,
+            0,
+            2,
+            0,
+            2
+          ],
+          "col_c_counts": [
+            2,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        "normalized": true
+      }
+    },
+    {
+      "ts": "2026-04-29T19:04:35.887491+00:00",
+      "row_id": "camp_gate_011_5x5_5c_noisy",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "canonical_packet_solver",
+      "evidence_class": "no_model_prompt_constraint_graph_router",
+      "packet_valid": true,
+      "packet_exact": true,
+      "solver_unique": true,
+      "solve_exact": true,
+      "solve_cell_accuracy": 1.0,
+      "packet": {
+        "height": 5,
+        "width": 5,
+        "fixed_tents": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          0,
+          2,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          2,
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      "canonical_packet": {
+        "height": 5,
+        "width": 5,
+        "fixed_tents": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          0,
+          2,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          2,
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      "solved_output": "CXXXX\nTXXXX\nTCXTC\nXXXXX\nCTXCT",
+      "solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "diagnostics": {
+        "target_grid_used_by_router": false,
+        "source": "row_validator_upper_bound"
+      }
+    },
+    {
+      "ts": "2026-04-29T19:04:35.887491+00:00",
+      "row_id": "camp_gate_012_4x4_3c_noisy",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_graph_router_script",
+      "evidence_class": "no_model_prompt_constraint_graph_router",
+      "packet_valid": true,
+      "packet_exact": true,
+      "solver_unique": true,
+      "solve_exact": true,
+      "solve_cell_accuracy": 1.0,
+      "packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      "canonical_packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      "solved_output": "TXCX\nCXTX\nXXXX\nXXTC",
+      "solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "diagnostics": {
+        "target_grid_used_by_router": false,
+        "gates": {
+          "dimension_gate": true,
+          "anchor_gate": true,
+          "row_quota_gate": true,
+          "column_quota_gate": true
+        },
+        "raw_packet": {
+          "height": 4,
+          "width": 4,
+          "fixed_tents": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              3
+            ]
+          ],
+          "row_c_counts": [
+            1,
+            1,
+            0,
+            1
+          ],
+          "col_c_counts": [
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        "normalized": true
+      }
+    },
+    {
+      "ts": "2026-04-29T19:04:35.887491+00:00",
+      "row_id": "camp_gate_012_4x4_3c_noisy",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "canonical_packet_solver",
+      "evidence_class": "no_model_prompt_constraint_graph_router",
+      "packet_valid": true,
+      "packet_exact": true,
+      "solver_unique": true,
+      "solve_exact": true,
+      "solve_cell_accuracy": 1.0,
+      "packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      "canonical_packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      "solved_output": "TXCX\nCXTX\nXXXX\nXXTC",
+      "solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "diagnostics": {
+        "target_grid_used_by_router": false,
+        "source": "row_validator_upper_bound"
+      }
+    }
+  ],
+  "contract_path": "research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\results\\noisy_graph_router_script\\camp_gate_graph_router_contract.metta"
+}

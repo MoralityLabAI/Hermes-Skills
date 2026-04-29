@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-04-29T18:36:33.708990+00:00",
+  "generated_at_utc": "2026-04-29T19:06:54.015562+00:00",
   "route_id": "hard_env_boundary",
   "project_id": "logic_signature_camp_gate",
   "row_count": 12,
@@ -10,6 +10,9 @@
     "5x5": 2
   },
   "validator": "research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\validators\\validate_logic_signature_camp_gate.py",
+  "noisy_rows": "research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\rows\\logic_signature_camp_gate_noisy_extract_rows.jsonl",
+  "noisy_config": "research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\configs\\logic_signature_noisy_extract_suite.json",
+  "graph_router_contract": "research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\results\\noisy_graph_router_script\\camp_gate_graph_router_contract.metta",
   "projection_inputs": [
     "candidate_grid",
     "fixed_t_cells",
@@ -22,6 +25,24 @@
     "canonical_sha256",
     "expected_grid"
   ],
+  "task_graph_allocation": {
+    "script_gate": [
+      "dimension_extraction",
+      "anchor_extraction",
+      "row_quota_extraction",
+      "column_quota_extraction",
+      "public_constraint_solver"
+    ],
+    "trm_training_target": [
+      "field_transcription_under_paraphrase",
+      "schema_repair_accept_reject",
+      "candidate_commit_policy"
+    ],
+    "llm_role": [
+      "proposal_generation",
+      "ambiguous_surface_interpretation"
+    ]
+  },
   "recommended_caps": {
     "job_memory_limit_mb": 3000,
     "cpu_rate_percent": 50,

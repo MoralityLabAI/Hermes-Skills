@@ -42,6 +42,14 @@ EXTRACT_RESULTS_JSON = EXTRACT_RESULTS_DIR / "local_qwen25_3b_constraint_extract
 EXTRACT_JOBCAP_SUMMARY = EXTRACT_RESULTS_DIR / "jobcap.summary.json"
 EXTRACT_REPAIR_RESULTS_DIR = RESULTS_DIR / "constraint_extract_schema_repair"
 EXTRACT_REPAIR_RESULTS_JSON = EXTRACT_REPAIR_RESULTS_DIR / "constraint_extract_schema_repair.results.json"
+NOISY_ROWS_PATH = ROWS_DIR / "logic_signature_camp_gate_noisy_extract_rows.jsonl"
+NOISY_CONFIG_PATH = CONFIGS_DIR / "logic_signature_noisy_extract_suite.json"
+NOISY_EXTRACT_RESULTS_DIR = RESULTS_DIR / "local_qwen25_3b_noisy_graph_constraint_extract"
+NOISY_EXTRACT_RESULTS_JSON = NOISY_EXTRACT_RESULTS_DIR / "local_qwen25_3b_constraint_extract.results.json"
+NOISY_EXTRACT_JOBCAP_SUMMARY = NOISY_EXTRACT_RESULTS_DIR / "jobcap.summary.json"
+GRAPH_ROUTER_RESULTS_DIR = RESULTS_DIR / "noisy_graph_router_script"
+GRAPH_ROUTER_RESULTS_JSON = GRAPH_ROUTER_RESULTS_DIR / "noisy_graph_router.results.json"
+GRAPH_ROUTER_CONTRACT = GRAPH_ROUTER_RESULTS_DIR / "camp_gate_graph_router_contract.metta"
 
 
 def utc_now() -> str:
@@ -86,6 +94,21 @@ def extract_repair_summary_context() -> dict[str, Any] | None:
     return json.loads(EXTRACT_REPAIR_RESULTS_JSON.read_text(encoding="utf-8-sig"))
 
 
+def noisy_extract_summary_context() -> dict[str, Any] | None:
+    if not NOISY_EXTRACT_RESULTS_JSON.exists() or not NOISY_EXTRACT_JOBCAP_SUMMARY.exists():
+        return None
+    return {
+        "result": json.loads(NOISY_EXTRACT_RESULTS_JSON.read_text(encoding="utf-8-sig")),
+        "jobcap": json.loads(NOISY_EXTRACT_JOBCAP_SUMMARY.read_text(encoding="utf-8-sig")),
+    }
+
+
+def graph_router_summary_context() -> dict[str, Any] | None:
+    if not GRAPH_ROUTER_RESULTS_JSON.exists():
+        return None
+    return json.loads(GRAPH_ROUTER_RESULTS_JSON.read_text(encoding="utf-8-sig"))
+
+
 def arm_table(summary: dict[str, Any], arm_order: list[str]) -> str:
     rows: list[str] = []
     for arm in arm_order:
@@ -115,6 +138,8 @@ def write_docs(rows: list[dict[str, Any]]) -> None:
     ablation = ablation_summary_context()
     extract = extract_summary_context()
     extract_repair = extract_repair_summary_context()
+    noisy_extract = noisy_extract_summary_context()
+    graph_router = graph_router_summary_context()
 
     if local:
         result = local["result"]
@@ -186,6 +211,77 @@ The strict `metta_schema_extract` packets failed because the model omitted `widt
 Pending: run `research/scripts/run_logic_signature_constraint_extract_local_3b.py` and `research/scripts/replay_logic_signature_constraint_extract_repair.py`.
 """
 
+    if noisy_extract:
+        noisy_jobcap = noisy_extract["jobcap"]
+        noisy_result = noisy_extract["result"]
+        noisy_arms = noisy_result["summary"]["arms"]
+        noisy_lines = []
+        for arm in ("baseline_extract", "metta_schema_extract", "metta_graph_extract", "canonical_packet_solver"):
+            if arm not in noisy_arms:
+                continue
+            metrics = noisy_arms[arm]
+            noisy_lines.append(
+                f"| `{arm}` | {metrics['json_parse']}/{metrics['rows']} | "
+                f"{metrics['packet_exact']}/{metrics['rows']} | {metrics['solve_exact']}/{metrics['rows']} | "
+                f"{metrics['repair_solve_exact']}/{metrics['rows']} | {metrics['repair_solve_exact_rate']:.4f} |"
+            )
+        noisy_section = f"""## Noisy Constraint Extraction
+
+The noisy/paraphrased extraction run completed under the Windows job-cap wrapper with a {noisy_jobcap['caps']['ram_mb']:,} MB RAM cap, {noisy_jobcap['caps']['cpu_pct']}% CPU cap, {noisy_jobcap['caps']['io_mb_s']} MB/s IO cap, and {noisy_jobcap['caps']['timeout_sec']:,} second timeout. Runner-level child RSS peaked at `{noisy_result['summary'].get('peak_child_ram_mb', 0.0):.2f} MB`; the wrapper reported `{noisy_jobcap['status']}`.
+
+| Arm | JSON Parse | Strict Packet Exact | Strict Solve Exact | Repair Solve Exact | Repair Solve Rate |
+| --- | ---: | ---: | ---: | ---: | ---: |
+{chr(10).join(noisy_lines)}
+
+The graph-gated prompt improves the noisy repaired solve score from `metta_schema_extract` {noisy_arms['metta_schema_extract']['repair_solve_exact']}/{noisy_arms['metta_schema_extract']['rows']} to `metta_graph_extract` {noisy_arms['metta_graph_extract']['repair_solve_exact']}/{noisy_arms['metta_graph_extract']['rows']}. The remaining failures are field-transcription mistakes, not grid-execution failures.
+"""
+        allowed_live += (
+            f"\n- On noisy/paraphrased prompts, `metta_graph_extract` scored "
+            f"{noisy_arms['metta_graph_extract']['repair_solve_exact']}/{noisy_arms['metta_graph_extract']['rows']} "
+            f"repaired solve exact versus baseline "
+            f"{noisy_arms['baseline_extract']['repair_solve_exact']}/{noisy_arms['baseline_extract']['rows']}."
+        )
+        evidence += ", `live_model_local_3b_constraint_extract`"
+    else:
+        noisy_section = """## Noisy Constraint Extraction
+
+Pending: run `research/scripts/build_logic_signature_noisy_extract_rows.py` and the noisy local 3B extraction suite.
+"""
+
+    if graph_router:
+        router_arms = graph_router["summary"]["arms"]
+        router_lines = []
+        for arm in ("metta_graph_router_script", "canonical_packet_solver"):
+            if arm not in router_arms:
+                continue
+            metrics = router_arms[arm]
+            router_lines.append(
+                f"| `{arm}` | {metrics['packet_valid']}/{metrics['rows']} | "
+                f"{metrics['packet_exact']}/{metrics['rows']} | {metrics['solve_exact']}/{metrics['rows']} | "
+                f"{metrics['solve_exact_rate']:.4f} |"
+            )
+        graph_router_section = f"""## Graph Router Control
+
+The script-owned graph router parses only prompt-visible dimensions, anchor coordinates, row quotas, and column quotas before handing the packet to the public solver. It is the cleanest expression of the current methodology: scripts own stable extraction gates, TRM candidates should target uncertain gates, and the LLM should remain a proposal source rather than the executor.
+
+| Arm | Packet Valid | Packet Exact | Solve Exact | Solve Rate |
+| --- | ---: | ---: | ---: | ---: |
+{chr(10).join(router_lines)}
+
+This control reaches closure because the noisy prompts are still structured enough for typed script gates. It should be reported as a control-plane threshold, not as language understanding or trained TRM lift.
+"""
+        allowed_live += (
+            f"\n- Script-owned graph routing solved "
+            f"{router_arms['metta_graph_router_script']['solve_exact']}/{router_arms['metta_graph_router_script']['rows']} "
+            "noisy rows using prompt-visible constraints only."
+        )
+        evidence += ", `no_model_prompt_constraint_graph_router`"
+    else:
+        graph_router_section = """## Graph Router Control
+
+Pending: run `research/scripts/run_logic_signature_noisy_graph_router.py`.
+"""
+
     readme = f"""# Logic Signature Camp-Gate Leakage-Safe Micro-Suite
 
 Generated: `{generated_at}`
@@ -224,12 +320,21 @@ This study turns the prior Intellect-3 camp-gate replay into a leakage-safe micr
 - Projection ablation: `results/projection_ablation/projection_ablation.results.md`
 - Constraint extraction: `results/local_qwen25_3b_constraint_extract/local_qwen25_3b_constraint_extract.results.md`
 - Constraint extraction repair: `results/constraint_extract_schema_repair/constraint_extract_schema_repair.results.md`
+- Noisy extraction rows: `rows/logic_signature_camp_gate_noisy_extract_rows.jsonl`
+- Noisy extraction config: `configs/logic_signature_noisy_extract_suite.json`
+- Noisy local 3B graph extraction: `results/local_qwen25_3b_noisy_graph_constraint_extract/local_qwen25_3b_constraint_extract.results.md`
+- Noisy graph router control: `results/noisy_graph_router_script/noisy_graph_router.results.md`
+- Graph router MeTTa contract: `results/noisy_graph_router_script/camp_gate_graph_router_contract.metta`
 
 {local_section}
 
 {ablation_section}
 
 {extract_section}
+
+{noisy_section}
+
+{graph_router_section}
 """
     plan = f"""# Study Plan
 
@@ -237,12 +342,16 @@ This study turns the prior Intellect-3 camp-gate replay into a leakage-safe micr
 
 MeTTa/TRM signature projection can amplify hard logic only when a small model emits enough verifier-visible grid state. The gain should appear in `metta_signature_projection`, not necessarily in raw `metta_runtime`.
 
+The broader methodology is a task graph: stable symbolic gates should be scripts, uncertain verifier-facing gates become TRM training targets, and the LLM is most useful as a proposal/imagination source rather than as the final executor.
+
 ## Arms
 
 - `baseline`: direct grid answer.
 - `pure_trm`: TRM-style contract parsing prompt.
 - `metta_runtime`: MeTTa/TRM gate prompt without deterministic projection.
 - `metta_signature_projection`: deterministic min-edit projection from the `metta_runtime` candidate to public prompt constraints.
+- `metta_graph_extract`: noisy natural-language constraint extraction framed as typed gates.
+- `metta_graph_router_script`: no-model control where typed script gates own prompt-visible extraction before public solving.
 
 ## Metrics
 
@@ -250,6 +359,7 @@ MeTTa/TRM signature projection can amplify hard logic only when a small model em
 - `contract_valid`: grid satisfies public constraints.
 - `avg_cell_accuracy`: cell-level agreement with the held-out target.
 - `proposal_tier`: `none`, `weak_surface`, `partial_semantic`, or `full_candidate`.
+- `repair_solve_exact`: solved grid after deterministic schema repair of extracted constraint packets.
 
 ## Promotion Rule
 
@@ -265,6 +375,8 @@ If raw 3B outputs are mostly `none`, this lane needs a stronger model or a publi
 
 - `no_model_proposal_tier_smoke` verifies the validator and projection threshold behavior.
 - `live_model_local_3b` applies the same frozen rows and validator to local 3B completions when result receipts exist.
+- `live_model_local_3b_constraint_extract` measures whether 3B can transcribe prompt-visible constraints into solver packets.
+- `no_model_prompt_constraint_graph_router` measures typed script-gate closure without an LLM solve step.
 
 ## Allowed Claims
 
@@ -278,7 +390,8 @@ If raw 3B outputs are mostly `none`, this lane needs a stronger model or a publi
 - Do not call projection success a latent-reasoning improvement.
 - Do not compare this directly to the old 27B receipt replay without noting the old replay used answer-derived signatures.
 - Do not claim trained TRM lift; this study tests runtime framing and deterministic MeTTa projection.
-- Do not claim broad natural-language puzzle extraction yet; the extraction prompts are still structured and should be followed by paraphrased/noisy prompt variants.
+- Do not claim broad natural-language puzzle extraction yet; the noisy prompts are paraphrased but still generated from known controlled surfaces.
+- Do not conflate script-gate closure with model reasoning. It is evidence for control-plane allocation, not language-model capability.
 """
 
     config = {
@@ -288,8 +401,16 @@ If raw 3B outputs are mostly `none`, this lane needs a stronger model or a publi
         "row_count": len(rows),
         "shape_counts": counts,
         "validator": str(VALIDATOR_PATH.relative_to(ROOT)),
+        "noisy_rows": str(NOISY_ROWS_PATH.relative_to(ROOT)),
+        "noisy_config": str(NOISY_CONFIG_PATH.relative_to(ROOT)),
+        "graph_router_contract": str(GRAPH_ROUTER_CONTRACT.relative_to(ROOT)),
         "projection_inputs": ["candidate_grid", "fixed_t_cells", "row_c_counts", "col_c_counts", "adjacency_rules"],
         "projection_forbidden_inputs": ["canonical_output", "canonical_sha256", "expected_grid"],
+        "task_graph_allocation": {
+            "script_gate": ["dimension_extraction", "anchor_extraction", "row_quota_extraction", "column_quota_extraction", "public_constraint_solver"],
+            "trm_training_target": ["field_transcription_under_paraphrase", "schema_repair_accept_reject", "candidate_commit_policy"],
+            "llm_role": ["proposal_generation", "ambiguous_surface_interpretation"],
+        },
         "recommended_caps": {
             "job_memory_limit_mb": 3000,
             "cpu_rate_percent": 50,

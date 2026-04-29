@@ -1,0 +1,8 @@
+{
+  "generated_at_utc": "2026-04-29T18:43:54.687602+00:00",
+  "source_rows": "research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\rows\\logic_signature_camp_gate_rows.jsonl",
+  "rows": "research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\rows\\logic_signature_camp_gate_noisy_extract_rows.jsonl",
+  "row_count": 12,
+  "split": "noisy_paraphrase_extract",
+  "claim_boundary": "Tests structured natural-language constraint extraction, not free-form puzzle parsing."
+}

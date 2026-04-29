@@ -29,7 +29,7 @@ DEFAULT_OUT = STUDY / "results" / "local_qwen25_3b_constraint_extract"
 
 DEFAULT_MODEL = Path(r"D:\research_engine\models\Qwen2.5-3B-Instruct-GGUF\qwen2.5-3b-instruct-q4_k_m.gguf")
 DEFAULT_LLAMA_COMPLETION = Path(r"D:\research_engine\tools\llama.cpp-b8922-cuda12.4\llama-completion.exe")
-EXTRACT_ARMS = ("baseline_extract", "metta_schema_extract")
+EXTRACT_ARMS = ("baseline_extract", "metta_schema_extract", "metta_graph_extract")
 
 
 def utc_now() -> str:
@@ -99,6 +99,29 @@ def arm_prompt(row: dict[str, Any], arm: str) -> list[dict[str, str]]:
                 f"Prompt:\n{row['prompt']}\n\n"
                 f"Output schema:\n{schema_text()}\n\n"
                 "Extract only the public constraints. Do not solve the grid."
+            ),
+        )
+    if arm == "metta_graph_extract":
+        return render_messages(
+            (
+                "You are a MeTTa/TRM graph router for public constraint extraction. "
+                "Run independent gates before the final commit: "
+                "DIMENSION_GATE extracts height and width; "
+                "ANCHOR_GATE extracts fixed T anchor coordinates; "
+                "ROW_QUOTA_GATE extracts row C counts from top row to bottom row; "
+                "COLUMN_QUOTA_GATE extracts column C counts from left column to right column; "
+                "COMMIT_GATE emits one JSON object. "
+                "Coordinates are 1-indexed: r2c3 means [2,3], and '(1 from top, 4 from left)' means [1,4]. "
+                "Never subtract 1 from coordinates. Never copy column counts into row counts. "
+                "The row_c_counts length must equal height; col_c_counts length must equal width. "
+                "The sums of row_c_counts and col_c_counts must equal the number of fixed_tents. "
+                + final_contract
+            ),
+            (
+                f"Prompt:\n{row['prompt']}\n\n"
+                f"Output schema:\n{schema_text()}\n\n"
+                "Extract only public constraints. Do not solve the grid. "
+                "Return exactly one JSON object."
             ),
         )
     raise ValueError(f"unknown arm: {arm}")
