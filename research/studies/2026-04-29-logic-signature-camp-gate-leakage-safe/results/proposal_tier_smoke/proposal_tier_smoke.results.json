@@ -1,0 +1,4559 @@
+{
+  "generated_at_utc": "2026-04-29T13:59:53.067235+00:00",
+  "evidence_class": "no_model_proposal_tier_smoke",
+  "summary": {
+    "rows": 12,
+    "arms": {
+      "full_candidate": {
+        "rows": 12,
+        "contract_valid": 12,
+        "semantic_valid": 12,
+        "exact_success": 12,
+        "avg_cell_accuracy": 1.0,
+        "exact_rate": 1.0,
+        "contract_rate": 1.0,
+        "proposal_tier_counts": {
+          "full_candidate": 12
+        }
+      },
+      "full_candidate_metta_projection": {
+        "rows": 12,
+        "contract_valid": 12,
+        "semantic_valid": 12,
+        "exact_success": 12,
+        "avg_cell_accuracy": 1.0,
+        "exact_rate": 1.0,
+        "contract_rate": 1.0,
+        "proposal_tier_counts": {
+          "full_candidate": 12
+        }
+      },
+      "none_candidate": {
+        "rows": 12,
+        "contract_valid": 0,
+        "semantic_valid": 0,
+        "exact_success": 0,
+        "avg_cell_accuracy": 0.0,
+        "exact_rate": 0.0,
+        "contract_rate": 0.0,
+        "proposal_tier_counts": {
+          "none": 12
+        }
+      },
+      "partial_semantic_candidate": {
+        "rows": 12,
+        "contract_valid": 0,
+        "semantic_valid": 0,
+        "exact_success": 0,
+        "avg_cell_accuracy": 0.8225,
+        "exact_rate": 0.0,
+        "contract_rate": 0.0,
+        "proposal_tier_counts": {
+          "partial_semantic": 9,
+          "weak_surface": 3
+        }
+      },
+      "partial_semantic_candidate_metta_projection": {
+        "rows": 12,
+        "contract_valid": 12,
+        "semantic_valid": 12,
+        "exact_success": 12,
+        "avg_cell_accuracy": 1.0,
+        "exact_rate": 1.0,
+        "contract_rate": 1.0,
+        "proposal_tier_counts": {
+          "full_candidate": 12
+        }
+      },
+      "weak_surface_candidate": {
+        "rows": 12,
+        "contract_valid": 0,
+        "semantic_valid": 0,
+        "exact_success": 0,
+        "avg_cell_accuracy": 0.804167,
+        "exact_rate": 0.0,
+        "contract_rate": 0.0,
+        "proposal_tier_counts": {
+          "weak_surface": 12
+        }
+      },
+      "weak_surface_candidate_metta_projection": {
+        "rows": 12,
+        "contract_valid": 12,
+        "semantic_valid": 12,
+        "exact_success": 12,
+        "avg_cell_accuracy": 1.0,
+        "exact_rate": 1.0,
+        "contract_rate": 1.0,
+        "proposal_tier_counts": {
+          "full_candidate": 12
+        }
+      }
+    },
+    "evaluated_count": 84
+  },
+  "evaluated": [
+    {
+      "row_id": "camp_gate_001_5x4_4c",
+      "arm": "none_candidate",
+      "output": "I cannot solve this grid.",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "parse_ok": false,
+        "shape_ok": false,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [],
+        "col_c_counts_actual": [],
+        "row_c_counts_expected": [
+          0,
+          2,
+          0,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 0.0,
+        "proposal_tier": "none"
+      }
+    },
+    {
+      "row_id": "camp_gate_001_5x4_4c",
+      "arm": "weak_surface_candidate",
+      "output": "TXTX\nXXXX\nXXXX\nXTXX\nXXTX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.8,
+      "proposal_tier": "weak_surface",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "col_c_counts_actual": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "row_c_counts_expected": [
+          0,
+          2,
+          0,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 0.8,
+        "proposal_tier": "weak_surface"
+      }
+    },
+    {
+      "row_id": "camp_gate_001_5x4_4c",
+      "arm": "weak_surface_candidate_metta_projection",
+      "output": "TXTX\nCXCX\nXXXX\nCTXX\nXXTC",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "projection": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 4,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      },
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          0,
+          2,
+          0,
+          1,
+          1
+        ],
+        "col_c_counts_actual": [
+          2,
+          0,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          0,
+          2,
+          0,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_001_5x4_4c",
+      "arm": "partial_semantic_candidate",
+      "output": "TXTX\nXXCC\nXXXX\nCTXX\nCXTX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.8,
+      "proposal_tier": "partial_semantic",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [
+          0,
+          2,
+          0,
+          1,
+          1
+        ],
+        "col_c_counts_actual": [
+          2,
+          0,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          0,
+          2,
+          0,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 0.8,
+        "proposal_tier": "partial_semantic"
+      }
+    },
+    {
+      "row_id": "camp_gate_001_5x4_4c",
+      "arm": "partial_semantic_candidate_metta_projection",
+      "output": "TXTX\nCXCX\nXXXX\nCTXX\nXXTC",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "projection": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 4,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      },
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          0,
+          2,
+          0,
+          1,
+          1
+        ],
+        "col_c_counts_actual": [
+          2,
+          0,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          0,
+          2,
+          0,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_001_5x4_4c",
+      "arm": "full_candidate",
+      "output": "TXTX\nCXCX\nXXXX\nCTXX\nXXTC",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          0,
+          2,
+          0,
+          1,
+          1
+        ],
+        "col_c_counts_actual": [
+          2,
+          0,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          0,
+          2,
+          0,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_001_5x4_4c",
+      "arm": "full_candidate_metta_projection",
+      "output": "TXTX\nCXCX\nXXXX\nCTXX\nXXTC",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "projection": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 0,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      },
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          0,
+          2,
+          0,
+          1,
+          1
+        ],
+        "col_c_counts_actual": [
+          2,
+          0,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          0,
+          2,
+          0,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_002_4x4_3c",
+      "arm": "none_candidate",
+      "output": "I cannot solve this grid.",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "parse_ok": false,
+        "shape_ok": false,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [],
+        "col_c_counts_actual": [],
+        "row_c_counts_expected": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          0,
+          2
+        ],
+        "cell_accuracy": 0.0,
+        "proposal_tier": "none"
+      }
+    },
+    {
+      "row_id": "camp_gate_002_4x4_3c",
+      "arm": "weak_surface_candidate",
+      "output": "XXXX\nXXTX\nXXXX\nTXTX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.8125,
+      "proposal_tier": "weak_surface",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "col_c_counts_actual": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "row_c_counts_expected": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          0,
+          2
+        ],
+        "cell_accuracy": 0.8125,
+        "proposal_tier": "weak_surface"
+      }
+    },
+    {
+      "row_id": "camp_gate_002_4x4_3c",
+      "arm": "weak_surface_candidate_metta_projection",
+      "output": "XXXX\nXXTC\nCXXX\nTXTC",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "projection": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 3,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      },
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          0,
+          0,
+          2
+        ],
+        "row_c_counts_expected": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          0,
+          2
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_002_4x4_3c",
+      "arm": "partial_semantic_candidate",
+      "output": "XXXX\nCXTX\nXXXC\nTXTC",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.75,
+      "proposal_tier": "partial_semantic",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          0,
+          0,
+          2
+        ],
+        "row_c_counts_expected": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          0,
+          2
+        ],
+        "cell_accuracy": 0.75,
+        "proposal_tier": "partial_semantic"
+      }
+    },
+    {
+      "row_id": "camp_gate_002_4x4_3c",
+      "arm": "partial_semantic_candidate_metta_projection",
+      "output": "XXXX\nXXTC\nCXXX\nTXTC",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "projection": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 4,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      },
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          0,
+          0,
+          2
+        ],
+        "row_c_counts_expected": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          0,
+          2
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_002_4x4_3c",
+      "arm": "full_candidate",
+      "output": "XXXX\nXXTC\nCXXX\nTXTC",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          0,
+          0,
+          2
+        ],
+        "row_c_counts_expected": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          0,
+          2
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_002_4x4_3c",
+      "arm": "full_candidate_metta_projection",
+      "output": "XXXX\nXXTC\nCXXX\nTXTC",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "projection": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 0,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      },
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          0,
+          0,
+          2
+        ],
+        "row_c_counts_expected": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          0,
+          2
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_003_4x5_4c",
+      "arm": "none_candidate",
+      "output": "I cannot solve this grid.",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "parse_ok": false,
+        "shape_ok": false,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [],
+        "col_c_counts_actual": [],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          1,
+          0,
+          2
+        ],
+        "cell_accuracy": 0.0,
+        "proposal_tier": "none"
+      }
+    },
+    {
+      "row_id": "camp_gate_003_4x5_4c",
+      "arm": "weak_surface_candidate",
+      "output": "XXXTT\nXXXXX\nXXXXX\nXTXTX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.8,
+      "proposal_tier": "weak_surface",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "col_c_counts_actual": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          1,
+          0,
+          2
+        ],
+        "cell_accuracy": 0.8,
+        "proposal_tier": "weak_surface"
+      }
+    },
+    {
+      "row_id": "camp_gate_003_4x5_4c",
+      "arm": "weak_surface_candidate_metta_projection",
+      "output": "XXCTT\nXXXXC\nXXXXX\nCTXTC",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "projection": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 4,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      },
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_actual": [
+          1,
+          0,
+          1,
+          0,
+          2
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          1,
+          0,
+          2
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_003_4x5_4c",
+      "arm": "partial_semantic_candidate",
+      "output": "CXXTT\nXXXXC\nXXXXX\nXTCTC",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.8,
+      "proposal_tier": "partial_semantic",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_actual": [
+          1,
+          0,
+          1,
+          0,
+          2
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          1,
+          0,
+          2
+        ],
+        "cell_accuracy": 0.8,
+        "proposal_tier": "partial_semantic"
+      }
+    },
+    {
+      "row_id": "camp_gate_003_4x5_4c",
+      "arm": "partial_semantic_candidate_metta_projection",
+      "output": "XXCTT\nXXXXC\nXXXXX\nCTXTC",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "projection": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 4,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      },
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_actual": [
+          1,
+          0,
+          1,
+          0,
+          2
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          1,
+          0,
+          2
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_003_4x5_4c",
+      "arm": "full_candidate",
+      "output": "XXCTT\nXXXXC\nXXXXX\nCTXTC",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_actual": [
+          1,
+          0,
+          1,
+          0,
+          2
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          1,
+          0,
+          2
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_003_4x5_4c",
+      "arm": "full_candidate_metta_projection",
+      "output": "XXCTT\nXXXXC\nXXXXX\nCTXTC",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "projection": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 0,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      },
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_actual": [
+          1,
+          0,
+          1,
+          0,
+          2
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          1,
+          0,
+          2
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_004_5x4_4c",
+      "arm": "none_candidate",
+      "output": "I cannot solve this grid.",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "parse_ok": false,
+        "shape_ok": false,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [],
+        "col_c_counts_actual": [],
+        "row_c_counts_expected": [
+          1,
+          0,
+          2,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "cell_accuracy": 0.0,
+        "proposal_tier": "none"
+      }
+    },
+    {
+      "row_id": "camp_gate_004_5x4_4c",
+      "arm": "weak_surface_candidate",
+      "output": "XXTX\nTXXX\nXXXT\nXXXX\nTXXX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.8,
+      "proposal_tier": "weak_surface",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "col_c_counts_actual": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "row_c_counts_expected": [
+          1,
+          0,
+          2,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "cell_accuracy": 0.8,
+        "proposal_tier": "weak_surface"
+      }
+    },
+    {
+      "row_id": "camp_gate_004_5x4_4c",
+      "arm": "weak_surface_candidate_metta_projection",
+      "output": "XXTC\nTXXX\nCXCT\nXXXX\nTCXX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "projection": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 4,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      },
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          0,
+          2,
+          0,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          0,
+          2,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_004_5x4_4c",
+      "arm": "partial_semantic_candidate",
+      "output": "XCTX\nTXXX\nCXCT\nXXXX\nTXXC",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.8,
+      "proposal_tier": "partial_semantic",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [
+          1,
+          0,
+          2,
+          0,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          0,
+          2,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "cell_accuracy": 0.8,
+        "proposal_tier": "partial_semantic"
+      }
+    },
+    {
+      "row_id": "camp_gate_004_5x4_4c",
+      "arm": "partial_semantic_candidate_metta_projection",
+      "output": "XXTC\nTXXX\nCXCT\nXXXX\nTCXX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "projection": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 4,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      },
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          0,
+          2,
+          0,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          0,
+          2,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_004_5x4_4c",
+      "arm": "full_candidate",
+      "output": "XXTC\nTXXX\nCXCT\nXXXX\nTCXX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          0,
+          2,
+          0,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          0,
+          2,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_004_5x4_4c",
+      "arm": "full_candidate_metta_projection",
+      "output": "XXTC\nTXXX\nCXCT\nXXXX\nTCXX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "projection": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 0,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      },
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          0,
+          2,
+          0,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          0,
+          2,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_005_5x5_5c",
+      "arm": "none_candidate",
+      "output": "I cannot solve this grid.",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "parse_ok": false,
+        "shape_ok": false,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [],
+        "col_c_counts_actual": [],
+        "row_c_counts_expected": [
+          1,
+          2,
+          0,
+          2,
+          0
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          0,
+          2
+        ],
+        "cell_accuracy": 0.0,
+        "proposal_tier": "none"
+      }
+    },
+    {
+      "row_id": "camp_gate_005_5x5_5c",
+      "arm": "weak_surface_candidate",
+      "output": "TTXXT\nXXXXX\nXXXXX\nXTXTX\nXXXXX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.8,
+      "proposal_tier": "weak_surface",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "col_c_counts_actual": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "row_c_counts_expected": [
+          1,
+          2,
+          0,
+          2,
+          0
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          0,
+          2
+        ],
+        "cell_accuracy": 0.8,
+        "proposal_tier": "weak_surface"
+      }
+    },
+    {
+      "row_id": "camp_gate_005_5x5_5c",
+      "arm": "weak_surface_candidate_metta_projection",
+      "output": "TTCXT\nCXXXC\nXXXXX\nCTXTC\nXXXXX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "projection": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 5,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      },
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          2,
+          0,
+          2,
+          0
+        ],
+        "col_c_counts_actual": [
+          2,
+          0,
+          1,
+          0,
+          2
+        ],
+        "row_c_counts_expected": [
+          1,
+          2,
+          0,
+          2,
+          0
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          0,
+          2
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_005_5x5_5c",
+      "arm": "partial_semantic_candidate",
+      "output": "TTXXT\nCXXXC\nXXXXX\nCTXTC\nXXXXX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.96,
+      "proposal_tier": "weak_surface",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          0,
+          2,
+          0,
+          2,
+          0
+        ],
+        "col_c_counts_actual": [
+          2,
+          0,
+          0,
+          0,
+          2
+        ],
+        "row_c_counts_expected": [
+          1,
+          2,
+          0,
+          2,
+          0
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          0,
+          2
+        ],
+        "cell_accuracy": 0.96,
+        "proposal_tier": "weak_surface"
+      }
+    },
+    {
+      "row_id": "camp_gate_005_5x5_5c",
+      "arm": "partial_semantic_candidate_metta_projection",
+      "output": "TTCXT\nCXXXC\nXXXXX\nCTXTC\nXXXXX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "projection": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 1,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      },
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          2,
+          0,
+          2,
+          0
+        ],
+        "col_c_counts_actual": [
+          2,
+          0,
+          1,
+          0,
+          2
+        ],
+        "row_c_counts_expected": [
+          1,
+          2,
+          0,
+          2,
+          0
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          0,
+          2
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_005_5x5_5c",
+      "arm": "full_candidate",
+      "output": "TTCXT\nCXXXC\nXXXXX\nCTXTC\nXXXXX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          2,
+          0,
+          2,
+          0
+        ],
+        "col_c_counts_actual": [
+          2,
+          0,
+          1,
+          0,
+          2
+        ],
+        "row_c_counts_expected": [
+          1,
+          2,
+          0,
+          2,
+          0
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          0,
+          2
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_005_5x5_5c",
+      "arm": "full_candidate_metta_projection",
+      "output": "TTCXT\nCXXXC\nXXXXX\nCTXTC\nXXXXX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "projection": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 0,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      },
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          2,
+          0,
+          2,
+          0
+        ],
+        "col_c_counts_actual": [
+          2,
+          0,
+          1,
+          0,
+          2
+        ],
+        "row_c_counts_expected": [
+          1,
+          2,
+          0,
+          2,
+          0
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          0,
+          2
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_006_4x4_3c",
+      "arm": "none_candidate",
+      "output": "I cannot solve this grid.",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "parse_ok": false,
+        "shape_ok": false,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [],
+        "col_c_counts_actual": [],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "cell_accuracy": 0.0,
+        "proposal_tier": "none"
+      }
+    },
+    {
+      "row_id": "camp_gate_006_4x4_3c",
+      "arm": "weak_surface_candidate",
+      "output": "TXXX\nXXXX\nTXXT\nXXXX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.8125,
+      "proposal_tier": "weak_surface",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "col_c_counts_actual": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "cell_accuracy": 0.8125,
+        "proposal_tier": "weak_surface"
+      }
+    },
+    {
+      "row_id": "camp_gate_006_4x4_3c",
+      "arm": "weak_surface_candidate_metta_projection",
+      "output": "TCXX\nXXXC\nTXXT\nCXXX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "projection": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 3,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      },
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_006_4x4_3c",
+      "arm": "partial_semantic_candidate",
+      "output": "TXXC\nXCXX\nTXXT\nCXXX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.75,
+      "proposal_tier": "partial_semantic",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "cell_accuracy": 0.75,
+        "proposal_tier": "partial_semantic"
+      }
+    },
+    {
+      "row_id": "camp_gate_006_4x4_3c",
+      "arm": "partial_semantic_candidate_metta_projection",
+      "output": "TCXX\nXXXC\nTXXT\nCXXX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "projection": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 4,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      },
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_006_4x4_3c",
+      "arm": "full_candidate",
+      "output": "TCXX\nXXXC\nTXXT\nCXXX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_006_4x4_3c",
+      "arm": "full_candidate_metta_projection",
+      "output": "TCXX\nXXXC\nTXXT\nCXXX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "projection": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 0,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      },
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_007_5x4_4c",
+      "arm": "none_candidate",
+      "output": "I cannot solve this grid.",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "parse_ok": false,
+        "shape_ok": false,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [],
+        "col_c_counts_actual": [],
+        "row_c_counts_expected": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          2,
+          1
+        ],
+        "cell_accuracy": 0.0,
+        "proposal_tier": "none"
+      }
+    },
+    {
+      "row_id": "camp_gate_007_5x4_4c",
+      "arm": "weak_surface_candidate",
+      "output": "XXTX\nXXTX\nXXXX\nXTXX\nXTXX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.8,
+      "proposal_tier": "weak_surface",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "col_c_counts_actual": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "row_c_counts_expected": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          2,
+          1
+        ],
+        "cell_accuracy": 0.8,
+        "proposal_tier": "weak_surface"
+      }
+    },
+    {
+      "row_id": "camp_gate_007_5x4_4c",
+      "arm": "weak_surface_candidate_metta_projection",
+      "output": "XXTC\nXXTX\nXXCX\nCTXX\nXTCX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "projection": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 4,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      },
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          0,
+          2,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          2,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_007_5x4_4c",
+      "arm": "partial_semantic_candidate",
+      "output": "CXTX\nXXTX\nXXCX\nXTXC\nXTCX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.8,
+      "proposal_tier": "partial_semantic",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          0,
+          2,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          2,
+          1
+        ],
+        "cell_accuracy": 0.8,
+        "proposal_tier": "partial_semantic"
+      }
+    },
+    {
+      "row_id": "camp_gate_007_5x4_4c",
+      "arm": "partial_semantic_candidate_metta_projection",
+      "output": "XXTC\nXXTX\nXXCX\nCTXX\nXTCX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "projection": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 4,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      },
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          0,
+          2,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          2,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_007_5x4_4c",
+      "arm": "full_candidate",
+      "output": "XXTC\nXXTX\nXXCX\nCTXX\nXTCX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          0,
+          2,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          2,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_007_5x4_4c",
+      "arm": "full_candidate_metta_projection",
+      "output": "XXTC\nXXTX\nXXCX\nCTXX\nXTCX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "projection": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 0,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      },
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          0,
+          2,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          2,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_008_4x4_3c",
+      "arm": "none_candidate",
+      "output": "I cannot solve this grid.",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "parse_ok": false,
+        "shape_ok": false,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [],
+        "col_c_counts_actual": [],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "cell_accuracy": 0.0,
+        "proposal_tier": "none"
+      }
+    },
+    {
+      "row_id": "camp_gate_008_4x4_3c",
+      "arm": "weak_surface_candidate",
+      "output": "XXXX\nXTTX\nXXXX\nXTXX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.8125,
+      "proposal_tier": "weak_surface",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "col_c_counts_actual": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "cell_accuracy": 0.8125,
+        "proposal_tier": "weak_surface"
+      }
+    },
+    {
+      "row_id": "camp_gate_008_4x4_3c",
+      "arm": "weak_surface_candidate_metta_projection",
+      "output": "XCXX\nXTTC\nXXXX\nCTXX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "projection": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 3,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      },
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_008_4x4_3c",
+      "arm": "partial_semantic_candidate",
+      "output": "XCXX\nCTTX\nXXXX\nXTXC",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.75,
+      "proposal_tier": "partial_semantic",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "cell_accuracy": 0.75,
+        "proposal_tier": "partial_semantic"
+      }
+    },
+    {
+      "row_id": "camp_gate_008_4x4_3c",
+      "arm": "partial_semantic_candidate_metta_projection",
+      "output": "XCXX\nXTTC\nXXXX\nCTXX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "projection": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 4,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      },
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_008_4x4_3c",
+      "arm": "full_candidate",
+      "output": "XCXX\nXTTC\nXXXX\nCTXX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_008_4x4_3c",
+      "arm": "full_candidate_metta_projection",
+      "output": "XCXX\nXTTC\nXXXX\nCTXX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "projection": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 0,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      },
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_009_4x5_4c",
+      "arm": "none_candidate",
+      "output": "I cannot solve this grid.",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "parse_ok": false,
+        "shape_ok": false,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [],
+        "col_c_counts_actual": [],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          1,
+          0
+        ],
+        "cell_accuracy": 0.0,
+        "proposal_tier": "none"
+      }
+    },
+    {
+      "row_id": "camp_gate_009_4x5_4c",
+      "arm": "weak_surface_candidate",
+      "output": "XXTXX\nTXXXX\nXXXTX\nXTXXX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.8,
+      "proposal_tier": "weak_surface",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "col_c_counts_actual": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          1,
+          0
+        ],
+        "cell_accuracy": 0.8,
+        "proposal_tier": "weak_surface"
+      }
+    },
+    {
+      "row_id": "camp_gate_009_4x5_4c",
+      "arm": "weak_surface_candidate_metta_projection",
+      "output": "CXTXX\nTXCXX\nXXXTX\nCTXCX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "projection": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 4,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      },
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_actual": [
+          2,
+          0,
+          1,
+          1,
+          0
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          1,
+          0
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_009_4x5_4c",
+      "arm": "partial_semantic_candidate",
+      "output": "CXTXX\nTXXCX\nXXXTX\nCTCXX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.8,
+      "proposal_tier": "partial_semantic",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_actual": [
+          2,
+          0,
+          1,
+          1,
+          0
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          1,
+          0
+        ],
+        "cell_accuracy": 0.8,
+        "proposal_tier": "partial_semantic"
+      }
+    },
+    {
+      "row_id": "camp_gate_009_4x5_4c",
+      "arm": "partial_semantic_candidate_metta_projection",
+      "output": "CXTXX\nTXCXX\nXXXTX\nCTXCX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "projection": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 4,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      },
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_actual": [
+          2,
+          0,
+          1,
+          1,
+          0
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          1,
+          0
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_009_4x5_4c",
+      "arm": "full_candidate",
+      "output": "CXTXX\nTXCXX\nXXXTX\nCTXCX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_actual": [
+          2,
+          0,
+          1,
+          1,
+          0
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          1,
+          0
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_009_4x5_4c",
+      "arm": "full_candidate_metta_projection",
+      "output": "CXTXX\nTXCXX\nXXXTX\nCTXCX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "projection": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 0,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      },
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_actual": [
+          2,
+          0,
+          1,
+          1,
+          0
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          1,
+          0
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_010_5x4_4c",
+      "arm": "none_candidate",
+      "output": "I cannot solve this grid.",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "parse_ok": false,
+        "shape_ok": false,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [],
+        "col_c_counts_actual": [],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          2,
+          0
+        ],
+        "cell_accuracy": 0.0,
+        "proposal_tier": "none"
+      }
+    },
+    {
+      "row_id": "camp_gate_010_5x4_4c",
+      "arm": "weak_surface_candidate",
+      "output": "XTTX\nXXXX\nXXXX\nTXXX\nXXXT",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.8,
+      "proposal_tier": "weak_surface",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "col_c_counts_actual": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          2,
+          0
+        ],
+        "cell_accuracy": 0.8,
+        "proposal_tier": "weak_surface"
+      }
+    },
+    {
+      "row_id": "camp_gate_010_5x4_4c",
+      "arm": "weak_surface_candidate_metta_projection",
+      "output": "CTTX\nXXCX\nXXXX\nTXXX\nCXCT",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "projection": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 4,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      },
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          0,
+          2
+        ],
+        "col_c_counts_actual": [
+          2,
+          0,
+          2,
+          0
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          2,
+          0
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_010_5x4_4c",
+      "arm": "partial_semantic_candidate",
+      "output": "XTTX\nXXCX\nXXXX\nTXXX\nCXCT",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.95,
+      "proposal_tier": "weak_surface",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          0,
+          1,
+          0,
+          0,
+          2
+        ],
+        "col_c_counts_actual": [
+          1,
+          0,
+          2,
+          0
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          2,
+          0
+        ],
+        "cell_accuracy": 0.95,
+        "proposal_tier": "weak_surface"
+      }
+    },
+    {
+      "row_id": "camp_gate_010_5x4_4c",
+      "arm": "partial_semantic_candidate_metta_projection",
+      "output": "CTTX\nXXCX\nXXXX\nTXXX\nCXCT",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "projection": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 1,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      },
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          0,
+          2
+        ],
+        "col_c_counts_actual": [
+          2,
+          0,
+          2,
+          0
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          2,
+          0
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_010_5x4_4c",
+      "arm": "full_candidate",
+      "output": "CTTX\nXXCX\nXXXX\nTXXX\nCXCT",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          0,
+          2
+        ],
+        "col_c_counts_actual": [
+          2,
+          0,
+          2,
+          0
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          2,
+          0
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_010_5x4_4c",
+      "arm": "full_candidate_metta_projection",
+      "output": "CTTX\nXXCX\nXXXX\nTXXX\nCXCT",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "projection": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 0,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      },
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          0,
+          2
+        ],
+        "col_c_counts_actual": [
+          2,
+          0,
+          2,
+          0
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          2,
+          0
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_011_5x5_5c",
+      "arm": "none_candidate",
+      "output": "I cannot solve this grid.",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "parse_ok": false,
+        "shape_ok": false,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [],
+        "col_c_counts_actual": [],
+        "row_c_counts_expected": [
+          1,
+          0,
+          2,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          2,
+          1,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 0.0,
+        "proposal_tier": "none"
+      }
+    },
+    {
+      "row_id": "camp_gate_011_5x5_5c",
+      "arm": "weak_surface_candidate",
+      "output": "XXXXX\nTXXXX\nTXXTX\nXXXXX\nXTXXT",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.8,
+      "proposal_tier": "weak_surface",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "col_c_counts_actual": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "row_c_counts_expected": [
+          1,
+          0,
+          2,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          2,
+          1,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 0.8,
+        "proposal_tier": "weak_surface"
+      }
+    },
+    {
+      "row_id": "camp_gate_011_5x5_5c",
+      "arm": "weak_surface_candidate_metta_projection",
+      "output": "CXXXX\nTXXXX\nTCXTC\nXXXXX\nCTXCT",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "projection": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 5,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      },
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          0,
+          2,
+          0,
+          2
+        ],
+        "col_c_counts_actual": [
+          2,
+          1,
+          0,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          0,
+          2,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          2,
+          1,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_011_5x5_5c",
+      "arm": "partial_semantic_candidate",
+      "output": "XXXXX\nTXXXX\nTCXTC\nXXXXX\nCTXCT",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.96,
+      "proposal_tier": "weak_surface",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          0,
+          0,
+          2,
+          0,
+          2
+        ],
+        "col_c_counts_actual": [
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          0,
+          2,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          2,
+          1,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 0.96,
+        "proposal_tier": "weak_surface"
+      }
+    },
+    {
+      "row_id": "camp_gate_011_5x5_5c",
+      "arm": "partial_semantic_candidate_metta_projection",
+      "output": "CXXXX\nTXXXX\nTCXTC\nXXXXX\nCTXCT",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "projection": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 1,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      },
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          0,
+          2,
+          0,
+          2
+        ],
+        "col_c_counts_actual": [
+          2,
+          1,
+          0,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          0,
+          2,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          2,
+          1,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_011_5x5_5c",
+      "arm": "full_candidate",
+      "output": "CXXXX\nTXXXX\nTCXTC\nXXXXX\nCTXCT",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          0,
+          2,
+          0,
+          2
+        ],
+        "col_c_counts_actual": [
+          2,
+          1,
+          0,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          0,
+          2,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          2,
+          1,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_011_5x5_5c",
+      "arm": "full_candidate_metta_projection",
+      "output": "CXXXX\nTXXXX\nTCXTC\nXXXXX\nCTXCT",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "projection": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 0,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      },
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          0,
+          2,
+          0,
+          2
+        ],
+        "col_c_counts_actual": [
+          2,
+          1,
+          0,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          0,
+          2,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          2,
+          1,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_012_4x4_3c",
+      "arm": "none_candidate",
+      "output": "I cannot solve this grid.",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "parse_ok": false,
+        "shape_ok": false,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [],
+        "col_c_counts_actual": [],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 0.0,
+        "proposal_tier": "none"
+      }
+    },
+    {
+      "row_id": "camp_gate_012_4x4_3c",
+      "arm": "weak_surface_candidate",
+      "output": "TXXX\nXXTX\nXXXX\nXXTX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.8125,
+      "proposal_tier": "weak_surface",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "col_c_counts_actual": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 0.8125,
+        "proposal_tier": "weak_surface"
+      }
+    },
+    {
+      "row_id": "camp_gate_012_4x4_3c",
+      "arm": "weak_surface_candidate_metta_projection",
+      "output": "TXCX\nCXTX\nXXXX\nXXTC",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "projection": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 3,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      },
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_012_4x4_3c",
+      "arm": "partial_semantic_candidate",
+      "output": "TXCX\nXXTC\nXXXX\nCXTX",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.75,
+      "proposal_tier": "partial_semantic",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 0.75,
+        "proposal_tier": "partial_semantic"
+      }
+    },
+    {
+      "row_id": "camp_gate_012_4x4_3c",
+      "arm": "partial_semantic_candidate_metta_projection",
+      "output": "TXCX\nCXTX\nXXXX\nXXTC",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "projection": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 4,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      },
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_012_4x4_3c",
+      "arm": "full_candidate",
+      "output": "TXCX\nCXTX\nXXXX\nXXTC",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    },
+    {
+      "row_id": "camp_gate_012_4x4_3c",
+      "arm": "full_candidate_metta_projection",
+      "output": "TXCX\nCXTX\nXXXX\nXXTC",
+      "evidence_class": "no_model_proposal_tier_smoke",
+      "generated_at_utc": "2026-04-29T13:58:48.405693+00:00",
+      "projection": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 0,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      },
+      "env_family": "intellect3_logic_camp_gate",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "generated_at_utc": "2026-04-29T13:58:48.413187+00:00",
+  "route_id": "hard_env_boundary",
+  "project_id": "logic_signature_camp_gate",
+  "row_count": 12,
+  "shape_counts": {
+    "5x4": 4,
+    "4x4": 4,
+    "4x5": 2,
+    "5x5": 2
+  },
+  "validator": "research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\validators\\validate_logic_signature_camp_gate.py",
+  "projection_inputs": [
+    "candidate_grid",
+    "fixed_t_cells",
+    "row_c_counts",
+    "col_c_counts",
+    "adjacency_rules"
+  ],
+  "projection_forbidden_inputs": [
+    "canonical_output",
+    "canonical_sha256",
+    "expected_grid"
+  ],
+  "recommended_caps": {
+    "job_memory_limit_mb": 3000,
+    "cpu_rate_percent": 50,
+    "io_cap_mb_s": 50,
+    "runner_child_rss_mb": 2600,
+    "timeout_sec": 7200
+  }
+}
