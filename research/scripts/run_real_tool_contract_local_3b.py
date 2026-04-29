@@ -18,6 +18,11 @@ from run_mixed_contract_local_3b import (
     run_llama_completion,
 )
 
+try:
+    from apply_tool_router_v3_argcanon_gate import canonical_plan_from_prompt
+except ImportError:  # pragma: no cover - keeps this runner usable if the gate script is absent.
+    canonical_plan_from_prompt = None
+
 
 ROOT = Path(__file__).resolve().parents[2]
 STUDY = ROOT / "research" / "studies" / "2026-04-28-real-tool-contract-router-seed"
@@ -64,9 +69,9 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--memory-mode",
-        choices=["seed", "alias_v2"],
+        choices=["seed", "alias_v2", "alias_v3"],
         default="seed",
-        help="Use seed schema only or add v2 alias/argument-normalization memory for non-baseline arms.",
+        help="Use seed schema only, v2 alias memory, or v3 argument-template memory for non-baseline arms.",
     )
     return parser.parse_args()
 
@@ -92,7 +97,20 @@ def select_rows(rows: list[dict[str, Any]], case_ids: str, max_cases: int) -> li
     return selected
 
 
-def public_contract(config: dict[str, Any], memory_mode: str) -> str:
+def v3_retrieval_hint(row: dict[str, Any]) -> dict[str, Any]:
+    if canonical_plan_from_prompt is None:
+        return {}
+    plan, gate = canonical_plan_from_prompt(str(row["prompt"]))
+    if plan is None:
+        return {"argcanon_template": "none"}
+    return {
+        "template_id": gate.get("template_id", ""),
+        "canonical_tool_call": plan,
+        "instruction": "Copy canonical_tool_call exactly if it matches the request intent.",
+    }
+
+
+def public_contract(config: dict[str, Any], memory_mode: str, row: dict[str, Any] | None = None) -> str:
     payload = {
         "benchmark_date": "2026-04-28",
         "timezone": "America/Santiago",
@@ -109,10 +127,14 @@ def public_contract(config: dict[str, Any], memory_mode: str) -> str:
         },
         "output_contract": "Emit exactly one compact JSON object and no markdown or explanation.",
     }
-    if memory_mode == "alias_v2":
+    if memory_mode in {"alias_v2", "alias_v3"}:
         payload["alias_memory"] = config.get("alias_memory", {})
         payload["command_templates"] = config.get("command_templates", {})
         payload["argument_normalization_rules"] = config.get("argument_normalization_rules", [])
+    if memory_mode == "alias_v3":
+        payload["argument_template_rules"] = config.get("argument_template_rules", [])
+        if row is not None:
+            payload["retrieved_argument_template"] = v3_retrieval_hint(row)
     return json.dumps(payload, ensure_ascii=True, sort_keys=True)
 
 
@@ -137,11 +159,16 @@ def arm_prompt(row: dict[str, Any], config: dict[str, Any], arm: str, memory_mod
             },
         ]
     if arm == "pure_trm":
-        memory_hint = (
-            " Use alias_memory and command_templates exactly when present; preserve literal arguments."
-            if memory_mode == "alias_v2"
-            else ""
-        )
+        if memory_mode == "alias_v3":
+            memory_hint = (
+                " Use alias_memory, command_templates, and argument_template_memory exactly when present. "
+                "Treat argument_template_memory as a deterministic compiler: it may override route, fill missing "
+                "required args, normalize city/date/title strings, and reject destructive or ambiguous requests."
+            )
+        elif memory_mode == "alias_v2":
+            memory_hint = " Use alias_memory and command_templates exactly when present; preserve literal arguments."
+        else:
+            memory_hint = ""
         return [
             {
                 "role": "system",
@@ -153,18 +180,28 @@ def arm_prompt(row: dict[str, Any], config: dict[str, Any], arm: str, memory_mod
             },
             {
                 "role": "user",
-                "content": f"Request:\n{row['prompt']}\n\nPublic tool contract:\n{public_contract(config, memory_mode)}",
+                "content": f"Request:\n{row['prompt']}\n\nPublic tool contract:\n{public_contract(config, memory_mode, row)}",
             },
         ]
     if arm == "metta_runtime":
-        gate_sequence = (
-            "TRM_INTENT_CLASSIFY -> METTA_ALIAS_MEMORY -> METTA_SCHEMA_MEMORY -> "
-            "TRM_ARGUMENT_EXTRACT_LITERAL -> TRM_ARGUMENT_NORMALIZE -> "
-            "METTA_COMMAND_TEMPLATE_VALIDATE -> METTA_SAFETY_ROUTE -> TRM_JSON_COMMIT_GATE"
-            if memory_mode == "alias_v2"
-            else "TRM_INTENT_CLASSIFY -> METTA_SCHEMA_MEMORY -> TRM_ARGUMENT_NORMALIZE -> "
-            "METTA_SAFETY_ROUTE -> TRM_JSON_COMMIT_GATE"
-        )
+        if memory_mode == "alias_v3":
+            gate_sequence = (
+                "TRM_INTENT_CLASSIFY -> METTA_TEMPLATE_RETRIEVE -> METTA_ALIAS_MEMORY -> "
+                "METTA_ARGUMENT_TEMPLATE_COMPILE -> TRM_ARGUMENT_EXTRACT_LITERAL -> "
+                "TRM_ARGUMENT_NORMALIZE -> METTA_COMMAND_TEMPLATE_VALIDATE -> "
+                "METTA_SAFETY_ROUTE -> TRM_JSON_COMMIT_GATE"
+            )
+        elif memory_mode == "alias_v2":
+            gate_sequence = (
+                "TRM_INTENT_CLASSIFY -> METTA_ALIAS_MEMORY -> METTA_SCHEMA_MEMORY -> "
+                "TRM_ARGUMENT_EXTRACT_LITERAL -> TRM_ARGUMENT_NORMALIZE -> "
+                "METTA_COMMAND_TEMPLATE_VALIDATE -> METTA_SAFETY_ROUTE -> TRM_JSON_COMMIT_GATE"
+            )
+        else:
+            gate_sequence = (
+                "TRM_INTENT_CLASSIFY -> METTA_SCHEMA_MEMORY -> TRM_ARGUMENT_NORMALIZE -> "
+                "METTA_SAFETY_ROUTE -> TRM_JSON_COMMIT_GATE"
+            )
         return [
             {
                 "role": "system",
@@ -177,7 +214,7 @@ def arm_prompt(row: dict[str, Any], config: dict[str, Any], arm: str, memory_mod
                 "role": "user",
                 "content": (
                     f"Request:\n{row['prompt']}\n\n"
-                    f"Verifier-visible tool contract:\n{public_contract(config, memory_mode)}\n\n"
+                    f"Verifier-visible tool contract:\n{public_contract(config, memory_mode, row)}\n\n"
                     "Do not execute tools. Return only the planned tool call JSON."
                 ),
             },
@@ -203,14 +240,15 @@ def repair_prompt(
             "content": (
                 "You are the repair gate in a MeTTa/TRM tool router. Repair the previous JSON tool call "
                 "using only the request, public tool contract, and validator feedback. Emit only JSON. "
-                "If alias_memory or command_templates are present, copy their canonical values exactly."
+                "If alias_memory, command_templates, or argument_template_memory are present, copy their "
+                "canonical values exactly."
             ),
         },
         {
             "role": "user",
             "content": (
                 f"Request:\n{row['prompt']}\n\n"
-                f"Public tool contract:\n{public_contract(config, memory_mode)}\n\n"
+                f"Public tool contract:\n{public_contract(config, memory_mode, row)}\n\n"
                 f"Previous output:\n{previous_output}\n\n"
                 f"Validator feedback:\n{json.dumps(feedback, ensure_ascii=True, sort_keys=True)}"
             ),

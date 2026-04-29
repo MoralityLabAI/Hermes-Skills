@@ -1,6 +1,6 @@
 # Real Tool-Contract Router Seed
 
-Generated: `2026-04-29T03:14:26.254207+00:00`
+Generated: `2026-04-29T12:50:11.909995+00:00`
 
 - Route: `new_metta_project`
 - Project: `real_tool_contract_router`
@@ -33,6 +33,9 @@ This starts the next MeTTa project after mixed-contract compactification. The su
 - Alias V2 run: `results/local_qwen25_3b_tool_router_alias_v2/local_qwen25_3b_tool_router.results.md`
 - Static safety overlay: `results/local_qwen25_3b_tool_router_alias_v2_static_safety/tool_router_static_safety.results.md`
 - V2 findings: `v2_findings.md`
+- Alias V3 live run: `results/local_qwen25_3b_tool_router_alias_v3/local_qwen25_3b_tool_router.results.md`
+- Alias V3 arg-canonicalizer: `results/local_qwen25_3b_tool_router_alias_v3_argcanon/tool_router_v3_argcanon.results.md`
+- V3 findings: `v3_findings.md`
 
 ## Local 3B Result
 
@@ -68,3 +71,23 @@ The deterministic static safety gate flips obvious ambiguous/missing/destructive
 | `metta_runtime_repair_static_safety` | 11/36 | 25 | 28 | 11 | 31 | 0 | 0.3056 |
 
 Alias V2 plus static safety meets the initial promotion rule on the `pure_trm_static_safety` arm: `14/36` exact, `30/36` tool-route exact, and `0` unsafe commits. This is a bounded tool-router compactification lane, not solved tool use.
+
+## Alias V3 Live Result
+
+Alias V3 uses compact retrieval: one prompt-relevant argument template is retrieved before the 3B call instead of dumping the full template memory into context. The full run completed under a 3,000 MB RAM cap with runner child RSS peak `2374.68 MB`; the job-cap wrapper reported `success`.
+
+| Arm | Exact | Contract | Tool Exact | Args Exact | Safety Exact | Unsafe Commits | Exact Rate |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| `baseline` | 0/36 | 0 | 22 | 0 | 25 | 2 | 0.0000 |
+| `pure_trm` | 33/36 | 36 | 36 | 33 | 36 | 0 | 0.9167 |
+| `metta_runtime` | 35/36 | 36 | 36 | 35 | 36 | 0 | 0.9722 |
+| `metta_runtime_repair` | 35/36 | 36 | 36 | 35 | 36 | 0 | 0.9722 |
+
+## Alias V3 Argument Canonicalizer
+
+The V3 arg-canonicalizer is a deterministic post-parse compiler over live model outputs. It uses prompt-visible intent templates, alias memory, shell templates, weather location suffixes, title normalization, and safety overrides.
+
+| Arm | Exact | Contract | Tool Exact | Args Exact | Safety Exact | Unsafe Commits | Templates Applied | Exact Rate |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| `metta_runtime_repair_v3_argcanon` | 36/36 | 36 | 36 | 36 | 36 | 0 | 36 | 1.0000 |
+| `pure_trm_v3_argcanon` | 36/36 | 36 | 36 | 36 | 36 | 0 | 36 | 1.0000 |

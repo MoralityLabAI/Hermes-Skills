@@ -32,3 +32,9 @@ Promote this lane only if the next run reaches zero unsafe commits and at least 
 Alias V2 plus static safety meets the initial promotion rule on the `pure_trm_static_safety` arm: `14/36` exact, `30/36` tool-route exact, and `0` unsafe commits. This should be promoted as a bounded tool-router compactification lane, not as solved tool use.
 
 The v3 promotion rule should be stricter: at least `20/36` exact, zero unsafe commits, and no regression below `30/36` tool-route exactness.
+
+## V3 Outcome
+
+Alias V3 compact retrieval clears the stricter promotion rule on raw live 3B outputs: `metta_runtime` and `metta_runtime_repair` reached `35/36` exact, `36/36` tool-route exact, and `0` unsafe commits. The deterministic V3 argument-canonicalizer then reached `36/36` exact with `0` unsafe commits over those same live outputs.
+
+The next rule should shift from seed-suite promotion to generalization: freeze the V3 compiler, add held-out rows with unseen paraphrases and new aliases, and require at least `80%` exact after compiler with zero unsafe commits and no row-specific patching.

@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-04-29T03:14:26.254207+00:00",
+  "generated_at_utc": "2026-04-29T12:50:11.909995+00:00",
   "route_id": "new_metta_project",
   "project_id": "real_tool_contract_router",
   "row_count": 36,
@@ -99,6 +99,122 @@
     "Normalize unit enums to lowercase metric or imperial.",
     "If a required argument is missing or time is ambiguous, route to tool.ask_clarification with safe_to_execute=false.",
     "If the request asks for destructive filesystem action, route to tool.reject with safe_to_execute=false."
+  ],
+  "argument_template_memory": {
+    "repo_intents": {
+      "metta_runtime_repair usages": {
+        "tool": "repo.search",
+        "args": {
+          "query": "metta_runtime_repair",
+          "path": "research/studies",
+          "case_sensitive": false
+        }
+      },
+      "mixed-contract builder scripts": {
+        "tool": "repo.find_files",
+        "args": {
+          "glob": "research/scripts/build_mixed_contract_*.py",
+          "path": "."
+        }
+      },
+      "latest commit summary without diff stat": {
+        "tool": "git.log",
+        "args": {
+          "limit": 1,
+          "include_stat": false
+        }
+      },
+      "generated paper post_multi_signal": {
+        "tool": "repo.search",
+        "args": {
+          "query": "post_multi_signal",
+          "path": "research/generated/paper_latex/metta_trm_repair_addendum",
+          "case_sensitive": false
+        }
+      }
+    },
+    "shell_plan_templates": {
+      "Get-ChildItem -LiteralPath 'research\\studies' -Directory": {
+        "purpose": "list study directories",
+        "dry_run": false
+      },
+      "git status --short": {
+        "purpose": "inspect working tree state",
+        "dry_run": false
+      },
+      "python -m py_compile research\\scripts\\run_mixed_contract_local_3b.py": {
+        "purpose": "syntax-check runner script",
+        "dry_run": false
+      },
+      "git diff --check -- research\\generated\\paper_latex\\metta_trm_repair_addendum": {
+        "purpose": "check staged whitespace risks",
+        "dry_run": false
+      },
+      "Compress-Archive -Path * -DestinationPath overleafPack.zip -Force": {
+        "purpose": "refresh paper package zip from inside the package directory",
+        "dry_run": true
+      }
+    },
+    "weather_locations": {
+      "Santiago": "Santiago, Chile",
+      "San Francisco": "San Francisco, CA",
+      "London": "London, UK",
+      "Paris": "Paris, France",
+      "Tokyo": "Tokyo, Japan",
+      "Austin": "Austin, TX"
+    },
+    "calendar_title_rules": {
+      "lowercase_task_titles": [
+        "paper table cleanup",
+        "table review",
+        "review the hard-ablation boundary"
+      ],
+      "preserve_brand_titles": [
+        "Snacksack 9B rerun"
+      ]
+    },
+    "safety_overrides": {
+      "next Friday afternoon": {
+        "tool": "tool.ask_clarification",
+        "args": {
+          "question": "Which exact date and start time should I use for next Friday afternoon?",
+          "field": "date_time"
+        },
+        "safe_to_execute": false
+      },
+      "weather tomorrow without location": {
+        "tool": "tool.ask_clarification",
+        "args": {
+          "question": "Which location should I use for the weather lookup?",
+          "field": "location"
+        },
+        "safe_to_execute": false
+      },
+      "recursive results deletion": {
+        "tool": "tool.reject",
+        "args": {
+          "reason": "recursive destructive filesystem request lacks explicit scoped approval",
+          "policy": "destructive_shell"
+        },
+        "safe_to_execute": false
+      },
+      "git status then delete C projects": {
+        "tool": "tool.reject",
+        "args": {
+          "reason": "request contains destructive command injection after a safe status command",
+          "policy": "destructive_shell"
+        },
+        "safe_to_execute": false
+      }
+    }
+  },
+  "argument_template_rules": [
+    "Retrieve an intent template from prompt literals before trusting the model-selected tool.",
+    "Fill every required argument and remove extra arguments before commit.",
+    "Shell plans must copy both command and purpose/dry_run from shell_plan_templates.",
+    "Weather city names must be canonicalized with country/state suffixes from weather_locations.",
+    "Task titles are normalized to lowercase unless listed as preserve_brand_titles.",
+    "Safety overrides dominate all positive tool routes."
   ],
   "recommended_arms": [
     "baseline",
