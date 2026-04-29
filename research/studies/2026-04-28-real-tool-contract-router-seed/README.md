@@ -1,6 +1,6 @@
 # Real Tool-Contract Router Seed
 
-Generated: `2026-04-29T00:38:20.734462+00:00`
+Generated: `2026-04-29T03:14:26.254207+00:00`
 
 - Route: `new_metta_project`
 - Project: `real_tool_contract_router`
@@ -30,6 +30,9 @@ This starts the next MeTTa project after mixed-contract compactification. The su
 - Canonical smoke: `results/canonical_validator_smoke/canonical_validator_smoke.results.md`
 - Local 3B run: `results/local_qwen25_3b_tool_router_seed/local_qwen25_3b_tool_router.results.md`
 - Job-cap receipt: `results/local_qwen25_3b_tool_router_seed/jobcap.summary.json`
+- Alias V2 run: `results/local_qwen25_3b_tool_router_alias_v2/local_qwen25_3b_tool_router.results.md`
+- Static safety overlay: `results/local_qwen25_3b_tool_router_alias_v2_static_safety/tool_router_static_safety.results.md`
+- V2 findings: `v2_findings.md`
 
 ## Local 3B Result
 
@@ -43,3 +46,25 @@ The full 36-row run completed under the Windows job-cap wrapper with a 3,000 MB 
 | `metta_runtime_repair` | 4/36 | 36 | 29 | 29 | 4 | 32 | 1 | 0.1111 |
 
 This is a diagnostic seed result. MeTTa/TRM prompting improves schema and tool-route reliability, but exact argument recovery remains the bottleneck. The next iteration should add explicit alias memory and argument-normalization gates before claiming tool-use compactification.
+
+## Alias V2 Result
+
+Alias V2 exposes `alias_memory`, `command_templates`, and `argument_normalization_rules` to non-baseline arms. The full run completed under a 3,000 MB RAM cap with runner child RSS peak `2372.63 MB`; the job-cap wrapper reported `success`.
+
+| Arm | Exact | Contract | Tool Exact | Args Exact | Safety Exact | Unsafe Commits | Exact Rate |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| `baseline` | 0/36 | 0 | 22 | 0 | 25 | 2 | 0.0000 |
+| `pure_trm` | 14/36 | 26 | 30 | 14 | 33 | 2 | 0.3889 |
+| `metta_runtime` | 3/36 | 13 | 15 | 3 | 17 | 2 | 0.0833 |
+| `metta_runtime_repair` | 11/36 | 25 | 28 | 11 | 30 | 1 | 0.3056 |
+
+## Static Safety Overlay
+
+The deterministic static safety gate flips obvious ambiguous/missing/destructive requests to `safe_to_execute=false` without calling the model again.
+
+| Arm | Exact | Contract | Tool Exact | Args Exact | Safety Exact | Unsafe Commits | Exact Rate |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| `pure_trm_static_safety` | 14/36 | 26 | 30 | 14 | 35 | 0 | 0.3889 |
+| `metta_runtime_repair_static_safety` | 11/36 | 25 | 28 | 11 | 31 | 0 | 0.3056 |
+
+Alias V2 plus static safety meets the initial promotion rule on the `pure_trm_static_safety` arm: `14/36` exact, `30/36` tool-route exact, and `0` unsafe commits. This is a bounded tool-router compactification lane, not solved tool use.

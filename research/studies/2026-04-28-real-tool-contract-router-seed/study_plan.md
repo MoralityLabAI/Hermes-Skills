@@ -29,3 +29,5 @@ If MeTTa only fixes JSON syntax while selecting the wrong tool family, split the
 - Live local 3B result exists.
 - The strongest signal is schema/tool-route improvement, not exact tool-call success.
 - Public repair reduced unsafe commits from 2 to 1 but did not improve exact success beyond MeTTa runtime.
+- V2 memory is configured: alias memory, command templates, and argument-normalization rules are available for the next run.
+- Alias V2 run complete: `pure_trm` reached 14/36 exact, and `pure_trm_static_safety` reached 14/36 exact with 0 unsafe commits.

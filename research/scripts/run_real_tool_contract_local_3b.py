@@ -62,6 +62,12 @@ def parse_args() -> argparse.Namespace:
         "--run-note",
         default="Full local 3B run against frozen real-tool contract validators. This evaluates planned tool-call JSON only; it does not execute tools.",
     )
+    parser.add_argument(
+        "--memory-mode",
+        choices=["seed", "alias_v2"],
+        default="seed",
+        help="Use seed schema only or add v2 alias/argument-normalization memory for non-baseline arms.",
+    )
     return parser.parse_args()
 
 
@@ -86,7 +92,7 @@ def select_rows(rows: list[dict[str, Any]], case_ids: str, max_cases: int) -> li
     return selected
 
 
-def public_contract(config: dict[str, Any]) -> str:
+def public_contract(config: dict[str, Any], memory_mode: str) -> str:
     payload = {
         "benchmark_date": "2026-04-28",
         "timezone": "America/Santiago",
@@ -103,10 +109,14 @@ def public_contract(config: dict[str, Any]) -> str:
         },
         "output_contract": "Emit exactly one compact JSON object and no markdown or explanation.",
     }
+    if memory_mode == "alias_v2":
+        payload["alias_memory"] = config.get("alias_memory", {})
+        payload["command_templates"] = config.get("command_templates", {})
+        payload["argument_normalization_rules"] = config.get("argument_normalization_rules", [])
     return json.dumps(payload, ensure_ascii=True, sort_keys=True)
 
 
-def arm_prompt(row: dict[str, Any], config: dict[str, Any], arm: str) -> list[dict[str, str]]:
+def arm_prompt(row: dict[str, Any], config: dict[str, Any], arm: str, memory_mode: str) -> list[dict[str, str]]:
     tool_names = ", ".join(sorted(config["tool_schemas"]))
     if arm == "baseline":
         return [
@@ -127,34 +137,47 @@ def arm_prompt(row: dict[str, Any], config: dict[str, Any], arm: str) -> list[di
             },
         ]
     if arm == "pure_trm":
+        memory_hint = (
+            " Use alias_memory and command_templates exactly when present; preserve literal arguments."
+            if memory_mode == "alias_v2"
+            else ""
+        )
         return [
             {
                 "role": "system",
                 "content": (
                     "You are using a TRM-infused Hermes tool router. Parse intent, select the tool, "
                     "normalize arguments, check safety, then emit only the final tool-call JSON."
+                    f"{memory_hint}"
                 ),
             },
             {
                 "role": "user",
-                "content": f"Request:\n{row['prompt']}\n\nPublic tool contract:\n{public_contract(config)}",
+                "content": f"Request:\n{row['prompt']}\n\nPublic tool contract:\n{public_contract(config, memory_mode)}",
             },
         ]
     if arm == "metta_runtime":
+        gate_sequence = (
+            "TRM_INTENT_CLASSIFY -> METTA_ALIAS_MEMORY -> METTA_SCHEMA_MEMORY -> "
+            "TRM_ARGUMENT_EXTRACT_LITERAL -> TRM_ARGUMENT_NORMALIZE -> "
+            "METTA_COMMAND_TEMPLATE_VALIDATE -> METTA_SAFETY_ROUTE -> TRM_JSON_COMMIT_GATE"
+            if memory_mode == "alias_v2"
+            else "TRM_INTENT_CLASSIFY -> METTA_SCHEMA_MEMORY -> TRM_ARGUMENT_NORMALIZE -> "
+            "METTA_SAFETY_ROUTE -> TRM_JSON_COMMIT_GATE"
+        )
         return [
             {
                 "role": "system",
                 "content": (
                     "You are inside a MeTTa-scaffolded TRM tool circuit. Gate sequence: "
-                    "TRM_INTENT_CLASSIFY -> METTA_SCHEMA_MEMORY -> TRM_ARGUMENT_NORMALIZE -> "
-                    "METTA_SAFETY_ROUTE -> TRM_JSON_COMMIT_GATE. Emit only the committed JSON."
+                    f"{gate_sequence}. Emit only the committed JSON."
                 ),
             },
             {
                 "role": "user",
                 "content": (
                     f"Request:\n{row['prompt']}\n\n"
-                    f"Verifier-visible tool contract:\n{public_contract(config)}\n\n"
+                    f"Verifier-visible tool contract:\n{public_contract(config, memory_mode)}\n\n"
                     "Do not execute tools. Return only the planned tool call JSON."
                 ),
             },
@@ -167,6 +190,7 @@ def repair_prompt(
     config: dict[str, Any],
     previous_output: str,
     verdict: dict[str, Any],
+    memory_mode: str,
 ) -> list[dict[str, str]]:
     feedback = {
         "contract_valid": verdict["contract_valid"],
@@ -178,14 +202,15 @@ def repair_prompt(
             "role": "system",
             "content": (
                 "You are the repair gate in a MeTTa/TRM tool router. Repair the previous JSON tool call "
-                "using only the request, public tool contract, and validator feedback. Emit only JSON."
+                "using only the request, public tool contract, and validator feedback. Emit only JSON. "
+                "If alias_memory or command_templates are present, copy their canonical values exactly."
             ),
         },
         {
             "role": "user",
             "content": (
                 f"Request:\n{row['prompt']}\n\n"
-                f"Public tool contract:\n{public_contract(config)}\n\n"
+                f"Public tool contract:\n{public_contract(config, memory_mode)}\n\n"
                 f"Previous output:\n{previous_output}\n\n"
                 f"Validator feedback:\n{json.dumps(feedback, ensure_ascii=True, sort_keys=True)}"
             ),
@@ -416,7 +441,7 @@ def main() -> int:
                 output, diagnostics = run_llama_completion(
                     llama_completion=llama_completion,
                     model_path=model_path,
-                    messages=arm_prompt(row, config, arm),
+                    messages=arm_prompt(row, config, arm, args.memory_mode),
                     ctx=args.ctx,
                     threads=args.threads,
                     batch_size=args.batch_size,
@@ -456,7 +481,7 @@ def main() -> int:
                 output, diagnostics = run_llama_completion(
                     llama_completion=llama_completion,
                     model_path=model_path,
-                    messages=repair_prompt(row, config, metta_output, metta_verdict),
+                    messages=repair_prompt(row, config, metta_output, metta_verdict, args.memory_mode),
                     ctx=args.ctx,
                     threads=args.threads,
                     batch_size=args.batch_size,
@@ -495,6 +520,7 @@ def main() -> int:
             "max_child_rss_mb": args.max_child_rss_mb,
             "run_title": args.run_title,
             "run_note": args.run_note,
+            "memory_mode": args.memory_mode,
         },
         "run_title": args.run_title,
         "run_note": args.run_note,

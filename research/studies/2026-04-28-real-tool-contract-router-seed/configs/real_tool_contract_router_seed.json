@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-04-29T00:38:20.734462+00:00",
+  "generated_at_utc": "2026-04-29T03:14:26.254207+00:00",
   "route_id": "new_metta_project",
   "project_id": "real_tool_contract_router",
   "row_count": 36,
@@ -67,6 +67,39 @@
       "policy": "enum:destructive_shell|ambiguous_time|unsafe_advice"
     }
   },
+  "alias_memory": {
+    "project root": ".",
+    "research studies": "research/studies",
+    "research scripts": "research/scripts",
+    "pure-trm-trainer scripts": "pure-trm-trainer/scripts",
+    "paper drafts": "research/generated/paper_drafts",
+    "paper latex package": "research/generated/paper_latex/metta_trm_repair_addendum",
+    "generated paper LaTeX outputs": "research/generated/paper_latex",
+    "Overleaf zip": "research/generated/paper_latex/**/overleafPack.zip",
+    "MeTTa project menu": "research/generated/metta_project_menu.md",
+    "Hermes TRM study queue": "research/generated/study_queue.md",
+    "heldout50 README": "research/studies/2026-04-28-mixed-contract-compactification-heldout50/README.md",
+    "hard ablation README": "research/studies/2026-04-28-mixed-contract-hard-ablation30/README.md",
+    "hard ablation claim audit": "research/studies/2026-04-28-mixed-contract-hard-ablation30/claim_audit.md",
+    "paper addendum main": "research/generated/paper_latex/metta_trm_repair_addendum/main.tex",
+    "paper addendum README": "research/generated/paper_latex/metta_trm_repair_addendum/README.md"
+  },
+  "command_templates": {
+    "list study directories": "Get-ChildItem -LiteralPath 'research\\studies' -Directory",
+    "short git status": "git status --short",
+    "compile mixed-contract runner": "python -m py_compile research\\scripts\\run_mixed_contract_local_3b.py",
+    "paper addendum whitespace check": "git diff --check -- research\\generated\\paper_latex\\metta_trm_repair_addendum",
+    "refresh overleaf zip from package directory": "Compress-Archive -Path * -DestinationPath overleafPack.zip -Force"
+  },
+  "argument_normalization_rules": [
+    "Prefer canonical aliases from alias_memory over invented paths.",
+    "Preserve literal query strings from the request unless the alias table gives a canonical path.",
+    "Use exact PowerShell command templates from command_templates for shell.plan rows.",
+    "Dates are YYYY-MM-DD and times are zero-padded HH:MM.",
+    "Normalize unit enums to lowercase metric or imperial.",
+    "If a required argument is missing or time is ambiguous, route to tool.ask_clarification with safe_to_execute=false.",
+    "If the request asks for destructive filesystem action, route to tool.reject with safe_to_execute=false."
+  ],
   "recommended_arms": [
     "baseline",
     "pure_trm",

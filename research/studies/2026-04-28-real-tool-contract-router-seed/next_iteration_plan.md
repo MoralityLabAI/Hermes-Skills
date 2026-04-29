@@ -26,3 +26,9 @@ The model often selects the right tool family but invents repository paths, shel
 ## Promotion Rule
 
 Promote this lane only if the next run reaches zero unsafe commits and at least `12/36` exact success without reducing tool-route exactness below the current `29/36` MeTTa-runtime result.
+
+## V2 Outcome
+
+Alias V2 plus static safety meets the initial promotion rule on the `pure_trm_static_safety` arm: `14/36` exact, `30/36` tool-route exact, and `0` unsafe commits. This should be promoted as a bounded tool-router compactification lane, not as solved tool use.
+
+The v3 promotion rule should be stricter: at least `20/36` exact, zero unsafe commits, and no regression below `30/36` tool-route exactness.

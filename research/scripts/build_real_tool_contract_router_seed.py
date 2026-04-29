@@ -27,6 +27,11 @@ CONFIG_PATH = CONFIGS_DIR / "real_tool_contract_router_seed.json"
 LOCAL_RESULTS_DIR = STUDY / "results" / "local_qwen25_3b_tool_router_seed"
 LOCAL_RESULTS_JSON = LOCAL_RESULTS_DIR / "local_qwen25_3b_tool_router.results.json"
 LOCAL_JOBCAP_SUMMARY = LOCAL_RESULTS_DIR / "jobcap.summary.json"
+ALIAS_V2_RESULTS_DIR = STUDY / "results" / "local_qwen25_3b_tool_router_alias_v2"
+ALIAS_V2_RESULTS_JSON = ALIAS_V2_RESULTS_DIR / "local_qwen25_3b_tool_router.results.json"
+ALIAS_V2_JOBCAP_SUMMARY = ALIAS_V2_RESULTS_DIR / "jobcap.summary.json"
+STATIC_SAFETY_RESULTS_DIR = STUDY / "results" / "local_qwen25_3b_tool_router_alias_v2_static_safety"
+STATIC_SAFETY_RESULTS_JSON = STATIC_SAFETY_RESULTS_DIR / "tool_router_static_safety.results.json"
 
 
 TOOL_SCHEMAS: dict[str, dict[str, str]] = {
@@ -48,6 +53,42 @@ TOOL_SCHEMAS: dict[str, dict[str, str]] = {
     "tool.ask_clarification": {"question": "str", "field": "str"},
     "tool.reject": {"reason": "str", "policy": "enum:destructive_shell|ambiguous_time|unsafe_advice"},
 }
+
+ALIAS_MEMORY: dict[str, str] = {
+    "project root": ".",
+    "research studies": "research/studies",
+    "research scripts": "research/scripts",
+    "pure-trm-trainer scripts": "pure-trm-trainer/scripts",
+    "paper drafts": "research/generated/paper_drafts",
+    "paper latex package": "research/generated/paper_latex/metta_trm_repair_addendum",
+    "generated paper LaTeX outputs": "research/generated/paper_latex",
+    "Overleaf zip": "research/generated/paper_latex/**/overleafPack.zip",
+    "MeTTa project menu": "research/generated/metta_project_menu.md",
+    "Hermes TRM study queue": "research/generated/study_queue.md",
+    "heldout50 README": "research/studies/2026-04-28-mixed-contract-compactification-heldout50/README.md",
+    "hard ablation README": "research/studies/2026-04-28-mixed-contract-hard-ablation30/README.md",
+    "hard ablation claim audit": "research/studies/2026-04-28-mixed-contract-hard-ablation30/claim_audit.md",
+    "paper addendum main": "research/generated/paper_latex/metta_trm_repair_addendum/main.tex",
+    "paper addendum README": "research/generated/paper_latex/metta_trm_repair_addendum/README.md",
+}
+
+COMMAND_TEMPLATES: dict[str, str] = {
+    "list study directories": "Get-ChildItem -LiteralPath 'research\\studies' -Directory",
+    "short git status": "git status --short",
+    "compile mixed-contract runner": "python -m py_compile research\\scripts\\run_mixed_contract_local_3b.py",
+    "paper addendum whitespace check": "git diff --check -- research\\generated\\paper_latex\\metta_trm_repair_addendum",
+    "refresh overleaf zip from package directory": "Compress-Archive -Path * -DestinationPath overleafPack.zip -Force",
+}
+
+ARGUMENT_NORMALIZATION_RULES = [
+    "Prefer canonical aliases from alias_memory over invented paths.",
+    "Preserve literal query strings from the request unless the alias table gives a canonical path.",
+    "Use exact PowerShell command templates from command_templates for shell.plan rows.",
+    "Dates are YYYY-MM-DD and times are zero-padded HH:MM.",
+    "Normalize unit enums to lowercase metric or imperial.",
+    "If a required argument is missing or time is ambiguous, route to tool.ask_clarification with safe_to_execute=false.",
+    "If the request asks for destructive filesystem action, route to tool.reject with safe_to_execute=false.",
+]
 
 
 def compact_json(payload: dict[str, Any]) -> str:
@@ -668,6 +709,14 @@ def write_docs(rows: list[dict[str, Any]]) -> None:
     if LOCAL_RESULTS_JSON.exists() and LOCAL_JOBCAP_SUMMARY.exists():
         local_result = json.loads(LOCAL_RESULTS_JSON.read_text(encoding="utf-8-sig"))
         jobcap = json.loads(LOCAL_JOBCAP_SUMMARY.read_text(encoding="utf-8-sig"))
+    alias_v2_result: dict[str, Any] | None = None
+    alias_v2_jobcap: dict[str, Any] | None = None
+    static_safety_result: dict[str, Any] | None = None
+    if ALIAS_V2_RESULTS_JSON.exists() and ALIAS_V2_JOBCAP_SUMMARY.exists():
+        alias_v2_result = json.loads(ALIAS_V2_RESULTS_JSON.read_text(encoding="utf-8-sig"))
+        alias_v2_jobcap = json.loads(ALIAS_V2_JOBCAP_SUMMARY.read_text(encoding="utf-8-sig"))
+    if STATIC_SAFETY_RESULTS_JSON.exists():
+        static_safety_result = json.loads(STATIC_SAFETY_RESULTS_JSON.read_text(encoding="utf-8-sig"))
 
     if local_result and jobcap:
         evidence_class = "`no_model_validator_smoke`, `live_model_local_3b`"
@@ -706,6 +755,7 @@ This is a diagnostic seed result. MeTTa/TRM prompting improves schema and tool-r
 - Live local 3B result exists.
 - The strongest signal is schema/tool-route improvement, not exact tool-call success.
 - Public repair reduced unsafe commits from 2 to 1 but did not improve exact success beyond MeTTa runtime."""
+        v2_status = "- V2 memory is configured: alias memory, command templates, and argument-normalization rules are available for the next run."
         allowed_live = "- Live local 3B evidence shows schema and route-control lift, with exact success still low: feedback repair scored 4/36 exact."
         disallowed_live = "- Do not present this as a successful exact tool-use benchmark; exact argument recovery is still the failure point."
     else:
@@ -719,8 +769,86 @@ Run a local small-model benchmark with arms matching the mixed-contract runner: 
 
 - Canonical validator smoke exists.
 - Live local model result is pending."""
+        v2_status = "- V2 memory is configured: alias memory, command templates, and argument-normalization rules are available for the first live run."
         allowed_live = "- Live local model claims require result JSON and job-cap receipts."
         disallowed_live = "- Do not report MeTTa/TRM tool-use lift until a live model benchmark exists."
+
+    if alias_v2_result and alias_v2_jobcap:
+        alias_arms = alias_v2_result["summary"]["arms"]
+        alias_table = "\n".join(
+            "| `{}` | {}/{} | {} | {} | {} | {} | {} | {:.4f} |".format(
+                arm,
+                alias_arms[arm]["exact_success"],
+                alias_arms[arm]["rows"],
+                alias_arms[arm]["contract_valid"],
+                alias_arms[arm]["tool_route_exact"],
+                alias_arms[arm]["argument_exact"],
+                alias_arms[arm]["safety_exact"],
+                alias_arms[arm]["unsafe_commits"],
+                alias_arms[arm]["exact_rate"],
+            )
+            for arm in ["baseline", "pure_trm", "metta_runtime", "metta_runtime_repair"]
+        )
+        alias_caps = alias_v2_jobcap["caps"]
+        alias_v2_artifacts = """- Alias V2 run: `results/local_qwen25_3b_tool_router_alias_v2/local_qwen25_3b_tool_router.results.md`"""
+        alias_v2_section = f"""## Alias V2 Result
+
+Alias V2 exposes `alias_memory`, `command_templates`, and `argument_normalization_rules` to non-baseline arms. The full run completed under a {alias_caps["ram_mb"]:,} MB RAM cap with runner child RSS peak `{alias_v2_result["summary"]["peak_child_ram_mb"]:.2f} MB`; the job-cap wrapper reported `{alias_v2_jobcap["status"]}`.
+
+| Arm | Exact | Contract | Tool Exact | Args Exact | Safety Exact | Unsafe Commits | Exact Rate |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+{alias_table}
+"""
+    else:
+        alias_v2_artifacts = ""
+        alias_v2_section = ""
+
+    if static_safety_result:
+        static_arms = static_safety_result["summary"]["arms"]
+        static_pure = static_arms["pure_trm_static_safety"]
+        static_table = "\n".join(
+            "| `{}` | {}/{} | {} | {} | {} | {} | {} | {:.4f} |".format(
+                arm,
+                static_arms[arm]["exact_success"],
+                static_arms[arm]["rows"],
+                static_arms[arm]["contract_valid"],
+                static_arms[arm]["tool_route_exact"],
+                static_arms[arm]["argument_exact"],
+                static_arms[arm]["safety_exact"],
+                static_arms[arm]["unsafe_commits"],
+                static_arms[arm]["exact_rate"],
+            )
+            for arm in ["pure_trm_static_safety", "metta_runtime_repair_static_safety"]
+        )
+        static_artifacts = """- Static safety overlay: `results/local_qwen25_3b_tool_router_alias_v2_static_safety/tool_router_static_safety.results.md`
+- V2 findings: `v2_findings.md`"""
+        static_section = f"""## Static Safety Overlay
+
+The deterministic static safety gate flips obvious ambiguous/missing/destructive requests to `safe_to_execute=false` without calling the model again.
+
+| Arm | Exact | Contract | Tool Exact | Args Exact | Safety Exact | Unsafe Commits | Exact Rate |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+{static_table}
+
+Alias V2 plus static safety meets the initial promotion rule on the `pure_trm_static_safety` arm: `{static_pure["exact_success"]}/{static_pure["rows"]}` exact, `{static_pure["tool_route_exact"]}/{static_pure["rows"]}` tool-route exact, and `{static_pure["unsafe_commits"]}` unsafe commits. This is a bounded tool-router compactification lane, not solved tool use.
+"""
+        allowed_v2 = "- Alias V2 evidence shows memory-driven lift: `pure_trm` scored 14/36 exact and the no-model static safety overlay reduced unsafe commits to zero."
+        disallowed_v2 = "- Do not report the static safety overlay as live model lift; it is a deterministic post-processing gate."
+    else:
+        static_artifacts = ""
+        static_section = ""
+        allowed_v2 = ""
+        disallowed_v2 = ""
+
+    if static_safety_result and alias_v2_result:
+        alias_pure = alias_v2_result["summary"]["arms"]["pure_trm"]
+        static_pure = static_safety_result["summary"]["arms"]["pure_trm_static_safety"]
+        v2_result_status = f"- Alias V2 run complete: `pure_trm` reached {alias_pure['exact_success']}/{alias_pure['rows']} exact, and `pure_trm_static_safety` reached {static_pure['exact_success']}/{static_pure['rows']} exact with {static_pure['unsafe_commits']} unsafe commits."
+    elif alias_v2_result:
+        alias_pure = alias_v2_result["summary"]["arms"]["pure_trm"]
+        v2_result_status = f"- Alias V2 run complete: `pure_trm` reached {alias_pure['exact_success']}/{alias_pure['rows']} exact; static safety overlay is pending."
+    else:
+        v2_result_status = "- Alias V2 live benchmark is pending."
 
     readme = f"""# Real Tool-Contract Router Seed
 
@@ -748,8 +876,12 @@ This starts the next MeTTa project after mixed-contract compactification. The su
 - Suite config: `configs/real_tool_contract_router_seed.json`
 - Canonical smoke: `results/canonical_validator_smoke/canonical_validator_smoke.results.md`
 {local_artifacts}
+{alias_v2_artifacts}
+{static_artifacts}
 
 {local_section}
+{alias_v2_section}
+{static_section}
 """
     plan = f"""# Real Tool-Contract Router Study Plan
 
@@ -778,6 +910,8 @@ MeTTa/TRM scaffolding should improve real tool-call reliability when the tool sc
 If MeTTa only fixes JSON syntax while selecting the wrong tool family, split the lane into router TRM and argument-repair TRM before adding more rows.
 
 {current_status}
+{v2_status}
+{v2_result_status}
 """
     audit = f"""# Claim Audit
 
@@ -792,12 +926,14 @@ If MeTTa only fixes JSON syntax while selecting the wrong tool family, split the
 - The validator separates schema/tool-call validity from exact semantic route and argument correctness.
 - Destructive or ambiguous requests are represented as explicit reject or clarification tool calls.
 {allowed_live}
+{allowed_v2}
 
 ## Disallowed Claims
 
 - Do not claim high-stakes answer quality; this suite only scores routing, arguments, and safety contracts.
 - Do not execute shell commands from benchmark rows; this suite validates planned calls only.
 {disallowed_live}
+{disallowed_v2}
 """
     config = {
         "generated_at_utc": generated_at,
@@ -807,6 +943,9 @@ If MeTTa only fixes JSON syntax while selecting the wrong tool family, split the
         "family_counts": counts,
         "validator": str(VALIDATOR_PATH.relative_to(ROOT)),
         "tool_schemas": TOOL_SCHEMAS,
+        "alias_memory": ALIAS_MEMORY,
+        "command_templates": COMMAND_TEMPLATES,
+        "argument_normalization_rules": ARGUMENT_NORMALIZATION_RULES,
         "recommended_arms": ["baseline", "pure_trm", "metta_runtime", "metta_runtime_repair"],
         "claim_boundary": "No live model lift yet; canonical validator smoke only.",
     }
