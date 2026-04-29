@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-04-29T12:48:08.099728+00:00",
+  "generated_at_utc": "2026-04-29T13:28:11.778884+00:00",
   "source_results_path": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\studies\\2026-04-28-real-tool-contract-router-seed\\results\\local_qwen25_3b_tool_router_alias_v3\\local_qwen25_3b_tool_router.results.json",
   "rows_path": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\studies\\2026-04-28-real-tool-contract-router-seed\\rows\\real_tool_contract_router_seed_rows.jsonl",
   "validator_path": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\studies\\2026-04-28-real-tool-contract-router-seed\\validators\\validate_tool_contracts.py",
@@ -123,7 +123,7 @@
   },
   "evaluated": [
     {
-      "ts": "2026-04-29T12:48:08.093018+00:00",
+      "ts": "2026-04-29T13:28:11.772829+00:00",
       "row_id": "tool_repo_001_search_repair",
       "env_family": "repo_search",
       "arm": "pure_trm_v3_argcanon",
@@ -146,8 +146,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "repo.search_metta_runtime_repair",
-          "tags": [],
+          "template_id": "repo.search.metta_runtime_repair",
+          "tags": [
+            "repo"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -174,7 +176,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.093018+00:00",
+      "ts": "2026-04-29T13:28:11.772829+00:00",
       "row_id": "tool_repo_001_search_repair",
       "env_family": "repo_search",
       "arm": "metta_runtime_repair_v3_argcanon",
@@ -197,8 +199,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "repo.search_metta_runtime_repair",
-          "tags": [],
+          "template_id": "repo.search.metta_runtime_repair",
+          "tags": [
+            "repo"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -223,7 +227,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.093018+00:00",
+      "ts": "2026-04-29T13:28:11.772829+00:00",
       "row_id": "tool_repo_002_find_builders",
       "env_family": "repo_search",
       "arm": "pure_trm_v3_argcanon",
@@ -248,7 +252,7 @@
           "argcanon_applied": true,
           "template_id": "repo.find_mixed_contract_builders",
           "tags": [
-            "route_override"
+            "repo"
           ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
@@ -276,7 +280,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.093538+00:00",
+      "ts": "2026-04-29T13:28:11.772829+00:00",
       "row_id": "tool_repo_002_find_builders",
       "env_family": "repo_search",
       "arm": "metta_runtime_repair_v3_argcanon",
@@ -301,7 +305,7 @@
           "argcanon_applied": true,
           "template_id": "repo.find_mixed_contract_builders",
           "tags": [
-            "route_override"
+            "repo"
           ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
@@ -327,7 +331,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.093538+00:00",
+      "ts": "2026-04-29T13:28:11.772829+00:00",
       "row_id": "tool_repo_003_search_todo",
       "env_family": "repo_search",
       "arm": "pure_trm_v3_argcanon",
@@ -350,8 +354,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "repo.search_todo_pure_trm_scripts",
-          "tags": [],
+          "template_id": "repo.search.TODO",
+          "tags": [
+            "repo"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -378,7 +384,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.093538+00:00",
+      "ts": "2026-04-29T13:28:11.772829+00:00",
       "row_id": "tool_repo_003_search_todo",
       "env_family": "repo_search",
       "arm": "metta_runtime_repair_v3_argcanon",
@@ -401,8 +407,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "repo.search_todo_pure_trm_scripts",
-          "tags": [],
+          "template_id": "repo.search.TODO",
+          "tags": [
+            "repo"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -427,7 +435,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.093538+00:00",
+      "ts": "2026-04-29T13:28:11.772829+00:00",
       "row_id": "tool_repo_004_latest_commit",
       "env_family": "repo_search",
       "arm": "pure_trm_v3_argcanon",
@@ -450,9 +458,9 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "repo.latest_commit_no_stat",
+          "template_id": "repo.latest_commit",
           "tags": [
-            "route_override"
+            "repo"
           ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
@@ -480,7 +488,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.093538+00:00",
+      "ts": "2026-04-29T13:28:11.772829+00:00",
       "row_id": "tool_repo_004_latest_commit",
       "env_family": "repo_search",
       "arm": "metta_runtime_repair_v3_argcanon",
@@ -503,9 +511,9 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "repo.latest_commit_no_stat",
+          "template_id": "repo.latest_commit",
           "tags": [
-            "route_override"
+            "repo"
           ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
@@ -531,7 +539,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.093538+00:00",
+      "ts": "2026-04-29T13:28:11.773844+00:00",
       "row_id": "tool_repo_005_find_overleaf_pack",
       "env_family": "repo_search",
       "arm": "pure_trm_v3_argcanon",
@@ -556,7 +564,7 @@
           "argcanon_applied": true,
           "template_id": "repo.find_overleaf_pack",
           "tags": [
-            "route_override"
+            "repo"
           ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
@@ -584,7 +592,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.093538+00:00",
+      "ts": "2026-04-29T13:28:11.773844+00:00",
       "row_id": "tool_repo_005_find_overleaf_pack",
       "env_family": "repo_search",
       "arm": "metta_runtime_repair_v3_argcanon",
@@ -609,7 +617,7 @@
           "argcanon_applied": true,
           "template_id": "repo.find_overleaf_pack",
           "tags": [
-            "route_override"
+            "repo"
           ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
@@ -635,7 +643,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.093538+00:00",
+      "ts": "2026-04-29T13:28:11.773844+00:00",
       "row_id": "tool_repo_006_search_policy",
       "env_family": "repo_search",
       "arm": "pure_trm_v3_argcanon",
@@ -658,8 +666,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "repo.search_post_multi_signal",
-          "tags": [],
+          "template_id": "repo.search.post_multi_signal",
+          "tags": [
+            "repo"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -686,7 +696,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.093538+00:00",
+      "ts": "2026-04-29T13:28:11.773844+00:00",
       "row_id": "tool_repo_006_search_policy",
       "env_family": "repo_search",
       "arm": "metta_runtime_repair_v3_argcanon",
@@ -709,8 +719,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "repo.search_post_multi_signal",
-          "tags": [],
+          "template_id": "repo.search.post_multi_signal",
+          "tags": [
+            "repo"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -735,7 +747,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.093538+00:00",
+      "ts": "2026-04-29T13:28:11.773844+00:00",
       "row_id": "tool_file_001_project_menu",
       "env_family": "file_lookup",
       "arm": "pure_trm_v3_argcanon",
@@ -758,8 +770,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "file.metta_project_menu",
-          "tags": [],
+          "template_id": "file.metta_project_menu.md",
+          "tags": [
+            "file"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -786,7 +800,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.093538+00:00",
+      "ts": "2026-04-29T13:28:11.773844+00:00",
       "row_id": "tool_file_001_project_menu",
       "env_family": "file_lookup",
       "arm": "metta_runtime_repair_v3_argcanon",
@@ -809,8 +823,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "file.metta_project_menu",
-          "tags": [],
+          "template_id": "file.metta_project_menu.md",
+          "tags": [
+            "file"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -835,7 +851,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.093538+00:00",
+      "ts": "2026-04-29T13:28:11.774834+00:00",
       "row_id": "tool_file_002_paper_main",
       "env_family": "file_lookup",
       "arm": "pure_trm_v3_argcanon",
@@ -858,8 +874,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "file.paper_addendum_main",
-          "tags": [],
+          "template_id": "file.main.tex",
+          "tags": [
+            "file"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -886,7 +904,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.093538+00:00",
+      "ts": "2026-04-29T13:28:11.774834+00:00",
       "row_id": "tool_file_002_paper_main",
       "env_family": "file_lookup",
       "arm": "metta_runtime_repair_v3_argcanon",
@@ -909,8 +927,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "file.paper_addendum_main",
-          "tags": [],
+          "template_id": "file.main.tex",
+          "tags": [
+            "file"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -935,7 +955,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.093538+00:00",
+      "ts": "2026-04-29T13:28:11.774834+00:00",
       "row_id": "tool_file_003_heldout_readme",
       "env_family": "file_lookup",
       "arm": "pure_trm_v3_argcanon",
@@ -958,8 +978,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "file.heldout50_readme",
-          "tags": [],
+          "template_id": "file.README.md",
+          "tags": [
+            "file"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -986,7 +1008,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.093538+00:00",
+      "ts": "2026-04-29T13:28:11.774834+00:00",
       "row_id": "tool_file_003_heldout_readme",
       "env_family": "file_lookup",
       "arm": "metta_runtime_repair_v3_argcanon",
@@ -1009,8 +1031,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "file.heldout50_readme",
-          "tags": [],
+          "template_id": "file.README.md",
+          "tags": [
+            "file"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -1035,7 +1059,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.093538+00:00",
+      "ts": "2026-04-29T13:28:11.774834+00:00",
       "row_id": "tool_file_004_hard_claim_audit",
       "env_family": "file_lookup",
       "arm": "pure_trm_v3_argcanon",
@@ -1058,8 +1082,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "file.hard_ablation_claim_audit",
-          "tags": [],
+          "template_id": "file.claim_audit.md",
+          "tags": [
+            "file"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -1086,7 +1112,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.093538+00:00",
+      "ts": "2026-04-29T13:28:11.774834+00:00",
       "row_id": "tool_file_004_hard_claim_audit",
       "env_family": "file_lookup",
       "arm": "metta_runtime_repair_v3_argcanon",
@@ -1109,8 +1135,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "file.hard_ablation_claim_audit",
-          "tags": [],
+          "template_id": "file.claim_audit.md",
+          "tags": [
+            "file"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -1135,7 +1163,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.093538+00:00",
+      "ts": "2026-04-29T13:28:11.774834+00:00",
       "row_id": "tool_file_005_study_queue",
       "env_family": "file_lookup",
       "arm": "pure_trm_v3_argcanon",
@@ -1158,8 +1186,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "file.hermes_trm_study_queue",
-          "tags": [],
+          "template_id": "file.study_queue.md",
+          "tags": [
+            "file"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -1186,7 +1216,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.093538+00:00",
+      "ts": "2026-04-29T13:28:11.774834+00:00",
       "row_id": "tool_file_005_study_queue",
       "env_family": "file_lookup",
       "arm": "metta_runtime_repair_v3_argcanon",
@@ -1209,8 +1239,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "file.hermes_trm_study_queue",
-          "tags": [],
+          "template_id": "file.study_queue.md",
+          "tags": [
+            "file"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -1235,7 +1267,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.093538+00:00",
+      "ts": "2026-04-29T13:28:11.774834+00:00",
       "row_id": "tool_file_006_pack_readme",
       "env_family": "file_lookup",
       "arm": "pure_trm_v3_argcanon",
@@ -1258,8 +1290,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "file.repair_addendum_package_readme",
-          "tags": [],
+          "template_id": "file.README.md",
+          "tags": [
+            "file"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -1286,7 +1320,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.093538+00:00",
+      "ts": "2026-04-29T13:28:11.774834+00:00",
       "row_id": "tool_file_006_pack_readme",
       "env_family": "file_lookup",
       "arm": "metta_runtime_repair_v3_argcanon",
@@ -1309,8 +1343,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "file.repair_addendum_package_readme",
-          "tags": [],
+          "template_id": "file.README.md",
+          "tags": [
+            "file"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -1335,7 +1371,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.093538+00:00",
+      "ts": "2026-04-29T13:28:11.774834+00:00",
       "row_id": "tool_shell_001_list_studies",
       "env_family": "shell_safe_command",
       "arm": "pure_trm_v3_argcanon",
@@ -1359,7 +1395,9 @@
         "v3_argcanon_gate": {
           "argcanon_applied": true,
           "template_id": "shell.list_study_directories",
-          "tags": [],
+          "tags": [
+            "shell"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -1386,7 +1424,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.093538+00:00",
+      "ts": "2026-04-29T13:28:11.774834+00:00",
       "row_id": "tool_shell_001_list_studies",
       "env_family": "shell_safe_command",
       "arm": "metta_runtime_repair_v3_argcanon",
@@ -1410,7 +1448,9 @@
         "v3_argcanon_gate": {
           "argcanon_applied": true,
           "template_id": "shell.list_study_directories",
-          "tags": [],
+          "tags": [
+            "shell"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -1435,7 +1475,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.094543+00:00",
+      "ts": "2026-04-29T13:28:11.774834+00:00",
       "row_id": "tool_shell_002_git_status",
       "env_family": "shell_safe_command",
       "arm": "pure_trm_v3_argcanon",
@@ -1458,8 +1498,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "shell.git_status_short",
-          "tags": [],
+          "template_id": "shell.inspect_working_tree_state",
+          "tags": [
+            "shell"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -1486,7 +1528,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.094543+00:00",
+      "ts": "2026-04-29T13:28:11.775842+00:00",
       "row_id": "tool_shell_002_git_status",
       "env_family": "shell_safe_command",
       "arm": "metta_runtime_repair_v3_argcanon",
@@ -1509,8 +1551,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "shell.git_status_short",
-          "tags": [],
+          "template_id": "shell.inspect_working_tree_state",
+          "tags": [
+            "shell"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -1535,7 +1579,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.096055+00:00",
+      "ts": "2026-04-29T13:28:11.775842+00:00",
       "row_id": "tool_shell_003_compile_runner",
       "env_family": "shell_safe_command",
       "arm": "pure_trm_v3_argcanon",
@@ -1558,8 +1602,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "shell.compile_mixed_contract_runner",
-          "tags": [],
+          "template_id": "shell.syntax-check_runner_script",
+          "tags": [
+            "shell"
+          ],
           "source_exact_success": false,
           "source_tool_route_exact": true,
           "source_argument_exact": false,
@@ -1586,7 +1632,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.096055+00:00",
+      "ts": "2026-04-29T13:28:11.775842+00:00",
       "row_id": "tool_shell_003_compile_runner",
       "env_family": "shell_safe_command",
       "arm": "metta_runtime_repair_v3_argcanon",
@@ -1609,8 +1655,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "shell.compile_mixed_contract_runner",
-          "tags": [],
+          "template_id": "shell.syntax-check_runner_script",
+          "tags": [
+            "shell"
+          ],
           "source_exact_success": false,
           "source_tool_route_exact": true,
           "source_argument_exact": false,
@@ -1637,7 +1685,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.096055+00:00",
+      "ts": "2026-04-29T13:28:11.775842+00:00",
       "row_id": "tool_shell_004_diff_check",
       "env_family": "shell_safe_command",
       "arm": "pure_trm_v3_argcanon",
@@ -1660,8 +1708,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "shell.paper_addendum_diff_check",
-          "tags": [],
+          "template_id": "shell.check_staged_whitespace_risks",
+          "tags": [
+            "shell"
+          ],
           "source_exact_success": false,
           "source_tool_route_exact": true,
           "source_argument_exact": false,
@@ -1688,7 +1738,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.096055+00:00",
+      "ts": "2026-04-29T13:28:11.775842+00:00",
       "row_id": "tool_shell_004_diff_check",
       "env_family": "shell_safe_command",
       "arm": "metta_runtime_repair_v3_argcanon",
@@ -1711,8 +1761,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "shell.paper_addendum_diff_check",
-          "tags": [],
+          "template_id": "shell.check_staged_whitespace_risks",
+          "tags": [
+            "shell"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -1737,7 +1789,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.096055+00:00",
+      "ts": "2026-04-29T13:28:11.775842+00:00",
       "row_id": "tool_shell_005_reject_recursive_delete",
       "env_family": "shell_safe_command",
       "arm": "pure_trm_v3_argcanon",
@@ -1790,7 +1842,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.096055+00:00",
+      "ts": "2026-04-29T13:28:11.775842+00:00",
       "row_id": "tool_shell_005_reject_recursive_delete",
       "env_family": "shell_safe_command",
       "arm": "metta_runtime_repair_v3_argcanon",
@@ -1841,7 +1893,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.096055+00:00",
+      "ts": "2026-04-29T13:28:11.775842+00:00",
       "row_id": "tool_shell_006_plan_zip_refresh",
       "env_family": "shell_safe_command",
       "arm": "pure_trm_v3_argcanon",
@@ -1864,8 +1916,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "shell.refresh_overleaf_zip",
-          "tags": [],
+          "template_id": "shell.refresh_paper_package_zip_from_inside_the_package_directory",
+          "tags": [
+            "shell"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -1892,7 +1946,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.096055+00:00",
+      "ts": "2026-04-29T13:28:11.775842+00:00",
       "row_id": "tool_shell_006_plan_zip_refresh",
       "env_family": "shell_safe_command",
       "arm": "metta_runtime_repair_v3_argcanon",
@@ -1915,8 +1969,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "shell.refresh_overleaf_zip",
-          "tags": [],
+          "template_id": "shell.refresh_paper_package_zip_from_inside_the_package_directory",
+          "tags": [
+            "shell"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -1941,7 +1997,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.097071+00:00",
+      "ts": "2026-04-29T13:28:11.775842+00:00",
       "row_id": "tool_calendar_001_snacksack",
       "env_family": "scheduling_query",
       "arm": "pure_trm_v3_argcanon",
@@ -1964,8 +2020,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "calendar.snacksack_rerun_tomorrow",
-          "tags": [],
+          "template_id": "calendar.create_event",
+          "tags": [
+            "calendar"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -1992,7 +2050,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.097071+00:00",
+      "ts": "2026-04-29T13:28:11.775842+00:00",
       "row_id": "tool_calendar_001_snacksack",
       "env_family": "scheduling_query",
       "arm": "metta_runtime_repair_v3_argcanon",
@@ -2015,8 +2073,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "calendar.snacksack_rerun_tomorrow",
-          "tags": [],
+          "template_id": "calendar.create_event",
+          "tags": [
+            "calendar"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -2041,7 +2101,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.097071+00:00",
+      "ts": "2026-04-29T13:28:11.776833+00:00",
       "row_id": "tool_calendar_002_query_day",
       "env_family": "scheduling_query",
       "arm": "pure_trm_v3_argcanon",
@@ -2064,8 +2124,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "calendar.query_april_30",
-          "tags": [],
+          "template_id": "calendar.query_day",
+          "tags": [
+            "calendar"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -2092,7 +2154,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.097071+00:00",
+      "ts": "2026-04-29T13:28:11.776833+00:00",
       "row_id": "tool_calendar_002_query_day",
       "env_family": "scheduling_query",
       "arm": "metta_runtime_repair_v3_argcanon",
@@ -2115,8 +2177,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "calendar.query_april_30",
-          "tags": [],
+          "template_id": "calendar.query_day",
+          "tags": [
+            "calendar"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -2141,7 +2205,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.097071+00:00",
+      "ts": "2026-04-29T13:28:11.776833+00:00",
       "row_id": "tool_calendar_003_reminder",
       "env_family": "scheduling_query",
       "arm": "pure_trm_v3_argcanon",
@@ -2164,8 +2228,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "calendar.reminder_hard_ablation_boundary",
-          "tags": [],
+          "template_id": "calendar.reminder",
+          "tags": [
+            "calendar"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -2192,7 +2258,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.097071+00:00",
+      "ts": "2026-04-29T13:28:11.776833+00:00",
       "row_id": "tool_calendar_003_reminder",
       "env_family": "scheduling_query",
       "arm": "metta_runtime_repair_v3_argcanon",
@@ -2215,8 +2281,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "calendar.reminder_hard_ablation_boundary",
-          "tags": [],
+          "template_id": "calendar.reminder",
+          "tags": [
+            "calendar"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -2241,7 +2309,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.097071+00:00",
+      "ts": "2026-04-29T13:28:11.776833+00:00",
       "row_id": "tool_calendar_004_week_query",
       "env_family": "scheduling_query",
       "arm": "pure_trm_v3_argcanon",
@@ -2264,8 +2332,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "calendar.query_week_may_4",
-          "tags": [],
+          "template_id": "calendar.query_week",
+          "tags": [
+            "calendar"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -2292,7 +2362,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.097071+00:00",
+      "ts": "2026-04-29T13:28:11.776833+00:00",
       "row_id": "tool_calendar_004_week_query",
       "env_family": "scheduling_query",
       "arm": "metta_runtime_repair_v3_argcanon",
@@ -2315,8 +2385,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "calendar.query_week_may_4",
-          "tags": [],
+          "template_id": "calendar.query_week",
+          "tags": [
+            "calendar"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -2341,7 +2413,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.097071+00:00",
+      "ts": "2026-04-29T13:28:11.776833+00:00",
       "row_id": "tool_calendar_005_ambiguous_friday",
       "env_family": "scheduling_query",
       "arm": "pure_trm_v3_argcanon",
@@ -2366,7 +2438,7 @@
           "argcanon_applied": true,
           "template_id": "calendar.ambiguous_next_friday_afternoon",
           "tags": [
-            "safety_override"
+            "calendar"
           ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
@@ -2394,7 +2466,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.097071+00:00",
+      "ts": "2026-04-29T13:28:11.776833+00:00",
       "row_id": "tool_calendar_005_ambiguous_friday",
       "env_family": "scheduling_query",
       "arm": "metta_runtime_repair_v3_argcanon",
@@ -2419,7 +2491,7 @@
           "argcanon_applied": true,
           "template_id": "calendar.ambiguous_next_friday_afternoon",
           "tags": [
-            "safety_override"
+            "calendar"
           ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
@@ -2445,7 +2517,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.097071+00:00",
+      "ts": "2026-04-29T13:28:11.776833+00:00",
       "row_id": "tool_calendar_006_commit_event",
       "env_family": "scheduling_query",
       "arm": "pure_trm_v3_argcanon",
@@ -2468,8 +2540,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "calendar.paper_table_cleanup",
-          "tags": [],
+          "template_id": "calendar.create_event",
+          "tags": [
+            "calendar"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -2496,7 +2570,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.097071+00:00",
+      "ts": "2026-04-29T13:28:11.777840+00:00",
       "row_id": "tool_calendar_006_commit_event",
       "env_family": "scheduling_query",
       "arm": "metta_runtime_repair_v3_argcanon",
@@ -2519,8 +2593,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "calendar.paper_table_cleanup",
-          "tags": [],
+          "template_id": "calendar.create_event",
+          "tags": [
+            "calendar"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -2545,7 +2621,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.098221+00:00",
+      "ts": "2026-04-29T13:28:11.777840+00:00",
       "row_id": "tool_weather_001_tomorrow_santiago",
       "env_family": "weather_query",
       "arm": "pure_trm_v3_argcanon",
@@ -2569,7 +2645,9 @@
         "v3_argcanon_gate": {
           "argcanon_applied": true,
           "template_id": "weather.santiago",
-          "tags": [],
+          "tags": [
+            "weather"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -2596,7 +2674,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.098221+00:00",
+      "ts": "2026-04-29T13:28:11.777840+00:00",
       "row_id": "tool_weather_001_tomorrow_santiago",
       "env_family": "weather_query",
       "arm": "metta_runtime_repair_v3_argcanon",
@@ -2620,7 +2698,9 @@
         "v3_argcanon_gate": {
           "argcanon_applied": true,
           "template_id": "weather.santiago",
-          "tags": [],
+          "tags": [
+            "weather"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -2645,7 +2725,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.098221+00:00",
+      "ts": "2026-04-29T13:28:11.777840+00:00",
       "row_id": "tool_weather_002_sf_imperial",
       "env_family": "weather_query",
       "arm": "pure_trm_v3_argcanon",
@@ -2668,8 +2748,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "weather.san_francisco",
-          "tags": [],
+          "template_id": "weather.san francisco",
+          "tags": [
+            "weather"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -2696,7 +2778,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.098221+00:00",
+      "ts": "2026-04-29T13:28:11.777840+00:00",
       "row_id": "tool_weather_002_sf_imperial",
       "env_family": "weather_query",
       "arm": "metta_runtime_repair_v3_argcanon",
@@ -2719,8 +2801,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "weather.san_francisco",
-          "tags": [],
+          "template_id": "weather.san francisco",
+          "tags": [
+            "weather"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -2745,7 +2829,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.098221+00:00",
+      "ts": "2026-04-29T13:28:11.777840+00:00",
       "row_id": "tool_weather_003_london_metric",
       "env_family": "weather_query",
       "arm": "pure_trm_v3_argcanon",
@@ -2769,7 +2853,9 @@
         "v3_argcanon_gate": {
           "argcanon_applied": true,
           "template_id": "weather.london",
-          "tags": [],
+          "tags": [
+            "weather"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -2796,7 +2882,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.098221+00:00",
+      "ts": "2026-04-29T13:28:11.777840+00:00",
       "row_id": "tool_weather_003_london_metric",
       "env_family": "weather_query",
       "arm": "metta_runtime_repair_v3_argcanon",
@@ -2820,7 +2906,9 @@
         "v3_argcanon_gate": {
           "argcanon_applied": true,
           "template_id": "weather.london",
-          "tags": [],
+          "tags": [
+            "weather"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -2845,7 +2933,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.098221+00:00",
+      "ts": "2026-04-29T13:28:11.777840+00:00",
       "row_id": "tool_weather_004_ambiguous_units",
       "env_family": "weather_query",
       "arm": "pure_trm_v3_argcanon",
@@ -2869,7 +2957,9 @@
         "v3_argcanon_gate": {
           "argcanon_applied": true,
           "template_id": "weather.paris",
-          "tags": [],
+          "tags": [
+            "weather"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -2896,7 +2986,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.098221+00:00",
+      "ts": "2026-04-29T13:28:11.777840+00:00",
       "row_id": "tool_weather_004_ambiguous_units",
       "env_family": "weather_query",
       "arm": "metta_runtime_repair_v3_argcanon",
@@ -2920,7 +3010,9 @@
         "v3_argcanon_gate": {
           "argcanon_applied": true,
           "template_id": "weather.paris",
-          "tags": [],
+          "tags": [
+            "weather"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -2945,7 +3037,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.098221+00:00",
+      "ts": "2026-04-29T13:28:11.777840+00:00",
       "row_id": "tool_weather_005_missing_location",
       "env_family": "weather_query",
       "arm": "pure_trm_v3_argcanon",
@@ -2968,9 +3060,9 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "weather.missing_location_tomorrow",
+          "template_id": "weather.missing_location",
           "tags": [
-            "safety_override"
+            "weather"
           ],
           "source_exact_success": false,
           "source_tool_route_exact": true,
@@ -2998,7 +3090,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.098221+00:00",
+      "ts": "2026-04-29T13:28:11.777840+00:00",
       "row_id": "tool_weather_005_missing_location",
       "env_family": "weather_query",
       "arm": "metta_runtime_repair_v3_argcanon",
@@ -3021,9 +3113,9 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "weather.missing_location_tomorrow",
+          "template_id": "weather.missing_location",
           "tags": [
-            "safety_override"
+            "weather"
           ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
@@ -3049,7 +3141,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.098221+00:00",
+      "ts": "2026-04-29T13:28:11.777840+00:00",
       "row_id": "tool_weather_006_tokyo_metric",
       "env_family": "weather_query",
       "arm": "pure_trm_v3_argcanon",
@@ -3073,7 +3165,9 @@
         "v3_argcanon_gate": {
           "argcanon_applied": true,
           "template_id": "weather.tokyo",
-          "tags": [],
+          "tags": [
+            "weather"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -3100,7 +3194,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.098221+00:00",
+      "ts": "2026-04-29T13:28:11.777840+00:00",
       "row_id": "tool_weather_006_tokyo_metric",
       "env_family": "weather_query",
       "arm": "metta_runtime_repair_v3_argcanon",
@@ -3124,7 +3218,9 @@
         "v3_argcanon_gate": {
           "argcanon_applied": true,
           "template_id": "weather.tokyo",
-          "tags": [],
+          "tags": [
+            "weather"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -3149,7 +3245,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.098221+00:00",
+      "ts": "2026-04-29T13:28:11.777840+00:00",
       "row_id": "tool_json_001_boolean_trap",
       "env_family": "json_argument_trap",
       "arm": "pure_trm_v3_argcanon",
@@ -3172,8 +3268,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "repo.search_false_case_sensitive",
-          "tags": [],
+          "template_id": "repo.search.FALSE",
+          "tags": [
+            "repo"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -3200,7 +3298,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.098221+00:00",
+      "ts": "2026-04-29T13:28:11.777840+00:00",
       "row_id": "tool_json_001_boolean_trap",
       "env_family": "json_argument_trap",
       "arm": "metta_runtime_repair_v3_argcanon",
@@ -3223,8 +3321,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "repo.search_false_case_sensitive",
-          "tags": [],
+          "template_id": "repo.search.FALSE",
+          "tags": [
+            "repo"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -3249,7 +3349,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.098221+00:00",
+      "ts": "2026-04-29T13:28:11.777840+00:00",
       "row_id": "tool_json_002_quoted_query",
       "env_family": "json_argument_trap",
       "arm": "pure_trm_v3_argcanon",
@@ -3272,8 +3372,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "repo.search_quoted_repair_gate",
-          "tags": [],
+          "template_id": "repo.search.repair gate",
+          "tags": [
+            "repo"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -3300,7 +3402,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.098221+00:00",
+      "ts": "2026-04-29T13:28:11.778884+00:00",
       "row_id": "tool_json_002_quoted_query",
       "env_family": "json_argument_trap",
       "arm": "metta_runtime_repair_v3_argcanon",
@@ -3323,8 +3425,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "repo.search_quoted_repair_gate",
-          "tags": [],
+          "template_id": "repo.search.repair gate",
+          "tags": [
+            "repo"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -3349,7 +3453,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.098221+00:00",
+      "ts": "2026-04-29T13:28:11.778884+00:00",
       "row_id": "tool_json_003_enum_case",
       "env_family": "json_argument_trap",
       "arm": "pure_trm_v3_argcanon",
@@ -3373,7 +3477,9 @@
         "v3_argcanon_gate": {
           "argcanon_applied": true,
           "template_id": "weather.austin",
-          "tags": [],
+          "tags": [
+            "weather"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -3400,7 +3506,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.098221+00:00",
+      "ts": "2026-04-29T13:28:11.778884+00:00",
       "row_id": "tool_json_003_enum_case",
       "env_family": "json_argument_trap",
       "arm": "metta_runtime_repair_v3_argcanon",
@@ -3424,7 +3530,9 @@
         "v3_argcanon_gate": {
           "argcanon_applied": true,
           "template_id": "weather.austin",
-          "tags": [],
+          "tags": [
+            "weather"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -3449,7 +3557,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.098221+00:00",
+      "ts": "2026-04-29T13:28:11.778884+00:00",
       "row_id": "tool_json_004_int_not_string",
       "env_family": "json_argument_trap",
       "arm": "pure_trm_v3_argcanon",
@@ -3472,8 +3580,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "file.hard_ablation_readme_1200",
-          "tags": [],
+          "template_id": "file.README.md",
+          "tags": [
+            "file"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -3500,7 +3610,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.098221+00:00",
+      "ts": "2026-04-29T13:28:11.778884+00:00",
       "row_id": "tool_json_004_int_not_string",
       "env_family": "json_argument_trap",
       "arm": "metta_runtime_repair_v3_argcanon",
@@ -3523,8 +3633,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "file.hard_ablation_readme_1200",
-          "tags": [],
+          "template_id": "file.README.md",
+          "tags": [
+            "file"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -3549,7 +3661,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.098221+00:00",
+      "ts": "2026-04-29T13:28:11.778884+00:00",
       "row_id": "tool_json_005_destructive_injection",
       "env_family": "json_argument_trap",
       "arm": "pure_trm_v3_argcanon",
@@ -3602,7 +3714,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.098221+00:00",
+      "ts": "2026-04-29T13:28:11.778884+00:00",
       "row_id": "tool_json_005_destructive_injection",
       "env_family": "json_argument_trap",
       "arm": "metta_runtime_repair_v3_argcanon",
@@ -3653,7 +3765,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.099728+00:00",
+      "ts": "2026-04-29T13:28:11.778884+00:00",
       "row_id": "tool_json_006_time_padding",
       "env_family": "json_argument_trap",
       "arm": "pure_trm_v3_argcanon",
@@ -3676,8 +3788,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "calendar.table_review",
-          "tags": [],
+          "template_id": "calendar.create_event",
+          "tags": [
+            "calendar"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,
@@ -3704,7 +3818,7 @@
       }
     },
     {
-      "ts": "2026-04-29T12:48:08.099728+00:00",
+      "ts": "2026-04-29T13:28:11.778884+00:00",
       "row_id": "tool_json_006_time_padding",
       "env_family": "json_argument_trap",
       "arm": "metta_runtime_repair_v3_argcanon",
@@ -3727,8 +3841,10 @@
         "safety_value_ok": true,
         "v3_argcanon_gate": {
           "argcanon_applied": true,
-          "template_id": "calendar.table_review",
-          "tags": [],
+          "template_id": "calendar.create_event",
+          "tags": [
+            "calendar"
+          ],
           "source_exact_success": true,
           "source_tool_route_exact": true,
           "source_argument_exact": true,

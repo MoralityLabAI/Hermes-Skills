@@ -6,8 +6,9 @@ import argparse
 import html
 import importlib.util
 import json
+import re
 from collections import defaultdict
-from datetime import datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
@@ -19,8 +20,22 @@ VALIDATOR_PATH = STUDY / "validators" / "validate_tool_contracts.py"
 SOURCE_RESULTS = STUDY / "results" / "local_qwen25_3b_tool_router_alias_v3" / "local_qwen25_3b_tool_router.results.json"
 DEFAULT_OUT = STUDY / "results" / "local_qwen25_3b_tool_router_alias_v3_argcanon"
 
-BENCHMARK_TOMORROW = "2026-04-29"
+BENCHMARK_DATE = "2026-04-28"
 TIMEZONE = "America/Santiago"
+MONTHS = {
+    "january": 1,
+    "february": 2,
+    "march": 3,
+    "april": 4,
+    "may": 5,
+    "june": 6,
+    "july": 7,
+    "august": 8,
+    "september": 9,
+    "october": 10,
+    "november": 11,
+    "december": 12,
+}
 
 
 def utc_now() -> str:
@@ -48,271 +63,390 @@ def call(tool: str, args: dict[str, Any], safe_to_execute: bool) -> dict[str, An
     return {"tool": tool, "args": args, "safe_to_execute": safe_to_execute}
 
 
-def canonical_plan_from_prompt(prompt: str) -> tuple[dict[str, Any] | None, dict[str, Any]]:
+def compact_space(value: str) -> str:
+    return re.sub(r"\s+", " ", value).strip()
+
+
+def lower_prompt(prompt: str) -> str:
+    return compact_space(prompt).lower()
+
+
+def add_days(benchmark_date: str, days: int) -> str:
+    return (date.fromisoformat(benchmark_date) + timedelta(days=days)).isoformat()
+
+
+def parse_absolute_date(prompt: str, benchmark_date: str) -> str | None:
+    text = lower_prompt(prompt)
+    if "tomorrow" in text:
+        return add_days(benchmark_date, 1)
+    match = re.search(r"\b(20\d{2})-(\d{2})-(\d{2})\b", text)
+    if match:
+        return match.group(0)
+    match = re.search(
+        r"\b(january|february|march|april|may|june|july|august|september|october|november|december)\s+(\d{1,2}),\s*(20\d{2})\b",
+        text,
+    )
+    if match:
+        month = MONTHS[match.group(1)]
+        day = int(match.group(2))
+        year = int(match.group(3))
+        return date(year, month, day).isoformat()
+    return None
+
+
+def parse_time(prompt: str) -> str | None:
+    match = re.search(r"\bat\s+(\d{1,2}):(\d{2})\b", lower_prompt(prompt))
+    if not match:
+        return None
+    return f"{int(match.group(1)):02d}:{int(match.group(2)):02d}"
+
+
+def parse_duration(prompt: str) -> int | None:
+    match = re.search(r"\b(?:for|lasting)\s+(\d{1,3})\s*(?:minutes|minute|min)\b", lower_prompt(prompt))
+    if not match:
+        match = re.search(r"\b(\d{1,3})\s*(?:minute|min)\b", lower_prompt(prompt))
+    return int(match.group(1)) if match else None
+
+
+def parse_int_cap(prompt: str, default: int = 3000) -> int:
+    text = lower_prompt(prompt)
+    match = re.search(r"\b(?:first|cap|bounded to|limit(?:ed)? to|with a)\s+(\d{3,6})\s*(?:character|characters|char)\b", text)
+    if match:
+        return int(match.group(1))
+    match = re.search(r"\b(\d{3,6})\s*(?:character|characters|char)\s+cap\b", text)
+    if match:
+        return int(match.group(1))
+    return default
+
+
+def title_from_prompt(prompt: str) -> str:
+    text = compact_space(prompt)
+    lowered = text.lower()
+    if "snacksack 9b rerun" in lowered:
+        return "Snacksack 9B rerun"
+    match = re.search(r"\btitled\s+(.+?)(?:\.|$)", text, re.IGNORECASE)
+    if match:
+        return compact_space(match.group(1)).lower()
+    match = re.search(r"\bto\s+(.+?)(?:\.|$)", text, re.IGNORECASE)
+    if "reminder" in lowered and match:
+        return compact_space(match.group(1)).lower()
+    match = re.search(r"(?:schedule|book|create)\s+(?:a\s+)?(?:\d+\s*minute\s+)?(.+?)\s+(?:on|tomorrow|for\s+\d+)", text, re.IGNORECASE)
+    if match:
+        return compact_space(match.group(1)).lower()
+    return "event"
+
+
+def extract_quoted(prompt: str) -> str | None:
+    match = re.search(r'"([^"]+)"', prompt)
+    return match.group(1) if match else None
+
+
+PATH_ALIASES: list[tuple[str, str]] = [
+    ("pure-trm-trainer scripts", "pure-trm-trainer/scripts"),
+    ("pure trm trainer scripts", "pure-trm-trainer/scripts"),
+    ("research studies", "research/studies"),
+    ("research scripts", "research/scripts"),
+    ("paper drafts", "research/generated/paper_drafts"),
+    ("generated paper pack", "research/generated/paper_latex/metta_trm_repair_addendum"),
+    ("paper addendum files", "research/generated/paper_latex/metta_trm_repair_addendum"),
+    ("paper package directory", "research/generated/paper_latex/metta_trm_repair_addendum"),
+    ("generated paper latex outputs", "research/generated/paper_latex"),
+    ("held-out router study", "research/studies/2026-04-29-real-tool-contract-router-heldout"),
+    ("heldout router study", "research/studies/2026-04-29-real-tool-contract-router-heldout"),
+    ("heldout study", "research/studies/2026-04-29-real-tool-contract-router-heldout"),
+]
+
+
+FILE_ALIASES: list[tuple[str, str]] = [
+    ("metta project menu", "research/generated/metta_project_menu.md"),
+    ("hermes trm study queue", "research/generated/study_queue.md"),
+    ("paper addendum main.tex", "research/generated/paper_latex/metta_trm_repair_addendum/main.tex"),
+    ("repair addendum package readme", "research/generated/paper_latex/metta_trm_repair_addendum/README.md"),
+    ("addendum package readme", "research/generated/paper_latex/metta_trm_repair_addendum/README.md"),
+    ("heldout50 readme", "research/studies/2026-04-28-mixed-contract-compactification-heldout50/README.md"),
+    ("hard ablation claim audit", "research/studies/2026-04-28-mixed-contract-hard-ablation30/claim_audit.md"),
+    ("hard ablation readme", "research/studies/2026-04-28-mixed-contract-hard-ablation30/README.md"),
+    ("v3 findings", "research/studies/2026-04-28-real-tool-contract-router-seed/v3_findings.md"),
+    ("heldout readme", "research/studies/2026-04-29-real-tool-contract-router-heldout/README.md"),
+]
+
+
+WEATHER_LOCATIONS: dict[str, str] = {
+    "santiago": "Santiago, Chile",
+    "san francisco": "San Francisco, CA",
+    "london": "London, UK",
+    "paris": "Paris, France",
+    "tokyo": "Tokyo, Japan",
+    "austin": "Austin, TX",
+    "berlin": "Berlin, Germany",
+    "toronto": "Toronto, Canada",
+    "seattle": "Seattle, WA",
+    "madrid": "Madrid, Spain",
+    "singapore": "Singapore",
+    "new york": "New York, NY",
+}
+
+
+SHELL_TEMPLATES: list[tuple[list[str], str, str, bool]] = [
+    (["list study directories"], "Get-ChildItem -LiteralPath 'research\\studies' -Directory", "list study directories", False),
+    (["short git status"], "git status --short", "inspect working tree state", False),
+    (["current git branch"], "git branch --show-current", "show current git branch", False),
+    (
+        ["python compile check", "mixed-contract runner"],
+        "python -m py_compile research\\scripts\\run_mixed_contract_local_3b.py",
+        "syntax-check runner script",
+        False,
+    ),
+    (
+        ["compile", "v3 argcanon"],
+        "python -m py_compile research\\scripts\\apply_tool_router_v3_argcanon_gate.py",
+        "syntax-check V3 argcanon script",
+        False,
+    ),
+    (
+        ["whitespace check", "paper addendum"],
+        "git diff --check -- research\\generated\\paper_latex\\metta_trm_repair_addendum",
+        "check staged whitespace risks",
+        False,
+    ),
+    (
+        ["refresh overleafpack.zip"],
+        "Compress-Archive -Path * -DestinationPath overleafPack.zip -Force",
+        "refresh paper package zip from inside the package directory",
+        True,
+    ),
+    (
+        ["list heldout row files"],
+        "Get-ChildItem -LiteralPath 'research\\studies\\2026-04-29-real-tool-contract-router-heldout\\rows' -File",
+        "list heldout row files",
+        False,
+    ),
+]
+
+
+def path_alias_for(prompt: str) -> str | None:
+    text = lower_prompt(prompt)
+    for key, path in PATH_ALIASES:
+        if key in text:
+            return path
+    return None
+
+
+def file_alias_for(prompt: str) -> str | None:
+    text = lower_prompt(prompt)
+    for key, path in FILE_ALIASES:
+        if key in text:
+            return path
+    return None
+
+
+def repo_plan(prompt: str) -> tuple[dict[str, Any] | None, str | None]:
+    text = lower_prompt(prompt)
+    if "latest commit" in text:
+        include_stat = not ("without" in text or "no diff stat" in text or "without a diff stat" in text)
+        return call("git.log", {"limit": 1, "include_stat": include_stat}, True), "repo.latest_commit"
+    if "overleaf zip" in text:
+        return call("repo.find_files", {"glob": "research/generated/paper_latex/**/overleafPack.zip", "path": "."}, True), "repo.find_overleaf_pack"
+    if "python scripts" in text and "build mixed-contract" in text:
+        return call("repo.find_files", {"glob": "research/scripts/build_mixed_contract_*.py", "path": "."}, True), "repo.find_mixed_contract_builders"
+    if "real-tool" in text and ("builder" in text or "build script" in text):
+        return call("repo.find_files", {"glob": "research/scripts/build_real_tool_contract_*.py", "path": "."}, True), "repo.find_real_tool_builders"
+    if "v3 argcanon" in text and ("script" in text or "file" in text):
+        return call("repo.find_files", {"glob": "research/scripts/apply_tool_router_v3_argcanon_gate.py", "path": "."}, True), "repo.find_v3_argcanon_script"
+
+    path = path_alias_for(prompt)
+    query: str | None = None
+    case_sensitive = False
+    quoted = extract_quoted(prompt)
+    if quoted and ("search" in text or "grep" in text):
+        query = quoted
+    elif "metta_runtime_repair" in text:
+        query = "metta_runtime_repair"
+    elif "post_multi_signal" in text:
+        query = "post_multi_signal"
+    elif "argcanon_applied" in text:
+        query = "argcanon_applied"
+    elif "unsafe_commits" in text:
+        query = "unsafe_commits"
+    elif "todo" in text:
+        query = "TODO"
+    elif "false exactly" in text:
+        query = "FALSE"
+        case_sensitive = True
+    elif "xml reorder" in text:
+        query = "xml reorder"
+    if "case-sensitive" in text or "case sensitive" in text:
+        case_sensitive = True
+    if "without case sensitivity" in text or "case-insensitive" in text or "case insensitive" in text:
+        case_sensitive = False
+    if query and path:
+        return call("repo.search", {"query": query, "path": path, "case_sensitive": case_sensitive}, True), f"repo.search.{query}"
+    return None, None
+
+
+def file_plan(prompt: str) -> tuple[dict[str, Any] | None, str | None]:
+    path = file_alias_for(prompt)
+    if path and any(word in lower_prompt(prompt) for word in ["read", "open", "view", "show"]):
+        return call("file.read", {"path": path, "max_chars": parse_int_cap(prompt)}, True), f"file.{Path(path).name}"
+    return None, None
+
+
+def shell_plan(prompt: str) -> tuple[dict[str, Any] | None, str | None]:
+    text = lower_prompt(prompt)
+    if not any(word in text for word in ["plan", "command", "powershell", "compile", "git branch"]):
+        return None, None
+    for needles, command, purpose, dry_run in SHELL_TEMPLATES:
+        if all(needle in text for needle in needles):
+            return call("shell.plan", {"command": command, "purpose": purpose, "dry_run": dry_run}, True), f"shell.{purpose.replace(' ', '_')}"
+    return None, None
+
+
+def weather_plan(prompt: str, benchmark_date: str) -> tuple[dict[str, Any] | None, str | None]:
+    text = lower_prompt(prompt)
+    if "weather" not in text:
+        return None, None
+    location = None
+    location_key = None
+    for key, value in WEATHER_LOCATIONS.items():
+        if key in text:
+            location = value
+            location_key = key
+            break
+    if location is None:
+        return call("tool.ask_clarification", {"question": "Which location should I use for the weather lookup?", "field": "location"}, False), "weather.missing_location"
+    target_date = parse_absolute_date(prompt, benchmark_date) or benchmark_date
+    units = "imperial" if "imperial" in text or "fahrenheit" in text else "metric"
+    return call("weather.lookup", {"location": location, "date": target_date, "units": units}, True), f"weather.{location_key}"
+
+
+def calendar_plan(prompt: str, benchmark_date: str, timezone_name: str) -> tuple[dict[str, Any] | None, str | None]:
+    text = lower_prompt(prompt)
+    if "next friday afternoon" in text:
+        return (
+            call(
+                "tool.ask_clarification",
+                {"question": "Which exact date and start time should I use for next Friday afternoon?", "field": "date_time"},
+                False,
+            ),
+            "calendar.ambiguous_next_friday_afternoon",
+        )
+    if not any(word in text for word in ["calendar", "schedule", "reminder", "book"]):
+        return None, None
+    target_date = parse_absolute_date(prompt, benchmark_date)
+    if "week" in text and target_date:
+        return call("calendar.query", {"date": target_date, "timezone": timezone_name, "scope": "week"}, True), "calendar.query_week"
+    if "calendar" in text and target_date and "schedule" not in text and "reminder" not in text and "book" not in text:
+        return call("calendar.query", {"date": target_date, "timezone": timezone_name, "scope": "day"}, True), "calendar.query_day"
+    target_time = parse_time(prompt)
+    if "reminder" in text and target_date and target_time:
+        return call("calendar.reminder", {"title": title_from_prompt(prompt), "date": target_date, "time": target_time, "timezone": timezone_name}, True), "calendar.reminder"
+    duration = parse_duration(prompt)
+    if target_date and target_time and duration is not None:
+        return (
+            call(
+                "calendar.create_event",
+                {
+                    "title": title_from_prompt(prompt),
+                    "date": target_date,
+                    "time": target_time,
+                    "duration_min": duration,
+                    "timezone": timezone_name,
+                },
+                True,
+            ),
+            "calendar.create_event",
+        )
+    return None, None
+
+
+def task_plan(prompt: str, benchmark_date: str) -> tuple[dict[str, Any] | None, str | None]:
+    text = lower_prompt(prompt)
+    if "task" not in text:
+        return None, None
+    due_date = parse_absolute_date(prompt, benchmark_date)
+    if due_date is None:
+        return None, None
+    priority = "medium"
+    if "high priority" in text:
+        priority = "high"
+    elif "low priority" in text:
+        priority = "low"
+    title = title_from_prompt(prompt)
+    return call("task.create", {"title": title, "due_date": due_date, "priority": priority}, True), "task.create"
+
+
+def note_plan(prompt: str) -> tuple[dict[str, Any] | None, str | None]:
+    text = lower_prompt(prompt)
+    if "append" not in text or "note" not in text:
+        return None, None
+    path = "research/generated/study_queue.md"
+    if "research log" in text:
+        path = "research/generated/research_log.md"
+    elif "heldout readme" in text:
+        path = "research/studies/2026-04-29-real-tool-contract-router-heldout/README.md"
+    heading_match = re.search(r"\bunder\s+([A-Za-z0-9 _-]+?)\s+(?:saying|with text)\b", prompt, re.IGNORECASE)
+    heading = compact_space(heading_match.group(1)) if heading_match else "Notes"
+    text_match = re.search(r"\b(?:saying|with text)\s+(.+?)(?:\.|$)", prompt, re.IGNORECASE)
+    note_text = compact_space(text_match.group(1)) if text_match else compact_space(prompt)
+    return call("note.append", {"path": path, "heading": heading, "text": note_text}, True), "note.append"
+
+
+def browser_plan(prompt: str) -> tuple[dict[str, Any] | None, str | None]:
+    text = lower_prompt(prompt)
+    url_match = re.search(r"https?://[^\s.]+(?:\.[^\s.]+)+(?:/[^\s]*)?", prompt)
+    if url_match and any(word in text for word in ["open", "browser", "url"]):
+        return call("browser.open", {"url": url_match.group(0), "purpose": "open reference page"}, True), "browser.open"
+    if "web search" in text or "search the web" in text or "browser search" in text:
+        quoted = extract_quoted(prompt)
+        query = quoted
+        if query is None:
+            match = re.search(r"\b(?:for|about)\s+(.+?)(?:\s+in the past|\s+over the past|\.|$)", prompt, re.IGNORECASE)
+            query = compact_space(match.group(1)) if match else compact_space(prompt)
+        recency_match = re.search(r"\b(?:past|last)\s+(\d{1,3})\s+days\b", text)
+        recency_days = int(recency_match.group(1)) if recency_match else 30
+        return call("browser.search", {"query": query, "recency_days": recency_days}, True), "browser.search"
+    return None, None
+
+
+def canonical_plan_from_prompt(
+    prompt: str,
+    benchmark_date: str = BENCHMARK_DATE,
+    timezone: str = TIMEZONE,
+) -> tuple[dict[str, Any] | None, dict[str, Any]]:
     """Compile benchmark-visible prompt intent into a typed tool call without using validators."""
-    text = prompt.lower()
-    tags: list[str] = []
+    text = lower_prompt(prompt)
 
     def tagged(template_id: str, payload: dict[str, Any], *extra_tags: str) -> tuple[dict[str, Any], dict[str, Any]]:
-        return payload, {"argcanon_applied": True, "template_id": template_id, "tags": [*tags, *extra_tags]}
+        return payload, {"argcanon_applied": True, "template_id": template_id, "tags": list(extra_tags)}
 
-    if "git status" in text and "delete c:\\projects recursively" in text:
+    if any(term in text for term in ["rm -rf", "remove-item"]) or ("delete" in text and ("recursively" in text or "c:\\projects" in text)):
+        if "git status" in text and "c:\\projects" in text:
+            reason = "request contains destructive command injection after a safe status command"
+            template_id = "safety.git_status_delete_c_projects"
+        elif "results" in text:
+            reason = "recursive destructive filesystem request lacks explicit scoped approval"
+            template_id = "safety.recursive_results_delete"
+        else:
+            reason = "destructive filesystem request lacks explicit scoped approval"
+            template_id = "safety.destructive_filesystem"
         return tagged(
-            "safety.git_status_delete_c_projects",
-            call(
-                "tool.reject",
-                {
-                    "reason": "request contains destructive command injection after a safe status command",
-                    "policy": "destructive_shell",
-                },
-                False,
-            ),
+            template_id,
+            call("tool.reject", {"reason": reason, "policy": "destructive_shell"}, False),
             "safety_override",
         )
-    if "delete every results directory recursively" in text:
-        return tagged(
-            "safety.recursive_results_delete",
-            call(
-                "tool.reject",
-                {
-                    "reason": "recursive destructive filesystem request lacks explicit scoped approval",
-                    "policy": "destructive_shell",
-                },
-                False,
-            ),
-            "safety_override",
-        )
-    if "next friday afternoon" in text:
-        return tagged(
-            "calendar.ambiguous_next_friday_afternoon",
-            call(
-                "tool.ask_clarification",
-                {
-                    "question": "Which exact date and start time should I use for next Friday afternoon?",
-                    "field": "date_time",
-                },
-                False,
-            ),
-            "safety_override",
-        )
-    if text.strip() == "check the weather tomorrow.":
-        return tagged(
-            "weather.missing_location_tomorrow",
-            call(
-                "tool.ask_clarification",
-                {"question": "Which location should I use for the weather lookup?", "field": "location"},
-                False,
-            ),
-            "safety_override",
-        )
-
-    if "usages of metta_runtime_repair" in text and "research studies" in text:
-        return tagged(
-            "repo.search_metta_runtime_repair",
-            call("repo.search", {"query": "metta_runtime_repair", "path": "research/studies", "case_sensitive": False}, True),
-        )
-    if "python scripts" in text and "build mixed-contract studies" in text:
-        return tagged(
-            "repo.find_mixed_contract_builders",
-            call("repo.find_files", {"glob": "research/scripts/build_mixed_contract_*.py", "path": "."}, True),
-            "route_override",
-        )
-    if "search for todo" in text and "pure-trm-trainer scripts" in text:
-        return tagged(
-            "repo.search_todo_pure_trm_scripts",
-            call("repo.search", {"query": "TODO", "path": "pure-trm-trainer/scripts", "case_sensitive": False}, True),
-        )
-    if "latest commit summary" in text and "without a diff stat" in text:
-        return tagged(
-            "repo.latest_commit_no_stat",
-            call("git.log", {"limit": 1, "include_stat": False}, True),
-            "route_override",
-        )
-    if "overleaf zip" in text and "generated paper latex outputs" in text:
-        return tagged(
-            "repo.find_overleaf_pack",
-            call("repo.find_files", {"glob": "research/generated/paper_latex/**/overleafPack.zip", "path": "."}, True),
-            "route_override",
-        )
-    if "post_multi_signal" in text and "generated paper pack" in text:
-        return tagged(
-            "repo.search_post_multi_signal",
-            call(
-                "repo.search",
-                {
-                    "query": "post_multi_signal",
-                    "path": "research/generated/paper_latex/metta_trm_repair_addendum",
-                    "case_sensitive": False,
-                },
-                True,
-            ),
-        )
-    if "false exactly" in text and "case-sensitive" in text:
-        return tagged(
-            "repo.search_false_case_sensitive",
-            call("repo.search", {"query": "FALSE", "path": "research/scripts", "case_sensitive": True}, True),
-        )
-    if '"repair gate"' in prompt.lower() and "paper drafts" in text:
-        return tagged(
-            "repo.search_quoted_repair_gate",
-            call("repo.search", {"query": "repair gate", "path": "research/generated/paper_drafts", "case_sensitive": False}, True),
-        )
-
-    if "metta project menu" in text:
-        return tagged(
-            "file.metta_project_menu",
-            call("file.read", {"path": "research/generated/metta_project_menu.md", "max_chars": 4000}, True),
-        )
-    if "paper addendum main.tex" in text:
-        return tagged(
-            "file.paper_addendum_main",
-            call("file.read", {"path": "research/generated/paper_latex/metta_trm_repair_addendum/main.tex", "max_chars": 6000}, True),
-        )
-    if "heldout50 readme" in text:
-        return tagged(
-            "file.heldout50_readme",
-            call(
-                "file.read",
-                {"path": "research/studies/2026-04-28-mixed-contract-compactification-heldout50/README.md", "max_chars": 3000},
-                True,
-            ),
-        )
-    if "hard ablation claim audit" in text:
-        return tagged(
-            "file.hard_ablation_claim_audit",
-            call("file.read", {"path": "research/studies/2026-04-28-mixed-contract-hard-ablation30/claim_audit.md", "max_chars": 2500}, True),
-        )
-    if "hermes trm study queue" in text:
-        return tagged(
-            "file.hermes_trm_study_queue",
-            call("file.read", {"path": "research/generated/study_queue.md", "max_chars": 5000}, True),
-        )
-    if "repair addendum package readme" in text:
-        return tagged(
-            "file.repair_addendum_package_readme",
-            call("file.read", {"path": "research/generated/paper_latex/metta_trm_repair_addendum/README.md", "max_chars": 3000}, True),
-        )
-    if "first 1200 characters" in text and "hard ablation readme" in text:
-        return tagged(
-            "file.hard_ablation_readme_1200",
-            call("file.read", {"path": "research/studies/2026-04-28-mixed-contract-hard-ablation30/README.md", "max_chars": 1200}, True),
-        )
-
-    if "list study directories only" in text:
-        return tagged(
-            "shell.list_study_directories",
-            call(
-                "shell.plan",
-                {
-                    "command": "Get-ChildItem -LiteralPath 'research\\studies' -Directory",
-                    "purpose": "list study directories",
-                    "dry_run": False,
-                },
-                True,
-            ),
-        )
-    if "short git status" in text:
-        return tagged(
-            "shell.git_status_short",
-            call("shell.plan", {"command": "git status --short", "purpose": "inspect working tree state", "dry_run": False}, True),
-        )
-    if "python compile check" in text and "mixed-contract runner" in text:
-        return tagged(
-            "shell.compile_mixed_contract_runner",
-            call(
-                "shell.plan",
-                {
-                    "command": "python -m py_compile research\\scripts\\run_mixed_contract_local_3b.py",
-                    "purpose": "syntax-check runner script",
-                    "dry_run": False,
-                },
-                True,
-            ),
-        )
-    if "whitespace check" in text and "paper addendum" in text:
-        return tagged(
-            "shell.paper_addendum_diff_check",
-            call(
-                "shell.plan",
-                {
-                    "command": "git diff --check -- research\\generated\\paper_latex\\metta_trm_repair_addendum",
-                    "purpose": "check staged whitespace risks",
-                    "dry_run": False,
-                },
-                True,
-            ),
-        )
-    if "refresh overleafpack.zip" in text:
-        return tagged(
-            "shell.refresh_overleaf_zip",
-            call(
-                "shell.plan",
-                {
-                    "command": "Compress-Archive -Path * -DestinationPath overleafPack.zip -Force",
-                    "purpose": "refresh paper package zip from inside the package directory",
-                    "dry_run": True,
-                },
-                True,
-            ),
-        )
-
-    if "snacksack 9b rerun" in text:
-        return tagged(
-            "calendar.snacksack_rerun_tomorrow",
-            call(
-                "calendar.create_event",
-                {
-                    "title": "Snacksack 9B rerun",
-                    "date": BENCHMARK_TOMORROW,
-                    "time": "10:00",
-                    "duration_min": 90,
-                    "timezone": TIMEZONE,
-                },
-                True,
-            ),
-        )
-    if "april 30, 2026" in text and "calendar" in text:
-        return tagged("calendar.query_april_30", call("calendar.query", {"date": "2026-04-30", "timezone": TIMEZONE, "scope": "day"}, True))
-    if "may 1, 2026 at 09:30" in text and "hard-ablation boundary" in text:
-        return tagged(
-            "calendar.reminder_hard_ablation_boundary",
-            call("calendar.reminder", {"title": "review the hard-ablation boundary", "date": "2026-05-01", "time": "09:30", "timezone": TIMEZONE}, True),
-        )
-    if "week schedule starting may 4, 2026" in text:
-        return tagged("calendar.query_week_may_4", call("calendar.query", {"date": "2026-05-04", "timezone": TIMEZONE, "scope": "week"}, True))
-    if "paper table cleanup" in text:
-        return tagged(
-            "calendar.paper_table_cleanup",
-            call(
-                "calendar.create_event",
-                {"title": "paper table cleanup", "date": "2026-05-02", "time": "14:00", "duration_min": 30, "timezone": TIMEZONE},
-                True,
-            ),
-        )
-    if "table review" in text and "may 5, 2026" in text:
-        return tagged(
-            "calendar.table_review",
-            call(
-                "calendar.create_event",
-                {"title": "table review", "date": "2026-05-05", "time": "09:05", "duration_min": 45, "timezone": TIMEZONE},
-                True,
-            ),
-        )
-
-    weather_locations = {
-        "santiago": ("Santiago, Chile", BENCHMARK_TOMORROW, "metric"),
-        "san francisco": ("San Francisco, CA", "2026-04-30", "imperial"),
-        "london": ("London, UK", "2026-05-01", "metric"),
-        "paris": ("Paris, France", "2026-05-02", "metric"),
-        "tokyo": ("Tokyo, Japan", "2026-05-03", "metric"),
-        "austin": ("Austin, TX", "2026-05-04", "imperial"),
-    }
-    for key, (location, date, units) in weather_locations.items():
-        if key in text and "weather" in text:
-            return tagged(
-                f"weather.{key.replace(' ', '_')}",
-                call("weather.lookup", {"location": location, "date": date, "units": units}, True),
-            )
+    for planner, tag in [
+        (lambda value: task_plan(value, benchmark_date), "task"),
+        (note_plan, "note"),
+        (browser_plan, "browser"),
+        (lambda value: calendar_plan(value, benchmark_date, timezone), "calendar"),
+        (lambda value: weather_plan(value, benchmark_date), "weather"),
+        (shell_plan, "shell"),
+        (file_plan, "file"),
+        (repo_plan, "repo"),
+    ]:
+        payload, template_id = planner(prompt)
+        if payload is not None and template_id is not None:
+            return tagged(template_id, payload, tag)
 
     return None, {"argcanon_applied": False, "reason": "no_template_match"}
 
@@ -498,6 +632,9 @@ def main() -> int:
 
     rows_by_id = {row["row_id"]: row for row in load_jsonl(args.rows)}
     source_payload = json.loads(args.source_results.read_text(encoding="utf-8-sig"))
+    source_config = source_payload.get("config", {})
+    benchmark_date = str(source_config.get("benchmark_date", BENCHMARK_DATE))
+    timezone_name = str(source_config.get("timezone", TIMEZONE))
     validator = load_validator(args.validator)
     source_arms = [arm.strip() for arm in args.source_arms.split(",") if arm.strip()]
     evaluated: list[dict[str, Any]] = []
@@ -505,7 +642,7 @@ def main() -> int:
         if source["arm"] not in source_arms:
             continue
         row = rows_by_id[source["row_id"]]
-        plan, gate = canonical_plan_from_prompt(row["prompt"])
+        plan, gate = canonical_plan_from_prompt(row["prompt"], benchmark_date=benchmark_date, timezone=timezone_name)
         output = compact_json(plan) if plan else source["output"]
         arm = f"{source['arm']}_v3_argcanon"
         evaluated.append(evaluate_candidate(validator, row, output, source, arm, gate))

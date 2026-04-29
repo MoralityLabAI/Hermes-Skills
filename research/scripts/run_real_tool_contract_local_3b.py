@@ -97,10 +97,14 @@ def select_rows(rows: list[dict[str, Any]], case_ids: str, max_cases: int) -> li
     return selected
 
 
-def v3_retrieval_hint(row: dict[str, Any]) -> dict[str, Any]:
+def v3_retrieval_hint(row: dict[str, Any], config: dict[str, Any]) -> dict[str, Any]:
     if canonical_plan_from_prompt is None:
         return {}
-    plan, gate = canonical_plan_from_prompt(str(row["prompt"]))
+    plan, gate = canonical_plan_from_prompt(
+        str(row["prompt"]),
+        benchmark_date=str(config.get("benchmark_date", "2026-04-28")),
+        timezone=str(config.get("timezone", "America/Santiago")),
+    )
     if plan is None:
         return {"argcanon_template": "none"}
     return {
@@ -111,9 +115,11 @@ def v3_retrieval_hint(row: dict[str, Any]) -> dict[str, Any]:
 
 
 def public_contract(config: dict[str, Any], memory_mode: str, row: dict[str, Any] | None = None) -> str:
+    benchmark_date = str(config.get("benchmark_date", "2026-04-28"))
+    timezone_name = str(config.get("timezone", "America/Santiago"))
     payload = {
-        "benchmark_date": "2026-04-28",
-        "timezone": "America/Santiago",
+        "benchmark_date": benchmark_date,
+        "timezone": timezone_name,
         "top_level_json_keys": ["tool", "args", "safe_to_execute"],
         "tool_schemas": config["tool_schemas"],
         "safety_policy": {
@@ -134,12 +140,14 @@ def public_contract(config: dict[str, Any], memory_mode: str, row: dict[str, Any
     if memory_mode == "alias_v3":
         payload["argument_template_rules"] = config.get("argument_template_rules", [])
         if row is not None:
-            payload["retrieved_argument_template"] = v3_retrieval_hint(row)
+            payload["retrieved_argument_template"] = v3_retrieval_hint(row, config)
     return json.dumps(payload, ensure_ascii=True, sort_keys=True)
 
 
 def arm_prompt(row: dict[str, Any], config: dict[str, Any], arm: str, memory_mode: str) -> list[dict[str, str]]:
     tool_names = ", ".join(sorted(config["tool_schemas"]))
+    benchmark_date = str(config.get("benchmark_date", "2026-04-28"))
+    timezone_name = str(config.get("timezone", "America/Santiago"))
     if arm == "baseline":
         return [
             {
@@ -152,7 +160,7 @@ def arm_prompt(row: dict[str, Any], config: dict[str, Any], arm: str, memory_mod
             {
                 "role": "user",
                 "content": (
-                    f"Current benchmark date: 2026-04-28. Timezone: America/Santiago.\n"
+                    f"Current benchmark date: {benchmark_date}. Timezone: {timezone_name}.\n"
                     f"Allowed tools: {tool_names}.\n"
                     f"Request: {row['prompt']}"
                 ),
@@ -548,6 +556,8 @@ def main() -> int:
         "config_path": str(config_path),
         "config": {
             "case_ids": [row["row_id"] for row in rows],
+            "benchmark_date": config.get("benchmark_date", "2026-04-28"),
+            "timezone": config.get("timezone", "America/Santiago"),
             "ctx": args.ctx,
             "threads": args.threads,
             "batch_size": args.batch_size,

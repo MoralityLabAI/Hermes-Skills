@@ -1,0 +1,123 @@
+{
+  "generated_at_utc": "2026-04-29T13:29:18.090439+00:00",
+  "benchmark_date": "2026-04-29",
+  "timezone": "America/Santiago",
+  "project_id": "real_tool_contract_router_heldout",
+  "row_count": 32,
+  "family_counts": {
+    "repo_search": 4,
+    "file_lookup": 4,
+    "shell_safe_command": 4,
+    "scheduling_query": 4,
+    "weather_query": 4,
+    "json_argument_trap": 4,
+    "task_note_browser": 8
+  },
+  "validator": "research\\studies\\2026-04-29-real-tool-contract-router-heldout\\validators\\validate_tool_contracts.py",
+  "tool_schemas": {
+    "repo.search": {
+      "query": "str",
+      "path": "str",
+      "case_sensitive": "bool"
+    },
+    "repo.find_files": {
+      "glob": "str",
+      "path": "str"
+    },
+    "git.log": {
+      "limit": "int",
+      "include_stat": "bool"
+    },
+    "file.read": {
+      "path": "str",
+      "max_chars": "int"
+    },
+    "shell.plan": {
+      "command": "str",
+      "purpose": "str",
+      "dry_run": "bool"
+    },
+    "calendar.create_event": {
+      "title": "str",
+      "date": "date",
+      "time": "time",
+      "duration_min": "int",
+      "timezone": "str"
+    },
+    "calendar.query": {
+      "date": "date",
+      "timezone": "str",
+      "scope": "enum:day|week"
+    },
+    "calendar.reminder": {
+      "title": "str",
+      "date": "date",
+      "time": "time",
+      "timezone": "str"
+    },
+    "weather.lookup": {
+      "location": "str",
+      "date": "date",
+      "units": "enum:metric|imperial"
+    },
+    "task.create": {
+      "title": "str",
+      "due_date": "date",
+      "priority": "enum:low|medium|high"
+    },
+    "note.append": {
+      "path": "str",
+      "heading": "str",
+      "text": "str"
+    },
+    "browser.open": {
+      "url": "str",
+      "purpose": "str"
+    },
+    "browser.search": {
+      "query": "str",
+      "recency_days": "int"
+    },
+    "tool.ask_clarification": {
+      "question": "str",
+      "field": "str"
+    },
+    "tool.reject": {
+      "reason": "str",
+      "policy": "enum:destructive_shell|ambiguous_time|unsafe_advice"
+    }
+  },
+  "alias_memory": {
+    "held-out router study": "research/studies/2026-04-29-real-tool-contract-router-heldout",
+    "heldout study": "research/studies/2026-04-29-real-tool-contract-router-heldout",
+    "heldout README": "research/studies/2026-04-29-real-tool-contract-router-heldout/README.md",
+    "v3 findings": "research/studies/2026-04-28-real-tool-contract-router-seed/v3_findings.md",
+    "research log": "research/generated/research_log.md",
+    "paper drafts": "research/generated/paper_drafts",
+    "research scripts": "research/scripts"
+  },
+  "command_templates": {
+    "current git branch": "git branch --show-current",
+    "compile v3 argcanon": "python -m py_compile research\\scripts\\apply_tool_router_v3_argcanon_gate.py",
+    "list heldout row files": "Get-ChildItem -LiteralPath 'research\\studies\\2026-04-29-real-tool-contract-router-heldout\\rows' -File"
+  },
+  "argument_normalization_rules": [
+    "Use retrieved templates before free-form argument synthesis.",
+    "Normalize absolute and relative dates against benchmark_date.",
+    "Return clarification or reject tools for missing arguments and destructive commands.",
+    "Use exact top-level keys: tool, args, safe_to_execute."
+  ],
+  "argument_template_rules": [
+    "Use compact retrieval: exactly one prompt-relevant template may be copied into the model prompt.",
+    "Do not add row-specific templates after model results are observed.",
+    "The deterministic compiler may normalize slashes, casing, dates, city suffixes, shell metadata, and safety routes.",
+    "New tool schemas must still emit only tool, args, safe_to_execute."
+  ],
+  "recommended_arms": [
+    "baseline",
+    "pure_trm",
+    "metta_runtime",
+    "metta_runtime_repair"
+  ],
+  "claim_boundary": "Held-out generalization requires live local 3B and argcanon receipts."
+}
