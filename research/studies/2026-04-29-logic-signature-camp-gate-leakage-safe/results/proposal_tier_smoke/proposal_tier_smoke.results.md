@@ -1,6 +1,6 @@
 # Logic Signature Camp-Gate Proposal-Tier Smoke
 
-Generated: `2026-04-29T13:59:53.067235+00:00`
+Generated: `2026-04-29T18:36:34.106248+00:00`
 
 Evidence class: `no_model_proposal_tier_smoke`
 

@@ -1,6 +1,6 @@
 # Logic Signature Camp-Gate Leakage-Safe Micro-Suite
 
-Generated: `2026-04-29T13:58:48.413187+00:00`
+Generated: `2026-04-29T18:36:33.708990+00:00`
 
 - Route: `hard_env_boundary`
 - Project: `logic_signature_camp_gate`
@@ -36,6 +36,9 @@ This study turns the prior Intellect-3 camp-gate replay into a leakage-safe micr
 - Proposal-tier smoke: `results/proposal_tier_smoke/proposal_tier_smoke.results.md`
 - Local 3B run: `results/local_qwen25_3b_logic_signature_camp_gate/local_qwen25_3b_logic_signature_camp_gate.results.md`
 - Job-cap receipt: `results/local_qwen25_3b_logic_signature_camp_gate/jobcap.summary.json`
+- Projection ablation: `results/projection_ablation/projection_ablation.results.md`
+- Constraint extraction: `results/local_qwen25_3b_constraint_extract/local_qwen25_3b_constraint_extract.results.md`
+- Constraint extraction repair: `results/constraint_extract_schema_repair/constraint_extract_schema_repair.results.md`
 
 ## Local 3B Result
 
@@ -49,3 +52,28 @@ The local Qwen2.5-3B Q4 run completed under the Windows job-cap wrapper with a 3
 | `metta_signature_projection` | 9/12 | 0.7500 | 9/12 | 0.7500 | full_candidate:9, none:3 |
 
 Interpretation: the projection column is the key hard-env measurement. It tests whether local 3B emits enough verifier-visible grid state for prompt-derived signature projection to close the solution. It is not a trained TRM lift claim.
+
+
+## Projection Ablation
+
+The projection replay separates candidate-conditioned closure from pure public-constraint solving.
+
+| Arm | Exact | Exact Rate | Contract Valid | Avg Cell Acc | Tier Counts |
+| --- | ---: | ---: | ---: | ---: | --- |
+| `metta_runtime` | 0/12 | 0.0000 | 0/12 | 0.2792 | none:3, weak_surface:9 |
+| `candidate_conditioned_projection` | 9/12 | 0.7500 | 9/12 | 0.7500 | full_candidate:9, none:3 |
+| `public_constraint_solver` | 12/12 | 1.0000 | 12/12 | 1.0000 | full_candidate:12 |
+
+The `candidate_conditioned_projection` arm preserves the earlier 9/12 result. The `public_constraint_solver` arm reaches 12/12 because every frozen row has a unique solution from prompt-visible constraints. This is a stronger but narrower claim: once constraints are machine-visible, the LLM is not needed for grid execution.
+
+
+## Constraint Extraction Follow-Up
+
+The extraction run completed under the Windows job-cap wrapper with a 3,000 MB RAM cap, 50% CPU cap, 50 MB/s IO cap, and 7,200 second timeout. Runner-level child RSS peaked at `2356.16 MB`; the wrapper reported `success`.
+
+| Arm | JSON Parse | Strict Packet Exact | Strict Solve Exact | Repair Packet Exact | Repair Solve Exact |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| `baseline_extract` | 0/12 | 0/12 | 0/12 | 0/12 | 0/12 |
+| `metta_schema_extract` | 12/12 | 0/12 | 0/12 | 12/12 | 12/12 |
+
+The strict `metta_schema_extract` packets failed because the model omitted `width` in all rows and had one row-count mass-balance error. Deterministic MeTTa-style schema repair inferred missing dimensions from count-vector lengths and accepted the unique row/column-balanced packet only when the public solver closed. This produced 12/12 repaired solve exact.

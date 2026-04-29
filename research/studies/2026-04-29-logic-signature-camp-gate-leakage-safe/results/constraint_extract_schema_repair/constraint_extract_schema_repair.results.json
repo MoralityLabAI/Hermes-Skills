@@ -1,0 +1,4180 @@
+{
+  "generated_at_utc": "2026-04-29T18:36:29.532353+00:00",
+  "model_path": "D:\\Research_Engine\\models\\Qwen2.5-3B-Instruct-GGUF\\qwen2.5-3b-instruct-q4_k_m.gguf",
+  "llama_completion_path": "D:\\Research_Engine\\tools\\llama.cpp-b8922-cuda12.4\\llama-completion.exe",
+  "rows_path": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\rows\\logic_signature_camp_gate_rows.jsonl",
+  "source_results": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\results\\local_qwen25_3b_constraint_extract\\local_qwen25_3b_constraint_extract.results.json",
+  "summary": {
+    "evidence_class": "live_model_local_3b_constraint_extract",
+    "rows": 12,
+    "arms": {
+      "baseline_extract": {
+        "rows": 12,
+        "json_parse": 0,
+        "packet_valid": 0,
+        "packet_exact": 0,
+        "solver_unique": 0,
+        "solve_exact": 0,
+        "solve_exact_rate": 0.0,
+        "packet_exact_rate": 0.0,
+        "avg_solve_cell_accuracy": 0.0,
+        "repair_packet_exact": 0,
+        "repair_solve_exact": 0,
+        "repair_solve_exact_rate": 0.0
+      },
+      "canonical_packet_solver": {
+        "rows": 12,
+        "json_parse": 12,
+        "packet_valid": 12,
+        "packet_exact": 12,
+        "solver_unique": 12,
+        "solve_exact": 12,
+        "solve_exact_rate": 1.0,
+        "packet_exact_rate": 1.0,
+        "avg_solve_cell_accuracy": 1.0,
+        "repair_packet_exact": 12,
+        "repair_solve_exact": 12,
+        "repair_solve_exact_rate": 1.0
+      },
+      "metta_schema_extract": {
+        "rows": 12,
+        "json_parse": 12,
+        "packet_valid": 0,
+        "packet_exact": 0,
+        "solver_unique": 0,
+        "solve_exact": 0,
+        "solve_exact_rate": 0.0,
+        "packet_exact_rate": 0.0,
+        "avg_solve_cell_accuracy": 0.0,
+        "repair_packet_exact": 12,
+        "repair_solve_exact": 12,
+        "repair_solve_exact_rate": 1.0
+      }
+    },
+    "failure_counts_by_family": {
+      "intellect3_logic_camp_gate": 24
+    },
+    "peak_child_ram_mb": 0.0
+  },
+  "evaluated": [
+    {
+      "ts": "2026-04-29T18:36:29.517760+00:00",
+      "row_id": "camp_gate_001_5x4_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "canonical_packet_solver",
+      "output": "{\"height\":5,\"width\":4,\"fixed_tents\":[[1,1],[1,3],[4,2],[5,3]],\"row_c_counts\":[0,2,0,1,1],\"col_c_counts\":[2,0,1,1]}",
+      "evidence_class": "no_model_canonical_constraint_solver",
+      "json_parse": true,
+      "packet_valid": true,
+      "packet_exact": true,
+      "solver_unique": true,
+      "solve_exact": true,
+      "solve_cell_accuracy": 1.0,
+      "repair_packet_valid": true,
+      "repair_packet_exact": true,
+      "repair_solver_unique": true,
+      "repair_solve_exact": true,
+      "repair_solve_cell_accuracy": 1.0,
+      "normalized_packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            3
+          ]
+        ],
+        "row_c_counts": [
+          0,
+          2,
+          0,
+          1,
+          1
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          1,
+          1
+        ]
+      },
+      "repaired_packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            3
+          ]
+        ],
+        "row_c_counts": [
+          0,
+          2,
+          0,
+          1,
+          1
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          1,
+          1
+        ]
+      },
+      "canonical_packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            3
+          ]
+        ],
+        "row_c_counts": [
+          0,
+          2,
+          0,
+          1,
+          1
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          1,
+          1
+        ]
+      },
+      "solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "repair_solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "solved_output": "TXTX\nCXCX\nXXXX\nCTXX\nXXTC",
+      "repair_solved_output": "TXTX\nCXCX\nXXXX\nCTXX\nXXTC",
+      "diagnostics": {
+        "model_calls": 0
+      }
+    },
+    {
+      "ts": "2026-04-29T18:36:29.517760+00:00",
+      "row_id": "camp_gate_002_4x4_3c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "canonical_packet_solver",
+      "output": "{\"height\":4,\"width\":4,\"fixed_tents\":[[2,3],[4,1],[4,3]],\"row_c_counts\":[0,1,1,1],\"col_c_counts\":[1,0,0,2]}",
+      "evidence_class": "no_model_canonical_constraint_solver",
+      "json_parse": true,
+      "packet_valid": true,
+      "packet_exact": true,
+      "solver_unique": true,
+      "solve_exact": true,
+      "solve_cell_accuracy": 1.0,
+      "repair_packet_valid": true,
+      "repair_packet_exact": true,
+      "repair_solver_unique": true,
+      "repair_solve_exact": true,
+      "repair_solve_cell_accuracy": 1.0,
+      "normalized_packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "row_c_counts": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          0,
+          2
+        ]
+      },
+      "repaired_packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "row_c_counts": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          0,
+          2
+        ]
+      },
+      "canonical_packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "row_c_counts": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          0,
+          2
+        ]
+      },
+      "solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "repair_solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "solved_output": "XXXX\nXXTC\nCXXX\nTXTC",
+      "repair_solved_output": "XXXX\nXXTC\nCXXX\nTXTC",
+      "diagnostics": {
+        "model_calls": 0
+      }
+    },
+    {
+      "ts": "2026-04-29T18:36:29.519231+00:00",
+      "row_id": "camp_gate_003_4x5_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "canonical_packet_solver",
+      "output": "{\"height\":4,\"width\":5,\"fixed_tents\":[[1,4],[1,5],[4,2],[4,4]],\"row_c_counts\":[1,1,0,2],\"col_c_counts\":[1,0,1,0,2]}",
+      "evidence_class": "no_model_canonical_constraint_solver",
+      "json_parse": true,
+      "packet_valid": true,
+      "packet_exact": true,
+      "solver_unique": true,
+      "solve_exact": true,
+      "solve_cell_accuracy": 1.0,
+      "repair_packet_valid": true,
+      "repair_packet_exact": true,
+      "repair_solver_unique": true,
+      "repair_solve_exact": true,
+      "repair_solve_cell_accuracy": 1.0,
+      "normalized_packet": {
+        "height": 4,
+        "width": 5,
+        "fixed_tents": [
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          1,
+          0,
+          2
+        ]
+      },
+      "repaired_packet": {
+        "height": 4,
+        "width": 5,
+        "fixed_tents": [
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          1,
+          0,
+          2
+        ]
+      },
+      "canonical_packet": {
+        "height": 4,
+        "width": 5,
+        "fixed_tents": [
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          1,
+          0,
+          2
+        ]
+      },
+      "solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "repair_solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "solved_output": "XXCTT\nXXXXC\nXXXXX\nCTXTC",
+      "repair_solved_output": "XXCTT\nXXXXC\nXXXXX\nCTXTC",
+      "diagnostics": {
+        "model_calls": 0
+      }
+    },
+    {
+      "ts": "2026-04-29T18:36:29.520250+00:00",
+      "row_id": "camp_gate_004_5x4_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "canonical_packet_solver",
+      "output": "{\"height\":5,\"width\":4,\"fixed_tents\":[[1,3],[2,1],[3,4],[5,1]],\"row_c_counts\":[1,0,2,0,1],\"col_c_counts\":[1,1,1,1]}",
+      "evidence_class": "no_model_canonical_constraint_solver",
+      "json_parse": true,
+      "packet_valid": true,
+      "packet_exact": true,
+      "solver_unique": true,
+      "solve_exact": true,
+      "solve_cell_accuracy": 1.0,
+      "repair_packet_valid": true,
+      "repair_packet_exact": true,
+      "repair_solver_unique": true,
+      "repair_solve_exact": true,
+      "repair_solve_cell_accuracy": 1.0,
+      "normalized_packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            1
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          0,
+          2,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "repaired_packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            1
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          0,
+          2,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "canonical_packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            1
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          0,
+          2,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "repair_solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "solved_output": "XXTC\nTXXX\nCXCT\nXXXX\nTCXX",
+      "repair_solved_output": "XXTC\nTXXX\nCXCT\nXXXX\nTCXX",
+      "diagnostics": {
+        "model_calls": 0
+      }
+    },
+    {
+      "ts": "2026-04-29T18:36:29.520250+00:00",
+      "row_id": "camp_gate_005_5x5_5c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "canonical_packet_solver",
+      "output": "{\"height\":5,\"width\":5,\"fixed_tents\":[[1,1],[1,2],[1,5],[4,2],[4,4]],\"row_c_counts\":[1,2,0,2,0],\"col_c_counts\":[2,0,1,0,2]}",
+      "evidence_class": "no_model_canonical_constraint_solver",
+      "json_parse": true,
+      "packet_valid": true,
+      "packet_exact": true,
+      "solver_unique": true,
+      "solve_exact": true,
+      "solve_cell_accuracy": 1.0,
+      "repair_packet_valid": true,
+      "repair_packet_exact": true,
+      "repair_solver_unique": true,
+      "repair_solve_exact": true,
+      "repair_solve_cell_accuracy": 1.0,
+      "normalized_packet": {
+        "height": 5,
+        "width": 5,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          2,
+          0,
+          2,
+          0
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          1,
+          0,
+          2
+        ]
+      },
+      "repaired_packet": {
+        "height": 5,
+        "width": 5,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          2,
+          0,
+          2,
+          0
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          1,
+          0,
+          2
+        ]
+      },
+      "canonical_packet": {
+        "height": 5,
+        "width": 5,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          2,
+          0,
+          2,
+          0
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          1,
+          0,
+          2
+        ]
+      },
+      "solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "repair_solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "solved_output": "TTCXT\nCXXXC\nXXXXX\nCTXTC\nXXXXX",
+      "repair_solved_output": "TTCXT\nCXXXC\nXXXXX\nCTXTC\nXXXXX",
+      "diagnostics": {
+        "model_calls": 0
+      }
+    },
+    {
+      "ts": "2026-04-29T18:36:29.521250+00:00",
+      "row_id": "camp_gate_006_4x4_3c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "canonical_packet_solver",
+      "output": "{\"height\":4,\"width\":4,\"fixed_tents\":[[1,1],[3,1],[3,4]],\"row_c_counts\":[1,1,0,1],\"col_c_counts\":[1,1,0,1]}",
+      "evidence_class": "no_model_canonical_constraint_solver",
+      "json_parse": true,
+      "packet_valid": true,
+      "packet_exact": true,
+      "solver_unique": true,
+      "solve_exact": true,
+      "solve_cell_accuracy": 1.0,
+      "repair_packet_valid": true,
+      "repair_packet_exact": true,
+      "repair_solver_unique": true,
+      "repair_solve_exact": true,
+      "repair_solve_cell_accuracy": 1.0,
+      "normalized_packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ]
+      },
+      "repaired_packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ]
+      },
+      "canonical_packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ]
+      },
+      "solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "repair_solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "solved_output": "TCXX\nXXXC\nTXXT\nCXXX",
+      "repair_solved_output": "TCXX\nXXXC\nTXXT\nCXXX",
+      "diagnostics": {
+        "model_calls": 0
+      }
+    },
+    {
+      "ts": "2026-04-29T18:36:29.521250+00:00",
+      "row_id": "camp_gate_007_5x4_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "canonical_packet_solver",
+      "output": "{\"height\":5,\"width\":4,\"fixed_tents\":[[1,3],[2,3],[4,2],[5,2]],\"row_c_counts\":[1,0,1,1,1],\"col_c_counts\":[1,0,2,1]}",
+      "evidence_class": "no_model_canonical_constraint_solver",
+      "json_parse": true,
+      "packet_valid": true,
+      "packet_exact": true,
+      "solver_unique": true,
+      "solve_exact": true,
+      "solve_cell_accuracy": 1.0,
+      "repair_packet_valid": true,
+      "repair_packet_exact": true,
+      "repair_solver_unique": true,
+      "repair_solve_exact": true,
+      "repair_solve_cell_accuracy": 1.0,
+      "normalized_packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            2
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          2,
+          1
+        ]
+      },
+      "repaired_packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            2
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          2,
+          1
+        ]
+      },
+      "canonical_packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            2
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          2,
+          1
+        ]
+      },
+      "solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "repair_solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "solved_output": "XXTC\nXXTX\nXXCX\nCTXX\nXTCX",
+      "repair_solved_output": "XXTC\nXXTX\nXXCX\nCTXX\nXTCX",
+      "diagnostics": {
+        "model_calls": 0
+      }
+    },
+    {
+      "ts": "2026-04-29T18:36:29.521250+00:00",
+      "row_id": "camp_gate_008_4x4_3c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "canonical_packet_solver",
+      "output": "{\"height\":4,\"width\":4,\"fixed_tents\":[[2,2],[2,3],[4,2]],\"row_c_counts\":[1,1,0,1],\"col_c_counts\":[1,1,0,1]}",
+      "evidence_class": "no_model_canonical_constraint_solver",
+      "json_parse": true,
+      "packet_valid": true,
+      "packet_exact": true,
+      "solver_unique": true,
+      "solve_exact": true,
+      "solve_cell_accuracy": 1.0,
+      "repair_packet_valid": true,
+      "repair_packet_exact": true,
+      "repair_solver_unique": true,
+      "repair_solve_exact": true,
+      "repair_solve_cell_accuracy": 1.0,
+      "normalized_packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ]
+      },
+      "repaired_packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ]
+      },
+      "canonical_packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ]
+      },
+      "solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "repair_solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "solved_output": "XCXX\nXTTC\nXXXX\nCTXX",
+      "repair_solved_output": "XCXX\nXTTC\nXXXX\nCTXX",
+      "diagnostics": {
+        "model_calls": 0
+      }
+    },
+    {
+      "ts": "2026-04-29T18:36:29.522253+00:00",
+      "row_id": "camp_gate_009_4x5_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "canonical_packet_solver",
+      "output": "{\"height\":4,\"width\":5,\"fixed_tents\":[[1,3],[2,1],[3,4],[4,2]],\"row_c_counts\":[1,1,0,2],\"col_c_counts\":[2,0,1,1,0]}",
+      "evidence_class": "no_model_canonical_constraint_solver",
+      "json_parse": true,
+      "packet_valid": true,
+      "packet_exact": true,
+      "solver_unique": true,
+      "solve_exact": true,
+      "solve_cell_accuracy": 1.0,
+      "repair_packet_valid": true,
+      "repair_packet_exact": true,
+      "repair_solver_unique": true,
+      "repair_solve_exact": true,
+      "repair_solve_cell_accuracy": 1.0,
+      "normalized_packet": {
+        "height": 4,
+        "width": 5,
+        "fixed_tents": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          1,
+          1,
+          0
+        ]
+      },
+      "repaired_packet": {
+        "height": 4,
+        "width": 5,
+        "fixed_tents": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          1,
+          1,
+          0
+        ]
+      },
+      "canonical_packet": {
+        "height": 4,
+        "width": 5,
+        "fixed_tents": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          1,
+          1,
+          0
+        ]
+      },
+      "solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "repair_solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "solved_output": "CXTXX\nTXCXX\nXXXTX\nCTXCX",
+      "repair_solved_output": "CXTXX\nTXCXX\nXXXTX\nCTXCX",
+      "diagnostics": {
+        "model_calls": 0
+      }
+    },
+    {
+      "ts": "2026-04-29T18:36:29.522253+00:00",
+      "row_id": "camp_gate_010_5x4_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "canonical_packet_solver",
+      "output": "{\"height\":5,\"width\":4,\"fixed_tents\":[[1,2],[1,3],[4,1],[5,4]],\"row_c_counts\":[1,1,0,0,2],\"col_c_counts\":[2,0,2,0]}",
+      "evidence_class": "no_model_canonical_constraint_solver",
+      "json_parse": true,
+      "packet_valid": true,
+      "packet_exact": true,
+      "solver_unique": true,
+      "solve_exact": true,
+      "solve_cell_accuracy": 1.0,
+      "repair_packet_valid": true,
+      "repair_packet_exact": true,
+      "repair_solver_unique": true,
+      "repair_solve_exact": true,
+      "repair_solve_cell_accuracy": 1.0,
+      "normalized_packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          2,
+          0
+        ]
+      },
+      "repaired_packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          2,
+          0
+        ]
+      },
+      "canonical_packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          2,
+          0
+        ]
+      },
+      "solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "repair_solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "solved_output": "CTTX\nXXCX\nXXXX\nTXXX\nCXCT",
+      "repair_solved_output": "CTTX\nXXCX\nXXXX\nTXXX\nCXCT",
+      "diagnostics": {
+        "model_calls": 0
+      }
+    },
+    {
+      "ts": "2026-04-29T18:36:29.522253+00:00",
+      "row_id": "camp_gate_011_5x5_5c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "canonical_packet_solver",
+      "output": "{\"height\":5,\"width\":5,\"fixed_tents\":[[2,1],[3,1],[3,4],[5,2],[5,5]],\"row_c_counts\":[1,0,2,0,2],\"col_c_counts\":[2,1,0,1,1]}",
+      "evidence_class": "no_model_canonical_constraint_solver",
+      "json_parse": true,
+      "packet_valid": true,
+      "packet_exact": true,
+      "solver_unique": true,
+      "solve_exact": true,
+      "solve_cell_accuracy": 1.0,
+      "repair_packet_valid": true,
+      "repair_packet_exact": true,
+      "repair_solver_unique": true,
+      "repair_solve_exact": true,
+      "repair_solve_cell_accuracy": 1.0,
+      "normalized_packet": {
+        "height": 5,
+        "width": 5,
+        "fixed_tents": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          0,
+          2,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          2,
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      "repaired_packet": {
+        "height": 5,
+        "width": 5,
+        "fixed_tents": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          0,
+          2,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          2,
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      "canonical_packet": {
+        "height": 5,
+        "width": 5,
+        "fixed_tents": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          0,
+          2,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          2,
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      "solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "repair_solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "solved_output": "CXXXX\nTXXXX\nTCXTC\nXXXXX\nCTXCT",
+      "repair_solved_output": "CXXXX\nTXXXX\nTCXTC\nXXXXX\nCTXCT",
+      "diagnostics": {
+        "model_calls": 0
+      }
+    },
+    {
+      "ts": "2026-04-29T18:36:29.522253+00:00",
+      "row_id": "camp_gate_012_4x4_3c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "canonical_packet_solver",
+      "output": "{\"height\":4,\"width\":4,\"fixed_tents\":[[1,1],[2,3],[4,3]],\"row_c_counts\":[1,1,0,1],\"col_c_counts\":[1,0,1,1]}",
+      "evidence_class": "no_model_canonical_constraint_solver",
+      "json_parse": true,
+      "packet_valid": true,
+      "packet_exact": true,
+      "solver_unique": true,
+      "solve_exact": true,
+      "solve_cell_accuracy": 1.0,
+      "repair_packet_valid": true,
+      "repair_packet_exact": true,
+      "repair_solver_unique": true,
+      "repair_solve_exact": true,
+      "repair_solve_cell_accuracy": 1.0,
+      "normalized_packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      "repaired_packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      "canonical_packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      "solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "repair_solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "solved_output": "TXCX\nCXTX\nXXXX\nXXTC",
+      "repair_solved_output": "TXCX\nCXTX\nXXXX\nXXTC",
+      "diagnostics": {
+        "model_calls": 0
+      }
+    },
+    {
+      "ts": "2026-04-29T18:36:29.523247+00:00",
+      "row_id": "camp_gate_001_5x4_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "baseline_extract",
+      "output": "T C X X\nC T C C\nX C X C\nT X T C\nX C C X",
+      "evidence_class": "live_log_replay_constraint_extract_schema_repair",
+      "json_parse": false,
+      "packet_valid": false,
+      "packet_exact": false,
+      "solver_unique": false,
+      "solve_exact": false,
+      "solve_cell_accuracy": 0.0,
+      "repair_packet_valid": false,
+      "repair_packet_exact": false,
+      "repair_solver_unique": false,
+      "repair_solve_exact": false,
+      "repair_solve_cell_accuracy": 0.0,
+      "normalized_packet": null,
+      "repaired_packet": null,
+      "canonical_packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            3
+          ]
+        ],
+        "row_c_counts": [
+          0,
+          2,
+          0,
+          1,
+          1
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          1,
+          1
+        ]
+      },
+      "solver": {
+        "solved": false,
+        "reason": "constraint_packet_parse_failure",
+        "target_grid_used_by_solver": false
+      },
+      "repair_solver": {
+        "solved": false,
+        "reason": "constraint_packet_parse_failure",
+        "target_grid_used_by_solver": false
+      },
+      "repair_diagnostics": {
+        "repaired": false,
+        "reason": "packet_parse_failure",
+        "target_grid_used_by_repair": false
+      },
+      "solved_output": "",
+      "repair_solved_output": "",
+      "diagnostics": {
+        "replay_source": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\results\\local_qwen25_3b_constraint_extract\\local_qwen25_3b_constraint_extract.results.json",
+        "original_diagnostics": {
+          "returncode": 0,
+          "elapsed_sec": 47.2234,
+          "peak_child_ram_mb": 2348.668,
+          "stderr_tail": "ch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 1677436140\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 160, n_keep = 0\n\ncommon_perf_print:    sampling time =      29.45 ms\ncommon_perf_print:    samplers time =      11.68 ms /   304 tokens\ncommon_perf_print:        load time =    4218.49 ms\ncommon_perf_print: prompt eval time =    4164.98 ms /   279 tokens (   14.93 ms per token,    66.99 tokens per second)\ncommon_perf_print:        eval time =    1783.76 ms /    24 runs   (   74.32 ms per token,    13.45 tokens per second)\ncommon_perf_print:       total time =    6034.12 ms /   303 tokens\ncommon_perf_print: unaccounted time =      55.94 ms /   0.9 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         27\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+          "raw_output_tail": "T C X X\nC T C C\nX C X C\nT X T C\nX C C X [end of text]\n\n\n"
+        }
+      }
+    },
+    {
+      "ts": "2026-04-29T18:36:29.523758+00:00",
+      "row_id": "camp_gate_001_5x4_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_schema_extract",
+      "output": "{\"col_c_counts\": [2, 0, 1, 1], \"fixed_tents\": [[1, 1], [1, 3], [4, 2], [5, 3]], \"height\": 5, \"row_c_counts\": [0, 2, 0, 1, 1]}",
+      "evidence_class": "live_log_replay_constraint_extract_schema_repair",
+      "json_parse": true,
+      "packet_valid": false,
+      "packet_exact": false,
+      "solver_unique": false,
+      "solve_exact": false,
+      "solve_cell_accuracy": 0.0,
+      "repair_packet_valid": true,
+      "repair_packet_exact": true,
+      "repair_solver_unique": true,
+      "repair_solve_exact": true,
+      "repair_solve_cell_accuracy": 1.0,
+      "normalized_packet": null,
+      "repaired_packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            3
+          ]
+        ],
+        "row_c_counts": [
+          0,
+          2,
+          0,
+          1,
+          1
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          1,
+          1
+        ]
+      },
+      "canonical_packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            3
+          ]
+        ],
+        "row_c_counts": [
+          0,
+          2,
+          0,
+          1,
+          1
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          1,
+          1
+        ]
+      },
+      "solver": {
+        "solved": false,
+        "reason": "constraint_packet_parse_failure",
+        "target_grid_used_by_solver": false
+      },
+      "repair_solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "repair_diagnostics": {
+        "repaired": true,
+        "target_grid_used_by_repair": false,
+        "inferred_height": false,
+        "inferred_width": true,
+        "row_total": 4,
+        "col_total": 4,
+        "solver": {
+          "solved": true,
+          "valid_solution_count_from_extracted_constraints": 1,
+          "target_grid_used_by_solver": false
+        },
+        "repair_strategy": "dimension_inference_only"
+      },
+      "solved_output": "",
+      "repair_solved_output": "TXTX\nCXCX\nXXXX\nCTXX\nXXTC",
+      "diagnostics": {
+        "replay_source": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\results\\local_qwen25_3b_constraint_extract\\local_qwen25_3b_constraint_extract.results.json",
+        "original_diagnostics": {
+          "returncode": 0,
+          "elapsed_sec": 12.0936,
+          "peak_child_ram_mb": 2349.8789,
+          "stderr_tail": "ch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 2460596474\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 160, n_keep = 0\n\ncommon_perf_print:    sampling time =      79.09 ms\ncommon_perf_print:    samplers time =      31.70 ms /   452 tokens\ncommon_perf_print:        load time =    1149.09 ms\ncommon_perf_print: prompt eval time =    1146.35 ms /   379 tokens (    3.02 ms per token,   330.62 tokens per second)\ncommon_perf_print:        eval time =    2687.35 ms /    72 runs   (   37.32 ms per token,    26.79 tokens per second)\ncommon_perf_print:       total time =    3923.76 ms /   451 tokens\ncommon_perf_print: unaccounted time =      10.98 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         77\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+          "raw_output_tail": "{\"col_c_counts\": [2, 0, 1, 1], \"fixed_tents\": [[1, 1], [1, 3], [4, 2], [5, 3]], \"height\": 5, \"row_c_counts\": [0, 2, 0, 1, 1]} [end of text]\n\n\n"
+        }
+      }
+    },
+    {
+      "ts": "2026-04-29T18:36:29.523758+00:00",
+      "row_id": "camp_gate_002_4x4_3c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "baseline_extract",
+      "output": "X C X X\nC T C X\nX C X C\nX X C T",
+      "evidence_class": "live_log_replay_constraint_extract_schema_repair",
+      "json_parse": false,
+      "packet_valid": false,
+      "packet_exact": false,
+      "solver_unique": false,
+      "solve_exact": false,
+      "solve_cell_accuracy": 0.0,
+      "repair_packet_valid": false,
+      "repair_packet_exact": false,
+      "repair_solver_unique": false,
+      "repair_solve_exact": false,
+      "repair_solve_cell_accuracy": 0.0,
+      "normalized_packet": null,
+      "repaired_packet": null,
+      "canonical_packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "row_c_counts": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          0,
+          2
+        ]
+      },
+      "solver": {
+        "solved": false,
+        "reason": "constraint_packet_parse_failure",
+        "target_grid_used_by_solver": false
+      },
+      "repair_solver": {
+        "solved": false,
+        "reason": "constraint_packet_parse_failure",
+        "target_grid_used_by_solver": false
+      },
+      "repair_diagnostics": {
+        "repaired": false,
+        "reason": "packet_parse_failure",
+        "target_grid_used_by_repair": false
+      },
+      "solved_output": "",
+      "repair_solved_output": "",
+      "diagnostics": {
+        "replay_source": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\results\\local_qwen25_3b_constraint_extract\\local_qwen25_3b_constraint_extract.results.json",
+        "original_diagnostics": {
+          "returncode": 0,
+          "elapsed_sec": 9.5846,
+          "peak_child_ram_mb": 2349.2773,
+          "stderr_tail": "ch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 3422579029\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 160, n_keep = 0\n\ncommon_perf_print:    sampling time =      23.99 ms\ncommon_perf_print:    samplers time =       9.62 ms /   289 tokens\ncommon_perf_print:        load time =    1042.17 ms\ncommon_perf_print: prompt eval time =    1038.15 ms /   269 tokens (    3.86 ms per token,   259.12 tokens per second)\ncommon_perf_print:        eval time =     734.15 ms /    19 runs   (   38.64 ms per token,    25.88 tokens per second)\ncommon_perf_print:       total time =    1802.18 ms /   288 tokens\ncommon_perf_print: unaccounted time =       5.89 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         22\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+          "raw_output_tail": "X C X X\nC T C X\nX C X C\nX X C T [end of text]\n\n\n"
+        }
+      }
+    },
+    {
+      "ts": "2026-04-29T18:36:29.523758+00:00",
+      "row_id": "camp_gate_002_4x4_3c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_schema_extract",
+      "output": "{\"col_c_counts\": [1, 0, 0, 2], \"fixed_tents\": [[2, 3], [4, 1], [4, 3]], \"height\": 4, \"row_c_counts\": [0, 1, 1, 1]}",
+      "evidence_class": "live_log_replay_constraint_extract_schema_repair",
+      "json_parse": true,
+      "packet_valid": false,
+      "packet_exact": false,
+      "solver_unique": false,
+      "solve_exact": false,
+      "solve_cell_accuracy": 0.0,
+      "repair_packet_valid": true,
+      "repair_packet_exact": true,
+      "repair_solver_unique": true,
+      "repair_solve_exact": true,
+      "repair_solve_cell_accuracy": 1.0,
+      "normalized_packet": null,
+      "repaired_packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "row_c_counts": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          0,
+          2
+        ]
+      },
+      "canonical_packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "row_c_counts": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          0,
+          2
+        ]
+      },
+      "solver": {
+        "solved": false,
+        "reason": "constraint_packet_parse_failure",
+        "target_grid_used_by_solver": false
+      },
+      "repair_solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "repair_diagnostics": {
+        "repaired": true,
+        "target_grid_used_by_repair": false,
+        "inferred_height": false,
+        "inferred_width": true,
+        "row_total": 3,
+        "col_total": 3,
+        "solver": {
+          "solved": true,
+          "valid_solution_count_from_extracted_constraints": 1,
+          "target_grid_used_by_solver": false
+        },
+        "repair_strategy": "dimension_inference_only"
+      },
+      "solved_output": "",
+      "repair_solved_output": "XXXX\nXXTC\nCXXX\nTXTC",
+      "diagnostics": {
+        "replay_source": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\results\\local_qwen25_3b_constraint_extract\\local_qwen25_3b_constraint_extract.results.json",
+        "original_diagnostics": {
+          "returncode": 0,
+          "elapsed_sec": 11.0785,
+          "peak_child_ram_mb": 2349.1914,
+          "stderr_tail": "ch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 3939264684\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 160, n_keep = 0\n\ncommon_perf_print:    sampling time =      75.48 ms\ncommon_perf_print:    samplers time =      31.23 ms /   433 tokens\ncommon_perf_print:        load time =    1105.83 ms\ncommon_perf_print: prompt eval time =    1102.43 ms /   369 tokens (    2.99 ms per token,   334.72 tokens per second)\ncommon_perf_print:        eval time =    2378.61 ms /    63 runs   (   37.76 ms per token,    26.49 tokens per second)\ncommon_perf_print:       total time =    3566.42 ms /   432 tokens\ncommon_perf_print: unaccounted time =       9.90 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         68\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+          "raw_output_tail": "{\"col_c_counts\": [1, 0, 0, 2], \"fixed_tents\": [[2, 3], [4, 1], [4, 3]], \"height\": 4, \"row_c_counts\": [0, 1, 1, 1]} [end of text]\n\n\n"
+        }
+      }
+    },
+    {
+      "ts": "2026-04-29T18:36:29.523758+00:00",
+      "row_id": "camp_gate_003_4x5_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "baseline_extract",
+      "output": "T C X\nX C X\nT C X\nX C X",
+      "evidence_class": "live_log_replay_constraint_extract_schema_repair",
+      "json_parse": false,
+      "packet_valid": false,
+      "packet_exact": false,
+      "solver_unique": false,
+      "solve_exact": false,
+      "solve_cell_accuracy": 0.0,
+      "repair_packet_valid": false,
+      "repair_packet_exact": false,
+      "repair_solver_unique": false,
+      "repair_solve_exact": false,
+      "repair_solve_cell_accuracy": 0.0,
+      "normalized_packet": null,
+      "repaired_packet": null,
+      "canonical_packet": {
+        "height": 4,
+        "width": 5,
+        "fixed_tents": [
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          1,
+          0,
+          2
+        ]
+      },
+      "solver": {
+        "solved": false,
+        "reason": "constraint_packet_parse_failure",
+        "target_grid_used_by_solver": false
+      },
+      "repair_solver": {
+        "solved": false,
+        "reason": "constraint_packet_parse_failure",
+        "target_grid_used_by_solver": false
+      },
+      "repair_diagnostics": {
+        "repaired": false,
+        "reason": "packet_parse_failure",
+        "target_grid_used_by_repair": false
+      },
+      "solved_output": "",
+      "repair_solved_output": "",
+      "diagnostics": {
+        "replay_source": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\results\\local_qwen25_3b_constraint_extract\\local_qwen25_3b_constraint_extract.results.json",
+        "original_diagnostics": {
+          "returncode": 0,
+          "elapsed_sec": 9.5609,
+          "peak_child_ram_mb": 2349.6172,
+          "stderr_tail": "ch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 3910237112\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 160, n_keep = 0\n\ncommon_perf_print:    sampling time =      20.10 ms\ncommon_perf_print:    samplers time =       7.88 ms /   295 tokens\ncommon_perf_print:        load time =    1033.15 ms\ncommon_perf_print: prompt eval time =    1029.59 ms /   279 tokens (    3.69 ms per token,   270.98 tokens per second)\ncommon_perf_print:        eval time =     607.80 ms /    15 runs   (   40.52 ms per token,    24.68 tokens per second)\ncommon_perf_print:       total time =    1662.69 ms /   294 tokens\ncommon_perf_print: unaccounted time =       5.20 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         18\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+          "raw_output_tail": "T C X\nX C X\nT C X\nX C X [end of text]\n\n\n"
+        }
+      }
+    },
+    {
+      "ts": "2026-04-29T18:36:29.524775+00:00",
+      "row_id": "camp_gate_003_4x5_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_schema_extract",
+      "output": "{\"col_c_counts\": [1, 0, 1, 0, 2], \"fixed_tents\": [[1, 4], [1, 5], [4, 2], [4, 4]], \"height\": 4, \"row_c_counts\": [1, 1, 0, 2]}",
+      "evidence_class": "live_log_replay_constraint_extract_schema_repair",
+      "json_parse": true,
+      "packet_valid": false,
+      "packet_exact": false,
+      "solver_unique": false,
+      "solve_exact": false,
+      "solve_cell_accuracy": 0.0,
+      "repair_packet_valid": true,
+      "repair_packet_exact": true,
+      "repair_solver_unique": true,
+      "repair_solve_exact": true,
+      "repair_solve_cell_accuracy": 1.0,
+      "normalized_packet": null,
+      "repaired_packet": {
+        "height": 4,
+        "width": 5,
+        "fixed_tents": [
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          1,
+          0,
+          2
+        ]
+      },
+      "canonical_packet": {
+        "height": 4,
+        "width": 5,
+        "fixed_tents": [
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          1,
+          0,
+          2
+        ]
+      },
+      "solver": {
+        "solved": false,
+        "reason": "constraint_packet_parse_failure",
+        "target_grid_used_by_solver": false
+      },
+      "repair_solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "repair_diagnostics": {
+        "repaired": true,
+        "target_grid_used_by_repair": false,
+        "inferred_height": false,
+        "inferred_width": true,
+        "row_total": 4,
+        "col_total": 4,
+        "solver": {
+          "solved": true,
+          "valid_solution_count_from_extracted_constraints": 1,
+          "target_grid_used_by_solver": false
+        },
+        "repair_strategy": "dimension_inference_only"
+      },
+      "solved_output": "",
+      "repair_solved_output": "XXCTT\nXXXXC\nXXXXX\nCTXTC",
+      "diagnostics": {
+        "replay_source": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\results\\local_qwen25_3b_constraint_extract\\local_qwen25_3b_constraint_extract.results.json",
+        "original_diagnostics": {
+          "returncode": 0,
+          "elapsed_sec": 10.5838,
+          "peak_child_ram_mb": 2349.5234,
+          "stderr_tail": "ch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 3154604615\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 160, n_keep = 0\n\ncommon_perf_print:    sampling time =      83.40 ms\ncommon_perf_print:    samplers time =      32.29 ms /   452 tokens\ncommon_perf_print:        load time =    1212.83 ms\ncommon_perf_print: prompt eval time =    1209.47 ms /   379 tokens (    3.19 ms per token,   313.36 tokens per second)\ncommon_perf_print:        eval time =    2746.47 ms /    72 runs   (   38.15 ms per token,    26.22 tokens per second)\ncommon_perf_print:       total time =    4049.82 ms /   451 tokens\ncommon_perf_print: unaccounted time =      10.48 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         77\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+          "raw_output_tail": "{\"col_c_counts\": [1, 0, 1, 0, 2], \"fixed_tents\": [[1, 4], [1, 5], [4, 2], [4, 4]], \"height\": 4, \"row_c_counts\": [1, 1, 0, 2]} [end of text]\n\n\n"
+        }
+      }
+    },
+    {
+      "ts": "2026-04-29T18:36:29.524775+00:00",
+      "row_id": "camp_gate_004_5x4_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "baseline_extract",
+      "output": "T C X X\nC T C X\nX C C T\nX X C T\nX C C X",
+      "evidence_class": "live_log_replay_constraint_extract_schema_repair",
+      "json_parse": false,
+      "packet_valid": false,
+      "packet_exact": false,
+      "solver_unique": false,
+      "solve_exact": false,
+      "solve_cell_accuracy": 0.0,
+      "repair_packet_valid": false,
+      "repair_packet_exact": false,
+      "repair_solver_unique": false,
+      "repair_solve_exact": false,
+      "repair_solve_cell_accuracy": 0.0,
+      "normalized_packet": null,
+      "repaired_packet": null,
+      "canonical_packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            1
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          0,
+          2,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "solver": {
+        "solved": false,
+        "reason": "constraint_packet_parse_failure",
+        "target_grid_used_by_solver": false
+      },
+      "repair_solver": {
+        "solved": false,
+        "reason": "constraint_packet_parse_failure",
+        "target_grid_used_by_solver": false
+      },
+      "repair_diagnostics": {
+        "repaired": false,
+        "reason": "packet_parse_failure",
+        "target_grid_used_by_repair": false
+      },
+      "solved_output": "",
+      "repair_solved_output": "",
+      "diagnostics": {
+        "replay_source": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\results\\local_qwen25_3b_constraint_extract\\local_qwen25_3b_constraint_extract.results.json",
+        "original_diagnostics": {
+          "returncode": 0,
+          "elapsed_sec": 11.1045,
+          "peak_child_ram_mb": 2348.9727,
+          "stderr_tail": "ch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 2398376143\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 160, n_keep = 0\n\ncommon_perf_print:    sampling time =      32.92 ms\ncommon_perf_print:    samplers time =      13.31 ms /   304 tokens\ncommon_perf_print:        load time =    1040.13 ms\ncommon_perf_print: prompt eval time =    1035.97 ms /   279 tokens (    3.71 ms per token,   269.31 tokens per second)\ncommon_perf_print:        eval time =    1037.05 ms /    24 runs   (   43.21 ms per token,    23.14 tokens per second)\ncommon_perf_print:       total time =    2112.44 ms /   303 tokens\ncommon_perf_print: unaccounted time =       6.50 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         27\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+          "raw_output_tail": "T C X X\nC T C X\nX C C T\nX X C T\nX C C X [end of text]\n\n\n"
+        }
+      }
+    },
+    {
+      "ts": "2026-04-29T18:36:29.525810+00:00",
+      "row_id": "camp_gate_004_5x4_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_schema_extract",
+      "output": "{\"col_c_counts\": [1, 1, 1, 1], \"fixed_tents\": [[1, 3], [2, 1], [3, 4], [5, 1]], \"height\": 5, \"row_c_counts\": [1, 0, 2, 0, 1]}",
+      "evidence_class": "live_log_replay_constraint_extract_schema_repair",
+      "json_parse": true,
+      "packet_valid": false,
+      "packet_exact": false,
+      "solver_unique": false,
+      "solve_exact": false,
+      "solve_cell_accuracy": 0.0,
+      "repair_packet_valid": true,
+      "repair_packet_exact": true,
+      "repair_solver_unique": true,
+      "repair_solve_exact": true,
+      "repair_solve_cell_accuracy": 1.0,
+      "normalized_packet": null,
+      "repaired_packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            1
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          0,
+          2,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "canonical_packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            1
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          0,
+          2,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "solver": {
+        "solved": false,
+        "reason": "constraint_packet_parse_failure",
+        "target_grid_used_by_solver": false
+      },
+      "repair_solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "repair_diagnostics": {
+        "repaired": true,
+        "target_grid_used_by_repair": false,
+        "inferred_height": false,
+        "inferred_width": true,
+        "row_total": 4,
+        "col_total": 4,
+        "solver": {
+          "solved": true,
+          "valid_solution_count_from_extracted_constraints": 1,
+          "target_grid_used_by_solver": false
+        },
+        "repair_strategy": "dimension_inference_only"
+      },
+      "solved_output": "",
+      "repair_solved_output": "XXTC\nTXXX\nCXCT\nXXXX\nTCXX",
+      "diagnostics": {
+        "replay_source": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\results\\local_qwen25_3b_constraint_extract\\local_qwen25_3b_constraint_extract.results.json",
+        "original_diagnostics": {
+          "returncode": 0,
+          "elapsed_sec": 15.6396,
+          "peak_child_ram_mb": 2349.1641,
+          "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 619804918\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 160, n_keep = 0\n\ncommon_perf_print:    sampling time =     143.86 ms\ncommon_perf_print:    samplers time =      60.69 ms /   452 tokens\ncommon_perf_print:        load time =    1563.62 ms\ncommon_perf_print: prompt eval time =    1558.20 ms /   379 tokens (    4.11 ms per token,   243.23 tokens per second)\ncommon_perf_print:        eval time =    2657.03 ms /    72 runs   (   36.90 ms per token,    27.10 tokens per second)\ncommon_perf_print:       total time =    4379.20 ms /   451 tokens\ncommon_perf_print: unaccounted time =      20.11 ms /   0.5 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         77\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+          "raw_output_tail": "{\"col_c_counts\": [1, 1, 1, 1], \"fixed_tents\": [[1, 3], [2, 1], [3, 4], [5, 1]], \"height\": 5, \"row_c_counts\": [1, 0, 2, 0, 1]} [end of text]\n\n\n"
+        }
+      }
+    },
+    {
+      "ts": "2026-04-29T18:36:29.525810+00:00",
+      "row_id": "camp_gate_005_5x5_5c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "baseline_extract",
+      "output": "T C X\nX C X\nT C X\nX C X\nT C X",
+      "evidence_class": "live_log_replay_constraint_extract_schema_repair",
+      "json_parse": false,
+      "packet_valid": false,
+      "packet_exact": false,
+      "solver_unique": false,
+      "solve_exact": false,
+      "solve_cell_accuracy": 0.0,
+      "repair_packet_valid": false,
+      "repair_packet_exact": false,
+      "repair_solver_unique": false,
+      "repair_solve_exact": false,
+      "repair_solve_cell_accuracy": 0.0,
+      "normalized_packet": null,
+      "repaired_packet": null,
+      "canonical_packet": {
+        "height": 5,
+        "width": 5,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          2,
+          0,
+          2,
+          0
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          1,
+          0,
+          2
+        ]
+      },
+      "solver": {
+        "solved": false,
+        "reason": "constraint_packet_parse_failure",
+        "target_grid_used_by_solver": false
+      },
+      "repair_solver": {
+        "solved": false,
+        "reason": "constraint_packet_parse_failure",
+        "target_grid_used_by_solver": false
+      },
+      "repair_diagnostics": {
+        "repaired": false,
+        "reason": "packet_parse_failure",
+        "target_grid_used_by_repair": false
+      },
+      "solved_output": "",
+      "repair_solved_output": "",
+      "diagnostics": {
+        "replay_source": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\results\\local_qwen25_3b_constraint_extract\\local_qwen25_3b_constraint_extract.results.json",
+        "original_diagnostics": {
+          "returncode": 0,
+          "elapsed_sec": 15.1238,
+          "peak_child_ram_mb": 2349.2695,
+          "stderr_tail": "ch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 2125302730\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 160, n_keep = 0\n\ncommon_perf_print:    sampling time =      43.93 ms\ncommon_perf_print:    samplers time =      20.59 ms /   309 tokens\ncommon_perf_print:        load time =    1571.17 ms\ncommon_perf_print: prompt eval time =    1564.88 ms /   289 tokens (    5.41 ms per token,   184.68 tokens per second)\ncommon_perf_print:        eval time =     642.07 ms /    19 runs   (   33.79 ms per token,    29.59 tokens per second)\ncommon_perf_print:       total time =    2262.73 ms /   308 tokens\ncommon_perf_print: unaccounted time =      11.85 ms /   0.5 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         23\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+          "raw_output_tail": "T C X\nX C X\nT C X\nX C X\nT C X [end of text]\n\n\n"
+        }
+      }
+    },
+    {
+      "ts": "2026-04-29T18:36:29.528354+00:00",
+      "row_id": "camp_gate_005_5x5_5c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_schema_extract",
+      "output": "{\"col_c_counts\": [2, 0, 1, 0, 2], \"fixed_tents\": [[1, 1], [1, 2], [1, 5], [4, 2], [4, 4]], \"height\": 5, \"row_c_counts\": [1, 0, 0, 2, 0]}",
+      "evidence_class": "live_log_replay_constraint_extract_schema_repair",
+      "json_parse": true,
+      "packet_valid": false,
+      "packet_exact": false,
+      "solver_unique": false,
+      "solve_exact": false,
+      "solve_cell_accuracy": 0.0,
+      "repair_packet_valid": true,
+      "repair_packet_exact": true,
+      "repair_solver_unique": true,
+      "repair_solve_exact": true,
+      "repair_solve_cell_accuracy": 1.0,
+      "normalized_packet": null,
+      "repaired_packet": {
+        "height": 5,
+        "width": 5,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          2,
+          0,
+          2,
+          0
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          1,
+          0,
+          2
+        ]
+      },
+      "canonical_packet": {
+        "height": 5,
+        "width": 5,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          2,
+          0,
+          2,
+          0
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          1,
+          0,
+          2
+        ]
+      },
+      "solver": {
+        "solved": false,
+        "reason": "constraint_packet_parse_failure",
+        "target_grid_used_by_solver": false
+      },
+      "repair_solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "repair_diagnostics": {
+        "repaired": true,
+        "target_grid_used_by_repair": false,
+        "inferred_height": false,
+        "inferred_width": true,
+        "row_total": 3,
+        "col_total": 5,
+        "row_balance_viable_packets": 1,
+        "repair_strategy": "row_col_c_total_balance_unique_solve",
+        "solver": {
+          "solved": true,
+          "valid_solution_count_from_extracted_constraints": 1,
+          "target_grid_used_by_solver": false
+        },
+        "row_total_after": 5,
+        "col_total_after": 5
+      },
+      "solved_output": "",
+      "repair_solved_output": "TTCXT\nCXXXC\nXXXXX\nCTXTC\nXXXXX",
+      "diagnostics": {
+        "replay_source": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\results\\local_qwen25_3b_constraint_extract\\local_qwen25_3b_constraint_extract.results.json",
+        "original_diagnostics": {
+          "returncode": 0,
+          "elapsed_sec": 14.1276,
+          "peak_child_ram_mb": 2355.9844,
+          "stderr_tail": "ch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 3408797722\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 160, n_keep = 0\n\ncommon_perf_print:    sampling time =     143.64 ms\ncommon_perf_print:    samplers time =      60.81 ms /   471 tokens\ncommon_perf_print:        load time =    1763.25 ms\ncommon_perf_print: prompt eval time =    1756.17 ms /   389 tokens (    4.51 ms per token,   221.51 tokens per second)\ncommon_perf_print:        eval time =    3081.47 ms /    81 runs   (   38.04 ms per token,    26.29 tokens per second)\ncommon_perf_print:       total time =    5001.20 ms /   470 tokens\ncommon_perf_print: unaccounted time =      19.93 ms /   0.4 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         86\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+          "raw_output_tail": "{\"col_c_counts\": [2, 0, 1, 0, 2], \"fixed_tents\": [[1, 1], [1, 2], [1, 5], [4, 2], [4, 4]], \"height\": 5, \"row_c_counts\": [1, 0, 0, 2, 0]} [end of text]\n\n\n"
+        }
+      }
+    },
+    {
+      "ts": "2026-04-29T18:36:29.528354+00:00",
+      "row_id": "camp_gate_006_4x4_3c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "baseline_extract",
+      "output": "T C X X\nX C T T\nT X C X\nX X T C",
+      "evidence_class": "live_log_replay_constraint_extract_schema_repair",
+      "json_parse": false,
+      "packet_valid": false,
+      "packet_exact": false,
+      "solver_unique": false,
+      "solve_exact": false,
+      "solve_cell_accuracy": 0.0,
+      "repair_packet_valid": false,
+      "repair_packet_exact": false,
+      "repair_solver_unique": false,
+      "repair_solve_exact": false,
+      "repair_solve_cell_accuracy": 0.0,
+      "normalized_packet": null,
+      "repaired_packet": null,
+      "canonical_packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ]
+      },
+      "solver": {
+        "solved": false,
+        "reason": "constraint_packet_parse_failure",
+        "target_grid_used_by_solver": false
+      },
+      "repair_solver": {
+        "solved": false,
+        "reason": "constraint_packet_parse_failure",
+        "target_grid_used_by_solver": false
+      },
+      "repair_diagnostics": {
+        "repaired": false,
+        "reason": "packet_parse_failure",
+        "target_grid_used_by_repair": false
+      },
+      "solved_output": "",
+      "repair_solved_output": "",
+      "diagnostics": {
+        "replay_source": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\results\\local_qwen25_3b_constraint_extract\\local_qwen25_3b_constraint_extract.results.json",
+        "original_diagnostics": {
+          "returncode": 0,
+          "elapsed_sec": 12.1199,
+          "peak_child_ram_mb": 2349.4844,
+          "stderr_tail": "ch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 3940578514\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 160, n_keep = 0\n\ncommon_perf_print:    sampling time =      44.91 ms\ncommon_perf_print:    samplers time =      20.34 ms /   289 tokens\ncommon_perf_print:        load time =    1577.12 ms\ncommon_perf_print: prompt eval time =    1571.98 ms /   269 tokens (    5.84 ms per token,   171.12 tokens per second)\ncommon_perf_print:        eval time =     754.76 ms /    19 runs   (   39.72 ms per token,    25.17 tokens per second)\ncommon_perf_print:       total time =    2380.89 ms /   288 tokens\ncommon_perf_print: unaccounted time =       9.23 ms /   0.4 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         22\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+          "raw_output_tail": "T C X X\nX C T T\nT X C X\nX X T C [end of text]\n\n\n"
+        }
+      }
+    },
+    {
+      "ts": "2026-04-29T18:36:29.528354+00:00",
+      "row_id": "camp_gate_006_4x4_3c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_schema_extract",
+      "output": "{\"col_c_counts\": [1, 1, 0, 1], \"fixed_tents\": [[1, 1], [3, 1], [3, 4]], \"height\": 4, \"row_c_counts\": [1, 1, 0, 1]}",
+      "evidence_class": "live_log_replay_constraint_extract_schema_repair",
+      "json_parse": true,
+      "packet_valid": false,
+      "packet_exact": false,
+      "solver_unique": false,
+      "solve_exact": false,
+      "solve_cell_accuracy": 0.0,
+      "repair_packet_valid": true,
+      "repair_packet_exact": true,
+      "repair_solver_unique": true,
+      "repair_solve_exact": true,
+      "repair_solve_cell_accuracy": 1.0,
+      "normalized_packet": null,
+      "repaired_packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ]
+      },
+      "canonical_packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ]
+      },
+      "solver": {
+        "solved": false,
+        "reason": "constraint_packet_parse_failure",
+        "target_grid_used_by_solver": false
+      },
+      "repair_solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "repair_diagnostics": {
+        "repaired": true,
+        "target_grid_used_by_repair": false,
+        "inferred_height": false,
+        "inferred_width": true,
+        "row_total": 3,
+        "col_total": 3,
+        "solver": {
+          "solved": true,
+          "valid_solution_count_from_extracted_constraints": 1,
+          "target_grid_used_by_solver": false
+        },
+        "repair_strategy": "dimension_inference_only"
+      },
+      "solved_output": "",
+      "repair_solved_output": "TCXX\nXXXC\nTXXT\nCXXX",
+      "diagnostics": {
+        "replay_source": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\results\\local_qwen25_3b_constraint_extract\\local_qwen25_3b_constraint_extract.results.json",
+        "original_diagnostics": {
+          "returncode": 0,
+          "elapsed_sec": 14.6387,
+          "peak_child_ram_mb": 2349.8789,
+          "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 980903810\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 160, n_keep = 0\n\ncommon_perf_print:    sampling time =     118.16 ms\ncommon_perf_print:    samplers time =      50.94 ms /   433 tokens\ncommon_perf_print:        load time =    1599.31 ms\ncommon_perf_print: prompt eval time =    1593.84 ms /   369 tokens (    4.32 ms per token,   231.52 tokens per second)\ncommon_perf_print:        eval time =    2378.76 ms /    63 runs   (   37.76 ms per token,    26.48 tokens per second)\ncommon_perf_print:       total time =    4110.42 ms /   432 tokens\ncommon_perf_print: unaccounted time =      19.66 ms /   0.5 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         68\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+          "raw_output_tail": "{\"col_c_counts\": [1, 1, 0, 1], \"fixed_tents\": [[1, 1], [3, 1], [3, 4]], \"height\": 4, \"row_c_counts\": [1, 1, 0, 1]} [end of text]\n\n\n"
+        }
+      }
+    },
+    {
+      "ts": "2026-04-29T18:36:29.528354+00:00",
+      "row_id": "camp_gate_007_5x4_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "baseline_extract",
+      "output": "T C X X\nC T C X\nT C C X\nX C C T\nX X C T",
+      "evidence_class": "live_log_replay_constraint_extract_schema_repair",
+      "json_parse": false,
+      "packet_valid": false,
+      "packet_exact": false,
+      "solver_unique": false,
+      "solve_exact": false,
+      "solve_cell_accuracy": 0.0,
+      "repair_packet_valid": false,
+      "repair_packet_exact": false,
+      "repair_solver_unique": false,
+      "repair_solve_exact": false,
+      "repair_solve_cell_accuracy": 0.0,
+      "normalized_packet": null,
+      "repaired_packet": null,
+      "canonical_packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            2
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          2,
+          1
+        ]
+      },
+      "solver": {
+        "solved": false,
+        "reason": "constraint_packet_parse_failure",
+        "target_grid_used_by_solver": false
+      },
+      "repair_solver": {
+        "solved": false,
+        "reason": "constraint_packet_parse_failure",
+        "target_grid_used_by_solver": false
+      },
+      "repair_diagnostics": {
+        "repaired": false,
+        "reason": "packet_parse_failure",
+        "target_grid_used_by_repair": false
+      },
+      "solved_output": "",
+      "repair_solved_output": "",
+      "diagnostics": {
+        "replay_source": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\results\\local_qwen25_3b_constraint_extract\\local_qwen25_3b_constraint_extract.results.json",
+        "original_diagnostics": {
+          "returncode": 0,
+          "elapsed_sec": 11.6004,
+          "peak_child_ram_mb": 2349.0742,
+          "stderr_tail": "ch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 3829264263\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 160, n_keep = 0\n\ncommon_perf_print:    sampling time =      29.51 ms\ncommon_perf_print:    samplers time =      10.99 ms /   304 tokens\ncommon_perf_print:        load time =     991.28 ms\ncommon_perf_print: prompt eval time =     987.20 ms /   279 tokens (    3.54 ms per token,   282.62 tokens per second)\ncommon_perf_print:        eval time =    1027.63 ms /    24 runs   (   42.82 ms per token,    23.35 tokens per second)\ncommon_perf_print:       total time =    2050.85 ms /   303 tokens\ncommon_perf_print: unaccounted time =       6.51 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         27\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+          "raw_output_tail": "T C X X\nC T C X\nT C C X\nX C C T\nX X C T [end of text]\n\n\n"
+        }
+      }
+    },
+    {
+      "ts": "2026-04-29T18:36:29.529353+00:00",
+      "row_id": "camp_gate_007_5x4_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_schema_extract",
+      "output": "{\"col_c_counts\": [1, 0, 2, 1], \"fixed_tents\": [[1, 3], [2, 3], [4, 2], [5, 2]], \"height\": 5, \"row_c_counts\": [1, 0, 1, 1, 1]}",
+      "evidence_class": "live_log_replay_constraint_extract_schema_repair",
+      "json_parse": true,
+      "packet_valid": false,
+      "packet_exact": false,
+      "solver_unique": false,
+      "solve_exact": false,
+      "solve_cell_accuracy": 0.0,
+      "repair_packet_valid": true,
+      "repair_packet_exact": true,
+      "repair_solver_unique": true,
+      "repair_solve_exact": true,
+      "repair_solve_cell_accuracy": 1.0,
+      "normalized_packet": null,
+      "repaired_packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            2
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          2,
+          1
+        ]
+      },
+      "canonical_packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            2
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          2,
+          1
+        ]
+      },
+      "solver": {
+        "solved": false,
+        "reason": "constraint_packet_parse_failure",
+        "target_grid_used_by_solver": false
+      },
+      "repair_solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "repair_diagnostics": {
+        "repaired": true,
+        "target_grid_used_by_repair": false,
+        "inferred_height": false,
+        "inferred_width": true,
+        "row_total": 4,
+        "col_total": 4,
+        "solver": {
+          "solved": true,
+          "valid_solution_count_from_extracted_constraints": 1,
+          "target_grid_used_by_solver": false
+        },
+        "repair_strategy": "dimension_inference_only"
+      },
+      "solved_output": "",
+      "repair_solved_output": "XXTC\nXXTX\nXXCX\nCTXX\nXTCX",
+      "diagnostics": {
+        "replay_source": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\results\\local_qwen25_3b_constraint_extract\\local_qwen25_3b_constraint_extract.results.json",
+        "original_diagnostics": {
+          "returncode": 0,
+          "elapsed_sec": 11.1003,
+          "peak_child_ram_mb": 2349.9023,
+          "stderr_tail": "ch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 1262137895\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 160, n_keep = 0\n\ncommon_perf_print:    sampling time =      81.14 ms\ncommon_perf_print:    samplers time =      32.92 ms /   452 tokens\ncommon_perf_print:        load time =    1183.24 ms\ncommon_perf_print: prompt eval time =    1179.57 ms /   379 tokens (    3.11 ms per token,   321.30 tokens per second)\ncommon_perf_print:        eval time =    2925.66 ms /    72 runs   (   40.63 ms per token,    24.61 tokens per second)\ncommon_perf_print:       total time =    4197.63 ms /   451 tokens\ncommon_perf_print: unaccounted time =      11.26 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         77\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+          "raw_output_tail": "{\"col_c_counts\": [1, 0, 2, 1], \"fixed_tents\": [[1, 3], [2, 3], [4, 2], [5, 2]], \"height\": 5, \"row_c_counts\": [1, 0, 1, 1, 1]} [end of text]\n\n\n"
+        }
+      }
+    },
+    {
+      "ts": "2026-04-29T18:36:29.529353+00:00",
+      "row_id": "camp_gate_008_4x4_3c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "baseline_extract",
+      "output": "T C X X\nC T C X\nX C X T\nX X T C",
+      "evidence_class": "live_log_replay_constraint_extract_schema_repair",
+      "json_parse": false,
+      "packet_valid": false,
+      "packet_exact": false,
+      "solver_unique": false,
+      "solve_exact": false,
+      "solve_cell_accuracy": 0.0,
+      "repair_packet_valid": false,
+      "repair_packet_exact": false,
+      "repair_solver_unique": false,
+      "repair_solve_exact": false,
+      "repair_solve_cell_accuracy": 0.0,
+      "normalized_packet": null,
+      "repaired_packet": null,
+      "canonical_packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ]
+      },
+      "solver": {
+        "solved": false,
+        "reason": "constraint_packet_parse_failure",
+        "target_grid_used_by_solver": false
+      },
+      "repair_solver": {
+        "solved": false,
+        "reason": "constraint_packet_parse_failure",
+        "target_grid_used_by_solver": false
+      },
+      "repair_diagnostics": {
+        "repaired": false,
+        "reason": "packet_parse_failure",
+        "target_grid_used_by_repair": false
+      },
+      "solved_output": "",
+      "repair_solved_output": "",
+      "diagnostics": {
+        "replay_source": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\results\\local_qwen25_3b_constraint_extract\\local_qwen25_3b_constraint_extract.results.json",
+        "original_diagnostics": {
+          "returncode": 0,
+          "elapsed_sec": 9.5941,
+          "peak_child_ram_mb": 2349.0586,
+          "stderr_tail": "ch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 3249642450\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 160, n_keep = 0\n\ncommon_perf_print:    sampling time =      27.44 ms\ncommon_perf_print:    samplers time =      11.11 ms /   289 tokens\ncommon_perf_print:        load time =     988.57 ms\ncommon_perf_print: prompt eval time =     985.91 ms /   269 tokens (    3.67 ms per token,   272.84 tokens per second)\ncommon_perf_print:        eval time =     778.49 ms /    19 runs   (   40.97 ms per token,    24.41 tokens per second)\ncommon_perf_print:       total time =    1796.38 ms /   288 tokens\ncommon_perf_print: unaccounted time =       4.54 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         22\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+          "raw_output_tail": "T C X X\nC T C X\nX C X T\nX X T C [end of text]\n\n\n"
+        }
+      }
+    },
+    {
+      "ts": "2026-04-29T18:36:29.529353+00:00",
+      "row_id": "camp_gate_008_4x4_3c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_schema_extract",
+      "output": "{\"col_c_counts\": [1, 1, 0, 1], \"fixed_tents\": [[2, 2], [2, 3], [4, 2]], \"height\": 4, \"row_c_counts\": [1, 1, 0, 1]}",
+      "evidence_class": "live_log_replay_constraint_extract_schema_repair",
+      "json_parse": true,
+      "packet_valid": false,
+      "packet_exact": false,
+      "solver_unique": false,
+      "solve_exact": false,
+      "solve_cell_accuracy": 0.0,
+      "repair_packet_valid": true,
+      "repair_packet_exact": true,
+      "repair_solver_unique": true,
+      "repair_solve_exact": true,
+      "repair_solve_cell_accuracy": 1.0,
+      "normalized_packet": null,
+      "repaired_packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ]
+      },
+      "canonical_packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ]
+      },
+      "solver": {
+        "solved": false,
+        "reason": "constraint_packet_parse_failure",
+        "target_grid_used_by_solver": false
+      },
+      "repair_solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "repair_diagnostics": {
+        "repaired": true,
+        "target_grid_used_by_repair": false,
+        "inferred_height": false,
+        "inferred_width": true,
+        "row_total": 3,
+        "col_total": 3,
+        "solver": {
+          "solved": true,
+          "valid_solution_count_from_extracted_constraints": 1,
+          "target_grid_used_by_solver": false
+        },
+        "repair_strategy": "dimension_inference_only"
+      },
+      "solved_output": "",
+      "repair_solved_output": "XCXX\nXTTC\nXXXX\nCTXX",
+      "diagnostics": {
+        "replay_source": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\results\\local_qwen25_3b_constraint_extract\\local_qwen25_3b_constraint_extract.results.json",
+        "original_diagnostics": {
+          "returncode": 0,
+          "elapsed_sec": 13.6594,
+          "peak_child_ram_mb": 2349.2891,
+          "stderr_tail": "ch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 1473449825\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 160, n_keep = 0\n\ncommon_perf_print:    sampling time =     107.02 ms\ncommon_perf_print:    samplers time =      46.70 ms /   433 tokens\ncommon_perf_print:        load time =    1462.39 ms\ncommon_perf_print: prompt eval time =    1457.93 ms /   369 tokens (    3.95 ms per token,   253.10 tokens per second)\ncommon_perf_print:        eval time =    2465.75 ms /    63 runs   (   39.14 ms per token,    25.55 tokens per second)\ncommon_perf_print:       total time =    4045.22 ms /   432 tokens\ncommon_perf_print: unaccounted time =      14.52 ms /   0.4 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         68\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+          "raw_output_tail": "{\"col_c_counts\": [1, 1, 0, 1], \"fixed_tents\": [[2, 2], [2, 3], [4, 2]], \"height\": 4, \"row_c_counts\": [1, 1, 0, 1]} [end of text]\n\n\n"
+        }
+      }
+    },
+    {
+      "ts": "2026-04-29T18:36:29.529353+00:00",
+      "row_id": "camp_gate_009_4x5_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "baseline_extract",
+      "output": "T C X\nX C X\nT C X\nX C X",
+      "evidence_class": "live_log_replay_constraint_extract_schema_repair",
+      "json_parse": false,
+      "packet_valid": false,
+      "packet_exact": false,
+      "solver_unique": false,
+      "solve_exact": false,
+      "solve_cell_accuracy": 0.0,
+      "repair_packet_valid": false,
+      "repair_packet_exact": false,
+      "repair_solver_unique": false,
+      "repair_solve_exact": false,
+      "repair_solve_cell_accuracy": 0.0,
+      "normalized_packet": null,
+      "repaired_packet": null,
+      "canonical_packet": {
+        "height": 4,
+        "width": 5,
+        "fixed_tents": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          1,
+          1,
+          0
+        ]
+      },
+      "solver": {
+        "solved": false,
+        "reason": "constraint_packet_parse_failure",
+        "target_grid_used_by_solver": false
+      },
+      "repair_solver": {
+        "solved": false,
+        "reason": "constraint_packet_parse_failure",
+        "target_grid_used_by_solver": false
+      },
+      "repair_diagnostics": {
+        "repaired": false,
+        "reason": "packet_parse_failure",
+        "target_grid_used_by_repair": false
+      },
+      "solved_output": "",
+      "repair_solved_output": "",
+      "diagnostics": {
+        "replay_source": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\results\\local_qwen25_3b_constraint_extract\\local_qwen25_3b_constraint_extract.results.json",
+        "original_diagnostics": {
+          "returncode": 0,
+          "elapsed_sec": 11.5711,
+          "peak_child_ram_mb": 2349.1406,
+          "stderr_tail": "ch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 3112245715\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 160, n_keep = 0\n\ncommon_perf_print:    sampling time =      17.83 ms\ncommon_perf_print:    samplers time =       7.60 ms /   295 tokens\ncommon_perf_print:        load time =    1031.57 ms\ncommon_perf_print: prompt eval time =    1028.77 ms /   279 tokens (    3.69 ms per token,   271.20 tokens per second)\ncommon_perf_print:        eval time =     596.03 ms /    15 runs   (   39.74 ms per token,    25.17 tokens per second)\ncommon_perf_print:       total time =    1646.74 ms /   294 tokens\ncommon_perf_print: unaccounted time =       4.11 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         18\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+          "raw_output_tail": "T C X\nX C X\nT C X\nX C X [end of text]\n\n\n"
+        }
+      }
+    },
+    {
+      "ts": "2026-04-29T18:36:29.530351+00:00",
+      "row_id": "camp_gate_009_4x5_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_schema_extract",
+      "output": "{\"col_c_counts\": [2, 0, 1, 1, 0], \"fixed_tents\": [[1, 3], [2, 1], [3, 4], [4, 2]], \"height\": 4, \"row_c_counts\": [1, 1, 0, 2]}",
+      "evidence_class": "live_log_replay_constraint_extract_schema_repair",
+      "json_parse": true,
+      "packet_valid": false,
+      "packet_exact": false,
+      "solver_unique": false,
+      "solve_exact": false,
+      "solve_cell_accuracy": 0.0,
+      "repair_packet_valid": true,
+      "repair_packet_exact": true,
+      "repair_solver_unique": true,
+      "repair_solve_exact": true,
+      "repair_solve_cell_accuracy": 1.0,
+      "normalized_packet": null,
+      "repaired_packet": {
+        "height": 4,
+        "width": 5,
+        "fixed_tents": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          1,
+          1,
+          0
+        ]
+      },
+      "canonical_packet": {
+        "height": 4,
+        "width": 5,
+        "fixed_tents": [
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          1,
+          1,
+          0
+        ]
+      },
+      "solver": {
+        "solved": false,
+        "reason": "constraint_packet_parse_failure",
+        "target_grid_used_by_solver": false
+      },
+      "repair_solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "repair_diagnostics": {
+        "repaired": true,
+        "target_grid_used_by_repair": false,
+        "inferred_height": false,
+        "inferred_width": true,
+        "row_total": 4,
+        "col_total": 4,
+        "solver": {
+          "solved": true,
+          "valid_solution_count_from_extracted_constraints": 1,
+          "target_grid_used_by_solver": false
+        },
+        "repair_strategy": "dimension_inference_only"
+      },
+      "solved_output": "",
+      "repair_solved_output": "CXTXX\nTXCXX\nXXXTX\nCTXCX",
+      "diagnostics": {
+        "replay_source": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\results\\local_qwen25_3b_constraint_extract\\local_qwen25_3b_constraint_extract.results.json",
+        "original_diagnostics": {
+          "returncode": 0,
+          "elapsed_sec": 11.0971,
+          "peak_child_ram_mb": 2349.7617,
+          "stderr_tail": "ch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 1933493456\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 160, n_keep = 0\n\ncommon_perf_print:    sampling time =      89.60 ms\ncommon_perf_print:    samplers time =      35.67 ms /   452 tokens\ncommon_perf_print:        load time =    1061.77 ms\ncommon_perf_print: prompt eval time =    1058.65 ms /   379 tokens (    2.79 ms per token,   358.00 tokens per second)\ncommon_perf_print:        eval time =    2934.57 ms /    72 runs   (   40.76 ms per token,    24.54 tokens per second)\ncommon_perf_print:       total time =    4093.73 ms /   451 tokens\ncommon_perf_print: unaccounted time =      10.90 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         77\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+          "raw_output_tail": "{\"col_c_counts\": [2, 0, 1, 1, 0], \"fixed_tents\": [[1, 3], [2, 1], [3, 4], [4, 2]], \"height\": 4, \"row_c_counts\": [1, 1, 0, 2]} [end of text]\n\n\n"
+        }
+      }
+    },
+    {
+      "ts": "2026-04-29T18:36:29.530351+00:00",
+      "row_id": "camp_gate_010_5x4_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "baseline_extract",
+      "output": "T C X X\nC T C T\nX C C X\nT X T C\nX C T X",
+      "evidence_class": "live_log_replay_constraint_extract_schema_repair",
+      "json_parse": false,
+      "packet_valid": false,
+      "packet_exact": false,
+      "solver_unique": false,
+      "solve_exact": false,
+      "solve_cell_accuracy": 0.0,
+      "repair_packet_valid": false,
+      "repair_packet_exact": false,
+      "repair_solver_unique": false,
+      "repair_solve_exact": false,
+      "repair_solve_cell_accuracy": 0.0,
+      "normalized_packet": null,
+      "repaired_packet": null,
+      "canonical_packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          2,
+          0
+        ]
+      },
+      "solver": {
+        "solved": false,
+        "reason": "constraint_packet_parse_failure",
+        "target_grid_used_by_solver": false
+      },
+      "repair_solver": {
+        "solved": false,
+        "reason": "constraint_packet_parse_failure",
+        "target_grid_used_by_solver": false
+      },
+      "repair_diagnostics": {
+        "repaired": false,
+        "reason": "packet_parse_failure",
+        "target_grid_used_by_repair": false
+      },
+      "solved_output": "",
+      "repair_solved_output": "",
+      "diagnostics": {
+        "replay_source": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\results\\local_qwen25_3b_constraint_extract\\local_qwen25_3b_constraint_extract.results.json",
+        "original_diagnostics": {
+          "returncode": 0,
+          "elapsed_sec": 11.5901,
+          "peak_child_ram_mb": 2349.1172,
+          "stderr_tail": "ch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 1120979546\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 160, n_keep = 0\n\ncommon_perf_print:    sampling time =      34.21 ms\ncommon_perf_print:    samplers time =      13.02 ms /   304 tokens\ncommon_perf_print:        load time =    1204.48 ms\ncommon_perf_print: prompt eval time =    1200.38 ms /   279 tokens (    4.30 ms per token,   232.43 tokens per second)\ncommon_perf_print:        eval time =    1012.62 ms /    24 runs   (   42.19 ms per token,    23.70 tokens per second)\ncommon_perf_print:       total time =    2254.62 ms /   303 tokens\ncommon_perf_print: unaccounted time =       7.41 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         27\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+          "raw_output_tail": "T C X X\nC T C T\nX C C X\nT X T C\nX C T X [end of text]\n\n\n"
+        }
+      }
+    },
+    {
+      "ts": "2026-04-29T18:36:29.530351+00:00",
+      "row_id": "camp_gate_010_5x4_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_schema_extract",
+      "output": "{\"col_c_counts\": [2, 0, 2, 0], \"fixed_tents\": [[1, 2], [1, 3], [4, 1], [5, 4]], \"height\": 5, \"row_c_counts\": [1, 1, 0, 0, 2]}",
+      "evidence_class": "live_log_replay_constraint_extract_schema_repair",
+      "json_parse": true,
+      "packet_valid": false,
+      "packet_exact": false,
+      "solver_unique": false,
+      "solve_exact": false,
+      "solve_cell_accuracy": 0.0,
+      "repair_packet_valid": true,
+      "repair_packet_exact": true,
+      "repair_solver_unique": true,
+      "repair_solve_exact": true,
+      "repair_solve_cell_accuracy": 1.0,
+      "normalized_packet": null,
+      "repaired_packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          2,
+          0
+        ]
+      },
+      "canonical_packet": {
+        "height": 5,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          2,
+          0,
+          2,
+          0
+        ]
+      },
+      "solver": {
+        "solved": false,
+        "reason": "constraint_packet_parse_failure",
+        "target_grid_used_by_solver": false
+      },
+      "repair_solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "repair_diagnostics": {
+        "repaired": true,
+        "target_grid_used_by_repair": false,
+        "inferred_height": false,
+        "inferred_width": true,
+        "row_total": 4,
+        "col_total": 4,
+        "solver": {
+          "solved": true,
+          "valid_solution_count_from_extracted_constraints": 1,
+          "target_grid_used_by_solver": false
+        },
+        "repair_strategy": "dimension_inference_only"
+      },
+      "solved_output": "",
+      "repair_solved_output": "CTTX\nXXCX\nXXXX\nTXXX\nCXCT",
+      "diagnostics": {
+        "replay_source": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\results\\local_qwen25_3b_constraint_extract\\local_qwen25_3b_constraint_extract.results.json",
+        "original_diagnostics": {
+          "returncode": 0,
+          "elapsed_sec": 12.6014,
+          "peak_child_ram_mb": 2349.8828,
+          "stderr_tail": "ch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 2940689428\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 160, n_keep = 0\n\ncommon_perf_print:    sampling time =      91.66 ms\ncommon_perf_print:    samplers time =      35.76 ms /   452 tokens\ncommon_perf_print:        load time =    1165.14 ms\ncommon_perf_print: prompt eval time =    1160.74 ms /   379 tokens (    3.06 ms per token,   326.52 tokens per second)\ncommon_perf_print:        eval time =    2947.55 ms /    72 runs   (   40.94 ms per token,    24.43 tokens per second)\ncommon_perf_print:       total time =    4211.73 ms /   451 tokens\ncommon_perf_print: unaccounted time =      11.78 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         77\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+          "raw_output_tail": "{\"col_c_counts\": [2, 0, 2, 0], \"fixed_tents\": [[1, 2], [1, 3], [4, 1], [5, 4]], \"height\": 5, \"row_c_counts\": [1, 1, 0, 0, 2]} [end of text]\n\n\n"
+        }
+      }
+    },
+    {
+      "ts": "2026-04-29T18:36:29.530351+00:00",
+      "row_id": "camp_gate_011_5x5_5c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "baseline_extract",
+      "output": "X C X C X\nC T C T C\nX C X C X\nT C T C T\nX C X C X",
+      "evidence_class": "live_log_replay_constraint_extract_schema_repair",
+      "json_parse": false,
+      "packet_valid": false,
+      "packet_exact": false,
+      "solver_unique": false,
+      "solve_exact": false,
+      "solve_cell_accuracy": 0.0,
+      "repair_packet_valid": false,
+      "repair_packet_exact": false,
+      "repair_solver_unique": false,
+      "repair_solve_exact": false,
+      "repair_solve_cell_accuracy": 0.0,
+      "normalized_packet": null,
+      "repaired_packet": null,
+      "canonical_packet": {
+        "height": 5,
+        "width": 5,
+        "fixed_tents": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          0,
+          2,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          2,
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      "solver": {
+        "solved": false,
+        "reason": "constraint_packet_parse_failure",
+        "target_grid_used_by_solver": false
+      },
+      "repair_solver": {
+        "solved": false,
+        "reason": "constraint_packet_parse_failure",
+        "target_grid_used_by_solver": false
+      },
+      "repair_diagnostics": {
+        "repaired": false,
+        "reason": "packet_parse_failure",
+        "target_grid_used_by_repair": false
+      },
+      "solved_output": "",
+      "repair_solved_output": "",
+      "diagnostics": {
+        "replay_source": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\results\\local_qwen25_3b_constraint_extract\\local_qwen25_3b_constraint_extract.results.json",
+        "original_diagnostics": {
+          "returncode": 0,
+          "elapsed_sec": 10.5901,
+          "peak_child_ram_mb": 2348.832,
+          "stderr_tail": "ch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 3663195217\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 160, n_keep = 0\n\ncommon_perf_print:    sampling time =      34.53 ms\ncommon_perf_print:    samplers time =      13.29 ms /   319 tokens\ncommon_perf_print:        load time =    1086.69 ms\ncommon_perf_print: prompt eval time =    1082.69 ms /   289 tokens (    3.75 ms per token,   266.93 tokens per second)\ncommon_perf_print:        eval time =    1194.53 ms /    29 runs   (   41.19 ms per token,    24.28 tokens per second)\ncommon_perf_print:       total time =    2318.83 ms /   318 tokens\ncommon_perf_print: unaccounted time =       7.08 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         33\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+          "raw_output_tail": "X C X C X\nC T C T C\nX C X C X\nT C T C T\nX C X C X [end of text]\n\n\n"
+        }
+      }
+    },
+    {
+      "ts": "2026-04-29T18:36:29.531354+00:00",
+      "row_id": "camp_gate_011_5x5_5c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_schema_extract",
+      "output": "{\"col_c_counts\": [2, 1, 0, 1, 1], \"fixed_tents\": [[2, 1], [3, 1], [3, 4], [5, 2], [5, 5]], \"height\": 5, \"row_c_counts\": [1, 0, 2, 0, 2]}",
+      "evidence_class": "live_log_replay_constraint_extract_schema_repair",
+      "json_parse": true,
+      "packet_valid": false,
+      "packet_exact": false,
+      "solver_unique": false,
+      "solve_exact": false,
+      "solve_cell_accuracy": 0.0,
+      "repair_packet_valid": true,
+      "repair_packet_exact": true,
+      "repair_solver_unique": true,
+      "repair_solve_exact": true,
+      "repair_solve_cell_accuracy": 1.0,
+      "normalized_packet": null,
+      "repaired_packet": {
+        "height": 5,
+        "width": 5,
+        "fixed_tents": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          0,
+          2,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          2,
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      "canonical_packet": {
+        "height": 5,
+        "width": 5,
+        "fixed_tents": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          0,
+          2,
+          0,
+          2
+        ],
+        "col_c_counts": [
+          2,
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      "solver": {
+        "solved": false,
+        "reason": "constraint_packet_parse_failure",
+        "target_grid_used_by_solver": false
+      },
+      "repair_solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "repair_diagnostics": {
+        "repaired": true,
+        "target_grid_used_by_repair": false,
+        "inferred_height": false,
+        "inferred_width": true,
+        "row_total": 5,
+        "col_total": 5,
+        "solver": {
+          "solved": true,
+          "valid_solution_count_from_extracted_constraints": 1,
+          "target_grid_used_by_solver": false
+        },
+        "repair_strategy": "dimension_inference_only"
+      },
+      "solved_output": "",
+      "repair_solved_output": "CXXXX\nTXXXX\nTCXTC\nXXXXX\nCTXCT",
+      "diagnostics": {
+        "replay_source": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\results\\local_qwen25_3b_constraint_extract\\local_qwen25_3b_constraint_extract.results.json",
+        "original_diagnostics": {
+          "returncode": 0,
+          "elapsed_sec": 11.5931,
+          "peak_child_ram_mb": 2356.1602,
+          "stderr_tail": "ch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 1191476932\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 160, n_keep = 0\n\ncommon_perf_print:    sampling time =      97.11 ms\ncommon_perf_print:    samplers time =      40.43 ms /   471 tokens\ncommon_perf_print:        load time =    1212.12 ms\ncommon_perf_print: prompt eval time =    1207.82 ms /   389 tokens (    3.10 ms per token,   322.07 tokens per second)\ncommon_perf_print:        eval time =    3290.58 ms /    81 runs   (   40.62 ms per token,    24.62 tokens per second)\ncommon_perf_print:       total time =    4608.13 ms /   470 tokens\ncommon_perf_print: unaccounted time =      12.62 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         86\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+          "raw_output_tail": "{\"col_c_counts\": [2, 1, 0, 1, 1], \"fixed_tents\": [[2, 1], [3, 1], [3, 4], [5, 2], [5, 5]], \"height\": 5, \"row_c_counts\": [1, 0, 2, 0, 2]} [end of text]\n\n\n"
+        }
+      }
+    },
+    {
+      "ts": "2026-04-29T18:36:29.531354+00:00",
+      "row_id": "camp_gate_012_4x4_3c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "baseline_extract",
+      "output": "T C X X\nX C T X\nT X C T\nX X C X",
+      "evidence_class": "live_log_replay_constraint_extract_schema_repair",
+      "json_parse": false,
+      "packet_valid": false,
+      "packet_exact": false,
+      "solver_unique": false,
+      "solve_exact": false,
+      "solve_cell_accuracy": 0.0,
+      "repair_packet_valid": false,
+      "repair_packet_exact": false,
+      "repair_solver_unique": false,
+      "repair_solve_exact": false,
+      "repair_solve_cell_accuracy": 0.0,
+      "normalized_packet": null,
+      "repaired_packet": null,
+      "canonical_packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      "solver": {
+        "solved": false,
+        "reason": "constraint_packet_parse_failure",
+        "target_grid_used_by_solver": false
+      },
+      "repair_solver": {
+        "solved": false,
+        "reason": "constraint_packet_parse_failure",
+        "target_grid_used_by_solver": false
+      },
+      "repair_diagnostics": {
+        "repaired": false,
+        "reason": "packet_parse_failure",
+        "target_grid_used_by_repair": false
+      },
+      "solved_output": "",
+      "repair_solved_output": "",
+      "diagnostics": {
+        "replay_source": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\results\\local_qwen25_3b_constraint_extract\\local_qwen25_3b_constraint_extract.results.json",
+        "original_diagnostics": {
+          "returncode": 0,
+          "elapsed_sec": 11.1008,
+          "peak_child_ram_mb": 2348.6797,
+          "stderr_tail": "ch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 2088953718\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 160, n_keep = 0\n\ncommon_perf_print:    sampling time =      23.27 ms\ncommon_perf_print:    samplers time =       9.17 ms /   289 tokens\ncommon_perf_print:        load time =    1103.95 ms\ncommon_perf_print: prompt eval time =    1100.07 ms /   269 tokens (    4.09 ms per token,   244.53 tokens per second)\ncommon_perf_print:        eval time =     823.87 ms /    19 runs   (   43.36 ms per token,    23.06 tokens per second)\ncommon_perf_print:       total time =    1952.93 ms /   288 tokens\ncommon_perf_print: unaccounted time =       5.71 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         22\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+          "raw_output_tail": "T C X X\nX C T X\nT X C T\nX X C X [end of text]\n\n\n"
+        }
+      }
+    },
+    {
+      "ts": "2026-04-29T18:36:29.532353+00:00",
+      "row_id": "camp_gate_012_4x4_3c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_schema_extract",
+      "output": "{\"col_c_counts\": [1, 0, 1, 1], \"fixed_tents\": [[1, 1], [2, 3], [4, 3]], \"height\": 4, \"row_c_counts\": [1, 1, 0, 1]}",
+      "evidence_class": "live_log_replay_constraint_extract_schema_repair",
+      "json_parse": true,
+      "packet_valid": false,
+      "packet_exact": false,
+      "solver_unique": false,
+      "solve_exact": false,
+      "solve_cell_accuracy": 0.0,
+      "repair_packet_valid": true,
+      "repair_packet_exact": true,
+      "repair_solver_unique": true,
+      "repair_solve_exact": true,
+      "repair_solve_cell_accuracy": 1.0,
+      "normalized_packet": null,
+      "repaired_packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      "canonical_packet": {
+        "height": 4,
+        "width": 4,
+        "fixed_tents": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "row_c_counts": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts": [
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      "solver": {
+        "solved": false,
+        "reason": "constraint_packet_parse_failure",
+        "target_grid_used_by_solver": false
+      },
+      "repair_solver": {
+        "solved": true,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": false
+      },
+      "repair_diagnostics": {
+        "repaired": true,
+        "target_grid_used_by_repair": false,
+        "inferred_height": false,
+        "inferred_width": true,
+        "row_total": 3,
+        "col_total": 3,
+        "solver": {
+          "solved": true,
+          "valid_solution_count_from_extracted_constraints": 1,
+          "target_grid_used_by_solver": false
+        },
+        "repair_strategy": "dimension_inference_only"
+      },
+      "solved_output": "",
+      "repair_solved_output": "TXCX\nCXTX\nXXXX\nXXTC",
+      "diagnostics": {
+        "replay_source": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\results\\local_qwen25_3b_constraint_extract\\local_qwen25_3b_constraint_extract.results.json",
+        "original_diagnostics": {
+          "returncode": 0,
+          "elapsed_sec": 12.5909,
+          "peak_child_ram_mb": 2350.2695,
+          "stderr_tail": "ch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 4068591635\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 160, n_keep = 0\n\ncommon_perf_print:    sampling time =      68.67 ms\ncommon_perf_print:    samplers time =      27.43 ms /   433 tokens\ncommon_perf_print:        load time =    1120.45 ms\ncommon_perf_print: prompt eval time =    1118.02 ms /   369 tokens (    3.03 ms per token,   330.05 tokens per second)\ncommon_perf_print:        eval time =    2618.78 ms /    63 runs   (   41.57 ms per token,    24.06 tokens per second)\ncommon_perf_print:       total time =    3813.87 ms /   432 tokens\ncommon_perf_print: unaccounted time =       8.40 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         68\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+          "raw_output_tail": "{\"col_c_counts\": [1, 0, 1, 1], \"fixed_tents\": [[1, 1], [2, 3], [4, 3]], \"height\": 4, \"row_c_counts\": [1, 1, 0, 1]} [end of text]\n\n\n"
+        }
+      }
+    }
+  ]
+}

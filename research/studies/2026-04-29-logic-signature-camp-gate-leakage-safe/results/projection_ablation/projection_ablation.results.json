@@ -1,0 +1,3892 @@
+{
+  "generated_at_utc": "2026-04-29T18:25:02.704781+00:00",
+  "source_results": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\results\\local_qwen25_3b_logic_signature_camp_gate\\local_qwen25_3b_logic_signature_camp_gate.results.json",
+  "rows_path": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\rows\\logic_signature_camp_gate_rows.jsonl",
+  "validator_path": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\studies\\2026-04-29-logic-signature-camp-gate-leakage-safe\\validators\\validate_logic_signature_camp_gate.py",
+  "summary": {
+    "evidence_class": "live_log_replay_public_constraint_solver",
+    "rows": 12,
+    "arms": {
+      "baseline": {
+        "rows": 12,
+        "contract_valid": 0,
+        "semantic_valid": 0,
+        "exact_success": 0,
+        "contract_rate": 0.0,
+        "exact_rate": 0.0,
+        "avg_cell_accuracy": 0.078125,
+        "proposal_tier_counts": {
+          "none": 10,
+          "weak_surface": 2
+        }
+      },
+      "candidate_conditioned_projection": {
+        "rows": 12,
+        "contract_valid": 9,
+        "semantic_valid": 9,
+        "exact_success": 9,
+        "contract_rate": 0.75,
+        "exact_rate": 0.75,
+        "avg_cell_accuracy": 0.75,
+        "proposal_tier_counts": {
+          "full_candidate": 9,
+          "none": 3
+        }
+      },
+      "metta_runtime": {
+        "rows": 12,
+        "contract_valid": 0,
+        "semantic_valid": 0,
+        "exact_success": 0,
+        "contract_rate": 0.0,
+        "exact_rate": 0.0,
+        "avg_cell_accuracy": 0.2791666666666667,
+        "proposal_tier_counts": {
+          "weak_surface": 9,
+          "none": 3
+        }
+      },
+      "metta_signature_projection": {
+        "rows": 12,
+        "contract_valid": 9,
+        "semantic_valid": 9,
+        "exact_success": 9,
+        "contract_rate": 0.75,
+        "exact_rate": 0.75,
+        "avg_cell_accuracy": 0.75,
+        "proposal_tier_counts": {
+          "full_candidate": 9,
+          "none": 3
+        }
+      },
+      "public_constraint_solver": {
+        "rows": 12,
+        "contract_valid": 12,
+        "semantic_valid": 12,
+        "exact_success": 12,
+        "contract_rate": 1.0,
+        "exact_rate": 1.0,
+        "avg_cell_accuracy": 1.0,
+        "proposal_tier_counts": {
+          "full_candidate": 12
+        }
+      },
+      "pure_trm": {
+        "rows": 12,
+        "contract_valid": 0,
+        "semantic_valid": 0,
+        "exact_success": 0,
+        "contract_rate": 0.0,
+        "exact_rate": 0.0,
+        "avg_cell_accuracy": 0.15625,
+        "proposal_tier_counts": {
+          "none": 7,
+          "weak_surface": 5
+        }
+      }
+    },
+    "note": "Public solver uses frozen prompt constraints only. It is intentionally not candidate-conditioned."
+  },
+  "evaluated": [
+    {
+      "ts": "2026-04-29T13:55:35.709121+00:00",
+      "row_id": "camp_gate_001_5x4_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "baseline",
+      "output": "T C X\nX C X\nT C X\nX C X\nT C X",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "parse_ok": false,
+        "shape_ok": false,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [],
+        "col_c_counts_actual": [],
+        "row_c_counts_expected": [
+          0,
+          2,
+          0,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 0.0,
+        "proposal_tier": "none"
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 37.6202,
+        "peak_child_ram_mb": 2351.4336,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 1205883371\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 96, n_keep = 0\n\ncommon_perf_print:    sampling time =       9.07 ms\ncommon_perf_print:    samplers time =       3.11 ms /   284 tokens\ncommon_perf_print:        load time =    7907.76 ms\ncommon_perf_print: prompt eval time =    7788.02 ms /   264 tokens (   29.50 ms per token,    33.90 tokens per second)\ncommon_perf_print:        eval time =     936.41 ms /    19 runs   (   49.28 ms per token,    20.29 tokens per second)\ncommon_perf_print:       total time =    8854.15 ms /   283 tokens\ncommon_perf_print: unaccounted time =     120.65 ms /   1.4 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         22\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "T C X\nX C X\nT C X\nX C X\nT C X [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:55:40.240482+00:00",
+      "row_id": "camp_gate_001_5x4_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "pure_trm",
+      "output": "T C X  \nX C T  \nT X X  \nX C T  \nT X X",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "parse_ok": false,
+        "shape_ok": false,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [],
+        "col_c_counts_actual": [],
+        "row_c_counts_expected": [
+          0,
+          2,
+          0,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 0.0,
+        "proposal_tier": "none"
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 4.0293,
+        "peak_child_ram_mb": 2321.9102,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 4139696254\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 96, n_keep = 0\n\ncommon_perf_print:    sampling time =       7.83 ms\ncommon_perf_print:    samplers time =       3.10 ms /   473 tokens\ncommon_perf_print:        load time =     714.29 ms\ncommon_perf_print: prompt eval time =     713.24 ms /   453 tokens (    1.57 ms per token,   635.13 tokens per second)\ncommon_perf_print:        eval time =     302.87 ms /    19 runs   (   15.94 ms per token,    62.73 tokens per second)\ncommon_perf_print:       total time =    1025.86 ms /   472 tokens\ncommon_perf_print: unaccounted time =       1.92 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         25\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "T C X  \nX C T  \nT X X  \nX C T  \nT X X [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:55:44.788731+00:00",
+      "row_id": "camp_gate_001_5x4_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_runtime",
+      "output": "T C X X\nT C X X\nX C T T\nX X C C\nX X T T",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.35,
+      "proposal_tier": "weak_surface",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [
+          1,
+          1,
+          1,
+          2,
+          0
+        ],
+        "col_c_counts_actual": [
+          0,
+          3,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          0,
+          2,
+          0,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 0.35,
+        "proposal_tier": "weak_surface"
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 4.0451,
+        "peak_child_ram_mb": 2333.7852,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 3851680385\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 96, n_keep = 0\n\ncommon_perf_print:    sampling time =      10.56 ms\ncommon_perf_print:    samplers time =       4.52 ms /   508 tokens\ncommon_perf_print:        load time =    1013.66 ms\ncommon_perf_print: prompt eval time =    1012.72 ms /   483 tokens (    2.10 ms per token,   476.93 tokens per second)\ncommon_perf_print:        eval time =     372.79 ms /    24 runs   (   15.53 ms per token,    64.38 tokens per second)\ncommon_perf_print:       total time =    1398.41 ms /   507 tokens\ncommon_perf_print: unaccounted time =       2.33 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         31\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "T C X X\nT C X X\nX C T T\nX X C C\nX X T T [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:55:45.290581+00:00",
+      "row_id": "camp_gate_001_5x4_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_signature_projection",
+      "output": "TXTX\nCXCX\nXXXX\nCTXX\nXXTC",
+      "evidence_class": "live_model_local_3b_prompt_constraint_projection",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          0,
+          2,
+          0,
+          1,
+          1
+        ],
+        "col_c_counts_actual": [
+          2,
+          0,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          0,
+          2,
+          0,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      },
+      "diagnostics": {
+        "projection": {
+          "projected": true,
+          "projection_source": "prompt_constraints_min_edit",
+          "candidate_distance": 13,
+          "valid_solution_count_from_prompt_constraints": 1,
+          "target_grid_used_by_projection": false
+        },
+        "peak_child_ram_mb": 0.0,
+        "elapsed_sec": 0.0
+      }
+    },
+    {
+      "ts": "2026-04-29T13:55:48.319700+00:00",
+      "row_id": "camp_gate_002_4x4_3c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "baseline",
+      "output": "T C X X\nX C T X\nX X C T\nT X C X",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.4375,
+      "proposal_tier": "weak_surface",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_actual": [
+          0,
+          2,
+          2,
+          0
+        ],
+        "row_c_counts_expected": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          0,
+          2
+        ],
+        "cell_accuracy": 0.4375,
+        "proposal_tier": "weak_surface"
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 3.0281,
+        "peak_child_ram_mb": 2297.6641,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 3423492198\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 96, n_keep = 0\n\ncommon_perf_print:    sampling time =       7.08 ms\ncommon_perf_print:    samplers time =       2.56 ms /   274 tokens\ncommon_perf_print:        load time =     347.53 ms\ncommon_perf_print: prompt eval time =     346.95 ms /   254 tokens (    1.37 ms per token,   732.09 tokens per second)\ncommon_perf_print:        eval time =     303.00 ms /    19 runs   (   15.95 ms per token,    62.71 tokens per second)\ncommon_perf_print:       total time =     658.30 ms /   273 tokens\ncommon_perf_print: unaccounted time =       1.27 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         21\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "T C X X\nX C T X\nX X C T\nT X C X [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:55:52.353344+00:00",
+      "row_id": "camp_gate_002_4x4_3c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "pure_trm",
+      "output": "T C X X  \nX C T X  \nX X C T  \nX T X C",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.375,
+      "proposal_tier": "weak_surface",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_actual": [
+          0,
+          2,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          0,
+          2
+        ],
+        "cell_accuracy": 0.375,
+        "proposal_tier": "weak_surface"
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 3.5318,
+        "peak_child_ram_mb": 2318.3477,
+        "stderr_tail": "atch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 452992507\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 96, n_keep = 0\n\ncommon_perf_print:    sampling time =       7.67 ms\ncommon_perf_print:    samplers time =       2.68 ms /   454 tokens\ncommon_perf_print:        load time =     645.12 ms\ncommon_perf_print: prompt eval time =     644.31 ms /   434 tokens (    1.48 ms per token,   673.59 tokens per second)\ncommon_perf_print:        eval time =     296.05 ms /    19 runs   (   15.58 ms per token,    64.18 tokens per second)\ncommon_perf_print:       total time =     949.60 ms /   453 tokens\ncommon_perf_print: unaccounted time =       1.57 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         24\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "T C X X  \nX C T X  \nX X C T  \nX T X C [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:55:56.878743+00:00",
+      "row_id": "camp_gate_002_4x4_3c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_runtime",
+      "output": "T C X X  \nX C T X  \nX X C T  \nX X X C",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.4375,
+      "proposal_tier": "weak_surface",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_actual": [
+          0,
+          2,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          0,
+          2
+        ],
+        "cell_accuracy": 0.4375,
+        "proposal_tier": "weak_surface"
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 4.0242,
+        "peak_child_ram_mb": 2360.875,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 2461670050\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 96, n_keep = 0\n\ncommon_perf_print:    sampling time =       7.76 ms\ncommon_perf_print:    samplers time =       3.36 ms /   484 tokens\ncommon_perf_print:        load time =     987.38 ms\ncommon_perf_print: prompt eval time =     986.40 ms /   464 tokens (    2.13 ms per token,   470.40 tokens per second)\ncommon_perf_print:        eval time =     293.19 ms /    19 runs   (   15.43 ms per token,    64.80 tokens per second)\ncommon_perf_print:       total time =    1289.08 ms /   483 tokens\ncommon_perf_print: unaccounted time =       1.72 ms /   0.1 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         25\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "T C X X  \nX C T X  \nX X C T  \nX X X C [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:55:57.380380+00:00",
+      "row_id": "camp_gate_002_4x4_3c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_signature_projection",
+      "output": "XXXX\nXXTC\nCXXX\nTXTC",
+      "evidence_class": "live_model_local_3b_prompt_constraint_projection",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          0,
+          0,
+          2
+        ],
+        "row_c_counts_expected": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          0,
+          2
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      },
+      "diagnostics": {
+        "projection": {
+          "projected": true,
+          "projection_source": "prompt_constraints_min_edit",
+          "candidate_distance": 9,
+          "valid_solution_count_from_prompt_constraints": 1,
+          "target_grid_used_by_projection": false
+        },
+        "peak_child_ram_mb": 0.0,
+        "elapsed_sec": 0.0
+      }
+    },
+    {
+      "ts": "2026-04-29T13:56:00.405365+00:00",
+      "row_id": "camp_gate_003_4x5_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "baseline",
+      "output": "T C X\nX C X\nT C X\nX C X",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "parse_ok": false,
+        "shape_ok": false,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [],
+        "col_c_counts_actual": [],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          1,
+          0,
+          2
+        ],
+        "cell_accuracy": 0.0,
+        "proposal_tier": "none"
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 3.0229,
+        "peak_child_ram_mb": 2313.4219,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 4089213840\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 96, n_keep = 0\n\ncommon_perf_print:    sampling time =       5.20 ms\ncommon_perf_print:    samplers time =       1.99 ms /   280 tokens\ncommon_perf_print:        load time =     403.72 ms\ncommon_perf_print: prompt eval time =     403.15 ms /   264 tokens (    1.53 ms per token,   654.85 tokens per second)\ncommon_perf_print:        eval time =     237.20 ms /    15 runs   (   15.81 ms per token,    63.24 tokens per second)\ncommon_perf_print:       total time =     646.66 ms /   279 tokens\ncommon_perf_print: unaccounted time =       1.12 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         18\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "T C X\nX C X\nT C X\nX C X [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:56:04.436548+00:00",
+      "row_id": "camp_gate_003_4x5_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "pure_trm",
+      "output": "T C X X X  \nT C X X X  \nX C C C X  \nX X T T X",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.25,
+      "proposal_tier": "weak_surface",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [
+          1,
+          1,
+          3,
+          0
+        ],
+        "col_c_counts_actual": [
+          0,
+          3,
+          1,
+          1,
+          0
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          1,
+          0,
+          2
+        ],
+        "cell_accuracy": 0.25,
+        "proposal_tier": "weak_surface"
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 3.5302,
+        "peak_child_ram_mb": 2357.5859,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 2604008281\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 96, n_keep = 0\n\ncommon_perf_print:    sampling time =       8.06 ms\ncommon_perf_print:    samplers time =       2.91 ms /   477 tokens\ncommon_perf_print:        load time =     574.39 ms\ncommon_perf_print: prompt eval time =     573.61 ms /   453 tokens (    1.27 ms per token,   789.74 tokens per second)\ncommon_perf_print:        eval time =     359.62 ms /    23 runs   (   15.64 ms per token,    63.96 tokens per second)\ncommon_perf_print:       total time =     943.02 ms /   476 tokens\ncommon_perf_print: unaccounted time =       1.73 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         29\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "T C X X X  \nT C X X X  \nX C C C X  \nX X T T X [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:56:08.463797+00:00",
+      "row_id": "camp_gate_003_4x5_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_runtime",
+      "output": "T C X X X\nX C T T T\nX X C C T\nX X X T T",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.25,
+      "proposal_tier": "weak_surface",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [
+          1,
+          1,
+          2,
+          0
+        ],
+        "col_c_counts_actual": [
+          0,
+          2,
+          1,
+          1,
+          0
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          1,
+          0,
+          2
+        ],
+        "cell_accuracy": 0.25,
+        "proposal_tier": "weak_surface"
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 3.5249,
+        "peak_child_ram_mb": 2372.9609,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 2019074817\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 96, n_keep = 0\n\ncommon_perf_print:    sampling time =       8.51 ms\ncommon_perf_print:    samplers time =       2.98 ms /   507 tokens\ncommon_perf_print:        load time =     602.60 ms\ncommon_perf_print: prompt eval time =     601.31 ms /   483 tokens (    1.24 ms per token,   803.24 tokens per second)\ncommon_perf_print:        eval time =     353.69 ms /    23 runs   (   15.38 ms per token,    65.03 tokens per second)\ncommon_perf_print:       total time =     965.58 ms /   506 tokens\ncommon_perf_print: unaccounted time =       2.07 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         30\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "T C X X X\nX C T T T\nX X C C T\nX X X T T [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:56:08.965259+00:00",
+      "row_id": "camp_gate_003_4x5_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_signature_projection",
+      "output": "XXCTT\nXXXXC\nXXXXX\nCTXTC",
+      "evidence_class": "live_model_local_3b_prompt_constraint_projection",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_actual": [
+          1,
+          0,
+          1,
+          0,
+          2
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          1,
+          0,
+          2
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      },
+      "diagnostics": {
+        "projection": {
+          "projected": true,
+          "projection_source": "prompt_constraints_min_edit",
+          "candidate_distance": 15,
+          "valid_solution_count_from_prompt_constraints": 1,
+          "target_grid_used_by_projection": false
+        },
+        "peak_child_ram_mb": 0.0,
+        "elapsed_sec": 0.0
+      }
+    },
+    {
+      "ts": "2026-04-29T13:56:11.984514+00:00",
+      "row_id": "camp_gate_004_5x4_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "baseline",
+      "output": "T C X\nX C X\nT C X\nX C X\nT C X",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "parse_ok": false,
+        "shape_ok": false,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [],
+        "col_c_counts_actual": [],
+        "row_c_counts_expected": [
+          1,
+          0,
+          2,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "cell_accuracy": 0.0,
+        "proposal_tier": "none"
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 3.0182,
+        "peak_child_ram_mb": 2351.3125,
+        "stderr_tail": "atch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 132767582\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 96, n_keep = 0\n\ncommon_perf_print:    sampling time =       7.98 ms\ncommon_perf_print:    samplers time =       3.57 ms /   284 tokens\ncommon_perf_print:        load time =     428.34 ms\ncommon_perf_print: prompt eval time =     427.78 ms /   264 tokens (    1.62 ms per token,   617.13 tokens per second)\ncommon_perf_print:        eval time =     295.12 ms /    19 runs   (   15.53 ms per token,    64.38 tokens per second)\ncommon_perf_print:       total time =     732.23 ms /   283 tokens\ncommon_perf_print: unaccounted time =       1.35 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         22\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "T C X\nX C X\nT C X\nX C X\nT C X [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:56:16.018556+00:00",
+      "row_id": "camp_gate_004_5x4_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "pure_trm",
+      "output": "T C X  \nX C T  \nT X C  \nC T X  \nX T C",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "parse_ok": false,
+        "shape_ok": false,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [],
+        "col_c_counts_actual": [],
+        "row_c_counts_expected": [
+          1,
+          0,
+          2,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "cell_accuracy": 0.0,
+        "proposal_tier": "none"
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 3.5316,
+        "peak_child_ram_mb": 2318.9062,
+        "stderr_tail": "atch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 685269545\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 96, n_keep = 0\n\ncommon_perf_print:    sampling time =      11.52 ms\ncommon_perf_print:    samplers time =       3.85 ms /   473 tokens\ncommon_perf_print:        load time =     598.78 ms\ncommon_perf_print: prompt eval time =     597.75 ms /   453 tokens (    1.32 ms per token,   757.84 tokens per second)\ncommon_perf_print:        eval time =     309.28 ms /    19 runs   (   16.28 ms per token,    61.43 tokens per second)\ncommon_perf_print:       total time =     922.37 ms /   472 tokens\ncommon_perf_print: unaccounted time =       3.82 ms /   0.4 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         25\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "T C X  \nX C T  \nT X C  \nC T X  \nX T C [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:56:21.047043+00:00",
+      "row_id": "camp_gate_004_5x4_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_runtime",
+      "output": "T C X X  \nX C T T  \nT X X C  \nX C T T  \nT X X C",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.2,
+      "proposal_tier": "weak_surface",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_actual": [
+          0,
+          3,
+          0,
+          2
+        ],
+        "row_c_counts_expected": [
+          1,
+          0,
+          2,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "cell_accuracy": 0.2,
+        "proposal_tier": "weak_surface"
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 4.5273,
+        "peak_child_ram_mb": 2373.2344,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 1875831852\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 96, n_keep = 0\n\ncommon_perf_print:    sampling time =       9.54 ms\ncommon_perf_print:    samplers time =       3.62 ms /   508 tokens\ncommon_perf_print:        load time =     607.32 ms\ncommon_perf_print: prompt eval time =     606.43 ms /   483 tokens (    1.26 ms per token,   796.46 tokens per second)\ncommon_perf_print:        eval time =     376.57 ms /    24 runs   (   15.69 ms per token,    63.73 tokens per second)\ncommon_perf_print:       total time =     994.45 ms /   507 tokens\ncommon_perf_print: unaccounted time =       1.91 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         31\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "T C X X  \nX C T T  \nT X X C  \nX C T T  \nT X X C [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:56:21.549869+00:00",
+      "row_id": "camp_gate_004_5x4_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_signature_projection",
+      "output": "XXTC\nTXXX\nCXCT\nXXXX\nTCXX",
+      "evidence_class": "live_model_local_3b_prompt_constraint_projection",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          0,
+          2,
+          0,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          0,
+          2,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      },
+      "diagnostics": {
+        "projection": {
+          "projected": true,
+          "projection_source": "prompt_constraints_min_edit",
+          "candidate_distance": 16,
+          "valid_solution_count_from_prompt_constraints": 1,
+          "target_grid_used_by_projection": false
+        },
+        "peak_child_ram_mb": 0.0,
+        "elapsed_sec": 0.0
+      }
+    },
+    {
+      "ts": "2026-04-29T13:56:24.570233+00:00",
+      "row_id": "camp_gate_005_5x5_5c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "baseline",
+      "output": "T C X\nX C X\nT C X\nX C X\nT C X",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "parse_ok": false,
+        "shape_ok": false,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [],
+        "col_c_counts_actual": [],
+        "row_c_counts_expected": [
+          1,
+          2,
+          0,
+          2,
+          0
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          0,
+          2
+        ],
+        "cell_accuracy": 0.0,
+        "proposal_tier": "none"
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 3.0198,
+        "peak_child_ram_mb": 2351.4531,
+        "stderr_tail": "atch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 338564196\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 96, n_keep = 0\n\ncommon_perf_print:    sampling time =       7.11 ms\ncommon_perf_print:    samplers time =       2.47 ms /   294 tokens\ncommon_perf_print:        load time =     374.55 ms\ncommon_perf_print: prompt eval time =     373.98 ms /   274 tokens (    1.36 ms per token,   732.66 tokens per second)\ncommon_perf_print:        eval time =     296.94 ms /    19 runs   (   15.63 ms per token,    63.99 tokens per second)\ncommon_perf_print:       total time =     679.36 ms /   293 tokens\ncommon_perf_print: unaccounted time =       1.34 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         22\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "T C X\nX C X\nT C X\nX C X\nT C X [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:56:28.592501+00:00",
+      "row_id": "camp_gate_005_5x5_5c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "pure_trm",
+      "output": "T C X\nX C X\nT C X\nX C X\nT C X",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "parse_ok": false,
+        "shape_ok": false,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [],
+        "col_c_counts_actual": [],
+        "row_c_counts_expected": [
+          1,
+          2,
+          0,
+          2,
+          0
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          0,
+          2
+        ],
+        "cell_accuracy": 0.0,
+        "proposal_tier": "none"
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 3.5211,
+        "peak_child_ram_mb": 2352.7578,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 3762581798\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 96, n_keep = 0\n\ncommon_perf_print:    sampling time =       6.38 ms\ncommon_perf_print:    samplers time =       2.33 ms /   492 tokens\ncommon_perf_print:        load time =     555.78 ms\ncommon_perf_print: prompt eval time =     555.00 ms /   472 tokens (    1.18 ms per token,   850.45 tokens per second)\ncommon_perf_print:        eval time =     292.93 ms /    19 runs   (   15.42 ms per token,    64.86 tokens per second)\ncommon_perf_print:       total time =     855.74 ms /   491 tokens\ncommon_perf_print: unaccounted time =       1.44 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         25\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "T C X\nX C X\nT C X\nX C X\nT C X [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:56:33.495445+00:00",
+      "row_id": "camp_gate_005_5x5_5c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_runtime",
+      "output": "T C X\nX C X\nT C X\nX C X\nT C X",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "parse_ok": false,
+        "shape_ok": false,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [],
+        "col_c_counts_actual": [],
+        "row_c_counts_expected": [
+          1,
+          2,
+          0,
+          2,
+          0
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          0,
+          2
+        ],
+        "cell_accuracy": 0.0,
+        "proposal_tier": "none"
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 4.4005,
+        "peak_child_ram_mb": 2330.5625,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 1295286960\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 96, n_keep = 0\n\ncommon_perf_print:    sampling time =       6.24 ms\ncommon_perf_print:    samplers time =       2.37 ms /   522 tokens\ncommon_perf_print:        load time =     619.96 ms\ncommon_perf_print: prompt eval time =     618.91 ms /   502 tokens (    1.23 ms per token,   811.10 tokens per second)\ncommon_perf_print:        eval time =     310.26 ms /    19 runs   (   16.33 ms per token,    61.24 tokens per second)\ncommon_perf_print:       total time =     937.26 ms /   521 tokens\ncommon_perf_print: unaccounted time =       1.85 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         25\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "T C X\nX C X\nT C X\nX C X\nT C X [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:56:33.997198+00:00",
+      "row_id": "camp_gate_005_5x5_5c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_signature_projection",
+      "output": "",
+      "evidence_class": "live_model_local_3b_error",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "kind": "runner_error",
+        "error": "candidate_parse_failure"
+      },
+      "diagnostics": {
+        "projected": false,
+        "reason": "candidate_parse_failure"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:56:39.943388+00:00",
+      "row_id": "camp_gate_006_4x4_3c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "baseline",
+      "output": "T C  \nX X  \nT X  \nX C",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "parse_ok": false,
+        "shape_ok": false,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [],
+        "col_c_counts_actual": [],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "cell_accuracy": 0.0,
+        "proposal_tier": "none"
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 5.9462,
+        "peak_child_ram_mb": 2316.6758,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 2045535337\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 96, n_keep = 0\n\ncommon_perf_print:    sampling time =       5.66 ms\ncommon_perf_print:    samplers time =       2.18 ms /   266 tokens\ncommon_perf_print:        load time =     463.32 ms\ncommon_perf_print: prompt eval time =     462.63 ms /   254 tokens (    1.82 ms per token,   549.03 tokens per second)\ncommon_perf_print:        eval time =     197.05 ms /    11 runs   (   17.91 ms per token,    55.82 tokens per second)\ncommon_perf_print:       total time =     666.57 ms /   265 tokens\ncommon_perf_print: unaccounted time =       1.24 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         13\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "T C  \nX X  \nT X  \nX C [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:56:46.131901+00:00",
+      "row_id": "camp_gate_006_4x4_3c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "pure_trm",
+      "output": "T C X T\nX C X X\nT X C T\nX X T X",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.625,
+      "proposal_tier": "weak_surface",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [
+          1,
+          1,
+          1,
+          0
+        ],
+        "col_c_counts_actual": [
+          0,
+          2,
+          1,
+          0
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "cell_accuracy": 0.625,
+        "proposal_tier": "weak_surface"
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 5.6862,
+        "peak_child_ram_mb": 2352.082,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 2522567734\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 96, n_keep = 0\n\ncommon_perf_print:    sampling time =       9.16 ms\ncommon_perf_print:    samplers time =       3.35 ms /   454 tokens\ncommon_perf_print:        load time =     566.82 ms\ncommon_perf_print: prompt eval time =     565.31 ms /   434 tokens (    1.30 ms per token,   767.72 tokens per second)\ncommon_perf_print:        eval time =     301.98 ms /    19 runs   (   15.89 ms per token,    62.92 tokens per second)\ncommon_perf_print:       total time =     878.81 ms /   453 tokens\ncommon_perf_print: unaccounted time =       2.36 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         24\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "T C X T\nX C X X\nT X C T\nX X T X [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:56:50.161809+00:00",
+      "row_id": "camp_gate_006_4x4_3c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_runtime",
+      "output": "T C X X  \nX C T T  \nT X X C  \nX T C T",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.5,
+      "proposal_tier": "weak_surface",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_actual": [
+          0,
+          2,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "cell_accuracy": 0.5,
+        "proposal_tier": "weak_surface"
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 3.5288,
+        "peak_child_ram_mb": 2360.4922,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 2872572420\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 96, n_keep = 0\n\ncommon_perf_print:    sampling time =       7.22 ms\ncommon_perf_print:    samplers time =       2.55 ms /   484 tokens\ncommon_perf_print:        load time =     548.76 ms\ncommon_perf_print: prompt eval time =     547.90 ms /   464 tokens (    1.18 ms per token,   846.86 tokens per second)\ncommon_perf_print:        eval time =     329.24 ms /    19 runs   (   17.33 ms per token,    57.71 tokens per second)\ncommon_perf_print:       total time =     885.93 ms /   483 tokens\ncommon_perf_print: unaccounted time =       1.57 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         25\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "T C X X  \nX C T T  \nT X X C  \nX T C T [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:56:50.663430+00:00",
+      "row_id": "camp_gate_006_4x4_3c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_signature_projection",
+      "output": "TCXX\nXXXC\nTXXT\nCXXX",
+      "evidence_class": "live_model_local_3b_prompt_constraint_projection",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      },
+      "diagnostics": {
+        "projection": {
+          "projected": true,
+          "projection_source": "prompt_constraints_min_edit",
+          "candidate_distance": 8,
+          "valid_solution_count_from_prompt_constraints": 1,
+          "target_grid_used_by_projection": false
+        },
+        "peak_child_ram_mb": 0.0,
+        "elapsed_sec": 0.0
+      }
+    },
+    {
+      "ts": "2026-04-29T13:56:53.684913+00:00",
+      "row_id": "camp_gate_007_5x4_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "baseline",
+      "output": "T C X\nX C X\nT C X\nX C X\nT C X",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "parse_ok": false,
+        "shape_ok": false,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [],
+        "col_c_counts_actual": [],
+        "row_c_counts_expected": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          2,
+          1
+        ],
+        "cell_accuracy": 0.0,
+        "proposal_tier": "none"
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 3.0205,
+        "peak_child_ram_mb": 2351.1992,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 3416308371\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 96, n_keep = 0\n\ncommon_perf_print:    sampling time =       6.59 ms\ncommon_perf_print:    samplers time =       2.46 ms /   284 tokens\ncommon_perf_print:        load time =     403.54 ms\ncommon_perf_print: prompt eval time =     402.94 ms /   264 tokens (    1.53 ms per token,   655.18 tokens per second)\ncommon_perf_print:        eval time =     296.95 ms /    19 runs   (   15.63 ms per token,    63.98 tokens per second)\ncommon_perf_print:       total time =     707.83 ms /   283 tokens\ncommon_perf_print: unaccounted time =       1.34 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         22\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "T C X\nX C X\nT C X\nX C X\nT C X [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:56:57.706825+00:00",
+      "row_id": "camp_gate_007_5x4_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "pure_trm",
+      "output": "T C X  \nX C T  \nT X C  \nC T X  \nX T C",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "parse_ok": false,
+        "shape_ok": false,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [],
+        "col_c_counts_actual": [],
+        "row_c_counts_expected": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          2,
+          1
+        ],
+        "cell_accuracy": 0.0,
+        "proposal_tier": "none"
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 3.5204,
+        "peak_child_ram_mb": 2358.2773,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 3712708805\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 96, n_keep = 0\n\ncommon_perf_print:    sampling time =       6.99 ms\ncommon_perf_print:    samplers time =       2.80 ms /   473 tokens\ncommon_perf_print:        load time =     573.89 ms\ncommon_perf_print: prompt eval time =     573.15 ms /   453 tokens (    1.27 ms per token,   790.37 tokens per second)\ncommon_perf_print:        eval time =     300.03 ms /    19 runs   (   15.79 ms per token,    63.33 tokens per second)\ncommon_perf_print:       total time =     881.62 ms /   472 tokens\ncommon_perf_print: unaccounted time =       1.45 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         25\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "T C X  \nX C T  \nT X C  \nC T X  \nX T C [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:57:01.733597+00:00",
+      "row_id": "camp_gate_007_5x4_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_runtime",
+      "output": "T C X C  \nT X X X  \nT X X T  \nX C T T  \nX X T X",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.3,
+      "proposal_tier": "weak_surface",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [
+          2,
+          0,
+          0,
+          1,
+          0
+        ],
+        "col_c_counts_actual": [
+          0,
+          2,
+          0,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          2,
+          1
+        ],
+        "cell_accuracy": 0.3,
+        "proposal_tier": "weak_surface"
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 3.5255,
+        "peak_child_ram_mb": 2346.0781,
+        "stderr_tail": "atch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 688638812\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 96, n_keep = 0\n\ncommon_perf_print:    sampling time =       8.26 ms\ncommon_perf_print:    samplers time =       3.11 ms /   508 tokens\ncommon_perf_print:        load time =     593.78 ms\ncommon_perf_print: prompt eval time =     592.91 ms /   483 tokens (    1.23 ms per token,   814.63 tokens per second)\ncommon_perf_print:        eval time =     374.04 ms /    24 runs   (   15.59 ms per token,    64.16 tokens per second)\ncommon_perf_print:       total time =     976.98 ms /   507 tokens\ncommon_perf_print: unaccounted time =       1.77 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         31\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "T C X C  \nT X X X  \nT X X T  \nX C T T  \nX X T X [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:57:02.235117+00:00",
+      "row_id": "camp_gate_007_5x4_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_signature_projection",
+      "output": "XXTC\nXXTX\nXXCX\nCTXX\nXTCX",
+      "evidence_class": "live_model_local_3b_prompt_constraint_projection",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          0,
+          2,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          2,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      },
+      "diagnostics": {
+        "projection": {
+          "projected": true,
+          "projection_source": "prompt_constraints_min_edit",
+          "candidate_distance": 14,
+          "valid_solution_count_from_prompt_constraints": 1,
+          "target_grid_used_by_projection": false
+        },
+        "peak_child_ram_mb": 0.0,
+        "elapsed_sec": 0.0
+      }
+    },
+    {
+      "ts": "2026-04-29T13:57:06.187123+00:00",
+      "row_id": "camp_gate_008_4x4_3c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "baseline",
+      "output": "T C  \nX X  \nX X  \nT X",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "parse_ok": false,
+        "shape_ok": false,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [],
+        "col_c_counts_actual": [],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "cell_accuracy": 0.0,
+        "proposal_tier": "none"
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 3.951,
+        "peak_child_ram_mb": 2351.375,
+        "stderr_tail": "atch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 345253281\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 96, n_keep = 0\n\ncommon_perf_print:    sampling time =       4.29 ms\ncommon_perf_print:    samplers time =       1.42 ms /   266 tokens\ncommon_perf_print:        load time =     378.47 ms\ncommon_perf_print: prompt eval time =     377.88 ms /   254 tokens (    1.49 ms per token,   672.17 tokens per second)\ncommon_perf_print:        eval time =     195.92 ms /    11 runs   (   17.81 ms per token,    56.14 tokens per second)\ncommon_perf_print:       total time =     579.14 ms /   265 tokens\ncommon_perf_print: unaccounted time =       1.04 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         13\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "T C  \nX X  \nX X  \nT X [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:57:10.799697+00:00",
+      "row_id": "camp_gate_008_4x4_3c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "pure_trm",
+      "output": "T C X T\nX C X X\nT X C T\nX X T X",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.3125,
+      "proposal_tier": "weak_surface",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [
+          1,
+          1,
+          1,
+          0
+        ],
+        "col_c_counts_actual": [
+          0,
+          2,
+          1,
+          0
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "cell_accuracy": 0.3125,
+        "proposal_tier": "weak_surface"
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 4.1108,
+        "peak_child_ram_mb": 2317.9375,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 3084588683\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 96, n_keep = 0\n\ncommon_perf_print:    sampling time =      13.90 ms\ncommon_perf_print:    samplers time =       4.40 ms /   454 tokens\ncommon_perf_print:        load time =     548.57 ms\ncommon_perf_print: prompt eval time =     547.76 ms /   434 tokens (    1.26 ms per token,   792.31 tokens per second)\ncommon_perf_print:        eval time =     340.94 ms /    19 runs   (   17.94 ms per token,    55.73 tokens per second)\ncommon_perf_print:       total time =     906.75 ms /   453 tokens\ncommon_perf_print: unaccounted time =       4.15 ms /   0.5 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         24\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "T C X T\nX C X X\nT X C T\nX X T X [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:57:17.332499+00:00",
+      "row_id": "camp_gate_008_4x4_3c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_runtime",
+      "output": "T C X X  \nX C T T  \nX X C T  \nX X X C",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.5,
+      "proposal_tier": "weak_surface",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_actual": [
+          0,
+          2,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "cell_accuracy": 0.5,
+        "proposal_tier": "weak_surface"
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 6.0314,
+        "peak_child_ram_mb": 2360.8086,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 2243983505\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 96, n_keep = 0\n\ncommon_perf_print:    sampling time =       9.47 ms\ncommon_perf_print:    samplers time =       3.78 ms /   484 tokens\ncommon_perf_print:        load time =     785.14 ms\ncommon_perf_print: prompt eval time =     607.94 ms /   464 tokens (    1.31 ms per token,   763.23 tokens per second)\ncommon_perf_print:        eval time =     301.83 ms /    19 runs   (   15.89 ms per token,    62.95 tokens per second)\ncommon_perf_print:       total time =    1097.42 ms /   483 tokens\ncommon_perf_print: unaccounted time =     178.17 ms /  16.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         25\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "T C X X  \nX C T T  \nX X C T  \nX X X C [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:57:17.834550+00:00",
+      "row_id": "camp_gate_008_4x4_3c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_signature_projection",
+      "output": "XCXX\nXTTC\nXXXX\nCTXX",
+      "evidence_class": "live_model_local_3b_prompt_constraint_projection",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      },
+      "diagnostics": {
+        "projection": {
+          "projected": true,
+          "projection_source": "prompt_constraints_min_edit",
+          "candidate_distance": 8,
+          "valid_solution_count_from_prompt_constraints": 1,
+          "target_grid_used_by_projection": false
+        },
+        "peak_child_ram_mb": 0.0,
+        "elapsed_sec": 0.0
+      }
+    },
+    {
+      "ts": "2026-04-29T13:57:20.861757+00:00",
+      "row_id": "camp_gate_009_4x5_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "baseline",
+      "output": "T C X\nX C X\nT C X\nX T X",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "parse_ok": false,
+        "shape_ok": false,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [],
+        "col_c_counts_actual": [],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          1,
+          0
+        ],
+        "cell_accuracy": 0.0,
+        "proposal_tier": "none"
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 3.0272,
+        "peak_child_ram_mb": 2334.7891,
+        "stderr_tail": "atch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 378460673\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 96, n_keep = 0\n\ncommon_perf_print:    sampling time =       5.41 ms\ncommon_perf_print:    samplers time =       1.95 ms /   280 tokens\ncommon_perf_print:        load time =     404.36 ms\ncommon_perf_print: prompt eval time =     403.68 ms /   264 tokens (    1.53 ms per token,   653.99 tokens per second)\ncommon_perf_print:        eval time =     238.97 ms /    15 runs   (   15.93 ms per token,    62.77 tokens per second)\ncommon_perf_print:       total time =     649.34 ms /   279 tokens\ncommon_perf_print: unaccounted time =       1.28 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         18\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "T C X\nX C X\nT C X\nX T X [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:57:24.888755+00:00",
+      "row_id": "camp_gate_009_4x5_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "pure_trm",
+      "output": "T C X  \nX C T  \nT X C  \nC T X",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "parse_ok": false,
+        "shape_ok": false,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [],
+        "col_c_counts_actual": [],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          1,
+          0
+        ],
+        "cell_accuracy": 0.0,
+        "proposal_tier": "none"
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 3.5258,
+        "peak_child_ram_mb": 2357.8281,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 4155381684\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 96, n_keep = 0\n\ncommon_perf_print:    sampling time =       5.98 ms\ncommon_perf_print:    samplers time =       2.50 ms /   469 tokens\ncommon_perf_print:        load time =     570.10 ms\ncommon_perf_print: prompt eval time =     569.32 ms /   453 tokens (    1.26 ms per token,   795.69 tokens per second)\ncommon_perf_print:        eval time =     240.75 ms /    15 runs   (   16.05 ms per token,    62.31 tokens per second)\ncommon_perf_print:       total time =     817.58 ms /   468 tokens\ncommon_perf_print: unaccounted time =       1.53 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         21\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "T C X  \nX C T  \nT X C  \nC T X [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:57:28.919192+00:00",
+      "row_id": "camp_gate_009_4x5_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_runtime",
+      "output": "T C X C T\nX C T X C\nT X C T X\nX T C X T",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.25,
+      "proposal_tier": "weak_surface",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "col_c_counts_actual": [
+          0,
+          2,
+          2,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          1,
+          0
+        ],
+        "cell_accuracy": 0.25,
+        "proposal_tier": "weak_surface"
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 3.529,
+        "peak_child_ram_mb": 2318.6172,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 4184626988\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 96, n_keep = 0\n\ncommon_perf_print:    sampling time =       8.19 ms\ncommon_perf_print:    samplers time =       3.29 ms /   507 tokens\ncommon_perf_print:        load time =     603.85 ms\ncommon_perf_print: prompt eval time =     602.96 ms /   483 tokens (    1.25 ms per token,   801.05 tokens per second)\ncommon_perf_print:        eval time =     359.27 ms /    23 runs   (   15.62 ms per token,    64.02 tokens per second)\ncommon_perf_print:       total time =     972.20 ms /   506 tokens\ncommon_perf_print: unaccounted time =       1.78 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         30\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "T C X C T\nX C T X C\nT X C T X\nX T C X T [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:57:29.422119+00:00",
+      "row_id": "camp_gate_009_4x5_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_signature_projection",
+      "output": "CXTXX\nTXCXX\nXXXTX\nCTXCX",
+      "evidence_class": "live_model_local_3b_prompt_constraint_projection",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_actual": [
+          2,
+          0,
+          1,
+          1,
+          0
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          1,
+          0
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      },
+      "diagnostics": {
+        "projection": {
+          "projected": true,
+          "projection_source": "prompt_constraints_min_edit",
+          "candidate_distance": 15,
+          "valid_solution_count_from_prompt_constraints": 1,
+          "target_grid_used_by_projection": false
+        },
+        "peak_child_ram_mb": 0.0,
+        "elapsed_sec": 0.0
+      }
+    },
+    {
+      "ts": "2026-04-29T13:57:32.942644+00:00",
+      "row_id": "camp_gate_010_5x4_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "baseline",
+      "output": "T C X\nX C X\nT C X\nX C X\nT C X",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "parse_ok": false,
+        "shape_ok": false,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [],
+        "col_c_counts_actual": [],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          2,
+          0
+        ],
+        "cell_accuracy": 0.0,
+        "proposal_tier": "none"
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 3.5194,
+        "peak_child_ram_mb": 2351.5391,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 1363285118\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 96, n_keep = 0\n\ncommon_perf_print:    sampling time =      12.49 ms\ncommon_perf_print:    samplers time =       5.62 ms /   284 tokens\ncommon_perf_print:        load time =     417.13 ms\ncommon_perf_print: prompt eval time =     416.56 ms /   264 tokens (    1.58 ms per token,   633.76 tokens per second)\ncommon_perf_print:        eval time =     313.90 ms /    19 runs   (   16.52 ms per token,    60.53 tokens per second)\ncommon_perf_print:       total time =     744.84 ms /   283 tokens\ncommon_perf_print: unaccounted time =       1.89 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         22\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "T C X\nX C X\nT C X\nX C X\nT C X [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:57:37.992767+00:00",
+      "row_id": "camp_gate_010_5x4_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "pure_trm",
+      "output": "T C X  \nX C T  \nT X X  \nC T X  \nX C T",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "parse_ok": false,
+        "shape_ok": false,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [],
+        "col_c_counts_actual": [],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          2,
+          0
+        ],
+        "cell_accuracy": 0.0,
+        "proposal_tier": "none"
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 4.5481,
+        "peak_child_ram_mb": 2318.1211,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 2067705050\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 96, n_keep = 0\n\ncommon_perf_print:    sampling time =      12.04 ms\ncommon_perf_print:    samplers time =       4.61 ms /   473 tokens\ncommon_perf_print:        load time =     759.10 ms\ncommon_perf_print: prompt eval time =     758.30 ms /   453 tokens (    1.67 ms per token,   597.39 tokens per second)\ncommon_perf_print:        eval time =     332.60 ms /    19 runs   (   17.51 ms per token,    57.12 tokens per second)\ncommon_perf_print:       total time =    1105.03 ms /   472 tokens\ncommon_perf_print: unaccounted time =       2.09 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         25\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "T C X  \nX C T  \nT X X  \nC T X  \nX C T [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:57:45.533773+00:00",
+      "row_id": "camp_gate_010_5x4_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_runtime",
+      "output": "T C X T C  \nX C T C X  \nT X C X T  \nX T C X T  \nC X T C X",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "parse_ok": false,
+        "shape_ok": false,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [],
+        "col_c_counts_actual": [],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          2,
+          0
+        ],
+        "cell_accuracy": 0.0,
+        "proposal_tier": "none"
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 7.0385,
+        "peak_child_ram_mb": 2371.5117,
+        "stderr_tail": "atch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 629370187\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 96, n_keep = 0\n\ncommon_perf_print:    sampling time =      17.22 ms\ncommon_perf_print:    samplers time =       5.90 ms /   513 tokens\ncommon_perf_print:        load time =     786.24 ms\ncommon_perf_print: prompt eval time =     784.75 ms /   483 tokens (    1.62 ms per token,   615.48 tokens per second)\ncommon_perf_print:        eval time =     478.47 ms /    29 runs   (   16.50 ms per token,    60.61 tokens per second)\ncommon_perf_print:       total time =    1283.57 ms /   512 tokens\ncommon_perf_print: unaccounted time =       3.13 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         36\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "T C X T C  \nX C T C X  \nT X C X T  \nX T C X T  \nC X T C X [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:57:46.035971+00:00",
+      "row_id": "camp_gate_010_5x4_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_signature_projection",
+      "output": "",
+      "evidence_class": "live_model_local_3b_error",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "kind": "runner_error",
+        "error": "candidate_parse_failure"
+      },
+      "diagnostics": {
+        "projected": false,
+        "reason": "candidate_parse_failure"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:57:54.829731+00:00",
+      "row_id": "camp_gate_011_5x5_5c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "baseline",
+      "output": "T C X\nX C X\nT C X\nX C X\nT C X",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "parse_ok": false,
+        "shape_ok": false,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [],
+        "col_c_counts_actual": [],
+        "row_c_counts_expected": [
+          1,
+          0,
+          2,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          2,
+          1,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 0.0,
+        "proposal_tier": "none"
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 8.7928,
+        "peak_child_ram_mb": 2323.1484,
+        "stderr_tail": "atch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 676228835\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 96, n_keep = 0\n\ncommon_perf_print:    sampling time =      12.70 ms\ncommon_perf_print:    samplers time =       4.71 ms /   294 tokens\ncommon_perf_print:        load time =     528.45 ms\ncommon_perf_print: prompt eval time =     526.94 ms /   274 tokens (    1.92 ms per token,   519.99 tokens per second)\ncommon_perf_print:        eval time =     436.67 ms /    19 runs   (   22.98 ms per token,    43.51 tokens per second)\ncommon_perf_print:       total time =     979.32 ms /   293 tokens\ncommon_perf_print: unaccounted time =       3.01 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         22\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "T C X\nX C X\nT C X\nX C X\nT C X [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:58:00.361468+00:00",
+      "row_id": "camp_gate_011_5x5_5c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "pure_trm",
+      "output": "T C X\nX C X\nT C X\nX C X\nT C X",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "parse_ok": false,
+        "shape_ok": false,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [],
+        "col_c_counts_actual": [],
+        "row_c_counts_expected": [
+          1,
+          0,
+          2,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          2,
+          1,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 0.0,
+        "proposal_tier": "none"
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 5.029,
+        "peak_child_ram_mb": 2352.6133,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 3901310833\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 96, n_keep = 0\n\ncommon_perf_print:    sampling time =      13.40 ms\ncommon_perf_print:    samplers time =       4.83 ms /   492 tokens\ncommon_perf_print:        load time =     662.07 ms\ncommon_perf_print: prompt eval time =     660.67 ms /   472 tokens (    1.40 ms per token,   714.43 tokens per second)\ncommon_perf_print:        eval time =     314.83 ms /    19 runs   (   16.57 ms per token,    60.35 tokens per second)\ncommon_perf_print:       total time =     991.36 ms /   491 tokens\ncommon_perf_print: unaccounted time =       2.45 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         25\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "T C X\nX C X\nT C X\nX C X\nT C X [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:58:05.442402+00:00",
+      "row_id": "camp_gate_011_5x5_5c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_runtime",
+      "output": "T C X\nX C X\nT C X\nX C X\nT C X",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "parse_ok": false,
+        "shape_ok": false,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [],
+        "col_c_counts_actual": [],
+        "row_c_counts_expected": [
+          1,
+          0,
+          2,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          2,
+          1,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 0.0,
+        "proposal_tier": "none"
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 4.579,
+        "peak_child_ram_mb": 2352.5391,
+        "stderr_tail": "atch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 128314198\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 96, n_keep = 0\n\ncommon_perf_print:    sampling time =      14.66 ms\ncommon_perf_print:    samplers time =       4.87 ms /   522 tokens\ncommon_perf_print:        load time =     718.79 ms\ncommon_perf_print: prompt eval time =     717.65 ms /   502 tokens (    1.43 ms per token,   699.50 tokens per second)\ncommon_perf_print:        eval time =     327.57 ms /    19 runs   (   17.24 ms per token,    58.00 tokens per second)\ncommon_perf_print:       total time =    1062.18 ms /   521 tokens\ncommon_perf_print: unaccounted time =       2.30 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         25\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "T C X\nX C X\nT C X\nX C X\nT C X [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:58:05.943774+00:00",
+      "row_id": "camp_gate_011_5x5_5c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_signature_projection",
+      "output": "",
+      "evidence_class": "live_model_local_3b_error",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "kind": "runner_error",
+        "error": "candidate_parse_failure"
+      },
+      "diagnostics": {
+        "projected": false,
+        "reason": "candidate_parse_failure"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:58:09.978273+00:00",
+      "row_id": "camp_gate_012_4x4_3c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "baseline",
+      "output": "T C X X\nX C T X\nT X X C\nX X C T",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.5,
+      "proposal_tier": "weak_surface",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_actual": [
+          0,
+          2,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 0.5,
+        "proposal_tier": "weak_surface"
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 4.0325,
+        "peak_child_ram_mb": 2329.0703,
+        "stderr_tail": "atch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 162209796\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 96, n_keep = 0\n\ncommon_perf_print:    sampling time =      11.20 ms\ncommon_perf_print:    samplers time =       4.36 ms /   274 tokens\ncommon_perf_print:        load time =     388.14 ms\ncommon_perf_print: prompt eval time =     387.41 ms /   254 tokens (    1.53 ms per token,   655.64 tokens per second)\ncommon_perf_print:        eval time =     317.75 ms /    19 runs   (   16.72 ms per token,    59.80 tokens per second)\ncommon_perf_print:       total time =     718.22 ms /   273 tokens\ncommon_perf_print: unaccounted time =       1.87 ms /   0.3 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         21\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "T C X X\nX C T X\nT X X C\nX X C T [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:58:14.513021+00:00",
+      "row_id": "camp_gate_012_4x4_3c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "pure_trm",
+      "output": "T C X T\nX C X X\nT X C T\nX X C X",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.3125,
+      "proposal_tier": "weak_surface",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_actual": [
+          0,
+          2,
+          2,
+          0
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 0.3125,
+        "proposal_tier": "weak_surface"
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 4.0322,
+        "peak_child_ram_mb": 2352.293,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 2432476083\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 96, n_keep = 0\n\ncommon_perf_print:    sampling time =      11.93 ms\ncommon_perf_print:    samplers time =       3.98 ms /   454 tokens\ncommon_perf_print:        load time =     558.02 ms\ncommon_perf_print: prompt eval time =     557.16 ms /   434 tokens (    1.28 ms per token,   778.95 tokens per second)\ncommon_perf_print:        eval time =     314.48 ms /    19 runs   (   16.55 ms per token,    60.42 tokens per second)\ncommon_perf_print:       total time =     885.61 ms /   453 tokens\ncommon_perf_print: unaccounted time =       2.05 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         24\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "T C X T\nX C X X\nT X C T\nX X C X [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:58:19.041785+00:00",
+      "row_id": "camp_gate_012_4x4_3c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_runtime",
+      "output": "T C X X  \nX C T X  \nX X C T  \nX X X C",
+      "evidence_class": "live_model_local_3b",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.5625,
+      "proposal_tier": "weak_surface",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": false,
+        "no_extra_tents_ok": false,
+        "row_c_signature_ok": false,
+        "col_c_signature_ok": false,
+        "camp_no_touch_ok": false,
+        "each_t_one_c_ok": false,
+        "each_c_one_t_ok": false,
+        "row_c_counts_actual": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_actual": [
+          0,
+          2,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 0.5625,
+        "proposal_tier": "weak_surface"
+      },
+      "diagnostics": {
+        "returncode": 0,
+        "elapsed_sec": 4.0275,
+        "peak_child_ram_mb": 2360.7461,
+        "stderr_tail": "tch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | \n\nsampler seed: 4268519480\nsampler params: \n\trepeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000\n\tdry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = -1\n\ttop_k = 40, top_p = 1.000, min_p = 0.050, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000\n\tmirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900\nsampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist \ngenerate: n_ctx = 1536, n_batch = 128, n_predict = 96, n_keep = 0\n\ncommon_perf_print:    sampling time =      12.15 ms\ncommon_perf_print:    samplers time =       4.39 ms /   484 tokens\ncommon_perf_print:        load time =     628.75 ms\ncommon_perf_print: prompt eval time =     627.79 ms /   464 tokens (    1.35 ms per token,   739.10 tokens per second)\ncommon_perf_print:        eval time =     310.76 ms /    19 runs   (   16.36 ms per token,    61.14 tokens per second)\ncommon_perf_print:       total time =     952.80 ms /   483 tokens\ncommon_perf_print: unaccounted time =       2.10 ms /   0.2 %      (total - sampling - prompt eval - eval) / (total)\ncommon_perf_print:    graphs reused =         25\ncommon_memory_breakdown_print: | memory breakdown [MiB]          | total   free    self   model   context   compute    unaccounted |\ncommon_memory_breakdown_print: |   - CUDA0 (RTX 3050 Laptop GPU) |  4095 = 1353 + (1882 =  1834 +      28 +      18) +         859 |\ncommon_memory_breakdown_print: |   - Host                        |                  167 =   166 +       0 +       0                |\n",
+        "raw_output_tail": "T C X X  \nX C T X  \nX X C T  \nX X X C [end of text]\n\n\n"
+      }
+    },
+    {
+      "ts": "2026-04-29T13:58:19.543491+00:00",
+      "row_id": "camp_gate_012_4x4_3c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "metta_signature_projection",
+      "output": "TXCX\nCXTX\nXXXX\nXXTC",
+      "evidence_class": "live_model_local_3b_prompt_constraint_projection",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      },
+      "diagnostics": {
+        "projection": {
+          "projected": true,
+          "projection_source": "prompt_constraints_min_edit",
+          "candidate_distance": 7,
+          "valid_solution_count_from_prompt_constraints": 1,
+          "target_grid_used_by_projection": false
+        },
+        "peak_child_ram_mb": 0.0,
+        "elapsed_sec": 0.0
+      }
+    },
+    {
+      "ts": "2026-04-29T18:25:02.700771+00:00",
+      "row_id": "camp_gate_001_5x4_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "candidate_conditioned_projection",
+      "output": "TXTX\nCXCX\nXXXX\nCTXX\nXXTC",
+      "evidence_class": "live_log_replay_public_constraint_solver",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          0,
+          2,
+          0,
+          1,
+          1
+        ],
+        "col_c_counts_actual": [
+          2,
+          0,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          0,
+          2,
+          0,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      },
+      "diagnostics": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 13,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      }
+    },
+    {
+      "ts": "2026-04-29T18:25:02.700771+00:00",
+      "row_id": "camp_gate_001_5x4_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "public_constraint_solver",
+      "output": "TXTX\nCXCX\nXXXX\nCTXX\nXXTC",
+      "evidence_class": "live_log_replay_public_constraint_solver",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          0,
+          2,
+          0,
+          1,
+          1
+        ],
+        "col_c_counts_actual": [
+          2,
+          0,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          0,
+          2,
+          0,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      },
+      "diagnostics": {
+        "projected": true,
+        "projection_source": "prompt_constraints_unique_solver",
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false,
+        "model_candidate_used": false
+      }
+    },
+    {
+      "ts": "2026-04-29T18:25:02.700771+00:00",
+      "row_id": "camp_gate_002_4x4_3c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "candidate_conditioned_projection",
+      "output": "XXXX\nXXTC\nCXXX\nTXTC",
+      "evidence_class": "live_log_replay_public_constraint_solver",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          0,
+          0,
+          2
+        ],
+        "row_c_counts_expected": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          0,
+          2
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      },
+      "diagnostics": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 9,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      }
+    },
+    {
+      "ts": "2026-04-29T18:25:02.700771+00:00",
+      "row_id": "camp_gate_002_4x4_3c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "public_constraint_solver",
+      "output": "XXXX\nXXTC\nCXXX\nTXTC",
+      "evidence_class": "live_log_replay_public_constraint_solver",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          0,
+          0,
+          2
+        ],
+        "row_c_counts_expected": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          0,
+          2
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      },
+      "diagnostics": {
+        "projected": true,
+        "projection_source": "prompt_constraints_unique_solver",
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false,
+        "model_candidate_used": false
+      }
+    },
+    {
+      "ts": "2026-04-29T18:25:02.701769+00:00",
+      "row_id": "camp_gate_003_4x5_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "candidate_conditioned_projection",
+      "output": "XXCTT\nXXXXC\nXXXXX\nCTXTC",
+      "evidence_class": "live_log_replay_public_constraint_solver",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_actual": [
+          1,
+          0,
+          1,
+          0,
+          2
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          1,
+          0,
+          2
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      },
+      "diagnostics": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 15,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      }
+    },
+    {
+      "ts": "2026-04-29T18:25:02.701769+00:00",
+      "row_id": "camp_gate_003_4x5_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "public_constraint_solver",
+      "output": "XXCTT\nXXXXC\nXXXXX\nCTXTC",
+      "evidence_class": "live_log_replay_public_constraint_solver",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_actual": [
+          1,
+          0,
+          1,
+          0,
+          2
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          1,
+          0,
+          2
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      },
+      "diagnostics": {
+        "projected": true,
+        "projection_source": "prompt_constraints_unique_solver",
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false,
+        "model_candidate_used": false
+      }
+    },
+    {
+      "ts": "2026-04-29T18:25:02.701769+00:00",
+      "row_id": "camp_gate_004_5x4_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "candidate_conditioned_projection",
+      "output": "XXTC\nTXXX\nCXCT\nXXXX\nTCXX",
+      "evidence_class": "live_log_replay_public_constraint_solver",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          0,
+          2,
+          0,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          0,
+          2,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      },
+      "diagnostics": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 16,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      }
+    },
+    {
+      "ts": "2026-04-29T18:25:02.701769+00:00",
+      "row_id": "camp_gate_004_5x4_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "public_constraint_solver",
+      "output": "XXTC\nTXXX\nCXCT\nXXXX\nTCXX",
+      "evidence_class": "live_log_replay_public_constraint_solver",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          0,
+          2,
+          0,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          0,
+          2,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      },
+      "diagnostics": {
+        "projected": true,
+        "projection_source": "prompt_constraints_unique_solver",
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false,
+        "model_candidate_used": false
+      }
+    },
+    {
+      "ts": "2026-04-29T18:25:02.701769+00:00",
+      "row_id": "camp_gate_005_5x5_5c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "candidate_conditioned_projection",
+      "output": "",
+      "evidence_class": "live_log_replay_public_constraint_solver",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "kind": "solver_error",
+        "error": "candidate_parse_failure"
+      },
+      "diagnostics": {
+        "projected": false,
+        "reason": "candidate_parse_failure"
+      }
+    },
+    {
+      "ts": "2026-04-29T18:25:02.701769+00:00",
+      "row_id": "camp_gate_005_5x5_5c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "public_constraint_solver",
+      "output": "TTCXT\nCXXXC\nXXXXX\nCTXTC\nXXXXX",
+      "evidence_class": "live_log_replay_public_constraint_solver",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          2,
+          0,
+          2,
+          0
+        ],
+        "col_c_counts_actual": [
+          2,
+          0,
+          1,
+          0,
+          2
+        ],
+        "row_c_counts_expected": [
+          1,
+          2,
+          0,
+          2,
+          0
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          0,
+          2
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      },
+      "diagnostics": {
+        "projected": true,
+        "projection_source": "prompt_constraints_unique_solver",
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false,
+        "model_candidate_used": false
+      }
+    },
+    {
+      "ts": "2026-04-29T18:25:02.701769+00:00",
+      "row_id": "camp_gate_006_4x4_3c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "candidate_conditioned_projection",
+      "output": "TCXX\nXXXC\nTXXT\nCXXX",
+      "evidence_class": "live_log_replay_public_constraint_solver",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      },
+      "diagnostics": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 8,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      }
+    },
+    {
+      "ts": "2026-04-29T18:25:02.701769+00:00",
+      "row_id": "camp_gate_006_4x4_3c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "public_constraint_solver",
+      "output": "TCXX\nXXXC\nTXXT\nCXXX",
+      "evidence_class": "live_log_replay_public_constraint_solver",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      },
+      "diagnostics": {
+        "projected": true,
+        "projection_source": "prompt_constraints_unique_solver",
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false,
+        "model_candidate_used": false
+      }
+    },
+    {
+      "ts": "2026-04-29T18:25:02.703272+00:00",
+      "row_id": "camp_gate_007_5x4_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "candidate_conditioned_projection",
+      "output": "XXTC\nXXTX\nXXCX\nCTXX\nXTCX",
+      "evidence_class": "live_log_replay_public_constraint_solver",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          0,
+          2,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          2,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      },
+      "diagnostics": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 14,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      }
+    },
+    {
+      "ts": "2026-04-29T18:25:02.703272+00:00",
+      "row_id": "camp_gate_007_5x4_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "public_constraint_solver",
+      "output": "XXTC\nXXTX\nXXCX\nCTXX\nXTCX",
+      "evidence_class": "live_log_replay_public_constraint_solver",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          0,
+          2,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          2,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      },
+      "diagnostics": {
+        "projected": true,
+        "projection_source": "prompt_constraints_unique_solver",
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false,
+        "model_candidate_used": false
+      }
+    },
+    {
+      "ts": "2026-04-29T18:25:02.703272+00:00",
+      "row_id": "camp_gate_008_4x4_3c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "candidate_conditioned_projection",
+      "output": "XCXX\nXTTC\nXXXX\nCTXX",
+      "evidence_class": "live_log_replay_public_constraint_solver",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      },
+      "diagnostics": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 8,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      }
+    },
+    {
+      "ts": "2026-04-29T18:25:02.703272+00:00",
+      "row_id": "camp_gate_008_4x4_3c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "public_constraint_solver",
+      "output": "XCXX\nXTTC\nXXXX\nCTXX",
+      "evidence_class": "live_log_replay_public_constraint_solver",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      },
+      "diagnostics": {
+        "projected": true,
+        "projection_source": "prompt_constraints_unique_solver",
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false,
+        "model_candidate_used": false
+      }
+    },
+    {
+      "ts": "2026-04-29T18:25:02.703272+00:00",
+      "row_id": "camp_gate_009_4x5_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "candidate_conditioned_projection",
+      "output": "CXTXX\nTXCXX\nXXXTX\nCTXCX",
+      "evidence_class": "live_log_replay_public_constraint_solver",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_actual": [
+          2,
+          0,
+          1,
+          1,
+          0
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          1,
+          0
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      },
+      "diagnostics": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 15,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      }
+    },
+    {
+      "ts": "2026-04-29T18:25:02.704278+00:00",
+      "row_id": "camp_gate_009_4x5_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "public_constraint_solver",
+      "output": "CXTXX\nTXCXX\nXXXTX\nCTXCX",
+      "evidence_class": "live_log_replay_public_constraint_solver",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_actual": [
+          2,
+          0,
+          1,
+          1,
+          0
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          1,
+          1,
+          0
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      },
+      "diagnostics": {
+        "projected": true,
+        "projection_source": "prompt_constraints_unique_solver",
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false,
+        "model_candidate_used": false
+      }
+    },
+    {
+      "ts": "2026-04-29T18:25:02.704278+00:00",
+      "row_id": "camp_gate_010_5x4_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "candidate_conditioned_projection",
+      "output": "",
+      "evidence_class": "live_log_replay_public_constraint_solver",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "kind": "solver_error",
+        "error": "candidate_parse_failure"
+      },
+      "diagnostics": {
+        "projected": false,
+        "reason": "candidate_parse_failure"
+      }
+    },
+    {
+      "ts": "2026-04-29T18:25:02.704278+00:00",
+      "row_id": "camp_gate_010_5x4_4c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "public_constraint_solver",
+      "output": "CTTX\nXXCX\nXXXX\nTXXX\nCXCT",
+      "evidence_class": "live_log_replay_public_constraint_solver",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          0,
+          2
+        ],
+        "col_c_counts_actual": [
+          2,
+          0,
+          2,
+          0
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          2,
+          0,
+          2,
+          0
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      },
+      "diagnostics": {
+        "projected": true,
+        "projection_source": "prompt_constraints_unique_solver",
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false,
+        "model_candidate_used": false
+      }
+    },
+    {
+      "ts": "2026-04-29T18:25:02.704278+00:00",
+      "row_id": "camp_gate_011_5x5_5c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "candidate_conditioned_projection",
+      "output": "",
+      "evidence_class": "live_log_replay_public_constraint_solver",
+      "contract_valid": false,
+      "semantic_valid": false,
+      "exact_success": false,
+      "cell_accuracy": 0.0,
+      "proposal_tier": "none",
+      "details": {
+        "kind": "solver_error",
+        "error": "candidate_parse_failure"
+      },
+      "diagnostics": {
+        "projected": false,
+        "reason": "candidate_parse_failure"
+      }
+    },
+    {
+      "ts": "2026-04-29T18:25:02.704781+00:00",
+      "row_id": "camp_gate_011_5x5_5c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "public_constraint_solver",
+      "output": "CXXXX\nTXXXX\nTCXTC\nXXXXX\nCTXCT",
+      "evidence_class": "live_log_replay_public_constraint_solver",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          0,
+          2,
+          0,
+          2
+        ],
+        "col_c_counts_actual": [
+          2,
+          1,
+          0,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          0,
+          2,
+          0,
+          2
+        ],
+        "col_c_counts_expected": [
+          2,
+          1,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      },
+      "diagnostics": {
+        "projected": true,
+        "projection_source": "prompt_constraints_unique_solver",
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false,
+        "model_candidate_used": false
+      }
+    },
+    {
+      "ts": "2026-04-29T18:25:02.704781+00:00",
+      "row_id": "camp_gate_012_4x4_3c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "candidate_conditioned_projection",
+      "output": "TXCX\nCXTX\nXXXX\nXXTC",
+      "evidence_class": "live_log_replay_public_constraint_solver",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      },
+      "diagnostics": {
+        "projected": true,
+        "projection_source": "prompt_constraints_min_edit",
+        "candidate_distance": 7,
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false
+      }
+    },
+    {
+      "ts": "2026-04-29T18:25:02.704781+00:00",
+      "row_id": "camp_gate_012_4x4_3c",
+      "env_family": "intellect3_logic_camp_gate",
+      "arm": "public_constraint_solver",
+      "output": "TXCX\nCXTX\nXXXX\nXXTC",
+      "evidence_class": "live_log_replay_public_constraint_solver",
+      "contract_valid": true,
+      "semantic_valid": true,
+      "exact_success": true,
+      "cell_accuracy": 1.0,
+      "proposal_tier": "full_candidate",
+      "details": {
+        "parse_ok": true,
+        "shape_ok": true,
+        "fixed_tents_ok": true,
+        "no_extra_tents_ok": true,
+        "row_c_signature_ok": true,
+        "col_c_signature_ok": true,
+        "camp_no_touch_ok": true,
+        "each_t_one_c_ok": true,
+        "each_c_one_t_ok": true,
+        "row_c_counts_actual": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_actual": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "row_c_counts_expected": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "col_c_counts_expected": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "cell_accuracy": 1.0,
+        "proposal_tier": "full_candidate"
+      },
+      "diagnostics": {
+        "projected": true,
+        "projection_source": "prompt_constraints_unique_solver",
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": false,
+        "model_candidate_used": false
+      }
+    }
+  ]
+}

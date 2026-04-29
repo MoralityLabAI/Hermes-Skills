@@ -28,6 +28,7 @@ DEFAULT_MODEL = Path(r"D:\research_engine\models\Qwen2.5-3B-Instruct-GGUF\qwen2.
 DEFAULT_LLAMA_COMPLETION = Path(r"D:\research_engine\tools\llama.cpp-b8922-cuda12.4\llama-completion.exe")
 PROMPT_ARMS = ("baseline", "pure_trm", "metta_runtime")
 PROJECTION_ARM = "metta_signature_projection"
+PUBLIC_SOLVER_ARM = "public_constraint_solver"
 STOP_MARKERS = ("[end of text]", "<|im_end|>", "</s>")
 
 
@@ -270,13 +271,19 @@ def run_llama_completion(
 
 def evaluate_candidate(validator: Any, row: dict[str, Any], output: str, arm: str, diagnostics: dict[str, Any]) -> dict[str, Any]:
     verdict = validator.validate_output(row, output)
+    if arm == PROJECTION_ARM:
+        evidence_class = "live_model_local_3b_prompt_constraint_projection"
+    elif arm == PUBLIC_SOLVER_ARM:
+        evidence_class = "live_model_local_3b_public_constraint_solver"
+    else:
+        evidence_class = "live_model_local_3b"
     return {
         "ts": utc_now(),
         "row_id": row["row_id"],
         "env_family": row["env_family"],
         "arm": arm,
         "output": output,
-        "evidence_class": "live_model_local_3b" if arm != PROJECTION_ARM else "live_model_local_3b_prompt_constraint_projection",
+        "evidence_class": evidence_class,
         "contract_valid": verdict["contract_valid"],
         "semantic_valid": verdict["semantic_valid"],
         "exact_success": verdict["exact_success"],
@@ -463,6 +470,23 @@ def main() -> int:
         evaluated.append(projection_result)
         append_jsonl(events_path, projection_result)
         if "child_rss_cap_exceeded" in str(projection_result.get("diagnostics", {}).get("error", "")):
+            break
+
+        solved, solver = validator.public_constraint_solver_output(row)
+        if solved is None:
+            solver_result = error_candidate(row, PUBLIC_SOLVER_ARM, solver.get("reason", "solver_failed"))
+            solver_result["diagnostics"] = solver
+        else:
+            solver_result = evaluate_candidate(
+                validator,
+                row,
+                solved,
+                PUBLIC_SOLVER_ARM,
+                {"solver": solver, "peak_child_ram_mb": 0.0, "elapsed_sec": 0.0},
+            )
+        evaluated.append(solver_result)
+        append_jsonl(events_path, solver_result)
+        if "child_rss_cap_exceeded" in str(solver_result.get("diagnostics", {}).get("error", "")):
             break
 
     payload = {

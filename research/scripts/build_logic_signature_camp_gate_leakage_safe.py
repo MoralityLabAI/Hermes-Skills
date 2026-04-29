@@ -35,6 +35,13 @@ TIER_RESULTS_MD = TIER_RESULTS_DIR / "proposal_tier_smoke.results.md"
 LOCAL_RESULTS_DIR = RESULTS_DIR / "local_qwen25_3b_logic_signature_camp_gate"
 LOCAL_RESULTS_JSON = LOCAL_RESULTS_DIR / "local_qwen25_3b_logic_signature_camp_gate.results.json"
 LOCAL_JOBCAP_SUMMARY = LOCAL_RESULTS_DIR / "jobcap.summary.json"
+ABLATION_RESULTS_DIR = RESULTS_DIR / "projection_ablation"
+ABLATION_RESULTS_JSON = ABLATION_RESULTS_DIR / "projection_ablation.results.json"
+EXTRACT_RESULTS_DIR = RESULTS_DIR / "local_qwen25_3b_constraint_extract"
+EXTRACT_RESULTS_JSON = EXTRACT_RESULTS_DIR / "local_qwen25_3b_constraint_extract.results.json"
+EXTRACT_JOBCAP_SUMMARY = EXTRACT_RESULTS_DIR / "jobcap.summary.json"
+EXTRACT_REPAIR_RESULTS_DIR = RESULTS_DIR / "constraint_extract_schema_repair"
+EXTRACT_REPAIR_RESULTS_JSON = EXTRACT_REPAIR_RESULTS_DIR / "constraint_extract_schema_repair.results.json"
 
 
 def utc_now() -> str:
@@ -56,6 +63,27 @@ def local_summary_context() -> dict[str, Any] | None:
         "result": json.loads(LOCAL_RESULTS_JSON.read_text(encoding="utf-8-sig")),
         "jobcap": json.loads(LOCAL_JOBCAP_SUMMARY.read_text(encoding="utf-8-sig")),
     }
+
+
+def ablation_summary_context() -> dict[str, Any] | None:
+    if not ABLATION_RESULTS_JSON.exists():
+        return None
+    return json.loads(ABLATION_RESULTS_JSON.read_text(encoding="utf-8-sig"))
+
+
+def extract_summary_context() -> dict[str, Any] | None:
+    if not EXTRACT_RESULTS_JSON.exists() or not EXTRACT_JOBCAP_SUMMARY.exists():
+        return None
+    return {
+        "result": json.loads(EXTRACT_RESULTS_JSON.read_text(encoding="utf-8-sig")),
+        "jobcap": json.loads(EXTRACT_JOBCAP_SUMMARY.read_text(encoding="utf-8-sig")),
+    }
+
+
+def extract_repair_summary_context() -> dict[str, Any] | None:
+    if not EXTRACT_REPAIR_RESULTS_JSON.exists():
+        return None
+    return json.loads(EXTRACT_REPAIR_RESULTS_JSON.read_text(encoding="utf-8-sig"))
 
 
 def arm_table(summary: dict[str, Any], arm_order: list[str]) -> str:
@@ -84,6 +112,9 @@ def write_docs(rows: list[dict[str, Any]]) -> None:
     counts = family_counts(rows)
     counts_table = "\n".join(f"| `{shape}` | {count} |" for shape, count in sorted(counts.items()))
     local = local_summary_context()
+    ablation = ablation_summary_context()
+    extract = extract_summary_context()
+    extract_repair = extract_repair_summary_context()
 
     if local:
         result = local["result"]
@@ -114,6 +145,46 @@ Run `research/scripts/run_logic_signature_camp_gate_local_3b.py` under the Windo
 """
         evidence = "`no_model_proposal_tier_smoke`, pending `live_model_local_3b`"
         allowed_live = "- Live local 3B claims require result JSON plus a job-cap receipt."
+
+    if ablation:
+        ablation_section = f"""## Projection Ablation
+
+The projection replay separates candidate-conditioned closure from pure public-constraint solving.
+
+| Arm | Exact | Exact Rate | Contract Valid | Avg Cell Acc | Tier Counts |
+| --- | ---: | ---: | ---: | ---: | --- |
+{arm_table(ablation['summary'], ['metta_runtime', 'candidate_conditioned_projection', 'public_constraint_solver'])}
+
+The `candidate_conditioned_projection` arm preserves the earlier 9/12 result. The `public_constraint_solver` arm reaches 12/12 because every frozen row has a unique solution from prompt-visible constraints. This is a stronger but narrower claim: once constraints are machine-visible, the LLM is not needed for grid execution.
+"""
+        allowed_live += "\n- Public-constraint solver replay scored 12/12 exact; report it as symbolic solver closure, not model lift."
+    else:
+        ablation_section = """## Projection Ablation
+
+Pending: run `research/scripts/replay_logic_signature_camp_gate_public_solver.py` to separate candidate-conditioned projection from public-constraint solving.
+"""
+
+    if extract and extract_repair:
+        extract_jobcap = extract["jobcap"]
+        extract_result = extract["result"]
+        repair_result = extract_repair
+        extract_section = f"""## Constraint Extraction Follow-Up
+
+The extraction run completed under the Windows job-cap wrapper with a {extract_jobcap['caps']['ram_mb']:,} MB RAM cap, {extract_jobcap['caps']['cpu_pct']}% CPU cap, {extract_jobcap['caps']['io_mb_s']} MB/s IO cap, and {extract_jobcap['caps']['timeout_sec']:,} second timeout. Runner-level child RSS peaked at `{extract_result['summary'].get('peak_child_ram_mb', 0.0):.2f} MB`; the wrapper reported `{extract_jobcap['status']}`.
+
+| Arm | JSON Parse | Strict Packet Exact | Strict Solve Exact | Repair Packet Exact | Repair Solve Exact |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| `baseline_extract` | {repair_result['summary']['arms']['baseline_extract']['json_parse']}/12 | {repair_result['summary']['arms']['baseline_extract']['packet_exact']}/12 | {repair_result['summary']['arms']['baseline_extract']['solve_exact']}/12 | {repair_result['summary']['arms']['baseline_extract']['repair_packet_exact']}/12 | {repair_result['summary']['arms']['baseline_extract']['repair_solve_exact']}/12 |
+| `metta_schema_extract` | {repair_result['summary']['arms']['metta_schema_extract']['json_parse']}/12 | {repair_result['summary']['arms']['metta_schema_extract']['packet_exact']}/12 | {repair_result['summary']['arms']['metta_schema_extract']['solve_exact']}/12 | {repair_result['summary']['arms']['metta_schema_extract']['repair_packet_exact']}/12 | {repair_result['summary']['arms']['metta_schema_extract']['repair_solve_exact']}/12 |
+
+The strict `metta_schema_extract` packets failed because the model omitted `width` in all rows and had one row-count mass-balance error. Deterministic MeTTa-style schema repair inferred missing dimensions from count-vector lengths and accepted the unique row/column-balanced packet only when the public solver closed. This produced 12/12 repaired solve exact.
+"""
+        allowed_live += "\n- Constraint extraction plus deterministic schema repair scored 12/12 repaired solve exact for `metta_schema_extract`."
+    else:
+        extract_section = """## Constraint Extraction Follow-Up
+
+Pending: run `research/scripts/run_logic_signature_constraint_extract_local_3b.py` and `research/scripts/replay_logic_signature_constraint_extract_repair.py`.
+"""
 
     readme = f"""# Logic Signature Camp-Gate Leakage-Safe Micro-Suite
 
@@ -150,8 +221,15 @@ This study turns the prior Intellect-3 camp-gate replay into a leakage-safe micr
 - Proposal-tier smoke: `results/proposal_tier_smoke/proposal_tier_smoke.results.md`
 - Local 3B run: `results/local_qwen25_3b_logic_signature_camp_gate/local_qwen25_3b_logic_signature_camp_gate.results.md`
 - Job-cap receipt: `results/local_qwen25_3b_logic_signature_camp_gate/jobcap.summary.json`
+- Projection ablation: `results/projection_ablation/projection_ablation.results.md`
+- Constraint extraction: `results/local_qwen25_3b_constraint_extract/local_qwen25_3b_constraint_extract.results.md`
+- Constraint extraction repair: `results/constraint_extract_schema_repair/constraint_extract_schema_repair.results.md`
 
 {local_section}
+
+{ablation_section}
+
+{extract_section}
 """
     plan = f"""# Study Plan
 
@@ -200,6 +278,7 @@ If raw 3B outputs are mostly `none`, this lane needs a stronger model or a publi
 - Do not call projection success a latent-reasoning improvement.
 - Do not compare this directly to the old 27B receipt replay without noting the old replay used answer-derived signatures.
 - Do not claim trained TRM lift; this study tests runtime framing and deterministic MeTTa projection.
+- Do not claim broad natural-language puzzle extraction yet; the extraction prompts are still structured and should be followed by paraphrased/noisy prompt variants.
 """
 
     config = {

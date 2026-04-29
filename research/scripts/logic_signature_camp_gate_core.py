@@ -393,6 +393,233 @@ def project_output(row: dict[str, Any], output: str) -> tuple[str | None, dict[s
     }
 
 
+def public_constraint_solver_output(row: dict[str, Any]) -> tuple[str | None, dict[str, Any]]:
+    solutions = solve_from_constraints(row, max_solutions=2)
+    if len(solutions) != 1:
+        return None, {
+            "projected": False,
+            "reason": "prompt_constraints_not_unique",
+            "valid_solution_count_from_prompt_constraints": len(solutions),
+            "target_grid_used_by_projection": False,
+        }
+    return grid_to_text(solutions[0]), {
+        "projected": True,
+        "projection_source": "prompt_constraints_unique_solver",
+        "valid_solution_count_from_prompt_constraints": 1,
+        "target_grid_used_by_projection": False,
+        "model_candidate_used": False,
+    }
+
+
+def canonical_constraint_packet(row: dict[str, Any]) -> dict[str, Any]:
+    validator = row["validator"]
+    return {
+        "height": int(validator["height"]),
+        "width": int(validator["width"]),
+        "fixed_tents": [[int(r), int(c)] for r, c in validator["fixed_tents"]],
+        "row_c_counts": [int(value) for value in validator["row_c_counts"]],
+        "col_c_counts": [int(value) for value in validator["col_c_counts"]],
+    }
+
+
+def extract_json_object(text: str) -> dict[str, Any] | None:
+    cleaned = str(text or "").strip()
+    cleaned = re.sub(r"^```(?:json)?", "", cleaned, flags=re.IGNORECASE).strip()
+    cleaned = re.sub(r"```$", "", cleaned).strip()
+    try:
+        parsed = json.loads(cleaned)
+        return parsed if isinstance(parsed, dict) else None
+    except json.JSONDecodeError:
+        pass
+    start = cleaned.find("{")
+    end = cleaned.rfind("}")
+    if start < 0 or end <= start:
+        return None
+    try:
+        parsed = json.loads(cleaned[start : end + 1])
+    except json.JSONDecodeError:
+        return None
+    return parsed if isinstance(parsed, dict) else None
+
+
+def normalize_int_list(value: Any) -> list[int] | None:
+    if not isinstance(value, list):
+        return None
+    out: list[int] = []
+    for item in value:
+        if isinstance(item, bool):
+            return None
+        try:
+            out.append(int(item))
+        except (TypeError, ValueError):
+            return None
+    return out
+
+
+def normalize_tent_list(value: Any) -> list[list[int]] | None:
+    if not isinstance(value, list):
+        return None
+    out: list[list[int]] = []
+    for item in value:
+        if not isinstance(item, list) or len(item) != 2:
+            return None
+        try:
+            r = int(item[0])
+            c = int(item[1])
+        except (TypeError, ValueError):
+            return None
+        out.append([r, c])
+    return sorted(out)
+
+
+def normalize_constraint_packet(value: Any, *, infer_missing_dimensions: bool = False) -> dict[str, Any] | None:
+    if not isinstance(value, dict):
+        return None
+    fixed_tents = normalize_tent_list(value.get("fixed_tents") or value.get("fixed_tents_1_indexed"))
+    row_counts = normalize_int_list(value.get("row_c_counts"))
+    col_counts = normalize_int_list(value.get("col_c_counts"))
+    if fixed_tents is None or row_counts is None or col_counts is None:
+        return None
+    try:
+        height = int(value["height"])
+    except (KeyError, TypeError, ValueError):
+        if not infer_missing_dimensions:
+            return None
+        height = len(row_counts)
+    try:
+        width = int(value["width"])
+    except (KeyError, TypeError, ValueError):
+        if not infer_missing_dimensions:
+            return None
+        width = len(col_counts)
+    if len(row_counts) != height or len(col_counts) != width:
+        return None
+    if any(r < 1 or r > height or c < 1 or c > width for r, c in fixed_tents):
+        return None
+    return {
+        "height": height,
+        "width": width,
+        "fixed_tents": fixed_tents,
+        "row_c_counts": row_counts,
+        "col_c_counts": col_counts,
+    }
+
+
+def constraint_packet_exact(row: dict[str, Any], packet: dict[str, Any] | None) -> bool:
+    return packet == canonical_constraint_packet(row)
+
+
+def row_with_constraint_packet(row: dict[str, Any], packet: dict[str, Any]) -> dict[str, Any]:
+    cloned = dict(row)
+    validator = dict(row["validator"])
+    validator.update(
+        {
+            "height": packet["height"],
+            "width": packet["width"],
+            "fixed_tents": packet["fixed_tents"],
+            "row_c_counts": packet["row_c_counts"],
+            "col_c_counts": packet["col_c_counts"],
+        }
+    )
+    cloned["validator"] = validator
+    return cloned
+
+
+def solve_from_constraint_packet(row: dict[str, Any], packet: dict[str, Any] | None) -> tuple[str | None, dict[str, Any]]:
+    if packet is None:
+        return None, {
+            "solved": False,
+            "reason": "constraint_packet_parse_failure",
+            "target_grid_used_by_solver": False,
+        }
+    extracted_row = row_with_constraint_packet(row, packet)
+    solutions = solve_from_constraints(extracted_row, max_solutions=2)
+    if len(solutions) != 1:
+        return None, {
+            "solved": False,
+            "reason": "extracted_constraints_not_unique",
+            "valid_solution_count_from_extracted_constraints": len(solutions),
+            "target_grid_used_by_solver": False,
+        }
+    return grid_to_text(solutions[0]), {
+        "solved": True,
+        "valid_solution_count_from_extracted_constraints": 1,
+        "target_grid_used_by_solver": False,
+    }
+
+
+def _row_count_balance_candidates(packet: dict[str, Any]) -> list[dict[str, Any]]:
+    rows = list(packet["row_c_counts"])
+    cols = list(packet["col_c_counts"])
+    width = int(packet["width"])
+    delta = sum(cols) - sum(rows)
+    if delta == 0:
+        return [packet]
+
+    candidates: list[dict[str, Any]] = []
+
+    def rec(index: int, remaining: int, current: list[int]) -> None:
+        if index == len(rows):
+            if remaining == 0:
+                candidate = dict(packet)
+                candidate["row_c_counts"] = list(current)
+                candidates.append(candidate)
+            return
+        original = rows[index]
+        if delta > 0:
+            max_adjust = min(remaining, width - original)
+            for add in range(max_adjust + 1):
+                rec(index + 1, remaining - add, current + [original + add])
+        else:
+            max_adjust = min(remaining, original)
+            for sub in range(max_adjust + 1):
+                rec(index + 1, remaining - sub, current + [original - sub])
+
+    rec(0, abs(delta), [])
+    return candidates
+
+
+def repair_constraint_packet(row: dict[str, Any], raw_packet: Any) -> tuple[dict[str, Any] | None, dict[str, Any]]:
+    packet = normalize_constraint_packet(raw_packet, infer_missing_dimensions=True)
+    if packet is None:
+        return None, {"repaired": False, "reason": "packet_parse_failure", "target_grid_used_by_repair": False}
+
+    diagnostics: dict[str, Any] = {
+        "repaired": False,
+        "target_grid_used_by_repair": False,
+        "inferred_height": "height" not in raw_packet if isinstance(raw_packet, dict) else False,
+        "inferred_width": "width" not in raw_packet if isinstance(raw_packet, dict) else False,
+        "row_total": sum(packet["row_c_counts"]),
+        "col_total": sum(packet["col_c_counts"]),
+    }
+    solved, solver = solve_from_constraint_packet(row, packet)
+    if solved is not None:
+        diagnostics["solver"] = solver
+        diagnostics["repair_strategy"] = "dimension_inference_only"
+        diagnostics["repaired"] = diagnostics["inferred_height"] or diagnostics["inferred_width"]
+        return packet, diagnostics
+
+    if sum(packet["row_c_counts"]) != sum(packet["col_c_counts"]):
+        viable: list[tuple[dict[str, Any], dict[str, Any]]] = []
+        for candidate in _row_count_balance_candidates(packet):
+            candidate_solved, candidate_solver = solve_from_constraint_packet(row, candidate)
+            if candidate_solved is not None:
+                viable.append((candidate, candidate_solver))
+        diagnostics["row_balance_viable_packets"] = len(viable)
+        if len(viable) == 1:
+            repaired, repaired_solver = viable[0]
+            diagnostics["repaired"] = True
+            diagnostics["repair_strategy"] = "row_col_c_total_balance_unique_solve"
+            diagnostics["solver"] = repaired_solver
+            diagnostics["row_total_after"] = sum(repaired["row_c_counts"])
+            diagnostics["col_total_after"] = sum(repaired["col_c_counts"])
+            return repaired, diagnostics
+
+    diagnostics["solver"] = solver
+    diagnostics["reason"] = "no_unique_public_schema_repair"
+    return packet, diagnostics
+
+
 def is_valid_generated_solution(grid: list[list[str]]) -> bool:
     height = len(grid)
     width = len(grid[0]) if grid else 0
