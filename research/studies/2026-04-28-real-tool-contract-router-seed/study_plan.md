@@ -23,3 +23,9 @@ MeTTa/TRM scaffolding should improve real tool-call reliability when the tool sc
 ## Stop Rule
 
 If MeTTa only fixes JSON syntax while selecting the wrong tool family, split the lane into router TRM and argument-repair TRM before adding more rows.
+
+## Current Status
+
+- Live local 3B result exists.
+- The strongest signal is schema/tool-route improvement, not exact tool-call success.
+- Public repair reduced unsafe commits from 2 to 1 but did not improve exact success beyond MeTTa runtime.

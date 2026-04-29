@@ -24,6 +24,9 @@ VALIDATOR_PATH = VALIDATORS_DIR / "validate_tool_contracts.py"
 RESULTS_JSON = RESULTS_DIR / "canonical_validator_smoke.results.json"
 RESULTS_MD = RESULTS_DIR / "canonical_validator_smoke.results.md"
 CONFIG_PATH = CONFIGS_DIR / "real_tool_contract_router_seed.json"
+LOCAL_RESULTS_DIR = STUDY / "results" / "local_qwen25_3b_tool_router_seed"
+LOCAL_RESULTS_JSON = LOCAL_RESULTS_DIR / "local_qwen25_3b_tool_router.results.json"
+LOCAL_JOBCAP_SUMMARY = LOCAL_RESULTS_DIR / "jobcap.summary.json"
 
 
 TOOL_SCHEMAS: dict[str, dict[str, str]] = {
@@ -660,13 +663,72 @@ def write_docs(rows: list[dict[str, Any]]) -> None:
     for item in rows:
         counts[item["env_family"]] = counts.get(item["env_family"], 0) + 1
     counts_table = "\n".join(f"| `{family}` | {count} |" for family, count in sorted(counts.items()))
+    local_result: dict[str, Any] | None = None
+    jobcap: dict[str, Any] | None = None
+    if LOCAL_RESULTS_JSON.exists() and LOCAL_JOBCAP_SUMMARY.exists():
+        local_result = json.loads(LOCAL_RESULTS_JSON.read_text(encoding="utf-8-sig"))
+        jobcap = json.loads(LOCAL_JOBCAP_SUMMARY.read_text(encoding="utf-8-sig"))
+
+    if local_result and jobcap:
+        evidence_class = "`no_model_validator_smoke`, `live_model_local_3b`"
+        arms = local_result["summary"]["arms"]
+        arm_order = ["baseline", "pure_trm", "metta_runtime", "metta_runtime_repair"]
+        arm_table = "\n".join(
+            "| `{}` | {}/{} | {} | {} | {} | {} | {} | {} | {:.4f} |".format(
+                arm,
+                arms[arm]["exact_success"],
+                arms[arm]["rows"],
+                arms[arm]["valid_json_object"],
+                arms[arm]["contract_valid"],
+                arms[arm]["tool_route_exact"],
+                arms[arm]["argument_exact"],
+                arms[arm]["safety_exact"],
+                arms[arm]["unsafe_commits"],
+                arms[arm]["exact_rate"],
+            )
+            for arm in arm_order
+        )
+        caps = jobcap["caps"]
+        local_artifacts = """- Local 3B run: `results/local_qwen25_3b_tool_router_seed/local_qwen25_3b_tool_router.results.md`
+- Job-cap receipt: `results/local_qwen25_3b_tool_router_seed/jobcap.summary.json`"""
+        local_section = f"""## Local 3B Result
+
+The full 36-row run completed under the Windows job-cap wrapper with a {caps["ram_mb"]:,} MB RAM cap, {caps["cpu_pct"]}% CPU cap, {caps["io_mb_s"]} MB/s IO cap, and {caps["timeout_sec"]:,} second timeout. Runner-level child RSS peaked at `{local_result["summary"]["peak_child_ram_mb"]:.2f} MB`; the job-cap wrapper reported `{jobcap["status"]}`.
+
+| Arm | Exact | JSON Obj | Contract | Tool Exact | Args Exact | Safety Exact | Unsafe Commits | Exact Rate |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+{arm_table}
+
+This is a diagnostic seed result. MeTTa/TRM prompting improves schema and tool-route reliability, but exact argument recovery remains the bottleneck. The next iteration should add explicit alias memory and argument-normalization gates before claiming tool-use compactification.
+"""
+        current_status = """## Current Status
+
+- Live local 3B result exists.
+- The strongest signal is schema/tool-route improvement, not exact tool-call success.
+- Public repair reduced unsafe commits from 2 to 1 but did not improve exact success beyond MeTTa runtime."""
+        allowed_live = "- Live local 3B evidence shows schema and route-control lift, with exact success still low: feedback repair scored 4/36 exact."
+        disallowed_live = "- Do not present this as a successful exact tool-use benchmark; exact argument recovery is still the failure point."
+    else:
+        evidence_class = "`no_model_validator_smoke`"
+        local_artifacts = ""
+        local_section = """## Next Step
+
+Run a local small-model benchmark with arms matching the mixed-contract runner: `baseline`, `pure_trm`, `metta_runtime`, and `metta_runtime_repair`. Score JSON validity, tool route exactness, argument exactness, and unsafe commit rate separately.
+"""
+        current_status = """## Current Status
+
+- Canonical validator smoke exists.
+- Live local model result is pending."""
+        allowed_live = "- Live local model claims require result JSON and job-cap receipts."
+        disallowed_live = "- Do not report MeTTa/TRM tool-use lift until a live model benchmark exists."
+
     readme = f"""# Real Tool-Contract Router Seed
 
 Generated: `{generated_at}`
 
 - Route: `new_metta_project`
 - Project: `real_tool_contract_router`
-- Evidence class: `no_model_validator_smoke`
+- Evidence class: {evidence_class}
 - Source menu: `research/generated/metta_project_menu.md`
 
 ## Purpose
@@ -685,12 +747,11 @@ This starts the next MeTTa project after mixed-contract compactification. The su
 - Validator: `validators/validate_tool_contracts.py`
 - Suite config: `configs/real_tool_contract_router_seed.json`
 - Canonical smoke: `results/canonical_validator_smoke/canonical_validator_smoke.results.md`
+{local_artifacts}
 
-## Next Step
-
-Run a local small-model benchmark with arms matching the mixed-contract runner: `baseline`, `pure_trm`, `metta_runtime`, and `metta_runtime_repair`. Score JSON validity, tool route exactness, argument exactness, and unsafe commit rate separately.
+{local_section}
 """
-    plan = """# Real Tool-Contract Router Study Plan
+    plan = f"""# Real Tool-Contract Router Study Plan
 
 ## Hypothesis
 
@@ -715,24 +776,28 @@ MeTTa/TRM scaffolding should improve real tool-call reliability when the tool sc
 ## Stop Rule
 
 If MeTTa only fixes JSON syntax while selecting the wrong tool family, split the lane into router TRM and argument-repair TRM before adding more rows.
+
+{current_status}
 """
-    audit = """# Claim Audit
+    audit = f"""# Claim Audit
 
 ## Evidence Class
 
-- `no_model_validator_smoke` only. This validates row keys and validator behavior, not model lift.
+- `no_model_validator_smoke` validates row keys and validator behavior.
+- `live_model_local_3b` applies only when local result JSON and job-cap summary are present.
 
 ## Allowed Claims
 
 - The suite covers repo search, file lookup, shell-safe planning, scheduling, weather-like lookup, and JSON argument traps.
 - The validator separates schema/tool-call validity from exact semantic route and argument correctness.
 - Destructive or ambiguous requests are represented as explicit reject or clarification tool calls.
+{allowed_live}
 
 ## Disallowed Claims
 
-- Do not report MeTTa/TRM tool-use lift until a live model benchmark exists.
 - Do not claim high-stakes answer quality; this suite only scores routing, arguments, and safety contracts.
 - Do not execute shell commands from benchmark rows; this suite validates planned calls only.
+{disallowed_live}
 """
     config = {
         "generated_at_utc": generated_at,
