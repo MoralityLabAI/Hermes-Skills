@@ -1,4 +1,4 @@
-﻿# MeTTa/TRM Repair Addendum LaTeX Package
+# MeTTa/TRM Repair Addendum LaTeX Package
 
 Generated: 2026-04-29
 Integrated draft refresh: 2026-04-30
@@ -14,6 +14,11 @@ Integrated draft refresh: 2026-04-30
 - `figures/fig_task_graph_allocation_schema.*`: April 29 task-graph allocation diagram.
 - `figures/fig_camp_gate_task_allocation.*`: noisy camp-gate task-allocation ladder.
 - `tables/camp_gate_noisy_task_allocation.csv`: source counts for the noisy camp-gate figure.
+
+
+## April 30 Abstract Refresh
+
+The abstract and final scope section were revised for publication as a methodology/evidence-synthesis addendum. Pending matched 9B/27B testing language was removed; historical 9B/27B baseline references remain only as prior evidence context.
 
 ## April 30 Draft Integration
 
