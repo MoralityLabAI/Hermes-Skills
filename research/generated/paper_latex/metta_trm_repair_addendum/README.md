@@ -15,6 +15,9 @@ Integrated draft refresh: 2026-04-30
 - `figures/fig_camp_gate_task_allocation.*`: noisy camp-gate task-allocation ladder.
 - `tables/camp_gate_noisy_task_allocation.csv`: source counts for the noisy camp-gate figure.
 
+## April 30 Metadata and Motivation Refresh
+
+The title block now lists Patrick Dugan, Morality Lab. The subtitle was removed. The motivation section now frames compact hybrid AI capability as relevant to future security and power balance, and adds citations to Duffy et al. on Diplomacy harness evaluation and Sakana AI TAID on compact-model distillation.
 
 ## April 30 Abstract Refresh
 

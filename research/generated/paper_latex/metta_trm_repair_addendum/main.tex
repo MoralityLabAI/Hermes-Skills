@@ -9,9 +9,8 @@
 \usepackage{amsmath}
 \usepackage{enumitem}
 
-\title{MeTTa-Scaffolded Repair Curricula for TRM-Infused Hermes Skills\\
-\large Provisional Addendum and Data Campaign Plan}
-\author{Hermes Skills Research}
+\title{MeTTa-Scaffolded Repair Curricula for TRM-Infused Hermes Skills}
+\author{Patrick Dugan\\Morality Lab}
 \date{April 29, 2026}
 
 \begin{document}
@@ -26,6 +25,8 @@ We describe a methodology for improving Hermes agent harness skills infused with
 Hierarchical and recursive reasoning models have reopened the question of whether compact specialized models can perform useful reasoning work without relying on very large language models for every step. HRM proposes a two-timescale recurrent architecture with strong sample efficiency on puzzle-like reasoning tasks \citep{wang2025hrm}; TRM simplifies this direction into a small recursive network with strong ARC-style generalization claims \citep{jolicoeurmartineau2025trm}. In parallel, MeTTa and OpenCog Hyperon provide a reflective metagraph programming substrate for representing rules, programs, and cognitive procedures as rewriteable symbolic objects \citep{goertzel2021metta,meredith2023metametta}.
 
 Our Hermes setting combines these threads with instruction-tuned tool-use models such as Hermes 3 \citep{teknium2024hermes3} and Prime Intellect-style verifier environments for large-scale RL and evaluation \citep{primeintellect2025intellect3}. The specific research question is narrower than broad AGI: can MeTTa-scaffolded symbolic state make TRM training and deployment more data efficient for skill components such as repair, validation, routing, and commit control?
+
+This question is also strategically important. If advanced capabilities can be compressed into small local models, recursive modules, symbolic validators, and skill-specific control graphs, then the future security and power balance of AI will not be determined only by who controls the largest frontier training runs. It will also depend on how rapidly capable behaviors can be distilled, routed, evaluated, and recombined into deployable hybrid systems. Recent adjacent work points in the same direction from different angles. Duffy et al.\ show that a carefully engineered harness can make out-of-the-box local LLMs participate in full-press Diplomacy without fine-tuning, democratizing the study of strategic reasoning and negotiation behavior \citep{duffy2025democratizingdiplomacy}. Sakana AI's TAID work shows a complementary compression path: adaptive distillation can transfer knowledge from larger teachers into compact student models, producing high-performing small foundation models suitable for lower-resource deployment \citep{shing2025taid}. Our contribution is to study a third path: not only distilling a model or improving an evaluation harness, but restructuring the agent skill itself so that symbolic gates, TRM components, and a small LLM jointly carry the capability.
 
 \section{Prior TRM Baseline}
 
