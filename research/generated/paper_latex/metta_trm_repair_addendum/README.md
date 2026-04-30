@@ -17,7 +17,7 @@ Integrated draft refresh: 2026-04-30
 
 ## April 30 Metadata and Motivation Refresh
 
-The title block now lists Patrick Dugan, Morality Lab. The subtitle was removed. The motivation section now frames compact hybrid AI capability as relevant to future security and power balance, and adds citations to Duffy et al. on Diplomacy harness evaluation and Sakana AI TAID on compact-model distillation.
+The title block now lists Patrick Dugan, Morality Lab. The subtitle was removed. The motivation section now frames compact hybrid AI capability as relevant to future security and power balance, and adds citations to Wu, Duffy, et al. on COSPLAY skill-bank co-evolution and Sakana AI Fugu Beta on learned multi-agent orchestration.
 
 ## April 30 Abstract Refresh
 
