@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "C:\projects\Hermes Skills\research\scripts\run_local_if_summarize_metta_ablation.py", line 540, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "C:\projects\Hermes Skills\research\scripts\run_local_if_summarize_metta_ablation.py", line 443, in main
+    llm, backend_name, actual_model_path = build_generator(args)
+                                           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\projects\Hermes Skills\research\scripts\run_local_if_summarize_metta_ablation.py", line 324, in build_generator
+    return LlamaCppGenerator(model_path, args.ctx, args.threads, args.gpu_layers), "llama_cpp_direct_local", model_path
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\projects\Hermes Skills\research\scripts\run_local_if_summarize_metta_ablation.py", line 199, in __init__
+    self.llm = Llama(
+               ^^^^^^
+  File "C:\Python311\Lib\site-packages\llama_cpp\llama.py", line 369, in __init__
+    internals.LlamaModel(
+  File "C:\Python311\Lib\site-packages\llama_cpp\_internals.py", line 56, in __init__
+    raise ValueError(f"Failed to load model from file: {path_model}")
+ValueError: Failed to load model from file: D:\Research_Engine\models\Qwen3.5\Qwen3.5-2B\Qwen3.5-2B-Q4_K_M.gguf

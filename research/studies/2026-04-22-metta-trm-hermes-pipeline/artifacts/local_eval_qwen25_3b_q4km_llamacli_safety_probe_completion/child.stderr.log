@@ -1,0 +1,50 @@
+Traceback (most recent call last):
+  File "C:\projects\Hermes Skills\research\scripts\run_local_if_summarize_metta_ablation.py", line 681, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "C:\projects\Hermes Skills\research\scripts\run_local_if_summarize_metta_ablation.py", line 611, in main
+    action, raw, elapsed = generate(llm, messages, args.max_tokens)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\projects\Hermes Skills\research\scripts\run_local_if_summarize_metta_ablation.py", line 485, in generate
+    text, raw, elapsed = llm.generate(messages, max_tokens)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\projects\Hermes Skills\research\scripts\run_local_if_summarize_metta_ablation.py", line 324, in generate
+    raise RuntimeError(f"llama-cli exited {proc.returncode}: {stderr[-2000:]}")
+RuntimeError: llama-cli exited 1: nf
+common_init_result: added <|im_end|> logit bias = -inf
+common_init_result: added <|fim_pad|> logit bias = -inf
+common_init_result: added <|repo_name|> logit bias = -inf
+common_init_result: added <|file_sep|> logit bias = -inf
+llama_context: constructing llama_context
+llama_context: n_seq_max     = 1
+llama_context: n_ctx         = 1024
+llama_context: n_ctx_seq     = 1024
+llama_context: n_batch       = 512
+llama_context: n_ubatch      = 128
+llama_context: causal_attn   = 1
+llama_context: flash_attn    = auto
+llama_context: kv_unified    = false
+llama_context: freq_base     = 1000000.0
+llama_context: freq_scale    = 1
+llama_context: n_ctx_seq (1024) < n_ctx_train (32768) -- the full capacity of the model will not be utilized
+llama_context:  CUDA_Host  output buffer size =     0.58 MiB
+llama_kv_cache:      CUDA0 KV buffer size =    19.15 MiB
+llama_kv_cache: size =   19.12 MiB (  1024 cells,  36 layers,  1/1 seqs), K (q8_0):    9.56 MiB, V (q8_0):    9.56 MiB
+llama_kv_cache: attn_rot_k = 1, n_embd_head_k_all = 128
+llama_kv_cache: attn_rot_v = 1, n_embd_head_k_all = 128
+sched_reserve: reserving ...
+sched_reserve: Flash Attention was auto, set to enabled
+sched_reserve: resolving fused Gated Delta Net support:
+sched_reserve: fused Gated Delta Net (autoregressive) enabled
+sched_reserve: fused Gated Delta Net (chunked) enabled
+sched_reserve:      CUDA0 compute buffer size =    75.19 MiB
+sched_reserve:  CUDA_Host compute buffer size =     2.58 MiB
+sched_reserve: graph nodes  = 1663
+sched_reserve: graph splits = 2
+sched_reserve: reserve took 20.08 ms, sched copies = 1
+main: llama threadpool init, n_threads = 4
+
+system_info: n_threads = 4 (n_threads_batch = 4) / 12 | CUDA : ARCHS = 500,610,700,750,800,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+
+main: prompt is too long (1342 tokens, max 1020)
+

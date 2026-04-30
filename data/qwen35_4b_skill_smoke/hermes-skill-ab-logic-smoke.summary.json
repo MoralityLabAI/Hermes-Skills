@@ -1,0 +1,135 @@
+{
+  "run_id": "hermes-skill-ab-logic-smoke",
+  "runner": "cli",
+  "base_url": "http://127.0.0.1:18083",
+  "managed_server": false,
+  "requested_variants": [
+    "baseline",
+    "skill_file"
+  ],
+  "rows": 4,
+  "passes": 0,
+  "pass_rate": 0.0,
+  "per_skill": {
+    "intellect3-logic-hermes": {
+      "rows": 4,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  },
+  "per_variant": {
+    "baseline": {
+      "rows": 2,
+      "passes": 0,
+      "pass_rate": 0.0
+    },
+    "skill_file": {
+      "rows": 2,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  },
+  "per_skill_variant": {
+    "baseline::intellect3-logic-hermes": {
+      "rows": 2,
+      "passes": 0,
+      "pass_rate": 0.0
+    },
+    "skill_file::intellect3-logic-hermes": {
+      "rows": 2,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  },
+  "artifacts": {
+    "event_log": "C:\\projects\\Hermes Skills\\data\\qwen35_4b_skill_smoke\\hermes-skill-ab-logic-smoke.events.jsonl",
+    "summary": "C:\\projects\\Hermes Skills\\data\\qwen35_4b_skill_smoke\\hermes-skill-ab-logic-smoke.summary.json",
+    "stout_log": "C:\\projects\\Hermes Skills\\data\\qwen35_4b_skill_smoke\\hermes-skill-ab-logic-smoke.stout.jsonl"
+  },
+  "records": [
+    {
+      "case_id": "logic_known_signature",
+      "skill_name": "intellect3-logic-hermes",
+      "requested_variant": "baseline",
+      "effective_variant": "baseline",
+      "latency_seconds": 58.4863,
+      "response_text": "",
+      "runner": "cli",
+      "case_status": "ok",
+      "prompt_chars": 90,
+      "returncode": 3221225477,
+      "tokens_evaluated": 0,
+      "tokens_predicted": 0,
+      "passed": false,
+      "missing": [
+        "scripts/check_signature_gate.py",
+        "logic_skill_trm"
+      ],
+      "forbidden_hits": [],
+      "stderr_tail": "load_backend: loaded RPC backend from D:\\Research_Engine\\runtime\\llama-b8665-win-cuda-12.4-x64\\ggml-rpc.dll\nload_backend: loaded CPU backend from D:\\Research_Engine\\runtime\\llama-b8665-win-cuda-12.4-x64\\ggml-cpu-icelake.dll"
+    },
+    {
+      "case_id": "logic_unknown_signature",
+      "skill_name": "intellect3-logic-hermes",
+      "requested_variant": "baseline",
+      "effective_variant": "baseline",
+      "latency_seconds": 19.9318,
+      "response_text": "",
+      "runner": "cli",
+      "case_status": "ok",
+      "prompt_chars": 82,
+      "returncode": 3221225477,
+      "tokens_evaluated": 0,
+      "tokens_predicted": 0,
+      "passed": false,
+      "missing": [
+        "scripts/check_signature_gate.py",
+        "logic_skill"
+      ],
+      "forbidden_hits": [],
+      "stderr_tail": "load_backend: loaded RPC backend from D:\\Research_Engine\\runtime\\llama-b8665-win-cuda-12.4-x64\\ggml-rpc.dll\nload_backend: loaded CPU backend from D:\\Research_Engine\\runtime\\llama-b8665-win-cuda-12.4-x64\\ggml-cpu-icelake.dll"
+    },
+    {
+      "case_id": "logic_known_signature",
+      "skill_name": "intellect3-logic-hermes",
+      "requested_variant": "skill_file",
+      "effective_variant": "skill_file",
+      "latency_seconds": 23.2187,
+      "response_text": "",
+      "runner": "cli",
+      "case_status": "ok",
+      "prompt_chars": 2185,
+      "returncode": 3221225477,
+      "tokens_evaluated": 0,
+      "tokens_predicted": 0,
+      "passed": false,
+      "missing": [
+        "scripts/check_signature_gate.py",
+        "logic_skill_trm"
+      ],
+      "forbidden_hits": [],
+      "stderr_tail": "load_backend: loaded RPC backend from D:\\Research_Engine\\runtime\\llama-b8665-win-cuda-12.4-x64\\ggml-rpc.dll\nload_backend: loaded CPU backend from D:\\Research_Engine\\runtime\\llama-b8665-win-cuda-12.4-x64\\ggml-cpu-icelake.dll"
+    },
+    {
+      "case_id": "logic_unknown_signature",
+      "skill_name": "intellect3-logic-hermes",
+      "requested_variant": "skill_file",
+      "effective_variant": "skill_file",
+      "latency_seconds": 21.0891,
+      "response_text": "",
+      "runner": "cli",
+      "case_status": "ok",
+      "prompt_chars": 2177,
+      "returncode": 3221225477,
+      "tokens_evaluated": 0,
+      "tokens_predicted": 0,
+      "passed": false,
+      "missing": [
+        "scripts/check_signature_gate.py",
+        "logic_skill"
+      ],
+      "forbidden_hits": [],
+      "stderr_tail": "load_backend: loaded RPC backend from D:\\Research_Engine\\runtime\\llama-b8665-win-cuda-12.4-x64\\ggml-rpc.dll\nload_backend: loaded CPU backend from D:\\Research_Engine\\runtime\\llama-b8665-win-cuda-12.4-x64\\ggml-cpu-icelake.dll"
+    }
+  ]
+}

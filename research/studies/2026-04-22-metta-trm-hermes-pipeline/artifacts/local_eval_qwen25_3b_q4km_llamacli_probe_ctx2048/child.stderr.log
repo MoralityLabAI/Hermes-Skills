@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "C:\projects\Hermes Skills\research\scripts\run_local_if_summarize_metta_ablation.py", line 697, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "C:\projects\Hermes Skills\research\scripts\run_local_if_summarize_metta_ablation.py", line 627, in main
+    action, raw, elapsed = generate(llm, messages, args.max_tokens)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\projects\Hermes Skills\research\scripts\run_local_if_summarize_metta_ablation.py", line 501, in generate
+    text, raw, elapsed = llm.generate(messages, max_tokens)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\projects\Hermes Skills\research\scripts\run_local_if_summarize_metta_ablation.py", line 269, in generate
+    raise RuntimeError(
+RuntimeError: llama-cli prompt too long for safety budget: 5818 chars > 5000

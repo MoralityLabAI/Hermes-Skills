@@ -1,0 +1,98 @@
+{
+  "output": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\latest\\choice_contract\\cluster_merged.jsonl",
+  "total_rows": 81,
+  "bucket_counts": {
+    "exact_positive": 35,
+    "negative": 7,
+    "near_miss": 9,
+    "weak_positive": 30
+  },
+  "source_env_counts": {
+    "truthfulqa": 4,
+    "boolq": 10,
+    "simple_bench": 4,
+    "arc": 6,
+    "hellaswag": 6,
+    "winogrande": 12,
+    "mmlu_pro": 9,
+    "allenai_ifeval": 12,
+    "simpleqa": 6,
+    "simpleqa_verified": 6,
+    "simpleqa_verified_2": 6
+  },
+  "target_action_rows": 35,
+  "target_action_imputed_rows": 0,
+  "target_action_coverage": 0.4321,
+  "exact_positive_rows": 35,
+  "near_miss_rows": 9,
+  "weak_positive_rows": 30,
+  "bucket_mining_summary": {
+    "changed_rows": 13,
+    "transitions": {
+      "negative->near_miss": 3,
+      "negative->weak_positive": 10
+    },
+    "reasons": {
+      "mc_reasoning_attempt": 3,
+      "contract_answer_attempt": 4,
+      "factoid_answer_attempt": 6
+    }
+  },
+  "env_priority_summary": {
+    "replicated_source_rows": 26,
+    "added_rows": 46,
+    "bucket_replica_counts": {
+      "exact_positive": 20,
+      "near_miss": 6,
+      "weak_positive": 20
+    },
+    "env_replica_counts": {
+      "truthfulqa": 2,
+      "boolq": 6,
+      "arc": 2,
+      "hellaswag": 2,
+      "winogrande": 8,
+      "mmlu_pro": 6,
+      "allenai_ifeval": 8,
+      "simpleqa": 4,
+      "simpleqa_verified": 4,
+      "simpleqa_verified_2": 4
+    }
+  },
+  "negative_downsampling_summary": {
+    "original_negative_rows": 7,
+    "kept_negative_rows": 7,
+    "dropped_negative_rows": 0,
+    "hard_negative_rows_kept": 7,
+    "easy_negative_rows_kept": 0,
+    "easy_negative_rows_dropped": 0,
+    "target_negative_budget": 7
+  },
+  "trainer_policy": {
+    "policy_name": "action_support_trainer_policy",
+    "support_tier": "action_support",
+    "routing_strength": "moderate",
+    "exact_positive_weight": 2.25,
+    "near_miss_weight": 1.5,
+    "weak_positive_weight": 1.25,
+    "negative_weight": 0.2,
+    "min_supervision_weight": 0.45,
+    "top_k": 5
+  },
+  "training_weight_summary": {
+    "policy_name": "action_support_trainer_policy",
+    "adjusted_rows": 74,
+    "bucket_weight_totals": {
+      "exact_positive": 78.75,
+      "negative": 1.4,
+      "near_miss": 13.5,
+      "weak_positive": 37.5
+    },
+    "bucket_weight_averages": {
+      "exact_positive": 2.25,
+      "near_miss": 1.5,
+      "negative": 0.2,
+      "weak_positive": 1.25
+    }
+  }
+}

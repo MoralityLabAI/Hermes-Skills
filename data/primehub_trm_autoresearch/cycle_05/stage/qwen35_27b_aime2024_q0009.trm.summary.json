@@ -1,0 +1,14 @@
+{
+  "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_aime2024_q0009.jsonl",
+  "output": "C:\\projects\\Hermes Skills\\data\\primehub_trm_autoresearch\\cycle_05\\stage\\qwen35_27b_aime2024_q0009.trm.jsonl",
+  "total_rows": 1,
+  "bucket_counts": {
+    "exact_positive": 0,
+    "near_miss": 0,
+    "weak_positive": 0,
+    "negative": 1
+  },
+  "task_family": "auto",
+  "near_miss_threshold": 0.8,
+  "weak_positive_threshold": 0.5
+}

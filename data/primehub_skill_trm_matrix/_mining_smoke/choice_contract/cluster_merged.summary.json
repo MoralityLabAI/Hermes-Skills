@@ -1,0 +1,71 @@
+{
+  "output": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_mining_smoke\\choice_contract\\cluster_merged.jsonl",
+  "total_rows": 48,
+  "bucket_counts": {
+    "negative": 25,
+    "exact_positive": 15,
+    "weak_positive": 8
+  },
+  "source_env_counts": {
+    "truthfulqa": 5,
+    "boolq": 4,
+    "simple_bench": 4,
+    "arc": 4,
+    "hellaswag": 4,
+    "winogrande": 4,
+    "mmlu_pro": 7,
+    "allenai_ifeval": 4,
+    "simpleqa": 4,
+    "simpleqa_verified": 4,
+    "simpleqa_verified_2": 4
+  },
+  "target_action_rows": 15,
+  "target_action_imputed_rows": 0,
+  "target_action_coverage": 0.3125,
+  "exact_positive_rows": 15,
+  "near_miss_rows": 0,
+  "weak_positive_rows": 8,
+  "bucket_mining_summary": {
+    "changed_rows": 8,
+    "transitions": {
+      "negative->weak_positive": 8
+    },
+    "reasons": {
+      "contract_answer_attempt": 8
+    }
+  },
+  "negative_downsampling_summary": {
+    "original_negative_rows": 25,
+    "kept_negative_rows": 25,
+    "dropped_negative_rows": 0,
+    "hard_negative_rows_kept": 20,
+    "easy_negative_rows_kept": 5,
+    "easy_negative_rows_dropped": 0,
+    "target_negative_budget": 25
+  },
+  "trainer_policy": {
+    "policy_name": "action_support_trainer_policy",
+    "support_tier": "action_support",
+    "routing_strength": "moderate",
+    "exact_positive_weight": 2.25,
+    "near_miss_weight": 1.5,
+    "weak_positive_weight": 1.25,
+    "negative_weight": 0.2,
+    "min_supervision_weight": 0.45,
+    "top_k": 5
+  },
+  "training_weight_summary": {
+    "policy_name": "action_support_trainer_policy",
+    "adjusted_rows": 23,
+    "bucket_weight_totals": {
+      "negative": 5.0,
+      "exact_positive": 33.75,
+      "weak_positive": 10.0
+    },
+    "bucket_weight_averages": {
+      "exact_positive": 2.25,
+      "negative": 0.2,
+      "weak_positive": 1.25
+    }
+  }
+}

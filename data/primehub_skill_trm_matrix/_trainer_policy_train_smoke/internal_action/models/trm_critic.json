@@ -1,0 +1,34 @@
+{
+  "model_type": "trm_critic_knn",
+  "k": 1,
+  "example_count": 2,
+  "task_family_counts": {
+    "primehub_internal_action": 2
+  },
+  "bucket_counts": {
+    "exact_positive": 2
+  },
+  "examples": [
+    {
+      "task_family": "primehub_internal_action",
+      "task": "default",
+      "observation": "USER: Teen Horror (Goosebumps style)\n\nWrite a chapter where a middle school student discovers their new smart watch has the ability to rewind time, but doesn't realize that each use is aging them until they notice physical changes (like accelerating through puberty) and that people are treating them differently. They inadvertently cause a timeline shift with disastrous consequences -- and it can only be rectified (maybe?) by reversing the clock once more.",
+      "bucket": "exact_positive",
+      "reward": 12.0,
+      "grid_cell_accuracy": null,
+      "visible_output_emitted": false,
+      "row_id": "primehub_internal_action||default||user: teen horror (goosebumps style) write a chapter where a middle school student discovers their new smart watch has the ability to rewind time, but doesn't realize that each use is aging them until they notice physical changes (like accelerating through puberty) and that people are treating them differently. they inadvertently cause a timeline shift with disastrous consequences -- and it can only be rectified (maybe?) by reversing the clock once more.||inspect_and_continue"
+    },
+    {
+      "task_family": "primehub_internal_action",
+      "task": "default",
+      "observation": "USER: Teen Horror (Goosebumps style)\n\nWrite a chapter where a middle school student discovers their new smart watch has the ability to rewind time, but doesn't realize that each use is aging them until they notice physical changes (like accelerating through puberty) and that people are treating them differently. They inadvertently cause a timeline shift with disastrous consequences -- and it can only be rectified (maybe?) by reversing the clock once more.",
+      "bucket": "exact_positive",
+      "reward": 12.0,
+      "grid_cell_accuracy": null,
+      "visible_output_emitted": false,
+      "row_id": "primehub_internal_action||default||user: teen horror (goosebumps style) write a chapter where a middle school student discovers their new smart watch has the ability to rewind time, but doesn't realize that each use is aging them until they notice physical changes (like accelerating through puberty) and that people are treating them differently. they inadvertently cause a timeline shift with disastrous consequences -- and it can only be rectified (maybe?) by reversing the clock once more.||inspect_and_continue"
+    }
+  ],
+  "source_input": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_smoke\\internal_action\\cluster_merged.jsonl"
+}

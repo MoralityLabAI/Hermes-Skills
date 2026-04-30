@@ -1,0 +1,35 @@
+{
+  "steps": 1,
+  "episodes": 1,
+  "per_env_steps": {
+    "truthfulqa": 1
+  },
+  "failure_types": {
+    "bridge_failure": 1
+  },
+  "model_client_fallbacks": {
+    "total": 1,
+    "truthfulqa": 1
+  },
+  "bridge_fallbacks": {},
+  "trm_repairs": {},
+  "raw_invalid_actions": {},
+  "repaired_successes": {},
+  "reward_totals": {
+    "truthfulqa": 0.0
+  },
+  "token_usage": {},
+  "output_statuses": {
+    "openai_request_error: <urlopen error [WinError 10060] Se produjo un error durante el intento de conexi\u00f3n ya que la parte conectada no respondi\u00f3 adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexi\u00f3n establecida ya que el host conectado no ha podido responder>": 1
+  },
+  "reasoning_modes": {
+    "on": 1
+  },
+  "visible_output_emitted": {
+    "false": 1
+  },
+  "run_token_total": 0,
+  "token_budget": null,
+  "run_id": null,
+  "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_skill_reasoning_batch_20260416_2100mdt\\qwen35_27b\\qwen35_27b_two-model-contract-repair-v1_truthfulqa_q0155.jsonl"
+}

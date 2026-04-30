@@ -1,0 +1,28 @@
+{
+  "input": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\if_summarize_judge_trainer_policy\\metta_trainer_policy_bundle.jsonl",
+  "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\if_summarize_judge_trainer_policy\\rollup\\models\\trm_retriever.json",
+  "example_count": 404,
+  "task_family_counts": {
+    "primehub_constraint_summarize__retrieval_selection_correctness": 18,
+    "primehub_constraint_summarize__contract_family_match": 69,
+    "primehub_constraint_summarize__transport_visible_output": 72,
+    "primehub_constraint_summarize__transport_no_fallback": 72,
+    "primehub_constraint_summarize__task_success": 36,
+    "primehub_constraint_summarize__contract_validity": 36,
+    "primehub_constraint_summarize__critic_verdict_agreement": 36,
+    "primehub_constraint_summarize__failure_localization": 30,
+    "primehub_constraint_summarize__repair_success": 18,
+    "primehub_constraint_summarize__profile_selection_correctness": 17
+  },
+  "bucket_counts": {
+    "exact_positive": 125,
+    "weak_positive": 249,
+    "near_miss": 30
+  },
+  "include_buckets": [
+    "exact_positive",
+    "near_miss",
+    "weak_positive"
+  ],
+  "min_supervision_weight": 0.25
+}

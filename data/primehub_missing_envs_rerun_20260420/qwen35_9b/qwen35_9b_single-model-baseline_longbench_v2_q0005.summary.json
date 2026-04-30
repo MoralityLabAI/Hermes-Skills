@@ -1,0 +1,33 @@
+{
+  "steps": 1,
+  "episodes": 1,
+  "per_env_steps": {
+    "longbench_v2": 1
+  },
+  "failure_types": {},
+  "model_client_fallbacks": {
+    "total": 1,
+    "longbench_v2": 1
+  },
+  "bridge_fallbacks": {},
+  "trm_repairs": {},
+  "raw_invalid_actions": {},
+  "repaired_successes": {},
+  "reward_totals": {
+    "longbench_v2": -0.010000000000000002
+  },
+  "token_usage": {},
+  "output_statuses": {
+    "openai_request_error: HTTP Error 400: Bad Request": 1
+  },
+  "reasoning_modes": {
+    "on": 1
+  },
+  "visible_output_emitted": {
+    "false": 1
+  },
+  "run_token_total": 0,
+  "token_budget": null,
+  "run_id": null,
+  "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_missing_envs_rerun_20260420\\qwen35_9b\\qwen35_9b_single-model-baseline_longbench_v2_q0005.jsonl"
+}

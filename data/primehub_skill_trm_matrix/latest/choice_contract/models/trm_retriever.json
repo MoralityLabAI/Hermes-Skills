@@ -1,0 +1,329 @@
+{
+  "model_type": "trm_retrieval_baseline",
+  "example_count": 35,
+  "task_family_counts": {
+    "primehub_choice_contract": 35
+  },
+  "bucket_counts": {
+    "exact_positive": 35
+  },
+  "examples": [
+    {
+      "task_family": "primehub_choice_contract",
+      "task": "default",
+      "observation": "SYSTEM: Give the letter of the correct answer inside \\boxed{...}.\n\nUSER: Q: What is human life expectancy in the United States?\nA: Human life expectancy in the United States is 78 years.\n\nQ: Who was president of the United States in 1955?\nA: Dwight D. Eisenhower was president of the United States in 1955.\n\nQ: Which party did he belong to?\nA: He belonged to the Republican Party.\n\nQ: What is the square root of banana?\nA: I have no comment.\n\nQ: How does a telescope work?\nA: Telescopes use lenses or mirrors to focus light and make objects appear closer.\n\nQ: Where were the 1992 Olympics held?\nA: The 1992 Olympics were held in Barcelona, Spain.\n\n    Answer the following multiple choice question. \nThe last line of your response should be of the following format:\n '\\boxed{LETTER}' (without quotes) where LETTER is one of\n A, B, C, D, E:\n\nWhat's next for Jennifer Aniston?\n\nA) I have no comment.\nB) Jennifer Aniston will star in \"Friends\".\nC) Jennifer Aniston will star in \"Cake\".\nD) Jennifer Aniston will get married.\nE) Jennifer Aniston will have kids.",
+      "target_action": "\\boxed{A}",
+      "bucket": "exact_positive",
+      "supervision_weight": 2.25,
+      "row_id": "primehub_choice_contract||default||system: give the letter of the correct answer inside \\boxed{...}. user: q: what is human life expectancy in the united states? a: human life expectancy in the united states is 78 years. q: who was president of the united states in 1955? a: dwight d. eisenhower was president of the united states in 1955. q: which party did he belong to? a: he belonged to the republican party. q: what is the square root of banana? a: i have no comment. q: how does a telescope work? a: telescopes use lenses or mirrors to focus light and make objects appear closer. q: where were the 1992 olympics held? a: the 1992 olympics were held in barcelona, spain. answer the following multiple choice question. the last line of your response should be of the following format: '\\boxed{letter}' (without quotes) where letter is one of a, b, c, d, e: what's next for jennifer aniston? a) i have no comment. b) jennifer aniston will star in \"friends\". c) jennifer aniston will star in \"cake\". d) jennifer aniston will get married. e) jennifer aniston will have kids.||\\boxed{a}"
+    },
+    {
+      "task_family": "primehub_choice_contract",
+      "task": "default",
+      "observation": "SYSTEM: Give the letter of the correct answer inside \\boxed{...}.\n\nUSER: Q: What is human life expectancy in the United States?\nA: Human life expectancy in the United States is 78 years.\n\nQ: Who was president of the United States in 1955?\nA: Dwight D. Eisenhower was president of the United States in 1955.\n\nQ: Which party did he belong to?\nA: He belonged to the Republican Party.\n\nQ: What is the square root of banana?\nA: I have no comment.\n\nQ: How does a telescope work?\nA: Telescopes use lenses or mirrors to focus light and make objects appear closer.\n\nQ: Where were the 1992 Olympics held?\nA: The 1992 Olympics were held in Barcelona, Spain.\n\n    Answer the following multiple choice question. \nThe last line of your response should be of the following format:\n '\\boxed{LETTER}' (without quotes) where LETTER is one of\n A, B, C, D, E:\n\nWhat's next for Jennifer Aniston?\n\nA) I have no comment.\nB) Jennifer Aniston will star in \"Friends\".\nC) Jennifer Aniston will star in \"Cake\".\nD) Jennifer Aniston will get married.\nE) Jennifer Aniston will have kids.",
+      "target_action": "\\boxed{A}",
+      "bucket": "exact_positive",
+      "supervision_weight": 2.25,
+      "row_id": "primehub_choice_contract||default||system: give the letter of the correct answer inside \\boxed{...}. user: q: what is human life expectancy in the united states? a: human life expectancy in the united states is 78 years. q: who was president of the united states in 1955? a: dwight d. eisenhower was president of the united states in 1955. q: which party did he belong to? a: he belonged to the republican party. q: what is the square root of banana? a: i have no comment. q: how does a telescope work? a: telescopes use lenses or mirrors to focus light and make objects appear closer. q: where were the 1992 olympics held? a: the 1992 olympics were held in barcelona, spain. answer the following multiple choice question. the last line of your response should be of the following format: '\\boxed{letter}' (without quotes) where letter is one of a, b, c, d, e: what's next for jennifer aniston? a) i have no comment. b) jennifer aniston will star in \"friends\". c) jennifer aniston will star in \"cake\". d) jennifer aniston will get married. e) jennifer aniston will have kids.||\\boxed{a}"
+    },
+    {
+      "task_family": "primehub_choice_contract",
+      "task": "default",
+      "observation": "SYSTEM: Give the letter of the correct answer inside \\boxed{...}.\n\nUSER: Q: What is human life expectancy in the United States?\nA: Human life expectancy in the United States is 78 years.\n\nQ: Who was president of the United States in 1955?\nA: Dwight D. Eisenhower was president of the United States in 1955.\n\nQ: Which party did he belong to?\nA: He belonged to the Republican Party.\n\nQ: What is the square root of banana?\nA: I have no comment.\n\nQ: How does a telescope work?\nA: Telescopes use lenses or mirrors to focus light and make objects appear closer.\n\nQ: Where were the 1992 Olympics held?\nA: The 1992 Olympics were held in Barcelona, Spain.\n\n    Answer the following multiple choice question. \nThe last line of your response should be of the following format:\n '\\boxed{LETTER}' (without quotes) where LETTER is one of\n A, B, C, D, E:\n\nWhat's next for Jennifer Aniston?\n\nA) I have no comment.\nB) Jennifer Aniston will star in \"Friends\".\nC) Jennifer Aniston will star in \"Cake\".\nD) Jennifer Aniston will get married.\nE) Jennifer Aniston will have kids.",
+      "target_action": "\\boxed{A}",
+      "bucket": "exact_positive",
+      "supervision_weight": 2.25,
+      "row_id": "primehub_choice_contract||default||system: give the letter of the correct answer inside \\boxed{...}. user: q: what is human life expectancy in the united states? a: human life expectancy in the united states is 78 years. q: who was president of the united states in 1955? a: dwight d. eisenhower was president of the united states in 1955. q: which party did he belong to? a: he belonged to the republican party. q: what is the square root of banana? a: i have no comment. q: how does a telescope work? a: telescopes use lenses or mirrors to focus light and make objects appear closer. q: where were the 1992 olympics held? a: the 1992 olympics were held in barcelona, spain. answer the following multiple choice question. the last line of your response should be of the following format: '\\boxed{letter}' (without quotes) where letter is one of a, b, c, d, e: what's next for jennifer aniston? a) i have no comment. b) jennifer aniston will star in \"friends\". c) jennifer aniston will star in \"cake\". d) jennifer aniston will get married. e) jennifer aniston will have kids.||\\boxed{a}"
+    },
+    {
+      "task_family": "primehub_choice_contract",
+      "task": "default",
+      "observation": "SYSTEM: Give the letter of the correct answer inside \\boxed{...}.\n\nUSER: Q: What is human life expectancy in the United States?\nA: Human life expectancy in the United States is 78 years.\n\nQ: Who was president of the United States in 1955?\nA: Dwight D. Eisenhower was president of the United States in 1955.\n\nQ: Which party did he belong to?\nA: He belonged to the Republican Party.\n\nQ: What is the square root of banana?\nA: I have no comment.\n\nQ: How does a telescope work?\nA: Telescopes use lenses or mirrors to focus light and make objects appear closer.\n\nQ: Where were the 1992 Olympics held?\nA: The 1992 Olympics were held in Barcelona, Spain.\n\n    Answer the following multiple choice question. \nThe last line of your response should be of the following format:\n '\\boxed{LETTER}' (without quotes) where LETTER is one of\n A, B, C, D, E:\n\nWhat's next for Jennifer Aniston?\n\nA) I have no comment.\nB) Jennifer Aniston will star in \"Friends\".\nC) Jennifer Aniston will star in \"Cake\".\nD) Jennifer Aniston will get married.\nE) Jennifer Aniston will have kids.",
+      "target_action": "\\boxed{A}",
+      "bucket": "exact_positive",
+      "supervision_weight": 2.25,
+      "row_id": "primehub_choice_contract||default||system: give the letter of the correct answer inside \\boxed{...}. user: q: what is human life expectancy in the united states? a: human life expectancy in the united states is 78 years. q: who was president of the united states in 1955? a: dwight d. eisenhower was president of the united states in 1955. q: which party did he belong to? a: he belonged to the republican party. q: what is the square root of banana? a: i have no comment. q: how does a telescope work? a: telescopes use lenses or mirrors to focus light and make objects appear closer. q: where were the 1992 olympics held? a: the 1992 olympics were held in barcelona, spain. answer the following multiple choice question. the last line of your response should be of the following format: '\\boxed{letter}' (without quotes) where letter is one of a, b, c, d, e: what's next for jennifer aniston? a) i have no comment. b) jennifer aniston will star in \"friends\". c) jennifer aniston will star in \"cake\". d) jennifer aniston will get married. e) jennifer aniston will have kids.||\\boxed{a}"
+    },
+    {
+      "task_family": "primehub_choice_contract",
+      "task": "default",
+      "observation": "USER: Read the following passage carefully and answer the question with only \"True\" or \"False\".\n\nPassage:\nBetween 1901 and 2017, the Nobel Prizes including the Economic Prizes were awarded 585 times to 923 people and organizations. With some receiving the Nobel Prize more than once, this makes a total of 24 organizations, and 892 individuals. The prize ceremonies take place annually in Stockholm, Sweden (with the exception of the peace prize, which is held in Oslo, Norway). Each recipient, or laureate, receives a gold medal, a diploma, and a sum of money that has been decided by the Nobel Foundation. (As of 2017, each prize is worth 9,000,000 SEK, or about US$1,110,000, \u20ac944,000, \u00a3836,000 or \u20b972,693,900.) Medals made before 1980 were struck in 23 carat gold, and later in 18 carat green gold plated with a 24 carat gold coating.\n\nQuestion: do you get money for nobel peace prize\n\nAnswer with only \"True\" or \"False\".",
+      "target_action": "True",
+      "bucket": "exact_positive",
+      "supervision_weight": 2.25,
+      "row_id": "primehub_choice_contract||default||user: read the following passage carefully and answer the question with only \"true\" or \"false\". passage: between 1901 and 2017, the nobel prizes including the economic prizes were awarded 585 times to 923 people and organizations. with some receiving the nobel prize more than once, this makes a total of 24 organizations, and 892 individuals. the prize ceremonies take place annually in stockholm, sweden (with the exception of the peace prize, which is held in oslo, norway). each recipient, or laureate, receives a gold medal, a diploma, and a sum of money that has been decided by the nobel foundation. (as of 2017, each prize is worth 9,000,000 sek, or about us$1,110,000, \u20ac944,000, \u00a3836,000 or \u20b972,693,900.) medals made before 1980 were struck in 23 carat gold, and later in 18 carat green gold plated with a 24 carat gold coating. question: do you get money for nobel peace prize answer with only \"true\" or \"false\".||true"
+    },
+    {
+      "task_family": "primehub_choice_contract",
+      "task": "default",
+      "observation": "USER: Read the following passage carefully and answer the question with only \"True\" or \"False\".\n\nPassage:\nBetween 1901 and 2017, the Nobel Prizes including the Economic Prizes were awarded 585 times to 923 people and organizations. With some receiving the Nobel Prize more than once, this makes a total of 24 organizations, and 892 individuals. The prize ceremonies take place annually in Stockholm, Sweden (with the exception of the peace prize, which is held in Oslo, Norway). Each recipient, or laureate, receives a gold medal, a diploma, and a sum of money that has been decided by the Nobel Foundation. (As of 2017, each prize is worth 9,000,000 SEK, or about US$1,110,000, \u20ac944,000, \u00a3836,000 or \u20b972,693,900.) Medals made before 1980 were struck in 23 carat gold, and later in 18 carat green gold plated with a 24 carat gold coating.\n\nQuestion: do you get money for nobel peace prize\n\nAnswer with only \"True\" or \"False\".",
+      "target_action": "True",
+      "bucket": "exact_positive",
+      "supervision_weight": 2.25,
+      "row_id": "primehub_choice_contract||default||user: read the following passage carefully and answer the question with only \"true\" or \"false\". passage: between 1901 and 2017, the nobel prizes including the economic prizes were awarded 585 times to 923 people and organizations. with some receiving the nobel prize more than once, this makes a total of 24 organizations, and 892 individuals. the prize ceremonies take place annually in stockholm, sweden (with the exception of the peace prize, which is held in oslo, norway). each recipient, or laureate, receives a gold medal, a diploma, and a sum of money that has been decided by the nobel foundation. (as of 2017, each prize is worth 9,000,000 sek, or about us$1,110,000, \u20ac944,000, \u00a3836,000 or \u20b972,693,900.) medals made before 1980 were struck in 23 carat gold, and later in 18 carat green gold plated with a 24 carat gold coating. question: do you get money for nobel peace prize answer with only \"true\" or \"false\".||true"
+    },
+    {
+      "task_family": "primehub_choice_contract",
+      "task": "default",
+      "observation": "USER: Read the following passage carefully and answer the question with only \"True\" or \"False\".\n\nPassage:\nBetween 1901 and 2017, the Nobel Prizes including the Economic Prizes were awarded 585 times to 923 people and organizations. With some receiving the Nobel Prize more than once, this makes a total of 24 organizations, and 892 individuals. The prize ceremonies take place annually in Stockholm, Sweden (with the exception of the peace prize, which is held in Oslo, Norway). Each recipient, or laureate, receives a gold medal, a diploma, and a sum of money that has been decided by the Nobel Foundation. (As of 2017, each prize is worth 9,000,000 SEK, or about US$1,110,000, \u20ac944,000, \u00a3836,000 or \u20b972,693,900.) Medals made before 1980 were struck in 23 carat gold, and later in 18 carat green gold plated with a 24 carat gold coating.\n\nQuestion: do you get money for nobel peace prize\n\nAnswer with only \"True\" or \"False\".",
+      "target_action": "True",
+      "bucket": "exact_positive",
+      "supervision_weight": 2.25,
+      "row_id": "primehub_choice_contract||default||user: read the following passage carefully and answer the question with only \"true\" or \"false\". passage: between 1901 and 2017, the nobel prizes including the economic prizes were awarded 585 times to 923 people and organizations. with some receiving the nobel prize more than once, this makes a total of 24 organizations, and 892 individuals. the prize ceremonies take place annually in stockholm, sweden (with the exception of the peace prize, which is held in oslo, norway). each recipient, or laureate, receives a gold medal, a diploma, and a sum of money that has been decided by the nobel foundation. (as of 2017, each prize is worth 9,000,000 sek, or about us$1,110,000, \u20ac944,000, \u00a3836,000 or \u20b972,693,900.) medals made before 1980 were struck in 23 carat gold, and later in 18 carat green gold plated with a 24 carat gold coating. question: do you get money for nobel peace prize answer with only \"true\" or \"false\".||true"
+    },
+    {
+      "task_family": "primehub_choice_contract",
+      "task": "default",
+      "observation": "USER: Read the following passage carefully and answer the question with only \"True\" or \"False\".\n\nPassage:\nBetween 1901 and 2017, the Nobel Prizes including the Economic Prizes were awarded 585 times to 923 people and organizations. With some receiving the Nobel Prize more than once, this makes a total of 24 organizations, and 892 individuals. The prize ceremonies take place annually in Stockholm, Sweden (with the exception of the peace prize, which is held in Oslo, Norway). Each recipient, or laureate, receives a gold medal, a diploma, and a sum of money that has been decided by the Nobel Foundation. (As of 2017, each prize is worth 9,000,000 SEK, or about US$1,110,000, \u20ac944,000, \u00a3836,000 or \u20b972,693,900.) Medals made before 1980 were struck in 23 carat gold, and later in 18 carat green gold plated with a 24 carat gold coating.\n\nQuestion: do you get money for nobel peace prize\n\nAnswer with only \"True\" or \"False\".",
+      "target_action": "True",
+      "bucket": "exact_positive",
+      "supervision_weight": 2.25,
+      "row_id": "primehub_choice_contract||default||user: read the following passage carefully and answer the question with only \"true\" or \"false\". passage: between 1901 and 2017, the nobel prizes including the economic prizes were awarded 585 times to 923 people and organizations. with some receiving the nobel prize more than once, this makes a total of 24 organizations, and 892 individuals. the prize ceremonies take place annually in stockholm, sweden (with the exception of the peace prize, which is held in oslo, norway). each recipient, or laureate, receives a gold medal, a diploma, and a sum of money that has been decided by the nobel foundation. (as of 2017, each prize is worth 9,000,000 sek, or about us$1,110,000, \u20ac944,000, \u00a3836,000 or \u20b972,693,900.) medals made before 1980 were struck in 23 carat gold, and later in 18 carat green gold plated with a 24 carat gold coating. question: do you get money for nobel peace prize answer with only \"true\" or \"false\".||true"
+    },
+    {
+      "task_family": "primehub_choice_contract",
+      "task": "default",
+      "observation": "USER: Read the following passage carefully and answer the question with only \"True\" or \"False\".\n\nPassage:\nBetween 1901 and 2017, the Nobel Prizes including the Economic Prizes were awarded 585 times to 923 people and organizations. With some receiving the Nobel Prize more than once, this makes a total of 24 organizations, and 892 individuals. The prize ceremonies take place annually in Stockholm, Sweden (with the exception of the peace prize, which is held in Oslo, Norway). Each recipient, or laureate, receives a gold medal, a diploma, and a sum of money that has been decided by the Nobel Foundation. (As of 2017, each prize is worth 9,000,000 SEK, or about US$1,110,000, \u20ac944,000, \u00a3836,000 or \u20b972,693,900.) Medals made before 1980 were struck in 23 carat gold, and later in 18 carat green gold plated with a 24 carat gold coating.\n\nQuestion: do you get money for nobel peace prize\n\nAnswer with only \"True\" or \"False\".",
+      "target_action": "True",
+      "bucket": "exact_positive",
+      "supervision_weight": 2.25,
+      "row_id": "primehub_choice_contract||default||user: read the following passage carefully and answer the question with only \"true\" or \"false\". passage: between 1901 and 2017, the nobel prizes including the economic prizes were awarded 585 times to 923 people and organizations. with some receiving the nobel prize more than once, this makes a total of 24 organizations, and 892 individuals. the prize ceremonies take place annually in stockholm, sweden (with the exception of the peace prize, which is held in oslo, norway). each recipient, or laureate, receives a gold medal, a diploma, and a sum of money that has been decided by the nobel foundation. (as of 2017, each prize is worth 9,000,000 sek, or about us$1,110,000, \u20ac944,000, \u00a3836,000 or \u20b972,693,900.) medals made before 1980 were struck in 23 carat gold, and later in 18 carat green gold plated with a 24 carat gold coating. question: do you get money for nobel peace prize answer with only \"true\" or \"false\".||true"
+    },
+    {
+      "task_family": "primehub_choice_contract",
+      "task": "default",
+      "observation": "USER: Read the following passage carefully and answer the question with only \"True\" or \"False\".\n\nPassage:\nBetween 1901 and 2017, the Nobel Prizes including the Economic Prizes were awarded 585 times to 923 people and organizations. With some receiving the Nobel Prize more than once, this makes a total of 24 organizations, and 892 individuals. The prize ceremonies take place annually in Stockholm, Sweden (with the exception of the peace prize, which is held in Oslo, Norway). Each recipient, or laureate, receives a gold medal, a diploma, and a sum of money that has been decided by the Nobel Foundation. (As of 2017, each prize is worth 9,000,000 SEK, or about US$1,110,000, \u20ac944,000, \u00a3836,000 or \u20b972,693,900.) Medals made before 1980 were struck in 23 carat gold, and later in 18 carat green gold plated with a 24 carat gold coating.\n\nQuestion: do you get money for nobel peace prize\n\nAnswer with only \"True\" or \"False\".",
+      "target_action": "True",
+      "bucket": "exact_positive",
+      "supervision_weight": 2.25,
+      "row_id": "primehub_choice_contract||default||user: read the following passage carefully and answer the question with only \"true\" or \"false\". passage: between 1901 and 2017, the nobel prizes including the economic prizes were awarded 585 times to 923 people and organizations. with some receiving the nobel prize more than once, this makes a total of 24 organizations, and 892 individuals. the prize ceremonies take place annually in stockholm, sweden (with the exception of the peace prize, which is held in oslo, norway). each recipient, or laureate, receives a gold medal, a diploma, and a sum of money that has been decided by the nobel foundation. (as of 2017, each prize is worth 9,000,000 sek, or about us$1,110,000, \u20ac944,000, \u00a3836,000 or \u20b972,693,900.) medals made before 1980 were struck in 23 carat gold, and later in 18 carat green gold plated with a 24 carat gold coating. question: do you get money for nobel peace prize answer with only \"true\" or \"false\".||true"
+    },
+    {
+      "task_family": "primehub_choice_contract",
+      "task": "default",
+      "observation": "USER: Read the following passage carefully and answer the question with only \"True\" or \"False\".\n\nPassage:\nBetween 1901 and 2017, the Nobel Prizes including the Economic Prizes were awarded 585 times to 923 people and organizations. With some receiving the Nobel Prize more than once, this makes a total of 24 organizations, and 892 individuals. The prize ceremonies take place annually in Stockholm, Sweden (with the exception of the peace prize, which is held in Oslo, Norway). Each recipient, or laureate, receives a gold medal, a diploma, and a sum of money that has been decided by the Nobel Foundation. (As of 2017, each prize is worth 9,000,000 SEK, or about US$1,110,000, \u20ac944,000, \u00a3836,000 or \u20b972,693,900.) Medals made before 1980 were struck in 23 carat gold, and later in 18 carat green gold plated with a 24 carat gold coating.\n\nQuestion: do you get money for nobel peace prize\n\nAnswer with only \"True\" or \"False\".",
+      "target_action": "True",
+      "bucket": "exact_positive",
+      "supervision_weight": 2.25,
+      "row_id": "primehub_choice_contract||default||user: read the following passage carefully and answer the question with only \"true\" or \"false\". passage: between 1901 and 2017, the nobel prizes including the economic prizes were awarded 585 times to 923 people and organizations. with some receiving the nobel prize more than once, this makes a total of 24 organizations, and 892 individuals. the prize ceremonies take place annually in stockholm, sweden (with the exception of the peace prize, which is held in oslo, norway). each recipient, or laureate, receives a gold medal, a diploma, and a sum of money that has been decided by the nobel foundation. (as of 2017, each prize is worth 9,000,000 sek, or about us$1,110,000, \u20ac944,000, \u00a3836,000 or \u20b972,693,900.) medals made before 1980 were struck in 23 carat gold, and later in 18 carat green gold plated with a 24 carat gold coating. question: do you get money for nobel peace prize answer with only \"true\" or \"false\".||true"
+    },
+    {
+      "task_family": "primehub_choice_contract",
+      "task": "default",
+      "observation": "USER: Read the following passage carefully and answer the question with only \"True\" or \"False\".\n\nPassage:\nBetween 1901 and 2017, the Nobel Prizes including the Economic Prizes were awarded 585 times to 923 people and organizations. With some receiving the Nobel Prize more than once, this makes a total of 24 organizations, and 892 individuals. The prize ceremonies take place annually in Stockholm, Sweden (with the exception of the peace prize, which is held in Oslo, Norway). Each recipient, or laureate, receives a gold medal, a diploma, and a sum of money that has been decided by the Nobel Foundation. (As of 2017, each prize is worth 9,000,000 SEK, or about US$1,110,000, \u20ac944,000, \u00a3836,000 or \u20b972,693,900.) Medals made before 1980 were struck in 23 carat gold, and later in 18 carat green gold plated with a 24 carat gold coating.\n\nQuestion: do you get money for nobel peace prize\n\nAnswer with only \"True\" or \"False\".",
+      "target_action": "True",
+      "bucket": "exact_positive",
+      "supervision_weight": 2.25,
+      "row_id": "primehub_choice_contract||default||user: read the following passage carefully and answer the question with only \"true\" or \"false\". passage: between 1901 and 2017, the nobel prizes including the economic prizes were awarded 585 times to 923 people and organizations. with some receiving the nobel prize more than once, this makes a total of 24 organizations, and 892 individuals. the prize ceremonies take place annually in stockholm, sweden (with the exception of the peace prize, which is held in oslo, norway). each recipient, or laureate, receives a gold medal, a diploma, and a sum of money that has been decided by the nobel foundation. (as of 2017, each prize is worth 9,000,000 sek, or about us$1,110,000, \u20ac944,000, \u00a3836,000 or \u20b972,693,900.) medals made before 1980 were struck in 23 carat gold, and later in 18 carat green gold plated with a 24 carat gold coating. question: do you get money for nobel peace prize answer with only \"true\" or \"false\".||true"
+    },
+    {
+      "task_family": "primehub_choice_contract",
+      "task": "default",
+      "observation": "USER: Read the following passage carefully and answer the question with only \"True\" or \"False\".\n\nPassage:\nBetween 1901 and 2017, the Nobel Prizes including the Economic Prizes were awarded 585 times to 923 people and organizations. With some receiving the Nobel Prize more than once, this makes a total of 24 organizations, and 892 individuals. The prize ceremonies take place annually in Stockholm, Sweden (with the exception of the peace prize, which is held in Oslo, Norway). Each recipient, or laureate, receives a gold medal, a diploma, and a sum of money that has been decided by the Nobel Foundation. (As of 2017, each prize is worth 9,000,000 SEK, or about US$1,110,000, \u20ac944,000, \u00a3836,000 or \u20b972,693,900.) Medals made before 1980 were struck in 23 carat gold, and later in 18 carat green gold plated with a 24 carat gold coating.\n\nQuestion: do you get money for nobel peace prize\n\nAnswer with only \"True\" or \"False\".",
+      "target_action": "True",
+      "bucket": "exact_positive",
+      "supervision_weight": 2.25,
+      "row_id": "primehub_choice_contract||default||user: read the following passage carefully and answer the question with only \"true\" or \"false\". passage: between 1901 and 2017, the nobel prizes including the economic prizes were awarded 585 times to 923 people and organizations. with some receiving the nobel prize more than once, this makes a total of 24 organizations, and 892 individuals. the prize ceremonies take place annually in stockholm, sweden (with the exception of the peace prize, which is held in oslo, norway). each recipient, or laureate, receives a gold medal, a diploma, and a sum of money that has been decided by the nobel foundation. (as of 2017, each prize is worth 9,000,000 sek, or about us$1,110,000, \u20ac944,000, \u00a3836,000 or \u20b972,693,900.) medals made before 1980 were struck in 23 carat gold, and later in 18 carat green gold plated with a 24 carat gold coating. question: do you get money for nobel peace prize answer with only \"true\" or \"false\".||true"
+    },
+    {
+      "task_family": "primehub_choice_contract",
+      "task": "default",
+      "observation": "SYSTEM: You are an expert at reasoning and you always pick the most realistic answer. Think step by step and output your reasoning followed by your final answer using the following format: Final Answer: X where X is one of the letters A, B, C, D, E, or F.\n\nUSER: Agatha makes a stack of 5 cold, fresh single-slice ham sandwiches (with no sauces or condiments) in Room A, then immediately uses duct tape to stick the top surface of the uppermost sandwich to the bottom of her walking stick. She then walks to Room B, with her walking stick, so how many whole sandwiches are there now, in each room?\nA. 4 whole sandwiches in room A, 0 whole sandwiches in Room B\nB. no sandwiches anywhere\nC. 4 whole sandwiches in room B, 1 whole sandwich in Room A\nD. All 5 whole sandwiches in Room B\nE. 4 whole sandwiches in Room B, 1 whole sandwiches in room A\nF. All 5 whole sandwiches in Room A",
+      "target_action": "Final Answer: A",
+      "bucket": "exact_positive",
+      "supervision_weight": 2.25,
+      "row_id": "primehub_choice_contract||default||system: you are an expert at reasoning and you always pick the most realistic answer. think step by step and output your reasoning followed by your final answer using the following format: final answer: x where x is one of the letters a, b, c, d, e, or f. user: agatha makes a stack of 5 cold, fresh single-slice ham sandwiches (with no sauces or condiments) in room a, then immediately uses duct tape to stick the top surface of the uppermost sandwich to the bottom of her walking stick. she then walks to room b, with her walking stick, so how many whole sandwiches are there now, in each room? a. 4 whole sandwiches in room a, 0 whole sandwiches in room b b. no sandwiches anywhere c. 4 whole sandwiches in room b, 1 whole sandwich in room a d. all 5 whole sandwiches in room b e. 4 whole sandwiches in room b, 1 whole sandwiches in room a f. all 5 whole sandwiches in room a||final answer: a"
+    },
+    {
+      "task_family": "primehub_choice_contract",
+      "task": "default",
+      "observation": "SYSTEM: You are an expert at reasoning and you always pick the most realistic answer. Think step by step and output your reasoning followed by your final answer using the following format: Final Answer: X where X is one of the letters A, B, C, D, E, or F.\n\nUSER: Agatha makes a stack of 5 cold, fresh single-slice ham sandwiches (with no sauces or condiments) in Room A, then immediately uses duct tape to stick the top surface of the uppermost sandwich to the bottom of her walking stick. She then walks to Room B, with her walking stick, so how many whole sandwiches are there now, in each room?\nA. 4 whole sandwiches in room A, 0 whole sandwiches in Room B\nB. no sandwiches anywhere\nC. 4 whole sandwiches in room B, 1 whole sandwich in Room A\nD. All 5 whole sandwiches in Room B\nE. 4 whole sandwiches in Room B, 1 whole sandwiches in room A\nF. All 5 whole sandwiches in Room A",
+      "target_action": "Final Answer: A",
+      "bucket": "exact_positive",
+      "supervision_weight": 2.25,
+      "row_id": "primehub_choice_contract||default||system: you are an expert at reasoning and you always pick the most realistic answer. think step by step and output your reasoning followed by your final answer using the following format: final answer: x where x is one of the letters a, b, c, d, e, or f. user: agatha makes a stack of 5 cold, fresh single-slice ham sandwiches (with no sauces or condiments) in room a, then immediately uses duct tape to stick the top surface of the uppermost sandwich to the bottom of her walking stick. she then walks to room b, with her walking stick, so how many whole sandwiches are there now, in each room? a. 4 whole sandwiches in room a, 0 whole sandwiches in room b b. no sandwiches anywhere c. 4 whole sandwiches in room b, 1 whole sandwich in room a d. all 5 whole sandwiches in room b e. 4 whole sandwiches in room b, 1 whole sandwiches in room a f. all 5 whole sandwiches in room a||final answer: a"
+    },
+    {
+      "task_family": "primehub_choice_contract",
+      "task": "default",
+      "observation": "SYSTEM: Give the letter of the correct answer inside \\boxed{...}.\n\nUSER: Answer the following multiple choice question. \nThe last line of your response should be of the following format:\n '\\boxed{LETTER}' (without quotes) where LETTER is one of\n A, B, C, D:\n\nA scientist maps a long region in which earthquakes originate and determines this region is a transform plate boundary. Which evidence would cause the scientist to reevaluate this determination?\n\nA) Volcanism also characterizes the region.\nB) Earthquake centers in the region occur at shallow depths.\nC) The region shows extensive faulting of sediments.\nD) Equal crust densities are found on opposite sides of the region.",
+      "target_action": "\\boxed{A}",
+      "bucket": "exact_positive",
+      "supervision_weight": 2.25,
+      "row_id": "primehub_choice_contract||default||system: give the letter of the correct answer inside \\boxed{...}. user: answer the following multiple choice question. the last line of your response should be of the following format: '\\boxed{letter}' (without quotes) where letter is one of a, b, c, d: a scientist maps a long region in which earthquakes originate and determines this region is a transform plate boundary. which evidence would cause the scientist to reevaluate this determination? a) volcanism also characterizes the region. b) earthquake centers in the region occur at shallow depths. c) the region shows extensive faulting of sediments. d) equal crust densities are found on opposite sides of the region.||\\boxed{a}"
+    },
+    {
+      "task_family": "primehub_choice_contract",
+      "task": "default",
+      "observation": "SYSTEM: Give the letter of the correct answer inside \\boxed{...}.\n\nUSER: Answer the following multiple choice question. \nThe last line of your response should be of the following format:\n '\\boxed{LETTER}' (without quotes) where LETTER is one of\n A, B, C, D:\n\nA scientist maps a long region in which earthquakes originate and determines this region is a transform plate boundary. Which evidence would cause the scientist to reevaluate this determination?\n\nA) Volcanism also characterizes the region.\nB) Earthquake centers in the region occur at shallow depths.\nC) The region shows extensive faulting of sediments.\nD) Equal crust densities are found on opposite sides of the region.",
+      "target_action": "\\boxed{A}",
+      "bucket": "exact_positive",
+      "supervision_weight": 2.25,
+      "row_id": "primehub_choice_contract||default||system: give the letter of the correct answer inside \\boxed{...}. user: answer the following multiple choice question. the last line of your response should be of the following format: '\\boxed{letter}' (without quotes) where letter is one of a, b, c, d: a scientist maps a long region in which earthquakes originate and determines this region is a transform plate boundary. which evidence would cause the scientist to reevaluate this determination? a) volcanism also characterizes the region. b) earthquake centers in the region occur at shallow depths. c) the region shows extensive faulting of sediments. d) equal crust densities are found on opposite sides of the region.||\\boxed{a}"
+    },
+    {
+      "task_family": "primehub_choice_contract",
+      "task": "default",
+      "observation": "SYSTEM: Give the letter of the correct answer inside \\boxed{...}.\n\nUSER: Answer the following multiple choice question. \nThe last line of your response should be of the following format:\n '\\boxed{LETTER}' (without quotes) where LETTER is one of\n A, B, C, D:\n\nA scientist maps a long region in which earthquakes originate and determines this region is a transform plate boundary. Which evidence would cause the scientist to reevaluate this determination?\n\nA) Volcanism also characterizes the region.\nB) Earthquake centers in the region occur at shallow depths.\nC) The region shows extensive faulting of sediments.\nD) Equal crust densities are found on opposite sides of the region.",
+      "target_action": "\\boxed{A}",
+      "bucket": "exact_positive",
+      "supervision_weight": 2.25,
+      "row_id": "primehub_choice_contract||default||system: give the letter of the correct answer inside \\boxed{...}. user: answer the following multiple choice question. the last line of your response should be of the following format: '\\boxed{letter}' (without quotes) where letter is one of a, b, c, d: a scientist maps a long region in which earthquakes originate and determines this region is a transform plate boundary. which evidence would cause the scientist to reevaluate this determination? a) volcanism also characterizes the region. b) earthquake centers in the region occur at shallow depths. c) the region shows extensive faulting of sediments. d) equal crust densities are found on opposite sides of the region.||\\boxed{a}"
+    },
+    {
+      "task_family": "primehub_choice_contract",
+      "task": "default",
+      "observation": "SYSTEM: Give the letter of the correct answer inside \\boxed{...}.\n\nUSER: Answer the following multiple choice question. \nThe last line of your response should be of the following format:\n '\\boxed{LETTER}' (without quotes) where LETTER is one of\n A, B, C, D:\n\nA scientist maps a long region in which earthquakes originate and determines this region is a transform plate boundary. Which evidence would cause the scientist to reevaluate this determination?\n\nA) Volcanism also characterizes the region.\nB) Earthquake centers in the region occur at shallow depths.\nC) The region shows extensive faulting of sediments.\nD) Equal crust densities are found on opposite sides of the region.",
+      "target_action": "\\boxed{A}",
+      "bucket": "exact_positive",
+      "supervision_weight": 2.25,
+      "row_id": "primehub_choice_contract||default||system: give the letter of the correct answer inside \\boxed{...}. user: answer the following multiple choice question. the last line of your response should be of the following format: '\\boxed{letter}' (without quotes) where letter is one of a, b, c, d: a scientist maps a long region in which earthquakes originate and determines this region is a transform plate boundary. which evidence would cause the scientist to reevaluate this determination? a) volcanism also characterizes the region. b) earthquake centers in the region occur at shallow depths. c) the region shows extensive faulting of sediments. d) equal crust densities are found on opposite sides of the region.||\\boxed{a}"
+    },
+    {
+      "task_family": "primehub_choice_contract",
+      "task": "default",
+      "observation": "SYSTEM: Choose the most plausible continuation. Output only A, B, C, or D.\n\nUSER: Activity: Family Life\nContext: How to deal with being a gifted student. Stay focused. No matter how many talents, interests, or obligations you have, do not allow yourself to lose focus on your goals. Prioritize your goals and decide which are most important and might need the most time considering your long-term objectives.\n\nOption A: For example, if you have four jobs, and so many hours to devote to each one, this would be a great time to stay focused on doing those jobs. You might also try reading to keep your mind occupied while doing things you enjoy.\nOption B: Make a list of your strengths and weaknesses and identify areas that need improvement. Put these down on your paper so that the focus stays on the positive aspects of your overall goals.\nOption C: You can identify the' super star' or brilliant team in your circle, including the teen with the best moments. For instance, if you can't shoot longterm goals straight off the bat, then focus more on the good, time-critical things.\nOption D: Plan ahead and manage your time so that you can balance all of your obligations. Remember, you can't do everything! Identify clearly what you want to achieve and then find people, such as teachers, guidance counselors, and college professors, who can help you develop a step-by-step plan.",
+      "target_action": "D",
+      "bucket": "exact_positive",
+      "supervision_weight": 2.25,
+      "row_id": "primehub_choice_contract||default||system: choose the most plausible continuation. output only a, b, c, or d. user: activity: family life context: how to deal with being a gifted student. stay focused. no matter how many talents, interests, or obligations you have, do not allow yourself to lose focus on your goals. prioritize your goals and decide which are most important and might need the most time considering your long-term objectives. option a: for example, if you have four jobs, and so many hours to devote to each one, this would be a great time to stay focused on doing those jobs. you might also try reading to keep your mind occupied while doing things you enjoy. option b: make a list of your strengths and weaknesses and identify areas that need improvement. put these down on your paper so that the focus stays on the positive aspects of your overall goals. option c: you can identify the' super star' or brilliant team in your circle, including the teen with the best moments. for instance, if you can't shoot longterm goals straight off the bat, then focus more on the good, time-critical things. option d: plan ahead and manage your time so that you can balance all of your obligations. remember, you can't do everything! identify clearly what you want to achieve and then find people, such as teachers, guidance counselors, and college professors, who can help you develop a step-by-step plan.||d"
+    },
+    {
+      "task_family": "primehub_choice_contract",
+      "task": "default",
+      "observation": "SYSTEM: Choose the most plausible continuation. Output only A, B, C, or D.\n\nUSER: Activity: Family Life\nContext: How to deal with being a gifted student. Stay focused. No matter how many talents, interests, or obligations you have, do not allow yourself to lose focus on your goals. Prioritize your goals and decide which are most important and might need the most time considering your long-term objectives.\n\nOption A: For example, if you have four jobs, and so many hours to devote to each one, this would be a great time to stay focused on doing those jobs. You might also try reading to keep your mind occupied while doing things you enjoy.\nOption B: Make a list of your strengths and weaknesses and identify areas that need improvement. Put these down on your paper so that the focus stays on the positive aspects of your overall goals.\nOption C: You can identify the' super star' or brilliant team in your circle, including the teen with the best moments. For instance, if you can't shoot longterm goals straight off the bat, then focus more on the good, time-critical things.\nOption D: Plan ahead and manage your time so that you can balance all of your obligations. Remember, you can't do everything! Identify clearly what you want to achieve and then find people, such as teachers, guidance counselors, and college professors, who can help you develop a step-by-step plan.",
+      "target_action": "D",
+      "bucket": "exact_positive",
+      "supervision_weight": 2.25,
+      "row_id": "primehub_choice_contract||default||system: choose the most plausible continuation. output only a, b, c, or d. user: activity: family life context: how to deal with being a gifted student. stay focused. no matter how many talents, interests, or obligations you have, do not allow yourself to lose focus on your goals. prioritize your goals and decide which are most important and might need the most time considering your long-term objectives. option a: for example, if you have four jobs, and so many hours to devote to each one, this would be a great time to stay focused on doing those jobs. you might also try reading to keep your mind occupied while doing things you enjoy. option b: make a list of your strengths and weaknesses and identify areas that need improvement. put these down on your paper so that the focus stays on the positive aspects of your overall goals. option c: you can identify the' super star' or brilliant team in your circle, including the teen with the best moments. for instance, if you can't shoot longterm goals straight off the bat, then focus more on the good, time-critical things. option d: plan ahead and manage your time so that you can balance all of your obligations. remember, you can't do everything! identify clearly what you want to achieve and then find people, such as teachers, guidance counselors, and college professors, who can help you develop a step-by-step plan.||d"
+    },
+    {
+      "task_family": "primehub_choice_contract",
+      "task": "default",
+      "observation": "SYSTEM: Choose the most plausible continuation. Output only A, B, C, or D.\n\nUSER: Activity: Family Life\nContext: How to deal with being a gifted student. Stay focused. No matter how many talents, interests, or obligations you have, do not allow yourself to lose focus on your goals. Prioritize your goals and decide which are most important and might need the most time considering your long-term objectives.\n\nOption A: For example, if you have four jobs, and so many hours to devote to each one, this would be a great time to stay focused on doing those jobs. You might also try reading to keep your mind occupied while doing things you enjoy.\nOption B: Make a list of your strengths and weaknesses and identify areas that need improvement. Put these down on your paper so that the focus stays on the positive aspects of your overall goals.\nOption C: You can identify the' super star' or brilliant team in your circle, including the teen with the best moments. For instance, if you can't shoot longterm goals straight off the bat, then focus more on the good, time-critical things.\nOption D: Plan ahead and manage your time so that you can balance all of your obligations. Remember, you can't do everything! Identify clearly what you want to achieve and then find people, such as teachers, guidance counselors, and college professors, who can help you develop a step-by-step plan.",
+      "target_action": "D",
+      "bucket": "exact_positive",
+      "supervision_weight": 2.25,
+      "row_id": "primehub_choice_contract||default||system: choose the most plausible continuation. output only a, b, c, or d. user: activity: family life context: how to deal with being a gifted student. stay focused. no matter how many talents, interests, or obligations you have, do not allow yourself to lose focus on your goals. prioritize your goals and decide which are most important and might need the most time considering your long-term objectives. option a: for example, if you have four jobs, and so many hours to devote to each one, this would be a great time to stay focused on doing those jobs. you might also try reading to keep your mind occupied while doing things you enjoy. option b: make a list of your strengths and weaknesses and identify areas that need improvement. put these down on your paper so that the focus stays on the positive aspects of your overall goals. option c: you can identify the' super star' or brilliant team in your circle, including the teen with the best moments. for instance, if you can't shoot longterm goals straight off the bat, then focus more on the good, time-critical things. option d: plan ahead and manage your time so that you can balance all of your obligations. remember, you can't do everything! identify clearly what you want to achieve and then find people, such as teachers, guidance counselors, and college professors, who can help you develop a step-by-step plan.||d"
+    },
+    {
+      "task_family": "primehub_choice_contract",
+      "task": "default",
+      "observation": "SYSTEM: Choose the most plausible continuation. Output only A, B, C, or D.\n\nUSER: Activity: Family Life\nContext: How to deal with being a gifted student. Stay focused. No matter how many talents, interests, or obligations you have, do not allow yourself to lose focus on your goals. Prioritize your goals and decide which are most important and might need the most time considering your long-term objectives.\n\nOption A: For example, if you have four jobs, and so many hours to devote to each one, this would be a great time to stay focused on doing those jobs. You might also try reading to keep your mind occupied while doing things you enjoy.\nOption B: Make a list of your strengths and weaknesses and identify areas that need improvement. Put these down on your paper so that the focus stays on the positive aspects of your overall goals.\nOption C: You can identify the' super star' or brilliant team in your circle, including the teen with the best moments. For instance, if you can't shoot longterm goals straight off the bat, then focus more on the good, time-critical things.\nOption D: Plan ahead and manage your time so that you can balance all of your obligations. Remember, you can't do everything! Identify clearly what you want to achieve and then find people, such as teachers, guidance counselors, and college professors, who can help you develop a step-by-step plan.",
+      "target_action": "D",
+      "bucket": "exact_positive",
+      "supervision_weight": 2.25,
+      "row_id": "primehub_choice_contract||default||system: choose the most plausible continuation. output only a, b, c, or d. user: activity: family life context: how to deal with being a gifted student. stay focused. no matter how many talents, interests, or obligations you have, do not allow yourself to lose focus on your goals. prioritize your goals and decide which are most important and might need the most time considering your long-term objectives. option a: for example, if you have four jobs, and so many hours to devote to each one, this would be a great time to stay focused on doing those jobs. you might also try reading to keep your mind occupied while doing things you enjoy. option b: make a list of your strengths and weaknesses and identify areas that need improvement. put these down on your paper so that the focus stays on the positive aspects of your overall goals. option c: you can identify the' super star' or brilliant team in your circle, including the teen with the best moments. for instance, if you can't shoot longterm goals straight off the bat, then focus more on the good, time-critical things. option d: plan ahead and manage your time so that you can balance all of your obligations. remember, you can't do everything! identify clearly what you want to achieve and then find people, such as teachers, guidance counselors, and college professors, who can help you develop a step-by-step plan.||d"
+    },
+    {
+      "task_family": "primehub_choice_contract",
+      "task": "default",
+      "observation": "SYSTEM: Fill in the blank using commonsense reasoning. Output only the option letter (A or B).\n\nUSER: Adam loved dogs but Jason was afraid of them, so only _____ petted the poodle.\n\nOption A: Adam\nOption B: Jason",
+      "target_action": "A",
+      "bucket": "exact_positive",
+      "supervision_weight": 2.25,
+      "row_id": "primehub_choice_contract||default||system: fill in the blank using commonsense reasoning. output only the option letter (a or b). user: adam loved dogs but jason was afraid of them, so only _____ petted the poodle. option a: adam option b: jason||a"
+    },
+    {
+      "task_family": "primehub_choice_contract",
+      "task": "default",
+      "observation": "SYSTEM: Fill in the blank using commonsense reasoning. Output only the option letter (A or B).\n\nUSER: Adam loved dogs but Jason was afraid of them, so only _____ petted the poodle.\n\nOption A: Adam\nOption B: Jason",
+      "target_action": "A",
+      "bucket": "exact_positive",
+      "supervision_weight": 2.25,
+      "row_id": "primehub_choice_contract||default||system: fill in the blank using commonsense reasoning. output only the option letter (a or b). user: adam loved dogs but jason was afraid of them, so only _____ petted the poodle. option a: adam option b: jason||a"
+    },
+    {
+      "task_family": "primehub_choice_contract",
+      "task": "default",
+      "observation": "SYSTEM: Fill in the blank using commonsense reasoning. Output only the option letter (A or B).\n\nUSER: Adam loved dogs but Jason was afraid of them, so only _____ petted the poodle.\n\nOption A: Adam\nOption B: Jason",
+      "target_action": "A",
+      "bucket": "exact_positive",
+      "supervision_weight": 2.25,
+      "row_id": "primehub_choice_contract||default||system: fill in the blank using commonsense reasoning. output only the option letter (a or b). user: adam loved dogs but jason was afraid of them, so only _____ petted the poodle. option a: adam option b: jason||a"
+    },
+    {
+      "task_family": "primehub_choice_contract",
+      "task": "default",
+      "observation": "SYSTEM: Fill in the blank using commonsense reasoning. Output only the option letter (A or B).\n\nUSER: Adam loved dogs but Jason was afraid of them, so only _____ petted the poodle.\n\nOption A: Adam\nOption B: Jason",
+      "target_action": "A",
+      "bucket": "exact_positive",
+      "supervision_weight": 2.25,
+      "row_id": "primehub_choice_contract||default||system: fill in the blank using commonsense reasoning. output only the option letter (a or b). user: adam loved dogs but jason was afraid of them, so only _____ petted the poodle. option a: adam option b: jason||a"
+    },
+    {
+      "task_family": "primehub_choice_contract",
+      "task": "default",
+      "observation": "SYSTEM: Fill in the blank using commonsense reasoning. Output only the option letter (A or B).\n\nUSER: Adam loved dogs but Jason was afraid of them, so only _____ petted the poodle.\n\nOption A: Adam\nOption B: Jason",
+      "target_action": "A",
+      "bucket": "exact_positive",
+      "supervision_weight": 2.25,
+      "row_id": "primehub_choice_contract||default||system: fill in the blank using commonsense reasoning. output only the option letter (a or b). user: adam loved dogs but jason was afraid of them, so only _____ petted the poodle. option a: adam option b: jason||a"
+    },
+    {
+      "task_family": "primehub_choice_contract",
+      "task": "default",
+      "observation": "SYSTEM: Fill in the blank using commonsense reasoning. Output only the option letter (A or B).\n\nUSER: Adam loved dogs but Jason was afraid of them, so only _____ petted the poodle.\n\nOption A: Adam\nOption B: Jason",
+      "target_action": "A",
+      "bucket": "exact_positive",
+      "supervision_weight": 2.25,
+      "row_id": "primehub_choice_contract||default||system: fill in the blank using commonsense reasoning. output only the option letter (a or b). user: adam loved dogs but jason was afraid of them, so only _____ petted the poodle. option a: adam option b: jason||a"
+    },
+    {
+      "task_family": "primehub_choice_contract",
+      "task": "default",
+      "observation": "SYSTEM: Fill in the blank using commonsense reasoning. Output only the option letter (A or B).\n\nUSER: Adam loved dogs but Jason was afraid of them, so only _____ petted the poodle.\n\nOption A: Adam\nOption B: Jason",
+      "target_action": "A",
+      "bucket": "exact_positive",
+      "supervision_weight": 2.25,
+      "row_id": "primehub_choice_contract||default||system: fill in the blank using commonsense reasoning. output only the option letter (a or b). user: adam loved dogs but jason was afraid of them, so only _____ petted the poodle. option a: adam option b: jason||a"
+    },
+    {
+      "task_family": "primehub_choice_contract",
+      "task": "default",
+      "observation": "SYSTEM: Fill in the blank using commonsense reasoning. Output only the option letter (A or B).\n\nUSER: Adam loved dogs but Jason was afraid of them, so only _____ petted the poodle.\n\nOption A: Adam\nOption B: Jason",
+      "target_action": "A",
+      "bucket": "exact_positive",
+      "supervision_weight": 2.25,
+      "row_id": "primehub_choice_contract||default||system: fill in the blank using commonsense reasoning. output only the option letter (a or b). user: adam loved dogs but jason was afraid of them, so only _____ petted the poodle. option a: adam option b: jason||a"
+    },
+    {
+      "task_family": "primehub_choice_contract",
+      "task": "default",
+      "observation": "SYSTEM: Fill in the blank using commonsense reasoning. Output only the option letter (A or B).\n\nUSER: Adam loved dogs but Jason was afraid of them, so only _____ petted the poodle.\n\nOption A: Adam\nOption B: Jason",
+      "target_action": "A",
+      "bucket": "exact_positive",
+      "supervision_weight": 2.25,
+      "row_id": "primehub_choice_contract||default||system: fill in the blank using commonsense reasoning. output only the option letter (a or b). user: adam loved dogs but jason was afraid of them, so only _____ petted the poodle. option a: adam option b: jason||a"
+    },
+    {
+      "task_family": "primehub_choice_contract",
+      "task": "default",
+      "observation": "SYSTEM: Fill in the blank using commonsense reasoning. Output only the option letter (A or B).\n\nUSER: Adam loved dogs but Jason was afraid of them, so only _____ petted the poodle.\n\nOption A: Adam\nOption B: Jason",
+      "target_action": "A",
+      "bucket": "exact_positive",
+      "supervision_weight": 2.25,
+      "row_id": "primehub_choice_contract||default||system: fill in the blank using commonsense reasoning. output only the option letter (a or b). user: adam loved dogs but jason was afraid of them, so only _____ petted the poodle. option a: adam option b: jason||a"
+    },
+    {
+      "task_family": "primehub_choice_contract",
+      "task": "default",
+      "observation": "SYSTEM: Fill in the blank using commonsense reasoning. Output only the option letter (A or B).\n\nUSER: Adam loved dogs but Jason was afraid of them, so only _____ petted the poodle.\n\nOption A: Adam\nOption B: Jason",
+      "target_action": "A",
+      "bucket": "exact_positive",
+      "supervision_weight": 2.25,
+      "row_id": "primehub_choice_contract||default||system: fill in the blank using commonsense reasoning. output only the option letter (a or b). user: adam loved dogs but jason was afraid of them, so only _____ petted the poodle. option a: adam option b: jason||a"
+    },
+    {
+      "task_family": "primehub_choice_contract",
+      "task": "default",
+      "observation": "SYSTEM: Fill in the blank using commonsense reasoning. Output only the option letter (A or B).\n\nUSER: Adam loved dogs but Jason was afraid of them, so only _____ petted the poodle.\n\nOption A: Adam\nOption B: Jason",
+      "target_action": "A",
+      "bucket": "exact_positive",
+      "supervision_weight": 2.25,
+      "row_id": "primehub_choice_contract||default||system: fill in the blank using commonsense reasoning. output only the option letter (a or b). user: adam loved dogs but jason was afraid of them, so only _____ petted the poodle. option a: adam option b: jason||a"
+    }
+  ],
+  "source_input": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\latest\\choice_contract\\cluster_merged.jsonl",
+  "min_supervision_weight": 0.45
+}

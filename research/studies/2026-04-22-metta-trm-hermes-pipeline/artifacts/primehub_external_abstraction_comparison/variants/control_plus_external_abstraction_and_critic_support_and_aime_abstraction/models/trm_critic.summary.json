@@ -1,0 +1,14 @@
+{
+  "input": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support_and_aime_abstraction\\merged.jsonl",
+  "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support_and_aime_abstraction\\models\\trm_critic.json",
+  "example_count": 220,
+  "task_family_counts": {
+    "primehub": 220
+  },
+  "bucket_counts": {
+    "negative": 166,
+    "exact_positive": 49,
+    "weak_positive": 5
+  },
+  "k": 5
+}

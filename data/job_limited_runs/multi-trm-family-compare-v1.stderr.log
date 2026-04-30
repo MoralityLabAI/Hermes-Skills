@@ -1,0 +1,12 @@
+usage: run_multi_trm_family_compare.py [-h] --family-train-data
+                                       FAMILY_TRAIN_DATA --family-eval-data
+                                       FAMILY_EVAL_DATA --raw-model RAW_MODEL
+                                       --family-model FAMILY_MODEL --out-dir
+                                       OUT_DIR
+                                       [--raw-train-data RAW_TRAIN_DATA]
+                                       [--epochs EPOCHS]
+                                       [--batch-size BATCH_SIZE] [--lr LR]
+                                       [--seed SEED] [--device DEVICE]
+                                       [--log-jsonl LOG_JSONL]
+                                       [--summary-json SUMMARY_JSON]
+run_multi_trm_family_compare.py: error: the following arguments are required: --family-train-data, --family-eval-data, --raw-model, --family-model, --out-dir

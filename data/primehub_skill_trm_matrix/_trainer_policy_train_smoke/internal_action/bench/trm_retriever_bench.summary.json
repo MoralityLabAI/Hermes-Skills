@@ -1,0 +1,27 @@
+{
+  "rows": 2,
+  "exact_match_rate": 0.0,
+  "nonempty_prediction_rate": 0.0,
+  "avg_similarity": 0.0,
+  "avg_grid_cell_accuracy": null,
+  "per_family": {
+    "primehub_internal_action": {
+      "rows": 2,
+      "exact_match_rate": 0.0,
+      "nonempty_prediction_rate": 0.0,
+      "avg_similarity": 0.0,
+      "avg_grid_cell_accuracy": null
+    }
+  },
+  "model_example_count": 0,
+  "train_rows": 0,
+  "eval_rows": 2,
+  "holdout_ratio": 0.20021534163858337,
+  "leave_one_out": false,
+  "include_buckets": [
+    "exact_positive",
+    "near_miss",
+    "weak_positive"
+  ],
+  "min_supervision_weight": 0.85
+}

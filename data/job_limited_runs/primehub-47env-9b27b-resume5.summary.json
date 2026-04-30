@@ -1,0 +1,20 @@
+﻿{
+    "exit_code":  1,
+    "run_id":  "primehub-47env-9b27b-resume5",
+    "cpu_pct":  50,
+    "avg_ram_mb":  18,
+    "peak_ram_mb":  18.1,
+    "stdout_log":  "C:\\projects\\Hermes Skills\\data\\job_limited_runs\\primehub-47env-9b27b-resume5.stdout.log",
+    "peak_io_mb_s":  null,
+    "checkpoints":  [
+
+                    ],
+    "status":  "aborted",
+    "steps_completed":  1001,
+    "caps":  {
+                 "ram_mb":  2048,
+                 "cpu_pct":  50
+             },
+    "event_log":  "C:\\projects\\Hermes Skills\\data\\job_limited_runs\\primehub-47env-9b27b-resume5.events.jsonl",
+    "stderr_log":  "C:\\projects\\Hermes Skills\\data\\job_limited_runs\\primehub-47env-9b27b-resume5.stderr.log"
+}

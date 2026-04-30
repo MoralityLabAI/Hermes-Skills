@@ -1,0 +1,156 @@
+{
+  "run_id": "qwen35-4b-skill-smoke-server-all",
+  "runner": "server",
+  "base_url": "http://127.0.0.1:18083",
+  "managed_server": true,
+  "rows": 7,
+  "passes": 1,
+  "pass_rate": 0.1429,
+  "per_skill": {
+    "intellect3-logic-hermes": {
+      "rows": 2,
+      "passes": 0,
+      "pass_rate": 0.0
+    },
+    "intellect3-math-hermes": {
+      "rows": 2,
+      "passes": 0,
+      "pass_rate": 0.0
+    },
+    "pixie-mechinterp": {
+      "rows": 1,
+      "passes": 0,
+      "pass_rate": 0.0
+    },
+    "hermes-bluebeam-research": {
+      "rows": 1,
+      "passes": 0,
+      "pass_rate": 0.0
+    },
+    "trm-observability-workflow": {
+      "rows": 1,
+      "passes": 1,
+      "pass_rate": 1.0
+    }
+  },
+  "artifacts": {
+    "event_log": "C:\\projects\\Hermes Skills\\data\\qwen35_4b_skill_smoke\\qwen35-4b-skill-smoke-server-all.events.jsonl",
+    "summary": "C:\\projects\\Hermes Skills\\data\\qwen35_4b_skill_smoke\\qwen35-4b-skill-smoke-server-all.summary.json",
+    "stout_log": "C:\\projects\\Hermes Skills\\data\\qwen35_4b_skill_smoke\\qwen35-4b-skill-smoke-server-all.stout.jsonl"
+  },
+  "records": [
+    {
+      "case_id": "logic_known_signature",
+      "skill_name": "intellect3-logic-hermes",
+      "latency_seconds": 29.7821,
+      "response_text": "<think>\nThinking Process:\n\n1.  **Analyze the Request:**\n    *   **Skill:** intellect3-logic-hermes (Level 3, Logic, Hermes).\n    *   **Contract:** Parse grid and signatures, build a candidate, verify tent adjacency plus row/column counts and tree pairing, then commit the final T/X/C grid.\n    *   **Condition:** When row and column constraints are available, use `scripts/check_signature_gate",
+      "runner": "server",
+      "case_status": "ok",
+      "returncode": null,
+      "tokens_evaluated": 121,
+      "tokens_predicted": 96,
+      "passed": false,
+      "missing": [
+        "scripts/check_signature_gate.py",
+        "logic_skill_trm"
+      ],
+      "forbidden_hits": []
+    },
+    {
+      "case_id": "logic_unknown_signature",
+      "skill_name": "intellect3-logic-hermes",
+      "latency_seconds": 36.6596,
+      "response_text": "<think>\nThinking Process:\n\n1.  **Analyze the Request:**\n    *   **Skill:** intellect-logic-hermes (level 3).\n    *   **Contract:** Parse grid and signatures, build a candidate, verify tent adjacency + row/column counts + tree pairing, commit final T/X/C grid.\n    *   **Condition:** If row/column constraints are available, use `scripts/check_signature_gate.py`.\n    *   **Routing",
+      "runner": "server",
+      "case_status": "ok",
+      "returncode": null,
+      "tokens_evaluated": 113,
+      "tokens_predicted": 96,
+      "passed": false,
+      "missing": [
+        "logic_skill"
+      ],
+      "forbidden_hits": []
+    },
+    {
+      "case_id": "math_supported_pattern",
+      "skill_name": "intellect3-math-hermes",
+      "latency_seconds": 33.6621,
+      "response_text": "<think>\nThinking Process:\n\n1.  **Analyze the Request:**\n    *   Input: A prompt asking to find two marked cells with consecutive integers whose product is 72.\n    *   Constraint: Return one-line JSON with keys `helper_script` and `route`.\n    *   System Instructions (Skill/Contract):\n        *   Skill: `intellect3-math-hermes`.\n        *   Contract: `parse g",
+      "runner": "server",
+      "case_status": "ok",
+      "returncode": null,
+      "tokens_evaluated": 103,
+      "tokens_predicted": 96,
+      "passed": false,
+      "missing": [
+        "scripts/check_support_pattern.py",
+        "math_skill_trm"
+      ],
+      "forbidden_hits": []
+    },
+    {
+      "case_id": "math_default_path",
+      "skill_name": "intellect3-math-hermes",
+      "latency_seconds": 25.225,
+      "response_text": "<think>\nThinking Process:\n\n1.  **Analyze the Request:**\n    *   Input: A math problem \"Compute 17*19+23\".\n    *   Task: Return a one-line JSON with keys `helper_script` and `route`.\n    *   Constraints:\n        *   Skill: intellect3-math-hermes.\n        *   Contract: parse givens, solve with a short candidate path,",
+      "runner": "server",
+      "case_status": "ok",
+      "returncode": null,
+      "tokens_evaluated": 100,
+      "tokens_predicted": 96,
+      "passed": false,
+      "missing": [
+        "scripts/check_support_pattern.py",
+        "math_skill"
+      ],
+      "forbidden_hits": []
+    },
+    {
+      "case_id": "pixie_matrix_choice",
+      "skill_name": "pixie-mechinterp",
+      "latency_seconds": 29.3025,
+      "response_text": "<think>\nThinking Process:\n\n1.  **Analyze the Request:**\n    *   **Skill:** pixie-mechinterp (This seems to be a specific internal or simulated skill set related to interpreting mechanisms, likely within a context of \"pixie\" which might refer to a specific project, tool, or persona).\n    *   **Workflow:**\n        1.  Read references/paths.md first.\n        2.  Inspect the",
+      "runner": "server",
+      "case_status": "ok",
+      "returncode": null,
+      "tokens_evaluated": 79,
+      "tokens_predicted": 96,
+      "passed": false,
+      "missing": [
+        "run_fae_ablation_matrix.py"
+      ],
+      "forbidden_hits": []
+    },
+    {
+      "case_id": "bluebeam_status_first",
+      "skill_name": "hermes-bluebeam-research",
+      "latency_seconds": 25.8818,
+      "response_text": "<think>\nThinking Process:\n\n1.  **Analyze the Request:**\n    *   **Skill:** `hermes-bluebeam-research`\n    *   **Task:** Continue the local BlueBeam loop while avoiding duplicate launches.\n    *   **Pre-requisite:** Check state with `scripts/bluebeam_research_status.py`.\n    *   **Preference:** Prefer existing artifacts over reruns.\n    *   **Condition:** If the loop is already",
+      "runner": "server",
+      "case_status": "ok",
+      "returncode": null,
+      "tokens_evaluated": 69,
+      "tokens_predicted": 96,
+      "passed": false,
+      "missing": [
+        "do not launch a duplicate"
+      ],
+      "forbidden_hits": []
+    },
+    {
+      "case_id": "trm_bootstrap_first",
+      "skill_name": "trm-observability-workflow",
+      "latency_seconds": 37.2288,
+      "response_text": "<think>\nThinking Process:\n\n1.  **Analyze the Request:**\n    *   **Skill:** trm-observability-workflow (TRM Observability Workflow).\n    *   **Workflow Order:** bootstrap the harness -> collect teacher traces -> build TRM rows -> merge corpora -> train or benchmark components.\n    *   **First Local Script:** `scripts/bootstrap_harness.py`.\n    *   **Task:** Bootstrap before teacher-trace collection",
+      "runner": "server",
+      "case_status": "ok",
+      "returncode": null,
+      "tokens_evaluated": 68,
+      "tokens_predicted": 96,
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": []
+    }
+  ]
+}

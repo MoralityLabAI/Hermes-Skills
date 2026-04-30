@@ -1,0 +1,14 @@
+{
+  "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_wmdp_q0012.jsonl",
+  "output": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_mining_smoke\\abstain_guard\\stage\\qwen35_9b_wmdp_q0012.trm.jsonl",
+  "total_rows": 1,
+  "bucket_counts": {
+    "exact_positive": 0,
+    "near_miss": 0,
+    "weak_positive": 0,
+    "negative": 1
+  },
+  "task_family": "primehub_abstain_guard",
+  "near_miss_threshold": 0.8,
+  "weak_positive_threshold": 0.5
+}

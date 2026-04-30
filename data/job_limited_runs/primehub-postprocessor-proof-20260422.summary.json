@@ -1,0 +1,20 @@
+﻿{
+    "exit_code":  0,
+    "run_id":  "primehub-postprocessor-proof-20260422",
+    "cpu_pct":  50,
+    "avg_ram_mb":  19.2,
+    "peak_ram_mb":  19.3,
+    "stdout_log":  "C:\\projects\\Hermes Skills\\data\\job_limited_runs\\primehub-postprocessor-proof-20260422.stdout.log",
+    "peak_io_mb_s":  null,
+    "checkpoints":  [
+
+                    ],
+    "status":  "completed",
+    "steps_completed":  170,
+    "caps":  {
+                 "ram_mb":  2048,
+                 "cpu_pct":  50
+             },
+    "event_log":  "C:\\projects\\Hermes Skills\\data\\job_limited_runs\\primehub-postprocessor-proof-20260422.events.jsonl",
+    "stderr_log":  "C:\\projects\\Hermes Skills\\data\\job_limited_runs\\primehub-postprocessor-proof-20260422.stderr.log"
+}

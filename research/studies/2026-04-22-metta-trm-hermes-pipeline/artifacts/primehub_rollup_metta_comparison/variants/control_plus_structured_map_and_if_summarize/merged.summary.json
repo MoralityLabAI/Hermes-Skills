@@ -1,0 +1,119 @@
+{
+  "inputs": [
+    "C:\\projects\\Hermes Skills\\data\\primehub_trm_autoresearch\\cycle_12\\primehub_trm_merged.jsonl",
+    "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_structured_map_trainer_policy\\metta_trainer_policy_bundle.jsonl",
+    "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\if_summarize_judge_trainer_policy\\metta_trainer_policy_bundle.jsonl"
+  ],
+  "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_rollup_metta_comparison\\variants\\control_plus_structured_map_and_if_summarize\\merged.jsonl",
+  "total_rows": 380,
+  "bucket_counts": {
+    "negative": 208,
+    "exact_positive": 167,
+    "weak_positive": 5
+  },
+  "task_family_counts": {
+    "primehub": 195,
+    "primehub_structured_map__retrieval_selection_correctness": 3,
+    "primehub_structured_map__task_success": 9,
+    "primehub_structured_map__contract_validity": 9,
+    "primehub_structured_map__repair_success": 3,
+    "primehub_constraint_summarize__retrieval_selection_correctness": 18,
+    "primehub_constraint_summarize__task_success": 54,
+    "primehub_constraint_summarize__contract_validity": 54,
+    "primehub_constraint_summarize__repair_success": 18,
+    "primehub_constraint_summarize__profile_selection_correctness": 17
+  },
+  "task_family_bucket_counts": {
+    "primehub": {
+      "negative": 166,
+      "exact_positive": 24,
+      "weak_positive": 5
+    },
+    "primehub_structured_map__retrieval_selection_correctness": {
+      "exact_positive": 3
+    },
+    "primehub_structured_map__task_success": {
+      "exact_positive": 6,
+      "negative": 3
+    },
+    "primehub_structured_map__contract_validity": {
+      "exact_positive": 6,
+      "negative": 3
+    },
+    "primehub_structured_map__repair_success": {
+      "exact_positive": 3
+    },
+    "primehub_constraint_summarize__retrieval_selection_correctness": {
+      "exact_positive": 18
+    },
+    "primehub_constraint_summarize__task_success": {
+      "exact_positive": 36,
+      "negative": 18
+    },
+    "primehub_constraint_summarize__contract_validity": {
+      "exact_positive": 36,
+      "negative": 18
+    },
+    "primehub_constraint_summarize__repair_success": {
+      "exact_positive": 18
+    },
+    "primehub_constraint_summarize__profile_selection_correctness": {
+      "exact_positive": 17
+    }
+  },
+  "included_families": [
+    "primehub",
+    "primehub_constraint_summarize__contract_validity",
+    "primehub_constraint_summarize__profile_selection_correctness",
+    "primehub_constraint_summarize__repair_success",
+    "primehub_constraint_summarize__retrieval_selection_correctness",
+    "primehub_constraint_summarize__task_success",
+    "primehub_structured_map__contract_validity",
+    "primehub_structured_map__repair_success",
+    "primehub_structured_map__retrieval_selection_correctness",
+    "primehub_structured_map__task_success"
+  ],
+  "excluded_families": {
+    "primehub_constraint_summarize__contract_family_match": {
+      "rows": 69,
+      "exact_positive": 0
+    },
+    "primehub_constraint_summarize__critic_verdict_agreement": {
+      "rows": 36,
+      "exact_positive": 0
+    },
+    "primehub_constraint_summarize__failure_localization": {
+      "rows": 36,
+      "exact_positive": 0
+    },
+    "primehub_constraint_summarize__transport_no_fallback": {
+      "rows": 72,
+      "exact_positive": 0
+    },
+    "primehub_constraint_summarize__transport_visible_output": {
+      "rows": 72,
+      "exact_positive": 0
+    },
+    "primehub_structured_map__contract_family_match": {
+      "rows": 3,
+      "exact_positive": 0
+    },
+    "primehub_structured_map__critic_verdict_agreement": {
+      "rows": 6,
+      "exact_positive": 0
+    },
+    "primehub_structured_map__failure_localization": {
+      "rows": 6,
+      "exact_positive": 0
+    },
+    "primehub_structured_map__transport_no_fallback": {
+      "rows": 12,
+      "exact_positive": 0
+    },
+    "primehub_structured_map__transport_visible_output": {
+      "rows": 12,
+      "exact_positive": 0
+    }
+  },
+  "min_exact_positives_per_family": 2
+}

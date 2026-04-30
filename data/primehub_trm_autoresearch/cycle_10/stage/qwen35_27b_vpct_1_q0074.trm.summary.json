@@ -1,0 +1,14 @@
+{
+  "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2\\qwen35_27b\\qwen35_27b_vpct_1_q0074.jsonl",
+  "output": "C:\\projects\\Hermes Skills\\data\\primehub_trm_autoresearch\\cycle_10\\stage\\qwen35_27b_vpct_1_q0074.trm.jsonl",
+  "total_rows": 1,
+  "bucket_counts": {
+    "exact_positive": 0,
+    "near_miss": 0,
+    "weak_positive": 0,
+    "negative": 1
+  },
+  "task_family": "auto",
+  "near_miss_threshold": 0.8,
+  "weak_positive_threshold": 0.5
+}

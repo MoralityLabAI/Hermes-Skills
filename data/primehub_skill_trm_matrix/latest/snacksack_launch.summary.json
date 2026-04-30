@@ -1,0 +1,51 @@
+{
+  "remote_root": "/home/snacksack/outputs/hermes_skill_trm_parallel/20260417T001839Z",
+  "clusters": [
+    {
+      "cluster_id": "hard_reasoning_numeric",
+      "unit": "hermes-skill-trm-hard-reasoning-numeric-01839z",
+      "remote_cluster_dir": "/home/snacksack/outputs/hermes_skill_trm_parallel/20260417T001839Z/clusters/hard_reasoning_numeric",
+      "log_path": "/home/snacksack/outputs/hermes_skill_trm_parallel/20260417T001839Z/clusters/hard_reasoning_numeric/run.log",
+      "systemd_stdout": ""
+    },
+    {
+      "cluster_id": "hard_reasoning_logic",
+      "unit": "hermes-skill-trm-hard-reasoning-logic-01839z",
+      "remote_cluster_dir": "/home/snacksack/outputs/hermes_skill_trm_parallel/20260417T001839Z/clusters/hard_reasoning_logic",
+      "log_path": "/home/snacksack/outputs/hermes_skill_trm_parallel/20260417T001839Z/clusters/hard_reasoning_logic/run.log",
+      "systemd_stdout": ""
+    },
+    {
+      "cluster_id": "choice_contract",
+      "unit": "hermes-skill-trm-choice-contract-01839z",
+      "remote_cluster_dir": "/home/snacksack/outputs/hermes_skill_trm_parallel/20260417T001839Z/clusters/choice_contract",
+      "log_path": "/home/snacksack/outputs/hermes_skill_trm_parallel/20260417T001839Z/clusters/choice_contract/run.log",
+      "systemd_stdout": ""
+    },
+    {
+      "cluster_id": "structured_map",
+      "unit": "hermes-skill-trm-structured-map-01839z",
+      "remote_cluster_dir": "/home/snacksack/outputs/hermes_skill_trm_parallel/20260417T001839Z/clusters/structured_map",
+      "log_path": "/home/snacksack/outputs/hermes_skill_trm_parallel/20260417T001839Z/clusters/structured_map/run.log",
+      "systemd_stdout": ""
+    },
+    {
+      "cluster_id": "internal_action",
+      "unit": "hermes-skill-trm-internal-action-01839z",
+      "remote_cluster_dir": "/home/snacksack/outputs/hermes_skill_trm_parallel/20260417T001839Z/clusters/internal_action",
+      "log_path": "/home/snacksack/outputs/hermes_skill_trm_parallel/20260417T001839Z/clusters/internal_action/run.log",
+      "systemd_stdout": ""
+    },
+    {
+      "cluster_id": "abstain_guard",
+      "unit": "hermes-skill-trm-abstain-guard-01839z",
+      "remote_cluster_dir": "/home/snacksack/outputs/hermes_skill_trm_parallel/20260417T001839Z/clusters/abstain_guard",
+      "log_path": "/home/snacksack/outputs/hermes_skill_trm_parallel/20260417T001839Z/clusters/abstain_guard/run.log",
+      "systemd_stdout": ""
+    }
+  ],
+  "host": "snacksack-ms-7d32.tail3156cd.ts.net",
+  "user": "snacksack",
+  "ram_mb": 5120,
+  "cpu_quota": 200
+}

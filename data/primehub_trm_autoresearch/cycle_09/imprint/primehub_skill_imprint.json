@@ -1,0 +1,145 @@
+{
+  "rows": 181,
+  "bucket_counts": {
+    "negative": 152,
+    "exact_positive": 24,
+    "weak_positive": 5
+  },
+  "target_action_rows": 24,
+  "target_action_coverage": 0.1326,
+  "critic_bucket_accuracy": 0.7419,
+  "retriever_exact_match_rate": 0.0645,
+  "critic_gated_route_abstain_rate": 0.9032,
+  "positive_visible_output_rate": 0.9167,
+  "positive_shape_counts": {
+    "short_single_line": 2,
+    "short_exact": 15,
+    "multiline_structured": 5,
+    "internal_only": 2
+  },
+  "top_positive_envs": [
+    {
+      "env_name": "psycho_bench",
+      "exact_positive": 4,
+      "weak_positive": 0,
+      "negative": 3,
+      "avg_positive_reward": 3.3233,
+      "models": {
+        "Qwen3.5-27B.Q4_K_M.gguf": 3,
+        "Qwen_Qwen3.5-9B-Q4_K_M.gguf": 4
+      }
+    },
+    {
+      "env_name": "winogrande",
+      "exact_positive": 4,
+      "weak_positive": 0,
+      "negative": 0,
+      "avg_positive_reward": 1.0,
+      "models": {
+        "Qwen3.5-27B.Q4_K_M.gguf": 2,
+        "Qwen_Qwen3.5-9B-Q4_K_M.gguf": 2
+      }
+    },
+    {
+      "env_name": "antislop",
+      "exact_positive": 3,
+      "weak_positive": 0,
+      "negative": 0,
+      "avg_positive_reward": 12.0,
+      "models": {
+        "Qwen3.5-27B.Q4_K_M.gguf": 2,
+        "Qwen_Qwen3.5-9B-Q4_K_M.gguf": 1
+      }
+    },
+    {
+      "env_name": "math_env",
+      "exact_positive": 3,
+      "weak_positive": 0,
+      "negative": 3,
+      "avg_positive_reward": 1.0,
+      "models": {
+        "Qwen3.5-27B.Q4_K_M.gguf": 3,
+        "Qwen_Qwen3.5-9B-Q4_K_M.gguf": 3
+      }
+    },
+    {
+      "env_name": "lisanbench",
+      "exact_positive": 2,
+      "weak_positive": 0,
+      "negative": 3,
+      "avg_positive_reward": 2.045,
+      "models": {
+        "Qwen3.5-27B.Q4_K_M.gguf": 3,
+        "Qwen_Qwen3.5-9B-Q4_K_M.gguf": 2
+      }
+    },
+    {
+      "env_name": "boolq",
+      "exact_positive": 2,
+      "weak_positive": 0,
+      "negative": 1,
+      "avg_positive_reward": 1.0,
+      "models": {
+        "Qwen3.5-27B.Q4_K_M.gguf": 2,
+        "Qwen_Qwen3.5-9B-Q4_K_M.gguf": 1
+      }
+    },
+    {
+      "env_name": "simple_bench",
+      "exact_positive": 2,
+      "weak_positive": 0,
+      "negative": 2,
+      "avg_positive_reward": 1.0,
+      "models": {
+        "Qwen3.5-27B.Q4_K_M.gguf": 2,
+        "Qwen_Qwen3.5-9B-Q4_K_M.gguf": 2
+      }
+    },
+    {
+      "env_name": "truthfulqa",
+      "exact_positive": 2,
+      "weak_positive": 0,
+      "negative": 3,
+      "avg_positive_reward": 1.0,
+      "models": {
+        "Qwen3.5-27B.Q4_K_M.gguf": 3,
+        "Qwen_Qwen3.5-9B-Q4_K_M.gguf": 2
+      }
+    }
+  ],
+  "negative_output_status_counts": {
+    "completed": 129,
+    "openai_request_error: HTTP Error 400: Bad Request": 12,
+    "openai_request_error: timed out": 10,
+    "openai_request_error: <urlopen error [WinError 10060] Se produjo un error durante el intento de conexi\u00f3n ya que la parte conectada no respondi\u00f3 adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexi\u00f3n establecida ya que el host conectado no ha podido responder>": 1
+  },
+  "model_summary": [
+    {
+      "model_name": "Qwen_Qwen3.5-9B-Q4_K_M.gguf",
+      "rows": 88,
+      "exact_positive": 19,
+      "weak_positive": 3,
+      "negative": 66,
+      "avg_positive_reward": 2.1781
+    },
+    {
+      "model_name": "Qwen3.5-27B.Q4_K_M.gguf",
+      "rows": 93,
+      "exact_positive": 5,
+      "weak_positive": 2,
+      "negative": 86,
+      "avg_positive_reward": 5.4
+    }
+  ],
+  "skill_prompt_lines": [
+    "Use TRM mainly as a critic and verification layer first; held-out critic accuracy is 0.74 while retrieval exact match is only 0.06.",
+    "When support is weak, stay on the plain skill path instead of forcing TRM escalation; target-action coverage is 0.13 and critic-gated abstention is 0.90.",
+    "When the task specifies a tight answer format, prefer the minimal exact answer over explanatory prose.",
+    "Current positive support is concentrated in psycho_bench, winogrande, antislop, math_env, lisanbench, boolq, simple_bench, truthfulqa; use this imprint as a control-plane prior, not a general reasoning substitute."
+  ],
+  "trainer_lines": [
+    "Promote critic and abstention gains first; do not treat the current corpus as strong action-imitation supervision.",
+    "Grow the exact-positive bank before relaxing the router gate or widening TRM default routing.",
+    "Keep collection focused on envs that can add completed exact-positive rows, especially outside the current narrow positive cluster."
+  ]
+}

@@ -1,0 +1,20 @@
+﻿{
+    "exit_code":  0,
+    "run_id":  "primehub-choice-contract-pressure-20260422",
+    "cpu_pct":  60,
+    "avg_ram_mb":  19.1,
+    "peak_ram_mb":  19.3,
+    "stdout_log":  "C:\\projects\\Hermes Skills\\data\\job_limited_runs\\primehub-choice-contract-pressure-20260422.stdout.log",
+    "peak_io_mb_s":  null,
+    "checkpoints":  [
+
+                    ],
+    "status":  "completed",
+    "steps_completed":  1652,
+    "caps":  {
+                 "ram_mb":  4096,
+                 "cpu_pct":  60
+             },
+    "event_log":  "C:\\projects\\Hermes Skills\\data\\job_limited_runs\\primehub-choice-contract-pressure-20260422.events.jsonl",
+    "stderr_log":  "C:\\projects\\Hermes Skills\\data\\job_limited_runs\\primehub-choice-contract-pressure-20260422.stderr.log"
+}

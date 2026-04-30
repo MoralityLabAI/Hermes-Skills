@@ -1,0 +1,41 @@
+{
+  "run_name": "qwen35_4b_intellect3_logic_hybrid_10_no_trm",
+  "config_path": "D:\\Research_Engine\\trmObservabilityLogs\\trm_observability_harness_snapshot\\configs\\qwen35_4b_intellect3_logic_hybrid_10_no_trm.yaml",
+  "source_path": "C:\\projects\\Tesseract\\Tesseract\\data\\normalized_trajectories\\intellect_3_logic.jsonl",
+  "rows": 10,
+  "arms": {
+    "vanilla": {
+      "rows": 10,
+      "exact_match_rate": 0.0,
+      "visible_output_rate": 1.0,
+      "avg_token_total": 314.6,
+      "avg_model_calls": 1.0,
+      "avg_latency_seconds": 19.0754,
+      "avg_grid_cell_accuracy": 0.788
+    },
+    "logic_skill": {
+      "rows": 10,
+      "exact_match_rate": 0.0,
+      "visible_output_rate": 1.0,
+      "avg_token_total": 442.6,
+      "avg_model_calls": 1.0,
+      "avg_latency_seconds": 22.8042,
+      "avg_grid_cell_accuracy": 0.781
+    }
+  },
+  "baseline_arm": "vanilla",
+  "deltas_vs_baseline": {
+    "vanilla": {
+      "exact_match_rate_delta": 0.0,
+      "avg_token_total_delta": 0.0
+    },
+    "logic_skill": {
+      "exact_match_rate_delta": 0.0,
+      "avg_token_total_delta": 128.0
+    }
+  },
+  "artifacts": {
+    "predictions": "C:\\projects\\Hermes Skills\\data\\qwen35_4b_intellect3_logic_hybrid_10_no_trm\\predictions.jsonl",
+    "summary": "C:\\projects\\Hermes Skills\\data\\qwen35_4b_intellect3_logic_hybrid_10_no_trm\\summary.json"
+  }
+}

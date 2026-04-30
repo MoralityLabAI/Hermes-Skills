@@ -1,0 +1,24 @@
+﻿{"event":"start","ts":"2026-04-15T23:20:49.6213226Z","exe":"C:\\Python311\\python.exe","args":["scripts/primehub_trm_autoresearch_loop.py","--cycles","2","--sleep-seconds","5","--work-base","data/primehub_trm_autoresearch","--summary","C:\\projects\\Hermes Skills\\data\\primehub_trm_autoresearch\\latest.summary.json","--ledger","C:\\projects\\Hermes Skills\\data\\primehub_trm_autoresearch\\ledger.jsonl","--latest-skill-imprint-json","C:\\projects\\Hermes Skills\\data\\primehub_trm_autoresearch\\latest.skill_imprint.json","--latest-skill-imprint-md","C:\\projects\\Hermes Skills\\data\\primehub_trm_autoresearch\\latest.skill_imprint.md","--publish-skill-sidecars"],"caps":{"ram_mb":1024,"cpu_pct":25},"workdir":"C:\\projects\\Hermes Skills","run_id":"primehub-trm-skill-loop-smoke"}
+{"run_id":"primehub-trm-skill-loop-smoke","pid":11924,"private_ram_mb":13.3,"event":"heartbeat","ts":"2026-04-15T23:20:55.2577690Z"}
+{"run_id":"primehub-trm-skill-loop-smoke","pid":11924,"private_ram_mb":13.3,"event":"heartbeat","ts":"2026-04-15T23:21:00.2847557Z"}
+{"run_id":"primehub-trm-skill-loop-smoke","pid":11924,"private_ram_mb":13.3,"event":"heartbeat","ts":"2026-04-15T23:21:05.3202939Z"}
+{"run_id":"primehub-trm-skill-loop-smoke","pid":11924,"private_ram_mb":13.3,"event":"heartbeat","ts":"2026-04-15T23:21:10.3571700Z"}
+{"run_id":"primehub-trm-skill-loop-smoke","pid":11924,"private_ram_mb":13.3,"event":"heartbeat","ts":"2026-04-15T23:21:15.3810123Z"}
+{"run_id":"primehub-trm-skill-loop-smoke","pid":11924,"private_ram_mb":13.3,"event":"heartbeat","ts":"2026-04-15T23:21:20.4360959Z"}
+{"run_id":"primehub-trm-skill-loop-smoke","pid":11924,"private_ram_mb":13.3,"event":"heartbeat","ts":"2026-04-15T23:21:25.4722720Z"}
+{"run_id":"primehub-trm-skill-loop-smoke","pid":11924,"private_ram_mb":13.3,"event":"heartbeat","ts":"2026-04-15T23:21:30.5078161Z"}
+{"run_id":"primehub-trm-skill-loop-smoke","pid":11924,"private_ram_mb":13.3,"event":"heartbeat","ts":"2026-04-15T23:21:35.5329480Z"}
+{"run_id":"primehub-trm-skill-loop-smoke","pid":11924,"private_ram_mb":13.3,"event":"heartbeat","ts":"2026-04-15T23:21:40.5625650Z"}
+{"run_id":"primehub-trm-skill-loop-smoke","pid":11924,"private_ram_mb":13.3,"event":"heartbeat","ts":"2026-04-15T23:21:45.6423727Z"}
+{"run_id":"primehub-trm-skill-loop-smoke","pid":11924,"private_ram_mb":13.3,"event":"heartbeat","ts":"2026-04-15T23:21:50.6738395Z"}
+{"run_id":"primehub-trm-skill-loop-smoke","pid":11924,"private_ram_mb":13.3,"event":"heartbeat","ts":"2026-04-15T23:21:55.7162573Z"}
+{"run_id":"primehub-trm-skill-loop-smoke","pid":11924,"private_ram_mb":13.3,"event":"heartbeat","ts":"2026-04-15T23:22:00.7570789Z"}
+{"run_id":"primehub-trm-skill-loop-smoke","pid":11924,"private_ram_mb":13.3,"event":"heartbeat","ts":"2026-04-15T23:22:05.8146636Z"}
+{"run_id":"primehub-trm-skill-loop-smoke","pid":11924,"private_ram_mb":13.3,"event":"heartbeat","ts":"2026-04-15T23:22:10.8580043Z"}
+{"run_id":"primehub-trm-skill-loop-smoke","pid":11924,"private_ram_mb":13.3,"event":"heartbeat","ts":"2026-04-15T23:22:15.9297746Z"}
+{"run_id":"primehub-trm-skill-loop-smoke","pid":11924,"private_ram_mb":13.3,"event":"heartbeat","ts":"2026-04-15T23:22:20.9633220Z"}
+{"run_id":"primehub-trm-skill-loop-smoke","pid":11924,"private_ram_mb":13.3,"event":"heartbeat","ts":"2026-04-15T23:22:26.0098164Z"}
+{"run_id":"primehub-trm-skill-loop-smoke","pid":11924,"private_ram_mb":13.3,"event":"heartbeat","ts":"2026-04-15T23:22:31.0371811Z"}
+{"run_id":"primehub-trm-skill-loop-smoke","pid":11924,"private_ram_mb":13.3,"event":"heartbeat","ts":"2026-04-15T23:22:36.0839464Z"}
+{"run_id":"primehub-trm-skill-loop-smoke","pid":11924,"private_ram_mb":13.8,"event":"heartbeat","ts":"2026-04-15T23:22:41.1157982Z"}
+{"exit_code":0,"pid":11924,"run_id":"primehub-trm-skill-loop-smoke","avg_ram_mb":13.3,"peak_ram_mb":13.8,"status":"completed","ts":"2026-04-15T23:22:46.2039660Z","event":"finish"}

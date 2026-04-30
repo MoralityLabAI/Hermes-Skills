@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "C:\Users\patri\AppData\Roaming\Python\Python311\site-packages\llama_cpp\_ctypes_extensions.py", line 67, in load_shared_library
+    return ctypes.CDLL(str(lib_path), **cdll_args)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\ctypes\__init__.py", line 376, in __init__
+    self._handle = _dlopen(self._name, mode)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: Could not find module 'C:\Users\patri\AppData\Roaming\Python\Python311\site-packages\llama_cpp\lib\llama.dll' (or one of its dependencies). Try using the full path with constructor syntax.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\projects\Hermes Skills\research\scripts\run_local_if_summarize_metta_ablation.py", line 21, in <module>
+    from llama_cpp import Llama
+  File "C:\Users\patri\AppData\Roaming\Python\Python311\site-packages\llama_cpp\__init__.py", line 1, in <module>
+    from .llama_cpp import *
+  File "C:\Users\patri\AppData\Roaming\Python\Python311\site-packages\llama_cpp\llama_cpp.py", line 38, in <module>
+    _lib = load_shared_library(_lib_base_name, _base_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\patri\AppData\Roaming\Python\Python311\site-packages\llama_cpp\_ctypes_extensions.py", line 69, in load_shared_library
+    raise RuntimeError(f"Failed to load shared library '{lib_path}': {e}")
+RuntimeError: Failed to load shared library 'C:\Users\patri\AppData\Roaming\Python\Python311\site-packages\llama_cpp\lib\llama.dll': Could not find module 'C:\Users\patri\AppData\Roaming\Python\Python311\site-packages\llama_cpp\lib\llama.dll' (or one of its dependencies). Try using the full path with constructor syntax.

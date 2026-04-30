@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-04-20T22:07:43+00:00",
+  "matrix_root": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_smoke",
+  "manifest_path": "C:\\projects\\Hermes Skills\\data\\primehub_skill_batch_evolution\\latest.manifest.json",
+  "global_prompt_lines": [
+    "Role split: action-bearing TRM support currently lives mainly in internal_action."
+  ],
+  "cluster_cards": {
+    "internal_action": {
+      "cluster_id": "internal_action",
+      "role_name": "latent_action_retriever",
+      "support_tier": "narrow_action_support",
+      "goal": "recover exact hidden-action tokens such as inspect_and_continue",
+      "task_family_label": "primehub_internal_action",
+      "rows": 2,
+      "exact_positive_rows": 2,
+      "weak_positive_rows": 0,
+      "target_action_coverage": 1.0,
+      "critic_bucket_accuracy": null,
+      "retriever_exact_match_rate": null,
+      "route_abstain_rate": null,
+      "bucket_counts": {
+        "exact_positive": 2
+      },
+      "source_env_counts": {
+        "antislop": 2
+      },
+      "skill_prompt_lines": [
+        "This TRM role is a narrow latent-action specialist: when the contract implies deferred internal continuation, emit only `inspect_and_continue` and no visible draft.",
+        "Do not generalize this support into normal visible-answer tasks; it is a tiny but clean exact-token niche."
+      ],
+      "trainer_lines": [
+        "Add more hidden-action environments before widening this role; the current signal is clean but too narrow to claim generality."
+      ],
+      "trainer_policy": {
+        "policy_name": "narrow_action_support_trainer_policy",
+        "support_tier": "narrow_action_support",
+        "routing_strength": "focused",
+        "exact_positive_weight": 3.0,
+        "weak_positive_weight": 1.5,
+        "negative_weight": 0.2,
+        "min_supervision_weight": 0.85,
+        "top_k": 1
+      }
+    }
+  }
+}

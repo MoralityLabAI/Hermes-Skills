@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+object address  : 0000017001127AC0
+object refcount : 2
+object type     : 00007FFD52A1DF70
+object type name: KeyboardInterrupt
+object repr     : KeyboardInterrupt()
+lost sys.stderr

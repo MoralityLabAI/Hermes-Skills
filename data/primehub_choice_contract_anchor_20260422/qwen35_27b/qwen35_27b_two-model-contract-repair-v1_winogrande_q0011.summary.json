@@ -1,0 +1,34 @@
+{
+  "steps": 1,
+  "episodes": 1,
+  "per_env_steps": {
+    "winogrande": 1
+  },
+  "failure_types": {},
+  "model_client_fallbacks": {},
+  "bridge_fallbacks": {},
+  "trm_repairs": {},
+  "raw_invalid_actions": {},
+  "repaired_successes": {},
+  "reward_totals": {
+    "winogrande": 1.0
+  },
+  "token_usage": {
+    "prompt_tokens": 418,
+    "completion_tokens": 193,
+    "total_tokens": 611
+  },
+  "output_statuses": {
+    "completed": 1
+  },
+  "reasoning_modes": {
+    "on": 1
+  },
+  "visible_output_emitted": {
+    "true": 1
+  },
+  "run_token_total": 611,
+  "token_budget": null,
+  "run_id": null,
+  "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_choice_contract_anchor_20260422\\qwen35_27b\\qwen35_27b_two-model-contract-repair-v1_winogrande_q0011.jsonl"
+}

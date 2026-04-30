@@ -1,0 +1,37 @@
+{
+  "steps": 1,
+  "episodes": 1,
+  "per_env_steps": {
+    "boolq": 1
+  },
+  "failure_types": {},
+  "model_client_fallbacks": {
+    "total": 1,
+    "boolq": 1
+  },
+  "bridge_fallbacks": {},
+  "trm_repairs": {},
+  "raw_invalid_actions": {},
+  "repaired_successes": {},
+  "reward_totals": {
+    "boolq": 0.0
+  },
+  "token_usage": {
+    "prompt_tokens": 638,
+    "completion_tokens": 64,
+    "total_tokens": 702
+  },
+  "output_statuses": {
+    "completed": 1
+  },
+  "reasoning_modes": {
+    "on": 1
+  },
+  "visible_output_emitted": {
+    "false": 1
+  },
+  "run_token_total": 702,
+  "token_budget": null,
+  "run_id": null,
+  "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_trainer_policy_baseline_rerun_20260421\\qwen35_9b\\qwen35_9b_two-model-contract-repair-v1_boolq_q0004.jsonl"
+}

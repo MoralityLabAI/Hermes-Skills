@@ -1,0 +1,3 @@
+﻿{"event":"start","ts":"2026-04-16T22:54:55.8426842Z","exe":"C:/Python311/python.exe","args":["C:/projects/HRM-re/experiments/hermes_skill_gym/run_multi_trm_family_compare.py"],"caps":{"ram_mb":2048,"cpu_pct":50},"workdir":"C:/projects/HRM-re","run_id":"multi-trm-family-compare-v1"}
+{"run_id":"multi-trm-family-compare-v1","pid":26748,"private_ram_mb":357.3,"event":"heartbeat","ts":"2026-04-16T22:55:01.1317509Z"}
+{"exit_code":2,"pid":26748,"run_id":"multi-trm-family-compare-v1","avg_ram_mb":357.3,"peak_ram_mb":357.3,"status":"aborted","ts":"2026-04-16T22:55:06.1872811Z","event":"finish"}

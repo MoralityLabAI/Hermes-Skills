@@ -1,0 +1,57 @@
+{
+  "run_name": "overnight-qwen35_9b-three-model-basket-v3-reasoning-heavy-math_env",
+  "max_episodes": 1,
+  "max_steps_per_episode": 8,
+  "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_skill_reasoning_batch_20260416_2100mdt\\qwen35_9b\\qwen35_9b_three-model-basket-v3-reasoning-heavy_math_env_q0083.jsonl",
+  "model": {
+    "provider": "openai_compatible",
+    "base_url": "http://snacksack-ms-7d32.tail3156cd.ts.net:8082/v1",
+    "model_name": "Qwen_Qwen3.5-9B-Q4_K_M.gguf",
+    "max_new_tokens": 256,
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "request_timeout": 900
+  },
+  "metadata": {
+    "variant_id": "three-model-basket-v3-reasoning-heavy",
+    "skill_name": "primehub-hard-reasoning-numeric-hermes",
+    "skill_cluster": "hard_reasoning_numeric",
+    "reasoning_mode": "on"
+  },
+  "envs": [
+    {
+      "type": "primehub_external",
+      "name": "math_env",
+      "command_template": [
+        "C:\\Python311\\python.exe",
+        "C:/projects/Hermes Skills/scripts/remote_prime_env_bridge.py",
+        "--source",
+        "research",
+        "--host",
+        "snacksack-ms-7d32.tail3156cd.ts.net",
+        "--user",
+        "snacksack",
+        "--identity-file",
+        "C:/Users/patri/.ssh/id_ed25519",
+        "--ssh-timeout-seconds",
+        "120",
+        "--research-root",
+        "/home/snacksack/prime_repos_tmp/research-environments/environments",
+        "--community-root",
+        "/home/snacksack/prime_repos_tmp/community-environments/environments",
+        "math_env"
+      ],
+      "reset_args": [
+        "--reset"
+      ],
+      "trace_profile_overrides": {
+        "reasoning_mode": "on",
+        "skill_name": "primehub-hard-reasoning-numeric-hermes",
+        "skill_prompt": "You are operating as Hermes skill Primehub-Hard-Reasoning-Numeric-v1.\nUse the stage order TRM_PARSE -> TRM_DECOMPOSE -> TRM_SOLVE -> TRM_VERIFY -> FINAL.\nKeep the derivation compact and explicit enough to catch arithmetic drift.\nEmit only the final exact answer string.\nCompute the final value exactly and prefer the minimal legal numeric form.\nIf the verification stage disagrees with the solve stage, repair before final output.",
+        "skill_cluster": "hard_reasoning_numeric",
+        "variant_id": "three-model-basket-v3-reasoning-heavy"
+      }
+    }
+  ],
+  "episodes": 1
+}

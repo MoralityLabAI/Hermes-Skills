@@ -1,0 +1,372 @@
+{
+  "merged_summary": {
+    "inputs": [
+      "C:\\projects\\Hermes Skills\\data\\primehub_trm_autoresearch\\cycle_12\\primehub_trm_merged.jsonl",
+      "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_structured_map_trainer_policy\\metta_trainer_policy_bundle.jsonl",
+      "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\if_summarize_judge_trainer_policy\\metta_trainer_policy_bundle.jsonl"
+    ],
+    "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_rollup_metta_comparison_debug\\variants\\control_plus_structured_map_and_if_summarize\\merged.jsonl",
+    "total_rows": 380,
+    "bucket_counts": {
+      "negative": 208,
+      "exact_positive": 167,
+      "weak_positive": 5
+    },
+    "task_family_counts": {
+      "primehub": 195,
+      "primehub_structured_map__retrieval_selection_correctness": 3,
+      "primehub_structured_map__task_success": 9,
+      "primehub_structured_map__contract_validity": 9,
+      "primehub_structured_map__repair_success": 3,
+      "primehub_constraint_summarize__retrieval_selection_correctness": 18,
+      "primehub_constraint_summarize__task_success": 54,
+      "primehub_constraint_summarize__contract_validity": 54,
+      "primehub_constraint_summarize__repair_success": 18,
+      "primehub_constraint_summarize__profile_selection_correctness": 17
+    },
+    "task_family_bucket_counts": {
+      "primehub": {
+        "negative": 166,
+        "exact_positive": 24,
+        "weak_positive": 5
+      },
+      "primehub_structured_map__retrieval_selection_correctness": {
+        "exact_positive": 3
+      },
+      "primehub_structured_map__task_success": {
+        "exact_positive": 6,
+        "negative": 3
+      },
+      "primehub_structured_map__contract_validity": {
+        "exact_positive": 6,
+        "negative": 3
+      },
+      "primehub_structured_map__repair_success": {
+        "exact_positive": 3
+      },
+      "primehub_constraint_summarize__retrieval_selection_correctness": {
+        "exact_positive": 18
+      },
+      "primehub_constraint_summarize__task_success": {
+        "exact_positive": 36,
+        "negative": 18
+      },
+      "primehub_constraint_summarize__contract_validity": {
+        "exact_positive": 36,
+        "negative": 18
+      },
+      "primehub_constraint_summarize__repair_success": {
+        "exact_positive": 18
+      },
+      "primehub_constraint_summarize__profile_selection_correctness": {
+        "exact_positive": 17
+      }
+    },
+    "included_families": [
+      "primehub",
+      "primehub_constraint_summarize__contract_validity",
+      "primehub_constraint_summarize__profile_selection_correctness",
+      "primehub_constraint_summarize__repair_success",
+      "primehub_constraint_summarize__retrieval_selection_correctness",
+      "primehub_constraint_summarize__task_success",
+      "primehub_structured_map__contract_validity",
+      "primehub_structured_map__repair_success",
+      "primehub_structured_map__retrieval_selection_correctness",
+      "primehub_structured_map__task_success"
+    ],
+    "excluded_families": {
+      "primehub_constraint_summarize__contract_family_match": {
+        "rows": 69,
+        "exact_positive": 0
+      },
+      "primehub_constraint_summarize__critic_verdict_agreement": {
+        "rows": 36,
+        "exact_positive": 0
+      },
+      "primehub_constraint_summarize__failure_localization": {
+        "rows": 36,
+        "exact_positive": 0
+      },
+      "primehub_constraint_summarize__transport_no_fallback": {
+        "rows": 72,
+        "exact_positive": 0
+      },
+      "primehub_constraint_summarize__transport_visible_output": {
+        "rows": 72,
+        "exact_positive": 0
+      },
+      "primehub_structured_map__contract_family_match": {
+        "rows": 3,
+        "exact_positive": 0
+      },
+      "primehub_structured_map__critic_verdict_agreement": {
+        "rows": 6,
+        "exact_positive": 0
+      },
+      "primehub_structured_map__failure_localization": {
+        "rows": 6,
+        "exact_positive": 0
+      },
+      "primehub_structured_map__transport_no_fallback": {
+        "rows": 12,
+        "exact_positive": 0
+      },
+      "primehub_structured_map__transport_visible_output": {
+        "rows": 12,
+        "exact_positive": 0
+      }
+    },
+    "min_exact_positives_per_family": 2
+  },
+  "global": {
+    "critic_bucket_accuracy": 0.7273,
+    "retriever_exact_match_rate": 0.1667,
+    "router_retrieval_only_exact_match_rate": 0.1667,
+    "router_critic_gated_exact_match_rate": 0.1364,
+    "router_critic_gated_route_abstain_rate": 0.4848,
+    "retriever_example_count": 141,
+    "critic_example_count": 314
+  },
+  "primehub_transfer": {
+    "critic_bucket_accuracy": 0.75,
+    "retriever_exact_match_rate": 0.0625,
+    "router_retrieval_only_exact_match_rate": 0.0625,
+    "router_critic_gated_exact_match_rate": 0.0,
+    "router_critic_gated_route_abstain_rate": 0.9062,
+    "rows": 32
+  },
+  "artifacts": {
+    "critic_summary": {
+      "input": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_rollup_metta_comparison_debug\\variants\\control_plus_structured_map_and_if_summarize\\merged.jsonl",
+      "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_rollup_metta_comparison_debug\\variants\\control_plus_structured_map_and_if_summarize\\models\\trm_critic.json",
+      "example_count": 380,
+      "task_family_counts": {
+        "primehub": 195,
+        "primehub_structured_map__retrieval_selection_correctness": 3,
+        "primehub_structured_map__task_success": 9,
+        "primehub_structured_map__contract_validity": 9,
+        "primehub_structured_map__repair_success": 3,
+        "primehub_constraint_summarize__retrieval_selection_correctness": 18,
+        "primehub_constraint_summarize__task_success": 54,
+        "primehub_constraint_summarize__contract_validity": 54,
+        "primehub_constraint_summarize__repair_success": 18,
+        "primehub_constraint_summarize__profile_selection_correctness": 17
+      },
+      "bucket_counts": {
+        "negative": 208,
+        "exact_positive": 167,
+        "weak_positive": 5
+      },
+      "k": 5
+    },
+    "critic_bench_summary": {
+      "rows": 66,
+      "bucket_accuracy": 0.7273,
+      "avg_bucket_abs_error": 0.8182,
+      "visible_output_accuracy": 0.7424,
+      "avg_grid_cell_accuracy_abs_error": null,
+      "per_family": {
+        "primehub": {
+          "rows": 32,
+          "bucket_accuracy": 0.75,
+          "avg_bucket_abs_error": 0.75,
+          "visible_output_accuracy": 0.4688,
+          "avg_grid_cell_accuracy_abs_error": null
+        },
+        "primehub_structured_map__task_success": {
+          "rows": 1,
+          "bucket_accuracy": 0.0,
+          "avg_bucket_abs_error": 3.0,
+          "visible_output_accuracy": 1.0,
+          "avg_grid_cell_accuracy_abs_error": null
+        },
+        "primehub_structured_map__contract_validity": {
+          "rows": 1,
+          "bucket_accuracy": 0.0,
+          "avg_bucket_abs_error": 3.0,
+          "visible_output_accuracy": 1.0,
+          "avg_grid_cell_accuracy_abs_error": null
+        },
+        "primehub_structured_map__retrieval_selection_correctness": {
+          "rows": 1,
+          "bucket_accuracy": 1.0,
+          "avg_bucket_abs_error": 0.0,
+          "visible_output_accuracy": 1.0,
+          "avg_grid_cell_accuracy_abs_error": null
+        },
+        "primehub_constraint_summarize__contract_validity": {
+          "rows": 11,
+          "bucket_accuracy": 0.5455,
+          "avg_bucket_abs_error": 1.3636,
+          "visible_output_accuracy": 1.0,
+          "avg_grid_cell_accuracy_abs_error": null
+        },
+        "primehub_constraint_summarize__task_success": {
+          "rows": 9,
+          "bucket_accuracy": 0.6667,
+          "avg_bucket_abs_error": 1.0,
+          "visible_output_accuracy": 1.0,
+          "avg_grid_cell_accuracy_abs_error": null
+        },
+        "primehub_constraint_summarize__repair_success": {
+          "rows": 3,
+          "bucket_accuracy": 1.0,
+          "avg_bucket_abs_error": 0.0,
+          "visible_output_accuracy": 1.0,
+          "avg_grid_cell_accuracy_abs_error": null
+        },
+        "primehub_constraint_summarize__profile_selection_correctness": {
+          "rows": 5,
+          "bucket_accuracy": 1.0,
+          "avg_bucket_abs_error": 0.0,
+          "visible_output_accuracy": 1.0,
+          "avg_grid_cell_accuracy_abs_error": null
+        },
+        "primehub_constraint_summarize__retrieval_selection_correctness": {
+          "rows": 3,
+          "bucket_accuracy": 1.0,
+          "avg_bucket_abs_error": 0.0,
+          "visible_output_accuracy": 1.0,
+          "avg_grid_cell_accuracy_abs_error": null
+        }
+      },
+      "model_example_count": 314,
+      "train_rows": 314,
+      "eval_rows": 66,
+      "holdout_ratio": 0.2,
+      "leave_one_out": false,
+      "k": 5
+    },
+    "retriever_summary": {
+      "input": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_rollup_metta_comparison_debug\\variants\\control_plus_structured_map_and_if_summarize\\merged.jsonl",
+      "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_rollup_metta_comparison_debug\\variants\\control_plus_structured_map_and_if_summarize\\models\\trm_retriever.json",
+      "example_count": 167,
+      "task_family_counts": {
+        "primehub": 24,
+        "primehub_structured_map__retrieval_selection_correctness": 3,
+        "primehub_structured_map__task_success": 6,
+        "primehub_structured_map__contract_validity": 6,
+        "primehub_structured_map__repair_success": 3,
+        "primehub_constraint_summarize__retrieval_selection_correctness": 18,
+        "primehub_constraint_summarize__task_success": 36,
+        "primehub_constraint_summarize__contract_validity": 36,
+        "primehub_constraint_summarize__repair_success": 18,
+        "primehub_constraint_summarize__profile_selection_correctness": 17
+      },
+      "bucket_counts": {
+        "exact_positive": 167
+      },
+      "include_buckets": [
+        "exact_positive",
+        "near_miss",
+        "weak_positive"
+      ],
+      "min_supervision_weight": 0.4
+    },
+    "retriever_bench_summary": {
+      "rows": 66,
+      "exact_match_rate": 0.1667,
+      "nonempty_prediction_rate": 1.0,
+      "avg_similarity": 0.6987,
+      "avg_grid_cell_accuracy": null,
+      "per_family": {
+        "primehub": {
+          "rows": 32,
+          "exact_match_rate": 0.0625,
+          "nonempty_prediction_rate": 1.0,
+          "avg_similarity": 0.3618,
+          "avg_grid_cell_accuracy": null
+        },
+        "primehub_structured_map__task_success": {
+          "rows": 1,
+          "exact_match_rate": 0.0,
+          "nonempty_prediction_rate": 1.0,
+          "avg_similarity": 1.1205,
+          "avg_grid_cell_accuracy": null
+        },
+        "primehub_structured_map__contract_validity": {
+          "rows": 1,
+          "exact_match_rate": 0.0,
+          "nonempty_prediction_rate": 1.0,
+          "avg_similarity": 1.2124,
+          "avg_grid_cell_accuracy": null
+        },
+        "primehub_structured_map__retrieval_selection_correctness": {
+          "rows": 1,
+          "exact_match_rate": 0.0,
+          "nonempty_prediction_rate": 1.0,
+          "avg_similarity": 0.7236,
+          "avg_grid_cell_accuracy": null
+        },
+        "primehub_constraint_summarize__contract_validity": {
+          "rows": 11,
+          "exact_match_rate": 0.4545,
+          "nonempty_prediction_rate": 1.0,
+          "avg_similarity": 1.0193,
+          "avg_grid_cell_accuracy": null
+        },
+        "primehub_constraint_summarize__task_success": {
+          "rows": 9,
+          "exact_match_rate": 0.4444,
+          "nonempty_prediction_rate": 1.0,
+          "avg_similarity": 1.0141,
+          "avg_grid_cell_accuracy": null
+        },
+        "primehub_constraint_summarize__repair_success": {
+          "rows": 3,
+          "exact_match_rate": 0.0,
+          "nonempty_prediction_rate": 1.0,
+          "avg_similarity": 0.8214,
+          "avg_grid_cell_accuracy": null
+        },
+        "primehub_constraint_summarize__profile_selection_correctness": {
+          "rows": 5,
+          "exact_match_rate": 0.0,
+          "nonempty_prediction_rate": 1.0,
+          "avg_similarity": 1.1018,
+          "avg_grid_cell_accuracy": null
+        },
+        "primehub_constraint_summarize__retrieval_selection_correctness": {
+          "rows": 3,
+          "exact_match_rate": 0.0,
+          "nonempty_prediction_rate": 1.0,
+          "avg_similarity": 1.0557,
+          "avg_grid_cell_accuracy": null
+        }
+      },
+      "model_example_count": 141,
+      "train_rows": 314,
+      "eval_rows": 66,
+      "holdout_ratio": 0.2,
+      "leave_one_out": false,
+      "include_buckets": [
+        "exact_positive",
+        "near_miss",
+        "weak_positive"
+      ],
+      "min_supervision_weight": 0.4
+    },
+    "router_bench_summary": {
+      "rows": 66,
+      "top_k": 5,
+      "retrieval_only": {
+        "exact_match_rate": 0.1667,
+        "nonempty_prediction_rate": 1.0,
+        "avg_grid_cell_accuracy": null
+      },
+      "critic_gated": {
+        "exact_match_rate": 0.1364,
+        "nonempty_prediction_rate": 0.5152,
+        "route_abstain_rate": 0.4848,
+        "avg_grid_cell_accuracy": null
+      },
+      "train_rows": 314,
+      "eval_rows": 66,
+      "retriever_example_count": 141,
+      "critic_example_count": 314,
+      "holdout_ratio": 0.2,
+      "min_supervision_weight": 0.4
+    },
+    "router_predictions_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_rollup_metta_comparison_debug\\variants\\control_plus_structured_map_and_if_summarize\\bench\\trm_router_bench.jsonl"
+  }
+}

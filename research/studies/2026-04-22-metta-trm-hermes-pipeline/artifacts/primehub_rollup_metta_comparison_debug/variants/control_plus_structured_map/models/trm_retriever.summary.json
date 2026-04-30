@@ -1,0 +1,21 @@
+{
+  "input": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_rollup_metta_comparison_debug\\variants\\control_plus_structured_map\\merged.jsonl",
+  "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_rollup_metta_comparison_debug\\variants\\control_plus_structured_map\\models\\trm_retriever.json",
+  "example_count": 42,
+  "task_family_counts": {
+    "primehub": 24,
+    "primehub_structured_map__retrieval_selection_correctness": 3,
+    "primehub_structured_map__task_success": 6,
+    "primehub_structured_map__contract_validity": 6,
+    "primehub_structured_map__repair_success": 3
+  },
+  "bucket_counts": {
+    "exact_positive": 42
+  },
+  "include_buckets": [
+    "exact_positive",
+    "near_miss",
+    "weak_positive"
+  ],
+  "min_supervision_weight": 0.4
+}

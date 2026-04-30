@@ -1,0 +1,3 @@
+{"ts": 1776284666.9358444, "event": "run_start", "run_id": "hermes-skill-ab-crash-check", "runner": "cli", "base_url": "http://127.0.0.1:18083", "managed_server": false, "case_id_filter": "logic_known_signature", "variants": ["baseline"], "max_tokens": 32}
+{"ts": 1776284685.0083356, "event": "case_result", "step": 1, "total_steps": 1, "case_id": "logic_known_signature", "skill_name": "intellect3-logic-hermes", "requested_variant": "baseline", "effective_variant": "baseline", "status": "error", "latency_seconds": 18.0585, "score": {"passed": false, "missing": [], "forbidden_hits": []}, "response_preview": ""}
+{"ts": 1776284685.0103538, "event": "run_complete", "run_id": "hermes-skill-ab-crash-check", "rows": 1, "passes": 0, "pass_rate": 0.0}

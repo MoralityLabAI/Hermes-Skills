@@ -1,0 +1,91 @@
+{
+  "generated_at_utc": "2026-04-24T16:54:03.906781+00:00",
+  "model": {
+    "model_id": "smollm3_3b_local_4bit",
+    "model_name": "SmolLM3-3B-HF-4bit",
+    "model_path": "D:\\Research_Engine\\models\\SmolLM3-3B",
+    "backend": "transformers_direct_local_cuda_4bit"
+  },
+  "envs": [
+    "if_summarize_judge"
+  ],
+  "blocked_envs": [
+    {
+      "env_id": "psycho_bench",
+      "reason": "not present in local Prime env checkout; previous runner depended on Snacksack community env bridge"
+    },
+    {
+      "env_id": "ascii_tree",
+      "reason": "not present in local Prime env checkout; previous runner depended on Snacksack community env bridge"
+    },
+    {
+      "env_id": "pydantic_adherence",
+      "reason": "not present in local Prime env checkout; previous runner depended on Snacksack community env bridge"
+    }
+  ],
+  "results": [
+    {
+      "seed": 7,
+      "arm_id": "without_metta",
+      "env_id": "if_summarize_judge",
+      "constraint_type": "increasing_length",
+      "constraint": "Summarize the following text in exactly 3 sentences. Each sentence must be longer than the previous one. Write only the 3 sentences, nothing else.",
+      "reward": 0.0,
+      "judge_note": "FASTPATH increasing_length lengths=[1]",
+      "action": "tringrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrray",
+      "generation_sec": 21.7535,
+      "raw_usage": {
+        "prompt_tokens": 741,
+        "completion_tokens": 32,
+        "total_tokens": 773
+      },
+      "success": true
+    },
+    {
+      "seed": 7,
+      "arm_id": "with_metta_runtime",
+      "env_id": "if_summarize_judge",
+      "constraint_type": "increasing_length",
+      "constraint": "Summarize the following text in exactly 3 sentences. Each sentence must be longer than the previous one. Write only the 3 sentences, nothing else.",
+      "reward": 0.0,
+      "judge_note": "FASTPATH increasing_length lengths=[1]",
+      "action": "tringrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrray",
+      "generation_sec": 21.0255,
+      "raw_usage": {
+        "prompt_tokens": 1333,
+        "completion_tokens": 32,
+        "total_tokens": 1365
+      },
+      "success": true
+    },
+    {
+      "seed": 7,
+      "arm_id": "with_metta_runtime_repair",
+      "env_id": "if_summarize_judge",
+      "constraint_type": "increasing_length",
+      "constraint": "Summarize the following text in exactly 3 sentences. Each sentence must be longer than the previous one. Write only the 3 sentences, nothing else.",
+      "reward": 1.0,
+      "judge_note": "FASTPATH increasing_length lengths=[2, 6, 11]",
+      "action": "Ruins remain. Roman villa roots shaped the castle. Later wars shattered its defenses and left moats and towers behind.",
+      "generation_sec": 21.0255,
+      "raw_usage": {
+        "prompt_tokens": 1333,
+        "completion_tokens": 32,
+        "total_tokens": 1365
+      },
+      "repair_report": {
+        "env_id": "if_summarize_judge",
+        "status": "repaired",
+        "original_text": "tringrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrrayrray",
+        "repaired_text": "Ruins remain. Roman villa roots shaped the castle. Later wars shattered its defenses and left moats and towers behind.",
+        "applied_repairs": [
+          "replaced candidate with canonical profile-shaped answer"
+        ],
+        "detected_failures": [
+          "wrong sentence count"
+        ]
+      },
+      "success": true
+    }
+  ]
+}

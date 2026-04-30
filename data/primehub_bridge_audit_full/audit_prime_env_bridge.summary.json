@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-04-15T14:27:35Z",
+  "manifest": "C:\\projects\\Hermes Skills\\data\\primehub_env_manifest.json",
+  "selected_envs": 161,
+  "eligible_envs": 9,
+  "status_counts": {
+    "ok": 9,
+    "failure": 146,
+    "unsupported": 5,
+    "process_error": 1
+  },
+  "env_type_counts": {
+    "SingleTurnEnv": 9,
+    "CLBenchRLMEnv": 1,
+    "ColorCodewordEnv": 1,
+    "ToolEnv": 1,
+    "RLMEnv": 2
+  },
+  "eligible_env_ids": [
+    "aime2024",
+    "aime2025",
+    "aime2026",
+    "clbench",
+    "if_summarize_judge",
+    "logic_env",
+    "math500",
+    "math_env",
+    "mmlu_pro"
+  ],
+  "artifacts": {
+    "stout": "C:\\projects\\Hermes Skills\\data\\primehub_bridge_audit_full\\audit_prime_env_bridge.stout.jsonl",
+    "summary": "C:\\projects\\Hermes Skills\\data\\primehub_bridge_audit_full\\audit_prime_env_bridge.summary.json"
+  }
+}

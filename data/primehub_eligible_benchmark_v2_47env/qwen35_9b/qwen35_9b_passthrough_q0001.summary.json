@@ -1,0 +1,36 @@
+{
+  "steps": 1,
+  "episodes": 1,
+  "per_env_steps": {
+    "passthrough": 1
+  },
+  "failure_types": {
+    "bridge_failure": 1
+  },
+  "model_client_fallbacks": {},
+  "bridge_fallbacks": {},
+  "trm_repairs": {},
+  "raw_invalid_actions": {},
+  "repaired_successes": {},
+  "reward_totals": {
+    "passthrough": 0.0
+  },
+  "token_usage": {
+    "prompt_tokens": 191,
+    "completion_tokens": 12,
+    "total_tokens": 203
+  },
+  "output_statuses": {
+    "completed": 1
+  },
+  "reasoning_modes": {
+    "off": 1
+  },
+  "visible_output_emitted": {
+    "true": 1
+  },
+  "run_token_total": 203,
+  "token_budget": null,
+  "run_id": null,
+  "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_passthrough_q0001.jsonl"
+}

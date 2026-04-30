@@ -1,0 +1,12 @@
+{
+  "input": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_smoke\\internal_action\\cluster_merged.jsonl",
+  "output": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_smoke\\internal_action\\models\\trm_critic.json",
+  "example_count": 2,
+  "task_family_counts": {
+    "primehub_internal_action": 2
+  },
+  "bucket_counts": {
+    "exact_positive": 2
+  },
+  "k": 1
+}

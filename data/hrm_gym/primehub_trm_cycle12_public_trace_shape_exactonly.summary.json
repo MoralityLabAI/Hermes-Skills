@@ -1,0 +1,24 @@
+{
+  "input_rows": 195,
+  "output_rows": 195,
+  "bucket_counts": {
+    "negative": 166,
+    "exact_positive": 24,
+    "weak_positive": 5
+  },
+  "synthesized_trace_rows": 195,
+  "reasoning_mode_counts": {
+    "public_trace_synth": 195
+  },
+  "trace_length_counts": {
+    "5": 195
+  },
+  "exact_positive_supervision_weights": [
+    2.5
+  ],
+  "weak_positive_supervision_weights": [
+    0.4
+  ],
+  "action_family_rows": 24,
+  "distinct_action_families": 9
+}

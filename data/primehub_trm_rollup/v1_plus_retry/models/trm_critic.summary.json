@@ -1,0 +1,13 @@
+{
+  "input": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\primehub_trm_merged.jsonl",
+  "output": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\models\\trm_critic.json",
+  "example_count": 26,
+  "task_family_counts": {
+    "primehub": 26
+  },
+  "bucket_counts": {
+    "negative": 23,
+    "exact_positive": 3
+  },
+  "k": 5
+}

@@ -1,0 +1,1294 @@
+{
+  "generated_at": "2026-04-15T12:10:00Z",
+  "total": 161,
+  "profiles": [
+    {
+      "source": "research",
+      "folder": "aime2024",
+      "env_id": "aime2024",
+      "command_name": "aime2024",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "aime2025",
+      "env_id": "aime2025",
+      "command_name": "aime2025",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "aime2026",
+      "env_id": "aime2026",
+      "command_name": "aime2026",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "bfcl_v3",
+      "env_id": "bfcl_v3",
+      "command_name": "bfcl_v3",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "browsecomp",
+      "env_id": "browsecomp",
+      "command_name": "browsecomp",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "clbench",
+      "env_id": "clbench",
+      "command_name": "clbench",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "clbench_rlm",
+      "env_id": "clbench_rlm",
+      "command_name": "clbench_rlm",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "code_env",
+      "env_id": "code_env",
+      "command_name": "code_env",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "color_codeword",
+      "env_id": "color_codeword",
+      "command_name": "color_codeword",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "ddbc",
+      "env_id": "ddbc",
+      "command_name": "ddbc",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "ddbc_rlm",
+      "env_id": "ddbc_rlm",
+      "command_name": "ddbc_rlm",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "deepdive",
+      "env_id": "deepdive",
+      "command_name": "deepdive",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "deepdive_rlm",
+      "env_id": "deepdive_rlm",
+      "command_name": "deepdive_rlm",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "gpqa",
+      "env_id": "gpqa",
+      "command_name": "gpqa",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "hle",
+      "env_id": "hle",
+      "command_name": "hle",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "if_summarize_judge",
+      "env_id": "if_summarize_judge",
+      "command_name": "if_summarize_judge",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "ifbench",
+      "env_id": "ifbench",
+      "command_name": "ifbench",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "ifeval",
+      "env_id": "ifeval",
+      "command_name": "ifeval",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "livecodebench",
+      "env_id": "livecodebench",
+      "command_name": "livecodebench",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "logic_env",
+      "env_id": "logic_env",
+      "command_name": "logic_env",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "longbenchpro_rlm",
+      "env_id": "longbenchpro_rlm",
+      "command_name": "longbenchpro_rlm",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "math500",
+      "env_id": "math500",
+      "command_name": "math500",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "math_env",
+      "env_id": "math_env",
+      "command_name": "math_env",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "math_env_rlm",
+      "env_id": "math_env_rlm",
+      "command_name": "math_env_rlm",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "mcp_atlas",
+      "env_id": "mcp_atlas",
+      "command_name": "mcp_atlas",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "mini_swe_agent_plus",
+      "env_id": "mini_swe_agent_plus",
+      "command_name": "mini_swe_agent_plus",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "mini_swe_agent_plus_rlm",
+      "env_id": "mini_swe_agent_plus_rlm",
+      "command_name": "mini_swe_agent_plus_rlm",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "mmlu_pro",
+      "env_id": "mmlu_pro",
+      "command_name": "mmlu_pro",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "mrcr_v2_rlm",
+      "env_id": "mrcr_v2_rlm",
+      "command_name": "mrcr_v2_rlm",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "needle_in_haystack_rlm",
+      "env_id": "needle_in_haystack_rlm",
+      "command_name": "needle_in_haystack_rlm",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "oolong_rlm",
+      "env_id": "oolong_rlm",
+      "command_name": "oolong_rlm",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "opencode_cp",
+      "env_id": "opencode_cp",
+      "command_name": "opencode_cp",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "opencode_deepdive",
+      "env_id": "opencode_deepdive",
+      "command_name": "opencode_deepdive",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "opencode_lean",
+      "env_id": "opencode_lean",
+      "command_name": "opencode_lean",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "opencode_math",
+      "env_id": "opencode_math",
+      "command_name": "opencode_math",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "opencode_science",
+      "env_id": "opencode_science",
+      "command_name": "opencode_science",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "opencode_swe",
+      "env_id": "opencode_swe",
+      "command_name": "opencode_swe",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "passthrough",
+      "env_id": "passthrough",
+      "command_name": "passthrough",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "patterned_needle_in_haystack",
+      "env_id": "patterned_needle_in_haystack",
+      "command_name": "patterned_needle_in_haystack",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "patterned_needle_in_haystack_rlm",
+      "env_id": "patterned_needle_in_haystack_rlm",
+      "command_name": "patterned_needle_in_haystack_rlm",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "pinchbench",
+      "env_id": "pinchbench",
+      "command_name": "pinchbench",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "rlm_secrets",
+      "env_id": "rlm_secrets",
+      "command_name": "rlm_secrets",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "rlm_swe",
+      "env_id": "rlm_swe",
+      "command_name": "rlm_swe",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "scicode",
+      "env_id": "scicode",
+      "command_name": "scicode",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "science_env",
+      "env_id": "science_env",
+      "command_name": "science_env",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "simpleqa",
+      "env_id": "simpleqa",
+      "command_name": "simpleqa",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "simpleqa_verified",
+      "env_id": "simpleqa_verified",
+      "command_name": "simpleqa_verified",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "tau2_bench",
+      "env_id": "tau2_bench",
+      "command_name": "tau2_bench",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "tau3_bench",
+      "env_id": "tau3_bench",
+      "command_name": "tau3_bench",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "tau3_bench_rlm",
+      "env_id": "tau3_bench_rlm",
+      "command_name": "tau3_bench_rlm",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "unscramble",
+      "env_id": "unscramble",
+      "command_name": "unscramble",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "verbatim_copy",
+      "env_id": "verbatim_copy",
+      "command_name": "verbatim_copy",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "research",
+      "folder": "verbatim_copy_rlm",
+      "env_id": "verbatim_copy_rlm",
+      "command_name": "verbatim_copy_rlm",
+      "available": true,
+      "owner": "primeintellect"
+    },
+    {
+      "source": "community",
+      "folder": "BigBench_BBH",
+      "env_id": "BigBench_BBH",
+      "command_name": "BigBench_BBH",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "UncertaintyBench",
+      "env_id": "UncertaintyBench",
+      "command_name": "UncertaintyBench",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "agency_bench",
+      "env_id": "agency_bench",
+      "command_name": "agency_bench",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "agent_dojo",
+      "env_id": "agent_dojo",
+      "command_name": "agent_dojo",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "agentharm",
+      "env_id": "agentharm",
+      "command_name": "agentharm",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "agentic_misalignment",
+      "env_id": "agentic_misalignment",
+      "command_name": "agentic_misalignment",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "aidanbench",
+      "env_id": "aidanbench",
+      "command_name": "aidanbench",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "aider_polyglot",
+      "env_id": "aider_polyglot",
+      "command_name": "aider_polyglot",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "allenai_ifeval",
+      "env_id": "allenai_ifeval",
+      "command_name": "allenai_ifeval",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "androidworld",
+      "env_id": "androidworld",
+      "command_name": "androidworld",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "antislop",
+      "env_id": "antislop",
+      "command_name": "antislop",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "arc",
+      "env_id": "arc",
+      "command_name": "arc",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "arc_agi",
+      "env_id": "arc_agi",
+      "command_name": "arc_agi",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "arc_agi_tool",
+      "env_id": "arc_agi_tool",
+      "command_name": "arc_agi_tool",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "art_e",
+      "env_id": "art_e",
+      "command_name": "art_e",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "ascii_tree",
+      "env_id": "ascii_tree",
+      "command_name": "ascii_tree",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "autodiff",
+      "env_id": "autodiff",
+      "command_name": "autodiff",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "backend_bench",
+      "env_id": "backend_bench",
+      "command_name": "backend_bench",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "balrog_bench",
+      "env_id": "balrog_bench",
+      "command_name": "balrog_bench",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "bixbench",
+      "env_id": "bixbench",
+      "command_name": "bixbench",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "boolq",
+      "env_id": "boolq",
+      "command_name": "boolq",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "browsecomp_plus",
+      "env_id": "browsecomp_plus",
+      "command_name": "browsecomp_plus",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "clockbench",
+      "env_id": "clockbench",
+      "command_name": "clockbench",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "coconot",
+      "env_id": "coconot",
+      "command_name": "coconot",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "colf",
+      "env_id": "colf",
+      "command_name": "colf",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "congressional_records",
+      "env_id": "congressional_records",
+      "command_name": "congressional_records",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "creative_writing",
+      "env_id": "creative_writing",
+      "command_name": "creative_writing",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "dabstep",
+      "env_id": "dabstep",
+      "command_name": "dabstep",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "datasets_codebase_search",
+      "env_id": "datasets_codebase_search",
+      "command_name": "datasets_codebase_search",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "deep_consult",
+      "env_id": "deep_consult",
+      "command_name": "deep_consult",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "enigmata",
+      "env_id": "enigmata",
+      "command_name": "enigmata",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "fh_aviary",
+      "env_id": "fh_aviary",
+      "command_name": "fh_aviary",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "fruit_box",
+      "env_id": "fruit_box",
+      "command_name": "fruit_box",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "gauss",
+      "env_id": "gauss",
+      "command_name": "gauss",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "github_mcp",
+      "env_id": "github_mcp",
+      "command_name": "github_mcp",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "gptworld",
+      "env_id": "gptworld",
+      "command_name": "gptworld",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "gpu_puzzles",
+      "env_id": "gpu_puzzles",
+      "command_name": "gpu_puzzles",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "gpu_puzzles_modal",
+      "env_id": "gpu_puzzles_modal",
+      "command_name": "gpu_puzzles_modal",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "gutenberg_env",
+      "env_id": "gutenberg_env",
+      "command_name": "gutenberg_env",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "hanabi",
+      "env_id": "hanabi",
+      "command_name": "hanabi",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "harmeval",
+      "env_id": "harmeval",
+      "command_name": "harmeval",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "hellaswag",
+      "env_id": "hellaswag",
+      "command_name": "hellaswag",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "hle_web_py",
+      "env_id": "hle_web_py",
+      "command_name": "hle_web_py",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "humaneval",
+      "env_id": "humaneval",
+      "command_name": "humaneval",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "internbootcamp_env",
+      "env_id": "internbootcamp_env",
+      "command_name": "internbootcamp_env",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "jailbreak_bench",
+      "env_id": "jailbreak_bench",
+      "command_name": "jailbreak_bench",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "kernelbench",
+      "env_id": "kernelbench",
+      "command_name": "kernelbench",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "ktor",
+      "env_id": "ktor",
+      "command_name": "ktor",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "legalbench",
+      "env_id": "legalbench",
+      "command_name": "legalbench",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "lisanbench",
+      "env_id": "lisanbench",
+      "command_name": "lisanbench",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "llm_training_puzzles",
+      "env_id": "llm_training_puzzles",
+      "command_name": "llm_training_puzzles",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "llm_writer_negative_style",
+      "env_id": "llm_writer_negative_style",
+      "command_name": "llm_writer_negative_style",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "llm_writing_detection",
+      "env_id": "llm_writing_detection",
+      "command_name": "llm_writing_detection",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "longbench_v2",
+      "env_id": "longbench_v2",
+      "command_name": "longbench_v2",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "mastermind",
+      "env_id": "mastermind",
+      "command_name": "mastermind",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "mbpp",
+      "env_id": "mbpp",
+      "command_name": "mbpp",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "mcp_universe",
+      "env_id": "mcp_universe",
+      "command_name": "mcp_universe",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "med_agent_bench",
+      "env_id": "med_agent_bench",
+      "command_name": "med_agent_bench",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "medsafetybench",
+      "env_id": "medsafetybench",
+      "command_name": "medsafetybench",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "mini_swe_agent_bench",
+      "env_id": "mini_swe_agent_bench",
+      "command_name": "mini_swe_agent_bench",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "minif2f",
+      "env_id": "minif2f",
+      "command_name": "minif2f",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "misguided_attn",
+      "env_id": "misguided_attn",
+      "command_name": "misguided_attn",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "mmlu",
+      "env_id": "mmlu",
+      "command_name": "mmlu",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "nextjs_codebase_search",
+      "env_id": "nextjs_codebase_search",
+      "command_name": "nextjs_codebase_search",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "nyt_connections",
+      "env_id": "nyt_connections",
+      "command_name": "nyt_connections",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "patents_ar_env",
+      "env_id": "patents_ar_env",
+      "command_name": "patents_ar_env",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "penrose_diagrams",
+      "env_id": "penrose_diagrams",
+      "command_name": "penrose_diagrams",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "phybench",
+      "env_id": "phybench",
+      "command_name": "phybench",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "piqa",
+      "env_id": "piqa",
+      "command_name": "piqa",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "psycho_bench",
+      "env_id": "psycho_bench",
+      "command_name": "psycho_bench",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "pydantic_adherence",
+      "env_id": "pydantic_adherence",
+      "command_name": "pydantic_adherence",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "reward_bench",
+      "env_id": "reward_bench",
+      "command_name": "reward_bench",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "rust_cargo",
+      "env_id": "rust_cargo",
+      "command_name": "rust_cargo",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "sad",
+      "env_id": "sad",
+      "command_name": "sad",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "scicode",
+      "env_id": "scicode",
+      "command_name": "scicode",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "search_r1_ish",
+      "env_id": "search_r1_ish",
+      "command_name": "search_r1_ish",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "seeclick",
+      "env_id": "seeclick",
+      "command_name": "seeclick",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "sg_bench",
+      "env_id": "sg_bench",
+      "command_name": "sg_bench",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "simple_bench",
+      "env_id": "simple_bench",
+      "command_name": "simple_bench",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "simpleqa_verified_2",
+      "env_id": "simpleqa_verified_2",
+      "command_name": "simpleqa_verified_2",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "skyrl_sql",
+      "env_id": "skyrl_sql",
+      "command_name": "skyrl_sql",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "spiral_bench",
+      "env_id": "spiral_bench",
+      "command_name": "spiral_bench",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "stepfun_prover",
+      "env_id": "stepfun_prover",
+      "command_name": "stepfun_prover",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "sycophancy_eval",
+      "env_id": "sycophancy_eval",
+      "command_name": "sycophancy_eval",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "synlogic",
+      "env_id": "synlogic",
+      "command_name": "synlogic",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "synthetic_clocks",
+      "env_id": "synthetic_clocks",
+      "command_name": "synthetic_clocks",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "tau_bench",
+      "env_id": "tau_bench",
+      "command_name": "tau_bench",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "taxcalc_bench",
+      "env_id": "taxcalc_bench",
+      "command_name": "taxcalc_bench",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "tensor_puzzles",
+      "env_id": "tensor_puzzles",
+      "command_name": "tensor_puzzles",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "text_quests",
+      "env_id": "text_quests",
+      "command_name": "text_quests",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "thematic_generalization",
+      "env_id": "thematic_generalization",
+      "command_name": "thematic_generalization",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "torch_ao_codebase_search",
+      "env_id": "torch_ao_codebase_search",
+      "command_name": "torch_ao_codebase_search",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "transformerpuzzles",
+      "env_id": "transformerpuzzles",
+      "command_name": "transformerpuzzles",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "triton_codebase_search",
+      "env_id": "triton_codebase_search",
+      "command_name": "triton_codebase_search",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "truthfulqa",
+      "env_id": "truthfulqa",
+      "command_name": "truthfulqa",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "uq",
+      "env_id": "uq",
+      "command_name": "uq",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "uq_project",
+      "env_id": "uq_project",
+      "command_name": "uq_project",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "vision_sr1",
+      "env_id": "vision_sr1",
+      "command_name": "vision_sr1",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "vllm_code_search",
+      "env_id": "vllm_code_search",
+      "command_name": "vllm_code_search",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "vpct_1",
+      "env_id": "vpct_1",
+      "command_name": "vpct_1",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "vrcli",
+      "env_id": "vrcli",
+      "command_name": "vrcli",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "web_voyager",
+      "env_id": "web_voyager",
+      "command_name": "web_voyager",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "webexplorer",
+      "env_id": "webexplorer",
+      "command_name": "webexplorer",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "wiki_race",
+      "env_id": "wiki_race",
+      "command_name": "wiki_race",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "wildjailbreak",
+      "env_id": "wildjailbreak",
+      "command_name": "wildjailbreak",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "winogrande",
+      "env_id": "winogrande",
+      "command_name": "winogrande",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "wmdp",
+      "env_id": "wmdp",
+      "command_name": "wmdp",
+      "available": true,
+      "owner": "community"
+    },
+    {
+      "source": "community",
+      "folder": "writing_bench",
+      "env_id": "writing_bench",
+      "command_name": "writing_bench",
+      "available": true,
+      "owner": "community"
+    }
+  ]
+}

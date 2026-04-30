@@ -1,0 +1,39 @@
+{
+  "steps": 1,
+  "episodes": 1,
+  "per_env_steps": {
+    "opencode_deepdive": 1
+  },
+  "failure_types": {
+    "bridge_failure": 1
+  },
+  "model_client_fallbacks": {
+    "total": 1,
+    "opencode_deepdive": 1
+  },
+  "bridge_fallbacks": {},
+  "trm_repairs": {},
+  "raw_invalid_actions": {},
+  "repaired_successes": {},
+  "reward_totals": {
+    "opencode_deepdive": 0.0
+  },
+  "token_usage": {
+    "prompt_tokens": 316,
+    "completion_tokens": 64,
+    "total_tokens": 380
+  },
+  "output_statuses": {
+    "completed": 1
+  },
+  "reasoning_modes": {
+    "off": 1
+  },
+  "visible_output_emitted": {
+    "false": 1
+  },
+  "run_token_total": 380,
+  "token_budget": null,
+  "run_id": null,
+  "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_overnight_all\\qwen35_9b\\qwen35_9b_opencode_deepdive_q0004.jsonl"
+}

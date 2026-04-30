@@ -1,0 +1,65 @@
+{
+  "run_name": "overnight-qwen35_27b-two-model-hard-reasoning-v1-lisanbench",
+  "max_episodes": 1,
+  "max_steps_per_episode": 8,
+  "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_trainer_policy_mining_rerun_20260421\\qwen35_27b\\qwen35_27b_two-model-hard-reasoning-v1_lisanbench_q0020.jsonl",
+  "model": {
+    "provider": "openai_compatible",
+    "base_url": "http://snacksack-ms-7d32.tail3156cd.ts.net:8081/v1",
+    "model_name": "Qwen3.5-27B.Q4_K_M.gguf",
+    "max_new_tokens": 256,
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "request_timeout": 900
+  },
+  "metadata": {
+    "variant_id": "two-model-hard-reasoning-v1",
+    "skill_name": "primehub-hard-reasoning-logic-hermes",
+    "skill_cluster": "hard_reasoning_logic",
+    "role_mode": "critic_only",
+    "role_support_tier": "critic_verify_sparse",
+    "role_gate_applied": true,
+    "role_gate_downgraded": false,
+    "role_gate_reason": "",
+    "reasoning_mode": "on"
+  },
+  "envs": [
+    {
+      "type": "primehub_external",
+      "name": "lisanbench",
+      "command_template": [
+        "C:\\Python311\\python.exe",
+        "C:/projects/Hermes Skills/scripts/remote_prime_env_bridge.py",
+        "--source",
+        "community",
+        "--host",
+        "snacksack-ms-7d32.tail3156cd.ts.net",
+        "--user",
+        "snacksack",
+        "--identity-file",
+        "C:/Users/patri/.ssh/id_ed25519",
+        "--ssh-timeout-seconds",
+        "120",
+        "--research-root",
+        "/home/snacksack/prime_repos_tmp/research-environments/environments",
+        "--community-root",
+        "/home/snacksack/prime_repos_tmp/community-environments/environments",
+        "lisanbench"
+      ],
+      "reset_args": [
+        "--reset"
+      ],
+      "trace_profile_overrides": {
+        "reasoning_mode": "on",
+        "skill_name": "primehub-hard-reasoning-logic-hermes",
+        "skill_prompt": "You are operating as Hermes skill Primehub-Hard-Reasoning-Logic-v1.\nUse the stage order TRM_PARSE -> TRM_STATE_TABLE -> TRM_ELIMINATE -> TRM_VERIFY -> FINAL.\nKeep a compact latent state table and eliminate unsupported candidates before choosing an answer.\nEmit only the final exact answer token or string required by the task.\nPreserve the exact answer contract and avoid speculative intermediate text.\nIf two candidates remain after elimination, verify against the literal question wording before final output.\nPrime/TRM role imprint:\n- This TRM role is a branch eliminator and verifier: use it to rule out unsupported candidates and confirm the surviving answer, not to improvise a new reasoning trace.\n- Current support is critic-weighted rather than retrieval-weighted, so stay on the base reasoning path unless the candidate set is already narrow.\n- Runtime gate: keep this cluster in critic-only mode and use TRM only to prune or verify candidates.",
+        "skill_cluster": "hard_reasoning_logic",
+        "role_mode": "critic_only",
+        "role_support_tier": "critic_verify_sparse",
+        "role_gate_applied": true,
+        "variant_id": "two-model-hard-reasoning-v1"
+      }
+    }
+  ],
+  "episodes": 1
+}

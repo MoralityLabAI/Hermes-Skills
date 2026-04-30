@@ -1,0 +1,239 @@
+{
+  "manifest": "C:\\projects\\Hermes Skills\\data\\primehub_skill_batch_evolution\\latest.manifest.json",
+  "run_roots": [
+    "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1",
+    "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1_retry_27b_tail",
+    "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env",
+    "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2"
+  ],
+  "replay_count": 212,
+  "clusters": {
+    "internal_action": {
+      "envs": [
+        "antislop"
+      ],
+      "profile": {
+        "task_family_label": "primehub_internal_action",
+        "top_k": 1,
+        "holdout_ratio": 0.25,
+        "min_supervision_weight": 0.4,
+        "goal": "recover exact hidden-action tokens such as inspect_and_continue"
+      },
+      "replays": 4,
+      "stage_manifest": [
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_antislop_q0031.jsonl",
+          "env_name": "antislop",
+          "task": "default",
+          "model_name": "Qwen3.5-27B.Q4_K_M.gguf",
+          "reward": 12.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_antislop_q0031.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_smoke\\internal_action\\stage\\qwen35_27b_antislop_q0031.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_smoke\\internal_action\\stage\\qwen35_27b_antislop_q0031.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 1,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 0
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_antislop_q0003.jsonl",
+          "env_name": "antislop",
+          "task": "default",
+          "model_name": "Qwen_Qwen3.5-9B-Q4_K_M.gguf",
+          "reward": 11.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_antislop_q0003.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_smoke\\internal_action\\stage\\qwen35_9b_antislop_q0003.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_smoke\\internal_action\\stage\\qwen35_9b_antislop_q0003.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 1,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 0
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2\\qwen35_27b\\qwen35_27b_antislop_q0048.jsonl",
+          "env_name": "antislop",
+          "task": "default",
+          "model_name": "Qwen3.5-27B.Q4_K_M.gguf",
+          "reward": 12.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2\\qwen35_27b\\qwen35_27b_antislop_q0048.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_smoke\\internal_action\\stage\\qwen35_27b_antislop_q0048.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_smoke\\internal_action\\stage\\qwen35_27b_antislop_q0048.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 1,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 0
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2\\qwen35_9b\\qwen35_9b_antislop_q0003.jsonl",
+          "env_name": "antislop",
+          "task": "default",
+          "model_name": "Qwen_Qwen3.5-9B-Q4_K_M.gguf",
+          "reward": 12.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2\\qwen35_9b\\qwen35_9b_antislop_q0003.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_smoke\\internal_action\\stage\\qwen35_9b_antislop_q0003.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_smoke\\internal_action\\stage\\qwen35_9b_antislop_q0003.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 1,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 0
+          }
+        }
+      ],
+      "merged": {
+        "output": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_smoke\\internal_action\\cluster_merged.jsonl",
+        "total_rows": 2,
+        "bucket_counts": {
+          "exact_positive": 2
+        },
+        "source_env_counts": {
+          "antislop": 2
+        },
+        "target_action_rows": 2,
+        "target_action_imputed_rows": 0,
+        "target_action_coverage": 1.0,
+        "exact_positive_rows": 2,
+        "weak_positive_rows": 0,
+        "trainer_policy": {
+          "policy_name": "narrow_action_support_trainer_policy",
+          "support_tier": "narrow_action_support",
+          "routing_strength": "focused",
+          "exact_positive_weight": 3.0,
+          "weak_positive_weight": 1.5,
+          "negative_weight": 0.2,
+          "min_supervision_weight": 0.85,
+          "top_k": 1
+        },
+        "training_weight_summary": {
+          "policy_name": "narrow_action_support_trainer_policy",
+          "adjusted_rows": 2,
+          "bucket_weight_totals": {
+            "exact_positive": 6.0
+          },
+          "bucket_weight_averages": {
+            "exact_positive": 3.0
+          }
+        }
+      },
+      "bench": {
+        "bench_holdout_ratio": 0.20021534163858337,
+        "critic_train": {
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_smoke\\internal_action\\cluster_merged.jsonl",
+          "output": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_smoke\\internal_action\\models\\trm_critic.json",
+          "example_count": 2,
+          "task_family_counts": {
+            "primehub_internal_action": 2
+          },
+          "bucket_counts": {
+            "exact_positive": 2
+          },
+          "k": 1
+        },
+        "critic_bench": {
+          "rows": 2,
+          "bucket_accuracy": 0.0,
+          "avg_bucket_abs_error": 3.0,
+          "visible_output_accuracy": 1.0,
+          "avg_grid_cell_accuracy_abs_error": null,
+          "per_family": {
+            "primehub_internal_action": {
+              "rows": 2,
+              "bucket_accuracy": 0.0,
+              "avg_bucket_abs_error": 3.0,
+              "visible_output_accuracy": 1.0,
+              "avg_grid_cell_accuracy_abs_error": null
+            }
+          },
+          "model_example_count": 0,
+          "train_rows": 0,
+          "eval_rows": 2,
+          "holdout_ratio": 0.20021534163858337,
+          "leave_one_out": false,
+          "k": 1
+        },
+        "retriever_train": {
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_smoke\\internal_action\\cluster_merged.jsonl",
+          "output": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_smoke\\internal_action\\models\\trm_retriever.json",
+          "example_count": 2,
+          "task_family_counts": {
+            "primehub_internal_action": 2
+          },
+          "bucket_counts": {
+            "exact_positive": 2
+          },
+          "include_buckets": [
+            "exact_positive",
+            "near_miss",
+            "weak_positive"
+          ],
+          "min_supervision_weight": 0.85
+        },
+        "retriever_bench": {
+          "rows": 2,
+          "exact_match_rate": 0.0,
+          "nonempty_prediction_rate": 0.0,
+          "avg_similarity": 0.0,
+          "avg_grid_cell_accuracy": null,
+          "per_family": {
+            "primehub_internal_action": {
+              "rows": 2,
+              "exact_match_rate": 0.0,
+              "nonempty_prediction_rate": 0.0,
+              "avg_similarity": 0.0,
+              "avg_grid_cell_accuracy": null
+            }
+          },
+          "model_example_count": 0,
+          "train_rows": 0,
+          "eval_rows": 2,
+          "holdout_ratio": 0.20021534163858337,
+          "leave_one_out": false,
+          "include_buckets": [
+            "exact_positive",
+            "near_miss",
+            "weak_positive"
+          ],
+          "min_supervision_weight": 0.85
+        },
+        "router_bench": {
+          "rows": 2,
+          "top_k": 1,
+          "retrieval_only": {
+            "exact_match_rate": 0.0,
+            "nonempty_prediction_rate": 0.0,
+            "avg_grid_cell_accuracy": null
+          },
+          "critic_gated": {
+            "exact_match_rate": 0.0,
+            "nonempty_prediction_rate": 0.0,
+            "route_abstain_rate": 1.0,
+            "avg_grid_cell_accuracy": null
+          },
+          "train_rows": 0,
+          "eval_rows": 2,
+          "retriever_example_count": 0,
+          "critic_example_count": 0,
+          "holdout_ratio": 0.20021534163858337,
+          "min_supervision_weight": 0.85
+        }
+      }
+    }
+  },
+  "role_based_imprint": {
+    "json": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_smoke\\role_based_imprint.json",
+    "md": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_smoke\\role_based_imprint.md",
+    "clusters": [
+      "internal_action"
+    ]
+  }
+}

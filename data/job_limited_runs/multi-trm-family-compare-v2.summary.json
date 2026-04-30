@@ -1,0 +1,20 @@
+﻿{
+    "exit_code":  0,
+    "run_id":  "multi-trm-family-compare-v2",
+    "cpu_pct":  50,
+    "avg_ram_mb":  1752.1,
+    "peak_ram_mb":  1916.3,
+    "stdout_log":  "C:\\projects\\Hermes Skills\\data\\job_limited_runs\\multi-trm-family-compare-v2.stdout.log",
+    "peak_io_mb_s":  null,
+    "checkpoints":  [
+
+                    ],
+    "status":  "completed",
+    "steps_completed":  7,
+    "caps":  {
+                 "ram_mb":  2048,
+                 "cpu_pct":  50
+             },
+    "event_log":  "C:\\projects\\Hermes Skills\\data\\job_limited_runs\\multi-trm-family-compare-v2.events.jsonl",
+    "stderr_log":  "C:\\projects\\Hermes Skills\\data\\job_limited_runs\\multi-trm-family-compare-v2.stderr.log"
+}

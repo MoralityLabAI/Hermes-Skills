@@ -1,0 +1,37 @@
+{
+  "steps": 1,
+  "episodes": 1,
+  "per_env_steps": {
+    "agency_bench": 1
+  },
+  "failure_types": {},
+  "model_client_fallbacks": {
+    "total": 1,
+    "agency_bench": 1
+  },
+  "bridge_fallbacks": {},
+  "trm_repairs": {},
+  "raw_invalid_actions": {},
+  "repaired_successes": {},
+  "reward_totals": {
+    "agency_bench": 0.0
+  },
+  "token_usage": {
+    "prompt_tokens": 413,
+    "completion_tokens": 256,
+    "total_tokens": 669
+  },
+  "output_statuses": {
+    "completed": 1
+  },
+  "reasoning_modes": {
+    "off": 1
+  },
+  "visible_output_emitted": {
+    "false": 1
+  },
+  "run_token_total": 669,
+  "token_budget": null,
+  "run_id": null,
+  "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2\\qwen35_27b\\qwen35_27b_agency_bench_q0046.jsonl"
+}

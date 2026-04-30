@@ -1,0 +1,40 @@
+{
+  "run_id": "qwen35-4b-skill-smoke-server1",
+  "runner": "server",
+  "base_url": "http://127.0.0.1:18083",
+  "managed_server": true,
+  "rows": 1,
+  "passes": 0,
+  "pass_rate": 0.0,
+  "per_skill": {
+    "intellect3-logic-hermes": {
+      "rows": 1,
+      "passes": 0,
+      "pass_rate": 0.0
+    }
+  },
+  "artifacts": {
+    "event_log": "C:\\projects\\Hermes Skills\\data\\qwen35_4b_skill_smoke\\qwen35-4b-skill-smoke-server1.events.jsonl",
+    "summary": "C:\\projects\\Hermes Skills\\data\\qwen35_4b_skill_smoke\\qwen35-4b-skill-smoke-server1.summary.json",
+    "stout_log": "C:\\projects\\Hermes Skills\\data\\qwen35_4b_skill_smoke\\qwen35-4b-skill-smoke-server1.stout.jsonl"
+  },
+  "records": [
+    {
+      "case_id": "logic_known_signature",
+      "skill_name": "intellect3-logic-hermes",
+      "latency_seconds": 25.1848,
+      "response_text": "<think>\nThinking Process:\n\n1.  **Analyze the Request:**\n    *   **Skill:** intellect3-logic-hermes (Level 3, Logic, Hermes).\n    *   **Contract:** Parse grid and signatures, build a candidate, verify tent adjacency plus row/column counts and tree",
+      "runner": "server",
+      "case_status": "ok",
+      "returncode": null,
+      "tokens_evaluated": 121,
+      "tokens_predicted": 64,
+      "passed": false,
+      "missing": [
+        "scripts/check_signature_gate.py",
+        "logic_skill_trm"
+      ],
+      "forbidden_hits": []
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "run_name": "overnight-qwen35_9b-two-model-contract-repair-v1-simpleqa_verified_2",
+  "max_episodes": 1,
+  "max_steps_per_episode": 8,
+  "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_choice_contract_envspecific_20260422\\qwen35_9b\\qwen35_9b_two-model-contract-repair-v1_simpleqa_verified_2_q0002.jsonl",
+  "model": {
+    "provider": "openai_compatible",
+    "base_url": "http://snacksack-ms-7d32.tail3156cd.ts.net:8082/v1",
+    "model_name": "Qwen_Qwen3.5-9B-Q4_K_M.gguf",
+    "max_new_tokens": 256,
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "request_timeout": 900
+  },
+  "metadata": {
+    "variant_id": "two-model-contract-repair-v1",
+    "skill_name": "primehub-choice-contract-hermes",
+    "skill_cluster": "choice_contract",
+    "role_mode": "action_support",
+    "role_support_tier": "action_support",
+    "role_gate_applied": true,
+    "role_gate_downgraded": false,
+    "role_gate_reason": "",
+    "reasoning_mode": "on"
+  },
+  "envs": [
+    {
+      "type": "primehub_external",
+      "name": "simpleqa_verified_2",
+      "command_template": [
+        "C:\\Python311\\python.exe",
+        "C:/projects/Hermes Skills/scripts/remote_prime_env_bridge.py",
+        "--source",
+        "community",
+        "--host",
+        "snacksack-ms-7d32.tail3156cd.ts.net",
+        "--user",
+        "snacksack",
+        "--identity-file",
+        "C:/Users/patri/.ssh/id_ed25519",
+        "--ssh-timeout-seconds",
+        "120",
+        "--research-root",
+        "/home/snacksack/prime_repos_tmp/research-environments/environments",
+        "--community-root",
+        "/home/snacksack/prime_repos_tmp/community-environments/environments",
+        "simpleqa_verified_2"
+      ],
+      "reset_args": [
+        "--reset"
+      ],
+      "trace_profile_overrides": {
+        "reasoning_mode": "on",
+        "skill_name": "primehub-choice-contract-hermes",
+        "skill_prompt": "You are operating as Hermes skill Primehub-Choice-Contract-v1.\nUse the stage order TRM_PARSE -> TRM_CRITIC -> TRM_FORMATTER -> TRM_VERIFY -> FINAL.\nRecover the semantic answer first, then repair only the output wrapper.\nDo not add explanations, rationale, or extra lines.\nEmit only the exact final answer string required by the task.\nIf the answer is already semantically correct but wrapped incorrectly, repair the wrapper before final output.\nPrime/TRM role imprint:\n- This TRM role is strongest as a contract formatter: recover semantics first, then use support to repair wrappers, choice tokens, and exact answer shells.\n- Treat retrieved support as a formatting prior, not as authority on semantics; if the solved answer conflicts with the template, keep the answer and repair only the wrapper.\n- Runtime gate: action-support escalation is allowed for this cluster after semantics are fixed.",
+        "skill_cluster": "choice_contract",
+        "role_mode": "action_support",
+        "role_support_tier": "action_support",
+        "role_gate_applied": true,
+        "variant_id": "two-model-contract-repair-v1"
+      }
+    }
+  ],
+  "episodes": 1
+}

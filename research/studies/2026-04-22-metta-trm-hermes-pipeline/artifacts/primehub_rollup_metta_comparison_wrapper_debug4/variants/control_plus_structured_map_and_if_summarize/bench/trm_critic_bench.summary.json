@@ -1,0 +1,78 @@
+{
+  "rows": 66,
+  "bucket_accuracy": 0.7273,
+  "avg_bucket_abs_error": 0.8182,
+  "visible_output_accuracy": 0.7424,
+  "avg_grid_cell_accuracy_abs_error": null,
+  "per_family": {
+    "primehub": {
+      "rows": 32,
+      "bucket_accuracy": 0.75,
+      "avg_bucket_abs_error": 0.75,
+      "visible_output_accuracy": 0.4688,
+      "avg_grid_cell_accuracy_abs_error": null
+    },
+    "primehub_structured_map__task_success": {
+      "rows": 1,
+      "bucket_accuracy": 0.0,
+      "avg_bucket_abs_error": 3.0,
+      "visible_output_accuracy": 1.0,
+      "avg_grid_cell_accuracy_abs_error": null
+    },
+    "primehub_structured_map__contract_validity": {
+      "rows": 1,
+      "bucket_accuracy": 0.0,
+      "avg_bucket_abs_error": 3.0,
+      "visible_output_accuracy": 1.0,
+      "avg_grid_cell_accuracy_abs_error": null
+    },
+    "primehub_structured_map__retrieval_selection_correctness": {
+      "rows": 1,
+      "bucket_accuracy": 1.0,
+      "avg_bucket_abs_error": 0.0,
+      "visible_output_accuracy": 1.0,
+      "avg_grid_cell_accuracy_abs_error": null
+    },
+    "primehub_constraint_summarize__contract_validity": {
+      "rows": 11,
+      "bucket_accuracy": 0.5455,
+      "avg_bucket_abs_error": 1.3636,
+      "visible_output_accuracy": 1.0,
+      "avg_grid_cell_accuracy_abs_error": null
+    },
+    "primehub_constraint_summarize__task_success": {
+      "rows": 9,
+      "bucket_accuracy": 0.6667,
+      "avg_bucket_abs_error": 1.0,
+      "visible_output_accuracy": 1.0,
+      "avg_grid_cell_accuracy_abs_error": null
+    },
+    "primehub_constraint_summarize__repair_success": {
+      "rows": 3,
+      "bucket_accuracy": 1.0,
+      "avg_bucket_abs_error": 0.0,
+      "visible_output_accuracy": 1.0,
+      "avg_grid_cell_accuracy_abs_error": null
+    },
+    "primehub_constraint_summarize__profile_selection_correctness": {
+      "rows": 5,
+      "bucket_accuracy": 1.0,
+      "avg_bucket_abs_error": 0.0,
+      "visible_output_accuracy": 1.0,
+      "avg_grid_cell_accuracy_abs_error": null
+    },
+    "primehub_constraint_summarize__retrieval_selection_correctness": {
+      "rows": 3,
+      "bucket_accuracy": 1.0,
+      "avg_bucket_abs_error": 0.0,
+      "visible_output_accuracy": 1.0,
+      "avg_grid_cell_accuracy_abs_error": null
+    }
+  },
+  "model_example_count": 314,
+  "train_rows": 314,
+  "eval_rows": 66,
+  "holdout_ratio": 0.2,
+  "leave_one_out": false,
+  "k": 5
+}

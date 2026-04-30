@@ -1,0 +1,109 @@
+{
+  "cluster_id": "hard_reasoning_logic",
+  "input": "/home/snacksack/outputs/hermes_skill_trm_parallel/20260417T001839Z/clusters/hard_reasoning_logic/cluster_merged.jsonl",
+  "out_dir": "/home/snacksack/outputs/hermes_skill_trm_parallel/20260417T001839Z/clusters/hard_reasoning_logic",
+  "top_k": 3,
+  "holdout_ratio": 0.25,
+  "bench_holdout_ratio": 0.3526479137706606,
+  "min_supervision_weight": 0.4,
+  "critic_train": {
+    "input": "/home/snacksack/outputs/hermes_skill_trm_parallel/20260417T001839Z/clusters/hard_reasoning_logic/cluster_merged.jsonl",
+    "output": "/home/snacksack/outputs/hermes_skill_trm_parallel/20260417T001839Z/clusters/hard_reasoning_logic/models/trm_critic.json",
+    "example_count": 27,
+    "task_family_counts": {
+      "primehub_hard_reasoning_logic": 27
+    },
+    "bucket_counts": {
+      "negative": 24,
+      "exact_positive": 3
+    },
+    "k": 3
+  },
+  "critic_bench": {
+    "rows": 7,
+    "bucket_accuracy": 0.5714,
+    "avg_bucket_abs_error": 1.2857,
+    "visible_output_accuracy": 0.5714,
+    "avg_grid_cell_accuracy_abs_error": null,
+    "per_family": {
+      "primehub_hard_reasoning_logic": {
+        "rows": 7,
+        "bucket_accuracy": 0.5714,
+        "avg_bucket_abs_error": 1.2857,
+        "visible_output_accuracy": 0.5714,
+        "avg_grid_cell_accuracy_abs_error": null
+      }
+    },
+    "model_example_count": 20,
+    "train_rows": 20,
+    "eval_rows": 7,
+    "holdout_ratio": 0.3526479137706606,
+    "leave_one_out": false,
+    "k": 3
+  },
+  "retriever_train": {
+    "input": "/home/snacksack/outputs/hermes_skill_trm_parallel/20260417T001839Z/clusters/hard_reasoning_logic/cluster_merged.jsonl",
+    "output": "/home/snacksack/outputs/hermes_skill_trm_parallel/20260417T001839Z/clusters/hard_reasoning_logic/models/trm_retriever.json",
+    "example_count": 3,
+    "task_family_counts": {
+      "primehub_hard_reasoning_logic": 3
+    },
+    "bucket_counts": {
+      "exact_positive": 3
+    },
+    "include_buckets": [
+      "exact_positive",
+      "near_miss",
+      "weak_positive"
+    ],
+    "min_supervision_weight": 0.4
+  },
+  "retriever_bench": {
+    "rows": 7,
+    "exact_match_rate": 0.0,
+    "nonempty_prediction_rate": 1.0,
+    "avg_similarity": 0.5611,
+    "avg_grid_cell_accuracy": null,
+    "per_family": {
+      "primehub_hard_reasoning_logic": {
+        "rows": 7,
+        "exact_match_rate": 0.0,
+        "nonempty_prediction_rate": 1.0,
+        "avg_similarity": 0.5611,
+        "avg_grid_cell_accuracy": null
+      }
+    },
+    "model_example_count": 3,
+    "train_rows": 20,
+    "eval_rows": 7,
+    "holdout_ratio": 0.3526479137706606,
+    "leave_one_out": false,
+    "include_buckets": [
+      "exact_positive",
+      "near_miss",
+      "weak_positive"
+    ],
+    "min_supervision_weight": 0.4
+  },
+  "router_bench": {
+    "rows": 7,
+    "top_k": 3,
+    "retrieval_only": {
+      "exact_match_rate": 0.0,
+      "nonempty_prediction_rate": 1.0,
+      "avg_grid_cell_accuracy": null
+    },
+    "critic_gated": {
+      "exact_match_rate": 0.0,
+      "nonempty_prediction_rate": 0.4286,
+      "route_abstain_rate": 0.5714,
+      "avg_grid_cell_accuracy": null
+    },
+    "train_rows": 20,
+    "eval_rows": 7,
+    "retriever_example_count": 3,
+    "critic_example_count": 20,
+    "holdout_ratio": 0.3526479137706606,
+    "min_supervision_weight": 0.4
+  }
+}

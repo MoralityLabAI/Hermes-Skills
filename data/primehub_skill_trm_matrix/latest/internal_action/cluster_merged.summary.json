@@ -1,0 +1,56 @@
+{
+  "output": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\latest\\internal_action\\cluster_merged.jsonl",
+  "total_rows": 2,
+  "bucket_counts": {
+    "exact_positive": 2
+  },
+  "source_env_counts": {
+    "antislop": 2
+  },
+  "target_action_rows": 2,
+  "target_action_imputed_rows": 0,
+  "target_action_coverage": 1.0,
+  "exact_positive_rows": 2,
+  "near_miss_rows": 0,
+  "weak_positive_rows": 0,
+  "bucket_mining_summary": {
+    "changed_rows": 0,
+    "transitions": {},
+    "reasons": {}
+  },
+  "env_priority_summary": {
+    "replicated_source_rows": 0,
+    "added_rows": 0,
+    "bucket_replica_counts": {},
+    "env_replica_counts": {}
+  },
+  "negative_downsampling_summary": {
+    "original_negative_rows": 0,
+    "kept_negative_rows": 0,
+    "dropped_negative_rows": 0,
+    "hard_negative_rows_kept": 0,
+    "easy_negative_rows_kept": 0,
+    "easy_negative_rows_dropped": 0
+  },
+  "trainer_policy": {
+    "policy_name": "narrow_action_support_trainer_policy",
+    "support_tier": "narrow_action_support",
+    "routing_strength": "focused",
+    "exact_positive_weight": 3.0,
+    "near_miss_weight": 2.0,
+    "weak_positive_weight": 1.5,
+    "negative_weight": 0.2,
+    "min_supervision_weight": 0.85,
+    "top_k": 1
+  },
+  "training_weight_summary": {
+    "policy_name": "narrow_action_support_trainer_policy",
+    "adjusted_rows": 2,
+    "bucket_weight_totals": {
+      "exact_positive": 6.0
+    },
+    "bucket_weight_averages": {
+      "exact_positive": 3.0
+    }
+  }
+}

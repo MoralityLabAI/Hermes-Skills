@@ -1,0 +1,109 @@
+Wrote 195 merged TRM rows to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control\merged.jsonl
+{"negative": 166, "exact_positive": 24, "weak_positive": 5}
+Wrote critic model with 195 examples to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control\models\trm_critic.json
+{'negative': 166, 'exact_positive': 24, 'weak_positive': 5}
+Wrote benchmark summary to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control\bench\trm_critic_bench.summary.json
+{"eval_rows": 32, "bucket_accuracy": 0.75, "per_family": {"primehub": {"rows": 32, "bucket_accuracy": 0.75, "avg_bucket_abs_error": 0.75, "visible_output_accuracy": 0.4688, "avg_grid_cell_accuracy_abs_error": null}}}
+Wrote retriever model with 24 examples to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control\models\trm_retriever.json
+{"exact_positive": 24}
+Wrote benchmark summary to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control\bench\trm_retriever_bench.summary.json
+{"eval_rows": 32, "exact_match_rate": 0.0625, "per_family": {"primehub": {"rows": 32, "exact_match_rate": 0.0625, "nonempty_prediction_rate": 1.0, "avg_similarity": 0.3618, "avg_grid_cell_accuracy": null}}}
+Wrote router benchmark summary to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control\bench\trm_router_bench.summary.json
+{"eval_rows": 32, "retrieval_only": {"exact_match_rate": 0.0625, "nonempty_prediction_rate": 1.0, "avg_grid_cell_accuracy": null}, "critic_gated": {"exact_match_rate": 0.0, "nonempty_prediction_rate": 0.0938, "route_abstain_rate": 0.9062, "avg_grid_cell_accuracy": null}}
+Wrote 202 merged TRM rows to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_abstraction\merged.jsonl
+{"negative": 166, "exact_positive": 31, "weak_positive": 5}
+Wrote critic model with 202 examples to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_abstraction\models\trm_critic.json
+{'negative': 166, 'exact_positive': 31, 'weak_positive': 5}
+Wrote benchmark summary to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_abstraction\bench\trm_critic_bench.summary.json
+{"eval_rows": 32, "bucket_accuracy": 0.5938, "per_family": {"primehub": {"rows": 32, "bucket_accuracy": 0.5938, "avg_bucket_abs_error": 1.2188, "visible_output_accuracy": 0.4688, "avg_grid_cell_accuracy_abs_error": null}}}
+Wrote retriever model with 31 examples to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_abstraction\models\trm_retriever.json
+{"exact_positive": 31}
+Wrote benchmark summary to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_abstraction\bench\trm_retriever_bench.summary.json
+{"eval_rows": 32, "exact_match_rate": 0.1562, "per_family": {"primehub": {"rows": 32, "exact_match_rate": 0.1562, "nonempty_prediction_rate": 1.0, "avg_similarity": 0.4897, "avg_grid_cell_accuracy": null}}}
+Wrote router benchmark summary to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_abstraction\bench\trm_router_bench.summary.json
+{"eval_rows": 32, "retrieval_only": {"exact_match_rate": 0.1562, "nonempty_prediction_rate": 1.0, "avg_grid_cell_accuracy": null}, "critic_gated": {"exact_match_rate": 0.0, "nonempty_prediction_rate": 0.25, "route_abstain_rate": 0.75, "avg_grid_cell_accuracy": null}}
+Wrote 214 merged TRM rows to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_abstraction_and_critic_support\merged.jsonl
+{"negative": 166, "exact_positive": 43, "weak_positive": 5}
+Wrote critic model with 214 examples to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_abstraction_and_critic_support\models\trm_critic.json
+{'negative': 166, 'exact_positive': 43, 'weak_positive': 5}
+Wrote benchmark summary to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_abstraction_and_critic_support\bench\trm_critic_bench.summary.json
+{"eval_rows": 32, "bucket_accuracy": 0.75, "per_family": {"primehub": {"rows": 32, "bucket_accuracy": 0.75, "avg_bucket_abs_error": 0.75, "visible_output_accuracy": 0.625, "avg_grid_cell_accuracy_abs_error": null}}}
+Wrote retriever model with 31 examples to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_abstraction_and_critic_support\models\trm_retriever.json
+{"exact_positive": 31}
+Wrote benchmark summary to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_abstraction_and_critic_support\bench\trm_retriever_bench.summary.json
+{"eval_rows": 32, "exact_match_rate": 0.1562, "per_family": {"primehub": {"rows": 32, "exact_match_rate": 0.1562, "nonempty_prediction_rate": 1.0, "avg_similarity": 0.4897, "avg_grid_cell_accuracy": null}}}
+Wrote router benchmark summary to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_abstraction_and_critic_support\bench\trm_router_bench.summary.json
+{"eval_rows": 32, "retrieval_only": {"exact_match_rate": 0.1562, "nonempty_prediction_rate": 1.0, "avg_grid_cell_accuracy": null}, "critic_gated": {"exact_match_rate": 0.1562, "nonempty_prediction_rate": 0.4062, "route_abstain_rate": 0.5938, "avg_grid_cell_accuracy": null}}
+Wrote 230 merged TRM rows to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_and_all_transfer\merged.jsonl
+{"negative": 182, "exact_positive": 35, "weak_positive": 6, "near_miss": 7}
+Wrote critic model with 230 examples to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_and_all_transfer\models\trm_critic.json
+{'negative': 182, 'exact_positive': 35, 'weak_positive': 6, 'near_miss': 7}
+Wrote benchmark summary to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_and_all_transfer\bench\trm_critic_bench.summary.json
+{"eval_rows": 39, "bucket_accuracy": 0.6154, "per_family": {"primehub": {"rows": 39, "bucket_accuracy": 0.6154, "avg_bucket_abs_error": 1.1026, "visible_output_accuracy": 0.5128, "avg_grid_cell_accuracy_abs_error": null}}}
+Wrote retriever model with 42 examples to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_and_all_transfer\models\trm_retriever.json
+{"exact_positive": 35, "near_miss": 7}
+Wrote benchmark summary to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_and_all_transfer\bench\trm_retriever_bench.summary.json
+{"eval_rows": 39, "exact_match_rate": 0.1282, "per_family": {"primehub": {"rows": 39, "exact_match_rate": 0.1282, "nonempty_prediction_rate": 1.0, "avg_similarity": 0.5929, "avg_grid_cell_accuracy": null}}}
+Wrote router benchmark summary to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_and_all_transfer\bench\trm_router_bench.summary.json
+{"eval_rows": 39, "retrieval_only": {"exact_match_rate": 0.1282, "nonempty_prediction_rate": 1.0, "avg_grid_cell_accuracy": null}, "critic_gated": {"exact_match_rate": 0.0, "nonempty_prediction_rate": 0.2051, "route_abstain_rate": 0.7949, "avg_grid_cell_accuracy": null}}
+Wrote 242 merged TRM rows to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_critic_and_all_transfer\merged.jsonl
+{"negative": 182, "exact_positive": 47, "weak_positive": 6, "near_miss": 7}
+Wrote critic model with 242 examples to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_critic_and_all_transfer\models\trm_critic.json
+{'negative': 182, 'exact_positive': 47, 'weak_positive': 6, 'near_miss': 7}
+Wrote benchmark summary to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_critic_and_all_transfer\bench\trm_critic_bench.summary.json
+{"eval_rows": 39, "bucket_accuracy": 0.7436, "per_family": {"primehub": {"rows": 39, "bucket_accuracy": 0.7436, "avg_bucket_abs_error": 0.7179, "visible_output_accuracy": 0.641, "avg_grid_cell_accuracy_abs_error": null}}}
+Wrote retriever model with 42 examples to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_critic_and_all_transfer\models\trm_retriever.json
+{"exact_positive": 35, "near_miss": 7}
+Wrote benchmark summary to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_critic_and_all_transfer\bench\trm_retriever_bench.summary.json
+{"eval_rows": 39, "exact_match_rate": 0.1282, "per_family": {"primehub": {"rows": 39, "exact_match_rate": 0.1282, "nonempty_prediction_rate": 1.0, "avg_similarity": 0.5929, "avg_grid_cell_accuracy": null}}}
+Wrote router benchmark summary to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_critic_and_all_transfer\bench\trm_router_bench.summary.json
+{"eval_rows": 39, "retrieval_only": {"exact_match_rate": 0.1282, "nonempty_prediction_rate": 1.0, "avg_grid_cell_accuracy": null}, "critic_gated": {"exact_match_rate": 0.1282, "nonempty_prediction_rate": 0.3333, "route_abstain_rate": 0.6667, "avg_grid_cell_accuracy": null}}
+Wrote 220 merged TRM rows to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_abstraction_and_critic_support_and_ifeval_abstraction\merged.jsonl
+{"negative": 166, "exact_positive": 49, "weak_positive": 5}
+Wrote critic model with 220 examples to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_abstraction_and_critic_support_and_ifeval_abstraction\models\trm_critic.json
+{'negative': 166, 'exact_positive': 49, 'weak_positive': 5}
+Wrote benchmark summary to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_abstraction_and_critic_support_and_ifeval_abstraction\bench\trm_critic_bench.summary.json
+{"eval_rows": 32, "bucket_accuracy": 0.6562, "per_family": {"primehub": {"rows": 32, "bucket_accuracy": 0.6562, "avg_bucket_abs_error": 1.0312, "visible_output_accuracy": 0.625, "avg_grid_cell_accuracy_abs_error": null}}}
+Wrote retriever model with 37 examples to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_abstraction_and_critic_support_and_ifeval_abstraction\models\trm_retriever.json
+{"exact_positive": 37}
+Wrote benchmark summary to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_abstraction_and_critic_support_and_ifeval_abstraction\bench\trm_retriever_bench.summary.json
+{"eval_rows": 32, "exact_match_rate": 0.1562, "per_family": {"primehub": {"rows": 32, "exact_match_rate": 0.1562, "nonempty_prediction_rate": 1.0, "avg_similarity": 0.5548, "avg_grid_cell_accuracy": null}}}
+Wrote router benchmark summary to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_abstraction_and_critic_support_and_ifeval_abstraction\bench\trm_router_bench.summary.json
+{"eval_rows": 32, "retrieval_only": {"exact_match_rate": 0.1562, "nonempty_prediction_rate": 1.0, "avg_grid_cell_accuracy": null}, "critic_gated": {"exact_match_rate": 0.1562, "nonempty_prediction_rate": 0.5, "route_abstain_rate": 0.5, "avg_grid_cell_accuracy": null}}
+Wrote 226 merged TRM rows to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_abstraction_and_critic_support_and_ifeval_stack\merged.jsonl
+{"negative": 166, "exact_positive": 55, "weak_positive": 5}
+Wrote critic model with 226 examples to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_abstraction_and_critic_support_and_ifeval_stack\models\trm_critic.json
+{'negative': 166, 'exact_positive': 55, 'weak_positive': 5}
+Wrote benchmark summary to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_abstraction_and_critic_support_and_ifeval_stack\bench\trm_critic_bench.summary.json
+{"eval_rows": 32, "bucket_accuracy": 0.6562, "per_family": {"primehub": {"rows": 32, "bucket_accuracy": 0.6562, "avg_bucket_abs_error": 1.0312, "visible_output_accuracy": 0.625, "avg_grid_cell_accuracy_abs_error": null}}}
+Wrote retriever model with 37 examples to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_abstraction_and_critic_support_and_ifeval_stack\models\trm_retriever.json
+{"exact_positive": 37}
+Wrote benchmark summary to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_abstraction_and_critic_support_and_ifeval_stack\bench\trm_retriever_bench.summary.json
+{"eval_rows": 32, "exact_match_rate": 0.1562, "per_family": {"primehub": {"rows": 32, "exact_match_rate": 0.1562, "nonempty_prediction_rate": 1.0, "avg_similarity": 0.5548, "avg_grid_cell_accuracy": null}}}
+Wrote router benchmark summary to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_abstraction_and_critic_support_and_ifeval_stack\bench\trm_router_bench.summary.json
+{"eval_rows": 32, "retrieval_only": {"exact_match_rate": 0.1562, "nonempty_prediction_rate": 1.0, "avg_grid_cell_accuracy": null}, "critic_gated": {"exact_match_rate": 0.1562, "nonempty_prediction_rate": 0.5, "route_abstain_rate": 0.5, "avg_grid_cell_accuracy": null}}
+Wrote 220 merged TRM rows to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_abstraction_and_critic_support_and_aime_abstraction\merged.jsonl
+{"negative": 166, "exact_positive": 49, "weak_positive": 5}
+Wrote critic model with 220 examples to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_abstraction_and_critic_support_and_aime_abstraction\models\trm_critic.json
+{'negative': 166, 'exact_positive': 49, 'weak_positive': 5}
+Wrote benchmark summary to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_abstraction_and_critic_support_and_aime_abstraction\bench\trm_critic_bench.summary.json
+{"eval_rows": 32, "bucket_accuracy": 0.5625, "per_family": {"primehub": {"rows": 32, "bucket_accuracy": 0.5625, "avg_bucket_abs_error": 1.3125, "visible_output_accuracy": 0.625, "avg_grid_cell_accuracy_abs_error": null}}}
+Wrote retriever model with 37 examples to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_abstraction_and_critic_support_and_aime_abstraction\models\trm_retriever.json
+{"exact_positive": 37}
+Wrote benchmark summary to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_abstraction_and_critic_support_and_aime_abstraction\bench\trm_retriever_bench.summary.json
+{"eval_rows": 32, "exact_match_rate": 0.1562, "per_family": {"primehub": {"rows": 32, "exact_match_rate": 0.1562, "nonempty_prediction_rate": 1.0, "avg_similarity": 0.5798, "avg_grid_cell_accuracy": null}}}
+Wrote router benchmark summary to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_abstraction_and_critic_support_and_aime_abstraction\bench\trm_router_bench.summary.json
+{"eval_rows": 32, "retrieval_only": {"exact_match_rate": 0.1562, "nonempty_prediction_rate": 1.0, "avg_grid_cell_accuracy": null}, "critic_gated": {"exact_match_rate": 0.1562, "nonempty_prediction_rate": 0.5938, "route_abstain_rate": 0.4062, "avg_grid_cell_accuracy": null}}
+Wrote 226 merged TRM rows to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_abstraction_and_critic_support_and_aime_stack\merged.jsonl
+{"negative": 166, "exact_positive": 55, "weak_positive": 5}
+Wrote critic model with 226 examples to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_abstraction_and_critic_support_and_aime_stack\models\trm_critic.json
+{'negative': 166, 'exact_positive': 55, 'weak_positive': 5}
+Wrote benchmark summary to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_abstraction_and_critic_support_and_aime_stack\bench\trm_critic_bench.summary.json
+{"eval_rows": 32, "bucket_accuracy": 0.5625, "per_family": {"primehub": {"rows": 32, "bucket_accuracy": 0.5625, "avg_bucket_abs_error": 1.3125, "visible_output_accuracy": 0.625, "avg_grid_cell_accuracy_abs_error": null}}}
+Wrote retriever model with 37 examples to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_abstraction_and_critic_support_and_aime_stack\models\trm_retriever.json
+{"exact_positive": 37}
+Wrote benchmark summary to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_abstraction_and_critic_support_and_aime_stack\bench\trm_retriever_bench.summary.json
+{"eval_rows": 32, "exact_match_rate": 0.1562, "per_family": {"primehub": {"rows": 32, "exact_match_rate": 0.1562, "nonempty_prediction_rate": 1.0, "avg_similarity": 0.5798, "avg_grid_cell_accuracy": null}}}
+Wrote router benchmark summary to C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\variants\control_plus_external_abstraction_and_critic_support_and_aime_stack\bench\trm_router_bench.summary.json
+{"eval_rows": 32, "retrieval_only": {"exact_match_rate": 0.1562, "nonempty_prediction_rate": 1.0, "avg_grid_cell_accuracy": null}, "critic_gated": {"exact_match_rate": 0.1562, "nonempty_prediction_rate": 0.5938, "route_abstain_rate": 0.4062, "avg_grid_cell_accuracy": null}}
+C:\projects\Hermes Skills\research\studies\2026-04-22-metta-trm-hermes-pipeline\artifacts\primehub_external_abstraction_comparison\comparison.summary.json

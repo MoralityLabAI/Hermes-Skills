@@ -1,0 +1,72 @@
+{
+  "output": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\latest\\hard_reasoning_numeric\\cluster_merged.jsonl",
+  "total_rows": 35,
+  "bucket_counts": {
+    "negative": 24,
+    "exact_positive": 3,
+    "weak_positive": 8
+  },
+  "source_env_counts": {
+    "math_env": 7,
+    "math500": 6,
+    "gauss": 4,
+    "aime2024": 6,
+    "aime2025": 6,
+    "aime2026": 6
+  },
+  "target_action_rows": 3,
+  "target_action_imputed_rows": 0,
+  "target_action_coverage": 0.0857,
+  "exact_positive_rows": 3,
+  "near_miss_rows": 0,
+  "weak_positive_rows": 8,
+  "bucket_mining_summary": {
+    "changed_rows": 8,
+    "transitions": {
+      "negative->weak_positive": 8
+    },
+    "reasons": {
+      "final_answer_attempt": 8
+    }
+  },
+  "env_priority_summary": {
+    "replicated_source_rows": 0,
+    "added_rows": 0,
+    "bucket_replica_counts": {},
+    "env_replica_counts": {}
+  },
+  "negative_downsampling_summary": {
+    "original_negative_rows": 24,
+    "kept_negative_rows": 24,
+    "dropped_negative_rows": 0,
+    "hard_negative_rows_kept": 18,
+    "easy_negative_rows_kept": 6,
+    "easy_negative_rows_dropped": 0,
+    "target_negative_budget": 24
+  },
+  "trainer_policy": {
+    "policy_name": "critic_verify_sparse_trainer_policy",
+    "support_tier": "critic_verify_sparse",
+    "routing_strength": "conservative",
+    "exact_positive_weight": 3.0,
+    "near_miss_weight": 1.8,
+    "weak_positive_weight": 1.0,
+    "negative_weight": 0.2,
+    "min_supervision_weight": 0.6,
+    "top_k": 2
+  },
+  "training_weight_summary": {
+    "policy_name": "critic_verify_sparse_trainer_policy",
+    "adjusted_rows": 11,
+    "bucket_weight_totals": {
+      "negative": 4.8,
+      "exact_positive": 9.0,
+      "weak_positive": 8.0
+    },
+    "bucket_weight_averages": {
+      "exact_positive": 3.0,
+      "negative": 0.2,
+      "weak_positive": 1.0
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "bundle_dir": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\if_summarize_judge_bundle",
+  "scorecard_dir": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\if_summarize_judge_multisignal",
+  "cluster_id": "constraint_summarize",
+  "trainer_policy": {
+    "policy_name": "format_support_trainer_policy",
+    "support_tier": "format_support",
+    "routing_strength": "moderate",
+    "exact_positive_weight": 2.1,
+    "near_miss_weight": 1.5,
+    "weak_positive_weight": 1.0,
+    "negative_weight": 0.15,
+    "min_supervision_weight": 0.35,
+    "top_k": 4,
+    "enabled_signals": [
+      "contract_family_match",
+      "contract_validity",
+      "critic_verdict_agreement",
+      "failure_localization",
+      "profile_selection_correctness",
+      "repair_success",
+      "retrieval_selection_correctness",
+      "task_success",
+      "transport_no_fallback",
+      "transport_visible_output"
+    ],
+    "signal_weights": {
+      "contract_family_match": 1.4,
+      "contract_validity": 1.6,
+      "critic_verdict_agreement": 1.1,
+      "failure_localization": 1.2,
+      "profile_selection_correctness": 1.6,
+      "repair_success": 1.7,
+      "retrieval_selection_correctness": 1.2,
+      "task_success": 1.3,
+      "transport_no_fallback": 0.85,
+      "transport_visible_output": 0.85
+    }
+  },
+  "row_count": 446,
+  "avg_supervision_weight": 1.6062,
+  "bucket_counts": {
+    "exact_positive": 125,
+    "weak_positive": 249,
+    "negative": 42,
+    "near_miss": 30
+  },
+  "task_family_counts": {
+    "primehub_constraint_summarize__retrieval_selection_correctness": 18,
+    "primehub_constraint_summarize__contract_family_match": 69,
+    "primehub_constraint_summarize__transport_visible_output": 72,
+    "primehub_constraint_summarize__transport_no_fallback": 72,
+    "primehub_constraint_summarize__task_success": 54,
+    "primehub_constraint_summarize__contract_validity": 54,
+    "primehub_constraint_summarize__critic_verdict_agreement": 36,
+    "primehub_constraint_summarize__failure_localization": 36,
+    "primehub_constraint_summarize__repair_success": 18,
+    "primehub_constraint_summarize__profile_selection_correctness": 17
+  },
+  "signal_counts": {
+    "retrieval_selection_correctness": 18,
+    "contract_family_match": 69,
+    "transport_visible_output": 72,
+    "transport_no_fallback": 72,
+    "task_success": 54,
+    "contract_validity": 54,
+    "critic_verdict_agreement": 36,
+    "failure_localization": 36,
+    "repair_success": 18,
+    "profile_selection_correctness": 17
+  },
+  "signal_positive_counts": {
+    "retrieval_selection_correctness": 18,
+    "contract_family_match": 69,
+    "transport_visible_output": 72,
+    "transport_no_fallback": 72,
+    "task_success": 36,
+    "contract_validity": 36,
+    "critic_verdict_agreement": 36,
+    "failure_localization": 30,
+    "repair_success": 18,
+    "profile_selection_correctness": 17
+  },
+  "signal_negative_counts": {
+    "task_success": 18,
+    "contract_validity": 18,
+    "failure_localization": 6
+  },
+  "channel_counts": {
+    "selection": 104,
+    "transport": 144,
+    "success": 108,
+    "critic": 36,
+    "repair": 54
+  },
+  "support_role_counts": {
+    "selection_support": 89,
+    "critic_verify": 232,
+    "repair_support": 125
+  }
+}

@@ -1,0 +1,780 @@
+{
+  "manifest": "C:\\projects\\Hermes Skills\\data\\primehub_skill_batch_evolution\\latest.manifest.json",
+  "run_roots": [
+    "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1",
+    "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1_retry_27b_tail",
+    "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env",
+    "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2"
+  ],
+  "replay_count": 212,
+  "clusters": {
+    "hard_reasoning_numeric": {
+      "envs": [
+        "math_env",
+        "math500",
+        "gauss",
+        "aime2024",
+        "aime2025",
+        "aime2026"
+      ],
+      "profile": {
+        "task_family_label": "primehub_hard_reasoning_numeric",
+        "top_k": 3,
+        "holdout_ratio": 0.25,
+        "min_supervision_weight": 0.4,
+        "goal": "improve exact numeric recovery and verification on hard reasoning envs"
+      },
+      "replays": 35,
+      "stage_manifest": [
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_27b\\qwen35_27b_math_env_q0023.jsonl",
+          "env_name": "math_env",
+          "task": "default",
+          "model_name": "Qwen3.5-27B.Q4_K_M.gguf",
+          "reward": 0.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_27b\\qwen35_27b_math_env_q0023.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_27b_math_env_q0023.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_27b_math_env_q0023.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 0,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 1
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_9b\\qwen35_9b_math_env_q0011.jsonl",
+          "env_name": "math_env",
+          "task": "default",
+          "model_name": "Qwen_Qwen3.5-9B-Q4_K_M.gguf",
+          "reward": 1.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_9b\\qwen35_9b_math_env_q0011.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_9b_math_env_q0011.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_9b_math_env_q0011.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 1,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 0
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1_retry_27b_tail\\qwen35_27b\\qwen35_27b_math_env_q0001.jsonl",
+          "env_name": "math_env",
+          "task": "default",
+          "model_name": "Qwen3.5-27B.Q4_K_M.gguf",
+          "reward": 0.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1_retry_27b_tail\\qwen35_27b\\qwen35_27b_math_env_q0001.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_27b_math_env_q0001.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_27b_math_env_q0001.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 0,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 1
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_math_env_q0016.jsonl",
+          "env_name": "math_env",
+          "task": "default",
+          "model_name": "Qwen3.5-27B.Q4_K_M.gguf",
+          "reward": 0.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_math_env_q0016.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_27b_math_env_q0016.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_27b_math_env_q0016.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 0,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 1
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_math_env_q0021.jsonl",
+          "env_name": "math_env",
+          "task": "default",
+          "model_name": "Qwen_Qwen3.5-9B-Q4_K_M.gguf",
+          "reward": 1.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_math_env_q0021.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_9b_math_env_q0021.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_9b_math_env_q0021.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 1,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 0
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2\\qwen35_27b\\qwen35_27b_math_env_q0085.jsonl",
+          "env_name": "math_env",
+          "task": "default",
+          "model_name": "Qwen3.5-27B.Q4_K_M.gguf",
+          "reward": 0.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2\\qwen35_27b\\qwen35_27b_math_env_q0085.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_27b_math_env_q0085.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_27b_math_env_q0085.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 0,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 1
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2\\qwen35_9b\\qwen35_9b_math_env_q0040.jsonl",
+          "env_name": "math_env",
+          "task": "default",
+          "model_name": "Qwen_Qwen3.5-9B-Q4_K_M.gguf",
+          "reward": 1.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2\\qwen35_9b\\qwen35_9b_math_env_q0040.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_9b_math_env_q0040.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_9b_math_env_q0040.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 1,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 0
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_27b\\qwen35_27b_math500_q0022.jsonl",
+          "env_name": "math500",
+          "task": "default",
+          "model_name": "Qwen3.5-27B.Q4_K_M.gguf",
+          "reward": 0.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_27b\\qwen35_27b_math500_q0022.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_27b_math500_q0022.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_27b_math500_q0022.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 0,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 1
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_9b\\qwen35_9b_math500_q0010.jsonl",
+          "env_name": "math500",
+          "task": "default",
+          "model_name": "Qwen_Qwen3.5-9B-Q4_K_M.gguf",
+          "reward": 0.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_9b\\qwen35_9b_math500_q0010.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_9b_math500_q0010.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_9b_math500_q0010.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 0,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 1
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_math500_q0015.jsonl",
+          "env_name": "math500",
+          "task": "default",
+          "model_name": "Qwen3.5-27B.Q4_K_M.gguf",
+          "reward": 0.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_math500_q0015.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_27b_math500_q0015.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_27b_math500_q0015.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 0,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 1
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_math500_q0020.jsonl",
+          "env_name": "math500",
+          "task": "default",
+          "model_name": "Qwen_Qwen3.5-9B-Q4_K_M.gguf",
+          "reward": 0.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_math500_q0020.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_9b_math500_q0020.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_9b_math500_q0020.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 0,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 1
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2\\qwen35_27b\\qwen35_27b_math500_q0084.jsonl",
+          "env_name": "math500",
+          "task": "default",
+          "model_name": "Qwen3.5-27B.Q4_K_M.gguf",
+          "reward": 0.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2\\qwen35_27b\\qwen35_27b_math500_q0084.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_27b_math500_q0084.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_27b_math500_q0084.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 0,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 1
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2\\qwen35_9b\\qwen35_9b_math500_q0039.jsonl",
+          "env_name": "math500",
+          "task": "default",
+          "model_name": "Qwen_Qwen3.5-9B-Q4_K_M.gguf",
+          "reward": 0.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2\\qwen35_9b\\qwen35_9b_math500_q0039.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_9b_math500_q0039.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_9b_math500_q0039.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 0,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 1
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_gauss_q0039.jsonl",
+          "env_name": "gauss",
+          "task": "5a",
+          "model_name": "Qwen3.5-27B.Q4_K_M.gguf",
+          "reward": 0.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_gauss_q0039.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_27b_gauss_q0039.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_27b_gauss_q0039.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 0,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 1
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_gauss_q0011.jsonl",
+          "env_name": "gauss",
+          "task": "5a",
+          "model_name": "Qwen_Qwen3.5-9B-Q4_K_M.gguf",
+          "reward": 0.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_gauss_q0011.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_9b_gauss_q0011.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_9b_gauss_q0011.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 0,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 1
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2\\qwen35_27b\\qwen35_27b_gauss_q0056.jsonl",
+          "env_name": "gauss",
+          "task": "5a",
+          "model_name": "Qwen3.5-27B.Q4_K_M.gguf",
+          "reward": 0.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2\\qwen35_27b\\qwen35_27b_gauss_q0056.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_27b_gauss_q0056.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_27b_gauss_q0056.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 0,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 1
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2\\qwen35_9b\\qwen35_9b_gauss_q0011.jsonl",
+          "env_name": "gauss",
+          "task": "5a",
+          "model_name": "Qwen_Qwen3.5-9B-Q4_K_M.gguf",
+          "reward": 0.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2\\qwen35_9b\\qwen35_9b_gauss_q0011.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_9b_gauss_q0011.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_9b_gauss_q0011.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 0,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 1
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_27b\\qwen35_27b_aime2024_q0016.jsonl",
+          "env_name": "aime2024",
+          "task": "default",
+          "model_name": "Qwen3.5-27B.Q4_K_M.gguf",
+          "reward": 0.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_27b\\qwen35_27b_aime2024_q0016.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_27b_aime2024_q0016.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_27b_aime2024_q0016.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 0,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 1
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_9b\\qwen35_9b_aime2024_q0004.jsonl",
+          "env_name": "aime2024",
+          "task": "default",
+          "model_name": "Qwen_Qwen3.5-9B-Q4_K_M.gguf",
+          "reward": 0.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_9b\\qwen35_9b_aime2024_q0004.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_9b_aime2024_q0004.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_9b_aime2024_q0004.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 0,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 1
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_aime2024_q0009.jsonl",
+          "env_name": "aime2024",
+          "task": "default",
+          "model_name": "Qwen3.5-27B.Q4_K_M.gguf",
+          "reward": 0.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_aime2024_q0009.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_27b_aime2024_q0009.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_27b_aime2024_q0009.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 0,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 1
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_aime2024_q0014.jsonl",
+          "env_name": "aime2024",
+          "task": "default",
+          "model_name": "Qwen_Qwen3.5-9B-Q4_K_M.gguf",
+          "reward": 0.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_aime2024_q0014.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_9b_aime2024_q0014.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_9b_aime2024_q0014.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 0,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 1
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2\\qwen35_27b\\qwen35_27b_aime2024_q0078.jsonl",
+          "env_name": "aime2024",
+          "task": "default",
+          "model_name": "Qwen3.5-27B.Q4_K_M.gguf",
+          "reward": 0.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2\\qwen35_27b\\qwen35_27b_aime2024_q0078.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_27b_aime2024_q0078.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_27b_aime2024_q0078.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 0,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 1
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2\\qwen35_9b\\qwen35_9b_aime2024_q0033.jsonl",
+          "env_name": "aime2024",
+          "task": "default",
+          "model_name": "Qwen_Qwen3.5-9B-Q4_K_M.gguf",
+          "reward": 0.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2\\qwen35_9b\\qwen35_9b_aime2024_q0033.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_9b_aime2024_q0033.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_9b_aime2024_q0033.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 0,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 1
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_27b\\qwen35_27b_aime2025_q0017.jsonl",
+          "env_name": "aime2025",
+          "task": "default",
+          "model_name": "Qwen3.5-27B.Q4_K_M.gguf",
+          "reward": 0.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_27b\\qwen35_27b_aime2025_q0017.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_27b_aime2025_q0017.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_27b_aime2025_q0017.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 0,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 1
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_9b\\qwen35_9b_aime2025_q0005.jsonl",
+          "env_name": "aime2025",
+          "task": "default",
+          "model_name": "Qwen_Qwen3.5-9B-Q4_K_M.gguf",
+          "reward": 0.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_9b\\qwen35_9b_aime2025_q0005.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_9b_aime2025_q0005.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_9b_aime2025_q0005.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 0,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 1
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_aime2025_q0010.jsonl",
+          "env_name": "aime2025",
+          "task": "default",
+          "model_name": "Qwen3.5-27B.Q4_K_M.gguf",
+          "reward": 0.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_aime2025_q0010.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_27b_aime2025_q0010.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_27b_aime2025_q0010.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 0,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 1
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_aime2025_q0015.jsonl",
+          "env_name": "aime2025",
+          "task": "default",
+          "model_name": "Qwen_Qwen3.5-9B-Q4_K_M.gguf",
+          "reward": 0.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_aime2025_q0015.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_9b_aime2025_q0015.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_9b_aime2025_q0015.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 0,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 1
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2\\qwen35_27b\\qwen35_27b_aime2025_q0079.jsonl",
+          "env_name": "aime2025",
+          "task": "default",
+          "model_name": "Qwen3.5-27B.Q4_K_M.gguf",
+          "reward": 0.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2\\qwen35_27b\\qwen35_27b_aime2025_q0079.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_27b_aime2025_q0079.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_27b_aime2025_q0079.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 0,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 1
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2\\qwen35_9b\\qwen35_9b_aime2025_q0034.jsonl",
+          "env_name": "aime2025",
+          "task": "default",
+          "model_name": "Qwen_Qwen3.5-9B-Q4_K_M.gguf",
+          "reward": 0.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2\\qwen35_9b\\qwen35_9b_aime2025_q0034.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_9b_aime2025_q0034.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_9b_aime2025_q0034.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 0,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 1
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_27b\\qwen35_27b_aime2026_q0018.jsonl",
+          "env_name": "aime2026",
+          "task": "default",
+          "model_name": "Qwen3.5-27B.Q4_K_M.gguf",
+          "reward": 0.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_27b\\qwen35_27b_aime2026_q0018.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_27b_aime2026_q0018.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_27b_aime2026_q0018.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 0,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 1
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_9b\\qwen35_9b_aime2026_q0006.jsonl",
+          "env_name": "aime2026",
+          "task": "default",
+          "model_name": "Qwen_Qwen3.5-9B-Q4_K_M.gguf",
+          "reward": 0.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_9b\\qwen35_9b_aime2026_q0006.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_9b_aime2026_q0006.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_9b_aime2026_q0006.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 0,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 1
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_aime2026_q0011.jsonl",
+          "env_name": "aime2026",
+          "task": "default",
+          "model_name": "Qwen3.5-27B.Q4_K_M.gguf",
+          "reward": 0.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_aime2026_q0011.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_27b_aime2026_q0011.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_27b_aime2026_q0011.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 0,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 1
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_aime2026_q0016.jsonl",
+          "env_name": "aime2026",
+          "task": "default",
+          "model_name": "Qwen_Qwen3.5-9B-Q4_K_M.gguf",
+          "reward": 0.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_aime2026_q0016.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_9b_aime2026_q0016.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_9b_aime2026_q0016.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 0,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 1
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2\\qwen35_27b\\qwen35_27b_aime2026_q0080.jsonl",
+          "env_name": "aime2026",
+          "task": "default",
+          "model_name": "Qwen3.5-27B.Q4_K_M.gguf",
+          "reward": 0.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2\\qwen35_27b\\qwen35_27b_aime2026_q0080.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_27b_aime2026_q0080.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_27b_aime2026_q0080.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 0,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 1
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2\\qwen35_9b\\qwen35_9b_aime2026_q0035.jsonl",
+          "env_name": "aime2026",
+          "task": "default",
+          "model_name": "Qwen_Qwen3.5-9B-Q4_K_M.gguf",
+          "reward": 0.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2\\qwen35_9b\\qwen35_9b_aime2026_q0035.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_9b_aime2026_q0035.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\stage\\qwen35_9b_aime2026_q0035.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 0,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 1
+          }
+        }
+      ],
+      "merged": {
+        "output": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\cluster_merged.jsonl",
+        "total_rows": 35,
+        "bucket_counts": {
+          "negative": 32,
+          "exact_positive": 3
+        },
+        "source_env_counts": {
+          "math_env": 7,
+          "math500": 6,
+          "gauss": 4,
+          "aime2024": 6,
+          "aime2025": 6,
+          "aime2026": 6
+        },
+        "target_action_rows": 3,
+        "target_action_imputed_rows": 0,
+        "target_action_coverage": 0.0857,
+        "exact_positive_rows": 3,
+        "weak_positive_rows": 0,
+        "trainer_policy": {
+          "policy_name": "critic_verify_sparse_trainer_policy",
+          "support_tier": "critic_verify_sparse",
+          "routing_strength": "conservative",
+          "exact_positive_weight": 3.0,
+          "weak_positive_weight": 1.0,
+          "negative_weight": 0.2,
+          "min_supervision_weight": 0.6,
+          "top_k": 2
+        },
+        "training_weight_summary": {
+          "policy_name": "critic_verify_sparse_trainer_policy",
+          "adjusted_rows": 3,
+          "bucket_weight_totals": {
+            "negative": 6.4,
+            "exact_positive": 9.0
+          },
+          "bucket_weight_averages": {
+            "exact_positive": 3.0,
+            "negative": 0.2
+          }
+        }
+      },
+      "bench": {
+        "bench_holdout_ratio": 0.5247805898123765,
+        "critic_train": {
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\cluster_merged.jsonl",
+          "output": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\models\\trm_critic.json",
+          "example_count": 35,
+          "task_family_counts": {
+            "primehub_hard_reasoning_numeric": 35
+          },
+          "bucket_counts": {
+            "negative": 32,
+            "exact_positive": 3
+          },
+          "k": 2
+        },
+        "critic_bench": {
+          "rows": 10,
+          "bucket_accuracy": 0.6,
+          "avg_bucket_abs_error": 1.2,
+          "visible_output_accuracy": 0.5,
+          "avg_grid_cell_accuracy_abs_error": null,
+          "per_family": {
+            "primehub_hard_reasoning_numeric": {
+              "rows": 10,
+              "bucket_accuracy": 0.6,
+              "avg_bucket_abs_error": 1.2,
+              "visible_output_accuracy": 0.5,
+              "avg_grid_cell_accuracy_abs_error": null
+            }
+          },
+          "model_example_count": 25,
+          "train_rows": 25,
+          "eval_rows": 10,
+          "holdout_ratio": 0.5247805898123765,
+          "leave_one_out": false,
+          "k": 2
+        },
+        "retriever_train": {
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\cluster_merged.jsonl",
+          "output": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\models\\trm_retriever.json",
+          "example_count": 3,
+          "task_family_counts": {
+            "primehub_hard_reasoning_numeric": 3
+          },
+          "bucket_counts": {
+            "exact_positive": 3
+          },
+          "include_buckets": [
+            "exact_positive",
+            "near_miss",
+            "weak_positive"
+          ],
+          "min_supervision_weight": 0.6
+        },
+        "retriever_bench": {
+          "rows": 10,
+          "exact_match_rate": 0.0,
+          "nonempty_prediction_rate": 1.0,
+          "avg_similarity": 0.5313,
+          "avg_grid_cell_accuracy": null,
+          "per_family": {
+            "primehub_hard_reasoning_numeric": {
+              "rows": 10,
+              "exact_match_rate": 0.0,
+              "nonempty_prediction_rate": 1.0,
+              "avg_similarity": 0.5313,
+              "avg_grid_cell_accuracy": null
+            }
+          },
+          "model_example_count": 3,
+          "train_rows": 25,
+          "eval_rows": 10,
+          "holdout_ratio": 0.5247805898123765,
+          "leave_one_out": false,
+          "include_buckets": [
+            "exact_positive",
+            "near_miss",
+            "weak_positive"
+          ],
+          "min_supervision_weight": 0.6
+        },
+        "router_bench": {
+          "rows": 10,
+          "top_k": 2,
+          "retrieval_only": {
+            "exact_match_rate": 0.0,
+            "nonempty_prediction_rate": 1.0,
+            "avg_grid_cell_accuracy": null
+          },
+          "critic_gated": {
+            "exact_match_rate": 0.0,
+            "nonempty_prediction_rate": 0.4,
+            "route_abstain_rate": 0.6,
+            "avg_grid_cell_accuracy": null
+          },
+          "train_rows": 25,
+          "eval_rows": 10,
+          "retriever_example_count": 3,
+          "critic_example_count": 25,
+          "holdout_ratio": 0.5247805898123765,
+          "min_supervision_weight": 0.6
+        }
+      }
+    }
+  },
+  "role_based_imprint": {
+    "json": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\role_based_imprint.json",
+    "md": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\role_based_imprint.md",
+    "clusters": [
+      "hard_reasoning_numeric"
+    ]
+  }
+}

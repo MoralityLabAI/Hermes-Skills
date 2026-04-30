@@ -1,0 +1,71 @@
+{
+  "remote_root": "/home/snacksack/outputs/hermes_skill_trm_parallel/20260417T001839Z",
+  "clusters": [
+    {
+      "cluster_id": "abstain_guard",
+      "bench_holdout_ratio": 0.048174939663881026,
+      "critic_bucket_accuracy": 1.0,
+      "critic_eval_rows": 4,
+      "retriever_exact_match_rate": 0.0,
+      "router_exact_match_rate": 0.0,
+      "router_abstain_rate": 1.0,
+      "retriever_example_count": 2,
+      "critic_example_count": 21
+    },
+    {
+      "cluster_id": "choice_contract",
+      "bench_holdout_ratio": 0.17885413311278014,
+      "critic_bucket_accuracy": 0.3077,
+      "critic_eval_rows": 13,
+      "retriever_exact_match_rate": 0.0,
+      "router_exact_match_rate": 0.0,
+      "router_abstain_rate": 0.3077,
+      "retriever_example_count": 15,
+      "critic_example_count": 48
+    },
+    {
+      "cluster_id": "hard_reasoning_logic",
+      "bench_holdout_ratio": 0.3526479137706606,
+      "critic_bucket_accuracy": 0.5714,
+      "critic_eval_rows": 7,
+      "retriever_exact_match_rate": 0.0,
+      "router_exact_match_rate": 0.0,
+      "router_abstain_rate": 0.5714,
+      "retriever_example_count": 3,
+      "critic_example_count": 27
+    },
+    {
+      "cluster_id": "hard_reasoning_numeric",
+      "bench_holdout_ratio": 0.5247805898123765,
+      "critic_bucket_accuracy": 0.6,
+      "critic_eval_rows": 10,
+      "retriever_exact_match_rate": 0.0,
+      "router_exact_match_rate": 0.0,
+      "router_abstain_rate": 0.6,
+      "retriever_example_count": 3,
+      "critic_example_count": 35
+    },
+    {
+      "cluster_id": "internal_action",
+      "bench_holdout_ratio": 0.01994915593297138,
+      "critic_bucket_accuracy": 1.0,
+      "critic_eval_rows": 2,
+      "retriever_exact_match_rate": 0.0,
+      "router_exact_match_rate": 0.0,
+      "router_abstain_rate": 0.0,
+      "retriever_example_count": 4,
+      "critic_example_count": 4
+    },
+    {
+      "cluster_id": "structured_map",
+      "bench_holdout_ratio": 0.4118304778139102,
+      "critic_bucket_accuracy": 0.0,
+      "critic_eval_rows": 5,
+      "retriever_exact_match_rate": 0.0,
+      "router_exact_match_rate": 0.0,
+      "router_abstain_rate": 0.0,
+      "retriever_example_count": 4,
+      "critic_example_count": 16
+    }
+  ]
+}

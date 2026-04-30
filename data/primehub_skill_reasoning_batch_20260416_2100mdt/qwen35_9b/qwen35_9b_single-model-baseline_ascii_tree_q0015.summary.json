@@ -1,0 +1,37 @@
+{
+  "steps": 1,
+  "episodes": 1,
+  "per_env_steps": {
+    "ascii_tree": 1
+  },
+  "failure_types": {},
+  "model_client_fallbacks": {
+    "total": 1,
+    "ascii_tree": 1
+  },
+  "bridge_fallbacks": {},
+  "trm_repairs": {},
+  "raw_invalid_actions": {},
+  "repaired_successes": {},
+  "reward_totals": {
+    "ascii_tree": 0.0
+  },
+  "token_usage": {
+    "prompt_tokens": 452,
+    "completion_tokens": 256,
+    "total_tokens": 708
+  },
+  "output_statuses": {
+    "completed": 1
+  },
+  "reasoning_modes": {
+    "on": 1
+  },
+  "visible_output_emitted": {
+    "false": 1
+  },
+  "run_token_total": 708,
+  "token_budget": null,
+  "run_id": null,
+  "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_skill_reasoning_batch_20260416_2100mdt\\qwen35_9b\\qwen35_9b_single-model-baseline_ascii_tree_q0015.jsonl"
+}

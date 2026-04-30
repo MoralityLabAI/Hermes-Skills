@@ -1,0 +1,18 @@
+{
+  "input": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_and_all_transfer\\merged.jsonl",
+  "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_and_all_transfer\\models\\trm_retriever.json",
+  "example_count": 42,
+  "task_family_counts": {
+    "primehub": 42
+  },
+  "bucket_counts": {
+    "exact_positive": 35,
+    "near_miss": 7
+  },
+  "include_buckets": [
+    "exact_positive",
+    "near_miss",
+    "weak_positive"
+  ],
+  "min_supervision_weight": 0.4
+}

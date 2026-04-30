@@ -1,0 +1,41 @@
+{
+  "model_type": "trm_retrieval_baseline",
+  "example_count": 3,
+  "task_family_counts": {
+    "primehub_hard_reasoning_numeric": 3
+  },
+  "bucket_counts": {
+    "exact_positive": 3
+  },
+  "examples": [
+    {
+      "task_family": "primehub_hard_reasoning_numeric",
+      "task": "default",
+      "observation": "USER: Solve the following math problem. Explain your reasoning and put the final answer in \\boxed{}.\n\nWe write on the board the integers from 1 to 2013. At each step, we erase two of them and write their difference instead. The number of integers thus decreases by 1. Can the last integer obtained at the two thousand and twelfth step be equal to 0?",
+      "target_action": "\\boxed{0}",
+      "bucket": "exact_positive",
+      "supervision_weight": 3.0,
+      "row_id": "primehub_hard_reasoning_numeric||default||user: solve the following math problem. explain your reasoning and put the final answer in \\boxed{}. we write on the board the integers from 1 to 2013. at each step, we erase two of them and write their difference instead. the number of integers thus decreases by 1. can the last integer obtained at the two thousand and twelfth step be equal to 0?||\\boxed{0}"
+    },
+    {
+      "task_family": "primehub_hard_reasoning_numeric",
+      "task": "default",
+      "observation": "USER: Solve the following math problem. Explain your reasoning and put the final answer in \\boxed{}.\n\nWe write on the board the integers from 1 to 2013. At each step, we erase two of them and write their difference instead. The number of integers thus decreases by 1. Can the last integer obtained at the two thousand and twelfth step be equal to 0?",
+      "target_action": "\\boxed{0}",
+      "bucket": "exact_positive",
+      "supervision_weight": 3.0,
+      "row_id": "primehub_hard_reasoning_numeric||default||user: solve the following math problem. explain your reasoning and put the final answer in \\boxed{}. we write on the board the integers from 1 to 2013. at each step, we erase two of them and write their difference instead. the number of integers thus decreases by 1. can the last integer obtained at the two thousand and twelfth step be equal to 0?||\\boxed{0}"
+    },
+    {
+      "task_family": "primehub_hard_reasoning_numeric",
+      "task": "default",
+      "observation": "USER: Solve the following math problem. Explain your reasoning and put the final answer in \\boxed{}.\n\nWe write on the board the integers from 1 to 2013. At each step, we erase two of them and write their difference instead. The number of integers thus decreases by 1. Can the last integer obtained at the two thousand and twelfth step be equal to 0?",
+      "target_action": "\\boxed{0}",
+      "bucket": "exact_positive",
+      "supervision_weight": 3.0,
+      "row_id": "primehub_hard_reasoning_numeric||default||user: solve the following math problem. explain your reasoning and put the final answer in \\boxed{}. we write on the board the integers from 1 to 2013. at each step, we erase two of them and write their difference instead. the number of integers thus decreases by 1. can the last integer obtained at the two thousand and twelfth step be equal to 0?||\\boxed{0}"
+    }
+  ],
+  "source_input": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric\\hard_reasoning_numeric\\cluster_merged.jsonl",
+  "min_supervision_weight": 0.6
+}

@@ -1,0 +1,13 @@
+﻿{"event":"start","ts":"2026-04-16T23:10:09.3284087Z","exe":"C:/Python311/python.exe","args":["C:/projects/HRM-re/experiments/hermes_skill_gym/run_multi_trm_exact_action_compare.py","--train-data","C:/projects/HRM-re/experiments/hermes_skill_gym/outputs/hermes_skill_gym_pruned_cycle13_enriched_compare/dataset/train.jsonl","--eval-data","C:/projects/HRM-re/experiments/hermes_skill_gym/outputs/hermes_skill_gym_pruned_cycle13_enriched_compare/dataset/eval.jsonl","--base-model","C:/projects/HRM-re/experiments/hermes_skill_gym/outputs/hermes_skill_gym_pruned_cycle13_enriched_compare/variants/trm_like_single_tier/artifacts/model.pt","--out-dir","C:/projects/HRM-re/experiments/hermes_skill_gym/outputs/hermes_skill_gym_multi_trm_exact_action_compare_v1","--device","cpu","--epochs","4","--batch-size","8","--lr","0.0002"],"caps":{"ram_mb":2048,"cpu_pct":50},"workdir":"C:/projects/HRM-re","run_id":"multi-trm-exact-action-compare-v1"}
+{"run_id":"multi-trm-exact-action-compare-v1","pid":31736,"private_ram_mb":813.8,"event":"heartbeat","ts":"2026-04-16T23:10:14.6748996Z"}
+{"run_id":"multi-trm-exact-action-compare-v1","pid":31736,"private_ram_mb":1860,"event":"heartbeat","ts":"2026-04-16T23:10:19.7352769Z"}
+{"run_id":"multi-trm-exact-action-compare-v1","pid":31736,"private_ram_mb":1860,"event":"heartbeat","ts":"2026-04-16T23:10:24.7993347Z"}
+{"run_id":"multi-trm-exact-action-compare-v1","pid":31736,"private_ram_mb":1860,"event":"heartbeat","ts":"2026-04-16T23:10:29.8646747Z"}
+{"run_id":"multi-trm-exact-action-compare-v1","pid":31736,"private_ram_mb":1859.9,"event":"heartbeat","ts":"2026-04-16T23:10:34.9001892Z"}
+{"run_id":"multi-trm-exact-action-compare-v1","pid":31736,"private_ram_mb":1864,"event":"heartbeat","ts":"2026-04-16T23:10:39.9253696Z"}
+{"run_id":"multi-trm-exact-action-compare-v1","pid":31736,"private_ram_mb":1863.6,"event":"heartbeat","ts":"2026-04-16T23:10:44.9592767Z"}
+{"run_id":"multi-trm-exact-action-compare-v1","pid":31736,"private_ram_mb":1863.5,"event":"heartbeat","ts":"2026-04-16T23:10:49.9787186Z"}
+{"run_id":"multi-trm-exact-action-compare-v1","pid":31736,"private_ram_mb":1863.3,"event":"heartbeat","ts":"2026-04-16T23:10:55.0047089Z"}
+{"run_id":"multi-trm-exact-action-compare-v1","pid":31736,"private_ram_mb":1868.1,"event":"heartbeat","ts":"2026-04-16T23:11:00.0639851Z"}
+{"run_id":"multi-trm-exact-action-compare-v1","pid":31736,"private_ram_mb":1868.1,"event":"heartbeat","ts":"2026-04-16T23:11:05.0934325Z"}
+{"exit_code":0,"pid":31736,"run_id":"multi-trm-exact-action-compare-v1","avg_ram_mb":1767.7,"peak_ram_mb":1868.1,"status":"completed","ts":"2026-04-16T23:11:10.1510776Z","event":"finish"}

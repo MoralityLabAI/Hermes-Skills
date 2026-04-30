@@ -1,0 +1,30 @@
+{
+  "run_name": "overnight-qwen35_9b-deepdive_rlm",
+  "max_episodes": 1,
+  "max_steps_per_episode": 8,
+  "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_overnight_all\\qwen35_9b\\qwen35_9b_deepdive_rlm_q0121.jsonl",
+  "model": {
+    "provider": "openai_compatible",
+    "base_url": "http://snacksack-ms-7d32.tail3156cd.ts.net:8082/v1",
+    "model_name": "Qwen3.5-9B-Q4_K_M.gguf",
+    "max_new_tokens": 64,
+    "temperature": 0.0,
+    "top_p": 1.0
+  },
+  "envs": [
+    {
+      "type": "primehub_external",
+      "name": "deepdive_rlm",
+      "command_template": [
+        "C:\\Python311\\python.exe",
+        "-m",
+        "prime_env_hub.cli",
+        "deepdive_rlm"
+      ],
+      "reset_args": [
+        "--reset"
+      ]
+    }
+  ],
+  "episodes": 1
+}

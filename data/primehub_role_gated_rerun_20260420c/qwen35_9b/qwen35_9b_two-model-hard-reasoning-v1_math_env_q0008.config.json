@@ -1,0 +1,65 @@
+{
+  "run_name": "overnight-qwen35_9b-two-model-hard-reasoning-v1-math_env",
+  "max_episodes": 1,
+  "max_steps_per_episode": 8,
+  "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_role_gated_rerun_20260420c\\qwen35_9b\\qwen35_9b_two-model-hard-reasoning-v1_math_env_q0008.jsonl",
+  "model": {
+    "provider": "openai_compatible",
+    "base_url": "http://snacksack-ms-7d32.tail3156cd.ts.net:8082/v1",
+    "model_name": "Qwen_Qwen3.5-9B-Q4_K_M.gguf",
+    "max_new_tokens": 256,
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "request_timeout": 900
+  },
+  "metadata": {
+    "variant_id": "two-model-hard-reasoning-v1",
+    "skill_name": "primehub-hard-reasoning-numeric-hermes",
+    "skill_cluster": "hard_reasoning_numeric",
+    "role_mode": "critic_only",
+    "role_support_tier": "critic_verify_sparse",
+    "role_gate_applied": true,
+    "role_gate_downgraded": false,
+    "role_gate_reason": "",
+    "reasoning_mode": "on"
+  },
+  "envs": [
+    {
+      "type": "primehub_external",
+      "name": "math_env",
+      "command_template": [
+        "C:\\Python311\\python.exe",
+        "C:/projects/Hermes Skills/scripts/remote_prime_env_bridge.py",
+        "--source",
+        "research",
+        "--host",
+        "snacksack-ms-7d32.tail3156cd.ts.net",
+        "--user",
+        "snacksack",
+        "--identity-file",
+        "C:/Users/patri/.ssh/id_ed25519",
+        "--ssh-timeout-seconds",
+        "120",
+        "--research-root",
+        "/home/snacksack/prime_repos_tmp/research-environments/environments",
+        "--community-root",
+        "/home/snacksack/prime_repos_tmp/community-environments/environments",
+        "math_env"
+      ],
+      "reset_args": [
+        "--reset"
+      ],
+      "trace_profile_overrides": {
+        "reasoning_mode": "on",
+        "skill_name": "primehub-hard-reasoning-numeric-hermes",
+        "skill_prompt": "You are operating as Hermes skill Primehub-Hard-Reasoning-Numeric-v1.\nUse the stage order TRM_PARSE -> TRM_DECOMPOSE -> TRM_SOLVE -> TRM_VERIFY -> FINAL.\nKeep the derivation compact and explicit enough to catch arithmetic drift.\nEmit only the final exact answer string.\nCompute the final value exactly and prefer the minimal legal numeric form.\nIf the verification stage disagrees with the solve stage, repair before final output.\nPrime/TRM role imprint:\n- This TRM role is a numeric verifier, not a generic solver: solve locally, then use TRM to catch arithmetic drift, sign errors, and invalid final forms.\n- Do not lean on retrieval-led derivations here; current support is too sparse, so use TRM mainly to veto contradictions or confirm the final exact value.\n- Runtime gate: keep this cluster in critic-only mode and do not escalate to retrieval-led action support.",
+        "skill_cluster": "hard_reasoning_numeric",
+        "role_mode": "critic_only",
+        "role_support_tier": "critic_verify_sparse",
+        "role_gate_applied": true,
+        "variant_id": "two-model-hard-reasoning-v1"
+      }
+    }
+  ],
+  "episodes": 1
+}

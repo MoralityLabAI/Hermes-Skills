@@ -1,0 +1,14 @@
+{
+  "input": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\latest\\structured_map\\cluster_merged.jsonl",
+  "output": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\latest\\structured_map\\models\\trm_critic.json",
+  "example_count": 16,
+  "task_family_counts": {
+    "primehub_structured_map": 16
+  },
+  "bucket_counts": {
+    "negative": 10,
+    "exact_positive": 4,
+    "weak_positive": 2
+  },
+  "k": 4
+}

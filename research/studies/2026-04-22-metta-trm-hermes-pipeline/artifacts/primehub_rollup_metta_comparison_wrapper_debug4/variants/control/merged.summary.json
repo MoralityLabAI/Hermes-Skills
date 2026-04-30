@@ -1,0 +1,27 @@
+{
+  "inputs": [
+    "C:\\projects\\Hermes Skills\\data\\primehub_trm_autoresearch\\cycle_12\\primehub_trm_merged.jsonl"
+  ],
+  "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_rollup_metta_comparison_wrapper_debug4\\variants\\control\\merged.jsonl",
+  "total_rows": 195,
+  "bucket_counts": {
+    "negative": 166,
+    "exact_positive": 24,
+    "weak_positive": 5
+  },
+  "task_family_counts": {
+    "primehub": 195
+  },
+  "task_family_bucket_counts": {
+    "primehub": {
+      "negative": 166,
+      "exact_positive": 24,
+      "weak_positive": 5
+    }
+  },
+  "included_families": [
+    "primehub"
+  ],
+  "excluded_families": {},
+  "min_exact_positives_per_family": 2
+}

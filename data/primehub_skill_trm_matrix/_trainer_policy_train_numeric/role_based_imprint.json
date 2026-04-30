@@ -1,0 +1,54 @@
+{
+  "generated_at": "2026-04-20T20:48:16+00:00",
+  "matrix_root": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_train_numeric",
+  "manifest_path": "C:\\projects\\Hermes Skills\\data\\primehub_skill_batch_evolution\\latest.manifest.json",
+  "global_prompt_lines": [
+    "Keep hard reasoning and guarded safety roles critic-first until their exact-positive banks grow: hard_reasoning_numeric."
+  ],
+  "cluster_cards": {
+    "hard_reasoning_numeric": {
+      "cluster_id": "hard_reasoning_numeric",
+      "role_name": "critic_verify_numeric",
+      "support_tier": "critic_verify_sparse",
+      "goal": "improve exact numeric recovery and verification on hard reasoning envs",
+      "task_family_label": "primehub_hard_reasoning_numeric",
+      "rows": 35,
+      "exact_positive_rows": 3,
+      "weak_positive_rows": 0,
+      "target_action_coverage": 0.0857,
+      "critic_bucket_accuracy": null,
+      "retriever_exact_match_rate": null,
+      "route_abstain_rate": null,
+      "bucket_counts": {
+        "negative": 32,
+        "exact_positive": 3
+      },
+      "source_env_counts": {
+        "math_env": 7,
+        "math500": 6,
+        "gauss": 4,
+        "aime2024": 6,
+        "aime2025": 6,
+        "aime2026": 6
+      },
+      "skill_prompt_lines": [
+        "This TRM role is a numeric verifier, not a generic solver: solve locally, then use TRM to catch arithmetic drift, sign errors, and invalid final forms.",
+        "Do not lean on retrieval-led derivations here; current support is too sparse, so use TRM mainly to veto contradictions or confirm the final exact value."
+      ],
+      "trainer_lines": [
+        "Collect more exact-positive rows before treating this role as retrieval-capable; right now it is primarily a verifier/control-plane specialist.",
+        "Keep routing conservative and prefer better row quality over more aggressive router behavior."
+      ],
+      "trainer_policy": {
+        "policy_name": "critic_verify_sparse_trainer_policy",
+        "support_tier": "critic_verify_sparse",
+        "routing_strength": "conservative",
+        "exact_positive_weight": 3.0,
+        "weak_positive_weight": 1.0,
+        "negative_weight": 0.2,
+        "min_supervision_weight": 0.6,
+        "top_k": 2
+      }
+    }
+  }
+}

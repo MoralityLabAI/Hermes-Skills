@@ -1,0 +1,90 @@
+{
+  "rows": 86,
+  "exact_match_rate": 0.6628,
+  "nonempty_prediction_rate": 1.0,
+  "avg_similarity": 0.9126,
+  "avg_grid_cell_accuracy": null,
+  "per_family": {
+    "primehub_constraint_summarize__contract_family_match": {
+      "rows": 16,
+      "exact_match_rate": 0.6875,
+      "nonempty_prediction_rate": 1.0,
+      "avg_similarity": 0.8425,
+      "avg_grid_cell_accuracy": null
+    },
+    "primehub_constraint_summarize__transport_visible_output": {
+      "rows": 13,
+      "exact_match_rate": 1.0,
+      "nonempty_prediction_rate": 1.0,
+      "avg_similarity": 0.8622,
+      "avg_grid_cell_accuracy": null
+    },
+    "primehub_constraint_summarize__contract_validity": {
+      "rows": 11,
+      "exact_match_rate": 0.4545,
+      "nonempty_prediction_rate": 1.0,
+      "avg_similarity": 1.0193,
+      "avg_grid_cell_accuracy": null
+    },
+    "primehub_constraint_summarize__task_success": {
+      "rows": 9,
+      "exact_match_rate": 0.4444,
+      "nonempty_prediction_rate": 1.0,
+      "avg_similarity": 1.0141,
+      "avg_grid_cell_accuracy": null
+    },
+    "primehub_constraint_summarize__transport_no_fallback": {
+      "rows": 10,
+      "exact_match_rate": 1.0,
+      "nonempty_prediction_rate": 1.0,
+      "avg_similarity": 0.8916,
+      "avg_grid_cell_accuracy": null
+    },
+    "primehub_constraint_summarize__critic_verdict_agreement": {
+      "rows": 10,
+      "exact_match_rate": 1.0,
+      "nonempty_prediction_rate": 1.0,
+      "avg_similarity": 0.8741,
+      "avg_grid_cell_accuracy": null
+    },
+    "primehub_constraint_summarize__repair_success": {
+      "rows": 3,
+      "exact_match_rate": 0.0,
+      "nonempty_prediction_rate": 1.0,
+      "avg_similarity": 0.8214,
+      "avg_grid_cell_accuracy": null
+    },
+    "primehub_constraint_summarize__failure_localization": {
+      "rows": 6,
+      "exact_match_rate": 0.6667,
+      "nonempty_prediction_rate": 1.0,
+      "avg_similarity": 0.7772,
+      "avg_grid_cell_accuracy": null
+    },
+    "primehub_constraint_summarize__profile_selection_correctness": {
+      "rows": 5,
+      "exact_match_rate": 0.0,
+      "nonempty_prediction_rate": 1.0,
+      "avg_similarity": 1.1018,
+      "avg_grid_cell_accuracy": null
+    },
+    "primehub_constraint_summarize__retrieval_selection_correctness": {
+      "rows": 3,
+      "exact_match_rate": 0.0,
+      "nonempty_prediction_rate": 1.0,
+      "avg_similarity": 1.0557,
+      "avg_grid_cell_accuracy": null
+    }
+  },
+  "model_example_count": 331,
+  "train_rows": 360,
+  "eval_rows": 86,
+  "holdout_ratio": 0.2,
+  "leave_one_out": false,
+  "include_buckets": [
+    "exact_positive",
+    "near_miss",
+    "weak_positive"
+  ],
+  "min_supervision_weight": 0.25
+}

@@ -1,0 +1,116 @@
+{
+  "manifest": "C:\\projects\\Hermes Skills\\data\\primehub_skill_batch_evolution\\latest.manifest.json",
+  "run_roots": [
+    "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1",
+    "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1_retry_27b_tail",
+    "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env",
+    "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2"
+  ],
+  "replay_count": 212,
+  "clusters": {
+    "internal_action": {
+      "envs": [
+        "antislop"
+      ],
+      "profile": {
+        "task_family_label": "primehub_internal_action",
+        "top_k": 1,
+        "holdout_ratio": 0.25,
+        "min_supervision_weight": 0.4,
+        "goal": "recover exact hidden-action tokens such as inspect_and_continue"
+      },
+      "replays": 4,
+      "stage_manifest": [
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_antislop_q0031.jsonl",
+          "env_name": "antislop",
+          "task": "default",
+          "model_name": "Qwen3.5-27B.Q4_K_M.gguf",
+          "reward": 12.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_antislop_q0031.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_role_smoke\\internal_action\\stage\\qwen35_27b_antislop_q0031.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_role_smoke\\internal_action\\stage\\qwen35_27b_antislop_q0031.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 1,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 0
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_antislop_q0003.jsonl",
+          "env_name": "antislop",
+          "task": "default",
+          "model_name": "Qwen_Qwen3.5-9B-Q4_K_M.gguf",
+          "reward": 11.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_9b\\qwen35_9b_antislop_q0003.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_role_smoke\\internal_action\\stage\\qwen35_9b_antislop_q0003.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_role_smoke\\internal_action\\stage\\qwen35_9b_antislop_q0003.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 1,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 0
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2\\qwen35_27b\\qwen35_27b_antislop_q0048.jsonl",
+          "env_name": "antislop",
+          "task": "default",
+          "model_name": "Qwen3.5-27B.Q4_K_M.gguf",
+          "reward": 12.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2\\qwen35_27b\\qwen35_27b_antislop_q0048.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_role_smoke\\internal_action\\stage\\qwen35_27b_antislop_q0048.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_role_smoke\\internal_action\\stage\\qwen35_27b_antislop_q0048.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 1,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 0
+          }
+        },
+        {
+          "path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2\\qwen35_9b\\qwen35_9b_antislop_q0003.jsonl",
+          "env_name": "antislop",
+          "task": "default",
+          "model_name": "Qwen_Qwen3.5-9B-Q4_K_M.gguf",
+          "reward": 12.0,
+          "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2\\qwen35_9b\\qwen35_9b_antislop_q0003.jsonl",
+          "staged": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_role_smoke\\internal_action\\stage\\qwen35_9b_antislop_q0003.trm.jsonl",
+          "summary": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_role_smoke\\internal_action\\stage\\qwen35_9b_antislop_q0003.trm.summary.json",
+          "total_rows": 1,
+          "bucket_counts": {
+            "exact_positive": 1,
+            "near_miss": 0,
+            "weak_positive": 0,
+            "negative": 0
+          }
+        }
+      ],
+      "merged": {
+        "output": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_role_smoke\\internal_action\\cluster_merged.jsonl",
+        "total_rows": 2,
+        "bucket_counts": {
+          "exact_positive": 2
+        },
+        "source_env_counts": {
+          "antislop": 2
+        },
+        "target_action_rows": 2,
+        "target_action_imputed_rows": 2,
+        "target_action_coverage": 1.0,
+        "exact_positive_rows": 2
+      }
+    }
+  },
+  "role_based_imprint": {
+    "json": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_role_smoke\\role_based_imprint.json",
+    "md": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_role_smoke\\role_based_imprint.md",
+    "clusters": [
+      "internal_action"
+    ]
+  }
+}

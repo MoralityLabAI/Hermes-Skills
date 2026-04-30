@@ -1,0 +1,34 @@
+{
+  "steps": 1,
+  "episodes": 1,
+  "per_env_steps": {
+    "mmlu_pro": 1
+  },
+  "failure_types": {},
+  "model_client_fallbacks": {},
+  "bridge_fallbacks": {},
+  "trm_repairs": {},
+  "raw_invalid_actions": {},
+  "repaired_successes": {},
+  "reward_totals": {
+    "mmlu_pro": 0.0
+  },
+  "token_usage": {
+    "prompt_tokens": 632,
+    "completion_tokens": 256,
+    "total_tokens": 888
+  },
+  "output_statuses": {
+    "completed": 1
+  },
+  "reasoning_modes": {
+    "off": 1
+  },
+  "visible_output_emitted": {
+    "true": 1
+  },
+  "run_token_total": 888,
+  "token_budget": null,
+  "run_id": null,
+  "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env_v2\\qwen35_9b\\qwen35_9b_mmlu_pro_q0041.jsonl"
+}

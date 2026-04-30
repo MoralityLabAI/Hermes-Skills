@@ -1,0 +1,37 @@
+{
+  "steps": 1,
+  "episodes": 1,
+  "per_env_steps": {
+    "math_env": 1
+  },
+  "failure_types": {},
+  "model_client_fallbacks": {
+    "total": 1,
+    "math_env": 1
+  },
+  "bridge_fallbacks": {},
+  "trm_repairs": {},
+  "raw_invalid_actions": {},
+  "repaired_successes": {},
+  "reward_totals": {
+    "math_env": 0.0
+  },
+  "token_usage": {
+    "prompt_tokens": 230,
+    "completion_tokens": 128,
+    "total_tokens": 358
+  },
+  "output_statuses": {
+    "completed": 1
+  },
+  "reasoning_modes": {
+    "off": 1
+  },
+  "visible_output_emitted": {
+    "false": 1
+  },
+  "run_token_total": 358,
+  "token_budget": null,
+  "run_id": null,
+  "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_dual_smoke_v2\\qwen35_27b\\qwen35_27b_math_env_q0004.jsonl"
+}

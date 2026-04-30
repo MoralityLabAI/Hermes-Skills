@@ -1,0 +1,17 @@
+{
+  "input": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\latest\\choice_contract\\cluster_merged.jsonl",
+  "output": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\latest\\choice_contract\\models\\trm_retriever.json",
+  "example_count": 35,
+  "task_family_counts": {
+    "primehub_choice_contract": 35
+  },
+  "bucket_counts": {
+    "exact_positive": 35
+  },
+  "include_buckets": [
+    "exact_positive",
+    "near_miss",
+    "weak_positive"
+  ],
+  "min_supervision_weight": 0.45
+}

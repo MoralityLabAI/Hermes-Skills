@@ -1,0 +1,42 @@
+{
+  "run_name": "overnight-qwen35_9b-math_env",
+  "max_episodes": 1,
+  "max_steps_per_episode": 8,
+  "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_dual_smoke\\qwen35_9b\\qwen35_9b_math_env_q0002.jsonl",
+  "model": {
+    "provider": "openai_compatible",
+    "base_url": "http://snacksack-ms-7d32.tail3156cd.ts.net:8082/v1",
+    "model_name": "Qwen_Qwen3.5-9B-Q4_K_M.gguf",
+    "max_new_tokens": 128,
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "request_timeout": 120
+  },
+  "envs": [
+    {
+      "type": "primehub_external",
+      "name": "math_env",
+      "command_template": [
+        "C:\\Python311\\python.exe",
+        "C:/projects/Hermes Skills/scripts/remote_prime_env_bridge.py",
+        "--source",
+        "research",
+        "--host",
+        "snacksack-ms-7d32.tail3156cd.ts.net",
+        "--user",
+        "snacksack",
+        "--identity-file",
+        "C:/Users/patri/.ssh/id_ed25519",
+        "--research-root",
+        "/home/snacksack/prime_repos_tmp/research-environments/environments",
+        "--community-root",
+        "/home/snacksack/prime_repos_tmp/community-environments/environments",
+        "math_env"
+      ],
+      "reset_args": [
+        "--reset"
+      ]
+    }
+  ],
+  "episodes": 1
+}

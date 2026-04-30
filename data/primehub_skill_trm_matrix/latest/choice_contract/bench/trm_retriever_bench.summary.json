@@ -1,0 +1,27 @@
+{
+  "rows": 18,
+  "exact_match_rate": 0.0,
+  "nonempty_prediction_rate": 1.0,
+  "avg_similarity": 0.5149,
+  "avg_grid_cell_accuracy": null,
+  "per_family": {
+    "primehub_choice_contract": {
+      "rows": 18,
+      "exact_match_rate": 0.0,
+      "nonempty_prediction_rate": 1.0,
+      "avg_similarity": 0.5149,
+      "avg_grid_cell_accuracy": null
+    }
+  },
+  "model_example_count": 35,
+  "train_rows": 63,
+  "eval_rows": 18,
+  "holdout_ratio": 0.17885413311278014,
+  "leave_one_out": false,
+  "include_buckets": [
+    "exact_positive",
+    "near_miss",
+    "weak_positive"
+  ],
+  "min_supervision_weight": 0.45
+}

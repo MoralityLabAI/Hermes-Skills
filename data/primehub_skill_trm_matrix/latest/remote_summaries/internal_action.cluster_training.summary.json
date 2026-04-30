@@ -1,0 +1,108 @@
+{
+  "cluster_id": "internal_action",
+  "input": "/home/snacksack/outputs/hermes_skill_trm_parallel/20260417T001839Z/clusters/internal_action/cluster_merged.jsonl",
+  "out_dir": "/home/snacksack/outputs/hermes_skill_trm_parallel/20260417T001839Z/clusters/internal_action",
+  "top_k": 1,
+  "holdout_ratio": 0.25,
+  "bench_holdout_ratio": 0.01994915593297138,
+  "min_supervision_weight": 0.4,
+  "critic_train": {
+    "input": "/home/snacksack/outputs/hermes_skill_trm_parallel/20260417T001839Z/clusters/internal_action/cluster_merged.jsonl",
+    "output": "/home/snacksack/outputs/hermes_skill_trm_parallel/20260417T001839Z/clusters/internal_action/models/trm_critic.json",
+    "example_count": 4,
+    "task_family_counts": {
+      "primehub_internal_action": 4
+    },
+    "bucket_counts": {
+      "exact_positive": 4
+    },
+    "k": 1
+  },
+  "critic_bench": {
+    "rows": 2,
+    "bucket_accuracy": 1.0,
+    "avg_bucket_abs_error": 0.0,
+    "visible_output_accuracy": 0.0,
+    "avg_grid_cell_accuracy_abs_error": null,
+    "per_family": {
+      "primehub_internal_action": {
+        "rows": 2,
+        "bucket_accuracy": 1.0,
+        "avg_bucket_abs_error": 0.0,
+        "visible_output_accuracy": 0.0,
+        "avg_grid_cell_accuracy_abs_error": null
+      }
+    },
+    "model_example_count": 2,
+    "train_rows": 2,
+    "eval_rows": 2,
+    "holdout_ratio": 0.01994915593297138,
+    "leave_one_out": false,
+    "k": 1
+  },
+  "retriever_train": {
+    "input": "/home/snacksack/outputs/hermes_skill_trm_parallel/20260417T001839Z/clusters/internal_action/cluster_merged.jsonl",
+    "output": "/home/snacksack/outputs/hermes_skill_trm_parallel/20260417T001839Z/clusters/internal_action/models/trm_retriever.json",
+    "example_count": 4,
+    "task_family_counts": {
+      "primehub_internal_action": 4
+    },
+    "bucket_counts": {
+      "exact_positive": 4
+    },
+    "include_buckets": [
+      "exact_positive",
+      "near_miss",
+      "weak_positive"
+    ],
+    "min_supervision_weight": 0.4
+  },
+  "retriever_bench": {
+    "rows": 2,
+    "exact_match_rate": 0.0,
+    "nonempty_prediction_rate": 1.0,
+    "avg_similarity": 1.1,
+    "avg_grid_cell_accuracy": null,
+    "per_family": {
+      "primehub_internal_action": {
+        "rows": 2,
+        "exact_match_rate": 0.0,
+        "nonempty_prediction_rate": 1.0,
+        "avg_similarity": 1.1,
+        "avg_grid_cell_accuracy": null
+      }
+    },
+    "model_example_count": 2,
+    "train_rows": 2,
+    "eval_rows": 2,
+    "holdout_ratio": 0.01994915593297138,
+    "leave_one_out": false,
+    "include_buckets": [
+      "exact_positive",
+      "near_miss",
+      "weak_positive"
+    ],
+    "min_supervision_weight": 0.4
+  },
+  "router_bench": {
+    "rows": 2,
+    "top_k": 1,
+    "retrieval_only": {
+      "exact_match_rate": 0.0,
+      "nonempty_prediction_rate": 1.0,
+      "avg_grid_cell_accuracy": null
+    },
+    "critic_gated": {
+      "exact_match_rate": 0.0,
+      "nonempty_prediction_rate": 1.0,
+      "route_abstain_rate": 0.0,
+      "avg_grid_cell_accuracy": null
+    },
+    "train_rows": 2,
+    "eval_rows": 2,
+    "retriever_example_count": 2,
+    "critic_example_count": 2,
+    "holdout_ratio": 0.01994915593297138,
+    "min_supervision_weight": 0.4
+  }
+}

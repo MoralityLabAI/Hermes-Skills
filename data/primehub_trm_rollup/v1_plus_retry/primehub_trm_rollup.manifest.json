@@ -1,0 +1,344 @@
+{
+  "timestamp_utc": "2026-04-15T20:34:07.427954+00:00",
+  "run_roots": [
+    "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1",
+    "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1_retry_27b_tail"
+  ],
+  "model_dirs": [],
+  "replays_found": 26,
+  "staged_sources": [
+    {
+      "input_replay": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_27b\\qwen35_27b_aime2024_q0016.jsonl",
+      "staged_trm": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_aime2024_q0016.trm.jsonl",
+      "staged_summary": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_aime2024_q0016.trm.summary.json",
+      "rows": 1,
+      "bucket_counts": {
+        "negative": 1
+      },
+      "target_action_rows": 0,
+      "target_action_imputed_rows": 0,
+      "model_dir": "qwen35_27b"
+    },
+    {
+      "input_replay": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_27b\\qwen35_27b_aime2025_q0017.jsonl",
+      "staged_trm": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_aime2025_q0017.trm.jsonl",
+      "staged_summary": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_aime2025_q0017.trm.summary.json",
+      "rows": 1,
+      "bucket_counts": {
+        "negative": 1
+      },
+      "target_action_rows": 0,
+      "target_action_imputed_rows": 0,
+      "model_dir": "qwen35_27b"
+    },
+    {
+      "input_replay": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_27b\\qwen35_27b_aime2026_q0018.jsonl",
+      "staged_trm": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_aime2026_q0018.trm.jsonl",
+      "staged_summary": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_aime2026_q0018.trm.summary.json",
+      "rows": 1,
+      "bucket_counts": {
+        "negative": 1
+      },
+      "target_action_rows": 0,
+      "target_action_imputed_rows": 0,
+      "model_dir": "qwen35_27b"
+    },
+    {
+      "input_replay": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_27b\\qwen35_27b_clbench_q0019.jsonl",
+      "staged_trm": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_clbench_q0019.trm.jsonl",
+      "staged_summary": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_clbench_q0019.trm.summary.json",
+      "rows": 1,
+      "bucket_counts": {
+        "negative": 1
+      },
+      "target_action_rows": 0,
+      "target_action_imputed_rows": 0,
+      "model_dir": "qwen35_27b"
+    },
+    {
+      "input_replay": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_27b\\qwen35_27b_if_summarize_judge_q0020.jsonl",
+      "staged_trm": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_if_summarize_judge_q0020.trm.jsonl",
+      "staged_summary": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_if_summarize_judge_q0020.trm.summary.json",
+      "rows": 1,
+      "bucket_counts": {
+        "negative": 1
+      },
+      "target_action_rows": 0,
+      "target_action_imputed_rows": 0,
+      "model_dir": "qwen35_27b"
+    },
+    {
+      "input_replay": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_27b\\qwen35_27b_lisanbench_q0013.jsonl",
+      "staged_trm": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_lisanbench_q0013.trm.jsonl",
+      "staged_summary": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_lisanbench_q0013.trm.summary.json",
+      "rows": 1,
+      "bucket_counts": {
+        "negative": 1
+      },
+      "target_action_rows": 0,
+      "target_action_imputed_rows": 0,
+      "model_dir": "qwen35_27b"
+    },
+    {
+      "input_replay": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_27b\\qwen35_27b_logic_env_q0021.jsonl",
+      "staged_trm": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_logic_env_q0021.trm.jsonl",
+      "staged_summary": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_logic_env_q0021.trm.summary.json",
+      "rows": 1,
+      "bucket_counts": {
+        "negative": 1
+      },
+      "target_action_rows": 0,
+      "target_action_imputed_rows": 0,
+      "model_dir": "qwen35_27b"
+    },
+    {
+      "input_replay": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_27b\\qwen35_27b_math500_q0022.jsonl",
+      "staged_trm": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_math500_q0022.trm.jsonl",
+      "staged_summary": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_math500_q0022.trm.summary.json",
+      "rows": 1,
+      "bucket_counts": {
+        "negative": 1
+      },
+      "target_action_rows": 0,
+      "target_action_imputed_rows": 0,
+      "model_dir": "qwen35_27b"
+    },
+    {
+      "input_replay": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_27b\\qwen35_27b_math_env_q0023.jsonl",
+      "staged_trm": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_math_env_q0023.trm.jsonl",
+      "staged_summary": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_math_env_q0023.trm.summary.json",
+      "rows": 1,
+      "bucket_counts": {
+        "negative": 1
+      },
+      "target_action_rows": 0,
+      "target_action_imputed_rows": 0,
+      "model_dir": "qwen35_27b"
+    },
+    {
+      "input_replay": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_27b\\qwen35_27b_misguided_attn_q0014.jsonl",
+      "staged_trm": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_misguided_attn_q0014.trm.jsonl",
+      "staged_summary": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_misguided_attn_q0014.trm.summary.json",
+      "rows": 1,
+      "bucket_counts": {
+        "negative": 1
+      },
+      "target_action_rows": 0,
+      "target_action_imputed_rows": 0,
+      "model_dir": "qwen35_27b"
+    },
+    {
+      "input_replay": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_27b\\qwen35_27b_mmlu_pro_q0024.jsonl",
+      "staged_trm": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_mmlu_pro_q0024.trm.jsonl",
+      "staged_summary": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_mmlu_pro_q0024.trm.summary.json",
+      "rows": 1,
+      "bucket_counts": {
+        "negative": 1
+      },
+      "target_action_rows": 0,
+      "target_action_imputed_rows": 0,
+      "model_dir": "qwen35_27b"
+    },
+    {
+      "input_replay": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_27b\\qwen35_27b_psycho_bench_q0015.jsonl",
+      "staged_trm": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_psycho_bench_q0015.trm.jsonl",
+      "staged_summary": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_psycho_bench_q0015.trm.summary.json",
+      "rows": 1,
+      "bucket_counts": {
+        "negative": 1
+      },
+      "target_action_rows": 0,
+      "target_action_imputed_rows": 0,
+      "model_dir": "qwen35_27b"
+    },
+    {
+      "input_replay": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_9b\\qwen35_9b_aime2024_q0004.jsonl",
+      "staged_trm": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_9b_aime2024_q0004.trm.jsonl",
+      "staged_summary": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_9b_aime2024_q0004.trm.summary.json",
+      "rows": 1,
+      "bucket_counts": {
+        "negative": 1
+      },
+      "target_action_rows": 0,
+      "target_action_imputed_rows": 0,
+      "model_dir": "qwen35_9b"
+    },
+    {
+      "input_replay": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_9b\\qwen35_9b_aime2025_q0005.jsonl",
+      "staged_trm": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_9b_aime2025_q0005.trm.jsonl",
+      "staged_summary": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_9b_aime2025_q0005.trm.summary.json",
+      "rows": 1,
+      "bucket_counts": {
+        "negative": 1
+      },
+      "target_action_rows": 0,
+      "target_action_imputed_rows": 0,
+      "model_dir": "qwen35_9b"
+    },
+    {
+      "input_replay": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_9b\\qwen35_9b_aime2026_q0006.jsonl",
+      "staged_trm": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_9b_aime2026_q0006.trm.jsonl",
+      "staged_summary": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_9b_aime2026_q0006.trm.summary.json",
+      "rows": 1,
+      "bucket_counts": {
+        "negative": 1
+      },
+      "target_action_rows": 0,
+      "target_action_imputed_rows": 0,
+      "model_dir": "qwen35_9b"
+    },
+    {
+      "input_replay": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_9b\\qwen35_9b_clbench_q0007.jsonl",
+      "staged_trm": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_9b_clbench_q0007.trm.jsonl",
+      "staged_summary": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_9b_clbench_q0007.trm.summary.json",
+      "rows": 1,
+      "bucket_counts": {
+        "negative": 1
+      },
+      "target_action_rows": 0,
+      "target_action_imputed_rows": 0,
+      "model_dir": "qwen35_9b"
+    },
+    {
+      "input_replay": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_9b\\qwen35_9b_if_summarize_judge_q0008.jsonl",
+      "staged_trm": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_9b_if_summarize_judge_q0008.trm.jsonl",
+      "staged_summary": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_9b_if_summarize_judge_q0008.trm.summary.json",
+      "rows": 1,
+      "bucket_counts": {
+        "negative": 1
+      },
+      "target_action_rows": 0,
+      "target_action_imputed_rows": 0,
+      "model_dir": "qwen35_9b"
+    },
+    {
+      "input_replay": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_9b\\qwen35_9b_lisanbench_q0001.jsonl",
+      "staged_trm": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_9b_lisanbench_q0001.trm.jsonl",
+      "staged_summary": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_9b_lisanbench_q0001.trm.summary.json",
+      "rows": 1,
+      "bucket_counts": {
+        "exact_positive": 1
+      },
+      "target_action_rows": 1,
+      "target_action_imputed_rows": 1,
+      "model_dir": "qwen35_9b"
+    },
+    {
+      "input_replay": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_9b\\qwen35_9b_logic_env_q0009.jsonl",
+      "staged_trm": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_9b_logic_env_q0009.trm.jsonl",
+      "staged_summary": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_9b_logic_env_q0009.trm.summary.json",
+      "rows": 1,
+      "bucket_counts": {
+        "negative": 1
+      },
+      "target_action_rows": 0,
+      "target_action_imputed_rows": 0,
+      "model_dir": "qwen35_9b"
+    },
+    {
+      "input_replay": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_9b\\qwen35_9b_math500_q0010.jsonl",
+      "staged_trm": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_9b_math500_q0010.trm.jsonl",
+      "staged_summary": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_9b_math500_q0010.trm.summary.json",
+      "rows": 1,
+      "bucket_counts": {
+        "negative": 1
+      },
+      "target_action_rows": 0,
+      "target_action_imputed_rows": 0,
+      "model_dir": "qwen35_9b"
+    },
+    {
+      "input_replay": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_9b\\qwen35_9b_math_env_q0011.jsonl",
+      "staged_trm": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_9b_math_env_q0011.trm.jsonl",
+      "staged_summary": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_9b_math_env_q0011.trm.summary.json",
+      "rows": 1,
+      "bucket_counts": {
+        "exact_positive": 1
+      },
+      "target_action_rows": 1,
+      "target_action_imputed_rows": 1,
+      "model_dir": "qwen35_9b"
+    },
+    {
+      "input_replay": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_9b\\qwen35_9b_misguided_attn_q0002.jsonl",
+      "staged_trm": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_9b_misguided_attn_q0002.trm.jsonl",
+      "staged_summary": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_9b_misguided_attn_q0002.trm.summary.json",
+      "rows": 1,
+      "bucket_counts": {
+        "negative": 1
+      },
+      "target_action_rows": 0,
+      "target_action_imputed_rows": 0,
+      "model_dir": "qwen35_9b"
+    },
+    {
+      "input_replay": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_9b\\qwen35_9b_mmlu_pro_q0012.jsonl",
+      "staged_trm": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_9b_mmlu_pro_q0012.trm.jsonl",
+      "staged_summary": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_9b_mmlu_pro_q0012.trm.summary.json",
+      "rows": 1,
+      "bucket_counts": {
+        "negative": 1
+      },
+      "target_action_rows": 0,
+      "target_action_imputed_rows": 0,
+      "model_dir": "qwen35_9b"
+    },
+    {
+      "input_replay": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1\\qwen35_9b\\qwen35_9b_psycho_bench_q0003.jsonl",
+      "staged_trm": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_9b_psycho_bench_q0003.trm.jsonl",
+      "staged_summary": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_9b_psycho_bench_q0003.trm.summary.json",
+      "rows": 1,
+      "bucket_counts": {
+        "exact_positive": 1
+      },
+      "target_action_rows": 1,
+      "target_action_imputed_rows": 1,
+      "model_dir": "qwen35_9b"
+    },
+    {
+      "input_replay": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1_retry_27b_tail\\qwen35_27b\\qwen35_27b_math_env_q0001.jsonl",
+      "staged_trm": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_math_env_q0001.trm.jsonl",
+      "staged_summary": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_math_env_q0001.trm.summary.json",
+      "rows": 1,
+      "bucket_counts": {
+        "negative": 1
+      },
+      "target_action_rows": 0,
+      "target_action_imputed_rows": 0,
+      "model_dir": "qwen35_27b"
+    },
+    {
+      "input_replay": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1_retry_27b_tail\\qwen35_27b\\qwen35_27b_mmlu_pro_q0002.jsonl",
+      "staged_trm": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_mmlu_pro_q0002.trm.jsonl",
+      "staged_summary": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_mmlu_pro_q0002.trm.summary.json",
+      "rows": 1,
+      "bucket_counts": {
+        "negative": 1
+      },
+      "target_action_rows": 0,
+      "target_action_imputed_rows": 0,
+      "model_dir": "qwen35_27b"
+    }
+  ],
+  "merged": {
+    "jsonl": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\primehub_trm_merged.jsonl",
+    "summary": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\primehub_trm_merged.summary.json",
+    "rows": 26,
+    "bucket_counts": {
+      "negative": 23,
+      "exact_positive": 3
+    },
+    "target_action_rows": 3,
+    "target_action_coverage": 0.1154
+  },
+  "impute_exact_positive_target_action": true,
+  "train_bench": {
+    "critic_model": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\models\\trm_critic.json",
+    "critic_summary": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\models\\trm_critic.summary.json",
+    "critic_bench_summary": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\bench\\trm_critic_bench.summary.json",
+    "retriever_model": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\models\\trm_retriever.json",
+    "retriever_summary": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\models\\trm_retriever.summary.json",
+    "retriever_bench_summary": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\bench\\trm_retriever_bench.summary.json",
+    "router_bench_summary": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\bench\\trm_router_bench.summary.json"
+  }
+}

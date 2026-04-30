@@ -1,0 +1,37 @@
+{
+  "steps": 1,
+  "episodes": 1,
+  "per_env_steps": {
+    "agency_bench": 1
+  },
+  "failure_types": {},
+  "model_client_fallbacks": {
+    "total": 1,
+    "agency_bench": 1
+  },
+  "bridge_fallbacks": {},
+  "trm_repairs": {},
+  "raw_invalid_actions": {},
+  "repaired_successes": {},
+  "reward_totals": {
+    "agency_bench": 0.0
+  },
+  "token_usage": {
+    "prompt_tokens": 502,
+    "completion_tokens": 256,
+    "total_tokens": 758
+  },
+  "output_statuses": {
+    "completed": 1
+  },
+  "reasoning_modes": {
+    "on": 1
+  },
+  "visible_output_emitted": {
+    "false": 1
+  },
+  "run_token_total": 758,
+  "token_budget": null,
+  "run_id": null,
+  "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_skill_reasoning_batch_20260416_2100mdt\\qwen35_9b\\qwen35_9b_three-model-basket-v3-reasoning-heavy_agency_bench_q0003.jsonl"
+}

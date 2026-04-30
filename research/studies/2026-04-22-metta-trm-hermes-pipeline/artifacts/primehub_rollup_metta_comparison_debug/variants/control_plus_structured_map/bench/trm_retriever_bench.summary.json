@@ -1,0 +1,48 @@
+{
+  "rows": 35,
+  "exact_match_rate": 0.0571,
+  "nonempty_prediction_rate": 1.0,
+  "avg_similarity": 0.4181,
+  "avg_grid_cell_accuracy": null,
+  "per_family": {
+    "primehub": {
+      "rows": 32,
+      "exact_match_rate": 0.0625,
+      "nonempty_prediction_rate": 1.0,
+      "avg_similarity": 0.3618,
+      "avg_grid_cell_accuracy": null
+    },
+    "primehub_structured_map__task_success": {
+      "rows": 1,
+      "exact_match_rate": 0.0,
+      "nonempty_prediction_rate": 1.0,
+      "avg_similarity": 1.1205,
+      "avg_grid_cell_accuracy": null
+    },
+    "primehub_structured_map__contract_validity": {
+      "rows": 1,
+      "exact_match_rate": 0.0,
+      "nonempty_prediction_rate": 1.0,
+      "avg_similarity": 1.2124,
+      "avg_grid_cell_accuracy": null
+    },
+    "primehub_structured_map__retrieval_selection_correctness": {
+      "rows": 1,
+      "exact_match_rate": 0.0,
+      "nonempty_prediction_rate": 1.0,
+      "avg_similarity": 0.7236,
+      "avg_grid_cell_accuracy": null
+    }
+  },
+  "model_example_count": 36,
+  "train_rows": 184,
+  "eval_rows": 35,
+  "holdout_ratio": 0.2,
+  "leave_one_out": false,
+  "include_buckets": [
+    "exact_positive",
+    "near_miss",
+    "weak_positive"
+  ],
+  "min_supervision_weight": 0.4
+}

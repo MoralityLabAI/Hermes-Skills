@@ -1,0 +1,30 @@
+Traceback (most recent call last):
+  File "C:\projects\Hermes Skills\research\scripts\run_local_if_summarize_metta_ablation.py", line 687, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "C:\projects\Hermes Skills\research\scripts\run_local_if_summarize_metta_ablation.py", line 617, in main
+    action, raw, elapsed = generate(llm, messages, args.max_tokens)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\projects\Hermes Skills\research\scripts\run_local_if_summarize_metta_ablation.py", line 491, in generate
+    text, raw, elapsed = llm.generate(messages, max_tokens)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\projects\Hermes Skills\research\scripts\run_local_if_summarize_metta_ablation.py", line 322, in generate
+    gpu_mem = self.sample_gpu_memory_mb()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\projects\Hermes Skills\research\scripts\run_local_if_summarize_metta_ablation.py", line 256, in sample_gpu_memory_mb
+    proc = subprocess.run(
+           ^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\subprocess.py", line 1209, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\subprocess.py", line 1626, in _communicate
+    self.stdout_thread.join(self._remaining_time(endtime))
+  File "C:\Python311\Lib\threading.py", line 1116, in join
+    self._wait_for_tstate_lock(timeout=max(timeout, 0))
+  File "C:\Python311\Lib\threading.py", line 1132, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

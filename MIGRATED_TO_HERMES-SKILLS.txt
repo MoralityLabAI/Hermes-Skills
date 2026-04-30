@@ -1,0 +1,17 @@
+This accidental workspace has been migrated into:
+
+C:\projects\Hermes-Skills\Hermes Skills
+
+Migration commits in the proper repo:
+
+- ef17a7f Migrate MeTTa TRM research artifacts
+- 83b9fd5 Fix migrated Hermes path references
+- 68ae4dd Migrate remaining Hermes skill packages
+
+Left here intentionally:
+
+- large local data/ artifacts
+- large old research/ artifact material not selected for Git import
+- any local caches or temporary outputs
+
+Do not continue new Hermes-Skills work in this directory unless explicitly using it as a backup/source archive.

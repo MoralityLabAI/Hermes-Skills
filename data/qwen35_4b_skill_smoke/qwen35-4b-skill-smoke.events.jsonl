@@ -1,0 +1,2 @@
+{"ts": 1776205015.565799, "event": "server_start", "base_url": "http://127.0.0.1:18083", "memory_limit_mb": 2048, "cpu_percent": 50, "ctx_size": 512}
+{"ts": 1776205062.455235, "event": "server_not_ready", "pid": 12956, "ready": false}

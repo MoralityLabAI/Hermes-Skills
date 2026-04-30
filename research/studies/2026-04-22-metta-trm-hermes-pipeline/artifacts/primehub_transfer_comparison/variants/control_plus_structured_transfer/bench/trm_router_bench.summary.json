@@ -1,0 +1,21 @@
+{
+  "rows": 39,
+  "top_k": 5,
+  "retrieval_only": {
+    "exact_match_rate": 0.0513,
+    "nonempty_prediction_rate": 1.0,
+    "avg_grid_cell_accuracy": null
+  },
+  "critic_gated": {
+    "exact_match_rate": 0.0,
+    "nonempty_prediction_rate": 0.0769,
+    "route_abstain_rate": 0.9231,
+    "avg_grid_cell_accuracy": null
+  },
+  "train_rows": 175,
+  "eval_rows": 39,
+  "retriever_example_count": 25,
+  "critic_example_count": 175,
+  "holdout_ratio": 0.2,
+  "min_supervision_weight": 0.4
+}

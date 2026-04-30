@@ -1,0 +1,16 @@
+{
+  "training_task_id": "local-if-summarize-metta-controlled-slice",
+  "checkpoint_interval": "per_seed_arm",
+  "chunk_strategy": "single local model load; one deterministic episode per seed per arm",
+  "caps_expected": {
+    "ram_mb": 2048,
+    "cpu_pct": 50,
+    "io_mb_s": 50
+  },
+  "model_path": "D:\\Research_Engine\\models\\Qwen2.5-3B-Instruct-GGUF\\qwen2.5-3b-instruct-q4_k_m.gguf",
+  "hf_model_path": "D:\\Research_Engine\\models\\Qwen3.5\\Qwen3.5-0.8B-Instruct",
+  "seeds": [
+    7
+  ],
+  "created_at_utc": "2026-04-24T23:57:06.183987+00:00"
+}

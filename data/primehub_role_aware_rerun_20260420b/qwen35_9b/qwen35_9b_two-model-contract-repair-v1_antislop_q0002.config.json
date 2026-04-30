@@ -1,0 +1,57 @@
+{
+  "run_name": "overnight-qwen35_9b-two-model-contract-repair-v1-antislop",
+  "max_episodes": 1,
+  "max_steps_per_episode": 8,
+  "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_role_aware_rerun_20260420b\\qwen35_9b\\qwen35_9b_two-model-contract-repair-v1_antislop_q0002.jsonl",
+  "model": {
+    "provider": "openai_compatible",
+    "base_url": "http://snacksack-ms-7d32.tail3156cd.ts.net:8082/v1",
+    "model_name": "Qwen_Qwen3.5-9B-Q4_K_M.gguf",
+    "max_new_tokens": 256,
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "request_timeout": 900
+  },
+  "metadata": {
+    "variant_id": "two-model-contract-repair-v1",
+    "skill_name": "primehub-internal-action-hermes",
+    "skill_cluster": "internal_action",
+    "reasoning_mode": "on"
+  },
+  "envs": [
+    {
+      "type": "primehub_external",
+      "name": "antislop",
+      "command_template": [
+        "C:\\Python311\\python.exe",
+        "C:/projects/Hermes Skills/scripts/remote_prime_env_bridge.py",
+        "--source",
+        "community",
+        "--host",
+        "snacksack-ms-7d32.tail3156cd.ts.net",
+        "--user",
+        "snacksack",
+        "--identity-file",
+        "C:/Users/patri/.ssh/id_ed25519",
+        "--ssh-timeout-seconds",
+        "120",
+        "--research-root",
+        "/home/snacksack/prime_repos_tmp/research-environments/environments",
+        "--community-root",
+        "/home/snacksack/prime_repos_tmp/community-environments/environments",
+        "antislop"
+      ],
+      "reset_args": [
+        "--reset"
+      ],
+      "trace_profile_overrides": {
+        "reasoning_mode": "on",
+        "skill_name": "primehub-internal-action-hermes",
+        "skill_prompt": "You are operating as Hermes skill Primehub-Internal-Action-v1.\nUse the stage order TRM_PARSE -> TRM_CRITIC -> TRM_INTERNAL_ACT -> TRM_VERIFY -> FINAL.\nWhen the valid move is hidden or deferred, emit only `inspect_and_continue`.\nDo not emit visible draft content when the contract requires internal continuation.\nPrime/TRM role imprint:\n- This TRM role is a narrow latent-action specialist: when the contract implies deferred internal continuation, emit only `inspect_and_continue` and no visible draft.\n- Do not generalize this support into normal visible-answer tasks; it is a tiny but clean exact-token niche.",
+        "skill_cluster": "internal_action",
+        "variant_id": "two-model-contract-repair-v1"
+      }
+    }
+  ],
+  "episodes": 1
+}

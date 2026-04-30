@@ -1,0 +1,15 @@
+{
+  "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_winogrande_q0006.jsonl",
+  "output": "C:\\projects\\Hermes Skills\\data\\primehub_trm_autoresearch\\cycle_09\\stage\\qwen35_27b_winogrande_q0006.trm.jsonl",
+  "total_rows": 1,
+  "bucket_counts": {
+    "exact_positive": 1,
+    "near_miss": 0,
+    "weak_positive": 0,
+    "negative": 0
+  },
+  "task_family": "auto",
+  "near_miss_threshold": 0.8,
+  "weak_positive_threshold": 0.5,
+  "target_action_imputed_rows": 1
+}

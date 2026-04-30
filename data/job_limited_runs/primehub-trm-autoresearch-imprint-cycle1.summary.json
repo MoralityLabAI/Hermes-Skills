@@ -1,0 +1,20 @@
+﻿{
+    "exit_code":  0,
+    "run_id":  "primehub-trm-autoresearch-imprint-cycle1",
+    "cpu_pct":  25,
+    "avg_ram_mb":  12.4,
+    "peak_ram_mb":  12.5,
+    "stdout_log":  "C:\\projects\\Hermes Skills\\data\\job_limited_runs\\primehub-trm-autoresearch-imprint-cycle1.stdout.log",
+    "peak_io_mb_s":  null,
+    "checkpoints":  [
+
+                    ],
+    "status":  "completed",
+    "steps_completed":  21,
+    "caps":  {
+                 "ram_mb":  1024,
+                 "cpu_pct":  25
+             },
+    "event_log":  "C:\\projects\\Hermes Skills\\data\\job_limited_runs\\primehub-trm-autoresearch-imprint-cycle1.events.jsonl",
+    "stderr_log":  "C:\\projects\\Hermes Skills\\data\\job_limited_runs\\primehub-trm-autoresearch-imprint-cycle1.stderr.log"
+}

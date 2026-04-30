@@ -1,0 +1,43 @@
+{
+  "output": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_smoke\\hard_reasoning_numeric\\cluster_merged.jsonl",
+  "total_rows": 35,
+  "bucket_counts": {
+    "negative": 32,
+    "exact_positive": 3
+  },
+  "source_env_counts": {
+    "math_env": 7,
+    "math500": 6,
+    "gauss": 4,
+    "aime2024": 6,
+    "aime2025": 6,
+    "aime2026": 6
+  },
+  "target_action_rows": 3,
+  "target_action_imputed_rows": 0,
+  "target_action_coverage": 0.0857,
+  "exact_positive_rows": 3,
+  "weak_positive_rows": 0,
+  "trainer_policy": {
+    "policy_name": "critic_verify_sparse_trainer_policy",
+    "support_tier": "critic_verify_sparse",
+    "routing_strength": "conservative",
+    "exact_positive_weight": 3.0,
+    "weak_positive_weight": 1.0,
+    "negative_weight": 0.2,
+    "min_supervision_weight": 0.6,
+    "top_k": 2
+  },
+  "training_weight_summary": {
+    "policy_name": "critic_verify_sparse_trainer_policy",
+    "adjusted_rows": 3,
+    "bucket_weight_totals": {
+      "negative": 6.4,
+      "exact_positive": 9.0
+    },
+    "bucket_weight_averages": {
+      "exact_positive": 3.0,
+      "negative": 0.2
+    }
+  }
+}

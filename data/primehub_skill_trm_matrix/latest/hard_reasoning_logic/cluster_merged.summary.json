@@ -1,0 +1,70 @@
+{
+  "output": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\latest\\hard_reasoning_logic\\cluster_merged.jsonl",
+  "total_rows": 20,
+  "bucket_counts": {
+    "negative": 15,
+    "weak_positive": 2,
+    "exact_positive": 3
+  },
+  "source_env_counts": {
+    "logic_env": 6,
+    "science_env": 4,
+    "lisanbench": 6,
+    "mmlu_pro": 4
+  },
+  "target_action_rows": 3,
+  "target_action_imputed_rows": 0,
+  "target_action_coverage": 0.15,
+  "exact_positive_rows": 3,
+  "near_miss_rows": 0,
+  "weak_positive_rows": 2,
+  "bucket_mining_summary": {
+    "changed_rows": 2,
+    "transitions": {
+      "negative->weak_positive": 2
+    },
+    "reasons": {
+      "final_answer_attempt": 2
+    }
+  },
+  "env_priority_summary": {
+    "replicated_source_rows": 0,
+    "added_rows": 0,
+    "bucket_replica_counts": {},
+    "env_replica_counts": {}
+  },
+  "negative_downsampling_summary": {
+    "original_negative_rows": 22,
+    "kept_negative_rows": 15,
+    "dropped_negative_rows": 7,
+    "hard_negative_rows_kept": 15,
+    "easy_negative_rows_kept": 0,
+    "easy_negative_rows_dropped": 7,
+    "target_negative_budget": 15
+  },
+  "trainer_policy": {
+    "policy_name": "critic_verify_sparse_trainer_policy",
+    "support_tier": "critic_verify_sparse",
+    "routing_strength": "conservative",
+    "exact_positive_weight": 2.75,
+    "near_miss_weight": 1.8,
+    "weak_positive_weight": 1.0,
+    "negative_weight": 0.2,
+    "min_supervision_weight": 0.6,
+    "top_k": 2
+  },
+  "training_weight_summary": {
+    "policy_name": "critic_verify_sparse_trainer_policy",
+    "adjusted_rows": 5,
+    "bucket_weight_totals": {
+      "negative": 3.0,
+      "weak_positive": 2.0,
+      "exact_positive": 8.25
+    },
+    "bucket_weight_averages": {
+      "exact_positive": 2.75,
+      "negative": 0.2,
+      "weak_positive": 1.0
+    }
+  }
+}

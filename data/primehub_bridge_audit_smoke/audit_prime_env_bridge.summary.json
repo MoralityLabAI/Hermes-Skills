@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-04-15T14:04:26Z",
+  "manifest": "C:\\projects\\Hermes Skills\\data\\primehub_env_manifest.json",
+  "selected_envs": 2,
+  "eligible_envs": 2,
+  "status_counts": {
+    "ok": 2
+  },
+  "env_type_counts": {
+    "SingleTurnEnv": 2
+  },
+  "eligible_env_ids": [
+    "logic_env",
+    "math_env"
+  ],
+  "artifacts": {
+    "stout": "C:\\projects\\Hermes Skills\\data\\primehub_bridge_audit_smoke\\audit_prime_env_bridge.stout.jsonl",
+    "summary": "C:\\projects\\Hermes Skills\\data\\primehub_bridge_audit_smoke\\audit_prime_env_bridge.summary.json"
+  }
+}

@@ -1,0 +1,20 @@
+﻿{
+    "exit_code":  0,
+    "run_id":  "multi-trm-formatter-verify-v1",
+    "cpu_pct":  50,
+    "avg_ram_mb":  1728.5,
+    "peak_ram_mb":  1870.2,
+    "stdout_log":  "C:\\projects\\Hermes Skills\\data\\job_limited_runs\\multi-trm-formatter-verify-v1.stdout.log",
+    "peak_io_mb_s":  null,
+    "checkpoints":  [
+
+                    ],
+    "status":  "completed",
+    "steps_completed":  8,
+    "caps":  {
+                 "ram_mb":  2048,
+                 "cpu_pct":  50
+             },
+    "event_log":  "C:\\projects\\Hermes Skills\\data\\job_limited_runs\\multi-trm-formatter-verify-v1.events.jsonl",
+    "stderr_log":  "C:\\projects\\Hermes Skills\\data\\job_limited_runs\\multi-trm-formatter-verify-v1.stderr.log"
+}

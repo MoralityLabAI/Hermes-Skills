@@ -1,0 +1,7 @@
+Unhandled exception in benchmark runner: [Errno 28] No space left on device
+object address  : 000001C4F49A7F40
+object refcount : 2
+object type     : 00007FFB7A7E38D0
+object type name: OSError
+object repr     : OSError(28, 'No space left on device')
+lost sys.stderr

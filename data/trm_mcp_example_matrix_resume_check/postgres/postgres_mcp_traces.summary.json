@@ -1,0 +1,12 @@
+{
+  "trace_count": 5,
+  "mcp_name": "postgres",
+  "scenario_ids": [
+    "pg_users_schema_exact",
+    "pg_orders_view_exact",
+    "pg_top_customers_template_exact",
+    "pg_users_near_miss",
+    "pg_wrong_route_schema"
+  ],
+  "notes": "Popular worked example for TRM-MCP around postgres schema reads, view reads, query-template retrieval, near-miss retrieval, and wrong-route failure."
+}

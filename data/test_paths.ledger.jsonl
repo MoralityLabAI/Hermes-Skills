@@ -1,0 +1,1 @@
+{"ts": 1776235209.6760693, "event": "task_complete", "status": "dry_run", "task_key": "qwen35_9b:BigBench_BBH", "model_id": "qwen35_9b", "env_id": "BigBench_BBH", "base_url": "http://snacksack-ms-7d32.tail3156cd.ts.net:8082/v1", "env_source": "community", "env_owner": "community", "episodes": 1}

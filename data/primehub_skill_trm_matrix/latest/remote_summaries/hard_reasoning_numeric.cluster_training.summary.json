@@ -1,0 +1,109 @@
+{
+  "cluster_id": "hard_reasoning_numeric",
+  "input": "/home/snacksack/outputs/hermes_skill_trm_parallel/20260417T001839Z/clusters/hard_reasoning_numeric/cluster_merged.jsonl",
+  "out_dir": "/home/snacksack/outputs/hermes_skill_trm_parallel/20260417T001839Z/clusters/hard_reasoning_numeric",
+  "top_k": 3,
+  "holdout_ratio": 0.25,
+  "bench_holdout_ratio": 0.5247805898123765,
+  "min_supervision_weight": 0.4,
+  "critic_train": {
+    "input": "/home/snacksack/outputs/hermes_skill_trm_parallel/20260417T001839Z/clusters/hard_reasoning_numeric/cluster_merged.jsonl",
+    "output": "/home/snacksack/outputs/hermes_skill_trm_parallel/20260417T001839Z/clusters/hard_reasoning_numeric/models/trm_critic.json",
+    "example_count": 35,
+    "task_family_counts": {
+      "primehub_hard_reasoning_numeric": 35
+    },
+    "bucket_counts": {
+      "negative": 32,
+      "exact_positive": 3
+    },
+    "k": 3
+  },
+  "critic_bench": {
+    "rows": 10,
+    "bucket_accuracy": 0.6,
+    "avg_bucket_abs_error": 1.2,
+    "visible_output_accuracy": 0.5,
+    "avg_grid_cell_accuracy_abs_error": null,
+    "per_family": {
+      "primehub_hard_reasoning_numeric": {
+        "rows": 10,
+        "bucket_accuracy": 0.6,
+        "avg_bucket_abs_error": 1.2,
+        "visible_output_accuracy": 0.5,
+        "avg_grid_cell_accuracy_abs_error": null
+      }
+    },
+    "model_example_count": 25,
+    "train_rows": 25,
+    "eval_rows": 10,
+    "holdout_ratio": 0.5247805898123765,
+    "leave_one_out": false,
+    "k": 3
+  },
+  "retriever_train": {
+    "input": "/home/snacksack/outputs/hermes_skill_trm_parallel/20260417T001839Z/clusters/hard_reasoning_numeric/cluster_merged.jsonl",
+    "output": "/home/snacksack/outputs/hermes_skill_trm_parallel/20260417T001839Z/clusters/hard_reasoning_numeric/models/trm_retriever.json",
+    "example_count": 3,
+    "task_family_counts": {
+      "primehub_hard_reasoning_numeric": 3
+    },
+    "bucket_counts": {
+      "exact_positive": 3
+    },
+    "include_buckets": [
+      "exact_positive",
+      "near_miss",
+      "weak_positive"
+    ],
+    "min_supervision_weight": 0.4
+  },
+  "retriever_bench": {
+    "rows": 10,
+    "exact_match_rate": 0.0,
+    "nonempty_prediction_rate": 1.0,
+    "avg_similarity": 0.3313,
+    "avg_grid_cell_accuracy": null,
+    "per_family": {
+      "primehub_hard_reasoning_numeric": {
+        "rows": 10,
+        "exact_match_rate": 0.0,
+        "nonempty_prediction_rate": 1.0,
+        "avg_similarity": 0.3313,
+        "avg_grid_cell_accuracy": null
+      }
+    },
+    "model_example_count": 3,
+    "train_rows": 25,
+    "eval_rows": 10,
+    "holdout_ratio": 0.5247805898123765,
+    "leave_one_out": false,
+    "include_buckets": [
+      "exact_positive",
+      "near_miss",
+      "weak_positive"
+    ],
+    "min_supervision_weight": 0.4
+  },
+  "router_bench": {
+    "rows": 10,
+    "top_k": 3,
+    "retrieval_only": {
+      "exact_match_rate": 0.0,
+      "nonempty_prediction_rate": 1.0,
+      "avg_grid_cell_accuracy": null
+    },
+    "critic_gated": {
+      "exact_match_rate": 0.0,
+      "nonempty_prediction_rate": 0.4,
+      "route_abstain_rate": 0.6,
+      "avg_grid_cell_accuracy": null
+    },
+    "train_rows": 25,
+    "eval_rows": 10,
+    "retriever_example_count": 3,
+    "critic_example_count": 25,
+    "holdout_ratio": 0.5247805898123765,
+    "min_supervision_weight": 0.4
+  }
+}

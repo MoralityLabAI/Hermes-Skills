@@ -1,0 +1,22 @@
+{
+  "rows": 10,
+  "bucket_accuracy": 0.0,
+  "avg_bucket_abs_error": 1.6,
+  "visible_output_accuracy": 0.5,
+  "avg_grid_cell_accuracy_abs_error": null,
+  "per_family": {
+    "primehub_hard_reasoning_numeric": {
+      "rows": 10,
+      "bucket_accuracy": 0.0,
+      "avg_bucket_abs_error": 1.6,
+      "visible_output_accuracy": 0.5,
+      "avg_grid_cell_accuracy_abs_error": null
+    }
+  },
+  "model_example_count": 25,
+  "train_rows": 25,
+  "eval_rows": 10,
+  "holdout_ratio": 0.5247805898123765,
+  "leave_one_out": false,
+  "k": 2
+}

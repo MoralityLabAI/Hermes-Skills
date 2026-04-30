@@ -1,0 +1,36 @@
+﻿{
+    "avg_ram_mb":  52.929,
+    "stdout_path":  "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_transfer_comparison\\child.stdout.log",
+    "child_args":  [
+                       "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\run_primehub_metta_transfer_comparison.py",
+                       "--out-dir",
+                       "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_transfer_comparison",
+                       "--summary-path",
+                       "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_transfer_comparison\\comparison.summary.json",
+                       "--events-path",
+                       "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_transfer_comparison\\comparison.events.jsonl"
+                   ],
+    "checkpoint_strategy":  "variant_complete",
+    "duration_sec":  283.2969,
+    "steps_completed":  278,
+    "exit_code":  0,
+    "started_at_utc":  "2026-04-23T21:06:46.4570644Z",
+    "peak_io_mb_s":  0,
+    "abort_reason":  null,
+    "peak_ram_mb":  76.4609,
+    "finished_at_utc":  "2026-04-23T21:11:29.7539621Z",
+    "working_directory":  "C:\\projects\\Hermes Skills",
+    "status":  "success",
+    "stderr_path":  "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_transfer_comparison\\child.stderr.log",
+    "caps":  {
+                 "ram_mb":  2048,
+                 "io_mb_s":  50,
+                 "cpu_pct":  50,
+                 "timeout_sec":  1800
+             },
+    "child_arg_string":  "\"C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\run_primehub_metta_transfer_comparison.py\" --out-dir \"C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_transfer_comparison\" --summary-path \"C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_transfer_comparison\\comparison.summary.json\" --events-path \"C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_transfer_comparison\\comparison.events.jsonl\"",
+    "cpu_pct":  5.1342,
+    "event_log_path":  "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_transfer_comparison\\jobcap.events.jsonl",
+    "script_path":  "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\run_primehub_metta_transfer_comparison.py",
+    "run_id":  "metta-primehub-transfer-comparison-20260423-rerun"
+}

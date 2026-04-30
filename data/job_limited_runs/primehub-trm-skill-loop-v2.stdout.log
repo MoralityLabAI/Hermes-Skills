@@ -1,0 +1,276 @@
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_aime2024_q0016.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_aime2025_q0017.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_aime2026_q0018.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_clbench_q0019.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_if_summarize_judge_q0020.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_lisanbench_q0013.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_logic_env_q0021.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_math500_q0022.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_math_env_q0023.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_misguided_attn_q0014.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_mmlu_pro_q0024.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_psycho_bench_q0015.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_aime2024_q0004.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_aime2025_q0005.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_aime2026_q0006.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_clbench_q0007.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_if_summarize_judge_q0008.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_lisanbench_q0001.trm.jsonl
+{"exact_positive": 1, "near_miss": 0, "weak_positive": 0, "negative": 0}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_logic_env_q0009.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_math500_q0010.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_math_env_q0011.trm.jsonl
+{"exact_positive": 1, "near_miss": 0, "weak_positive": 0, "negative": 0}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_misguided_attn_q0002.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_mmlu_pro_q0012.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_psycho_bench_q0003.trm.jsonl
+{"exact_positive": 1, "near_miss": 0, "weak_positive": 0, "negative": 0}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_math_env_q0001.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_mmlu_pro_q0002.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_agency_bench_q0029.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_aime2024_q0009.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_aime2025_q0010.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_aime2026_q0011.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_allenai_ifeval_q0030.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_antislop_q0031.trm.jsonl
+{"exact_positive": 1, "near_miss": 0, "weak_positive": 0, "negative": 0}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_arc_q0032.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_ascii_tree_q0033.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_bixbench_q0034.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_boolq_q0035.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_clbench_q0012.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_coconot_q0036.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_colf_q0037.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_deep_consult_q0038.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_gauss_q0039.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_hellaswag_q0040.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_if_summarize_judge_q0013.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_jailbreak_bench_q0041.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_lisanbench_q0042.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_llm_writing_detection_q0043.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_logic_env_q0014.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_longbench_v2_q0044.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_math500_q0015.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_math_env_q0016.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_medsafetybench_q0045.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_misguided_attn_q0046.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_mmlu_pro_q0017.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_mmlu_q0047.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_passthrough_q0018.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_psycho_bench_q0048.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_pydantic_adherence_q0049.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_reward_bench_q0050.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 1, "negative": 0}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_rust_cargo_q0051.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_science_env_q0019.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_simple_bench_q0052.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_simpleqa_q0020.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_simpleqa_verified_2_q0053.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_simpleqa_verified_q0021.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_truthfulqa_q0002.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_truthfulqa_q0054.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_unscramble_q0022.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_uq_project_q0004.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_uq_q0003.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_verbatim_copy_q0023.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_vpct_1_q0005.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_winogrande_q0006.trm.jsonl
+{"exact_positive": 1, "near_miss": 0, "weak_positive": 0, "negative": 0}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_wmdp_q0007.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_27b_writing_bench_q0008.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_agency_bench_q0001.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_aime2024_q0014.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_aime2025_q0015.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_aime2026_q0016.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_allenai_ifeval_q0002.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_antislop_q0003.trm.jsonl
+{"exact_positive": 1, "near_miss": 0, "weak_positive": 0, "negative": 0}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_arc_q0004.trm.jsonl
+{"exact_positive": 1, "near_miss": 0, "weak_positive": 0, "negative": 0}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_ascii_tree_q0005.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 1, "negative": 0}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_bixbench_q0006.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_boolq_q0007.trm.jsonl
+{"exact_positive": 1, "near_miss": 0, "weak_positive": 0, "negative": 0}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_clbench_q0017.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_coconot_q0008.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_colf_q0009.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_deep_consult_q0010.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_gauss_q0011.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_hellaswag_q0012.trm.jsonl
+{"exact_positive": 1, "near_miss": 0, "weak_positive": 0, "negative": 0}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_if_summarize_judge_q0018.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_jailbreak_bench_q0013.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_lisanbench_q0014.trm.jsonl
+{"exact_positive": 1, "near_miss": 0, "weak_positive": 0, "negative": 0}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_llm_writing_detection_q0015.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_logic_env_q0019.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_longbench_v2_q0016.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_math500_q0020.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_math_env_q0021.trm.jsonl
+{"exact_positive": 1, "near_miss": 0, "weak_positive": 0, "negative": 0}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_medsafetybench_q0017.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_misguided_attn_q0018.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_mmlu_pro_q0022.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_mmlu_q0019.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_passthrough_q0001.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_passthrough_q0023.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 2 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_psycho_bench_q0001.trm.jsonl
+{"exact_positive": 2, "near_miss": 0, "weak_positive": 0, "negative": 0}
+Wrote 0 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_psycho_bench_q0020.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 0}
+Wrote 2 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_pydantic_adherence_q0002.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 2}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_reward_bench_q0003.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 1, "negative": 0}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_rust_cargo_q0004.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_science_env_q0024.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_simple_bench_q0005.trm.jsonl
+{"exact_positive": 1, "near_miss": 0, "weak_positive": 0, "negative": 0}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_simpleqa_q0025.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_simpleqa_verified_2_q0006.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_simpleqa_verified_q0026.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_truthfulqa_q0007.trm.jsonl
+{"exact_positive": 1, "near_miss": 0, "weak_positive": 0, "negative": 0}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_unscramble_q0027.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_uq_project_q0009.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_uq_q0008.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_verbatim_copy_q0028.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_vpct_1_q0010.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_winogrande_q0011.trm.jsonl
+{"exact_positive": 1, "near_miss": 0, "weak_positive": 0, "negative": 0}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_wmdp_q0012.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 1 TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\stage\qwen35_9b_writing_bench_q0013.trm.jsonl
+{"exact_positive": 0, "near_miss": 0, "weak_positive": 0, "negative": 1}
+Wrote 124 merged TRM rows to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\primehub_trm_merged.jsonl
+{"negative": 105, "exact_positive": 16, "weak_positive": 3}
+Wrote critic model with 124 examples to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\models\trm_critic.json
+{'negative': 105, 'exact_positive': 16, 'weak_positive': 3}
+Wrote benchmark summary to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\bench\trm_critic_bench.summary.json
+{"eval_rows": 22, "bucket_accuracy": 0.7727, "per_family": {"primehub": {"rows": 22, "bucket_accuracy": 0.7727, "avg_bucket_abs_error": 0.6818, "visible_output_accuracy": 0.5, "avg_grid_cell_accuracy_abs_error": null}}}
+Wrote retriever model with 16 examples to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\models\trm_retriever.json
+{"exact_positive": 16}
+Wrote benchmark summary to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\bench\trm_retriever_bench.summary.json
+{"eval_rows": 22, "exact_match_rate": 0.0455, "per_family": {"primehub": {"rows": 22, "exact_match_rate": 0.0455, "nonempty_prediction_rate": 1.0, "avg_similarity": 0.3984, "avg_grid_cell_accuracy": null}}}
+Wrote router benchmark summary to C:\projects\Hermes Skills\data\primehub_trm_autoresearch\cycle_01\bench\trm_router_bench.summary.json
+{"eval_rows": 22, "retrieval_only": {"exact_match_rate": 0.0455, "nonempty_prediction_rate": 1.0, "avg_grid_cell_accuracy": null}, "critic_gated": {"exact_match_rate": 0.0, "nonempty_prediction_rate": 0.1364, "route_abstain_rate": 0.8636, "avg_grid_cell_accuracy": null}}
+{
+  "manifest": "C:\\projects\\Hermes Skills\\data\\primehub_trm_autoresearch\\cycle_01\\primehub_trm_rollup.manifest.json",
+  "merged_rows": 124,
+  "bucket_counts": {
+    "negative": 105,
+    "exact_positive": 16,
+    "weak_positive": 3
+  }
+}
+{
+  "output_json": "C:\\projects\\Hermes Skills\\data\\primehub_trm_autoresearch\\cycle_01\\imprint\\primehub_skill_imprint.json",
+  "output_md": "C:\\projects\\Hermes Skills\\data\\primehub_trm_autoresearch\\cycle_01\\imprint\\primehub_skill_imprint.md",
+  "rows": 124
+}
+{
+  "summary": "C:\\projects\\Hermes Skills\\data\\primehub_trm_autoresearch\\latest.summary.json",
+  "proposal_count": 5
+}

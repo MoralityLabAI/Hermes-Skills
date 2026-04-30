@@ -1,0 +1,36 @@
+﻿{
+    "avg_ram_mb":  55.2723,
+    "stdout_path":  "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\child.stdout.log",
+    "child_args":  [
+                       "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\run_primehub_external_abstraction_comparison.py",
+                       "--out-dir",
+                       "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison",
+                       "--summary-path",
+                       "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\comparison.summary.json",
+                       "--events-path",
+                       "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\comparison.events.jsonl"
+                   ],
+    "checkpoint_strategy":  "variant_complete",
+    "duration_sec":  774.2849,
+    "steps_completed":  758,
+    "exit_code":  0,
+    "started_at_utc":  "2026-04-23T23:55:17.2853981Z",
+    "peak_io_mb_s":  0,
+    "abort_reason":  null,
+    "peak_ram_mb":  77.5664,
+    "finished_at_utc":  "2026-04-24T00:08:11.5703009Z",
+    "working_directory":  "C:\\projects\\Hermes Skills",
+    "status":  "success",
+    "stderr_path":  "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\child.stderr.log",
+    "caps":  {
+                 "ram_mb":  2048,
+                 "io_mb_s":  50,
+                 "cpu_pct":  50,
+                 "timeout_sec":  1800
+             },
+    "child_arg_string":  "\"C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\run_primehub_external_abstraction_comparison.py\" --out-dir \"C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\" --summary-path \"C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\comparison.summary.json\" --events-path \"C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\comparison.events.jsonl\"",
+    "cpu_pct":  4.6021,
+    "event_log_path":  "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\jobcap.events.jsonl",
+    "script_path":  "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\run_primehub_external_abstraction_comparison.py",
+    "run_id":  "metta-primehub-external-abstraction-comparison-20260423-aime"
+}

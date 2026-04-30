@@ -1,0 +1,23 @@
+{
+  "run_name": "overnight-qwen35_9b-mbpp",
+  "max_episodes": 1,
+  "max_steps_per_episode": 8,
+  "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_overnight_live\\qwen35_9b\\qwen35_9b_mbpp_q0001.jsonl",
+  "model": {
+    "provider": "openai_compatible",
+    "base_url": "http://snacksack-ms-7d32.tail3156cd.ts.net:8082/v1",
+    "model_name": "Qwen3.5-9B-Q4_K_M.gguf",
+    "max_new_tokens": 64,
+    "temperature": 0.0,
+    "top_p": 1.0
+  },
+  "envs": [
+    {
+      "type": "jsonl_trajectory",
+      "name": "mbpp",
+      "source_path": "C:\\projects\\Tesseract\\Tesseract\\data\\normalized_trajectories\\mbpp.jsonl",
+      "reasoning_mode": "off"
+    }
+  ],
+  "episodes": 1
+}

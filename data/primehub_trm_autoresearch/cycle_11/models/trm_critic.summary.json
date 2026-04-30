@@ -1,0 +1,14 @@
+{
+  "input": "C:\\projects\\Hermes Skills\\data\\primehub_trm_autoresearch\\cycle_11\\primehub_trm_merged.jsonl",
+  "output": "C:\\projects\\Hermes Skills\\data\\primehub_trm_autoresearch\\cycle_11\\models\\trm_critic.json",
+  "example_count": 192,
+  "task_family_counts": {
+    "primehub": 192
+  },
+  "bucket_counts": {
+    "negative": 163,
+    "exact_positive": 24,
+    "weak_positive": 5
+  },
+  "k": 5
+}

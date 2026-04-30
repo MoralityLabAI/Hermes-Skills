@@ -1,0 +1,32 @@
+﻿{
+    "avg_ram_mb":  16.7794,
+    "stdout_path":  "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_rollup_metta_comparison_wrapper_debug4\\child.stdout.log",
+    "child_args":  [
+                       "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\run_primehub_metta_rollup_comparison.py",
+                       "--out-dir",
+                       "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_rollup_metta_comparison_wrapper_debug4"
+                   ],
+    "checkpoint_strategy":  "variant_complete",
+    "duration_sec":  157.0509,
+    "steps_completed":  151,
+    "exit_code":  0,
+    "started_at_utc":  "2026-04-23T19:47:40.2599281Z",
+    "peak_io_mb_s":  0,
+    "abort_reason":  null,
+    "peak_ram_mb":  16.8359,
+    "finished_at_utc":  "2026-04-23T19:50:17.3108650Z",
+    "working_directory":  "C:\\projects\\Hermes Skills",
+    "status":  "success",
+    "stderr_path":  "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_rollup_metta_comparison_wrapper_debug4\\child.stderr.log",
+    "caps":  {
+                 "ram_mb":  2048,
+                 "io_mb_s":  50,
+                 "cpu_pct":  50,
+                 "timeout_sec":  1800
+             },
+    "child_arg_string":  "\"C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\run_primehub_metta_rollup_comparison.py\" --out-dir \"C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_rollup_metta_comparison_wrapper_debug4\"",
+    "cpu_pct":  0.0084,
+    "event_log_path":  "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_rollup_metta_comparison_wrapper_debug4\\jobcap.events.jsonl",
+    "script_path":  "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\run_primehub_metta_rollup_comparison.py",
+    "run_id":  "metta-primehub-rollup-comparison-debug4"
+}

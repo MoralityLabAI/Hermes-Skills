@@ -1,0 +1,39 @@
+{
+  "steps": 1,
+  "episodes": 1,
+  "per_env_steps": {
+    "verbatim_copy": 1
+  },
+  "failure_types": {
+    "bridge_failure": 1
+  },
+  "model_client_fallbacks": {
+    "total": 1,
+    "verbatim_copy": 1
+  },
+  "bridge_fallbacks": {},
+  "trm_repairs": {},
+  "raw_invalid_actions": {},
+  "repaired_successes": {},
+  "reward_totals": {
+    "verbatim_copy": 0.0
+  },
+  "token_usage": {
+    "prompt_tokens": 406,
+    "completion_tokens": 256,
+    "total_tokens": 662
+  },
+  "output_statuses": {
+    "completed": 1
+  },
+  "reasoning_modes": {
+    "off": 1
+  },
+  "visible_output_emitted": {
+    "false": 1
+  },
+  "run_token_total": 662,
+  "token_budget": null,
+  "run_id": null,
+  "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_verbatim_copy_q0023.jsonl"
+}

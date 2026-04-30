@@ -1,0 +1,6 @@
+object address  : 0000025CE5A3AD40
+object refcount : 2
+object type     : 00007FFD52A1DF70
+object type name: KeyboardInterrupt
+object repr     : KeyboardInterrupt()
+lost sys.stderr

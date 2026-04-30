@@ -1,0 +1,21 @@
+﻿{"event":"start","ts":"2026-04-17T01:04:16.6848893Z","exe":"C:/Python311/python.exe","args":["scripts/overnight_primehub_benchmark.py","--env-mode","primehub","--model","9b","27b","--reasoning-mode","on","--skill-batch-manifest","C:\\projects\\Hermes Skills\\data\\primehub_skill_batch_evolution\\latest.manifest.json","--include","aime2024","aime2025","aime2026","logic_env","math500","math_env","mmlu_pro","science_env","simpleqa","simpleqa_verified","agency_bench","allenai_ifeval","antislop","arc","ascii_tree","bixbench","boolq","gauss","hellaswag","jailbreak_bench","lisanbench","medsafetybench","psycho_bench","pydantic_adherence","simple_bench","simpleqa_verified_2","truthfulqa","winogrande","wmdp","--variant","single-model-baseline","--max-new-tokens","256","--request-timeout","900","--task-timeout-seconds","2400","--max-runtime-minutes","0.02","--run-root","C:\\projects\\Hermes Skills\\data\\primehub_skill_reasoning_wrapper_smoke","--exclude","passthrough","verbatim_copy"],"caps":{"ram_mb":3072,"cpu_pct":50},"workdir":"C:\\projects\\Hermes Skills","run_id":"primehub-skill-reasoning-smoke-wrapper"}
+{"run_id":"primehub-skill-reasoning-smoke-wrapper","pid":8948,"private_ram_mb":18,"event":"heartbeat","ts":"2026-04-17T01:04:21.8184899Z"}
+{"run_id":"primehub-skill-reasoning-smoke-wrapper","pid":8948,"private_ram_mb":18,"event":"heartbeat","ts":"2026-04-17T01:04:26.8305154Z"}
+{"run_id":"primehub-skill-reasoning-smoke-wrapper","pid":8948,"private_ram_mb":18,"event":"heartbeat","ts":"2026-04-17T01:04:31.8508585Z"}
+{"run_id":"primehub-skill-reasoning-smoke-wrapper","pid":8948,"private_ram_mb":18,"event":"heartbeat","ts":"2026-04-17T01:04:36.8671519Z"}
+{"run_id":"primehub-skill-reasoning-smoke-wrapper","pid":8948,"private_ram_mb":18,"event":"heartbeat","ts":"2026-04-17T01:04:41.8834093Z"}
+{"run_id":"primehub-skill-reasoning-smoke-wrapper","pid":8948,"private_ram_mb":18,"event":"heartbeat","ts":"2026-04-17T01:04:46.9085876Z"}
+{"run_id":"primehub-skill-reasoning-smoke-wrapper","pid":8948,"private_ram_mb":18.1,"event":"heartbeat","ts":"2026-04-17T01:04:51.9251623Z"}
+{"run_id":"primehub-skill-reasoning-smoke-wrapper","pid":8948,"private_ram_mb":18.1,"event":"heartbeat","ts":"2026-04-17T01:04:56.9352000Z"}
+{"run_id":"primehub-skill-reasoning-smoke-wrapper","pid":8948,"private_ram_mb":18.1,"event":"heartbeat","ts":"2026-04-17T01:05:01.9501682Z"}
+{"run_id":"primehub-skill-reasoning-smoke-wrapper","pid":8948,"private_ram_mb":18.1,"event":"heartbeat","ts":"2026-04-17T01:05:06.9588907Z"}
+{"run_id":"primehub-skill-reasoning-smoke-wrapper","pid":8948,"private_ram_mb":18.1,"event":"heartbeat","ts":"2026-04-17T01:05:11.9673025Z"}
+{"run_id":"primehub-skill-reasoning-smoke-wrapper","pid":8948,"private_ram_mb":18.1,"event":"heartbeat","ts":"2026-04-17T01:05:16.9793285Z"}
+{"run_id":"primehub-skill-reasoning-smoke-wrapper","pid":8948,"private_ram_mb":18,"event":"heartbeat","ts":"2026-04-17T01:05:21.9977569Z"}
+{"run_id":"primehub-skill-reasoning-smoke-wrapper","pid":8948,"private_ram_mb":18,"event":"heartbeat","ts":"2026-04-17T01:05:27.0161865Z"}
+{"run_id":"primehub-skill-reasoning-smoke-wrapper","pid":8948,"private_ram_mb":18,"event":"heartbeat","ts":"2026-04-17T01:05:32.0376417Z"}
+{"run_id":"primehub-skill-reasoning-smoke-wrapper","pid":8948,"private_ram_mb":18,"event":"heartbeat","ts":"2026-04-17T01:05:37.0492207Z"}
+{"run_id":"primehub-skill-reasoning-smoke-wrapper","pid":8948,"private_ram_mb":18,"event":"heartbeat","ts":"2026-04-17T01:05:42.0652004Z"}
+{"run_id":"primehub-skill-reasoning-smoke-wrapper","pid":8948,"private_ram_mb":18,"event":"heartbeat","ts":"2026-04-17T01:05:47.0753531Z"}
+{"run_id":"primehub-skill-reasoning-smoke-wrapper","pid":8948,"private_ram_mb":18,"event":"heartbeat","ts":"2026-04-17T01:05:52.0899924Z"}
+{"exit_code":0,"pid":8948,"run_id":"primehub-skill-reasoning-smoke-wrapper","avg_ram_mb":18,"peak_ram_mb":18.1,"status":"completed","ts":"2026-04-17T01:05:57.1193981Z","event":"finish"}

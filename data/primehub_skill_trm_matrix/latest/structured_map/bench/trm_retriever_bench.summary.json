@@ -1,0 +1,27 @@
+{
+  "rows": 5,
+  "exact_match_rate": 0.0,
+  "nonempty_prediction_rate": 1.0,
+  "avg_similarity": 0.2619,
+  "avg_grid_cell_accuracy": null,
+  "per_family": {
+    "primehub_structured_map": {
+      "rows": 5,
+      "exact_match_rate": 0.0,
+      "nonempty_prediction_rate": 1.0,
+      "avg_similarity": 0.2619,
+      "avg_grid_cell_accuracy": null
+    }
+  },
+  "model_example_count": 4,
+  "train_rows": 11,
+  "eval_rows": 5,
+  "holdout_ratio": 0.4118304778139102,
+  "leave_one_out": false,
+  "include_buckets": [
+    "exact_positive",
+    "near_miss",
+    "weak_positive"
+  ],
+  "min_supervision_weight": 0.35
+}

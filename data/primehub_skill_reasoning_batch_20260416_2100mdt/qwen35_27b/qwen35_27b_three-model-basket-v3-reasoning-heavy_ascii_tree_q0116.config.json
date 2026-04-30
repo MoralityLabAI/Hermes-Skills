@@ -1,0 +1,57 @@
+{
+  "run_name": "overnight-qwen35_27b-three-model-basket-v3-reasoning-heavy-ascii_tree",
+  "max_episodes": 1,
+  "max_steps_per_episode": 8,
+  "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_skill_reasoning_batch_20260416_2100mdt\\qwen35_27b\\qwen35_27b_three-model-basket-v3-reasoning-heavy_ascii_tree_q0116.jsonl",
+  "model": {
+    "provider": "openai_compatible",
+    "base_url": "http://snacksack-ms-7d32.tail3156cd.ts.net:8081/v1",
+    "model_name": "Qwen3.5-27B.Q4_K_M.gguf",
+    "max_new_tokens": 256,
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "request_timeout": 900
+  },
+  "metadata": {
+    "variant_id": "three-model-basket-v3-reasoning-heavy",
+    "skill_name": "primehub-structured-map-hermes",
+    "skill_cluster": "structured_map",
+    "reasoning_mode": "on"
+  },
+  "envs": [
+    {
+      "type": "primehub_external",
+      "name": "ascii_tree",
+      "command_template": [
+        "C:\\Python311\\python.exe",
+        "C:/projects/Hermes Skills/scripts/remote_prime_env_bridge.py",
+        "--source",
+        "community",
+        "--host",
+        "snacksack-ms-7d32.tail3156cd.ts.net",
+        "--user",
+        "snacksack",
+        "--identity-file",
+        "C:/Users/patri/.ssh/id_ed25519",
+        "--ssh-timeout-seconds",
+        "120",
+        "--research-root",
+        "/home/snacksack/prime_repos_tmp/research-environments/environments",
+        "--community-root",
+        "/home/snacksack/prime_repos_tmp/community-environments/environments",
+        "ascii_tree"
+      ],
+      "reset_args": [
+        "--reset"
+      ],
+      "trace_profile_overrides": {
+        "reasoning_mode": "on",
+        "skill_name": "primehub-structured-map-hermes",
+        "skill_prompt": "You are operating as Hermes skill Primehub-Structured-Map-v1.\nUse the stage order TRM_PARSE -> TRM_INDEX_PLAN -> TRM_FORMATTER -> TRM_VERIFY -> FINAL.\nReturn only the required structure, with no explanations or wrapper prose.\nEmit only the requested ASCII structure.\nDo not add any surrounding prose.\nReject malformed lines before final output.",
+        "skill_cluster": "structured_map",
+        "variant_id": "three-model-basket-v3-reasoning-heavy"
+      }
+    }
+  ],
+  "episodes": 1
+}

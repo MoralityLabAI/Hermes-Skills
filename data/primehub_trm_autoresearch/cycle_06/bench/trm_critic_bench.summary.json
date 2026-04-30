@@ -1,0 +1,22 @@
+{
+  "rows": 28,
+  "bucket_accuracy": 0.75,
+  "avg_bucket_abs_error": 0.75,
+  "visible_output_accuracy": 0.5,
+  "avg_grid_cell_accuracy_abs_error": null,
+  "per_family": {
+    "primehub": {
+      "rows": 28,
+      "bucket_accuracy": 0.75,
+      "avg_bucket_abs_error": 0.75,
+      "visible_output_accuracy": 0.5,
+      "avg_grid_cell_accuracy_abs_error": null
+    }
+  },
+  "model_example_count": 135,
+  "train_rows": 135,
+  "eval_rows": 28,
+  "holdout_ratio": 0.2,
+  "leave_one_out": false,
+  "k": 5
+}

@@ -1,0 +1,11 @@
+usage: compile_metta_package.py [-h] --out-dir OUT_DIR package_dir
+
+Compile a MeTTa skill package into TRM bundle artifacts.
+
+positional arguments:
+  package_dir        Package directory containing package.manifest.json and
+                     .metta files.
+
+options:
+  -h, --help         show this help message and exit
+  --out-dir OUT_DIR  Output directory for the compiled bundle.

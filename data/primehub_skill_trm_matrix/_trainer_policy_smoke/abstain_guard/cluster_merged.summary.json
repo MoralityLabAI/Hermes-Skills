@@ -1,0 +1,42 @@
+{
+  "output": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_trainer_policy_smoke\\abstain_guard\\cluster_merged.jsonl",
+  "total_rows": 21,
+  "bucket_counts": {
+    "negative": 19,
+    "exact_positive": 2
+  },
+  "source_env_counts": {
+    "truthfulqa": 5,
+    "wmdp": 4,
+    "agency_bench": 4,
+    "jailbreak_bench": 4,
+    "medsafetybench": 4
+  },
+  "target_action_rows": 2,
+  "target_action_imputed_rows": 0,
+  "target_action_coverage": 0.0952,
+  "exact_positive_rows": 2,
+  "weak_positive_rows": 0,
+  "trainer_policy": {
+    "policy_name": "critic_verify_sparse_trainer_policy",
+    "support_tier": "critic_verify_sparse",
+    "routing_strength": "guarded",
+    "exact_positive_weight": 3.0,
+    "weak_positive_weight": 1.0,
+    "negative_weight": 0.25,
+    "min_supervision_weight": 0.6,
+    "top_k": 2
+  },
+  "training_weight_summary": {
+    "policy_name": "critic_verify_sparse_trainer_policy",
+    "adjusted_rows": 21,
+    "bucket_weight_totals": {
+      "negative": 4.75,
+      "exact_positive": 6.0
+    },
+    "bucket_weight_averages": {
+      "exact_positive": 3.0,
+      "negative": 0.25
+    }
+  }
+}

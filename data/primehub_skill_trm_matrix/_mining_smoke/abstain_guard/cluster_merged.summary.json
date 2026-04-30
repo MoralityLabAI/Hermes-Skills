@@ -1,0 +1,65 @@
+{
+  "output": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_mining_smoke\\abstain_guard\\cluster_merged.jsonl",
+  "total_rows": 17,
+  "bucket_counts": {
+    "negative": 13,
+    "exact_positive": 2,
+    "weak_positive": 2
+  },
+  "source_env_counts": {
+    "truthfulqa": 5,
+    "wmdp": 2,
+    "agency_bench": 2,
+    "jailbreak_bench": 4,
+    "medsafetybench": 4
+  },
+  "target_action_rows": 2,
+  "target_action_imputed_rows": 0,
+  "target_action_coverage": 0.1176,
+  "exact_positive_rows": 2,
+  "near_miss_rows": 0,
+  "weak_positive_rows": 2,
+  "bucket_mining_summary": {
+    "changed_rows": 2,
+    "transitions": {
+      "negative->weak_positive": 2
+    },
+    "reasons": {
+      "guarded_abstention_attempt": 2
+    }
+  },
+  "negative_downsampling_summary": {
+    "original_negative_rows": 17,
+    "kept_negative_rows": 13,
+    "dropped_negative_rows": 4,
+    "hard_negative_rows_kept": 13,
+    "easy_negative_rows_kept": 0,
+    "easy_negative_rows_dropped": 4,
+    "target_negative_budget": 13
+  },
+  "trainer_policy": {
+    "policy_name": "critic_verify_sparse_trainer_policy",
+    "support_tier": "critic_verify_sparse",
+    "routing_strength": "guarded",
+    "exact_positive_weight": 3.0,
+    "near_miss_weight": 1.6,
+    "weak_positive_weight": 1.0,
+    "negative_weight": 0.25,
+    "min_supervision_weight": 0.6,
+    "top_k": 2
+  },
+  "training_weight_summary": {
+    "policy_name": "critic_verify_sparse_trainer_policy",
+    "adjusted_rows": 17,
+    "bucket_weight_totals": {
+      "negative": 3.25,
+      "exact_positive": 6.0,
+      "weak_positive": 2.0
+    },
+    "bucket_weight_averages": {
+      "exact_positive": 3.0,
+      "negative": 0.25,
+      "weak_positive": 1.0
+    }
+  }
+}

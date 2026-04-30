@@ -1,0 +1,31 @@
+{
+  "run_name": "overnight-qwen35_27b-arc_agi",
+  "max_episodes": 1,
+  "max_steps_per_episode": 8,
+  "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_overnight_all\\qwen35_27b\\qwen35_27b_arc_agi_q0017.jsonl",
+  "model": {
+    "provider": "openai_compatible",
+    "base_url": "http://snacksack-ms-7d32.tail3156cd.ts.net:8082/v1",
+    "model_name": "Qwen3.5-27B.Q4_K_M.gguf",
+    "max_new_tokens": 64,
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "request_timeout": 180
+  },
+  "envs": [
+    {
+      "type": "primehub_external",
+      "name": "arc_agi",
+      "command_template": [
+        "C:\\Python311\\pythonw.exe",
+        "-m",
+        "prime_env_hub.cli",
+        "arc_agi"
+      ],
+      "reset_args": [
+        "--reset"
+      ]
+    }
+  ],
+  "episodes": 1
+}

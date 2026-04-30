@@ -1,0 +1,32 @@
+﻿{
+    "avg_ram_mb":  0,
+    "stdout_path":  "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\local_eval_qwen35_2b_if_summarize_metta\\child.stdout.log",
+    "child_args":  [
+                       "C:\\projects\\Hermes Skills\\research\\scripts\\run_local_if_summarize_metta_ablation.py",
+                       "--out-dir",
+                       "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\local_eval_qwen35_2b_if_summarize_metta"
+                   ],
+    "checkpoint_strategy":  "variant_complete",
+    "duration_sec":  1.3094,
+    "steps_completed":  0,
+    "exit_code":  1,
+    "started_at_utc":  "2026-04-24T14:00:22.3647591Z",
+    "peak_io_mb_s":  0,
+    "abort_reason":  "child_exit_1",
+    "peak_ram_mb":  0,
+    "finished_at_utc":  "2026-04-24T14:00:23.6741507Z",
+    "working_directory":  "C:\\projects\\Hermes Skills",
+    "status":  "failed",
+    "stderr_path":  "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\local_eval_qwen35_2b_if_summarize_metta\\child.stderr.log",
+    "caps":  {
+                 "ram_mb":  2048,
+                 "io_mb_s":  50,
+                 "cpu_pct":  50,
+                 "timeout_sec":  1800
+             },
+    "child_arg_string":  "\"C:\\projects\\Hermes Skills\\research\\scripts\\run_local_if_summarize_metta_ablation.py\" --out-dir \"C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\local_eval_qwen35_2b_if_summarize_metta\"",
+    "cpu_pct":  0,
+    "event_log_path":  "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\local_eval_qwen35_2b_if_summarize_metta\\jobcap.events.jsonl",
+    "script_path":  "C:\\projects\\Hermes Skills\\research\\scripts\\run_local_if_summarize_metta_ablation.py",
+    "run_id":  "local-if-summarize-metta-qwen35-2b-20260424"
+}

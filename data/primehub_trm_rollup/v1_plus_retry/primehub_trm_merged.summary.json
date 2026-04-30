@@ -1,0 +1,50 @@
+{
+  "inputs": [
+    "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_aime2024_q0016.trm.jsonl",
+    "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_aime2025_q0017.trm.jsonl",
+    "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_aime2026_q0018.trm.jsonl",
+    "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_clbench_q0019.trm.jsonl",
+    "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_if_summarize_judge_q0020.trm.jsonl",
+    "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_lisanbench_q0013.trm.jsonl",
+    "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_logic_env_q0021.trm.jsonl",
+    "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_math500_q0022.trm.jsonl",
+    "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_math_env_q0023.trm.jsonl",
+    "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_misguided_attn_q0014.trm.jsonl",
+    "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_mmlu_pro_q0024.trm.jsonl",
+    "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_psycho_bench_q0015.trm.jsonl",
+    "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_9b_aime2024_q0004.trm.jsonl",
+    "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_9b_aime2025_q0005.trm.jsonl",
+    "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_9b_aime2026_q0006.trm.jsonl",
+    "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_9b_clbench_q0007.trm.jsonl",
+    "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_9b_if_summarize_judge_q0008.trm.jsonl",
+    "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_9b_lisanbench_q0001.trm.jsonl",
+    "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_9b_logic_env_q0009.trm.jsonl",
+    "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_9b_math500_q0010.trm.jsonl",
+    "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_9b_math_env_q0011.trm.jsonl",
+    "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_9b_misguided_attn_q0002.trm.jsonl",
+    "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_9b_mmlu_pro_q0012.trm.jsonl",
+    "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_9b_psycho_bench_q0003.trm.jsonl",
+    "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_math_env_q0001.trm.jsonl",
+    "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\stage\\qwen35_27b_mmlu_pro_q0002.trm.jsonl"
+  ],
+  "output": "C:\\projects\\Hermes Skills\\data\\primehub_trm_rollup\\v1_plus_retry\\primehub_trm_merged.jsonl",
+  "total_rows": 26,
+  "bucket_counts": {
+    "negative": 23,
+    "exact_positive": 3
+  },
+  "task_family_counts": {
+    "primehub": 26
+  },
+  "task_family_bucket_counts": {
+    "primehub": {
+      "negative": 23,
+      "exact_positive": 3
+    }
+  },
+  "included_families": [
+    "primehub"
+  ],
+  "excluded_families": {},
+  "min_exact_positives_per_family": 2
+}

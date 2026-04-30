@@ -1,0 +1,14 @@
+{
+  "output": "C:\\projects\\Hermes Skills\\data\\primehub_skill_trm_matrix\\_role_smoke\\internal_action\\cluster_merged.jsonl",
+  "total_rows": 2,
+  "bucket_counts": {
+    "exact_positive": 2
+  },
+  "source_env_counts": {
+    "antislop": 2
+  },
+  "target_action_rows": 2,
+  "target_action_imputed_rows": 2,
+  "target_action_coverage": 1.0,
+  "exact_positive_rows": 2
+}

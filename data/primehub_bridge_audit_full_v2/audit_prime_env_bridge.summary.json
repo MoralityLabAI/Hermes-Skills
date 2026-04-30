@@ -1,0 +1,46 @@
+{
+  "generated_at": "2026-04-15T14:46:28Z",
+  "manifest": "C:\\projects\\Hermes Skills\\data\\primehub_env_manifest.json",
+  "selected_envs": 161,
+  "eligible_envs": 12,
+  "status_counts": {
+    "ok": 12,
+    "failure": 130,
+    "unsupported": 19
+  },
+  "env_type_counts": {
+    "SingleTurnEnv": 13,
+    "CLBenchRLMEnv": 1,
+    "ColorCodewordEnv": 1,
+    "ToolEnv": 1,
+    "RLMEnv": 5,
+    "PinchBenchEnv": 1,
+    "RLMSecretsEnv": 1,
+    "AidanBenchEnv": 1,
+    "CodebaseSearchEnv": 1,
+    "CodeSearchEnv": 1,
+    "LLMPuzzlesSandboxEnv": 1,
+    "MastermindEnv": 1,
+    "NYTConnectionsEnv": 1,
+    "TransformerPuzzlesSandboxEnv": 1,
+    "VLLMCodeSearchEnv": 1
+  },
+  "eligible_env_ids": [
+    "aime2024",
+    "aime2025",
+    "aime2026",
+    "clbench",
+    "if_summarize_judge",
+    "logic_env",
+    "math500",
+    "math_env",
+    "mmlu_pro",
+    "lisanbench",
+    "misguided_attn",
+    "psycho_bench"
+  ],
+  "artifacts": {
+    "stout": "C:\\projects\\Hermes Skills\\data\\primehub_bridge_audit_full_v2\\audit_prime_env_bridge.stout.jsonl",
+    "summary": "C:\\projects\\Hermes Skills\\data\\primehub_bridge_audit_full_v2\\audit_prime_env_bridge.summary.json"
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "merged_summary": {
+    "inputs": [
+      "C:\\projects\\Hermes Skills\\data\\primehub_trm_autoresearch\\cycle_12\\primehub_trm_merged.jsonl"
+    ],
+    "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_rollup_metta_comparison_wrapper_debug2\\variants\\control\\merged.jsonl",
+    "total_rows": 195,
+    "bucket_counts": {
+      "negative": 166,
+      "exact_positive": 24,
+      "weak_positive": 5
+    },
+    "task_family_counts": {
+      "primehub": 195
+    },
+    "task_family_bucket_counts": {
+      "primehub": {
+        "negative": 166,
+        "exact_positive": 24,
+        "weak_positive": 5
+      }
+    },
+    "included_families": [
+      "primehub"
+    ],
+    "excluded_families": {},
+    "min_exact_positives_per_family": 2
+  },
+  "global": {
+    "critic_bucket_accuracy": 0.75,
+    "retriever_exact_match_rate": 0.0625,
+    "router_retrieval_only_exact_match_rate": 0.0625,
+    "router_critic_gated_exact_match_rate": 0.0,
+    "router_critic_gated_route_abstain_rate": 0.9062,
+    "retriever_example_count": 19,
+    "critic_example_count": 163
+  },
+  "primehub_transfer": {
+    "critic_bucket_accuracy": 0.75,
+    "retriever_exact_match_rate": 0.0625,
+    "router_retrieval_only_exact_match_rate": 0.0625,
+    "router_critic_gated_exact_match_rate": 0.0,
+    "router_critic_gated_route_abstain_rate": 0.9062,
+    "rows": 32
+  },
+  "artifacts": {
+    "critic_summary": {
+      "input": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_rollup_metta_comparison_wrapper_debug2\\variants\\control\\merged.jsonl",
+      "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_rollup_metta_comparison_wrapper_debug2\\variants\\control\\models\\trm_critic.json",
+      "example_count": 195,
+      "task_family_counts": {
+        "primehub": 195
+      },
+      "bucket_counts": {
+        "negative": 166,
+        "exact_positive": 24,
+        "weak_positive": 5
+      },
+      "k": 5
+    },
+    "critic_bench_summary": {
+      "rows": 32,
+      "bucket_accuracy": 0.75,
+      "avg_bucket_abs_error": 0.75,
+      "visible_output_accuracy": 0.4688,
+      "avg_grid_cell_accuracy_abs_error": null,
+      "per_family": {
+        "primehub": {
+          "rows": 32,
+          "bucket_accuracy": 0.75,
+          "avg_bucket_abs_error": 0.75,
+          "visible_output_accuracy": 0.4688,
+          "avg_grid_cell_accuracy_abs_error": null
+        }
+      },
+      "model_example_count": 163,
+      "train_rows": 163,
+      "eval_rows": 32,
+      "holdout_ratio": 0.2,
+      "leave_one_out": false,
+      "k": 5
+    },
+    "retriever_summary": {
+      "input": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_rollup_metta_comparison_wrapper_debug2\\variants\\control\\merged.jsonl",
+      "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_rollup_metta_comparison_wrapper_debug2\\variants\\control\\models\\trm_retriever.json",
+      "example_count": 24,
+      "task_family_counts": {
+        "primehub": 24
+      },
+      "bucket_counts": {
+        "exact_positive": 24
+      },
+      "include_buckets": [
+        "exact_positive",
+        "near_miss",
+        "weak_positive"
+      ],
+      "min_supervision_weight": 0.4
+    },
+    "retriever_bench_summary": {
+      "rows": 32,
+      "exact_match_rate": 0.0625,
+      "nonempty_prediction_rate": 1.0,
+      "avg_similarity": 0.3618,
+      "avg_grid_cell_accuracy": null,
+      "per_family": {
+        "primehub": {
+          "rows": 32,
+          "exact_match_rate": 0.0625,
+          "nonempty_prediction_rate": 1.0,
+          "avg_similarity": 0.3618,
+          "avg_grid_cell_accuracy": null
+        }
+      },
+      "model_example_count": 19,
+      "train_rows": 163,
+      "eval_rows": 32,
+      "holdout_ratio": 0.2,
+      "leave_one_out": false,
+      "include_buckets": [
+        "exact_positive",
+        "near_miss",
+        "weak_positive"
+      ],
+      "min_supervision_weight": 0.4
+    },
+    "router_bench_summary": {
+      "rows": 32,
+      "top_k": 5,
+      "retrieval_only": {
+        "exact_match_rate": 0.0625,
+        "nonempty_prediction_rate": 1.0,
+        "avg_grid_cell_accuracy": null
+      },
+      "critic_gated": {
+        "exact_match_rate": 0.0,
+        "nonempty_prediction_rate": 0.0938,
+        "route_abstain_rate": 0.9062,
+        "avg_grid_cell_accuracy": null
+      },
+      "train_rows": 163,
+      "eval_rows": 32,
+      "retriever_example_count": 19,
+      "critic_example_count": 163,
+      "holdout_ratio": 0.2,
+      "min_supervision_weight": 0.4
+    },
+    "router_predictions_path": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_rollup_metta_comparison_wrapper_debug2\\variants\\control\\bench\\trm_router_bench.jsonl"
+  }
+}

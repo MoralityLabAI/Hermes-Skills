@@ -1,0 +1,2 @@
+﻿{"event":"start","ts":"2026-04-15T17:11:22.7564568Z","exe":"C:/Python311/python.exe","args":["-c","print(\"ok\")"],"caps":{"ram_mb":2048,"cpu_pct":50},"workdir":"C:/projects/Hermes Skills","run_id":"job-wrapper-smoke"}
+{"exit_code":1,"pid":13824,"run_id":"job-wrapper-smoke","avg_ram_mb":0,"peak_ram_mb":0,"status":"aborted","ts":"2026-04-15T17:11:27.8711364Z","event":"finish"}

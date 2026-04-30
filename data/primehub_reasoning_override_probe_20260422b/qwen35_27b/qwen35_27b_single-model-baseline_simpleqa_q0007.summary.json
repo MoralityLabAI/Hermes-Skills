@@ -1,0 +1,33 @@
+{
+  "steps": 1,
+  "episodes": 1,
+  "per_env_steps": {
+    "simpleqa": 1
+  },
+  "failure_types": {},
+  "model_client_fallbacks": {
+    "total": 1,
+    "simpleqa": 1
+  },
+  "bridge_fallbacks": {},
+  "trm_repairs": {},
+  "raw_invalid_actions": {},
+  "repaired_successes": {},
+  "reward_totals": {
+    "simpleqa": 0.0
+  },
+  "token_usage": {},
+  "output_statuses": {
+    "openai_request_error: timed out": 1
+  },
+  "reasoning_modes": {
+    "off": 1
+  },
+  "visible_output_emitted": {
+    "false": 1
+  },
+  "run_token_total": 0,
+  "token_budget": null,
+  "run_id": null,
+  "export_path": "C:\\projects\\Hermes Skills\\data\\primehub_reasoning_override_probe_20260422b\\qwen35_27b\\qwen35_27b_single-model-baseline_simpleqa_q0007.jsonl"
+}

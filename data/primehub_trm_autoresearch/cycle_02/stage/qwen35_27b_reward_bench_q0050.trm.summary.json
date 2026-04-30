@@ -1,0 +1,14 @@
+{
+  "input": "C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_reward_bench_q0050.jsonl",
+  "output": "C:\\projects\\Hermes Skills\\data\\primehub_trm_autoresearch\\cycle_02\\stage\\qwen35_27b_reward_bench_q0050.trm.jsonl",
+  "total_rows": 1,
+  "bucket_counts": {
+    "exact_positive": 0,
+    "near_miss": 0,
+    "weak_positive": 1,
+    "negative": 0
+  },
+  "task_family": "auto",
+  "near_miss_threshold": 0.8,
+  "weak_positive_threshold": 0.5
+}

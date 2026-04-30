@@ -1,0 +1,20 @@
+﻿{"event":"start","ts":"2026-04-15T18:04:25.7048001Z","exe":"C:/Python311/python.exe","args":["scripts/overnight_primehub_benchmark.py","--env-mode","primehub","--model","9b","27b","--include","aime2024","aime2025","aime2026","clbench","if_summarize_judge","logic_env","math500","math_env","mmlu_pro","passthrough","science_env","simpleqa","simpleqa_verified","unscramble","verbatim_copy","agency_bench","allenai_ifeval","antislop","arc","ascii_tree","bixbench","boolq","coconot","colf","deep_consult","gauss","hellaswag","jailbreak_bench","lisanbench","llm_writing_detection","longbench_v2","medsafetybench","misguided_attn","mmlu","psycho_bench","pydantic_adherence","reward_bench","rust_cargo","simple_bench","simpleqa_verified_2","truthfulqa","uq","uq_project","vpct_1","winogrande","wmdp","writing_bench","--max-new-tokens","256","--request-timeout","900","--task-timeout-seconds","2400","--max-runtime-minutes","1440","--run-root","C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env"],"caps":{"ram_mb":2048,"cpu_pct":50},"workdir":"C:\\projects\\Hermes Skills","run_id":"primehub-47env-launcher-smoke"}
+{"run_id":"primehub-47env-launcher-smoke","pid":1692,"private_ram_mb":17.4,"event":"heartbeat","ts":"2026-04-15T18:04:30.8707360Z"}
+{"run_id":"primehub-47env-launcher-smoke","pid":1692,"private_ram_mb":17.4,"event":"heartbeat","ts":"2026-04-15T18:04:35.8812975Z"}
+{"run_id":"primehub-47env-launcher-smoke","pid":1692,"private_ram_mb":17.4,"event":"heartbeat","ts":"2026-04-15T18:04:40.9034967Z"}
+{"run_id":"primehub-47env-launcher-smoke","pid":1692,"private_ram_mb":17.4,"event":"heartbeat","ts":"2026-04-15T18:04:45.9286109Z"}
+{"run_id":"primehub-47env-launcher-smoke","pid":1692,"private_ram_mb":17.4,"event":"heartbeat","ts":"2026-04-15T18:04:50.9406994Z"}
+{"run_id":"primehub-47env-launcher-smoke","pid":1692,"private_ram_mb":17.4,"event":"heartbeat","ts":"2026-04-15T18:04:55.9619182Z"}
+{"run_id":"primehub-47env-launcher-smoke","pid":1692,"private_ram_mb":17.5,"event":"heartbeat","ts":"2026-04-15T18:05:00.9748045Z"}
+{"run_id":"primehub-47env-launcher-smoke","pid":1692,"private_ram_mb":17.5,"event":"heartbeat","ts":"2026-04-15T18:05:06.0022994Z"}
+{"run_id":"primehub-47env-launcher-smoke","pid":1692,"private_ram_mb":17.5,"event":"heartbeat","ts":"2026-04-15T18:05:11.0522637Z"}
+{"run_id":"primehub-47env-launcher-smoke","pid":1692,"private_ram_mb":17.5,"event":"heartbeat","ts":"2026-04-15T18:05:16.0885778Z"}
+{"run_id":"primehub-47env-launcher-smoke","pid":1692,"private_ram_mb":17.5,"event":"heartbeat","ts":"2026-04-15T18:05:21.1500290Z"}
+{"run_id":"primehub-47env-launcher-smoke","pid":1692,"private_ram_mb":17.4,"event":"heartbeat","ts":"2026-04-15T18:05:26.1885777Z"}
+{"run_id":"primehub-47env-launcher-smoke","pid":1692,"private_ram_mb":17.4,"event":"heartbeat","ts":"2026-04-15T18:05:31.2511358Z"}
+{"run_id":"primehub-47env-launcher-smoke","pid":1692,"private_ram_mb":17.4,"event":"heartbeat","ts":"2026-04-15T18:05:36.3133266Z"}
+{"run_id":"primehub-47env-launcher-smoke","pid":1692,"private_ram_mb":17.4,"event":"heartbeat","ts":"2026-04-15T18:05:41.3393056Z"}
+{"run_id":"primehub-47env-launcher-smoke","pid":1692,"private_ram_mb":17.4,"event":"heartbeat","ts":"2026-04-15T18:05:46.3725288Z"}
+{"run_id":"primehub-47env-launcher-smoke","pid":1692,"private_ram_mb":17.4,"event":"heartbeat","ts":"2026-04-15T18:05:51.3990060Z"}
+{"run_id":"primehub-47env-launcher-smoke","pid":1692,"private_ram_mb":17.4,"event":"heartbeat","ts":"2026-04-15T18:05:56.4775829Z"}
+{"run_id":"primehub-47env-launcher-smoke","pid":1692,"private_ram_mb":17.4,"event":"heartbeat","ts":"2026-04-15T18:06:01.5075731Z"}

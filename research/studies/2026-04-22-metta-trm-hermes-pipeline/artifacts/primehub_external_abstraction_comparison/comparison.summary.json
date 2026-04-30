@@ -1,0 +1,2144 @@
+{
+  "generated_at_utc": "2026-04-24T00:08:11.500568+00:00",
+  "trainer_plan": {
+    "training_task_id": "metta-primehub-external-abstraction-comparison-20260423",
+    "checkpoint_interval": "variant_complete",
+    "chunk_strategy": "variant_per_run",
+    "holdout_ratio": 0.2,
+    "top_k": 5,
+    "min_supervision_weight": 0.4,
+    "base_corpus": "C:\\projects\\Hermes Skills\\data\\primehub_trm_autoresearch\\cycle_12\\primehub_trm_merged.jsonl",
+    "external_abstraction": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_bundle\\primehub_external_abstraction_bundle.jsonl",
+    "external_critic_support": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_critic_support_bundle\\primehub_external_critic_support_bundle.jsonl",
+    "ifeval_abstraction": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_ifeval_bundle\\primehub_external_ifeval_bundle.jsonl",
+    "ifeval_critic_support": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_ifeval_critic_support_bundle\\primehub_external_ifeval_critic_support_bundle.jsonl",
+    "aime_abstraction": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_aime2026_bundle\\primehub_external_aime2026_bundle.jsonl",
+    "aime_critic_support": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_aime2026_critic_support_bundle\\primehub_external_aime2026_critic_support_bundle.jsonl",
+    "structured_transfer": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_structured_map_transfer\\metta_primehub_transfer_bundle.jsonl",
+    "if_transfer": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\if_summarize_judge_transfer\\metta_primehub_transfer_bundle.jsonl"
+  },
+  "focus_envs": [
+    "aime2026",
+    "allenai_ifeval",
+    "ascii_tree",
+    "if_summarize_judge",
+    "math_env",
+    "psycho_bench",
+    "pydantic_adherence",
+    "truthfulqa"
+  ],
+  "variants": {
+    "control": {
+      "merged_summary": {
+        "inputs": [
+          "C:\\projects\\Hermes Skills\\data\\primehub_trm_autoresearch\\cycle_12\\primehub_trm_merged.jsonl"
+        ],
+        "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control\\merged.jsonl",
+        "total_rows": 195,
+        "bucket_counts": {
+          "negative": 166,
+          "exact_positive": 24,
+          "weak_positive": 5
+        },
+        "task_family_counts": {
+          "primehub": 195
+        },
+        "task_family_bucket_counts": {
+          "primehub": {
+            "negative": 166,
+            "exact_positive": 24,
+            "weak_positive": 5
+          }
+        },
+        "included_families": [
+          "primehub"
+        ],
+        "excluded_families": {},
+        "min_exact_positives_per_family": 2
+      },
+      "global": {
+        "critic_bucket_accuracy": 0.75,
+        "retriever_exact_match_rate": 0.0625,
+        "router_critic_gated_exact_match_rate": 0.0,
+        "router_critic_gated_route_abstain_rate": 0.9062
+      },
+      "subsets": {
+        "original_external_primehub_eval": {
+          "rows": 32,
+          "critic_bucket_accuracy": 0.75,
+          "retriever_exact_match_rate": 0.0625,
+          "router_retrieval_only_exact_match_rate": 0.0625,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 0.9062
+        },
+        "original_external_focus_eval": {
+          "rows": 17,
+          "critic_bucket_accuracy": 0.5294,
+          "retriever_exact_match_rate": 0.1176,
+          "router_retrieval_only_exact_match_rate": 0.1176,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 0.8235
+        },
+        "original_external_ifeval_eval": {
+          "rows": 3,
+          "retrieval_contract_success_rate": 0.0,
+          "gated_contract_success_rate": 0.0,
+          "gated_postscript_present_rate": 0.0,
+          "gated_semantic_match_rate": 0.0,
+          "gated_action_nonempty_rate": 0.0
+        },
+        "original_external_aime_eval": {
+          "rows": 6,
+          "retrieval_action_nonempty_rate": 1.0,
+          "retrieval_box_present_rate": 1.0,
+          "retrieval_boxed_exact_rate": 0.0,
+          "gated_action_nonempty_rate": 0.0,
+          "gated_box_present_rate": 0.0,
+          "gated_boxed_exact_rate": 0.0
+        },
+        "original_external_env_counts": {
+          "aime2026": 6,
+          "misguided_attn": 5,
+          "psycho_bench": 3,
+          "math_env": 3,
+          "allenai_ifeval": 3,
+          "colf": 3,
+          "jailbreak_bench": 3,
+          "uq": 4,
+          "truthfulqa": 2
+        },
+        "original_external_focus_env_counts": {
+          "aime2026": 6,
+          "psycho_bench": 3,
+          "math_env": 3,
+          "allenai_ifeval": 3,
+          "truthfulqa": 2
+        },
+        "focus_envs": [
+          "aime2026",
+          "allenai_ifeval",
+          "ascii_tree",
+          "if_summarize_judge",
+          "math_env",
+          "psycho_bench",
+          "pydantic_adherence",
+          "truthfulqa"
+        ]
+      },
+      "artifacts": {
+        "critic_model": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control\\models\\trm_critic.json",
+        "critic_summary": {
+          "input": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control\\merged.jsonl",
+          "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control\\models\\trm_critic.json",
+          "example_count": 195,
+          "task_family_counts": {
+            "primehub": 195
+          },
+          "bucket_counts": {
+            "negative": 166,
+            "exact_positive": 24,
+            "weak_positive": 5
+          },
+          "k": 5
+        },
+        "critic_bench_summary": {
+          "rows": 32,
+          "bucket_accuracy": 0.75,
+          "avg_bucket_abs_error": 0.75,
+          "visible_output_accuracy": 0.4688,
+          "avg_grid_cell_accuracy_abs_error": null,
+          "per_family": {
+            "primehub": {
+              "rows": 32,
+              "bucket_accuracy": 0.75,
+              "avg_bucket_abs_error": 0.75,
+              "visible_output_accuracy": 0.4688,
+              "avg_grid_cell_accuracy_abs_error": null
+            }
+          },
+          "model_example_count": 163,
+          "train_rows": 163,
+          "eval_rows": 32,
+          "holdout_ratio": 0.2,
+          "leave_one_out": false,
+          "k": 5
+        },
+        "retriever_model": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control\\models\\trm_retriever.json",
+        "retriever_summary": {
+          "input": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control\\merged.jsonl",
+          "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control\\models\\trm_retriever.json",
+          "example_count": 24,
+          "task_family_counts": {
+            "primehub": 24
+          },
+          "bucket_counts": {
+            "exact_positive": 24
+          },
+          "include_buckets": [
+            "exact_positive",
+            "near_miss",
+            "weak_positive"
+          ],
+          "min_supervision_weight": 0.4
+        },
+        "retriever_bench_summary": {
+          "rows": 32,
+          "exact_match_rate": 0.0625,
+          "nonempty_prediction_rate": 1.0,
+          "avg_similarity": 0.3618,
+          "avg_grid_cell_accuracy": null,
+          "per_family": {
+            "primehub": {
+              "rows": 32,
+              "exact_match_rate": 0.0625,
+              "nonempty_prediction_rate": 1.0,
+              "avg_similarity": 0.3618,
+              "avg_grid_cell_accuracy": null
+            }
+          },
+          "model_example_count": 19,
+          "train_rows": 163,
+          "eval_rows": 32,
+          "holdout_ratio": 0.2,
+          "leave_one_out": false,
+          "include_buckets": [
+            "exact_positive",
+            "near_miss",
+            "weak_positive"
+          ],
+          "min_supervision_weight": 0.4
+        },
+        "router_bench_summary": {
+          "rows": 32,
+          "top_k": 5,
+          "retrieval_only": {
+            "exact_match_rate": 0.0625,
+            "nonempty_prediction_rate": 1.0,
+            "avg_grid_cell_accuracy": null
+          },
+          "critic_gated": {
+            "exact_match_rate": 0.0,
+            "nonempty_prediction_rate": 0.0938,
+            "route_abstain_rate": 0.9062,
+            "avg_grid_cell_accuracy": null
+          },
+          "train_rows": 163,
+          "eval_rows": 32,
+          "retriever_example_count": 19,
+          "critic_example_count": 163,
+          "holdout_ratio": 0.2,
+          "min_supervision_weight": 0.4
+        }
+      }
+    },
+    "control_plus_external_abstraction": {
+      "merged_summary": {
+        "inputs": [
+          "C:\\projects\\Hermes Skills\\data\\primehub_trm_autoresearch\\cycle_12\\primehub_trm_merged.jsonl",
+          "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_bundle\\primehub_external_abstraction_bundle.jsonl"
+        ],
+        "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction\\merged.jsonl",
+        "total_rows": 202,
+        "bucket_counts": {
+          "negative": 166,
+          "exact_positive": 31,
+          "weak_positive": 5
+        },
+        "task_family_counts": {
+          "primehub": 202
+        },
+        "task_family_bucket_counts": {
+          "primehub": {
+            "negative": 166,
+            "exact_positive": 31,
+            "weak_positive": 5
+          }
+        },
+        "included_families": [
+          "primehub"
+        ],
+        "excluded_families": {},
+        "min_exact_positives_per_family": 2
+      },
+      "global": {
+        "critic_bucket_accuracy": 0.5938,
+        "retriever_exact_match_rate": 0.1562,
+        "router_critic_gated_exact_match_rate": 0.0,
+        "router_critic_gated_route_abstain_rate": 0.75
+      },
+      "subsets": {
+        "original_external_primehub_eval": {
+          "rows": 32,
+          "critic_bucket_accuracy": 0.5938,
+          "retriever_exact_match_rate": 0.1562,
+          "router_retrieval_only_exact_match_rate": 0.1562,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 0.75
+        },
+        "original_external_focus_eval": {
+          "rows": 17,
+          "critic_bucket_accuracy": 0.5294,
+          "retriever_exact_match_rate": 0.2941,
+          "router_retrieval_only_exact_match_rate": 0.2941,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 0.8235
+        },
+        "original_external_ifeval_eval": {
+          "rows": 3,
+          "retrieval_contract_success_rate": 0.0,
+          "gated_contract_success_rate": 0.0,
+          "gated_postscript_present_rate": 0.0,
+          "gated_semantic_match_rate": 0.0,
+          "gated_action_nonempty_rate": 0.0
+        },
+        "original_external_aime_eval": {
+          "rows": 6,
+          "retrieval_action_nonempty_rate": 1.0,
+          "retrieval_box_present_rate": 1.0,
+          "retrieval_boxed_exact_rate": 0.0,
+          "gated_action_nonempty_rate": 0.0,
+          "gated_box_present_rate": 0.0,
+          "gated_boxed_exact_rate": 0.0
+        },
+        "original_external_env_counts": {
+          "aime2026": 6,
+          "misguided_attn": 5,
+          "psycho_bench": 3,
+          "math_env": 3,
+          "allenai_ifeval": 3,
+          "colf": 3,
+          "jailbreak_bench": 3,
+          "uq": 4,
+          "truthfulqa": 2
+        },
+        "original_external_focus_env_counts": {
+          "aime2026": 6,
+          "psycho_bench": 3,
+          "math_env": 3,
+          "allenai_ifeval": 3,
+          "truthfulqa": 2
+        },
+        "focus_envs": [
+          "aime2026",
+          "allenai_ifeval",
+          "ascii_tree",
+          "if_summarize_judge",
+          "math_env",
+          "psycho_bench",
+          "pydantic_adherence",
+          "truthfulqa"
+        ]
+      },
+      "artifacts": {
+        "critic_model": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction\\models\\trm_critic.json",
+        "critic_summary": {
+          "input": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction\\merged.jsonl",
+          "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction\\models\\trm_critic.json",
+          "example_count": 202,
+          "task_family_counts": {
+            "primehub": 202
+          },
+          "bucket_counts": {
+            "negative": 166,
+            "exact_positive": 31,
+            "weak_positive": 5
+          },
+          "k": 5
+        },
+        "critic_bench_summary": {
+          "rows": 32,
+          "bucket_accuracy": 0.5938,
+          "avg_bucket_abs_error": 1.2188,
+          "visible_output_accuracy": 0.4688,
+          "avg_grid_cell_accuracy_abs_error": null,
+          "per_family": {
+            "primehub": {
+              "rows": 32,
+              "bucket_accuracy": 0.5938,
+              "avg_bucket_abs_error": 1.2188,
+              "visible_output_accuracy": 0.4688,
+              "avg_grid_cell_accuracy_abs_error": null
+            }
+          },
+          "model_example_count": 170,
+          "train_rows": 170,
+          "eval_rows": 32,
+          "holdout_ratio": 0.2,
+          "leave_one_out": false,
+          "k": 5
+        },
+        "retriever_model": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction\\models\\trm_retriever.json",
+        "retriever_summary": {
+          "input": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction\\merged.jsonl",
+          "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction\\models\\trm_retriever.json",
+          "example_count": 31,
+          "task_family_counts": {
+            "primehub": 31
+          },
+          "bucket_counts": {
+            "exact_positive": 31
+          },
+          "include_buckets": [
+            "exact_positive",
+            "near_miss",
+            "weak_positive"
+          ],
+          "min_supervision_weight": 0.4
+        },
+        "retriever_bench_summary": {
+          "rows": 32,
+          "exact_match_rate": 0.1562,
+          "nonempty_prediction_rate": 1.0,
+          "avg_similarity": 0.4897,
+          "avg_grid_cell_accuracy": null,
+          "per_family": {
+            "primehub": {
+              "rows": 32,
+              "exact_match_rate": 0.1562,
+              "nonempty_prediction_rate": 1.0,
+              "avg_similarity": 0.4897,
+              "avg_grid_cell_accuracy": null
+            }
+          },
+          "model_example_count": 26,
+          "train_rows": 170,
+          "eval_rows": 32,
+          "holdout_ratio": 0.2,
+          "leave_one_out": false,
+          "include_buckets": [
+            "exact_positive",
+            "near_miss",
+            "weak_positive"
+          ],
+          "min_supervision_weight": 0.4
+        },
+        "router_bench_summary": {
+          "rows": 32,
+          "top_k": 5,
+          "retrieval_only": {
+            "exact_match_rate": 0.1562,
+            "nonempty_prediction_rate": 1.0,
+            "avg_grid_cell_accuracy": null
+          },
+          "critic_gated": {
+            "exact_match_rate": 0.0,
+            "nonempty_prediction_rate": 0.25,
+            "route_abstain_rate": 0.75,
+            "avg_grid_cell_accuracy": null
+          },
+          "train_rows": 170,
+          "eval_rows": 32,
+          "retriever_example_count": 26,
+          "critic_example_count": 170,
+          "holdout_ratio": 0.2,
+          "min_supervision_weight": 0.4
+        }
+      }
+    },
+    "control_plus_external_abstraction_and_critic_support": {
+      "merged_summary": {
+        "inputs": [
+          "C:\\projects\\Hermes Skills\\data\\primehub_trm_autoresearch\\cycle_12\\primehub_trm_merged.jsonl",
+          "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_bundle\\primehub_external_abstraction_bundle.jsonl",
+          "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_critic_support_bundle\\primehub_external_critic_support_bundle.jsonl"
+        ],
+        "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support\\merged.jsonl",
+        "total_rows": 214,
+        "bucket_counts": {
+          "negative": 166,
+          "exact_positive": 43,
+          "weak_positive": 5
+        },
+        "task_family_counts": {
+          "primehub": 214
+        },
+        "task_family_bucket_counts": {
+          "primehub": {
+            "negative": 166,
+            "exact_positive": 43,
+            "weak_positive": 5
+          }
+        },
+        "included_families": [
+          "primehub"
+        ],
+        "excluded_families": {},
+        "min_exact_positives_per_family": 2
+      },
+      "global": {
+        "critic_bucket_accuracy": 0.75,
+        "retriever_exact_match_rate": 0.1562,
+        "router_critic_gated_exact_match_rate": 0.1562,
+        "router_critic_gated_route_abstain_rate": 0.5938
+      },
+      "subsets": {
+        "original_external_primehub_eval": {
+          "rows": 32,
+          "critic_bucket_accuracy": 0.75,
+          "retriever_exact_match_rate": 0.1562,
+          "router_retrieval_only_exact_match_rate": 0.1562,
+          "router_critic_gated_exact_match_rate": 0.1562,
+          "router_critic_gated_route_abstain_rate": 0.5938
+        },
+        "original_external_focus_eval": {
+          "rows": 17,
+          "critic_bucket_accuracy": 0.8235,
+          "retriever_exact_match_rate": 0.2941,
+          "router_retrieval_only_exact_match_rate": 0.2941,
+          "router_critic_gated_exact_match_rate": 0.2941,
+          "router_critic_gated_route_abstain_rate": 0.5294
+        },
+        "original_external_ifeval_eval": {
+          "rows": 3,
+          "retrieval_contract_success_rate": 0.0,
+          "gated_contract_success_rate": 0.0,
+          "gated_postscript_present_rate": 0.0,
+          "gated_semantic_match_rate": 0.0,
+          "gated_action_nonempty_rate": 0.0
+        },
+        "original_external_aime_eval": {
+          "rows": 6,
+          "retrieval_action_nonempty_rate": 1.0,
+          "retrieval_box_present_rate": 1.0,
+          "retrieval_boxed_exact_rate": 0.0,
+          "gated_action_nonempty_rate": 0.0,
+          "gated_box_present_rate": 0.0,
+          "gated_boxed_exact_rate": 0.0
+        },
+        "original_external_env_counts": {
+          "aime2026": 6,
+          "misguided_attn": 5,
+          "psycho_bench": 3,
+          "math_env": 3,
+          "allenai_ifeval": 3,
+          "colf": 3,
+          "jailbreak_bench": 3,
+          "uq": 4,
+          "truthfulqa": 2
+        },
+        "original_external_focus_env_counts": {
+          "aime2026": 6,
+          "psycho_bench": 3,
+          "math_env": 3,
+          "allenai_ifeval": 3,
+          "truthfulqa": 2
+        },
+        "focus_envs": [
+          "aime2026",
+          "allenai_ifeval",
+          "ascii_tree",
+          "if_summarize_judge",
+          "math_env",
+          "psycho_bench",
+          "pydantic_adherence",
+          "truthfulqa"
+        ]
+      },
+      "artifacts": {
+        "critic_model": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support\\models\\trm_critic.json",
+        "critic_summary": {
+          "input": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support\\merged.jsonl",
+          "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support\\models\\trm_critic.json",
+          "example_count": 214,
+          "task_family_counts": {
+            "primehub": 214
+          },
+          "bucket_counts": {
+            "negative": 166,
+            "exact_positive": 43,
+            "weak_positive": 5
+          },
+          "k": 5
+        },
+        "critic_bench_summary": {
+          "rows": 32,
+          "bucket_accuracy": 0.75,
+          "avg_bucket_abs_error": 0.75,
+          "visible_output_accuracy": 0.625,
+          "avg_grid_cell_accuracy_abs_error": null,
+          "per_family": {
+            "primehub": {
+              "rows": 32,
+              "bucket_accuracy": 0.75,
+              "avg_bucket_abs_error": 0.75,
+              "visible_output_accuracy": 0.625,
+              "avg_grid_cell_accuracy_abs_error": null
+            }
+          },
+          "model_example_count": 182,
+          "train_rows": 182,
+          "eval_rows": 32,
+          "holdout_ratio": 0.2,
+          "leave_one_out": false,
+          "k": 5
+        },
+        "retriever_model": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support\\models\\trm_retriever.json",
+        "retriever_summary": {
+          "input": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support\\merged.jsonl",
+          "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support\\models\\trm_retriever.json",
+          "example_count": 31,
+          "task_family_counts": {
+            "primehub": 31
+          },
+          "bucket_counts": {
+            "exact_positive": 31
+          },
+          "include_buckets": [
+            "exact_positive",
+            "near_miss",
+            "weak_positive"
+          ],
+          "min_supervision_weight": 0.4
+        },
+        "retriever_bench_summary": {
+          "rows": 32,
+          "exact_match_rate": 0.1562,
+          "nonempty_prediction_rate": 1.0,
+          "avg_similarity": 0.4897,
+          "avg_grid_cell_accuracy": null,
+          "per_family": {
+            "primehub": {
+              "rows": 32,
+              "exact_match_rate": 0.1562,
+              "nonempty_prediction_rate": 1.0,
+              "avg_similarity": 0.4897,
+              "avg_grid_cell_accuracy": null
+            }
+          },
+          "model_example_count": 26,
+          "train_rows": 182,
+          "eval_rows": 32,
+          "holdout_ratio": 0.2,
+          "leave_one_out": false,
+          "include_buckets": [
+            "exact_positive",
+            "near_miss",
+            "weak_positive"
+          ],
+          "min_supervision_weight": 0.4
+        },
+        "router_bench_summary": {
+          "rows": 32,
+          "top_k": 5,
+          "retrieval_only": {
+            "exact_match_rate": 0.1562,
+            "nonempty_prediction_rate": 1.0,
+            "avg_grid_cell_accuracy": null
+          },
+          "critic_gated": {
+            "exact_match_rate": 0.1562,
+            "nonempty_prediction_rate": 0.4062,
+            "route_abstain_rate": 0.5938,
+            "avg_grid_cell_accuracy": null
+          },
+          "train_rows": 182,
+          "eval_rows": 32,
+          "retriever_example_count": 26,
+          "critic_example_count": 182,
+          "holdout_ratio": 0.2,
+          "min_supervision_weight": 0.4
+        }
+      }
+    },
+    "control_plus_external_and_all_transfer": {
+      "merged_summary": {
+        "inputs": [
+          "C:\\projects\\Hermes Skills\\data\\primehub_trm_autoresearch\\cycle_12\\primehub_trm_merged.jsonl",
+          "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_bundle\\primehub_external_abstraction_bundle.jsonl",
+          "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_structured_map_transfer\\metta_primehub_transfer_bundle.jsonl",
+          "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\if_summarize_judge_transfer\\metta_primehub_transfer_bundle.jsonl"
+        ],
+        "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_and_all_transfer\\merged.jsonl",
+        "total_rows": 230,
+        "bucket_counts": {
+          "negative": 182,
+          "exact_positive": 35,
+          "weak_positive": 6,
+          "near_miss": 7
+        },
+        "task_family_counts": {
+          "primehub": 230
+        },
+        "task_family_bucket_counts": {
+          "primehub": {
+            "negative": 182,
+            "exact_positive": 35,
+            "weak_positive": 6,
+            "near_miss": 7
+          }
+        },
+        "included_families": [
+          "primehub"
+        ],
+        "excluded_families": {},
+        "min_exact_positives_per_family": 2
+      },
+      "global": {
+        "critic_bucket_accuracy": 0.6154,
+        "retriever_exact_match_rate": 0.1282,
+        "router_critic_gated_exact_match_rate": 0.0,
+        "router_critic_gated_route_abstain_rate": 0.7949
+      },
+      "subsets": {
+        "original_external_primehub_eval": {
+          "rows": 32,
+          "critic_bucket_accuracy": 0.5938,
+          "retriever_exact_match_rate": 0.1562,
+          "router_retrieval_only_exact_match_rate": 0.1562,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 0.75
+        },
+        "original_external_focus_eval": {
+          "rows": 17,
+          "critic_bucket_accuracy": 0.5294,
+          "retriever_exact_match_rate": 0.2941,
+          "router_retrieval_only_exact_match_rate": 0.2941,
+          "router_critic_gated_exact_match_rate": 0.0,
+          "router_critic_gated_route_abstain_rate": 0.8235
+        },
+        "original_external_ifeval_eval": {
+          "rows": 3,
+          "retrieval_contract_success_rate": 0.0,
+          "gated_contract_success_rate": 0.0,
+          "gated_postscript_present_rate": 0.0,
+          "gated_semantic_match_rate": 0.0,
+          "gated_action_nonempty_rate": 0.0
+        },
+        "original_external_aime_eval": {
+          "rows": 6,
+          "retrieval_action_nonempty_rate": 1.0,
+          "retrieval_box_present_rate": 1.0,
+          "retrieval_boxed_exact_rate": 0.0,
+          "gated_action_nonempty_rate": 0.0,
+          "gated_box_present_rate": 0.0,
+          "gated_boxed_exact_rate": 0.0
+        },
+        "original_external_env_counts": {
+          "aime2026": 6,
+          "misguided_attn": 5,
+          "psycho_bench": 3,
+          "math_env": 3,
+          "allenai_ifeval": 3,
+          "colf": 3,
+          "jailbreak_bench": 3,
+          "uq": 4,
+          "truthfulqa": 2
+        },
+        "original_external_focus_env_counts": {
+          "aime2026": 6,
+          "psycho_bench": 3,
+          "math_env": 3,
+          "allenai_ifeval": 3,
+          "truthfulqa": 2
+        },
+        "focus_envs": [
+          "aime2026",
+          "allenai_ifeval",
+          "ascii_tree",
+          "if_summarize_judge",
+          "math_env",
+          "psycho_bench",
+          "pydantic_adherence",
+          "truthfulqa"
+        ]
+      },
+      "artifacts": {
+        "critic_model": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_and_all_transfer\\models\\trm_critic.json",
+        "critic_summary": {
+          "input": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_and_all_transfer\\merged.jsonl",
+          "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_and_all_transfer\\models\\trm_critic.json",
+          "example_count": 230,
+          "task_family_counts": {
+            "primehub": 230
+          },
+          "bucket_counts": {
+            "negative": 182,
+            "exact_positive": 35,
+            "weak_positive": 6,
+            "near_miss": 7
+          },
+          "k": 5
+        },
+        "critic_bench_summary": {
+          "rows": 39,
+          "bucket_accuracy": 0.6154,
+          "avg_bucket_abs_error": 1.1026,
+          "visible_output_accuracy": 0.5128,
+          "avg_grid_cell_accuracy_abs_error": null,
+          "per_family": {
+            "primehub": {
+              "rows": 39,
+              "bucket_accuracy": 0.6154,
+              "avg_bucket_abs_error": 1.1026,
+              "visible_output_accuracy": 0.5128,
+              "avg_grid_cell_accuracy_abs_error": null
+            }
+          },
+          "model_example_count": 191,
+          "train_rows": 191,
+          "eval_rows": 39,
+          "holdout_ratio": 0.2,
+          "leave_one_out": false,
+          "k": 5
+        },
+        "retriever_model": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_and_all_transfer\\models\\trm_retriever.json",
+        "retriever_summary": {
+          "input": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_and_all_transfer\\merged.jsonl",
+          "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_and_all_transfer\\models\\trm_retriever.json",
+          "example_count": 42,
+          "task_family_counts": {
+            "primehub": 42
+          },
+          "bucket_counts": {
+            "exact_positive": 35,
+            "near_miss": 7
+          },
+          "include_buckets": [
+            "exact_positive",
+            "near_miss",
+            "weak_positive"
+          ],
+          "min_supervision_weight": 0.4
+        },
+        "retriever_bench_summary": {
+          "rows": 39,
+          "exact_match_rate": 0.1282,
+          "nonempty_prediction_rate": 1.0,
+          "avg_similarity": 0.5929,
+          "avg_grid_cell_accuracy": null,
+          "per_family": {
+            "primehub": {
+              "rows": 39,
+              "exact_match_rate": 0.1282,
+              "nonempty_prediction_rate": 1.0,
+              "avg_similarity": 0.5929,
+              "avg_grid_cell_accuracy": null
+            }
+          },
+          "model_example_count": 35,
+          "train_rows": 191,
+          "eval_rows": 39,
+          "holdout_ratio": 0.2,
+          "leave_one_out": false,
+          "include_buckets": [
+            "exact_positive",
+            "near_miss",
+            "weak_positive"
+          ],
+          "min_supervision_weight": 0.4
+        },
+        "router_bench_summary": {
+          "rows": 39,
+          "top_k": 5,
+          "retrieval_only": {
+            "exact_match_rate": 0.1282,
+            "nonempty_prediction_rate": 1.0,
+            "avg_grid_cell_accuracy": null
+          },
+          "critic_gated": {
+            "exact_match_rate": 0.0,
+            "nonempty_prediction_rate": 0.2051,
+            "route_abstain_rate": 0.7949,
+            "avg_grid_cell_accuracy": null
+          },
+          "train_rows": 191,
+          "eval_rows": 39,
+          "retriever_example_count": 35,
+          "critic_example_count": 191,
+          "holdout_ratio": 0.2,
+          "min_supervision_weight": 0.4
+        }
+      }
+    },
+    "control_plus_external_critic_and_all_transfer": {
+      "merged_summary": {
+        "inputs": [
+          "C:\\projects\\Hermes Skills\\data\\primehub_trm_autoresearch\\cycle_12\\primehub_trm_merged.jsonl",
+          "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_bundle\\primehub_external_abstraction_bundle.jsonl",
+          "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_critic_support_bundle\\primehub_external_critic_support_bundle.jsonl",
+          "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_structured_map_transfer\\metta_primehub_transfer_bundle.jsonl",
+          "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\if_summarize_judge_transfer\\metta_primehub_transfer_bundle.jsonl"
+        ],
+        "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_critic_and_all_transfer\\merged.jsonl",
+        "total_rows": 242,
+        "bucket_counts": {
+          "negative": 182,
+          "exact_positive": 47,
+          "weak_positive": 6,
+          "near_miss": 7
+        },
+        "task_family_counts": {
+          "primehub": 242
+        },
+        "task_family_bucket_counts": {
+          "primehub": {
+            "negative": 182,
+            "exact_positive": 47,
+            "weak_positive": 6,
+            "near_miss": 7
+          }
+        },
+        "included_families": [
+          "primehub"
+        ],
+        "excluded_families": {},
+        "min_exact_positives_per_family": 2
+      },
+      "global": {
+        "critic_bucket_accuracy": 0.7436,
+        "retriever_exact_match_rate": 0.1282,
+        "router_critic_gated_exact_match_rate": 0.1282,
+        "router_critic_gated_route_abstain_rate": 0.6667
+      },
+      "subsets": {
+        "original_external_primehub_eval": {
+          "rows": 32,
+          "critic_bucket_accuracy": 0.75,
+          "retriever_exact_match_rate": 0.1562,
+          "router_retrieval_only_exact_match_rate": 0.1562,
+          "router_critic_gated_exact_match_rate": 0.1562,
+          "router_critic_gated_route_abstain_rate": 0.5938
+        },
+        "original_external_focus_eval": {
+          "rows": 17,
+          "critic_bucket_accuracy": 0.8235,
+          "retriever_exact_match_rate": 0.2941,
+          "router_retrieval_only_exact_match_rate": 0.2941,
+          "router_critic_gated_exact_match_rate": 0.2941,
+          "router_critic_gated_route_abstain_rate": 0.5294
+        },
+        "original_external_ifeval_eval": {
+          "rows": 3,
+          "retrieval_contract_success_rate": 0.0,
+          "gated_contract_success_rate": 0.0,
+          "gated_postscript_present_rate": 0.0,
+          "gated_semantic_match_rate": 0.0,
+          "gated_action_nonempty_rate": 0.0
+        },
+        "original_external_aime_eval": {
+          "rows": 6,
+          "retrieval_action_nonempty_rate": 1.0,
+          "retrieval_box_present_rate": 1.0,
+          "retrieval_boxed_exact_rate": 0.0,
+          "gated_action_nonempty_rate": 0.0,
+          "gated_box_present_rate": 0.0,
+          "gated_boxed_exact_rate": 0.0
+        },
+        "original_external_env_counts": {
+          "aime2026": 6,
+          "misguided_attn": 5,
+          "psycho_bench": 3,
+          "math_env": 3,
+          "allenai_ifeval": 3,
+          "colf": 3,
+          "jailbreak_bench": 3,
+          "uq": 4,
+          "truthfulqa": 2
+        },
+        "original_external_focus_env_counts": {
+          "aime2026": 6,
+          "psycho_bench": 3,
+          "math_env": 3,
+          "allenai_ifeval": 3,
+          "truthfulqa": 2
+        },
+        "focus_envs": [
+          "aime2026",
+          "allenai_ifeval",
+          "ascii_tree",
+          "if_summarize_judge",
+          "math_env",
+          "psycho_bench",
+          "pydantic_adherence",
+          "truthfulqa"
+        ]
+      },
+      "artifacts": {
+        "critic_model": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_critic_and_all_transfer\\models\\trm_critic.json",
+        "critic_summary": {
+          "input": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_critic_and_all_transfer\\merged.jsonl",
+          "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_critic_and_all_transfer\\models\\trm_critic.json",
+          "example_count": 242,
+          "task_family_counts": {
+            "primehub": 242
+          },
+          "bucket_counts": {
+            "negative": 182,
+            "exact_positive": 47,
+            "weak_positive": 6,
+            "near_miss": 7
+          },
+          "k": 5
+        },
+        "critic_bench_summary": {
+          "rows": 39,
+          "bucket_accuracy": 0.7436,
+          "avg_bucket_abs_error": 0.7179,
+          "visible_output_accuracy": 0.641,
+          "avg_grid_cell_accuracy_abs_error": null,
+          "per_family": {
+            "primehub": {
+              "rows": 39,
+              "bucket_accuracy": 0.7436,
+              "avg_bucket_abs_error": 0.7179,
+              "visible_output_accuracy": 0.641,
+              "avg_grid_cell_accuracy_abs_error": null
+            }
+          },
+          "model_example_count": 203,
+          "train_rows": 203,
+          "eval_rows": 39,
+          "holdout_ratio": 0.2,
+          "leave_one_out": false,
+          "k": 5
+        },
+        "retriever_model": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_critic_and_all_transfer\\models\\trm_retriever.json",
+        "retriever_summary": {
+          "input": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_critic_and_all_transfer\\merged.jsonl",
+          "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_critic_and_all_transfer\\models\\trm_retriever.json",
+          "example_count": 42,
+          "task_family_counts": {
+            "primehub": 42
+          },
+          "bucket_counts": {
+            "exact_positive": 35,
+            "near_miss": 7
+          },
+          "include_buckets": [
+            "exact_positive",
+            "near_miss",
+            "weak_positive"
+          ],
+          "min_supervision_weight": 0.4
+        },
+        "retriever_bench_summary": {
+          "rows": 39,
+          "exact_match_rate": 0.1282,
+          "nonempty_prediction_rate": 1.0,
+          "avg_similarity": 0.5929,
+          "avg_grid_cell_accuracy": null,
+          "per_family": {
+            "primehub": {
+              "rows": 39,
+              "exact_match_rate": 0.1282,
+              "nonempty_prediction_rate": 1.0,
+              "avg_similarity": 0.5929,
+              "avg_grid_cell_accuracy": null
+            }
+          },
+          "model_example_count": 35,
+          "train_rows": 203,
+          "eval_rows": 39,
+          "holdout_ratio": 0.2,
+          "leave_one_out": false,
+          "include_buckets": [
+            "exact_positive",
+            "near_miss",
+            "weak_positive"
+          ],
+          "min_supervision_weight": 0.4
+        },
+        "router_bench_summary": {
+          "rows": 39,
+          "top_k": 5,
+          "retrieval_only": {
+            "exact_match_rate": 0.1282,
+            "nonempty_prediction_rate": 1.0,
+            "avg_grid_cell_accuracy": null
+          },
+          "critic_gated": {
+            "exact_match_rate": 0.1282,
+            "nonempty_prediction_rate": 0.3333,
+            "route_abstain_rate": 0.6667,
+            "avg_grid_cell_accuracy": null
+          },
+          "train_rows": 203,
+          "eval_rows": 39,
+          "retriever_example_count": 35,
+          "critic_example_count": 203,
+          "holdout_ratio": 0.2,
+          "min_supervision_weight": 0.4
+        }
+      }
+    },
+    "control_plus_external_abstraction_and_critic_support_and_ifeval_abstraction": {
+      "merged_summary": {
+        "inputs": [
+          "C:\\projects\\Hermes Skills\\data\\primehub_trm_autoresearch\\cycle_12\\primehub_trm_merged.jsonl",
+          "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_bundle\\primehub_external_abstraction_bundle.jsonl",
+          "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_critic_support_bundle\\primehub_external_critic_support_bundle.jsonl",
+          "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_ifeval_bundle\\primehub_external_ifeval_bundle.jsonl"
+        ],
+        "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support_and_ifeval_abstraction\\merged.jsonl",
+        "total_rows": 220,
+        "bucket_counts": {
+          "negative": 166,
+          "exact_positive": 49,
+          "weak_positive": 5
+        },
+        "task_family_counts": {
+          "primehub": 220
+        },
+        "task_family_bucket_counts": {
+          "primehub": {
+            "negative": 166,
+            "exact_positive": 49,
+            "weak_positive": 5
+          }
+        },
+        "included_families": [
+          "primehub"
+        ],
+        "excluded_families": {},
+        "min_exact_positives_per_family": 2
+      },
+      "global": {
+        "critic_bucket_accuracy": 0.6562,
+        "retriever_exact_match_rate": 0.1562,
+        "router_critic_gated_exact_match_rate": 0.1562,
+        "router_critic_gated_route_abstain_rate": 0.5
+      },
+      "subsets": {
+        "original_external_primehub_eval": {
+          "rows": 32,
+          "critic_bucket_accuracy": 0.6562,
+          "retriever_exact_match_rate": 0.1562,
+          "router_retrieval_only_exact_match_rate": 0.1562,
+          "router_critic_gated_exact_match_rate": 0.1562,
+          "router_critic_gated_route_abstain_rate": 0.5
+        },
+        "original_external_focus_eval": {
+          "rows": 17,
+          "critic_bucket_accuracy": 0.6471,
+          "retriever_exact_match_rate": 0.2941,
+          "router_retrieval_only_exact_match_rate": 0.2941,
+          "router_critic_gated_exact_match_rate": 0.2941,
+          "router_critic_gated_route_abstain_rate": 0.3529
+        },
+        "original_external_ifeval_eval": {
+          "rows": 3,
+          "retrieval_contract_success_rate": 1.0,
+          "gated_contract_success_rate": 1.0,
+          "gated_postscript_present_rate": 1.0,
+          "gated_semantic_match_rate": 1.0,
+          "gated_action_nonempty_rate": 1.0
+        },
+        "original_external_aime_eval": {
+          "rows": 6,
+          "retrieval_action_nonempty_rate": 1.0,
+          "retrieval_box_present_rate": 1.0,
+          "retrieval_boxed_exact_rate": 0.0,
+          "gated_action_nonempty_rate": 0.0,
+          "gated_box_present_rate": 0.0,
+          "gated_boxed_exact_rate": 0.0
+        },
+        "original_external_env_counts": {
+          "aime2026": 6,
+          "misguided_attn": 5,
+          "psycho_bench": 3,
+          "math_env": 3,
+          "allenai_ifeval": 3,
+          "colf": 3,
+          "jailbreak_bench": 3,
+          "uq": 4,
+          "truthfulqa": 2
+        },
+        "original_external_focus_env_counts": {
+          "aime2026": 6,
+          "psycho_bench": 3,
+          "math_env": 3,
+          "allenai_ifeval": 3,
+          "truthfulqa": 2
+        },
+        "focus_envs": [
+          "aime2026",
+          "allenai_ifeval",
+          "ascii_tree",
+          "if_summarize_judge",
+          "math_env",
+          "psycho_bench",
+          "pydantic_adherence",
+          "truthfulqa"
+        ]
+      },
+      "artifacts": {
+        "critic_model": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support_and_ifeval_abstraction\\models\\trm_critic.json",
+        "critic_summary": {
+          "input": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support_and_ifeval_abstraction\\merged.jsonl",
+          "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support_and_ifeval_abstraction\\models\\trm_critic.json",
+          "example_count": 220,
+          "task_family_counts": {
+            "primehub": 220
+          },
+          "bucket_counts": {
+            "negative": 166,
+            "exact_positive": 49,
+            "weak_positive": 5
+          },
+          "k": 5
+        },
+        "critic_bench_summary": {
+          "rows": 32,
+          "bucket_accuracy": 0.6562,
+          "avg_bucket_abs_error": 1.0312,
+          "visible_output_accuracy": 0.625,
+          "avg_grid_cell_accuracy_abs_error": null,
+          "per_family": {
+            "primehub": {
+              "rows": 32,
+              "bucket_accuracy": 0.6562,
+              "avg_bucket_abs_error": 1.0312,
+              "visible_output_accuracy": 0.625,
+              "avg_grid_cell_accuracy_abs_error": null
+            }
+          },
+          "model_example_count": 188,
+          "train_rows": 188,
+          "eval_rows": 32,
+          "holdout_ratio": 0.2,
+          "leave_one_out": false,
+          "k": 5
+        },
+        "retriever_model": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support_and_ifeval_abstraction\\models\\trm_retriever.json",
+        "retriever_summary": {
+          "input": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support_and_ifeval_abstraction\\merged.jsonl",
+          "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support_and_ifeval_abstraction\\models\\trm_retriever.json",
+          "example_count": 37,
+          "task_family_counts": {
+            "primehub": 37
+          },
+          "bucket_counts": {
+            "exact_positive": 37
+          },
+          "include_buckets": [
+            "exact_positive",
+            "near_miss",
+            "weak_positive"
+          ],
+          "min_supervision_weight": 0.4
+        },
+        "retriever_bench_summary": {
+          "rows": 32,
+          "exact_match_rate": 0.1562,
+          "nonempty_prediction_rate": 1.0,
+          "avg_similarity": 0.5548,
+          "avg_grid_cell_accuracy": null,
+          "per_family": {
+            "primehub": {
+              "rows": 32,
+              "exact_match_rate": 0.1562,
+              "nonempty_prediction_rate": 1.0,
+              "avg_similarity": 0.5548,
+              "avg_grid_cell_accuracy": null
+            }
+          },
+          "model_example_count": 32,
+          "train_rows": 188,
+          "eval_rows": 32,
+          "holdout_ratio": 0.2,
+          "leave_one_out": false,
+          "include_buckets": [
+            "exact_positive",
+            "near_miss",
+            "weak_positive"
+          ],
+          "min_supervision_weight": 0.4
+        },
+        "router_bench_summary": {
+          "rows": 32,
+          "top_k": 5,
+          "retrieval_only": {
+            "exact_match_rate": 0.1562,
+            "nonempty_prediction_rate": 1.0,
+            "avg_grid_cell_accuracy": null
+          },
+          "critic_gated": {
+            "exact_match_rate": 0.1562,
+            "nonempty_prediction_rate": 0.5,
+            "route_abstain_rate": 0.5,
+            "avg_grid_cell_accuracy": null
+          },
+          "train_rows": 188,
+          "eval_rows": 32,
+          "retriever_example_count": 32,
+          "critic_example_count": 188,
+          "holdout_ratio": 0.2,
+          "min_supervision_weight": 0.4
+        }
+      }
+    },
+    "control_plus_external_abstraction_and_critic_support_and_ifeval_stack": {
+      "merged_summary": {
+        "inputs": [
+          "C:\\projects\\Hermes Skills\\data\\primehub_trm_autoresearch\\cycle_12\\primehub_trm_merged.jsonl",
+          "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_bundle\\primehub_external_abstraction_bundle.jsonl",
+          "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_critic_support_bundle\\primehub_external_critic_support_bundle.jsonl",
+          "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_ifeval_bundle\\primehub_external_ifeval_bundle.jsonl",
+          "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_ifeval_critic_support_bundle\\primehub_external_ifeval_critic_support_bundle.jsonl"
+        ],
+        "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support_and_ifeval_stack\\merged.jsonl",
+        "total_rows": 226,
+        "bucket_counts": {
+          "negative": 166,
+          "exact_positive": 55,
+          "weak_positive": 5
+        },
+        "task_family_counts": {
+          "primehub": 226
+        },
+        "task_family_bucket_counts": {
+          "primehub": {
+            "negative": 166,
+            "exact_positive": 55,
+            "weak_positive": 5
+          }
+        },
+        "included_families": [
+          "primehub"
+        ],
+        "excluded_families": {},
+        "min_exact_positives_per_family": 2
+      },
+      "global": {
+        "critic_bucket_accuracy": 0.6562,
+        "retriever_exact_match_rate": 0.1562,
+        "router_critic_gated_exact_match_rate": 0.1562,
+        "router_critic_gated_route_abstain_rate": 0.5
+      },
+      "subsets": {
+        "original_external_primehub_eval": {
+          "rows": 32,
+          "critic_bucket_accuracy": 0.6562,
+          "retriever_exact_match_rate": 0.1562,
+          "router_retrieval_only_exact_match_rate": 0.1562,
+          "router_critic_gated_exact_match_rate": 0.1562,
+          "router_critic_gated_route_abstain_rate": 0.5
+        },
+        "original_external_focus_eval": {
+          "rows": 17,
+          "critic_bucket_accuracy": 0.6471,
+          "retriever_exact_match_rate": 0.2941,
+          "router_retrieval_only_exact_match_rate": 0.2941,
+          "router_critic_gated_exact_match_rate": 0.2941,
+          "router_critic_gated_route_abstain_rate": 0.3529
+        },
+        "original_external_ifeval_eval": {
+          "rows": 3,
+          "retrieval_contract_success_rate": 1.0,
+          "gated_contract_success_rate": 1.0,
+          "gated_postscript_present_rate": 1.0,
+          "gated_semantic_match_rate": 1.0,
+          "gated_action_nonempty_rate": 1.0
+        },
+        "original_external_aime_eval": {
+          "rows": 6,
+          "retrieval_action_nonempty_rate": 1.0,
+          "retrieval_box_present_rate": 1.0,
+          "retrieval_boxed_exact_rate": 0.0,
+          "gated_action_nonempty_rate": 0.0,
+          "gated_box_present_rate": 0.0,
+          "gated_boxed_exact_rate": 0.0
+        },
+        "original_external_env_counts": {
+          "aime2026": 6,
+          "misguided_attn": 5,
+          "psycho_bench": 3,
+          "math_env": 3,
+          "allenai_ifeval": 3,
+          "colf": 3,
+          "jailbreak_bench": 3,
+          "uq": 4,
+          "truthfulqa": 2
+        },
+        "original_external_focus_env_counts": {
+          "aime2026": 6,
+          "psycho_bench": 3,
+          "math_env": 3,
+          "allenai_ifeval": 3,
+          "truthfulqa": 2
+        },
+        "focus_envs": [
+          "aime2026",
+          "allenai_ifeval",
+          "ascii_tree",
+          "if_summarize_judge",
+          "math_env",
+          "psycho_bench",
+          "pydantic_adherence",
+          "truthfulqa"
+        ]
+      },
+      "artifacts": {
+        "critic_model": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support_and_ifeval_stack\\models\\trm_critic.json",
+        "critic_summary": {
+          "input": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support_and_ifeval_stack\\merged.jsonl",
+          "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support_and_ifeval_stack\\models\\trm_critic.json",
+          "example_count": 226,
+          "task_family_counts": {
+            "primehub": 226
+          },
+          "bucket_counts": {
+            "negative": 166,
+            "exact_positive": 55,
+            "weak_positive": 5
+          },
+          "k": 5
+        },
+        "critic_bench_summary": {
+          "rows": 32,
+          "bucket_accuracy": 0.6562,
+          "avg_bucket_abs_error": 1.0312,
+          "visible_output_accuracy": 0.625,
+          "avg_grid_cell_accuracy_abs_error": null,
+          "per_family": {
+            "primehub": {
+              "rows": 32,
+              "bucket_accuracy": 0.6562,
+              "avg_bucket_abs_error": 1.0312,
+              "visible_output_accuracy": 0.625,
+              "avg_grid_cell_accuracy_abs_error": null
+            }
+          },
+          "model_example_count": 194,
+          "train_rows": 194,
+          "eval_rows": 32,
+          "holdout_ratio": 0.2,
+          "leave_one_out": false,
+          "k": 5
+        },
+        "retriever_model": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support_and_ifeval_stack\\models\\trm_retriever.json",
+        "retriever_summary": {
+          "input": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support_and_ifeval_stack\\merged.jsonl",
+          "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support_and_ifeval_stack\\models\\trm_retriever.json",
+          "example_count": 37,
+          "task_family_counts": {
+            "primehub": 37
+          },
+          "bucket_counts": {
+            "exact_positive": 37
+          },
+          "include_buckets": [
+            "exact_positive",
+            "near_miss",
+            "weak_positive"
+          ],
+          "min_supervision_weight": 0.4
+        },
+        "retriever_bench_summary": {
+          "rows": 32,
+          "exact_match_rate": 0.1562,
+          "nonempty_prediction_rate": 1.0,
+          "avg_similarity": 0.5548,
+          "avg_grid_cell_accuracy": null,
+          "per_family": {
+            "primehub": {
+              "rows": 32,
+              "exact_match_rate": 0.1562,
+              "nonempty_prediction_rate": 1.0,
+              "avg_similarity": 0.5548,
+              "avg_grid_cell_accuracy": null
+            }
+          },
+          "model_example_count": 32,
+          "train_rows": 194,
+          "eval_rows": 32,
+          "holdout_ratio": 0.2,
+          "leave_one_out": false,
+          "include_buckets": [
+            "exact_positive",
+            "near_miss",
+            "weak_positive"
+          ],
+          "min_supervision_weight": 0.4
+        },
+        "router_bench_summary": {
+          "rows": 32,
+          "top_k": 5,
+          "retrieval_only": {
+            "exact_match_rate": 0.1562,
+            "nonempty_prediction_rate": 1.0,
+            "avg_grid_cell_accuracy": null
+          },
+          "critic_gated": {
+            "exact_match_rate": 0.1562,
+            "nonempty_prediction_rate": 0.5,
+            "route_abstain_rate": 0.5,
+            "avg_grid_cell_accuracy": null
+          },
+          "train_rows": 194,
+          "eval_rows": 32,
+          "retriever_example_count": 32,
+          "critic_example_count": 194,
+          "holdout_ratio": 0.2,
+          "min_supervision_weight": 0.4
+        }
+      }
+    },
+    "control_plus_external_abstraction_and_critic_support_and_aime_abstraction": {
+      "merged_summary": {
+        "inputs": [
+          "C:\\projects\\Hermes Skills\\data\\primehub_trm_autoresearch\\cycle_12\\primehub_trm_merged.jsonl",
+          "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_bundle\\primehub_external_abstraction_bundle.jsonl",
+          "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_critic_support_bundle\\primehub_external_critic_support_bundle.jsonl",
+          "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_aime2026_bundle\\primehub_external_aime2026_bundle.jsonl"
+        ],
+        "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support_and_aime_abstraction\\merged.jsonl",
+        "total_rows": 220,
+        "bucket_counts": {
+          "negative": 166,
+          "exact_positive": 49,
+          "weak_positive": 5
+        },
+        "task_family_counts": {
+          "primehub": 220
+        },
+        "task_family_bucket_counts": {
+          "primehub": {
+            "negative": 166,
+            "exact_positive": 49,
+            "weak_positive": 5
+          }
+        },
+        "included_families": [
+          "primehub"
+        ],
+        "excluded_families": {},
+        "min_exact_positives_per_family": 2
+      },
+      "global": {
+        "critic_bucket_accuracy": 0.5625,
+        "retriever_exact_match_rate": 0.1562,
+        "router_critic_gated_exact_match_rate": 0.1562,
+        "router_critic_gated_route_abstain_rate": 0.4062
+      },
+      "subsets": {
+        "original_external_primehub_eval": {
+          "rows": 32,
+          "critic_bucket_accuracy": 0.5625,
+          "retriever_exact_match_rate": 0.1562,
+          "router_retrieval_only_exact_match_rate": 0.1562,
+          "router_critic_gated_exact_match_rate": 0.1562,
+          "router_critic_gated_route_abstain_rate": 0.4062
+        },
+        "original_external_focus_eval": {
+          "rows": 17,
+          "critic_bucket_accuracy": 0.4706,
+          "retriever_exact_match_rate": 0.2941,
+          "router_retrieval_only_exact_match_rate": 0.2941,
+          "router_critic_gated_exact_match_rate": 0.2941,
+          "router_critic_gated_route_abstain_rate": 0.1765
+        },
+        "original_external_ifeval_eval": {
+          "rows": 3,
+          "retrieval_contract_success_rate": 0.0,
+          "gated_contract_success_rate": 0.0,
+          "gated_postscript_present_rate": 0.0,
+          "gated_semantic_match_rate": 0.0,
+          "gated_action_nonempty_rate": 0.0
+        },
+        "original_external_aime_eval": {
+          "rows": 6,
+          "retrieval_action_nonempty_rate": 1.0,
+          "retrieval_box_present_rate": 1.0,
+          "retrieval_boxed_exact_rate": 1.0,
+          "gated_action_nonempty_rate": 1.0,
+          "gated_box_present_rate": 1.0,
+          "gated_boxed_exact_rate": 1.0
+        },
+        "original_external_env_counts": {
+          "aime2026": 6,
+          "misguided_attn": 5,
+          "psycho_bench": 3,
+          "math_env": 3,
+          "allenai_ifeval": 3,
+          "colf": 3,
+          "jailbreak_bench": 3,
+          "uq": 4,
+          "truthfulqa": 2
+        },
+        "original_external_focus_env_counts": {
+          "aime2026": 6,
+          "psycho_bench": 3,
+          "math_env": 3,
+          "allenai_ifeval": 3,
+          "truthfulqa": 2
+        },
+        "focus_envs": [
+          "aime2026",
+          "allenai_ifeval",
+          "ascii_tree",
+          "if_summarize_judge",
+          "math_env",
+          "psycho_bench",
+          "pydantic_adherence",
+          "truthfulqa"
+        ]
+      },
+      "artifacts": {
+        "critic_model": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support_and_aime_abstraction\\models\\trm_critic.json",
+        "critic_summary": {
+          "input": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support_and_aime_abstraction\\merged.jsonl",
+          "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support_and_aime_abstraction\\models\\trm_critic.json",
+          "example_count": 220,
+          "task_family_counts": {
+            "primehub": 220
+          },
+          "bucket_counts": {
+            "negative": 166,
+            "exact_positive": 49,
+            "weak_positive": 5
+          },
+          "k": 5
+        },
+        "critic_bench_summary": {
+          "rows": 32,
+          "bucket_accuracy": 0.5625,
+          "avg_bucket_abs_error": 1.3125,
+          "visible_output_accuracy": 0.625,
+          "avg_grid_cell_accuracy_abs_error": null,
+          "per_family": {
+            "primehub": {
+              "rows": 32,
+              "bucket_accuracy": 0.5625,
+              "avg_bucket_abs_error": 1.3125,
+              "visible_output_accuracy": 0.625,
+              "avg_grid_cell_accuracy_abs_error": null
+            }
+          },
+          "model_example_count": 188,
+          "train_rows": 188,
+          "eval_rows": 32,
+          "holdout_ratio": 0.2,
+          "leave_one_out": false,
+          "k": 5
+        },
+        "retriever_model": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support_and_aime_abstraction\\models\\trm_retriever.json",
+        "retriever_summary": {
+          "input": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support_and_aime_abstraction\\merged.jsonl",
+          "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support_and_aime_abstraction\\models\\trm_retriever.json",
+          "example_count": 37,
+          "task_family_counts": {
+            "primehub": 37
+          },
+          "bucket_counts": {
+            "exact_positive": 37
+          },
+          "include_buckets": [
+            "exact_positive",
+            "near_miss",
+            "weak_positive"
+          ],
+          "min_supervision_weight": 0.4
+        },
+        "retriever_bench_summary": {
+          "rows": 32,
+          "exact_match_rate": 0.1562,
+          "nonempty_prediction_rate": 1.0,
+          "avg_similarity": 0.5798,
+          "avg_grid_cell_accuracy": null,
+          "per_family": {
+            "primehub": {
+              "rows": 32,
+              "exact_match_rate": 0.1562,
+              "nonempty_prediction_rate": 1.0,
+              "avg_similarity": 0.5798,
+              "avg_grid_cell_accuracy": null
+            }
+          },
+          "model_example_count": 32,
+          "train_rows": 188,
+          "eval_rows": 32,
+          "holdout_ratio": 0.2,
+          "leave_one_out": false,
+          "include_buckets": [
+            "exact_positive",
+            "near_miss",
+            "weak_positive"
+          ],
+          "min_supervision_weight": 0.4
+        },
+        "router_bench_summary": {
+          "rows": 32,
+          "top_k": 5,
+          "retrieval_only": {
+            "exact_match_rate": 0.1562,
+            "nonempty_prediction_rate": 1.0,
+            "avg_grid_cell_accuracy": null
+          },
+          "critic_gated": {
+            "exact_match_rate": 0.1562,
+            "nonempty_prediction_rate": 0.5938,
+            "route_abstain_rate": 0.4062,
+            "avg_grid_cell_accuracy": null
+          },
+          "train_rows": 188,
+          "eval_rows": 32,
+          "retriever_example_count": 32,
+          "critic_example_count": 188,
+          "holdout_ratio": 0.2,
+          "min_supervision_weight": 0.4
+        }
+      }
+    },
+    "control_plus_external_abstraction_and_critic_support_and_aime_stack": {
+      "merged_summary": {
+        "inputs": [
+          "C:\\projects\\Hermes Skills\\data\\primehub_trm_autoresearch\\cycle_12\\primehub_trm_merged.jsonl",
+          "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_bundle\\primehub_external_abstraction_bundle.jsonl",
+          "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_critic_support_bundle\\primehub_external_critic_support_bundle.jsonl",
+          "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_aime2026_bundle\\primehub_external_aime2026_bundle.jsonl",
+          "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_aime2026_critic_support_bundle\\primehub_external_aime2026_critic_support_bundle.jsonl"
+        ],
+        "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support_and_aime_stack\\merged.jsonl",
+        "total_rows": 226,
+        "bucket_counts": {
+          "negative": 166,
+          "exact_positive": 55,
+          "weak_positive": 5
+        },
+        "task_family_counts": {
+          "primehub": 226
+        },
+        "task_family_bucket_counts": {
+          "primehub": {
+            "negative": 166,
+            "exact_positive": 55,
+            "weak_positive": 5
+          }
+        },
+        "included_families": [
+          "primehub"
+        ],
+        "excluded_families": {},
+        "min_exact_positives_per_family": 2
+      },
+      "global": {
+        "critic_bucket_accuracy": 0.5625,
+        "retriever_exact_match_rate": 0.1562,
+        "router_critic_gated_exact_match_rate": 0.1562,
+        "router_critic_gated_route_abstain_rate": 0.4062
+      },
+      "subsets": {
+        "original_external_primehub_eval": {
+          "rows": 32,
+          "critic_bucket_accuracy": 0.5625,
+          "retriever_exact_match_rate": 0.1562,
+          "router_retrieval_only_exact_match_rate": 0.1562,
+          "router_critic_gated_exact_match_rate": 0.1562,
+          "router_critic_gated_route_abstain_rate": 0.4062
+        },
+        "original_external_focus_eval": {
+          "rows": 17,
+          "critic_bucket_accuracy": 0.4706,
+          "retriever_exact_match_rate": 0.2941,
+          "router_retrieval_only_exact_match_rate": 0.2941,
+          "router_critic_gated_exact_match_rate": 0.2941,
+          "router_critic_gated_route_abstain_rate": 0.1765
+        },
+        "original_external_ifeval_eval": {
+          "rows": 3,
+          "retrieval_contract_success_rate": 0.0,
+          "gated_contract_success_rate": 0.0,
+          "gated_postscript_present_rate": 0.0,
+          "gated_semantic_match_rate": 0.0,
+          "gated_action_nonempty_rate": 0.0
+        },
+        "original_external_aime_eval": {
+          "rows": 6,
+          "retrieval_action_nonempty_rate": 1.0,
+          "retrieval_box_present_rate": 1.0,
+          "retrieval_boxed_exact_rate": 1.0,
+          "gated_action_nonempty_rate": 1.0,
+          "gated_box_present_rate": 1.0,
+          "gated_boxed_exact_rate": 1.0
+        },
+        "original_external_env_counts": {
+          "aime2026": 6,
+          "misguided_attn": 5,
+          "psycho_bench": 3,
+          "math_env": 3,
+          "allenai_ifeval": 3,
+          "colf": 3,
+          "jailbreak_bench": 3,
+          "uq": 4,
+          "truthfulqa": 2
+        },
+        "original_external_focus_env_counts": {
+          "aime2026": 6,
+          "psycho_bench": 3,
+          "math_env": 3,
+          "allenai_ifeval": 3,
+          "truthfulqa": 2
+        },
+        "focus_envs": [
+          "aime2026",
+          "allenai_ifeval",
+          "ascii_tree",
+          "if_summarize_judge",
+          "math_env",
+          "psycho_bench",
+          "pydantic_adherence",
+          "truthfulqa"
+        ]
+      },
+      "artifacts": {
+        "critic_model": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support_and_aime_stack\\models\\trm_critic.json",
+        "critic_summary": {
+          "input": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support_and_aime_stack\\merged.jsonl",
+          "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support_and_aime_stack\\models\\trm_critic.json",
+          "example_count": 226,
+          "task_family_counts": {
+            "primehub": 226
+          },
+          "bucket_counts": {
+            "negative": 166,
+            "exact_positive": 55,
+            "weak_positive": 5
+          },
+          "k": 5
+        },
+        "critic_bench_summary": {
+          "rows": 32,
+          "bucket_accuracy": 0.5625,
+          "avg_bucket_abs_error": 1.3125,
+          "visible_output_accuracy": 0.625,
+          "avg_grid_cell_accuracy_abs_error": null,
+          "per_family": {
+            "primehub": {
+              "rows": 32,
+              "bucket_accuracy": 0.5625,
+              "avg_bucket_abs_error": 1.3125,
+              "visible_output_accuracy": 0.625,
+              "avg_grid_cell_accuracy_abs_error": null
+            }
+          },
+          "model_example_count": 194,
+          "train_rows": 194,
+          "eval_rows": 32,
+          "holdout_ratio": 0.2,
+          "leave_one_out": false,
+          "k": 5
+        },
+        "retriever_model": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support_and_aime_stack\\models\\trm_retriever.json",
+        "retriever_summary": {
+          "input": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support_and_aime_stack\\merged.jsonl",
+          "output": "C:\\projects\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\primehub_external_abstraction_comparison\\variants\\control_plus_external_abstraction_and_critic_support_and_aime_stack\\models\\trm_retriever.json",
+          "example_count": 37,
+          "task_family_counts": {
+            "primehub": 37
+          },
+          "bucket_counts": {
+            "exact_positive": 37
+          },
+          "include_buckets": [
+            "exact_positive",
+            "near_miss",
+            "weak_positive"
+          ],
+          "min_supervision_weight": 0.4
+        },
+        "retriever_bench_summary": {
+          "rows": 32,
+          "exact_match_rate": 0.1562,
+          "nonempty_prediction_rate": 1.0,
+          "avg_similarity": 0.5798,
+          "avg_grid_cell_accuracy": null,
+          "per_family": {
+            "primehub": {
+              "rows": 32,
+              "exact_match_rate": 0.1562,
+              "nonempty_prediction_rate": 1.0,
+              "avg_similarity": 0.5798,
+              "avg_grid_cell_accuracy": null
+            }
+          },
+          "model_example_count": 32,
+          "train_rows": 194,
+          "eval_rows": 32,
+          "holdout_ratio": 0.2,
+          "leave_one_out": false,
+          "include_buckets": [
+            "exact_positive",
+            "near_miss",
+            "weak_positive"
+          ],
+          "min_supervision_weight": 0.4
+        },
+        "router_bench_summary": {
+          "rows": 32,
+          "top_k": 5,
+          "retrieval_only": {
+            "exact_match_rate": 0.1562,
+            "nonempty_prediction_rate": 1.0,
+            "avg_grid_cell_accuracy": null
+          },
+          "critic_gated": {
+            "exact_match_rate": 0.1562,
+            "nonempty_prediction_rate": 0.5938,
+            "route_abstain_rate": 0.4062,
+            "avg_grid_cell_accuracy": null
+          },
+          "train_rows": 194,
+          "eval_rows": 32,
+          "retriever_example_count": 32,
+          "critic_example_count": 194,
+          "holdout_ratio": 0.2,
+          "min_supervision_weight": 0.4
+        }
+      }
+    }
+  },
+  "control_deltas": {
+    "control_plus_external_abstraction": {
+      "original_external_primehub_eval": {
+        "critic_bucket_accuracy": -0.1562,
+        "retriever_exact_match_rate": 0.0937,
+        "router_retrieval_only_exact_match_rate": 0.0937,
+        "router_critic_gated_exact_match_rate": 0.0,
+        "router_critic_gated_route_abstain_rate": -0.1562
+      },
+      "original_external_focus_eval": {
+        "critic_bucket_accuracy": 0.0,
+        "retriever_exact_match_rate": 0.1765,
+        "router_retrieval_only_exact_match_rate": 0.1765,
+        "router_critic_gated_exact_match_rate": 0.0,
+        "router_critic_gated_route_abstain_rate": 0.0
+      },
+      "original_external_ifeval_eval": {
+        "retrieval_contract_success_rate": 0.0,
+        "gated_contract_success_rate": 0.0,
+        "gated_postscript_present_rate": 0.0,
+        "gated_semantic_match_rate": 0.0,
+        "gated_action_nonempty_rate": 0.0
+      },
+      "original_external_aime_eval": {
+        "retrieval_action_nonempty_rate": 0.0,
+        "retrieval_box_present_rate": 0.0,
+        "retrieval_boxed_exact_rate": 0.0,
+        "gated_action_nonempty_rate": 0.0,
+        "gated_box_present_rate": 0.0,
+        "gated_boxed_exact_rate": 0.0
+      }
+    },
+    "control_plus_external_abstraction_and_critic_support": {
+      "original_external_primehub_eval": {
+        "critic_bucket_accuracy": 0.0,
+        "retriever_exact_match_rate": 0.0937,
+        "router_retrieval_only_exact_match_rate": 0.0937,
+        "router_critic_gated_exact_match_rate": 0.1562,
+        "router_critic_gated_route_abstain_rate": -0.3124
+      },
+      "original_external_focus_eval": {
+        "critic_bucket_accuracy": 0.2941,
+        "retriever_exact_match_rate": 0.1765,
+        "router_retrieval_only_exact_match_rate": 0.1765,
+        "router_critic_gated_exact_match_rate": 0.2941,
+        "router_critic_gated_route_abstain_rate": -0.2941
+      },
+      "original_external_ifeval_eval": {
+        "retrieval_contract_success_rate": 0.0,
+        "gated_contract_success_rate": 0.0,
+        "gated_postscript_present_rate": 0.0,
+        "gated_semantic_match_rate": 0.0,
+        "gated_action_nonempty_rate": 0.0
+      },
+      "original_external_aime_eval": {
+        "retrieval_action_nonempty_rate": 0.0,
+        "retrieval_box_present_rate": 0.0,
+        "retrieval_boxed_exact_rate": 0.0,
+        "gated_action_nonempty_rate": 0.0,
+        "gated_box_present_rate": 0.0,
+        "gated_boxed_exact_rate": 0.0
+      }
+    },
+    "control_plus_external_and_all_transfer": {
+      "original_external_primehub_eval": {
+        "critic_bucket_accuracy": -0.1562,
+        "retriever_exact_match_rate": 0.0937,
+        "router_retrieval_only_exact_match_rate": 0.0937,
+        "router_critic_gated_exact_match_rate": 0.0,
+        "router_critic_gated_route_abstain_rate": -0.1562
+      },
+      "original_external_focus_eval": {
+        "critic_bucket_accuracy": 0.0,
+        "retriever_exact_match_rate": 0.1765,
+        "router_retrieval_only_exact_match_rate": 0.1765,
+        "router_critic_gated_exact_match_rate": 0.0,
+        "router_critic_gated_route_abstain_rate": 0.0
+      },
+      "original_external_ifeval_eval": {
+        "retrieval_contract_success_rate": 0.0,
+        "gated_contract_success_rate": 0.0,
+        "gated_postscript_present_rate": 0.0,
+        "gated_semantic_match_rate": 0.0,
+        "gated_action_nonempty_rate": 0.0
+      },
+      "original_external_aime_eval": {
+        "retrieval_action_nonempty_rate": 0.0,
+        "retrieval_box_present_rate": 0.0,
+        "retrieval_boxed_exact_rate": 0.0,
+        "gated_action_nonempty_rate": 0.0,
+        "gated_box_present_rate": 0.0,
+        "gated_boxed_exact_rate": 0.0
+      }
+    },
+    "control_plus_external_critic_and_all_transfer": {
+      "original_external_primehub_eval": {
+        "critic_bucket_accuracy": 0.0,
+        "retriever_exact_match_rate": 0.0937,
+        "router_retrieval_only_exact_match_rate": 0.0937,
+        "router_critic_gated_exact_match_rate": 0.1562,
+        "router_critic_gated_route_abstain_rate": -0.3124
+      },
+      "original_external_focus_eval": {
+        "critic_bucket_accuracy": 0.2941,
+        "retriever_exact_match_rate": 0.1765,
+        "router_retrieval_only_exact_match_rate": 0.1765,
+        "router_critic_gated_exact_match_rate": 0.2941,
+        "router_critic_gated_route_abstain_rate": -0.2941
+      },
+      "original_external_ifeval_eval": {
+        "retrieval_contract_success_rate": 0.0,
+        "gated_contract_success_rate": 0.0,
+        "gated_postscript_present_rate": 0.0,
+        "gated_semantic_match_rate": 0.0,
+        "gated_action_nonempty_rate": 0.0
+      },
+      "original_external_aime_eval": {
+        "retrieval_action_nonempty_rate": 0.0,
+        "retrieval_box_present_rate": 0.0,
+        "retrieval_boxed_exact_rate": 0.0,
+        "gated_action_nonempty_rate": 0.0,
+        "gated_box_present_rate": 0.0,
+        "gated_boxed_exact_rate": 0.0
+      }
+    },
+    "control_plus_external_abstraction_and_critic_support_and_ifeval_abstraction": {
+      "original_external_primehub_eval": {
+        "critic_bucket_accuracy": -0.0938,
+        "retriever_exact_match_rate": 0.0937,
+        "router_retrieval_only_exact_match_rate": 0.0937,
+        "router_critic_gated_exact_match_rate": 0.1562,
+        "router_critic_gated_route_abstain_rate": -0.4062
+      },
+      "original_external_focus_eval": {
+        "critic_bucket_accuracy": 0.1177,
+        "retriever_exact_match_rate": 0.1765,
+        "router_retrieval_only_exact_match_rate": 0.1765,
+        "router_critic_gated_exact_match_rate": 0.2941,
+        "router_critic_gated_route_abstain_rate": -0.4706
+      },
+      "original_external_ifeval_eval": {
+        "retrieval_contract_success_rate": 1.0,
+        "gated_contract_success_rate": 1.0,
+        "gated_postscript_present_rate": 1.0,
+        "gated_semantic_match_rate": 1.0,
+        "gated_action_nonempty_rate": 1.0
+      },
+      "original_external_aime_eval": {
+        "retrieval_action_nonempty_rate": 0.0,
+        "retrieval_box_present_rate": 0.0,
+        "retrieval_boxed_exact_rate": 0.0,
+        "gated_action_nonempty_rate": 0.0,
+        "gated_box_present_rate": 0.0,
+        "gated_boxed_exact_rate": 0.0
+      }
+    },
+    "control_plus_external_abstraction_and_critic_support_and_ifeval_stack": {
+      "original_external_primehub_eval": {
+        "critic_bucket_accuracy": -0.0938,
+        "retriever_exact_match_rate": 0.0937,
+        "router_retrieval_only_exact_match_rate": 0.0937,
+        "router_critic_gated_exact_match_rate": 0.1562,
+        "router_critic_gated_route_abstain_rate": -0.4062
+      },
+      "original_external_focus_eval": {
+        "critic_bucket_accuracy": 0.1177,
+        "retriever_exact_match_rate": 0.1765,
+        "router_retrieval_only_exact_match_rate": 0.1765,
+        "router_critic_gated_exact_match_rate": 0.2941,
+        "router_critic_gated_route_abstain_rate": -0.4706
+      },
+      "original_external_ifeval_eval": {
+        "retrieval_contract_success_rate": 1.0,
+        "gated_contract_success_rate": 1.0,
+        "gated_postscript_present_rate": 1.0,
+        "gated_semantic_match_rate": 1.0,
+        "gated_action_nonempty_rate": 1.0
+      },
+      "original_external_aime_eval": {
+        "retrieval_action_nonempty_rate": 0.0,
+        "retrieval_box_present_rate": 0.0,
+        "retrieval_boxed_exact_rate": 0.0,
+        "gated_action_nonempty_rate": 0.0,
+        "gated_box_present_rate": 0.0,
+        "gated_boxed_exact_rate": 0.0
+      }
+    },
+    "control_plus_external_abstraction_and_critic_support_and_aime_abstraction": {
+      "original_external_primehub_eval": {
+        "critic_bucket_accuracy": -0.1875,
+        "retriever_exact_match_rate": 0.0937,
+        "router_retrieval_only_exact_match_rate": 0.0937,
+        "router_critic_gated_exact_match_rate": 0.1562,
+        "router_critic_gated_route_abstain_rate": -0.5
+      },
+      "original_external_focus_eval": {
+        "critic_bucket_accuracy": -0.0588,
+        "retriever_exact_match_rate": 0.1765,
+        "router_retrieval_only_exact_match_rate": 0.1765,
+        "router_critic_gated_exact_match_rate": 0.2941,
+        "router_critic_gated_route_abstain_rate": -0.647
+      },
+      "original_external_ifeval_eval": {
+        "retrieval_contract_success_rate": 0.0,
+        "gated_contract_success_rate": 0.0,
+        "gated_postscript_present_rate": 0.0,
+        "gated_semantic_match_rate": 0.0,
+        "gated_action_nonempty_rate": 0.0
+      },
+      "original_external_aime_eval": {
+        "retrieval_action_nonempty_rate": 0.0,
+        "retrieval_box_present_rate": 0.0,
+        "retrieval_boxed_exact_rate": 1.0,
+        "gated_action_nonempty_rate": 1.0,
+        "gated_box_present_rate": 1.0,
+        "gated_boxed_exact_rate": 1.0
+      }
+    },
+    "control_plus_external_abstraction_and_critic_support_and_aime_stack": {
+      "original_external_primehub_eval": {
+        "critic_bucket_accuracy": -0.1875,
+        "retriever_exact_match_rate": 0.0937,
+        "router_retrieval_only_exact_match_rate": 0.0937,
+        "router_critic_gated_exact_match_rate": 0.1562,
+        "router_critic_gated_route_abstain_rate": -0.5
+      },
+      "original_external_focus_eval": {
+        "critic_bucket_accuracy": -0.0588,
+        "retriever_exact_match_rate": 0.1765,
+        "router_retrieval_only_exact_match_rate": 0.1765,
+        "router_critic_gated_exact_match_rate": 0.2941,
+        "router_critic_gated_route_abstain_rate": -0.647
+      },
+      "original_external_ifeval_eval": {
+        "retrieval_contract_success_rate": 0.0,
+        "gated_contract_success_rate": 0.0,
+        "gated_postscript_present_rate": 0.0,
+        "gated_semantic_match_rate": 0.0,
+        "gated_action_nonempty_rate": 0.0
+      },
+      "original_external_aime_eval": {
+        "retrieval_action_nonempty_rate": 0.0,
+        "retrieval_box_present_rate": 0.0,
+        "retrieval_boxed_exact_rate": 1.0,
+        "gated_action_nonempty_rate": 1.0,
+        "gated_box_present_rate": 1.0,
+        "gated_boxed_exact_rate": 1.0
+      }
+    }
+  },
+  "best_original_variant": "control_plus_external_abstraction_and_critic_support_and_ifeval_abstraction",
+  "best_ifeval_variant": "control_plus_external_abstraction_and_critic_support_and_ifeval_abstraction",
+  "best_aime_variant": "control_plus_external_abstraction_and_critic_support_and_aime_abstraction"
+}

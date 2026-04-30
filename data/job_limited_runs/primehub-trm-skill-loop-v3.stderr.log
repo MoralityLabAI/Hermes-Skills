@@ -1,0 +1,12 @@
+No Prime benchmark replay JSONL files found.
+Traceback (most recent call last):
+  File "C:\projects\Hermes Skills\scripts\primehub_trm_autoresearch_loop.py", line 418, in <module>
+    main()
+  File "C:\projects\Hermes Skills\scripts\primehub_trm_autoresearch_loop.py", line 375, in main
+    rollup_data = run_rollup(rollup_dir, run_roots)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\projects\Hermes Skills\scripts\primehub_trm_autoresearch_loop.py", line 198, in run_rollup
+    subprocess.run(cmd, cwd=str(ROOT), check=True)
+  File "C:\Python311\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['C:\\Python311\\python.exe', 'C:\\projects\\Hermes Skills\\scripts\\run_primehub_trm_rollup.py', '--run-root', 'C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1,C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v1_retry_27b_tail,C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env,C:\\projects\\Hermes Skills\\data\\primehub_eligible_benchmark_v3_tuned_44env', '--work-dir', 'C:\\projects\\Hermes Skills\\data\\primehub_trm_autoresearch\\cycle_01']' returned non-zero exit status 1.
