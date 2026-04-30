@@ -1,6 +1,7 @@
 ﻿# MeTTa/TRM Repair Addendum LaTeX Package
 
 Generated: 2026-04-29
+Integrated draft refresh: 2026-04-30
 
 ## Contents
 
@@ -13,6 +14,17 @@ Generated: 2026-04-29
 - `figures/fig_task_graph_allocation_schema.*`: April 29 task-graph allocation diagram.
 - `figures/fig_camp_gate_task_allocation.*`: noisy camp-gate task-allocation ladder.
 - `tables/camp_gate_noisy_task_allocation.csv`: source counts for the noisy camp-gate figure.
+
+## April 30 Draft Integration
+
+The package now folds in the remaining `research/generated/paper_drafts` material that was not explicit in the April 29 package:
+
+- prior April 16--22 role-aware Hermes TRM baseline and evidence spine;
+- TRM-aware MeTTa composition and eval meta-skill methodology;
+- Intellect-3 logic flow-policy replay, including the C-signature repair policy result;
+- symbolic-closure threshold table and Flow/Circuit TRM framing.
+
+These additions are integrated into `main.tex` as compact paper sections rather than as verbatim draft appendices.
 
 ## April 28 Compactification Addendum
 
