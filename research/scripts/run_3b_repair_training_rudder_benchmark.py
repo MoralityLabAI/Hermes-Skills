@@ -378,8 +378,13 @@ def metta_static_target_action(row: dict[str, Any]) -> str | None:
     state = row.get("state") or {}
     failure_label = str(state.get("failure_label") or "")
     case_id = str(state.get("case_id") or "")
+    bucket = str(row.get("bucket") or "")
+    if bucket in {"repair_success", "partial_repair_improvement"}:
+        return "commit"
     if failure_label in {"exact_positive", "exact", "exact_grid", "exact_json", "exact_tree"}:
         return "commit"
+    if failure_label == "c_signature_fail" and bucket == "repair_failure_or_no_gain":
+        return "reject_or_abstain"
     if failure_label == "signature_pass_cell_fail":
         return "reject_or_abstain"
     if case_id.endswith(":none") or case_id.endswith(":weak_surface"):
