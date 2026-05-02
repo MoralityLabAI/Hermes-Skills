@@ -19,7 +19,7 @@ from pathlib import Path
 from typing import Any
 
 
-ROOT = Path(r"C:\projects\Hermes Skills")
+ROOT = Path(__file__).resolve().parents[2]
 LOCAL_RUNNER = ROOT / "research" / "scripts" / "run_3b_repair_training_rudder_benchmark.py"
 DEFAULT_SPLIT_DIR = ROOT / "research" / "generated" / "near_miss_repair_curriculum" / "splits"
 DEFAULT_OUT_ROOT = (
@@ -58,6 +58,43 @@ def utc_now() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
+def render_chatml_prompt(messages: list[dict[str, str]], *, no_think_prefill: bool) -> str:
+    parts: list[str] = []
+    for message in messages:
+        role = message["role"]
+        content = message["content"]
+        parts.append(f"<|im_start|>{role}\n{content}<|im_end|>\n")
+    parts.append("<|im_start|>assistant\n")
+    if no_think_prefill:
+        parts.append("<think>\n\n</think>\n\n")
+    return "".join(parts)
+
+
+def render_markdown(payload: dict[str, Any]) -> str:
+    lines = [
+        "# Remote repair-training rudder benchmark",
+        "",
+        f"- generated_at_utc: `{payload.get('generated_at_utc')}`",
+        f"- model_scale: `{payload.get('model_scale')}`",
+        f"- model_name: `{payload.get('model_name')}`",
+        f"- base_url: `{payload.get('base_url')}`",
+        f"- split_dir: `{payload.get('split_dir')}`",
+        f"- max_cases: `{payload.get('max_cases')}`",
+        f"- shots: `{payload.get('shots')}`",
+        "",
+        "| arm | n | target_action_accuracy | repair_action_accuracy | joint_accuracy | json_parse_rate |",
+        "| --- | ---: | ---: | ---: | ---: | ---: |",
+    ]
+    for arm, summary in sorted((payload.get("summary_by_arm") or {}).items()):
+        lines.append(
+            f"| `{arm}` | {summary['n']} | {summary['target_action_accuracy']:.4f} | "
+            f"{summary['repair_action_accuracy']:.4f} | {summary['joint_accuracy']:.4f} | "
+            f"{summary['json_parse_rate']:.4f} |"
+        )
+    lines.append("")
+    return "\n".join(lines)
+
+
 def chat_completion(
     *,
     base_url: str,
@@ -67,15 +104,31 @@ def chat_completion(
     temperature: float,
     top_p: float,
     request_timeout: int,
+    no_think_prefill: bool,
+    api_mode: str,
 ) -> tuple[str, dict[str, Any], float]:
-    url = base_url.rstrip("/") + "/chat/completions"
-    payload = {
-        "model": model_name,
-        "messages": messages,
-        "max_tokens": max_tokens,
-        "temperature": temperature,
-        "top_p": top_p,
-    }
+    if api_mode == "completions":
+        url = base_url.rstrip("/") + "/completions"
+        payload = {
+            "model": model_name,
+            "prompt": render_chatml_prompt(messages, no_think_prefill=no_think_prefill),
+            "max_tokens": max_tokens,
+            "temperature": temperature,
+            "top_p": top_p,
+            "stop": ["<|im_end|>"],
+        }
+    else:
+        url = base_url.rstrip("/") + "/chat/completions"
+        request_messages = list(messages)
+        if no_think_prefill:
+            request_messages.append({"role": "assistant", "content": "<think>\n\n</think>\n\n"})
+        payload = {
+            "model": model_name,
+            "messages": request_messages,
+            "max_tokens": max_tokens,
+            "temperature": temperature,
+            "top_p": top_p,
+        }
     body = json.dumps(payload).encode("utf-8")
     request = urllib.request.Request(
         url,
@@ -98,11 +151,15 @@ def chat_completion(
     text = ""
     if choices:
         message = choices[0].get("message") or {}
-        text = str(message.get("content") or choices[0].get("text") or "")
+        text = str(choices[0].get("text") or message.get("content") or "")
+        if text.startswith("<think>\n\n</think>"):
+            text = text.split("</think>", 1)[1].lstrip()
     diagnostics = {
-        "mode": "openai_compatible_chat",
+        "mode": f"openai_compatible_{api_mode}",
         "base_url": base_url,
         "model_name": model_name,
+        "no_think_prefill": no_think_prefill,
+        "api_mode": api_mode,
         "elapsed_sec": round(elapsed, 4),
         "usage": data.get("usage", {}),
     }
@@ -152,6 +209,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--endpoint-probe-timeout", type=int, default=8)
     parser.add_argument("--max-runtime-minutes", type=float, default=0.0)
     parser.add_argument("--arm", action="append", default=None)
+    parser.add_argument(
+        "--no-think-prefill",
+        action="store_true",
+        help="Append an empty assistant think block for Qwen thinking models served without reasoning-off support.",
+    )
+    parser.add_argument("--api-mode", choices=["chat", "completions"], default="chat")
     parser.add_argument("--probe-only", action="store_true")
     parser.add_argument("--skip-endpoint-check", action="store_true")
     return parser.parse_args()
@@ -211,6 +274,8 @@ def run_one_model(args: argparse.Namespace, scale: str) -> Path:
                         temperature=args.temperature,
                         top_p=args.top_p,
                         request_timeout=args.request_timeout,
+                        no_think_prefill=args.no_think_prefill,
+                        api_mode=args.api_mode,
                     )
                     model_parsed = LOCAL.parse_model_json(raw)
                     parsed = {"repair_action": fixed_repair, "target_action": model_parsed["target_action"]}
@@ -224,6 +289,8 @@ def run_one_model(args: argparse.Namespace, scale: str) -> Path:
                     temperature=args.temperature,
                     top_p=args.top_p,
                     request_timeout=args.request_timeout,
+                    no_think_prefill=args.no_think_prefill,
+                    api_mode=args.api_mode,
                 )
                 model_parsed = LOCAL.parse_model_json(raw)
                 parsed = {"repair_action": fixed_repair, "target_action": model_parsed["target_action"]}
@@ -236,6 +303,8 @@ def run_one_model(args: argparse.Namespace, scale: str) -> Path:
                     temperature=args.temperature,
                     top_p=args.top_p,
                     request_timeout=args.request_timeout,
+                    no_think_prefill=args.no_think_prefill,
+                    api_mode=args.api_mode,
                 )
                 parsed = LOCAL.parse_model_json(raw)
 
@@ -289,11 +358,14 @@ def run_one_model(args: argparse.Namespace, scale: str) -> Path:
             "temperature": args.temperature,
             "top_p": args.top_p,
             "request_timeout": args.request_timeout,
+            "no_think_prefill": args.no_think_prefill,
+            "api_mode": args.api_mode,
         },
     }
     LOCAL.write_jsonl(out_dir / "remote_repair_training_rudder.rows.jsonl", results)
     LOCAL.write_json(out_dir / "remote_repair_training_rudder.results.json", payload)
-    (out_dir / "remote_repair_training_rudder.results.md").write_text(LOCAL.render_markdown(payload), encoding="utf-8")
+    renderer = getattr(LOCAL, "render_markdown", render_markdown)
+    (out_dir / "remote_repair_training_rudder.results.md").write_text(renderer(payload), encoding="utf-8")
     return out_dir / "remote_repair_training_rudder.results.json"
 
 

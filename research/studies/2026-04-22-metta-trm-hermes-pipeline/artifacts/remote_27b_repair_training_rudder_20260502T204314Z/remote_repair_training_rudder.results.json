@@ -1,0 +1,87 @@
+{
+  "generated_at_utc": "2026-05-02T20:50:03.365262+00:00",
+  "schema": "remote_repair_training_rudder_benchmark_v1",
+  "model_scale": "27b",
+  "model_name": "Qwen3.5-27B.Q4_K_M.gguf",
+  "base_url": "http://snacksack-ms-7d32.tail3156cd.ts.net:8081/v1",
+  "split_dir": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\generated\\near_miss_repair_curriculum\\splits",
+  "eval_splits": [
+    "val_seen",
+    "holdout_seen",
+    "holdout_unseen_family"
+  ],
+  "max_cases": 0,
+  "shots": 4,
+  "arms": [
+    "raw_3b_rudder",
+    "repair_training_rudder",
+    "metta_action_space_rudder",
+    "metta_static_gate_rudder"
+  ],
+  "summary_by_arm": {
+    "metta_action_space_rudder": {
+      "n": 88,
+      "split_counts": {
+        "val_seen": 34,
+        "holdout_seen": 36,
+        "holdout_unseen_family": 18
+      },
+      "target_action_accuracy": 0.8068,
+      "repair_action_accuracy": 1.0,
+      "joint_accuracy": 0.8068,
+      "json_parse_rate": 1.0,
+      "avg_elapsed_sec": 1.1871,
+      "max_peak_child_ram_mb": 0.0
+    },
+    "metta_static_gate_rudder": {
+      "n": 88,
+      "split_counts": {
+        "val_seen": 34,
+        "holdout_seen": 36,
+        "holdout_unseen_family": 18
+      },
+      "target_action_accuracy": 0.9432,
+      "repair_action_accuracy": 1.0,
+      "joint_accuracy": 0.9432,
+      "json_parse_rate": 1.0,
+      "avg_elapsed_sec": 0.6188,
+      "max_peak_child_ram_mb": 0.0
+    },
+    "raw_3b_rudder": {
+      "n": 88,
+      "split_counts": {
+        "val_seen": 34,
+        "holdout_seen": 36,
+        "holdout_unseen_family": 18
+      },
+      "target_action_accuracy": 0.7614,
+      "repair_action_accuracy": 0.5341,
+      "joint_accuracy": 0.4886,
+      "json_parse_rate": 1.0,
+      "avg_elapsed_sec": 1.1859,
+      "max_peak_child_ram_mb": 0.0
+    },
+    "repair_training_rudder": {
+      "n": 88,
+      "split_counts": {
+        "val_seen": 34,
+        "holdout_seen": 36,
+        "holdout_unseen_family": 18
+      },
+      "target_action_accuracy": 0.9318,
+      "repair_action_accuracy": 0.7955,
+      "joint_accuracy": 0.7955,
+      "json_parse_rate": 1.0,
+      "avg_elapsed_sec": 1.645,
+      "max_peak_child_ram_mb": 0.0
+    }
+  },
+  "request_profile": {
+    "max_tokens": 128,
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "request_timeout": 180,
+    "no_think_prefill": true,
+    "api_mode": "completions"
+  }
+}
