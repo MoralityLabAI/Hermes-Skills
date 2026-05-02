@@ -1,0 +1,83 @@
+{
+  "generated_at_utc": "2026-05-02T22:42:05.148852+00:00",
+  "source": "C:\\projects\\Tesseract\\Tesseract\\data\\normalized_trajectories\\intellect_3_math.jsonl",
+  "receipts": "C:\\projects\\trm_observability_harness\\data\\qwen27b_intellect3_math_hybrid_200\\predictions.jsonl",
+  "base_url": "http://snacksack-ms-7d32.tail3156cd.ts.net:8081/v1",
+  "heldout_rows": 10,
+  "train_examples": 10,
+  "patch": {
+    "skill_name": "Intellect-3-Math-Auditor",
+    "task_prefix": "You are a rigorous mathematical auditor. Your goal is to solve the provided problem and output ONLY the final integer answer. \n\nFollow this strict protocol:\n1. ANALYZE: Identify the core domain (Geometry, Number Theory, Combinatorics, etc.) and key constraints.\n2. SOLVE: Derive the solution step-by-step. Do not guess.\n3. AUDIT: Before finalizing, perform a 'Sanity Check' on your result:\n   - Is the magnitude reasonable? (e.g., if calculating a sum of digits or small combinatorial count, an answer like 100,000 is likely wrong unless justified).\n   - Does it satisfy boundary conditions?\n   - If the problem asks for $a+b+c$ where inputs are small, does your result reflect that scale?\n4. REJECT: If your derived answer seems inconsistent with the problem type or magnitude (e.g., a probability > 1, a negative count), discard it and re-evaluate.\n5. OUTPUT: Return strictly the integer value. No explanations, no LaTeX formatting in the final output line.",
+    "metta_rules": [
+      "(rule math-audit-magnitude (if (and (is-problem-type ?p small-scale) (> ?answer 1000)) (reject-answer ?answer)))",
+      "(rule math-audit-consistency (if (not (satisfies-constraints ?problem ?answer)) (reject-answer ?answer)))",
+      "(rule math-route-decision (if (contains-keyword ?prompt \"find a+b+c\") (use-strict-integer-mode)))"
+    ],
+    "expected_failure_modes": [],
+    "route_policy": "",
+    "paper_read": "Recovered usable fields from a truncated 27B JSON patch."
+  },
+  "summary": {
+    "arms": {
+      "baseline": {
+        "rows": 10,
+        "exact": 0,
+        "exact_rate": 0.0,
+        "avg_latency_seconds": 1.415,
+        "common_actions": {
+          "10": 2,
+          "2014": 1,
+          "12": 1,
+          "144": 1,
+          "15": 1,
+          "2018": 1,
+          "20": 1,
+          "4": 1
+        }
+      },
+      "current_skill": {
+        "rows": 10,
+        "exact": 3,
+        "exact_rate": 0.3,
+        "avg_latency_seconds": 1.5233,
+        "common_actions": {
+          "10": 2,
+          "1023": 1,
+          "1": 1,
+          "17": 1,
+          "176": 1,
+          "2": 1,
+          "1009": 1,
+          "10201": 1
+        }
+      },
+      "metta_self_improved": {
+        "rows": 10,
+        "exact": 2,
+        "exact_rate": 0.2,
+        "avg_latency_seconds": 1.6962,
+        "common_actions": {
+          "10": 6,
+          "1007": 1,
+          "108": 1,
+          "1009": 1,
+          "100": 1
+        }
+      }
+    },
+    "transitions_vs_current_skill": {
+      "fixed_by_metta": 1,
+      "same_outcome": 2,
+      "regressed_by_metta": 2,
+      "changed_wrong_answer": 5
+    },
+    "metta_adoption_gate": {
+      "decision": "reject_patch_keep_current_skill",
+      "current_exact": 3,
+      "metta_exact": 2,
+      "fixed_by_metta": 1,
+      "regressed_by_metta": 2,
+      "rule": "Adopt only when held-out exact improves and fixes are at least regressions."
+    }
+  }
+}

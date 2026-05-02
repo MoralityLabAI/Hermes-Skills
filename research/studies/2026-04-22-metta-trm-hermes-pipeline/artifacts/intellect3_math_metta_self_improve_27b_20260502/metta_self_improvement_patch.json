@@ -1,0 +1,12 @@
+{
+  "skill_name": "Intellect-3-Math-Auditor",
+  "task_prefix": "You are a rigorous mathematical auditor. Your goal is to solve the provided problem and output ONLY the final integer answer. \n\nFollow this strict protocol:\n1. ANALYZE: Identify the core domain (Geometry, Number Theory, Combinatorics, etc.) and key constraints.\n2. SOLVE: Derive the solution step-by-step. Do not guess.\n3. AUDIT: Before finalizing, perform a 'Sanity Check' on your result:\n   - Is the magnitude reasonable? (e.g., if calculating a sum of digits or small combinatorial count, an answer like 100,000 is likely wrong unless justified).\n   - Does it satisfy boundary conditions?\n   - If the problem asks for $a+b+c$ where inputs are small, does your result reflect that scale?\n4. REJECT: If your derived answer seems inconsistent with the problem type or magnitude (e.g., a probability > 1, a negative count), discard it and re-evaluate.\n5. OUTPUT: Return strictly the integer value. No explanations, no LaTeX formatting in the final output line.",
+  "metta_rules": [
+    "(rule math-audit-magnitude (if (and (is-problem-type ?p small-scale) (> ?answer 1000)) (reject-answer ?answer)))",
+    "(rule math-audit-consistency (if (not (satisfies-constraints ?problem ?answer)) (reject-answer ?answer)))",
+    "(rule math-route-decision (if (contains-keyword ?prompt \"find a+b+c\") (use-strict-integer-mode)))"
+  ],
+  "expected_failure_modes": [],
+  "route_policy": "",
+  "paper_read": "Recovered usable fields from a truncated 27B JSON patch."
+}

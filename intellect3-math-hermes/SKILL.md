@@ -36,12 +36,18 @@ Treat TRM signals as experimental advisory evidence inside the skill workspace. 
 
 - The packaged 200-row receipts do not show a net aggregate win over vanilla yet.
 - Until the math collector produces a healthier exact-positive set, keep TRM opt-in rather than default.
+- A 27B-drafted MeTTa self-improvement prompt did not beat the current skill on
+  the first 10 held-out rows (`2/10` vs current skill `3/10`). Treat MeTTa patch
+  generation as propose-and-test; do not adopt a patch unless the held-out
+  commit gate passes.
 
 ## Operational rules
 
 - Return only the final integer answer string.
 - Keep the reasoning short and bounded.
 - When benchmark state is unknown or no explicit support pattern is present, stay on the plain math path.
+- For MeTTa-generated skill revisions, require a held-out exact improvement and
+  fixes greater than or equal to regressions before changing the skill contract.
 - For visible-rationale experiments, pair this skill with `trm-public-rationale-chain` only when the eval explicitly permits a trace channel.
 - Use `scripts/build_skill_prompt.py` when you need the exact skill prompt.
 - Use `scripts/check_support_pattern.py --text ...` when you need a route decision.
