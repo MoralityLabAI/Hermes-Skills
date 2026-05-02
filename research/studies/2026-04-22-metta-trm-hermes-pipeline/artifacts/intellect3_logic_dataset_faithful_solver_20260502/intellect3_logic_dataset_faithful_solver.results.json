@@ -1,0 +1,109 @@
+{
+  "generated_at_utc": "2026-05-02T22:04:46.046473+00:00",
+  "source": "C:\\projects\\Tesseract\\Tesseract\\data\\normalized_trajectories\\intellect_3_logic.jsonl",
+  "predictions": "C:\\projects\\trm_observability_harness\\data\\qwen27b_intellect3_logic_hybrid_200\\predictions.jsonl",
+  "summary": {
+    "generated_at_utc": "2026-05-02T22:04:46.046473+00:00",
+    "rows": 109,
+    "public_constraint_solved_rows": 109,
+    "solution_count_buckets": {
+      "2_solutions": 16,
+      "4_solutions": 1,
+      "unique": 92
+    },
+    "arms": {
+      "public_unique_solver": {
+        "rows": 109,
+        "exact": 92,
+        "exact_rate": 0.844037,
+        "avg_cell_accuracy": 0.844037,
+        "ambiguous_rows": 17,
+        "ambiguous_exact": 0,
+        "abstentions": 17
+      },
+      "public_first_solver": {
+        "rows": 109,
+        "exact": 96,
+        "exact_rate": 0.880734,
+        "avg_cell_accuracy": 0.976391,
+        "ambiguous_rows": 17,
+        "ambiguous_exact": 4,
+        "abstentions": 0
+      },
+      "candidate_project_logic_skill": {
+        "rows": 109,
+        "exact": 98,
+        "exact_rate": 0.899083,
+        "avg_cell_accuracy": 0.980061,
+        "ambiguous_rows": 17,
+        "ambiguous_exact": 6,
+        "abstentions": 0
+      },
+      "candidate_project_logic_skill_trm": {
+        "rows": 109,
+        "exact": 97,
+        "exact_rate": 0.889908,
+        "avg_cell_accuracy": 0.977615,
+        "ambiguous_rows": 17,
+        "ambiguous_exact": 5,
+        "abstentions": 0
+      },
+      "candidate_project_generic_skill": {
+        "rows": 109,
+        "exact": 96,
+        "exact_rate": 0.880734,
+        "avg_cell_accuracy": 0.976391,
+        "ambiguous_rows": 17,
+        "ambiguous_exact": 4,
+        "abstentions": 0
+      },
+      "candidate_project_vanilla": {
+        "rows": 109,
+        "exact": 96,
+        "exact_rate": 0.880734,
+        "avg_cell_accuracy": 0.976391,
+        "ambiguous_rows": 17,
+        "ambiguous_exact": 4,
+        "abstentions": 0
+      },
+      "metta_unique_else_logic_skill_projection": {
+        "rows": 109,
+        "exact": 98,
+        "exact_rate": 0.899083,
+        "avg_cell_accuracy": 0.980061,
+        "ambiguous_rows": 17,
+        "ambiguous_exact": 6,
+        "abstentions": 0
+      },
+      "canonical_oracle_upper_bound": {
+        "rows": 109,
+        "exact": 109,
+        "exact_rate": 1.0,
+        "avg_cell_accuracy": 1.0,
+        "ambiguous_rows": 17,
+        "ambiguous_exact": 17,
+        "abstentions": 0
+      }
+    },
+    "ambiguous_row_ids": [
+      "intellect_3_logic_19",
+      "intellect_3_logic_34",
+      "intellect_3_logic_40",
+      "intellect_3_logic_41",
+      "intellect_3_logic_44",
+      "intellect_3_logic_47",
+      "intellect_3_logic_52",
+      "intellect_3_logic_56",
+      "intellect_3_logic_68",
+      "intellect_3_logic_69",
+      "intellect_3_logic_73",
+      "intellect_3_logic_85",
+      "intellect_3_logic_86",
+      "intellect_3_logic_90",
+      "intellect_3_logic_91",
+      "intellect_3_logic_94",
+      "intellect_3_logic_107"
+    ],
+    "read": "Dataset-faithful public constraints produce at least one valid solution for all rows. They uniquely determine 92/109 benchmark targets; 17 rows have multiple public-valid grids. Candidate-conditioned projection improves benchmark-canonical agreement but cannot fairly recover hidden canonical choices for every ambiguous row without an extra tie-break signal."
+  }
+}
