@@ -40,6 +40,9 @@ Treat TRM signals as experimental advisory evidence inside the skill workspace. 
   the first 10 held-out rows (`2/10` vs current skill `3/10`). Treat MeTTa patch
   generation as propose-and-test; do not adopt a patch unless the held-out
   commit gate passes.
+- The active research direction is the skill-patch gym: maintain a patch bank,
+  evaluate patches on held-out rows, and train a TRM commit/veto controller over
+  patch outcomes.
 
 ## Operational rules
 
@@ -48,6 +51,8 @@ Treat TRM signals as experimental advisory evidence inside the skill workspace. 
 - When benchmark state is unknown or no explicit support pattern is present, stay on the plain math path.
 - For MeTTa-generated skill revisions, require a held-out exact improvement and
   fixes greater than or equal to regressions before changing the skill contract.
+- Prefer patch-bank search over single prompt mutation when trying to improve
+  this skill.
 - For visible-rationale experiments, pair this skill with `trm-public-rationale-chain` only when the eval explicitly permits a trace channel.
 - Use `scripts/build_skill_prompt.py` when you need the exact skill prompt.
 - Use `scripts/check_support_pattern.py --text ...` when you need a route decision.

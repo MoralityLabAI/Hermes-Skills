@@ -33,6 +33,17 @@ commit/veto gate, not as an automatic prompt replacement.  For Intellect-3-Math,
 adopt a self-improved skill patch only when held-out exact improves and fixes
 are at least regressions.
 
+## Skill-patch gym
+
+- Artifact: `research/studies/2026-04-22-metta-trm-hermes-pipeline/artifacts/intellect3_math_skill_patch_gym_20260502/intellect3_math_skill_patch_gym.results.md`
+- Patch bank: raw baseline, incumbent current skill, rejected 27B auditor patch, and four Codex-seeded candidate/controller patches.
+- TRM export: `30` patch commit/veto rows from the observed 10-row smoke.
+- Adoption gate: promote a patch only when held-out exact exceeds incumbent and fixes are at least regressions.
+
+Read: this is the path toward a real gym.  The unit of optimization is no longer
+"one better prompt"; it is a patch-search loop with MeTTa rule generation,
+held-out evaluation, and TRM commit/veto learning.
+
 ## Use
 
 Read these receipts with the local summary JSON files in this folder when you

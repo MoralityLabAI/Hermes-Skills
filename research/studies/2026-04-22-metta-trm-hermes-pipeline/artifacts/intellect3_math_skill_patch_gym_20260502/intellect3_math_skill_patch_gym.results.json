@@ -1,0 +1,697 @@
+{
+  "generated_at_utc": "2026-05-02T23:12:59.964196+00:00",
+  "source_dir": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\intellect3_math_metta_self_improve_27b_20260502",
+  "patch_bank": [
+    {
+      "patch_id": "raw_baseline_no_skill",
+      "source": "control",
+      "status": "comparison_only",
+      "task_prefix": "Solve the math problem. Return only the final integer answer.",
+      "metta_rules": [
+        "(= (patch_status raw_baseline_no_skill) comparison_only)",
+        "(= (adopt_patch raw_baseline_no_skill) False)"
+      ],
+      "intended_failure_modes": [
+        "no_skill_control"
+      ]
+    },
+    {
+      "patch_id": "incumbent_current_skill",
+      "source": "codex_5_4_incumbent",
+      "status": "incumbent",
+      "task_prefix": "Hermes/Intellect-3-Math-v1. Parse the givens, solve with a short candidate path, verify arithmetic consistency, and commit only the final integer answer. No prose, no tags, no markdown.",
+      "metta_rules": [
+        "(= (commit-skill-patch incumbent_current_skill) incumbent-baseline)",
+        "(= (reject-if-no-heldout-gain $patch) True)"
+      ],
+      "intended_failure_modes": [
+        "none_baseline"
+      ]
+    },
+    {
+      "patch_id": "qwen27b_auditor_patch",
+      "source": "live_qwen27b_drafted",
+      "status": "observed_rejected",
+      "task_prefix": "You are a rigorous mathematical auditor. Your goal is to solve the provided problem and output ONLY the final integer answer. \n\nFollow this strict protocol:\n1. ANALYZE: Identify the core domain (Geometry, Number Theory, Combinatorics, etc.) and key constraints.\n2. SOLVE: Derive the solution step-by-step. Do not guess.\n3. AUDIT: Before finalizing, perform a 'Sanity Check' on your result:\n   - Is the magnitude reasonable? (e.g., if calculating a sum of digits or small combinatorial count, an answer like 100,000 is likely wrong unless justified).\n   - Does it satisfy boundary conditions?\n   - If the problem asks for $a+b+c$ where inputs are small, does your result reflect that scale?\n4. REJECT: If your derived answer seems inconsistent with the problem type or magnitude (e.g., a probability > 1, a negative count), discard it and re-evaluate.\n5. OUTPUT: Return strictly the integer value. No explanations, no LaTeX formatting in the final output line.",
+      "metta_rules": [
+        "(rule math-audit-magnitude (if (and (is-problem-type ?p small-scale) (> ?answer 1000)) (reject-answer ?answer)))",
+        "(rule math-audit-consistency (if (not (satisfies-constraints ?problem ?answer)) (reject-answer ?answer)))",
+        "(rule math-route-decision (if (contains-keyword ?prompt \"find a+b+c\") (use-strict-integer-mode)))"
+      ],
+      "intended_failure_modes": [
+        "magnitude_error",
+        "constraint_inconsistency"
+      ]
+    },
+    {
+      "patch_id": "codex_domain_router_v1",
+      "source": "codex_gym_seed",
+      "status": "candidate_pending_live_eval",
+      "task_prefix": "Hermes/Intellect-3-Math-Domain-Router-v1. First privately classify the problem as geometry, number theory, combinatorics, algebra, sequence, or extremal/counting. Use the matching invariant: geometry -> diagram relation and requested expression; number theory -> divisibility/modular constraints; combinatorics -> counted object, overcount correction, and boundary cases; algebra -> solve symbolic relation then substitute. Before output, check answer shape and magnitude against the prompt. Return only the final integer.",
+      "metta_rules": [
+        "(= (route-domain geometry) diagram-expression-check)",
+        "(= (route-domain combinatorics) count-object-overcount-boundary)",
+        "(= (route-domain number_theory) modular-divisibility-check)",
+        "(= (commit-answer $a) (and (integer $a) (shape-valid $a) (magnitude-plausible $a)))"
+      ],
+      "intended_failure_modes": [
+        "wrong_domain_tool",
+        "intermediate_answer_commit",
+        "magnitude_outlier"
+      ]
+    },
+    {
+      "patch_id": "codex_answer_shape_verifier_v1",
+      "source": "codex_gym_seed",
+      "status": "candidate_pending_live_eval",
+      "task_prefix": "Hermes/Intellect-3-Math-Answer-Shape-Verifier-v1. Solve privately, but treat the final requested quantity as a contract. If the prompt asks for a+b+c, compute a,b,c explicitly before summing. If it asks for maximum k, prove the bound and construction mentally. If it asks for a count, verify non-negativity, integrality, and small cases. Reject answers that look like copied constants or raw intermediate values. Return only the final integer.",
+      "metta_rules": [
+        "(= (requested-form a+b+c) require-components-before-sum)",
+        "(= (requested-form maximum-k) require-upper-lower-bound)",
+        "(= (requested-form count) require-integral-nonnegative-smallcase)",
+        "(= (veto-answer copied_constant) True)"
+      ],
+      "intended_failure_modes": [
+        "answer_shape_mismatch",
+        "copied_constant",
+        "missing_bound_check"
+      ]
+    },
+    {
+      "patch_id": "codex_slow_path_trigger_v1",
+      "source": "codex_gym_seed",
+      "status": "candidate_pending_live_eval",
+      "task_prefix": "Hermes/Intellect-3-Math-Slow-Path-Trigger-v1. Use concise private reasoning. Trigger a slow path when the problem contains triangle, probability, maximum, all possible, modulo, polynomial, sequence, or large exponent wording. On slow path, identify the invariant and one verification equation before committing. Do not emit the first plausible integer. Return only the final integer answer.",
+      "metta_rules": [
+        "(= (slow-path-trigger triangle) geometry-invariant)",
+        "(= (slow-path-trigger maximum) extremal-bound)",
+        "(= (slow-path-trigger large_exponent) modular-or-log-scale-check)",
+        "(= (reject-first-plausible-integer) True)"
+      ],
+      "intended_failure_modes": [
+        "fast_guess",
+        "large_number_hallucination",
+        "unverified_extremal_answer"
+      ]
+    },
+    {
+      "patch_id": "codex_patch_commit_controller_v1",
+      "source": "codex_gym_seed",
+      "status": "controller_not_solver",
+      "task_prefix": "Hermes/Intellect-3-Math-Patch-Commit-Controller-v1. Generate no new math answer unless the candidate passes answer-shape, magnitude, sign, and domain-invariant checks. If candidate confidence is low, prefer the incumbent skill output over a speculative mutation. Return only the selected integer.",
+      "metta_rules": [
+        "(= (adopt-patch $p) (and (> (heldout-exact $p) (heldout-exact incumbent)) (>= (fixes $p) (regressions $p))))",
+        "(= (candidate-commit $answer) (and (shape-valid $answer) (not (magnitude-outlier $answer))))",
+        "(= (fallback) incumbent_current_skill)"
+      ],
+      "intended_failure_modes": [
+        "patch_overfit",
+        "regression_without_fix",
+        "candidate_selection_error"
+      ]
+    }
+  ],
+  "observed": {
+    "arms": {
+      "baseline": {
+        "rows": 10,
+        "exact": 0,
+        "exact_rate": 0.0,
+        "common_actions": {
+          "10": 2,
+          "2014": 1,
+          "12": 1,
+          "144": 1,
+          "15": 1,
+          "2018": 1,
+          "20": 1,
+          "4": 1
+        }
+      },
+      "current_skill": {
+        "rows": 10,
+        "exact": 3,
+        "exact_rate": 0.3,
+        "common_actions": {
+          "10": 2,
+          "1023": 1,
+          "1": 1,
+          "17": 1,
+          "176": 1,
+          "2": 1,
+          "1009": 1,
+          "10201": 1
+        }
+      },
+      "metta_self_improved": {
+        "rows": 10,
+        "exact": 2,
+        "exact_rate": 0.2,
+        "common_actions": {
+          "10": 6,
+          "1007": 1,
+          "108": 1,
+          "1009": 1,
+          "100": 1
+        }
+      }
+    },
+    "transitions_qwen27b_patch_vs_incumbent": {
+      "fixed_by_candidate": 1,
+      "same_outcome": 2,
+      "regressed_by_candidate": 2,
+      "changed_wrong_answer": 5
+    }
+  },
+  "adoption_gate": {
+    "incumbent_patch_id": "incumbent_current_skill",
+    "observed_candidate_patch_id": "qwen27b_auditor_patch",
+    "decision": "reject_patch_keep_current_skill",
+    "incumbent_exact": 3,
+    "candidate_exact": 2,
+    "rule": "adopt only if candidate held-out exact exceeds incumbent and fixed_by_candidate >= regressed_by_candidate"
+  },
+  "trm_rows": [
+    {
+      "row_id": "intellect_3_math_1",
+      "env_family": "intellect3_math_skill_patch_gym",
+      "patch_id": "raw_baseline_no_skill",
+      "arm": "baseline",
+      "state": {
+        "candidate_action": "2014",
+        "incumbent_action": "1023",
+        "candidate_exact": false,
+        "incumbent_exact": false
+      },
+      "label": "reject_patch",
+      "reason": "not_better_than_incumbent",
+      "target": {
+        "adoption_action": "reject_or_keep_incumbent"
+      }
+    },
+    {
+      "row_id": "intellect_3_math_1",
+      "env_family": "intellect3_math_skill_patch_gym",
+      "patch_id": "incumbent_current_skill",
+      "arm": "current_skill",
+      "state": {
+        "candidate_action": "1023",
+        "incumbent_action": "1023",
+        "candidate_exact": false,
+        "incumbent_exact": false
+      },
+      "label": "incumbent",
+      "reason": "baseline_for_patch_search",
+      "target": {
+        "adoption_action": "reject_or_keep_incumbent"
+      }
+    },
+    {
+      "row_id": "intellect_3_math_1",
+      "env_family": "intellect3_math_skill_patch_gym",
+      "patch_id": "qwen27b_auditor_patch",
+      "arm": "metta_self_improved",
+      "state": {
+        "candidate_action": "1007",
+        "incumbent_action": "1023",
+        "candidate_exact": true,
+        "incumbent_exact": false
+      },
+      "label": "commit_patch",
+      "reason": "fixes_incumbent_miss",
+      "target": {
+        "adoption_action": "commit"
+      }
+    },
+    {
+      "row_id": "intellect_3_math_11",
+      "env_family": "intellect3_math_skill_patch_gym",
+      "patch_id": "raw_baseline_no_skill",
+      "arm": "baseline",
+      "state": {
+        "candidate_action": "15",
+        "incumbent_action": "2",
+        "candidate_exact": false,
+        "incumbent_exact": false
+      },
+      "label": "reject_patch",
+      "reason": "not_better_than_incumbent",
+      "target": {
+        "adoption_action": "reject_or_keep_incumbent"
+      }
+    },
+    {
+      "row_id": "intellect_3_math_11",
+      "env_family": "intellect3_math_skill_patch_gym",
+      "patch_id": "incumbent_current_skill",
+      "arm": "current_skill",
+      "state": {
+        "candidate_action": "2",
+        "incumbent_action": "2",
+        "candidate_exact": false,
+        "incumbent_exact": false
+      },
+      "label": "incumbent",
+      "reason": "baseline_for_patch_search",
+      "target": {
+        "adoption_action": "reject_or_keep_incumbent"
+      }
+    },
+    {
+      "row_id": "intellect_3_math_11",
+      "env_family": "intellect3_math_skill_patch_gym",
+      "patch_id": "qwen27b_auditor_patch",
+      "arm": "metta_self_improved",
+      "state": {
+        "candidate_action": "10",
+        "incumbent_action": "2",
+        "candidate_exact": false,
+        "incumbent_exact": false
+      },
+      "label": "reject_patch",
+      "reason": "not_better_than_incumbent",
+      "target": {
+        "adoption_action": "reject_or_keep_incumbent"
+      }
+    },
+    {
+      "row_id": "intellect_3_math_13",
+      "env_family": "intellect3_math_skill_patch_gym",
+      "patch_id": "raw_baseline_no_skill",
+      "arm": "baseline",
+      "state": {
+        "candidate_action": "2018",
+        "incumbent_action": "1009",
+        "candidate_exact": false,
+        "incumbent_exact": false
+      },
+      "label": "reject_patch",
+      "reason": "not_better_than_incumbent",
+      "target": {
+        "adoption_action": "reject_or_keep_incumbent"
+      }
+    },
+    {
+      "row_id": "intellect_3_math_13",
+      "env_family": "intellect3_math_skill_patch_gym",
+      "patch_id": "incumbent_current_skill",
+      "arm": "current_skill",
+      "state": {
+        "candidate_action": "1009",
+        "incumbent_action": "1009",
+        "candidate_exact": false,
+        "incumbent_exact": false
+      },
+      "label": "incumbent",
+      "reason": "baseline_for_patch_search",
+      "target": {
+        "adoption_action": "reject_or_keep_incumbent"
+      }
+    },
+    {
+      "row_id": "intellect_3_math_13",
+      "env_family": "intellect3_math_skill_patch_gym",
+      "patch_id": "qwen27b_auditor_patch",
+      "arm": "metta_self_improved",
+      "state": {
+        "candidate_action": "1009",
+        "incumbent_action": "1009",
+        "candidate_exact": false,
+        "incumbent_exact": false
+      },
+      "label": "reject_patch",
+      "reason": "same_as_incumbent",
+      "target": {
+        "adoption_action": "reject_or_keep_incumbent"
+      }
+    },
+    {
+      "row_id": "intellect_3_math_15",
+      "env_family": "intellect3_math_skill_patch_gym",
+      "patch_id": "raw_baseline_no_skill",
+      "arm": "baseline",
+      "state": {
+        "candidate_action": "20",
+        "incumbent_action": "10",
+        "candidate_exact": false,
+        "incumbent_exact": false
+      },
+      "label": "reject_patch",
+      "reason": "not_better_than_incumbent",
+      "target": {
+        "adoption_action": "reject_or_keep_incumbent"
+      }
+    },
+    {
+      "row_id": "intellect_3_math_15",
+      "env_family": "intellect3_math_skill_patch_gym",
+      "patch_id": "incumbent_current_skill",
+      "arm": "current_skill",
+      "state": {
+        "candidate_action": "10",
+        "incumbent_action": "10",
+        "candidate_exact": false,
+        "incumbent_exact": false
+      },
+      "label": "incumbent",
+      "reason": "baseline_for_patch_search",
+      "target": {
+        "adoption_action": "reject_or_keep_incumbent"
+      }
+    },
+    {
+      "row_id": "intellect_3_math_15",
+      "env_family": "intellect3_math_skill_patch_gym",
+      "patch_id": "qwen27b_auditor_patch",
+      "arm": "metta_self_improved",
+      "state": {
+        "candidate_action": "100",
+        "incumbent_action": "10",
+        "candidate_exact": false,
+        "incumbent_exact": false
+      },
+      "label": "reject_patch",
+      "reason": "not_better_than_incumbent",
+      "target": {
+        "adoption_action": "reject_or_keep_incumbent"
+      }
+    },
+    {
+      "row_id": "intellect_3_math_17",
+      "env_family": "intellect3_math_skill_patch_gym",
+      "patch_id": "raw_baseline_no_skill",
+      "arm": "baseline",
+      "state": {
+        "candidate_action": "4",
+        "incumbent_action": "10201",
+        "candidate_exact": false,
+        "incumbent_exact": false
+      },
+      "label": "reject_patch",
+      "reason": "not_better_than_incumbent",
+      "target": {
+        "adoption_action": "reject_or_keep_incumbent"
+      }
+    },
+    {
+      "row_id": "intellect_3_math_17",
+      "env_family": "intellect3_math_skill_patch_gym",
+      "patch_id": "incumbent_current_skill",
+      "arm": "current_skill",
+      "state": {
+        "candidate_action": "10201",
+        "incumbent_action": "10201",
+        "candidate_exact": false,
+        "incumbent_exact": false
+      },
+      "label": "incumbent",
+      "reason": "baseline_for_patch_search",
+      "target": {
+        "adoption_action": "reject_or_keep_incumbent"
+      }
+    },
+    {
+      "row_id": "intellect_3_math_17",
+      "env_family": "intellect3_math_skill_patch_gym",
+      "patch_id": "qwen27b_auditor_patch",
+      "arm": "metta_self_improved",
+      "state": {
+        "candidate_action": "10",
+        "incumbent_action": "10201",
+        "candidate_exact": false,
+        "incumbent_exact": false
+      },
+      "label": "reject_patch",
+      "reason": "not_better_than_incumbent",
+      "target": {
+        "adoption_action": "reject_or_keep_incumbent"
+      }
+    },
+    {
+      "row_id": "intellect_3_math_19",
+      "env_family": "intellect3_math_skill_patch_gym",
+      "patch_id": "raw_baseline_no_skill",
+      "arm": "baseline",
+      "state": {
+        "candidate_action": "3",
+        "incumbent_action": "8",
+        "candidate_exact": false,
+        "incumbent_exact": true
+      },
+      "label": "reject_patch",
+      "reason": "regresses_incumbent_hit",
+      "target": {
+        "adoption_action": "reject_or_keep_incumbent"
+      }
+    },
+    {
+      "row_id": "intellect_3_math_19",
+      "env_family": "intellect3_math_skill_patch_gym",
+      "patch_id": "incumbent_current_skill",
+      "arm": "current_skill",
+      "state": {
+        "candidate_action": "8",
+        "incumbent_action": "8",
+        "candidate_exact": true,
+        "incumbent_exact": true
+      },
+      "label": "incumbent",
+      "reason": "baseline_for_patch_search",
+      "target": {
+        "adoption_action": "reject_or_keep_incumbent"
+      }
+    },
+    {
+      "row_id": "intellect_3_math_19",
+      "env_family": "intellect3_math_skill_patch_gym",
+      "patch_id": "qwen27b_auditor_patch",
+      "arm": "metta_self_improved",
+      "state": {
+        "candidate_action": "10",
+        "incumbent_action": "8",
+        "candidate_exact": false,
+        "incumbent_exact": true
+      },
+      "label": "reject_patch",
+      "reason": "regresses_incumbent_hit",
+      "target": {
+        "adoption_action": "reject_or_keep_incumbent"
+      }
+    },
+    {
+      "row_id": "intellect_3_math_3",
+      "env_family": "intellect3_math_skill_patch_gym",
+      "patch_id": "raw_baseline_no_skill",
+      "arm": "baseline",
+      "state": {
+        "candidate_action": "12",
+        "incumbent_action": "10",
+        "candidate_exact": false,
+        "incumbent_exact": true
+      },
+      "label": "reject_patch",
+      "reason": "regresses_incumbent_hit",
+      "target": {
+        "adoption_action": "reject_or_keep_incumbent"
+      }
+    },
+    {
+      "row_id": "intellect_3_math_3",
+      "env_family": "intellect3_math_skill_patch_gym",
+      "patch_id": "incumbent_current_skill",
+      "arm": "current_skill",
+      "state": {
+        "candidate_action": "10",
+        "incumbent_action": "10",
+        "candidate_exact": true,
+        "incumbent_exact": true
+      },
+      "label": "incumbent",
+      "reason": "baseline_for_patch_search",
+      "target": {
+        "adoption_action": "reject_or_keep_incumbent"
+      }
+    },
+    {
+      "row_id": "intellect_3_math_3",
+      "env_family": "intellect3_math_skill_patch_gym",
+      "patch_id": "qwen27b_auditor_patch",
+      "arm": "metta_self_improved",
+      "state": {
+        "candidate_action": "10",
+        "incumbent_action": "10",
+        "candidate_exact": true,
+        "incumbent_exact": true
+      },
+      "label": "reject_patch",
+      "reason": "same_as_incumbent",
+      "target": {
+        "adoption_action": "reject_or_keep_incumbent"
+      }
+    },
+    {
+      "row_id": "intellect_3_math_5",
+      "env_family": "intellect3_math_skill_patch_gym",
+      "patch_id": "raw_baseline_no_skill",
+      "arm": "baseline",
+      "state": {
+        "candidate_action": "10",
+        "incumbent_action": "1",
+        "candidate_exact": false,
+        "incumbent_exact": true
+      },
+      "label": "reject_patch",
+      "reason": "regresses_incumbent_hit",
+      "target": {
+        "adoption_action": "reject_or_keep_incumbent"
+      }
+    },
+    {
+      "row_id": "intellect_3_math_5",
+      "env_family": "intellect3_math_skill_patch_gym",
+      "patch_id": "incumbent_current_skill",
+      "arm": "current_skill",
+      "state": {
+        "candidate_action": "1",
+        "incumbent_action": "1",
+        "candidate_exact": true,
+        "incumbent_exact": true
+      },
+      "label": "incumbent",
+      "reason": "baseline_for_patch_search",
+      "target": {
+        "adoption_action": "reject_or_keep_incumbent"
+      }
+    },
+    {
+      "row_id": "intellect_3_math_5",
+      "env_family": "intellect3_math_skill_patch_gym",
+      "patch_id": "qwen27b_auditor_patch",
+      "arm": "metta_self_improved",
+      "state": {
+        "candidate_action": "10",
+        "incumbent_action": "1",
+        "candidate_exact": false,
+        "incumbent_exact": true
+      },
+      "label": "reject_patch",
+      "reason": "regresses_incumbent_hit",
+      "target": {
+        "adoption_action": "reject_or_keep_incumbent"
+      }
+    },
+    {
+      "row_id": "intellect_3_math_7",
+      "env_family": "intellect3_math_skill_patch_gym",
+      "patch_id": "raw_baseline_no_skill",
+      "arm": "baseline",
+      "state": {
+        "candidate_action": "10",
+        "incumbent_action": "17",
+        "candidate_exact": false,
+        "incumbent_exact": false
+      },
+      "label": "reject_patch",
+      "reason": "not_better_than_incumbent",
+      "target": {
+        "adoption_action": "reject_or_keep_incumbent"
+      }
+    },
+    {
+      "row_id": "intellect_3_math_7",
+      "env_family": "intellect3_math_skill_patch_gym",
+      "patch_id": "incumbent_current_skill",
+      "arm": "current_skill",
+      "state": {
+        "candidate_action": "17",
+        "incumbent_action": "17",
+        "candidate_exact": false,
+        "incumbent_exact": false
+      },
+      "label": "incumbent",
+      "reason": "baseline_for_patch_search",
+      "target": {
+        "adoption_action": "reject_or_keep_incumbent"
+      }
+    },
+    {
+      "row_id": "intellect_3_math_7",
+      "env_family": "intellect3_math_skill_patch_gym",
+      "patch_id": "qwen27b_auditor_patch",
+      "arm": "metta_self_improved",
+      "state": {
+        "candidate_action": "10",
+        "incumbent_action": "17",
+        "candidate_exact": false,
+        "incumbent_exact": false
+      },
+      "label": "reject_patch",
+      "reason": "not_better_than_incumbent",
+      "target": {
+        "adoption_action": "reject_or_keep_incumbent"
+      }
+    },
+    {
+      "row_id": "intellect_3_math_9",
+      "env_family": "intellect3_math_skill_patch_gym",
+      "patch_id": "raw_baseline_no_skill",
+      "arm": "baseline",
+      "state": {
+        "candidate_action": "144",
+        "incumbent_action": "176",
+        "candidate_exact": false,
+        "incumbent_exact": false
+      },
+      "label": "reject_patch",
+      "reason": "not_better_than_incumbent",
+      "target": {
+        "adoption_action": "reject_or_keep_incumbent"
+      }
+    },
+    {
+      "row_id": "intellect_3_math_9",
+      "env_family": "intellect3_math_skill_patch_gym",
+      "patch_id": "incumbent_current_skill",
+      "arm": "current_skill",
+      "state": {
+        "candidate_action": "176",
+        "incumbent_action": "176",
+        "candidate_exact": false,
+        "incumbent_exact": false
+      },
+      "label": "incumbent",
+      "reason": "baseline_for_patch_search",
+      "target": {
+        "adoption_action": "reject_or_keep_incumbent"
+      }
+    },
+    {
+      "row_id": "intellect_3_math_9",
+      "env_family": "intellect3_math_skill_patch_gym",
+      "patch_id": "qwen27b_auditor_patch",
+      "arm": "metta_self_improved",
+      "state": {
+        "candidate_action": "108",
+        "incumbent_action": "176",
+        "candidate_exact": false,
+        "incumbent_exact": false
+      },
+      "label": "reject_patch",
+      "reason": "not_better_than_incumbent",
+      "target": {
+        "adoption_action": "reject_or_keep_incumbent"
+      }
+    }
+  ],
+  "next_run": {
+    "recommended_holdout_rows": 20,
+    "recommended_patches": [
+      "codex_domain_router_v1",
+      "codex_answer_shape_verifier_v1",
+      "codex_slow_path_trigger_v1",
+      "codex_patch_commit_controller_v1"
+    ],
+    "execution": "evaluate each patch independently; checkpoint each row-arm result; promote only Pareto-improving patches",
+    "resource_note": "snacksack 27B server reset during an uncapped 20-row expansion; keep live batches small and resumable."
+  }
+}
