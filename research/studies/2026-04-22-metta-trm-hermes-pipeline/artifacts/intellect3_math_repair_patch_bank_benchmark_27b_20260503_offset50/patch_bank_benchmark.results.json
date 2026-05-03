@@ -1,0 +1,83 @@
+{
+  "generated_at_utc": "2026-05-03T01:35:35.335943+00:00",
+  "source": "C:\\projects\\Tesseract\\Tesseract\\data\\normalized_trajectories\\intellect_3_math.jsonl",
+  "patch_bank": "research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\intellect3_math_repair_patch_bank_20260503\\patch_bank_v3.json",
+  "base_url": "http://snacksack-ms-7d32.tail3156cd.ts.net:8081/v1",
+  "holdout_rows": 10,
+  "start_offset": 50,
+  "completed_calls": 30,
+  "patch_count": 3,
+  "summary": {
+    "arms": {
+      "raw_baseline_no_skill": {
+        "rows": 10,
+        "exact": 0,
+        "exact_rate": 0.0,
+        "errors": 0,
+        "avg_latency_seconds": 1.7025,
+        "common_actions": {
+          "10": 4,
+          "18": 1,
+          "150": 1,
+          "1998": 1,
+          "1025": 1,
+          "14": 1,
+          "2013": 1
+        }
+      },
+      "incumbent_current_skill": {
+        "rows": 10,
+        "exact": 2,
+        "exact_rate": 0.2,
+        "errors": 0,
+        "avg_latency_seconds": 1.7194,
+        "common_actions": {
+          "12": 2,
+          "2": 1,
+          "150": 1,
+          "1998": 1,
+          "1025": 1,
+          "1": 1,
+          "29": 1,
+          "2013": 1
+        }
+      },
+      "codex_near_miss_repair_v3": {
+        "rows": 10,
+        "exact": 0,
+        "exact_rate": 0.0,
+        "errors": 0,
+        "avg_latency_seconds": 1.7957,
+        "common_actions": {
+          "10": 4,
+          "19": 1,
+          "12": 1,
+          "15": 1,
+          "1998": 1,
+          "1025": 1,
+          "2013": 1
+        }
+      }
+    },
+    "adoption_gates": {
+      "raw_baseline_no_skill": {
+        "decision": "comparison_only",
+        "fixes_vs_incumbent": 0,
+        "regressions_vs_incumbent": 2,
+        "changed_wrong_vs_incumbent": 4,
+        "candidate_exact": 0,
+        "incumbent_exact": 2
+      },
+      "codex_near_miss_repair_v3": {
+        "decision": "reject_patch",
+        "fixes_vs_incumbent": 0,
+        "regressions_vs_incumbent": 2,
+        "changed_wrong_vs_incumbent": 4,
+        "candidate_exact": 0,
+        "incumbent_exact": 2
+      }
+    },
+    "best_patch_by_exact": "incumbent_current_skill",
+    "read": "Patch-bank benchmark over held-out rows; adoption is gated against the incumbent, not raw exact alone."
+  }
+}

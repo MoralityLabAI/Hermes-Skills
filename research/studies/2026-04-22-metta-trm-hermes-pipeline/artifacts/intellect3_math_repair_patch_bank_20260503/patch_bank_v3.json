@@ -1,0 +1,263 @@
+[
+  {
+    "patch_id": "raw_baseline_no_skill",
+    "source": "control",
+    "status": "comparison_only",
+    "task_prefix": "Solve the math problem. Return only the final integer answer.",
+    "metta_rules": [
+      "(= (patch_status raw_baseline_no_skill) comparison_only)",
+      "(= (adopt_patch raw_baseline_no_skill) False)"
+    ],
+    "intended_failure_modes": [
+      "no_skill_control"
+    ]
+  },
+  {
+    "patch_id": "incumbent_current_skill",
+    "source": "codex_5_4_incumbent",
+    "status": "incumbent",
+    "task_prefix": "Hermes/Intellect-3-Math-v1. Parse the givens, solve with a short candidate path, verify arithmetic consistency, and commit only the final integer answer. No prose, no tags, no markdown.",
+    "metta_rules": [
+      "(= (commit-skill-patch incumbent_current_skill) incumbent-baseline)",
+      "(= (reject-if-no-heldout-gain $patch) True)"
+    ],
+    "intended_failure_modes": [
+      "none_baseline"
+    ]
+  },
+  {
+    "patch_id": "qwen27b_auditor_patch",
+    "source": "live_qwen27b_drafted",
+    "status": "observed_rejected",
+    "task_prefix": "You are a rigorous mathematical auditor. Your goal is to solve the provided problem and output ONLY the final integer answer. \n\nFollow this strict protocol:\n1. ANALYZE: Identify the core domain (Geometry, Number Theory, Combinatorics, etc.) and key constraints.\n2. SOLVE: Derive the solution step-by-step. Do not guess.\n3. AUDIT: Before finalizing, perform a 'Sanity Check' on your result:\n   - Is the magnitude reasonable? (e.g., if calculating a sum of digits or small combinatorial count, an answer like 100,000 is likely wrong unless justified).\n   - Does it satisfy boundary conditions?\n   - If the problem asks for $a+b+c$ where inputs are small, does your result reflect that scale?\n4. REJECT: If your derived answer seems inconsistent with the problem type or magnitude (e.g., a probability > 1, a negative count), discard it and re-evaluate.\n5. OUTPUT: Return strictly the integer value. No explanations, no LaTeX formatting in the final output line.",
+    "metta_rules": [
+      "(rule math-audit-magnitude (if (and (is-problem-type ?p small-scale) (> ?answer 1000)) (reject-answer ?answer)))",
+      "(rule math-audit-consistency (if (not (satisfies-constraints ?problem ?answer)) (reject-answer ?answer)))",
+      "(rule math-route-decision (if (contains-keyword ?prompt \"find a+b+c\") (use-strict-integer-mode)))"
+    ],
+    "intended_failure_modes": [
+      "magnitude_error",
+      "constraint_inconsistency"
+    ]
+  },
+  {
+    "patch_id": "codex_domain_router_v1",
+    "source": "codex_gym_seed",
+    "status": "candidate_pending_live_eval",
+    "task_prefix": "Hermes/Intellect-3-Math-Domain-Router-v1. First privately classify the problem as geometry, number theory, combinatorics, algebra, sequence, or extremal/counting. Use the matching invariant: geometry -> diagram relation and requested expression; number theory -> divisibility/modular constraints; combinatorics -> counted object, overcount correction, and boundary cases; algebra -> solve symbolic relation then substitute. Before output, check answer shape and magnitude against the prompt. Return only the final integer.",
+    "metta_rules": [
+      "(= (route-domain geometry) diagram-expression-check)",
+      "(= (route-domain combinatorics) count-object-overcount-boundary)",
+      "(= (route-domain number_theory) modular-divisibility-check)",
+      "(= (commit-answer $a) (and (integer $a) (shape-valid $a) (magnitude-plausible $a)))"
+    ],
+    "intended_failure_modes": [
+      "wrong_domain_tool",
+      "intermediate_answer_commit",
+      "magnitude_outlier"
+    ]
+  },
+  {
+    "patch_id": "codex_answer_shape_verifier_v1",
+    "source": "codex_gym_seed",
+    "status": "candidate_pending_live_eval",
+    "task_prefix": "Hermes/Intellect-3-Math-Answer-Shape-Verifier-v1. Solve privately, but treat the final requested quantity as a contract. If the prompt asks for a+b+c, compute a,b,c explicitly before summing. If it asks for maximum k, prove the bound and construction mentally. If it asks for a count, verify non-negativity, integrality, and small cases. Reject answers that look like copied constants or raw intermediate values. Return only the final integer.",
+    "metta_rules": [
+      "(= (requested-form a+b+c) require-components-before-sum)",
+      "(= (requested-form maximum-k) require-upper-lower-bound)",
+      "(= (requested-form count) require-integral-nonnegative-smallcase)",
+      "(= (veto-answer copied_constant) True)"
+    ],
+    "intended_failure_modes": [
+      "answer_shape_mismatch",
+      "copied_constant",
+      "missing_bound_check"
+    ]
+  },
+  {
+    "patch_id": "codex_slow_path_trigger_v1",
+    "source": "codex_gym_seed",
+    "status": "candidate_pending_live_eval",
+    "task_prefix": "Hermes/Intellect-3-Math-Slow-Path-Trigger-v1. Use concise private reasoning. Trigger a slow path when the problem contains triangle, probability, maximum, all possible, modulo, polynomial, sequence, or large exponent wording. On slow path, identify the invariant and one verification equation before committing. Do not emit the first plausible integer. Return only the final integer answer.",
+    "metta_rules": [
+      "(= (slow-path-trigger triangle) geometry-invariant)",
+      "(= (slow-path-trigger maximum) extremal-bound)",
+      "(= (slow-path-trigger large_exponent) modular-or-log-scale-check)",
+      "(= (reject-first-plausible-integer) True)"
+    ],
+    "intended_failure_modes": [
+      "fast_guess",
+      "large_number_hallucination",
+      "unverified_extremal_answer"
+    ]
+  },
+  {
+    "patch_id": "codex_patch_commit_controller_v1",
+    "source": "codex_gym_seed",
+    "status": "controller_not_solver",
+    "task_prefix": "Hermes/Intellect-3-Math-Patch-Commit-Controller-v1. Generate no new math answer unless the candidate passes answer-shape, magnitude, sign, and domain-invariant checks. If candidate confidence is low, prefer the incumbent skill output over a speculative mutation. Return only the selected integer.",
+    "metta_rules": [
+      "(= (adopt-patch $p) (and (> (heldout-exact $p) (heldout-exact incumbent)) (>= (fixes $p) (regressions $p))))",
+      "(= (candidate-commit $answer) (and (shape-valid $answer) (not (magnitude-outlier $answer))))",
+      "(= (fallback) incumbent_current_skill)"
+    ],
+    "intended_failure_modes": [
+      "patch_overfit",
+      "regression_without_fix",
+      "candidate_selection_error"
+    ]
+  },
+  {
+    "patch_id": "codex_metta_theorem_router_v2",
+    "source": "codex_diversity_seed",
+    "status": "candidate_pending_live_eval",
+    "task_prefix": "Hermes/Intellect-3-Math-MeTTa-Theorem-Router-v2. Use private theorem routing before calculation. If the problem is a locker/open-skip process, model the survivor/elimination order on powers of two. If it is a binomial ending-in-zeros problem, compute p-adic valuations rather than expanding. If it is a circle/sequence sign constraint, reduce to recurrence or alternating-block feasibility. If it is a grid connected-polyomino guarantee, use coloring/packing lower and upper bounds. If it is orthogonal-diagonal geometry, introduce coordinates and ratio variables. Return only the final integer.",
+    "metta_rules": [
+      "(= (route locker-skip-process) josephus-elimination-invariant)",
+      "(= (route binomial-trailing-zeroes) p-adic-valuation-search)",
+      "(= (route circle-recurrence-positivity) alternating-block-bound)",
+      "(= (route connected-polyomino-guarantee) coloring-packing-bound)",
+      "(= (route perpendicular-diagonals-geometry) coordinate-ratio-solve)"
+    ],
+    "intended_failure_modes": [
+      "missing_known_invariant",
+      "wrong_domain_route",
+      "fast_guess"
+    ]
+  },
+  {
+    "patch_id": "codex_finite_table_builder_v2",
+    "source": "codex_diversity_seed",
+    "status": "candidate_pending_live_eval",
+    "task_prefix": "Hermes/Intellect-3-Math-Finite-Table-Builder-v2. For finite processes, privately build the first small instances and infer the invariant only after the table is consistent. Use this for lockers, sequences, grids, games, maximum counts, and all-possible wording. Prefer a verified recurrence or period over a direct guess. Commit only the final requested integer.",
+    "metta_rules": [
+      "(= (finite-process ?p) build-small-instance-table)",
+      "(= (commit ?answer) (and (matches-small-cases ?answer) (matches-requested-form ?answer)))",
+      "(= (veto ?answer) first-plausible-pattern-without-table)"
+    ],
+    "intended_failure_modes": [
+      "pattern_without_small_cases",
+      "off_by_one",
+      "wrong_requested_quantity"
+    ]
+  },
+  {
+    "patch_id": "codex_backward_constraint_solver_v2",
+    "source": "codex_diversity_seed",
+    "status": "candidate_pending_live_eval",
+    "task_prefix": "Hermes/Intellect-3-Math-Backward-Constraint-Solver-v2. Start from the requested final quantity and work backward through the constraints. For maximum/minimum questions, prove both a construction and a blocking bound. For expressions m+n or a+b+c, solve the components first, then combine. For large constants in the prompt, do not copy them; use them only as constraints. Return only the final integer.",
+    "metta_rules": [
+      "(= (requested maximum) require-upper-bound-and-construction)",
+      "(= (requested component-sum) solve-components-before-sum)",
+      "(= (large-constant-in-prompt) constraint-not-answer)",
+      "(= (commit ?answer) bound-and-construction-agree)"
+    ],
+    "intended_failure_modes": [
+      "copied_prompt_constant",
+      "missing_bound",
+      "component_sum_error"
+    ]
+  },
+  {
+    "patch_id": "codex_modular_valuation_solver_v2",
+    "source": "codex_diversity_seed",
+    "status": "candidate_pending_live_eval",
+    "task_prefix": "Hermes/Intellect-3-Math-Modular-Valuation-Solver-v2. For divisibility, last digits, trailing zeroes, large exponents, binomial coefficients, and modular constraints, use valuations and residues. For trailing zeroes require enough factors of both 2 and 5; search n by inequalities before testing nearby values. Avoid decimal expansion. Return only the final integer.",
+    "metta_rules": [
+      "(= (trailing-zeroes ?k) require-min-v2-v5-at-least-k)",
+      "(= (binomial-coefficient) use-factorial-valuation-differences)",
+      "(= (large-exponent) reduce-by-modulus-or-period)",
+      "(= (commit ?n) nearby-values-checked)"
+    ],
+    "intended_failure_modes": [
+      "decimal_expansion_guess",
+      "missing_factor_five",
+      "modular_period_error"
+    ]
+  },
+  {
+    "patch_id": "codex_coordinate_geometry_solver_v2",
+    "source": "codex_diversity_seed",
+    "status": "candidate_pending_live_eval",
+    "task_prefix": "Hermes/Intellect-3-Math-Coordinate-Geometry-Solver-v2. For geometry with perpendicular, parallel, diagonal, trapezoid, circle, or ratio language, privately assign coordinates and variables. Translate orthogonality into dot products or slope products, simplify ratios symbolically, and only then compute the requested integer such as m+n. Return only the final integer.",
+    "metta_rules": [
+      "(= (parallel-perpendicular-geometry) coordinate-system)",
+      "(= (orthogonal-lines) dot-product-zero)",
+      "(= (ratio-expression) symbolic-ratio-before-number)",
+      "(= (fraction-answer m/n) output-m-plus-n)"
+    ],
+    "intended_failure_modes": [
+      "diagram_guess",
+      "ratio_inversion",
+      "fraction_component_error"
+    ]
+  },
+  {
+    "patch_id": "codex_extremal_construction_solver_v2",
+    "source": "codex_diversity_seed",
+    "status": "candidate_pending_live_eval",
+    "task_prefix": "Hermes/Intellect-3-Math-Extremal-Construction-Solver-v2. For largest, smallest, maximal, minimal, guarantee, or determine wording, solve as an extremal proof. First find a construction achieving the candidate value, then find the obstruction that forbids one more or one less. Prefer invariant bounds such as parity, coloring, pigeonhole, recurrence sign, and divisibility. Return only the final integer.",
+    "metta_rules": [
+      "(= (extremal-problem) construction-plus-obstruction)",
+      "(= (guarantee-problem) adversarial-bound)",
+      "(= (circle-sequence) recurrence-sign-bound)",
+      "(= (grid-connected-figure) coloring-or-packing-bound)"
+    ],
+    "intended_failure_modes": [
+      "one_sided_extremal_proof",
+      "guarantee_misread",
+      "off_by_one"
+    ]
+  },
+  {
+    "patch_id": "codex_near_miss_repair_v3",
+    "source": "codex_repair_curriculum_seed",
+    "status": "candidate_pending_live_eval",
+    "task_prefix": "Hermes/Intellect-3-Math-Near-Miss-Repair-v3. You are repairing common semi-failed answers. Before committing, check whether your answer is a familiar attractor copied from the prompt or an off-by-one boundary. For 2m circular strict recurrence/positivity problems, do not answer m or m+0 by symmetry until strict wraparound is checked; the strict cycle usually loses one slot. For power-of-two locker/open-skip processes, do not answer N-1 merely because it is the last index before N; simulate closed-locker elimination and allow the endpoint N to survive. For binomial trailing-zero questions, reject 1024-style powers of two unless the factor-5 valuation is sufficient. Return only the final integer.",
+    "metta_rules": [
+      "(= (repair circle-strict-recurrence m) check-m-minus-one)",
+      "(= (repair power-two-locker N) allow-endpoint-survivor)",
+      "(= (repair binomial-zero-attractor power-of-two) require-factor-five)",
+      "(= (veto copied-boundary-attractor) True)"
+    ],
+    "intended_failure_modes": [
+      "off_by_one_attractor",
+      "copied_power_of_two",
+      "strict_cycle_wraparound"
+    ]
+  },
+  {
+    "patch_id": "codex_trm_repair_gate_v3",
+    "source": "codex_repair_curriculum_seed",
+    "status": "candidate_pending_live_eval",
+    "task_prefix": "Hermes/Intellect-3-Math-TRM-Repair-Gate-v3. Treat the first plausible integer as a candidate from a weak solver. Run this repair gate privately: (1) Is the candidate a number appearing in the prompt? If yes, require an independent derivation. (2) Is the candidate one away from a natural boundary such as 2^k-1, n/2, n/2+1, or a grid side length? If yes, test the adjacent values. (3) Is the candidate a power of two in a problem requiring factors of 5 or divisibility by 10^k? If yes, reject it. (4) If a strict inequality wraps around a cycle, reserve slack for the wraparound. Return only the repaired final integer.",
+    "metta_rules": [
+      "(= (candidate-source prompt-constant) require-independent-derivation)",
+      "(= (candidate-near-boundary) test-adjacent-values)",
+      "(= (power-of-two-for-trailing-zeroes) reject-unless-v5-sufficient)",
+      "(= (strict-cycle) require-wraparound-slack)"
+    ],
+    "intended_failure_modes": [
+      "prompt_constant_copy",
+      "boundary_neighbor_error",
+      "valuation_mismatch"
+    ]
+  },
+  {
+    "patch_id": "codex_pattern_micro_solver_v3",
+    "source": "codex_repair_curriculum_seed",
+    "status": "candidate_pending_live_eval",
+    "task_prefix": "Hermes/Intellect-3-Math-Pattern-Micro-Solver-v3. Use these compact micro-solvers when the text matches. Locker hallway with repeatedly opening every other closed locker: solve as elimination order on remaining closed lockers, not as ordinary Josephus on all labels; endpoints can be last. Circle labels with each number larger than the sum of the preceding two: propagate signs around the cycle and count the maximum positives after strict wraparound. Small connected figure cut from an (s+1)x(s+1) grid with s cells: use the guarantee/packing invariant, not the area quotient. Binomial n choose 4 trailing zeroes: compute v2 and v5 of n(n-1)(n-2)(n-3)/24 and search the first n with both at least 4. Return only the integer.",
+    "metta_rules": [
+      "(= (micro-solver locker-hallway) closed-locker-elimination)",
+      "(= (micro-solver strict-circle-labels) sign-propagation-cycle)",
+      "(= (micro-solver connected-grid-guarantee) packing-invariant)",
+      "(= (micro-solver binomial-four-zeroes) valuation-window-search)"
+    ],
+    "intended_failure_modes": [
+      "wrong_named_algorithm",
+      "area_quotient_trap",
+      "valuation_window_error"
+    ]
+  }
+]

@@ -47,6 +47,10 @@ Treat TRM signals as experimental advisory evidence inside the skill workspace. 
   no whole patch cleared the global adoption gate.  Row-level signal exists but
   is thin: only `8/40` rows had any exact answer across the patch bank, so the
   next lever is more diverse patch generation, not just selector tuning.
+- A focused near-miss repair patch fixed typed attractor errors on one shard
+  (`2/10` vs incumbent `1/10`) but failed validation on the next shard (`0/10`
+  vs incumbent `2/10`).  Use repair patches as row-level commit/veto training
+  data, not as global skill replacements.
 
 ## Operational rules
 
@@ -59,6 +63,8 @@ Treat TRM signals as experimental advisory evidence inside the skill workspace. 
   this skill.
 - Distinguish global patch adoption from row-level patch selection.  A patch can
   be globally rejected while still providing positive row-level commit examples.
+- Treat near-miss repair rules as conditional tools.  Require a route/gate that
+  detects the matching failure pattern before applying them.
 - For visible-rationale experiments, pair this skill with `trm-public-rationale-chain` only when the eval explicitly permits a trace channel.
 - Use `scripts/build_skill_prompt.py` when you need the exact skill prompt.
 - Use `scripts/check_support_pattern.py --text ...` when you need a route decision.

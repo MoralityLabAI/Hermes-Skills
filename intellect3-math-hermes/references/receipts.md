@@ -68,6 +68,25 @@ negative, and row-level candidate selection has only weak signal.  The next TRM
 target is a per-row patch selector/commit gate, but it needs more diverse
 candidate generators before selector learning can pay off.
 
+## Diverse and repair patch probes
+
+- Diverse bank artifact: `research/studies/2026-04-22-metta-trm-hermes-pipeline/artifacts/intellect3_math_diverse_patch_bank_20260503/patch_bank_v2.results.md`
+- Diverse bank live shard: `research/studies/2026-04-22-metta-trm-hermes-pipeline/artifacts/intellect3_math_diverse_patch_bank_benchmark_27b_20260503_offset40/patch_bank_benchmark.results.md`
+- Diverse bank result: verifier-like and solver-procedure variants remained
+  flat on offset40; most arms scored `1/10`, and only one row had any exact
+  answer.
+- Repair bank artifact: `research/studies/2026-04-22-metta-trm-hermes-pipeline/artifacts/intellect3_math_repair_patch_bank_20260503/patch_bank_v3.results.md`
+- Repair focused shard: `research/studies/2026-04-22-metta-trm-hermes-pipeline/artifacts/intellect3_math_repair_patch_bank_benchmark_27b_20260503_offset40/patch_bank_benchmark.results.md`
+- Repair validation shard: `research/studies/2026-04-22-metta-trm-hermes-pipeline/artifacts/intellect3_math_repair_patch_bank_benchmark_27b_20260503_offset50/patch_bank_benchmark.results.md`
+- Cross-validation summary: `research/studies/2026-04-22-metta-trm-hermes-pipeline/artifacts/intellect3_math_repair_patch_validation_27b_20260503/repair_patch_validation.results.md`
+
+Read: near-miss repair is the first prompt family in this run that produced a
+clear local lift (`2/10` vs incumbent `1/10`) by repairing `1009 -> 1008` on a
+strict circular recurrence row and `1023 -> 1024` on a locker elimination row.
+It did not validate as a global prompt (`0/10` vs incumbent `2/10` on the next
+shard).  This strengthens the methodology claim: semi-failed outputs are useful
+for repair TRM data, but the repair action must be gated by applicability.
+
 ## Use
 
 Read these receipts with the local summary JSON files in this folder when you

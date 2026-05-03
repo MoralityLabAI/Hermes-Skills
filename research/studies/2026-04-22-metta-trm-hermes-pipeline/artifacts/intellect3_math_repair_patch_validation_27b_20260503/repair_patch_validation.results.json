@@ -1,0 +1,27 @@
+{
+  "generated_at_utc": "2026-05-03T01:37:00Z",
+  "model": "Qwen3.5-27B.Q4_K_M.gguf",
+  "shards": [
+    {
+      "name": "offset40",
+      "artifact": "research/studies/2026-04-22-metta-trm-hermes-pipeline/artifacts/intellect3_math_repair_patch_bank_benchmark_27b_20260503_offset40/patch_bank_benchmark.results.md",
+      "rows": 10,
+      "incumbent_exact": 1,
+      "near_miss_repair_exact": 2,
+      "fixes_vs_incumbent": 2,
+      "regressions_vs_incumbent": 1,
+      "decision": "row_level_signal_only"
+    },
+    {
+      "name": "offset50",
+      "artifact": "research/studies/2026-04-22-metta-trm-hermes-pipeline/artifacts/intellect3_math_repair_patch_bank_benchmark_27b_20260503_offset50/patch_bank_benchmark.results.md",
+      "rows": 10,
+      "incumbent_exact": 2,
+      "near_miss_repair_exact": 0,
+      "fixes_vs_incumbent": 0,
+      "regressions_vs_incumbent": 2,
+      "decision": "reject_global_patch"
+    }
+  ],
+  "read": "Near-miss repair prompts can fix typed semi-failed outputs, but validation shows they are not safe as global skill replacements. Train a per-row TRM commit/veto gate."
+}

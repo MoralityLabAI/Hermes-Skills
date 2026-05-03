@@ -1,0 +1,132 @@
+{
+  "generated_at_utc": "2026-05-03T01:34:15.376441+00:00",
+  "source": "C:\\projects\\Tesseract\\Tesseract\\data\\normalized_trajectories\\intellect_3_math.jsonl",
+  "patch_bank": "research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\intellect3_math_repair_patch_bank_20260503\\patch_bank_v3.json",
+  "base_url": "http://snacksack-ms-7d32.tail3156cd.ts.net:8081/v1",
+  "holdout_rows": 10,
+  "start_offset": 40,
+  "completed_calls": 50,
+  "patch_count": 5,
+  "summary": {
+    "arms": {
+      "raw_baseline_no_skill": {
+        "rows": 10,
+        "exact": 0,
+        "exact_rate": 0.0,
+        "errors": 0,
+        "avg_latency_seconds": 1.7289,
+        "common_actions": {
+          "1024": 3,
+          "14": 1,
+          "1009": 1,
+          "1": 1,
+          "1023": 1,
+          "108": 1,
+          "10": 1,
+          "102": 1
+        }
+      },
+      "incumbent_current_skill": {
+        "rows": 10,
+        "exact": 1,
+        "exact_rate": 0.1,
+        "errors": 0,
+        "avg_latency_seconds": 1.6234,
+        "common_actions": {
+          "1023": 2,
+          "1024": 2,
+          "120": 2,
+          "103": 1,
+          "1009": 1,
+          "102": 1,
+          "132": 1
+        }
+      },
+      "codex_near_miss_repair_v3": {
+        "rows": 10,
+        "exact": 2,
+        "exact_rate": 0.2,
+        "errors": 0,
+        "avg_latency_seconds": 1.6513,
+        "common_actions": {
+          "1024": 4,
+          "14": 1,
+          "1008": 1,
+          "1": 1,
+          "102": 1,
+          "10": 1,
+          "170": 1
+        }
+      },
+      "codex_trm_repair_gate_v3": {
+        "rows": 10,
+        "exact": 1,
+        "exact_rate": 0.1,
+        "errors": 0,
+        "avg_latency_seconds": 1.9813,
+        "common_actions": {
+          "100": 2,
+          "108": 2,
+          "1024": 2,
+          "109": 1,
+          "1009": 1,
+          "102": 1,
+          "1023": 1
+        }
+      },
+      "codex_pattern_micro_solver_v3": {
+        "rows": 10,
+        "exact": 1,
+        "exact_rate": 0.1,
+        "errors": 0,
+        "avg_latency_seconds": 2.0043,
+        "common_actions": {
+          "102": 2,
+          "109": 1,
+          "1009": 1,
+          "1023": 1,
+          "104": 1,
+          "108": 1,
+          "1608924": 1,
+          "100": 1
+        }
+      }
+    },
+    "adoption_gates": {
+      "raw_baseline_no_skill": {
+        "decision": "comparison_only",
+        "fixes_vs_incumbent": 0,
+        "regressions_vs_incumbent": 1,
+        "changed_wrong_vs_incumbent": 5,
+        "candidate_exact": 0,
+        "incumbent_exact": 1
+      },
+      "codex_near_miss_repair_v3": {
+        "decision": "adopt_patch",
+        "fixes_vs_incumbent": 2,
+        "regressions_vs_incumbent": 1,
+        "changed_wrong_vs_incumbent": 5,
+        "candidate_exact": 2,
+        "incumbent_exact": 1
+      },
+      "codex_trm_repair_gate_v3": {
+        "decision": "reject_patch",
+        "fixes_vs_incumbent": 0,
+        "regressions_vs_incumbent": 0,
+        "changed_wrong_vs_incumbent": 6,
+        "candidate_exact": 1,
+        "incumbent_exact": 1
+      },
+      "codex_pattern_micro_solver_v3": {
+        "decision": "reject_patch",
+        "fixes_vs_incumbent": 0,
+        "regressions_vs_incumbent": 0,
+        "changed_wrong_vs_incumbent": 7,
+        "candidate_exact": 1,
+        "incumbent_exact": 1
+      }
+    },
+    "best_patch_by_exact": "codex_near_miss_repair_v3",
+    "read": "Patch-bank benchmark over held-out rows; adoption is gated against the incumbent, not raw exact alone."
+  }
+}
