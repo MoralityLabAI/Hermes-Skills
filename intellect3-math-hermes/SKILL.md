@@ -43,6 +43,10 @@ Treat TRM signals as experimental advisory evidence inside the skill workspace. 
 - The active research direction is the skill-patch gym: maintain a patch bank,
   evaluate patches on held-out rows, and train a TRM commit/veto controller over
   patch outcomes.
+- A 20-row live 27B patch-bank benchmark kept the incumbent ahead (`4/20`);
+  no whole patch cleared the global adoption gate.  There was still row-level
+  signal: one Qwen auditor output fixed an incumbent miss, so train/select at
+  row level before promoting any whole prompt patch.
 
 ## Operational rules
 
@@ -53,6 +57,8 @@ Treat TRM signals as experimental advisory evidence inside the skill workspace. 
   fixes greater than or equal to regressions before changing the skill contract.
 - Prefer patch-bank search over single prompt mutation when trying to improve
   this skill.
+- Distinguish global patch adoption from row-level patch selection.  A patch can
+  be globally rejected while still providing positive row-level commit examples.
 - For visible-rationale experiments, pair this skill with `trm-public-rationale-chain` only when the eval explicitly permits a trace channel.
 - Use `scripts/build_skill_prompt.py` when you need the exact skill prompt.
 - Use `scripts/check_support_pattern.py --text ...` when you need a route decision.

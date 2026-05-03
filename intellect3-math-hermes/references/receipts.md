@@ -44,6 +44,25 @@ Read: this is the path toward a real gym.  The unit of optimization is no longer
 "one better prompt"; it is a patch-search loop with MeTTa rule generation,
 held-out evaluation, and TRM commit/veto learning.
 
+## Patch-bank live benchmark
+
+- Artifact: `research/studies/2026-04-22-metta-trm-hermes-pipeline/artifacts/intellect3_math_patch_bank_benchmark_27b_20260502_combined20/combined_patch_bank_benchmark.results.md`
+- Model: `Qwen3.5-27B-Q4_K_M.gguf` on snacksack.
+- Unique held-out rows: `20`
+- Calls: `140`
+- Incumbent current skill: `4/20`
+- Qwen 27B auditor patch: `3/20`
+- Raw baseline: `2/20`
+- Codex candidate patches: `1/20` to `2/20`
+- Global adoption result: no candidate patch clears the incumbent gate.
+- Row-level export: `140` patch commit/veto rows, including one row-level
+  `commit_patch` where the Qwen auditor patch fixes an incumbent miss.
+
+Read: this supports the gym direction.  Whole-patch adoption is currently
+negative, but row-level candidate selection has signal.  The next TRM target is
+therefore a per-row patch selector/commit gate rather than a global prompt
+replacement.
+
 ## Use
 
 Read these receipts with the local summary JSON files in this folder when you
