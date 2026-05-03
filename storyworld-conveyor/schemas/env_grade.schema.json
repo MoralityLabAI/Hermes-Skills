@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EnvGradeRecord",
+  "type": "object",
+  "required": [
+    "run_id",
+    "stage_id",
+    "encounter_id",
+    "completion_id",
+    "action_validity",
+    "constraint_violations",
+    "env_score"
+  ],
+  "properties": {
+    "run_id": {"type": "string"},
+    "stage_id": {"type": "string"},
+    "encounter_id": {"type": "string"},
+    "completion_id": {"type": "string"},
+    "action_validity": {"type": "integer"},
+    "constraint_violations": {"type": "integer"},
+    "target_count": {"type": "integer"},
+    "target_hits": {"type": "integer"},
+    "state_delta_count": {"type": "integer"},
+    "success_flag": {"type": "integer"},
+    "penalties": {"type": "number"},
+    "env_score": {"type": "number"},
+    "normalized": {"type": "object"},
+    "details": {"type": "object"}
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EncounterRecord",
+  "type": "object",
+  "required": [
+    "encounter_id",
+    "family",
+    "difficulty_tier",
+    "title",
+    "encounter_spec",
+    "canonical_state",
+    "allowed_actions",
+    "constraints"
+  ],
+  "properties": {
+    "encounter_id": {"type": "string"},
+    "family": {"type": "string"},
+    "difficulty_tier": {"type": "string"},
+    "title": {"type": "string"},
+    "encounter_spec": {"type": "string"},
+    "canonical_state": {"type": "object"},
+    "allowed_actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "label"],
+        "properties": {
+          "id": {"type": "string"},
+          "label": {"type": "string"},
+          "state_deltas": {"type": "object"},
+          "tags": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "constraints": {"type": "array", "items": {"type": "string"}},
+    "required_mentions": {"type": "array", "items": {"type": "string"}},
+    "forbidden_terms": {"type": "array", "items": {"type": "string"}},
+    "stakeholders": {"type": "array", "items": {"type": "string"}},
+    "target_action_ids": {"type": "array", "items": {"type": "string"}},
+    "metadata": {"type": "object"}
+  }
+}

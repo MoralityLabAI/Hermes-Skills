@@ -1,0 +1,19 @@
+{
+  "artifact_root": "C:/projects/GPTStoryworld/hermes-skills/storyworld-conveyor/hrm_runs",
+  "run_id": "hrm_trainer_hermes_safe",
+  "template_root": "C:/projects/HRM-re/experiments/hrm_trainer_template",
+  "trainer_script": "C:/projects/HRM-re/experiments/hrm_trainer_template/run_trainer.ps1",
+  "base_trainer_config": "C:/projects/HRM-re/experiments/hrm_trainer_template/trainer_config_safe.json",
+  "output_dir": "C:/projects/HRM-re/experiments/hrm_trainer_template/outputs",
+  "trainer_overrides": {
+    "dry_run": true,
+    "max_steps": 80,
+    "max_runtime_seconds": 180,
+    "train": {
+      "type": "conductor",
+      "data": "C:/projects/HRM-re/experiments/storyworld_conductor_hrm/data_conductor.jsonl",
+      "out": "C:/projects/HRM-re/experiments/hrm_trainer_template/outputs/hrm_trainer_hermes_safe/model.pt",
+      "resume_latest": true
+    }
+  }
+}

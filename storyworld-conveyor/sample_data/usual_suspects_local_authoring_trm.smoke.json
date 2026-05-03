@@ -1,0 +1,191 @@
+{
+  "storyworld": {
+    "label": "usual_suspects_rebalance_smoke",
+    "mc_report": "C:\\projects\\GPTStoryworld\\hermes-skills\\storyworld-conveyor\\reports\\usual_suspects_mc_smoke.txt",
+    "quality_report": "C:\\projects\\GPTStoryworld\\hermes-skills\\storyworld-conveyor\\factory_runs\\the_usual_suspects_qwen35_2b_run\\reports\\quality_gate.json",
+    "mode": "monte_carlo_rebalance"
+  },
+  "focus_metrics": [
+    {
+      "name": "dead_end_rate_pct",
+      "actual": 100.0,
+      "target_max": 0.0,
+      "direction": "decrease"
+    },
+    {
+      "name": "options_per_encounter",
+      "actual": 3.0,
+      "target": 3.2,
+      "direction": "fix"
+    },
+    {
+      "name": "reactions_per_option",
+      "actual": 2.0,
+      "target": 2.5,
+      "direction": "fix"
+    },
+    {
+      "name": "effects_per_reaction",
+      "actual": 4.0,
+      "target": 4.5,
+      "direction": "fix"
+    },
+    {
+      "name": "avg_encounter_words",
+      "actual": 29.0,
+      "target": 50.0,
+      "direction": "fix"
+    },
+    {
+      "name": "avg_reaction_words",
+      "actual": 16.0,
+      "target": 20.0,
+      "direction": "fix"
+    },
+    {
+      "name": "pvalue_refs",
+      "actual": 0.0,
+      "target": 1.0,
+      "direction": "fix"
+    },
+    {
+      "name": "p2value_refs",
+      "actual": 0.0,
+      "target": 1.0,
+      "direction": "fix"
+    },
+    {
+      "name": "effect_operator_variety",
+      "actual": 1.0,
+      "target": 2.0,
+      "direction": "fix"
+    },
+    {
+      "name": "effect_operator_dominance",
+      "actual": 1.0,
+      "target": 0.92,
+      "direction": "fix"
+    },
+    {
+      "name": "effect_script_complexity",
+      "actual": 1.0,
+      "target": 1.2,
+      "direction": "fix"
+    },
+    {
+      "name": "desirability_script_complexity",
+      "actual": 1.0,
+      "target": 1.2,
+      "direction": "fix"
+    },
+    {
+      "name": "super_secret_reachability",
+      "actual": 0.0,
+      "target": 0.25,
+      "direction": "fix"
+    }
+  ],
+  "quality_failures": [
+    "options_per_encounter",
+    "reactions_per_option",
+    "effects_per_reaction",
+    "avg_encounter_words",
+    "avg_reaction_words",
+    "pvalue_refs",
+    "p2value_refs",
+    "effect_operator_variety",
+    "effect_operator_dominance",
+    "effect_script_complexity",
+    "desirability_script_complexity",
+    "super_secret_reachability"
+  ],
+  "priority_fixes": [
+    "Increase local specificity with slightly richer option and reaction phrasing.",
+    "Prefer denser effect payloads rather than flat single-axis updates.",
+    "Reduce pure NUDGE monoculture when possible by varying local effect structure.",
+    "If natural, add at least one desirability reference using P(...).",
+    "If natural, add at least one second-order desirability reference using P2(...).",
+    "Avoid making all local consequences feel terminal or convergent; preserve continuation pressure.",
+    "Do not let every reaction in page_scene_01 collapse into the same narrative consequence tone.",
+    "Do not let every reaction in page_scene_02 collapse into the same narrative consequence tone."
+  ],
+  "phase_guidance": {
+    "plan": [
+      "Translate global failures into encounter-local edits only.",
+      "Prefer the smallest revision that improves continuity, consequence clarity, or operator variety."
+    ],
+    "encounter_build": [
+      "Emit only a valid ENC block with stable ids.",
+      "Change text and scripts only where the local fix hints justify it.",
+      "Do not apply broad whole-world rebalance ideas directly inside one encounter."
+    ],
+    "local_fix_hints": [
+      "Increase local specificity with slightly richer option and reaction phrasing.",
+      "Prefer denser effect payloads rather than flat single-axis updates.",
+      "Reduce pure NUDGE monoculture when possible by varying local effect structure.",
+      "If natural, add at least one desirability reference using P(...).",
+      "If natural, add at least one second-order desirability reference using P2(...).",
+      "Avoid making all local consequences feel terminal or convergent; preserve continuation pressure.",
+      "Do not let every reaction in page_scene_01 collapse into the same narrative consequence tone.",
+      "Do not let every reaction in page_scene_02 collapse into the same narrative consequence tone."
+    ]
+  },
+  "local_targets": [
+    {
+      "encounter_id": "page_scene_01",
+      "turn_span": "0..0",
+      "reaction_count": 6,
+      "option_labels": [
+        "flip the room on harbor",
+        "hold back on harbor",
+        "press harder on harbor"
+      ],
+      "consequences": [
+        "wild"
+      ],
+      "local_fix_hints": [
+        "Increase local specificity with slightly richer option and reaction phrasing.",
+        "Prefer denser effect payloads rather than flat single-axis updates.",
+        "Reduce pure NUDGE monoculture when possible by varying local effect structure.",
+        "If natural, add at least one desirability reference using P(...).",
+        "If natural, add at least one second-order desirability reference using P2(...).",
+        "Avoid making all local consequences feel terminal or convergent; preserve continuation pressure.",
+        "Do not let every reaction in page_scene_01 collapse into the same narrative consequence tone."
+      ]
+    },
+    {
+      "encounter_id": "page_scene_02",
+      "turn_span": "0..0",
+      "reaction_count": 6,
+      "option_labels": [
+        "flip the room on burn",
+        "hold back on burn",
+        "press harder on burn"
+      ],
+      "consequences": [
+        "wild"
+      ],
+      "local_fix_hints": [
+        "Increase local specificity with slightly richer option and reaction phrasing.",
+        "Prefer denser effect payloads rather than flat single-axis updates.",
+        "Reduce pure NUDGE monoculture when possible by varying local effect structure.",
+        "If natural, add at least one desirability reference using P(...).",
+        "If natural, add at least one second-order desirability reference using P2(...).",
+        "Avoid making all local consequences feel terminal or convergent; preserve continuation pressure.",
+        "Do not let every reaction in page_scene_02 collapse into the same narrative consequence tone."
+      ]
+    }
+  ],
+  "recommended_overrides": {
+    "style": {
+      "scene_scope": "local",
+      "novelty": "low",
+      "format_discipline": "strict"
+    },
+    "repair_build_output": true
+  },
+  "notes": [
+    "Derived from global Monte Carlo and quality failures, narrowed to the requested encounters.",
+    "Use this packet for local authoring guidance, not whole-world rebalance planning."
+  ]
+}

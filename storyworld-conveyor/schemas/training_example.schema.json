@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TrainingExample",
+  "type": "object",
+  "required": ["split", "encounter_id", "completion_id", "task_type"],
+  "properties": {
+    "split": {"type": "string"},
+    "encounter_id": {"type": "string"},
+    "completion_id": {"type": "string"},
+    "task_type": {"type": "string"},
+    "source_paths": {"type": "object"},
+    "prompt": {"type": "string"},
+    "response": {"type": "string"},
+    "candidate": {"type": "string"},
+    "labels": {"type": "object"},
+    "critique": {"type": "object"}
+  }
+}

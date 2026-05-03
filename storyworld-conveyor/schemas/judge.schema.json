@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "JudgeRecord",
+  "type": "object",
+  "required": [
+    "run_id",
+    "stage_id",
+    "encounter_id",
+    "completion_id",
+    "judge_provider",
+    "judge_model",
+    "judge_score"
+  ],
+  "properties": {
+    "run_id": {"type": "string"},
+    "stage_id": {"type": "string"},
+    "encounter_id": {"type": "string"},
+    "completion_id": {"type": "string"},
+    "judge_provider": {"type": "string"},
+    "judge_model": {"type": "string"},
+    "coherence": {"type": "number"},
+    "ethical_adequacy": {"type": "number"},
+    "least_bad_tradeoff_quality": {"type": "number"},
+    "stakeholder_awareness": {"type": "number"},
+    "uncertainty_handling": {"type": "number"},
+    "concise_reasoning_quality": {"type": "number"},
+    "judge_score": {"type": "number"},
+    "raw_output_path": {"type": "string"},
+    "notes": {"type": "string"},
+    "metadata": {"type": "object"}
+  }
+}

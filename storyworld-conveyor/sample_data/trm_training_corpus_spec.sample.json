@@ -1,0 +1,36 @@
+{
+  "output_dir": "C:/projects/GPTStoryworld/hermes-skills/storyworld-conveyor/trm_corpus/sample",
+  "dedupe": true,
+  "train_ratio": 0.9,
+  "shuffle_seed": 7,
+  "sources": [
+    {
+      "name": "storyworld-trm-play",
+      "type": "trm_play_root",
+      "path": "D:/Research_Engine/runs/storyworld_trm_setup/storyworld-trm-setup-sample"
+    },
+    {
+      "name": "oracle-reasoning",
+      "type": "jsonl",
+      "path": "C:/projects/GPTStoryworld/results/20260205_170220/codex_oracle_reasoning.jsonl",
+      "mode": "reasoning_trace",
+      "state_fields": [
+        "question",
+        "state",
+        "world_state",
+        "observation"
+      ],
+      "tools_field": "candidate_tools",
+      "tools_default": [
+        "WAIT"
+      ],
+      "action_field": "chosen_action",
+      "action_default": "WAIT",
+      "meta_fields": [
+        "run_id",
+        "episode",
+        "turn"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+     1|{
+     2|  "project": "macbeth_overnight_grind_v2_secret_endings",
+     3|  "target_world": "C:/projects/GPTStoryworld/storyworlds/by-week/2026-W11/validated_macbeth.json", 
+     4|  "target_endings": {
+     5|    "standard": 4,
+     6|    "secret": 2,
+     7|    "super_secret": 1
+     8|  },
+     9|  "super_secret_concept": "A witches-driven SCP-like inversion of the setting where the castle and moor behave like a containment breach of prophecy itself.",
+    10|  "structural_beats": [
+    11|    "materialize and sequence spools",
+    12|    "thread character tensions through encounter blocks", 
+    13|    "add 3+ new secret options per story arc with explicit secret-ending routes",
+    14|    "diversify desirability formulas beyond simple nudges: exponential threat curves, loyalty erosion functions, honor redemption costs",
+    15|    "add location-bound after-effects: prophetic resonance, haunting attachments, cursed geometry",
+    16|    "warp metric distance around fear, loyalty, honor, transgression, and prophecy",
+    17|    "run Monte Carlo probes for secret route viability",
+    18|    "run multiple-paths analysis for ending diversity",
+    19|    "rebalance based on reports before export"
+    20|  ],
+    21|  "secret_ending_requirements": {
+    22|    "min_secret_options_per_arc": 3,
+    23|    "min_secret_ending_prereqs": 2,
+    24|    "secret_effect_variety": ["location", "character", "prophecy", "fate"],
+    25|    "desirability_complexity": "curves_and_thresholds"
+    26|  },
+    27|  "overnight_constraints": {
+    28|    "max_query_minutes": 30,
+    29|    "loop_count": 3,
+    30|    "log_root_windows": "D:/Research_Engine/Hermes-experiment-logs", 
+    31|    "budget_usd": 4.0,
+    32|    "target_input_tokens": 40000000,
+    33|    "target_output_tokens": 5000000
+    34|  }
+    35|}
+    36|

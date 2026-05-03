@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CompletionRecord",
+  "type": "object",
+  "required": [
+    "run_id",
+    "stage_id",
+    "encounter_id",
+    "completion_id",
+    "model_name",
+    "model_provider",
+    "prompt_path",
+    "raw_prompt",
+    "completion_text"
+  ],
+  "properties": {
+    "run_id": {"type": "string"},
+    "stage_id": {"type": "string"},
+    "encounter_id": {"type": "string"},
+    "completion_id": {"type": "string"},
+    "model_name": {"type": "string"},
+    "model_provider": {"type": "string"},
+    "completion_index": {"type": "integer"},
+    "prompt_path": {"type": "string"},
+    "raw_prompt": {"type": "string"},
+    "completion_text": {"type": "string"},
+    "token_counts": {"type": "object"},
+    "metadata": {"type": "object"}
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "StageManifest",
+  "type": "object",
+  "required": [
+    "run_id",
+    "stage",
+    "status",
+    "started_at",
+    "input_files",
+    "output_files",
+    "counters",
+    "config_digest"
+  ],
+  "properties": {
+    "run_id": {"type": "string"},
+    "stage": {"type": "string"},
+    "status": {"type": "string"},
+    "started_at": {"type": "string"},
+    "completed_at": {"type": ["string", "null"]},
+    "input_files": {"type": "array", "items": {"type": "string"}},
+    "output_files": {"type": "array", "items": {"type": "string"}},
+    "counters": {"type": "object"},
+    "config_digest": {"type": "string"},
+    "notes": {"type": "array", "items": {"type": "string"}}
+  }
+}

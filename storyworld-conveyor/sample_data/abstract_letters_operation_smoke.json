@@ -1,0 +1,11 @@
+{
+  "world_json": "C:/projects/GPTStoryworld/hermes-skills/storyworld-conveyor/factory_runs/abstract_letters_96/worlds/artistry_world.json",
+  "quality_report": "C:/projects/GPTStoryworld/hermes-skills/storyworld-conveyor/factory_runs/abstract_letters_96/reports/quality_gate.json",
+  "model_path": "D:/Research_Engine/models/Qwen3.5/Qwen3.5-2B-HF",
+  "adapter_path": "",
+  "output_root": "C:/projects/GPTStoryworld/hermes-skills/storyworld-conveyor/context_port_runs",
+  "max_packets": 24,
+  "max_new_tokens": 160,
+  "temperature": 0.0,
+  "no_adapter": true
+}

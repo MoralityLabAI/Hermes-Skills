@@ -1,0 +1,141 @@
+{
+  "artifact_root": "C:/projects/GPTStoryworld/hermes-skills/storyworld-conveyor/factory_runs",
+  "run_id": "macbeth_smoke_factory",
+  "base_world": "C:/projects/GPTStoryworld/storyworlds/by-week/2026-W11/validated_macbeth.json",
+  "paths": {
+    "repo_root": "C:/projects/GPTStoryworld",
+    "python_bin": "python3",
+    "storyworld_scripts": "C:/projects/GPTStoryworld/codex-skills/storyworld-building/scripts",
+    "small_builder_scripts": "C:/projects/GPTStoryworld/codex-skills/small-storyworld-builder/scripts"
+  },
+  "artifacts": {
+    "seed_world": "{out_dir}/macbeth_seed.json",
+    "spooled_world": "{out_dir}/macbeth_spooled.json",
+    "artistry_world": "{out_dir}/macbeth_artistry.json",
+    "swmd_min": "{out_dir}/macbeth_artistry.swmd.min.md",
+    "quality_report": "{report_dir}/quality_gate.json",
+    "encounter_index_dir": "{index_dir}/encounter_index",
+    "phase_events": "{report_dir}/phase_events.jsonl",
+    "phase_state": "{report_dir}/phase_state.json"
+  },
+  "stages": [
+    {
+      "name": "seed_world",
+      "command": [
+        "{python_bin}",
+        "{storyworld_scripts}/one_shot_factory.py",
+        "--base",
+        "{base_world}",
+        "--out",
+        "{seed_world}",
+        "--target-encounters",
+        "80",
+        "--title",
+        "Macbeth: Conveyor Smoke",
+        "--about",
+        "A conveyor-smoke Macbeth build for validator-first overnight orchestration.",
+        "--motif",
+        "Tonight the court counts every oath twice and trusts no prophecy at face value."
+      ],
+      "outputs": ["{seed_world}"]
+    },
+    {
+      "name": "validate_seed",
+      "command": [
+        "{python_bin}",
+        "{storyworld_scripts}/sweepweave_validator.py",
+        "validate",
+        "{seed_world}"
+      ],
+      "outputs": ["{seed_world}"]
+    },
+    {
+      "name": "materialize_spools",
+      "command": [
+        "{python_bin}",
+        "{storyworld_scripts}/materialize_spools.py",
+        "{seed_world}",
+        "{spooled_world}"
+      ],
+      "outputs": ["{spooled_world}"]
+    },
+    {
+      "name": "sequence_spools",
+      "command": [
+        "{python_bin}",
+        "{storyworld_scripts}/spool_sequencing.py",
+        "{spooled_world}"
+      ],
+      "outputs": ["{spooled_world}"]
+    },
+    {
+      "name": "apply_artistry",
+      "command": [
+        "{python_bin}",
+        "{storyworld_scripts}/apply_artistry_pass.py",
+        "--in-json",
+        "{spooled_world}",
+        "--out-json",
+        "{artistry_world}",
+        "--gate-pct",
+        "0.09"
+      ],
+      "outputs": ["{artistry_world}"]
+    },
+    {
+      "name": "validate_artistry",
+      "command": [
+        "{python_bin}",
+        "{storyworld_scripts}/sweepweave_validator.py",
+        "validate",
+        "{artistry_world}"
+      ],
+      "outputs": ["{artistry_world}"]
+    },
+    {
+      "name": "secret_gate_audit",
+      "command": [
+        "{python_bin}",
+        "{storyworld_scripts}/secret_endings_gates.py",
+        "{artistry_world}"
+      ],
+      "outputs": ["{artistry_world}"]
+    },
+    {
+      "name": "quality_gate",
+      "command": [
+        "{python_bin}",
+        "{storyworld_scripts}/storyworld_quality_gate.py",
+        "--storyworld",
+        "{artistry_world}",
+        "--report-out",
+        "{quality_report}"
+      ],
+      "outputs": ["{quality_report}"]
+    },
+    {
+      "name": "export_swmd_min",
+      "command": [
+        "{python_bin}",
+        "{storyworld_scripts}/json_to_swmd.py",
+        "{artistry_world}",
+        "{swmd_min}",
+        "--mode",
+        "minified"
+      ],
+      "outputs": ["{swmd_min}"]
+    },
+    {
+      "name": "build_encounter_index",
+      "command": [
+        "{python_bin}",
+        "{small_builder_scripts}/swmd_encounter_index.py",
+        "--swmd",
+        "{swmd_min}",
+        "--out-dir",
+        "{encounter_index_dir}"
+      ],
+      "outputs": ["{encounter_index_dir}"]
+    }
+  ]
+}

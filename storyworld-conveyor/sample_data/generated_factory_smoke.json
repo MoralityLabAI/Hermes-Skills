@@ -1,0 +1,208 @@
+{
+  "artifact_root": "C:/projects/GPTStoryworld/hermes-skills/storyworld-conveyor/factory_runs",
+  "run_id": "generated_smoke",
+  "base_world": "C:/projects/GPTStoryworld/storyworlds/by-week/2026-W11/validated_macbeth.json",
+  "paths": {
+    "repo_root": "C:/projects/GPTStoryworld",
+    "python_bin": "python3",
+    "storyworld_scripts": "C:/projects/GPTStoryworld/codex-skills/storyworld-building/scripts",
+    "small_builder_scripts": "C:/projects/GPTStoryworld/codex-skills/small-storyworld-builder/scripts"
+  },
+  "story_brief": {
+    "title": "Macbeth: Generated Factory",
+    "about": "A generated factory config with precise flag loading.",
+    "motif": "Every oath becomes measurable at the next branch.",
+    "theme": "",
+    "genre": "",
+    "characters": [
+      "Macbeth",
+      "Lady Macbeth",
+      "Banquo",
+      "Macduff"
+    ]
+  },
+  "design_targets": {
+    "target_encounters": 40,
+    "ending_count": 4,
+    "secret_ending_count": 2,
+    "super_secret_count": 1,
+    "avg_options_per_encounter": 3.2,
+    "avg_reactions_per_option": 2.5,
+    "avg_effects_per_reaction": 4.5
+  },
+  "artifacts": {
+    "seed_world": "{out_dir}/seed_world.json",
+    "spooled_world": "{out_dir}/spooled_world.json",
+    "artistry_world": "{out_dir}/artistry_world.json",
+    "quality_report": "{report_dir}/quality_gate.json",
+    "swmd_min": "{out_dir}/storyworld.swmd.min.md",
+    "encounter_index_dir": "{index_dir}/encounter_index",
+    "paths_report": "{report_dir}/multiple_paths.txt",
+    "mc_report": "{report_dir}/monte_carlo.txt"
+  },
+  "stages": [
+    {
+      "name": "seed_world",
+      "command": [
+        "{python_bin}",
+        "{storyworld_scripts}/one_shot_factory.py",
+        "--base",
+        "{base_world}",
+        "--out",
+        "{seed_world}",
+        "--target-encounters",
+        "40",
+        "--title",
+        "Macbeth: Generated Factory",
+        "--about",
+        "A generated factory config with precise flag loading.",
+        "--motif",
+        "Every oath becomes measurable at the next branch."
+      ],
+      "outputs": [
+        "{seed_world}"
+      ]
+    },
+    {
+      "name": "validate_seed",
+      "command": [
+        "{python_bin}",
+        "{storyworld_scripts}/sweepweave_validator.py",
+        "validate",
+        "{seed_world}"
+      ],
+      "outputs": [
+        "{seed_world}"
+      ]
+    },
+    {
+      "name": "materialize_spools",
+      "command": [
+        "{python_bin}",
+        "{storyworld_scripts}/materialize_spools.py",
+        "{seed_world}",
+        "{spooled_world}"
+      ],
+      "outputs": [
+        "{spooled_world}"
+      ]
+    },
+    {
+      "name": "sequence_spools",
+      "command": [
+        "{python_bin}",
+        "{storyworld_scripts}/spool_sequencing.py",
+        "{spooled_world}"
+      ],
+      "outputs": [
+        "{spooled_world}"
+      ]
+    },
+    {
+      "name": "apply_artistry",
+      "command": [
+        "{python_bin}",
+        "{storyworld_scripts}/apply_artistry_pass.py",
+        "--in-json",
+        "{spooled_world}",
+        "--out-json",
+        "{artistry_world}",
+        "--gate-pct",
+        "0.1"
+      ],
+      "outputs": [
+        "{artistry_world}"
+      ]
+    },
+    {
+      "name": "validate_artistry",
+      "command": [
+        "{python_bin}",
+        "{storyworld_scripts}/sweepweave_validator.py",
+        "validate",
+        "{artistry_world}"
+      ],
+      "outputs": [
+        "{artistry_world}"
+      ]
+    },
+    {
+      "name": "quality_gate",
+      "command": [
+        "{python_bin}",
+        "{storyworld_scripts}/storyworld_quality_gate.py",
+        "--storyworld",
+        "{artistry_world}",
+        "--strict",
+        "--report-out",
+        "{quality_report}"
+      ],
+      "outputs": [
+        "{quality_report}"
+      ],
+      "continue_on_failure": true
+    },
+    {
+      "name": "export_swmd_min",
+      "command": [
+        "{python_bin}",
+        "{storyworld_scripts}/json_to_swmd.py",
+        "{artistry_world}",
+        "{swmd_min}",
+        "--mode",
+        "minified"
+      ],
+      "outputs": [
+        "{swmd_min}"
+      ]
+    },
+    {
+      "name": "build_encounter_index",
+      "command": [
+        "{python_bin}",
+        "{small_builder_scripts}/swmd_encounter_index.py",
+        "--swmd",
+        "{swmd_min}",
+        "--out-dir",
+        "{encounter_index_dir}"
+      ],
+      "outputs": [
+        "{encounter_index_dir}"
+      ]
+    },
+    {
+      "name": "multiple_paths_probe",
+      "command": [
+        "{python_bin}",
+        "{storyworld_scripts}/multiple_paths.py",
+        "--runs",
+        "400",
+        "--seed",
+        "17",
+        "{artistry_world}"
+      ],
+      "outputs": [
+        "{paths_report}"
+      ],
+      "stdout_to": "{paths_report}",
+      "continue_on_failure": true
+    },
+    {
+      "name": "monte_carlo_baseline",
+      "command": [
+        "{python_bin}",
+        "{storyworld_scripts}/monte_carlo_rehearsal.py",
+        "{artistry_world}",
+        "--runs",
+        "1200",
+        "--seed",
+        "17"
+      ],
+      "outputs": [
+        "{mc_report}"
+      ],
+      "stdout_to": "{mc_report}",
+      "continue_on_failure": true
+    }
+  ]
+}

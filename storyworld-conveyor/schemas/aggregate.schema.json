@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AggregateRecord",
+  "type": "object",
+  "required": [
+    "run_id",
+    "stage_id",
+    "encounter_id",
+    "completion_id",
+    "env_score",
+    "judge_score",
+    "final_score"
+  ],
+  "properties": {
+    "run_id": {"type": "string"},
+    "stage_id": {"type": "string"},
+    "encounter_id": {"type": "string"},
+    "completion_id": {"type": "string"},
+    "env_score": {"type": "number"},
+    "judge_score": {"type": "number"},
+    "final_score": {"type": "number"},
+    "env_weight": {"type": "number"},
+    "judge_weight": {"type": "number"},
+    "rank_within_encounter": {"type": "integer"},
+    "bundle": {"type": "object"}
+  }
+}

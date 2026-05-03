@@ -1,0 +1,45 @@
+{
+  "artifact_root": "D:/Research_Engine/trinity-storyworld-runs",
+  "run_id": "arcee_trinity_play_traces",
+  "encounter_builder": {
+    "count": 2,
+    "thematic_families": ["moral", "dilemma"],
+    "difficulty_tiers": ["t1", "t2"]
+  },
+  "completion_runner": {
+    "models": [
+      {
+        "name": "trinity-large-thinking",
+        "provider": "openai_compatible",
+        "api_base": "https://api.arcee.ai/api/v1/chat/completions",
+        "api_key_env": "OPENAI_API_KEY",
+        "system_prompt_file": "C:/projects/GPTStoryworld/hermes-skills/storyworld-conveyor/Claude.md",
+        "n": 2,
+        "temperature": 0.0,
+        "max_tokens": 1024,
+        "timeout_seconds": 240
+      }
+    ]
+  },
+  "llm_judge": {
+    "provider": "mock",
+    "model": "gpt-5-mini",
+    "api_key_env": "OPENAI_API_KEY",
+    "base_url": "https://api.openai.com/v1/responses",
+    "max_output_tokens": 800,
+    "timeout_seconds": 60
+  },
+  "aggregator": {
+    "weights": {
+      "env_score": 0.65,
+      "judge_score": 0.35
+    }
+  },
+  "trainer_export": {
+    "splits": {
+      "train": 0.7,
+      "val": 0.15,
+      "test": 0.15
+    }
+  }
+}

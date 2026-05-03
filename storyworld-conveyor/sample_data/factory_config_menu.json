@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "templates": [
+    {
+      "id": "fresh_seed_artistry",
+      "description": "Fresh build from a validated base world through seed, spool, artistry, validation, quality gate, and SWMD-min export.",
+      "required_args": ["--base-world", "--out-config", "--title", "--about", "--motif"],
+      "supports": [
+        "--target-encounters",
+        "--characters",
+        "--ending-count",
+        "--secret-ending-count",
+        "--super-secret-count",
+        "--avg-options",
+        "--avg-reactions",
+        "--avg-effects",
+        "--gate-pct",
+        "--include-monte-carlo",
+        "--include-encounter-index"
+      ]
+    },
+    {
+      "id": "balanced_secret_topology",
+      "description": "Fresh build plus path probing, Monte Carlo, reachability rebalance, and optional QLoRA export.",
+      "required_args": ["--base-world", "--out-config", "--title", "--about", "--motif"],
+      "supports": [
+        "--target-encounters",
+        "--characters",
+        "--ending-count",
+        "--secret-ending-count",
+        "--super-secret-count",
+        "--avg-options",
+        "--avg-reactions",
+        "--avg-effects",
+        "--gate-pct",
+        "--mc-runs",
+        "--probe-runs",
+        "--include-qlora"
+      ]
+    },
+    {
+      "id": "desirability_grind",
+      "description": "Rewrite desirability/effect scripts across an already-built world and run quality checks.",
+      "required_args": ["--base-world", "--out-config"],
+      "supports": [
+        "--characters",
+        "--ending-count",
+        "--secret-ending-count",
+        "--super-secret-count",
+        "--avg-options",
+        "--avg-reactions",
+        "--avg-effects",
+        "--include-monte-carlo"
+      ]
+    }
+  ]
+}

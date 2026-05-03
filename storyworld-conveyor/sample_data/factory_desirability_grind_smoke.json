@@ -1,0 +1,84 @@
+{
+  "artifact_root": "C:/projects/GPTStoryworld/hermes-skills/storyworld-conveyor/factory_runs",
+  "run_id": "desirability_grind_smoke",
+  "base_world": "C:/projects/GPTStoryworld/hermes-skills/storyworld-conveyor/factory_runs/macbeth_patch_test/worlds/macbeth_artistry_overnight.json",
+  "paths": {
+    "repo_root": "C:/projects/GPTStoryworld",
+    "python_bin": "python3",
+    "storyworld_scripts": "C:/projects/GPTStoryworld/codex-skills/storyworld-building/scripts",
+    "small_builder_scripts": "C:/projects/GPTStoryworld/codex-skills/small-storyworld-builder/scripts"
+  },
+  "artifacts": {
+    "rewritten_world": "{out_dir}/macbeth_artistry_overnight_v2.json",
+    "reinforced_world": "{out_dir}/macbeth_artistry_overnight_v3.json",
+    "desirability_report": "{report_dir}/desirability_rewrite_report.json",
+    "quality_report": "{report_dir}/quality_gate_v2.json",
+    "swmd_min": "{out_dir}/macbeth_artistry_overnight_v3.swmd.min.md"
+  },
+  "stages": [
+    {
+      "name": "rewrite_desirability",
+      "command": [
+        "{python_bin}",
+        "{storyworld_scripts}/systematic_desirability_rewrite.py",
+        "{base_world}",
+        "--out-json",
+        "{rewritten_world}",
+        "--report-out",
+        "{desirability_report}"
+      ],
+      "outputs": ["{rewritten_world}", "{desirability_report}"]
+    },
+    {
+      "name": "reinforce_super_secret",
+      "command": [
+        "{python_bin}",
+        "{storyworld_scripts}/reinforce_super_secret_route.py",
+        "{rewritten_world}",
+        "--out-json",
+        "{reinforced_world}",
+        "--anchor-id",
+        "page_0087",
+        "--secret-id",
+        "page_secret_0299"
+      ],
+      "outputs": ["{reinforced_world}"]
+    },
+    {
+      "name": "validate_rewritten",
+      "command": [
+        "{python_bin}",
+        "{storyworld_scripts}/sweepweave_validator.py",
+        "validate",
+        "{reinforced_world}"
+      ],
+      "outputs": ["{reinforced_world}"]
+    },
+    {
+      "name": "quality_gate",
+      "command": [
+        "{python_bin}",
+        "{storyworld_scripts}/storyworld_quality_gate.py",
+        "--storyworld",
+        "{reinforced_world}",
+        "--strict",
+        "--report-out",
+        "{quality_report}"
+      ],
+      "outputs": ["{quality_report}"],
+      "continue_on_failure": true
+    },
+    {
+      "name": "export_swmd_min",
+      "command": [
+        "{python_bin}",
+        "{storyworld_scripts}/json_to_swmd.py",
+        "{reinforced_world}",
+        "{swmd_min}",
+        "--mode",
+        "minified"
+      ],
+      "outputs": ["{swmd_min}"]
+    }
+  ]
+}

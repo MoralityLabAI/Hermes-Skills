@@ -1,0 +1,173 @@
+{
+  "artifact_root": "C:/projects/GPTStoryworld/hermes-skills/storyworld-conveyor/factory_runs",
+  "run_id": "the_usual_suspects_qwen35_2b",
+  "base_world": "fresh:the_usual_suspects",
+  "paths": {
+    "repo_root": "C:/projects/GPTStoryworld",
+    "python_bin": "python3",
+    "storyworld_scripts": "C:/projects/GPTStoryworld/codex-skills/storyworld-building/scripts",
+    "small_builder_scripts": "C:/projects/GPTStoryworld/codex-skills/small-storyworld-builder/scripts"
+  },
+  "local_model": {
+    "model_path": "D:/Research_Engine/models/Qwen3.5/Qwen3.5-2B-HF",
+    "python_exe": "D:/Research_Engine/.venv-train/Scripts/python.exe",
+    "trainer_script": "D:/Research_Engine/storyworld_mcp_stack/scripts/train_qlora_local_micro.py",
+    "qlora_root": "D:/Research_Engine/storyworld_qlora"
+  },
+  "story_brief": {
+    "title": "The Usual Suspects: Criminal Masterminds",
+    "about": "A complex puzzle of criminal masterminds, layered testimony, and deception.",
+    "motif": "Every witness edits the room they swear they saw.",
+    "theme": "noir deception puzzle",
+    "genre": "crime mystery"
+  },
+  "design_targets": {
+    "target_encounters": 20,
+    "ending_count": 4,
+    "secret_ending_count": 0,
+    "super_secret_count": 0,
+    "avg_options_per_encounter": 3.2,
+    "avg_reactions_per_option": 2.5,
+    "avg_effects_per_reaction": 4.5
+  },
+  "artifacts": {
+    "seed_world": "{out_dir}/usual_suspects_seed.json",
+    "spooled_world": "{out_dir}/usual_suspects_spooled.json",
+    "artistry_world": "{out_dir}/usual_suspects_artistry.json",
+    "swmd_min": "{out_dir}/usual_suspects_artistry.swmd.min.md",
+    "quality_report": "{report_dir}/quality_gate.json",
+    "encounter_index_dir": "{index_dir}/encounter_index",
+    "qlora_out_dir": "{qlora_dir}/overnight_examples"
+  },
+  "stages": [
+    {
+      "name": "seed_world",
+      "command": [
+        "{python_bin}",
+        "{storyworld_scripts}/fresh_storyworld_seed.py",
+        "--slug",
+        "the_usual_suspects",
+        "--out",
+        "{seed_world}",
+        "--target-encounters",
+        "20",
+        "--title",
+        "The Usual Suspects: Criminal Masterminds",
+        "--about",
+        "A complex puzzle of criminal masterminds, layered testimony, and deception.",
+        "--motif",
+        "Every witness edits the room they swear they saw."
+      ],
+      "outputs": ["{seed_world}"]
+    },
+    {
+      "name": "validate_seed",
+      "command": [
+        "{python_bin}",
+        "{storyworld_scripts}/sweepweave_validator.py",
+        "validate",
+        "{seed_world}"
+      ],
+      "outputs": ["{seed_world}"]
+    },
+    {
+      "name": "materialize_spools",
+      "command": [
+        "{python_bin}",
+        "{storyworld_scripts}/materialize_spools.py",
+        "{seed_world}",
+        "{spooled_world}"
+      ],
+      "outputs": ["{spooled_world}"]
+    },
+    {
+      "name": "sequence_spools",
+      "command": [
+        "{python_bin}",
+        "{storyworld_scripts}/spool_sequencing.py",
+        "{spooled_world}"
+      ],
+      "outputs": ["{spooled_world}"]
+    },
+    {
+      "name": "apply_artistry",
+      "command": [
+        "{python_bin}",
+        "{storyworld_scripts}/apply_artistry_pass.py",
+        "--in-json",
+        "{spooled_world}",
+        "--out-json",
+        "{artistry_world}",
+        "--gate-pct",
+        "0.1"
+      ],
+      "outputs": ["{artistry_world}"]
+    },
+    {
+      "name": "validate_artistry",
+      "command": [
+        "{python_bin}",
+        "{storyworld_scripts}/sweepweave_validator.py",
+        "validate",
+        "{artistry_world}"
+      ],
+      "outputs": ["{artistry_world}"]
+    },
+    {
+      "name": "quality_gate",
+      "command": [
+        "{python_bin}",
+        "{storyworld_scripts}/storyworld_quality_gate.py",
+        "--storyworld",
+        "{artistry_world}",
+        "--strict",
+        "--report-out",
+        "{quality_report}"
+      ],
+      "outputs": ["{quality_report}"],
+      "continue_on_failure": true
+    },
+    {
+      "name": "export_swmd_min",
+      "command": [
+        "{python_bin}",
+        "{storyworld_scripts}/json_to_swmd.py",
+        "{artistry_world}",
+        "{swmd_min}",
+        "--mode",
+        "minified"
+      ],
+      "outputs": ["{swmd_min}"]
+    },
+    {
+      "name": "build_encounter_index",
+      "command": [
+        "{python_bin}",
+        "{small_builder_scripts}/swmd_encounter_index.py",
+        "--swmd",
+        "{swmd_min}",
+        "--out-dir",
+        "{encounter_index_dir}"
+      ],
+      "outputs": ["{encounter_index_dir}"]
+    },
+    {
+      "name": "build_qlora_examples",
+      "command": [
+        "{python_bin}",
+        "{small_builder_scripts}/swmd_build_qlora_examples.py",
+        "--swmd-glob",
+        "{swmd_min}",
+        "--out-dir",
+        "{qlora_out_dir}",
+        "--max-total-encounters",
+        "20",
+        "--examples-per-encounter",
+        "6",
+        "--val-ratio",
+        "0.1"
+      ],
+      "outputs": ["{qlora_out_dir}"]
+    }
+  ]
+}

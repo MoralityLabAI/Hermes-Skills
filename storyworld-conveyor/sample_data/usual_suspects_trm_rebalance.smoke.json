@@ -1,0 +1,180 @@
+{
+  "storyworld": {
+    "label": "usual_suspects_rebalance_smoke",
+    "mc_report": "C:\\projects\\GPTStoryworld\\hermes-skills\\storyworld-conveyor\\reports\\usual_suspects_mc_smoke.txt",
+    "quality_report": "C:\\projects\\GPTStoryworld\\hermes-skills\\storyworld-conveyor\\factory_runs\\the_usual_suspects_qwen35_2b_run\\reports\\quality_gate.json",
+    "mode": "monte_carlo_rebalance"
+  },
+  "focus_metrics": [
+    {
+      "name": "dead_end_rate_pct",
+      "actual": 100.0,
+      "target_max": 0.0,
+      "direction": "decrease"
+    },
+    {
+      "name": "options_per_encounter",
+      "actual": 3.0,
+      "target": 3.2,
+      "direction": "fix"
+    },
+    {
+      "name": "reactions_per_option",
+      "actual": 2.0,
+      "target": 2.5,
+      "direction": "fix"
+    },
+    {
+      "name": "effects_per_reaction",
+      "actual": 4.0,
+      "target": 4.5,
+      "direction": "fix"
+    },
+    {
+      "name": "avg_encounter_words",
+      "actual": 29.0,
+      "target": 50.0,
+      "direction": "fix"
+    },
+    {
+      "name": "avg_reaction_words",
+      "actual": 16.0,
+      "target": 20.0,
+      "direction": "fix"
+    },
+    {
+      "name": "pvalue_refs",
+      "actual": 0.0,
+      "target": 1.0,
+      "direction": "fix"
+    },
+    {
+      "name": "p2value_refs",
+      "actual": 0.0,
+      "target": 1.0,
+      "direction": "fix"
+    },
+    {
+      "name": "effect_operator_variety",
+      "actual": 1.0,
+      "target": 2.0,
+      "direction": "fix"
+    },
+    {
+      "name": "effect_operator_dominance",
+      "actual": 1.0,
+      "target": 0.92,
+      "direction": "fix"
+    },
+    {
+      "name": "effect_script_complexity",
+      "actual": 1.0,
+      "target": 1.2,
+      "direction": "fix"
+    },
+    {
+      "name": "desirability_script_complexity",
+      "actual": 1.0,
+      "target": 1.2,
+      "direction": "fix"
+    },
+    {
+      "name": "super_secret_reachability",
+      "actual": 0.0,
+      "target": 0.25,
+      "direction": "fix"
+    }
+  ],
+  "target_endings": {
+    "boost": [],
+    "suppress": [],
+    "unreachable": [
+      "page_end_200",
+      "page_end_201",
+      "page_end_202",
+      "page_end_203"
+    ]
+  },
+  "priority_fixes": [
+    "Reduce dead-end rate from 100.00% by adding safe continuation routes and loosening brittle visibility gates.",
+    "Restore reachability for currently unreachable endings before any text-only polish.",
+    "Raise super-secret route viability and avoid edits that make hidden endings rarer.",
+    "Diversify dominant operators to reduce monoculture in desirability/effect scripts.",
+    "Push super-secret reachability above 0.25; current value is 0.00."
+  ],
+  "recommendations": [
+    "Treat failing quality checks as hard rebalance constraints during planning and audit phases.",
+    "Favor edits that preserve continuation safety over stylistic flourishes.",
+    "Use reasoning phases to identify route and stat adjustments; keep final world edits localized and validator-safe."
+  ],
+  "phase_guidance": {
+    "plan": [
+      "Translate Monte Carlo skew into concrete local edit targets.",
+      "Boost these endings where possible: none.",
+      "Avoid further strengthening these routes: none."
+    ],
+    "characterize": [
+      "Call out route bottlenecks, gating pressure, and stat funnels that explain the observed Monte Carlo skew.",
+      "Identify which voices or choices are collapsing distinct routes into the same outcome."
+    ],
+    "act_complete": [
+      "Audit whether current act transitions create route funnels, dead ends, or runaway variable dynamics.",
+      "Surface continuity risks that would make rebalance edits unstable."
+    ],
+    "recharacterize": [
+      "Re-express character and option tension so the targeted routes become narratively legible without breaking invariants.",
+      "Keep rebalance fixes compatible with the world's causal logic."
+    ],
+    "encounter_build": [
+      "When authoring is enabled, make only local edits that support the priority fixes and preserve stable ORX ids."
+    ],
+    "late_stage_holistic": [
+      "Use end-state polish only to reinforce validated rebalance moves, not to invent new route structure."
+    ],
+    "priority_fixes": [
+      "Reduce dead-end rate from 100.00% by adding safe continuation routes and loosening brittle visibility gates.",
+      "Restore reachability for currently unreachable endings before any text-only polish.",
+      "Raise super-secret route viability and avoid edits that make hidden endings rarer.",
+      "Diversify dominant operators to reduce monoculture in desirability/effect scripts.",
+      "Push super-secret reachability above 0.25; current value is 0.00."
+    ]
+  },
+  "quality_failures": [
+    "options_per_encounter",
+    "reactions_per_option",
+    "effects_per_reaction",
+    "avg_encounter_words",
+    "avg_reaction_words",
+    "pvalue_refs",
+    "p2value_refs",
+    "effect_operator_variety",
+    "effect_operator_dominance",
+    "effect_script_complexity",
+    "desirability_script_complexity",
+    "super_secret_reachability"
+  ],
+  "recommended_overrides": {
+    "repair_build_output": true,
+    "reasoning_preferred_phases": [
+      "plan",
+      "characterize",
+      "act_complete",
+      "recharacterize"
+    ],
+    "authoring_guarded_phases": [
+      "encounter_build",
+      "late_stage_holistic"
+    ]
+  },
+  "notes": [
+    "Monte Carlo source: C:\\projects\\GPTStoryworld\\hermes-skills\\storyworld-conveyor\\reports\\usual_suspects_mc_smoke.txt",
+    "Quality gate source: C:\\projects\\GPTStoryworld\\hermes-skills\\storyworld-conveyor\\factory_runs\\the_usual_suspects_qwen35_2b_run\\reports\\quality_gate.json",
+    "Dead-end rate: 100.00%",
+    "Unreachable endings: page_end_200, page_end_201, page_end_202, page_end_203"
+  ],
+  "raw_metrics": {
+    "dead_end_rate_pct": 100.0,
+    "ending_pct": {},
+    "secret_pct": {}
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "artifact_root": "/Users/ben/MoralityLab/repos/GPTStoryworld/hermes-skills/storyworld-conveyor/context_port_runs",
+  "run_id": "usual_suspects_trinity_nano_mac_authoring_smoke",
+  "python_bin": "/Users/ben/worker/venv_tesseract_bench312/bin/python",
+  "inference_backend": "mlx",
+  "swmd": "/Users/ben/MoralityLab/repos/GPTStoryworld/hermes-skills/storyworld-conveyor/factory_runs/the_usual_suspects_qwen35_2b_run/worlds/usual_suspects_artistry.swmd.min.md",
+  "model_path": "/Users/ben/worker/models/Trinity-Nano-Preview-MLX-5bit",
+  "adapter_path": "",
+  "trm_advice_json": "",
+  "monte_carlo_report": "",
+  "quality_report": "",
+  "qlora_examples_jsonl": "/Users/ben/MoralityLab/repos/GPTStoryworld/hermes-skills/storyworld-conveyor/factory_runs/the_usual_suspects_qwen35_2b_run/qlora/overnight_examples/train_messages.jsonl",
+  "phases": "plan,encounter_build",
+  "max_encounters": 1,
+  "start_index": 1,
+  "neighbor_hops": 1,
+  "context_budget_tokens": 4096,
+  "reserve_output_tokens": 384,
+  "planning_card_tokens": 384,
+  "max_new_tokens": 64,
+  "temperature": 0.0,
+  "fewshot_count": 1,
+  "repair_build_output": true,
+  "apply": false,
+  "hardware_profile": {
+    "target_machine": "samac",
+    "model_class": "Trinity_Nano_Preview_MLX_5bit",
+    "mode": "Hermes_authoring_smoke"
+  }
+}

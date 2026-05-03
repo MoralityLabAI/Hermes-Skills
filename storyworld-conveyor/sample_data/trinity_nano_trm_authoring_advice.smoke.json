@@ -1,0 +1,32 @@
+{
+  "storyworld": "usual_suspects_artistry",
+  "focus_metrics": [
+    "clear_option_consequence",
+    "reaction_specificity",
+    "local_continuity"
+  ],
+  "priority_fixes": [
+    "Keep the revised encounter block terse and machine-parseable.",
+    "Preserve option ids and reaction ids from the target encounter when possible.",
+    "Make reactions concrete and scene-specific instead of generic pressure verbs.",
+    "Avoid introducing new lore not implied by the local packet."
+  ],
+  "phase_guidance": {
+    "plan": [
+      "Identify the smallest local improvement that clarifies stakes or consequences.",
+      "Prefer continuity with the target encounter and one-hop neighbors."
+    ],
+    "encounter_build": [
+      "Emit only a valid ENC block with ORX lines.",
+      "Retain stable ids whenever possible.",
+      "Favor concrete social leverage, suspicion, and trust shifts over generic nudges."
+    ]
+  },
+  "recommended_overrides": {
+    "style": {
+      "scene_scope": "local",
+      "novelty": "low",
+      "format_discipline": "strict"
+    }
+  }
+}

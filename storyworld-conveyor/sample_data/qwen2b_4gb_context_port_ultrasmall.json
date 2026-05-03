@@ -1,0 +1,26 @@
+{
+  "artifact_root": "C:/projects/GPTStoryworld/hermes-skills/storyworld-conveyor/context_port_runs",
+  "run_id": "usual_suspects_qwen2b_4gb_ultrasmall",
+  "python_bin": "D:/Research_Engine/.venv-train/Scripts/python.exe",
+  "swmd": "C:/projects/GPTStoryworld/hermes-skills/storyworld-conveyor/factory_runs/the_usual_suspects_qwen35_2b_run/worlds/usual_suspects_artistry.swmd.min.md",
+  "model_path": "D:/Research_Engine/models/Qwen3.5/Qwen3.5-2B-HF",
+  "adapter_path": "D:/Research_Engine/storyworld_qlora/adapters/qwen35-2b-usual-suspects-local-r2-checkpoint13",
+  "trm_advice_json": "",
+  "qlora_examples_jsonl": "C:/projects/GPTStoryworld/hermes-skills/storyworld-conveyor/factory_runs/the_usual_suspects_qwen35_2b_run/qlora/overnight_examples/train_messages.jsonl",
+  "phases": "plan,encounter_build",
+  "max_encounters": 1,
+  "start_index": 1,
+  "neighbor_hops": 1,
+  "context_budget_tokens": 4096,
+  "reserve_output_tokens": 384,
+  "planning_card_tokens": 384,
+  "max_new_tokens": 48,
+  "temperature": 0.0,
+  "fewshot_count": 1,
+  "apply": false,
+  "hardware_profile": {
+    "gpu_vram_mb": 4000,
+    "reserved_for_tab_mb": 100,
+    "effective_model_budget_mb": 3900
+  }
+}

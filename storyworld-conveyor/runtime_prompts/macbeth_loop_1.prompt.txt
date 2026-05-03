@@ -1,0 +1,63 @@
+Use skill storyworld-building-codex.
+Use skill storyworld-conveyor-runner.
+If the skill name is not discoverable, read and follow:
+- /mnt/c/projects/GPTStoryworld/hermes-skills/storyworld-conveyor/AGENTS.md
+- /mnt/c/projects/GPTStoryworld/hermes-skills/storyworld-conveyor/skills/storyworld-conveyor-runner/SKILL.md
+
+Work only on Macbeth and leave artifacts on disk.
+Target brief file: /mnt/c/projects/GPTStoryworld/hermes-skills/storyworld-conveyor/sample_data/macbeth_overnight_brief.json
+Primary world: /mnt/c/projects/GPTStoryworld/storyworlds/by-week/2026-W11/validated_macbeth.json
+Overnight factory config: /mnt/d/Research_Engine/Hermes-experiment-logs/storyworld-conveyor/macbeth-overnight-trm-selfimprove-20260315-091133/loop-1/factory_overnight_macbeth_loop_1.json
+TRM rebalance advisor packet: /mnt/d/Research_Engine/Hermes-experiment-logs/storyworld-conveyor/macbeth-overnight-trm-selfimprove-20260315-091133/loop-1/trm_rebalance_advice.json
+Baseline comparison run: /mnt/c/projects/GPTStoryworld/hermes-skills/storyworld-conveyor/factory_runs/macbeth_patch_test
+
+Objective for this loop:
+- push Macbeth toward 4 standard endings, 2 secret endings, and 1 super secret witches/SCP inversion ending
+- specifically intensify spool structure, character thread continuity, secret options, desirability formulas, richer effects, warped metric distance, Monte Carlo probe quality, and rebalance practicality
+- preserve validator-first discipline
+- run the storyworld factory and inspect the generated reports
+- revise based on the reports and then rerun the most relevant checks
+
+Preferred factory command for this loop:
+python3 /mnt/c/projects/GPTStoryworld/hermes-skills/storyworld-conveyor/run_storyworld_factory.py --config /mnt/d/Research_Engine/Hermes-experiment-logs/storyworld-conveyor/macbeth-overnight-trm-selfimprove-20260315-091133/loop-1/factory_overnight_macbeth_loop_1.json --run-id macbeth_loop_1 --force
+
+Primary artifact root to inspect after the run:
+/mnt/c/projects/GPTStoryworld/hermes-skills/storyworld-conveyor/factory_runs/macbeth_loop_1
+
+Required behavior:
+- filesystem claims must be backed by real command output
+- never say complete without file paths and counts
+- run from the WSL-mounted GPTStoryworld workspace
+- start by running pwd && ls -ld /mnt/c/projects/GPTStoryworld /mnt/c/projects/GPTStoryworld/hermes-skills/storyworld-conveyor
+- read the TRM advisor packet before planning edits; treat it as the default rebalance policy unless current artifacts prove it wrong
+- use the factory config and its artifacts rather than freehand claims
+- treat env truth and stage manifests as authoritative
+- after the first checkpoint, do not reread AGENTS.md or SKILL.md unless you are editing those files directly
+- do not read prior full session transcripts unless a concrete file path from the delta brief is missing; use the previous delta brief as the carry-forward memory packet
+- do not spend turns summarizing unchanged reports; spend turns on code/config edits or reruns
+- this loop is a failure if you do not make at least one concrete file edit under:
+  - /mnt/c/projects/GPTStoryworld/codex-skills/storyworld-building/scripts
+  - /mnt/c/projects/GPTStoryworld/hermes-skills/storyworld-conveyor/sample_data
+  - /mnt/c/projects/GPTStoryworld/hermes-skills/storyworld-conveyor/skills
+- if the candidate run matches baseline in metrics/distribution, treat that as a no-op and patch code/config rather than narrating
+- your final step must run the delta auditor command below and print its paths
+
+Required delta auditor command:
+python3 /mnt/c/projects/GPTStoryworld/hermes-skills/storyworld-conveyor/scripts/audit_macbeth_loop.py --baseline-run /mnt/c/projects/GPTStoryworld/hermes-skills/storyworld-conveyor/factory_runs/macbeth_patch_test --candidate-run /mnt/c/projects/GPTStoryworld/hermes-skills/storyworld-conveyor/factory_runs/macbeth_loop_1 --out-json /mnt/d/Research_Engine/Hermes-experiment-logs/storyworld-conveyor/macbeth-overnight-trm-selfimprove-20260315-091133/loop-1/delta_report.json --out-txt /mnt/d/Research_Engine/Hermes-experiment-logs/storyworld-conveyor/macbeth-overnight-trm-selfimprove-20260315-091133/loop-1/delta_brief.txt
+
+Loop id: macbeth_loop_1
+Loop output root: /mnt/d/Research_Engine/Hermes-experiment-logs/storyworld-conveyor/macbeth-overnight-trm-selfimprove-20260315-091133/loop-1
+This is loop 1; no previous loop artifacts exist.
+No previous delta brief exists; compare against baseline macbeth_patch_test only.
+
+Minimum command checklist:
+1. read the brief and only the minimal runner instructions needed to execute
+2. run the overnight factory config or a justified subset
+3. inspect manifests, Monte Carlo output, multiple paths output, and quality report
+4. make at least one concrete revision attempt aimed at endings/secret structure or desirability/effect structure
+5. rerun validator and the relevant factory checks
+6. run the delta auditor against macbeth_patch_test
+7. print the exact artifact paths produced in this loop
+8. print which stage failed or remained weak, and what should change in the next loop
+
+Keep the run within this single query window.

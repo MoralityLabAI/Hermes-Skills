@@ -1,0 +1,41 @@
+{
+  "artifact_root": "C:/projects/GPTStoryworld/hermes-skills/storyworld-conveyor/sample_runs",
+  "run_id": "demo3",
+  "encounter_builder": {
+    "count": 10,
+    "input_jsonl": "C:/projects/GPTStoryworld/hermes-skills/storyworld-conveyor/sample_data/encounters_3.jsonl",
+    "thematic_families": ["scarcity", "legitimacy", "hostage", "factional"],
+    "difficulty_tiers": ["t1", "t2", "t3"]
+  },
+  "completion_runner": {
+    "models": [
+      {
+        "name": "hermes_teacher_mock",
+        "provider": "mock",
+        "n": 2,
+        "temperature": 0.0
+      }
+    ]
+  },
+  "llm_judge": {
+    "provider": "mock",
+    "model": "gpt-5-mini",
+    "api_key_env": "OPENAI_API_KEY",
+    "base_url": "https://api.openai.com/v1/responses",
+    "max_output_tokens": 800,
+    "timeout_seconds": 60
+  },
+  "aggregator": {
+    "weights": {
+      "env_score": 0.65,
+      "judge_score": 0.35
+    }
+  },
+  "trainer_export": {
+    "splits": {
+      "train": 0.7,
+      "val": 0.15,
+      "test": 0.15
+    }
+  }
+}

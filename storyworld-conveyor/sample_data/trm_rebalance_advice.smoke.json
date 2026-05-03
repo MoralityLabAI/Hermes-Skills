@@ -1,0 +1,391 @@
+{
+  "tool": "trm_storyworld_rebalance",
+  "action": "emit_rebalance_packet",
+  "confidence": 0.87,
+  "notes": [
+    "Historical Macbeth runs analyzed: 7.",
+    "Historical no-op loop count: 7.",
+    "Weakest ending by mean share: page_secret_0202 (7.786%).",
+    "Weakest secret by mean share: page_secret_0202 (7.786%).",
+    "Super-secret gate failed in 5 historical quality reports.",
+    "Most common quality failures: options_per_encounter, reactions_per_option, effects_per_reaction."
+  ],
+  "payload": {
+    "target_share_pct": 14.286,
+    "historical_runs": [
+      "macbeth_loop_1",
+      "macbeth_loop_1_rerun",
+      "macbeth_loop_2",
+      "macbeth_loop_3",
+      "macbeth_loop_4",
+      "macbeth_overnight_grind",
+      "macbeth_patch_test"
+    ],
+    "historical_no_op_loops": 7,
+    "historical_mean_share_pct": {
+      "page_end_0201": 9.214,
+      "page_end_0202": 11.357,
+      "page_end_0203": 9.643,
+      "page_end_0204": 11.143,
+      "page_secret_0201": 11.143,
+      "page_secret_0202": 7.786,
+      "page_secret_0299": 11.143
+    },
+    "historical_share_gap_pct": {
+      "page_end_0201": 5.072,
+      "page_end_0202": 2.929,
+      "page_end_0203": 4.643,
+      "page_end_0204": 3.143,
+      "page_secret_0201": 3.143,
+      "page_secret_0202": 6.5,
+      "page_secret_0299": 3.143
+    },
+    "weakest_ending": "page_secret_0202",
+    "weakest_secret": "page_secret_0202",
+    "strongest_secret": "page_secret_0201",
+    "average_dead_end_rate_pct": 0.0,
+    "super_secret_gate_failures": 5,
+    "quality_failure_counts": {
+      "options_per_encounter": 2,
+      "reactions_per_option": 2,
+      "effects_per_reaction": 2
+    },
+    "recommended_overrides": {
+      "ending_reachability_balance": {
+        "bias": 0.096,
+        "warped_min": 0.933
+      },
+      "late_stage_balance": {
+        "ending_id": "page_secret_0202",
+        "accept_threshold": 0.107,
+        "weight": 0.904,
+        "bias": 0.049,
+        "target_min": 0.118,
+        "target_max": 0.168
+      }
+    },
+    "patched_config": {
+      "artifact_root": "C:/projects/GPTStoryworld/hermes-skills/storyworld-conveyor/factory_runs",
+      "run_id": "macbeth_overnight_grind",
+      "base_world": "C:/projects/GPTStoryworld/storyworlds/by-week/2026-W11/validated_macbeth.json",
+      "budget": {
+        "target_spend_usd": 4.0,
+        "window_hours": 24,
+        "judge_model": "gpt-5-mini",
+        "target_input_tokens": 40000000,
+        "target_output_tokens": 5000000,
+        "notes": [
+          "Run env-first passes before enabling external judge.",
+          "Shard judge runs into batches and monitor logs every checkpoint.",
+          "Mock judge can be swapped to GPT-5 mini after structure is stable."
+        ]
+      },
+      "paths": {
+        "repo_root": "C:/projects/GPTStoryworld",
+        "python_bin": "python3",
+        "storyworld_scripts": "C:/projects/GPTStoryworld/codex-skills/storyworld-building/scripts",
+        "small_builder_scripts": "C:/projects/GPTStoryworld/codex-skills/small-storyworld-builder/scripts"
+      },
+      "artifacts": {
+        "seed_world": "{out_dir}/macbeth_seed_overnight.json",
+        "spooled_world": "{out_dir}/macbeth_spooled_overnight.json",
+        "artistry_world": "{out_dir}/macbeth_artistry_overnight.json",
+        "swmd_min": "{out_dir}/macbeth_artistry_overnight.swmd.min.md",
+        "quality_report": "{report_dir}/quality_gate_overnight.json",
+        "mc_report": "{report_dir}/monte_carlo_overnight.txt",
+        "paths_report": "{report_dir}/multiple_paths.txt",
+        "encounter_index_dir": "{index_dir}/encounter_index_overnight",
+        "qlora_out_dir": "{qlora_dir}/overnight_examples"
+      },
+      "stages": [
+        {
+          "name": "seed_world",
+          "command": [
+            "{python_bin}",
+            "{storyworld_scripts}/one_shot_factory.py",
+            "--base",
+            "{base_world}",
+            "--out",
+            "{seed_world}",
+            "--target-encounters",
+            "96",
+            "--title",
+            "Macbeth: Overnight Conveyor Grind",
+            "--about",
+            "An overnight Macbeth build tuned for batch orchestration, desirability warping, and secret-gated dramatic branches.",
+            "--motif",
+            "Every promise in this castle bends the metric distance between fear, loyalty, and revenge."
+          ],
+          "outputs": [
+            "{seed_world}"
+          ]
+        },
+        {
+          "name": "validate_seed",
+          "command": [
+            "{python_bin}",
+            "{storyworld_scripts}/sweepweave_validator.py",
+            "validate",
+            "{seed_world}"
+          ],
+          "outputs": [
+            "{seed_world}"
+          ]
+        },
+        {
+          "name": "materialize_spools",
+          "command": [
+            "{python_bin}",
+            "{storyworld_scripts}/materialize_spools.py",
+            "{seed_world}",
+            "{spooled_world}"
+          ],
+          "outputs": [
+            "{spooled_world}"
+          ]
+        },
+        {
+          "name": "sequence_spools",
+          "command": [
+            "{python_bin}",
+            "{storyworld_scripts}/spool_sequencing.py",
+            "{spooled_world}"
+          ],
+          "outputs": [
+            "{spooled_world}"
+          ]
+        },
+        {
+          "name": "apply_artistry",
+          "command": [
+            "{python_bin}",
+            "{storyworld_scripts}/apply_artistry_pass.py",
+            "--in-json",
+            "{spooled_world}",
+            "--out-json",
+            "{artistry_world}",
+            "--gate-pct",
+            "0.1"
+          ],
+          "outputs": [
+            "{artistry_world}"
+          ]
+        },
+        {
+          "name": "scaffold_macbeth_topology",
+          "command": [
+            "{python_bin}",
+            "{storyworld_scripts}/scaffold_macbeth_topology.py",
+            "{artistry_world}",
+            "--apply"
+          ],
+          "outputs": [
+            "{artistry_world}"
+          ]
+        },
+        {
+          "name": "validate_artistry",
+          "command": [
+            "{python_bin}",
+            "{storyworld_scripts}/sweepweave_validator.py",
+            "validate",
+            "{artistry_world}"
+          ],
+          "outputs": [
+            "{artistry_world}"
+          ]
+        },
+        {
+          "name": "secret_gate_audit",
+          "command": [
+            "{python_bin}",
+            "{storyworld_scripts}/secret_endings_gates.py",
+            "--min-effects",
+            "3",
+            "--min-reactions",
+            "2",
+            "--min-options",
+            "2",
+            "--min-threshold",
+            "0.03",
+            "{artistry_world}"
+          ],
+          "outputs": [
+            "{artistry_world}"
+          ],
+          "continue_on_failure": true
+        },
+        {
+          "name": "multiple_paths_probe",
+          "command": [
+            "{python_bin}",
+            "{storyworld_scripts}/multiple_paths.py",
+            "--runs",
+            "400",
+            "--seed",
+            "17",
+            "{artistry_world}"
+          ],
+          "outputs": [
+            "{paths_report}"
+          ],
+          "stdout_to": "{paths_report}",
+          "continue_on_failure": true
+        },
+        {
+          "name": "monte_carlo_baseline",
+          "command": [
+            "{python_bin}",
+            "{storyworld_scripts}/monte_carlo_rehearsal.py",
+            "{artistry_world}",
+            "--runs",
+            "1200",
+            "--seed",
+            "17"
+          ],
+          "outputs": [
+            "{mc_report}"
+          ],
+          "stdout_to": "{mc_report}",
+          "continue_on_failure": true
+        },
+        {
+          "name": "ending_reachability_balance",
+          "command": [
+            "{python_bin}",
+            "{storyworld_scripts}/ending_reachability_balance.py",
+            "--runs",
+            "800",
+            "--seed",
+            "17",
+            "--bias",
+            "0.096",
+            "--warped-min",
+            "0.933",
+            "--apply",
+            "{artistry_world}"
+          ],
+          "outputs": [
+            "{artistry_world}"
+          ],
+          "continue_on_failure": true
+        },
+        {
+          "name": "late_stage_balance",
+          "command": [
+            "{python_bin}",
+            "{storyworld_scripts}/late_stage_balance.py",
+            "--runs",
+            "800",
+            "--seed",
+            "17",
+            "--ending-id",
+            "page_secret_0202",
+            "--character",
+            "char_elizabeth",
+            "--prop-a",
+            "Influence",
+            "--prop-b",
+            "Transgression_Order",
+            "--accept-threshold",
+            "0.107",
+            "--weight",
+            "0.904",
+            "--bias",
+            "0.049",
+            "--target-min",
+            "0.118",
+            "--target-max",
+            "0.168",
+            "--apply",
+            "{artistry_world}"
+          ],
+          "outputs": [
+            "{artistry_world}"
+          ],
+          "continue_on_failure": true
+        },
+        {
+          "name": "quality_gate",
+          "command": [
+            "{python_bin}",
+            "{storyworld_scripts}/storyworld_quality_gate.py",
+            "--storyworld",
+            "{artistry_world}",
+            "--strict",
+            "--report-out",
+            "{quality_report}"
+          ],
+          "outputs": [
+            "{quality_report}"
+          ],
+          "continue_on_failure": true
+        },
+        {
+          "name": "export_swmd_min",
+          "command": [
+            "{python_bin}",
+            "{storyworld_scripts}/json_to_swmd.py",
+            "{artistry_world}",
+            "{swmd_min}",
+            "--mode",
+            "minified"
+          ],
+          "outputs": [
+            "{swmd_min}"
+          ]
+        },
+        {
+          "name": "build_encounter_index",
+          "command": [
+            "{python_bin}",
+            "{small_builder_scripts}/swmd_encounter_index.py",
+            "--swmd",
+            "{swmd_min}",
+            "--out-dir",
+            "{encounter_index_dir}"
+          ],
+          "outputs": [
+            "{encounter_index_dir}"
+          ]
+        },
+        {
+          "name": "build_qlora_examples",
+          "command": [
+            "{python_bin}",
+            "{small_builder_scripts}/swmd_build_qlora_examples.py",
+            "--swmd-glob",
+            "{swmd_min}",
+            "--out-dir",
+            "{qlora_out_dir}",
+            "--max-total-encounters",
+            "120",
+            "--examples-per-encounter",
+            "6",
+            "--val-ratio",
+            "0.05"
+          ],
+          "outputs": [
+            "{qlora_out_dir}"
+          ],
+          "continue_on_failure": true
+        }
+      ],
+      "_config_path": "C:\\projects\\GPTStoryworld\\hermes-skills\\storyworld-conveyor\\sample_data\\factory_overnight_macbeth.json"
+    },
+    "context": {
+      "task": "Rebalance Macbeth ending topology using historical factory and loop data.",
+      "messages": [],
+      "working_memory": {},
+      "artifacts": [
+        "C:\\projects\\GPTStoryworld\\hermes-skills\\storyworld-conveyor\\sample_data\\factory_overnight_macbeth.json",
+        "C:\\projects\\GPTStoryworld\\hermes-skills\\storyworld-conveyor\\factory_runs",
+        "D:\\Research_Engine\\Hermes-experiment-logs\\storyworld-conveyor"
+      ],
+      "metadata": {
+        "overlay_source": "hermes-trm-overlay",
+        "mode": "storyworld_rebalance"
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "artifact_root": "/Users/ben/MoralityLab/repos/GPTStoryworld/hermes-skills/storyworld-conveyor/context_port_runs",
+  "run_id": "macbeth_qwen9b_mac_rebalance_smoke",
+  "python_bin": "/Users/ben/worker/venv_tesseract_bench312/bin/python",
+  "inference_backend": "mlx",
+  "swmd": "/Users/ben/MoralityLab/repos/GPTStoryworld/hermes-skills/storyworld-conveyor/factory_runs/macbeth_loop_3/worlds/macbeth_artistry_overnight.swmd.min.md",
+  "model_path": "/Users/ben/worker/models/Qwen3.5-9B-4bit",
+  "adapter_path": "",
+  "trm_advice_json": "",
+  "monte_carlo_report": "/Users/ben/MoralityLab/repos/GPTStoryworld/hermes-skills/storyworld-conveyor/factory_runs/macbeth_loop_3/reports/monte_carlo_overnight.txt",
+  "quality_report": "/Users/ben/MoralityLab/repos/GPTStoryworld/hermes-skills/storyworld-conveyor/factory_runs/macbeth_loop_3/reports/quality_gate_overnight.json",
+  "storyworld_label": "macbeth_loop_3_rebalance",
+  "qlora_examples_jsonl": "/Users/ben/MoralityLab/repos/GPTStoryworld/hermes-skills/storyworld-conveyor/factory_runs/the_usual_suspects_qwen35_2b_run/qlora/overnight_examples/train_messages.jsonl",
+  "phases": "plan,characterize,act_complete,recharacterize",
+  "max_encounters": 1,
+  "start_index": 1,
+  "neighbor_hops": 1,
+  "context_budget_tokens": 8192,
+  "reserve_output_tokens": 1024,
+  "planning_card_tokens": 900,
+  "max_new_tokens": 160,
+  "temperature": 0.0,
+  "fewshot_count": 1,
+  "repair_build_output": true,
+  "apply": false,
+  "hardware_profile": {
+    "target_machine": "samac",
+    "model_class": "Qwen3.5_9B_4bit_MLX",
+    "mode": "Hermes_reasoning_rebalance_smoke"
+  }
+}
