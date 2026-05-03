@@ -46,22 +46,27 @@ held-out evaluation, and TRM commit/veto learning.
 
 ## Patch-bank live benchmark
 
-- Artifact: `research/studies/2026-04-22-metta-trm-hermes-pipeline/artifacts/intellect3_math_patch_bank_benchmark_27b_20260502_combined20/combined_patch_bank_benchmark.results.md`
+- Artifact: `research/studies/2026-04-22-metta-trm-hermes-pipeline/artifacts/intellect3_math_patch_bank_benchmark_27b_20260502_combined40/combined_patch_bank_benchmark.results.md`
 - Model: `Qwen3.5-27B-Q4_K_M.gguf` on snacksack.
-- Unique held-out rows: `20`
-- Calls: `140`
-- Incumbent current skill: `4/20`
-- Qwen 27B auditor patch: `3/20`
-- Raw baseline: `2/20`
-- Codex candidate patches: `1/20` to `2/20`
+- Unique held-out rows: `40`
+- Calls: `280`
+- Incumbent current skill: `7/40`
+- Qwen 27B auditor patch: `4/40`
+- Raw baseline: `3/40`
+- Codex candidate patches: `2/40` to `4/40`
 - Global adoption result: no candidate patch clears the incumbent gate.
-- Row-level export: `140` patch commit/veto rows, including one row-level
+- Row-level export: `280` patch commit/veto rows, including one row-level
   `commit_patch` where the Qwen auditor patch fixes an incumbent miss.
+- Row-level upper bound from this patch bank: `8/40` rows had at least one exact
+  answer across all arms (`6` multi-patch exact rows plus `2` incumbent-only).
+- Selector smoke: `research/studies/2026-04-22-metta-trm-hermes-pipeline/artifacts/intellect3_math_patch_selector_27b_20260503_combined40/patch_selector.results.md`
+- Selector result: simple prior selection does not beat incumbent on test
+  (`4/20` vs `4/20`), so the immediate bottleneck is patch diversity.
 
 Read: this supports the gym direction.  Whole-patch adoption is currently
-negative, but row-level candidate selection has signal.  The next TRM target is
-therefore a per-row patch selector/commit gate rather than a global prompt
-replacement.
+negative, and row-level candidate selection has only weak signal.  The next TRM
+target is a per-row patch selector/commit gate, but it needs more diverse
+candidate generators before selector learning can pay off.
 
 ## Use
 

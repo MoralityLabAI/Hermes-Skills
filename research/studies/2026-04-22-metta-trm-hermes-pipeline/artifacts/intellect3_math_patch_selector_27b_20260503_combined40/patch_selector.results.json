@@ -1,0 +1,105 @@
+{
+  "generated_at_utc": "2026-05-03T00:57:52.301243+00:00",
+  "shards": [
+    "research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\intellect3_math_patch_bank_benchmark_27b_20260502",
+    "research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\intellect3_math_patch_bank_benchmark_27b_20260502_offset10",
+    "research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\intellect3_math_patch_bank_benchmark_27b_20260502_offset20",
+    "research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\intellect3_math_patch_bank_benchmark_27b_20260502_offset30"
+  ],
+  "rows": 40,
+  "calls": 280,
+  "selectors": {
+    "incumbent_all": {
+      "split": "all",
+      "rows": 40,
+      "exact": 7,
+      "exact_rate": 0.175,
+      "missing_selected_rows": 0,
+      "selected_patch_counts": {
+        "incumbent_current_skill": 40
+      }
+    },
+    "oracle_any_exact_all": {
+      "split": "all",
+      "rows": 40,
+      "exact": 8,
+      "exact_rate": 0.2,
+      "missing_selected_rows": 0,
+      "selected_patch_counts": {
+        "raw_baseline_no_skill": 3,
+        "incumbent_current_skill": 37
+      }
+    },
+    "plurality_answer_all": {
+      "split": "all",
+      "rows": 40,
+      "exact": 4,
+      "exact_rate": 0.1,
+      "missing_selected_rows": 0,
+      "selected_patch_counts": {
+        "incumbent_current_skill": 20,
+        "codex_answer_shape_verifier_v1": 14,
+        "codex_patch_commit_controller_v1": 1,
+        "codex_domain_router_v1": 5
+      }
+    },
+    "prior_selector_train": {
+      "split": "train",
+      "rows": 20,
+      "exact": 4,
+      "exact_rate": 0.2,
+      "missing_selected_rows": 0,
+      "selected_patch_counts": {
+        "qwen27b_auditor_patch": 1,
+        "incumbent_current_skill": 18,
+        "codex_slow_path_trigger_v1": 1
+      }
+    },
+    "prior_selector_test": {
+      "split": "test",
+      "rows": 20,
+      "exact": 4,
+      "exact_rate": 0.2,
+      "missing_selected_rows": 0,
+      "selected_patch_counts": {
+        "codex_domain_router_v1": 1,
+        "incumbent_current_skill": 15,
+        "qwen27b_auditor_patch": 2,
+        "codex_patch_commit_controller_v1": 1,
+        "codex_slow_path_trigger_v1": 1
+      }
+    },
+    "incumbent_test": {
+      "split": "test",
+      "rows": 20,
+      "exact": 4,
+      "exact_rate": 0.2,
+      "missing_selected_rows": 0,
+      "selected_patch_counts": {
+        "incumbent_current_skill": 20
+      }
+    },
+    "oracle_any_exact_test": {
+      "split": "test",
+      "rows": 20,
+      "exact": 4,
+      "exact_rate": 0.2,
+      "missing_selected_rows": 0,
+      "selected_patch_counts": {
+        "incumbent_current_skill": 19,
+        "raw_baseline_no_skill": 1
+      }
+    }
+  },
+  "row_level_upper_bound": {
+    "rows": 40,
+    "exact": 8,
+    "exact_rate": 0.2,
+    "missing_selected_rows": 0,
+    "selected_patch_counts": {
+      "raw_baseline_no_skill": 3,
+      "incumbent_current_skill": 37
+    }
+  },
+  "read": "The current patch bank has a small oracle headroom over the incumbent (8/40 vs 7/40), but the simple learned prior selector does not yet extract reliable held-out lift. Next useful work is to train a selector TRM on richer features, not to adopt a global prompt patch."
+}

@@ -1,0 +1,174 @@
+{
+  "generated_at_utc": "2026-05-03T00:57:37.902018+00:00",
+  "source": "C:\\projects\\Tesseract\\Tesseract\\data\\normalized_trajectories\\intellect_3_math.jsonl",
+  "patch_bank": "C:\\projects\\Hermes-Skills\\Hermes Skills\\research\\studies\\2026-04-22-metta-trm-hermes-pipeline\\artifacts\\intellect3_math_skill_patch_gym_20260502\\patch_bank.json",
+  "base_url": "http://snacksack-ms-7d32.tail3156cd.ts.net:8081/v1",
+  "holdout_rows": 10,
+  "start_offset": 30,
+  "completed_calls": 70,
+  "patch_count": 7,
+  "summary": {
+    "arms": {
+      "raw_baseline_no_skill": {
+        "rows": 10,
+        "exact": 1,
+        "exact_rate": 0.1,
+        "errors": 0,
+        "avg_latency_seconds": 1.5048,
+        "common_actions": {
+          "10": 4,
+          "1024": 2,
+          "1": 1,
+          "1000": 1,
+          "1012": 1,
+          "1005": 1
+        }
+      },
+      "incumbent_current_skill": {
+        "rows": 10,
+        "exact": 1,
+        "exact_rate": 0.1,
+        "errors": 0,
+        "avg_latency_seconds": 1.5576,
+        "common_actions": {
+          "1024": 2,
+          "-1": 1,
+          "1000": 1,
+          "12": 1,
+          "13": 1,
+          "1012": 1,
+          "10": 1,
+          "1005": 1
+        }
+      },
+      "qwen27b_auditor_patch": {
+        "rows": 10,
+        "exact": 1,
+        "exact_rate": 0.1,
+        "errors": 0,
+        "avg_latency_seconds": 1.7425,
+        "common_actions": {
+          "10": 5,
+          "1024": 2,
+          "1000": 1,
+          "1012": 1,
+          "1005": 1
+        }
+      },
+      "codex_domain_router_v1": {
+        "rows": 10,
+        "exact": 1,
+        "exact_rate": 0.1,
+        "errors": 0,
+        "avg_latency_seconds": 1.6075,
+        "common_actions": {
+          "10": 5,
+          "1024": 2,
+          "1000": 1,
+          "1012": 1,
+          "1005": 1
+        }
+      },
+      "codex_answer_shape_verifier_v1": {
+        "rows": 10,
+        "exact": 1,
+        "exact_rate": 0.1,
+        "errors": 0,
+        "avg_latency_seconds": 1.5735,
+        "common_actions": {
+          "10": 3,
+          "1024": 2,
+          "1000": 1,
+          "17": 1,
+          "1": 1,
+          "1012": 1,
+          "1005": 1
+        }
+      },
+      "codex_slow_path_trigger_v1": {
+        "rows": 10,
+        "exact": 1,
+        "exact_rate": 0.1,
+        "errors": 0,
+        "avg_latency_seconds": 1.5505,
+        "common_actions": {
+          "10": 2,
+          "-2": 1,
+          "1000": 1,
+          "1024": 1,
+          "12": 1,
+          "1012": 1,
+          "1": 1,
+          "1005": 1
+        }
+      },
+      "codex_patch_commit_controller_v1": {
+        "rows": 10,
+        "exact": 1,
+        "exact_rate": 0.1,
+        "errors": 0,
+        "avg_latency_seconds": 1.6069,
+        "common_actions": {
+          "10": 4,
+          "1024": 2,
+          "1000": 1,
+          "12": 1,
+          "1012": 1,
+          "1005": 1
+        }
+      }
+    },
+    "adoption_gates": {
+      "raw_baseline_no_skill": {
+        "decision": "comparison_only",
+        "fixes_vs_incumbent": 0,
+        "regressions_vs_incumbent": 0,
+        "changed_wrong_vs_incumbent": 4,
+        "candidate_exact": 1,
+        "incumbent_exact": 1
+      },
+      "qwen27b_auditor_patch": {
+        "decision": "reject_patch",
+        "fixes_vs_incumbent": 0,
+        "regressions_vs_incumbent": 0,
+        "changed_wrong_vs_incumbent": 4,
+        "candidate_exact": 1,
+        "incumbent_exact": 1
+      },
+      "codex_domain_router_v1": {
+        "decision": "reject_patch",
+        "fixes_vs_incumbent": 0,
+        "regressions_vs_incumbent": 0,
+        "changed_wrong_vs_incumbent": 4,
+        "candidate_exact": 1,
+        "incumbent_exact": 1
+      },
+      "codex_answer_shape_verifier_v1": {
+        "decision": "reject_patch",
+        "fixes_vs_incumbent": 0,
+        "regressions_vs_incumbent": 0,
+        "changed_wrong_vs_incumbent": 4,
+        "candidate_exact": 1,
+        "incumbent_exact": 1
+      },
+      "codex_slow_path_trigger_v1": {
+        "decision": "reject_patch",
+        "fixes_vs_incumbent": 0,
+        "regressions_vs_incumbent": 0,
+        "changed_wrong_vs_incumbent": 4,
+        "candidate_exact": 1,
+        "incumbent_exact": 1
+      },
+      "codex_patch_commit_controller_v1": {
+        "decision": "reject_patch",
+        "fixes_vs_incumbent": 0,
+        "regressions_vs_incumbent": 0,
+        "changed_wrong_vs_incumbent": 3,
+        "candidate_exact": 1,
+        "incumbent_exact": 1
+      }
+    },
+    "best_patch_by_exact": "raw_baseline_no_skill",
+    "read": "Patch-bank benchmark over held-out rows; adoption is gated against the incumbent, not raw exact alone."
+  }
+}

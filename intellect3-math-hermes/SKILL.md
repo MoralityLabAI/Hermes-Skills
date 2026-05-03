@@ -43,10 +43,10 @@ Treat TRM signals as experimental advisory evidence inside the skill workspace. 
 - The active research direction is the skill-patch gym: maintain a patch bank,
   evaluate patches on held-out rows, and train a TRM commit/veto controller over
   patch outcomes.
-- A 20-row live 27B patch-bank benchmark kept the incumbent ahead (`4/20`);
-  no whole patch cleared the global adoption gate.  There was still row-level
-  signal: one Qwen auditor output fixed an incumbent miss, so train/select at
-  row level before promoting any whole prompt patch.
+- A 40-row live 27B patch-bank benchmark kept the incumbent ahead (`7/40`);
+  no whole patch cleared the global adoption gate.  Row-level signal exists but
+  is thin: only `8/40` rows had any exact answer across the patch bank, so the
+  next lever is more diverse patch generation, not just selector tuning.
 
 ## Operational rules
 

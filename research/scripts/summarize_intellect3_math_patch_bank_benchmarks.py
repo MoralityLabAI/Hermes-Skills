@@ -147,7 +147,7 @@ def render_md(payload: dict[str, Any]) -> str:
             payload["summary"]["read"],
             "",
             f"Best raw exact patch: `{payload['summary']['best_patch_by_exact']}`.",
-            "No candidate patch clears the adoption gate on the combined 20-row smoke.",
+            f"No candidate patch clears the adoption gate on the combined {payload['unique_rows']}-row smoke.",
         ]
     )
     return "\n".join(lines) + "\n"
