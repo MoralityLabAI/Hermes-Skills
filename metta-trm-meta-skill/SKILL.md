@@ -1,11 +1,11 @@
 ---
 name: metta-trm-meta-skill
-description: "Use when a Hermes or Codex workflow needs a MeTTa/TRM control-plane meta-skill: authoring compact MeTTa packages, repairing small-model MeTTa drafts, exporting TRM controller rows, and evolving task skills through benchmark-gated MeTTa framework optimization."
+description: "Use when a Hermes or Codex workflow needs a MeTTa/TRM control-plane meta-skill: routing broad subject/cognition domains, authoring compact MeTTa packages, repairing small-model MeTTa drafts, exporting TRM controller rows, and evolving task skills through benchmark-gated MeTTa framework optimization."
 ---
 
 # MeTTa TRM Meta-Skill
 
-Use this as the front-door orchestration skill for compactification work where small models need help authoring MeTTa, curating TRM data, or improving Hermes skills through typed control-plane gates.
+Use this as the front-door orchestration skill for compactification work where small models need help routing broad domains, authoring MeTTa, curating TRM data, or improving Hermes skills through typed control-plane gates.
 
 This skill composes, rather than replaces:
 
@@ -17,24 +17,27 @@ This skill composes, rather than replaces:
 
 ## Core Flow
 
-Follow `AUTHOR -> REPAIR -> VERIFY -> EXPORT_ROWS -> BENCH_ARMS -> EVOLVE_SKILL`:
+Follow `ROUTE_DOMAIN -> AUTHOR -> REPAIR -> VERIFY -> EXPORT_ROWS -> BENCH_ARMS -> EVOLVE_SKILL`:
 
-1. `AUTHOR`
+1. `ROUTE_DOMAIN`
+   If the task is broad or ambiguous, route it through the domain lattice before authoring. Use university-subject/key-cognition domains, not final skill names.
+2. `AUTHOR`
    Draft a compact MeTTa package from a task trace, skill failure, benchmark, or MCP memory surface. Keep one top-level atom per line.
-2. `REPAIR`
+3. `REPAIR`
    Canonicalize small-model MeTTa drafts before judging them. Repair syntax and unsupported atom usage separately.
-3. `VERIFY`
+4. `VERIFY`
    Score syntax, contract coverage, retrieval coverage, repair coverage, and TRM export readiness.
-4. `EXPORT_ROWS`
+5. `EXPORT_ROWS`
    Emit Pure-TRM-Trainer rows for author routing, syntax repair, semantic verification, retrieval routing, skill patch control, and commit/veto.
-5. `BENCH_ARMS`
+6. `BENCH_ARMS`
    Compare baseline, TRM-only, MeTTa-runtime, and MeTTa-runtime+repair. Label projected results as methodology unless receipts exist.
-6. `EVOLVE_SKILL`
+7. `EVOLVE_SKILL`
    Propose bounded skill changes only when verifier or benchmark evidence identifies a concrete bottleneck.
 
 ## Local References
 
 - Contract: `references/meta_skill_contract.md`
+- Domain router lattice: `references/domain_router_lattice.md`
 
 ## Local Scripts
 
@@ -75,6 +78,14 @@ Held-out repair generalization:
 ```powershell
 python "C:\projects\Hermes-Skills\Hermes Skills\metta-trm-meta-skill\scripts\run_repair_generalization_study.py" --out-dir D:\metta_trm_meta_small_model_bench\heldout_generalization --controller-train-messages D:\metta_trm_meta_small_model_bench\repair_curriculum_v1\repair_curriculum_train_messages.jsonl
 ```
+
+Domain router bootstrap study:
+
+```powershell
+python "C:\projects\Hermes-Skills\Hermes Skills\metta-trm-meta-skill\scripts\run_domain_router_bootstrap_study.py" --out-dir D:\metta_trm_meta_small_model_bench\domain_router --router-mode heuristic
+```
+
+Add `--router-mode llm --run-bootstrap` when a local OpenAI-compatible endpoint is live.
 
 Common commands:
 
