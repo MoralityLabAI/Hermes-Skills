@@ -79,6 +79,26 @@ The MeTTa/MCP-enriched schema surface contains:
 
 This is the concrete meaning of "MeTTa improves the DB schema" in the current evidence: it turns vague prompt and replay material into addressable schema records with handles, answer shapes, cues, examples, failure modes, and verifier notes. It is not yet a live SQL migration claim.
 
+## Recovered Live Schema-Retrieval Measurement
+
+The April Primehub structured-map retrieval study contains a live 9B measurement that should be treated as the primary empirical result for this paper seed's schema-memory claim.
+
+The run compares three arms:
+
+1. `baseline`: no Hermes structured-map prompt.
+2. `plain_structured_map`: the structured-map skill prompt without retrieved schema memory.
+3. `retrieval_assisted`: the structured-map prompt plus TRM-MCP-style Primehub schema memory.
+
+The post-fix three-environment snapshot reports:
+
+1. `ascii_tree`: baseline `0.0`, plain structured-map `0.0`, retrieval-assisted `0.8`.
+2. `psycho_bench`: baseline `3.3283`, plain structured-map `3.3061`, retrieval-assisted `3.3311`.
+3. `pydantic_adherence`: baseline `0.0`, plain structured-map `0.0`, retrieval-assisted `1.0`.
+
+Token usage shows why the claim must be precise. Retrieval-assisted schema memory did not reduce prompt tokens in this implementation. It increased total tokens from `497` to `939` on `ascii_tree`, from `1119` to `1534` on `psycho_bench`, and from `1243` to `1860` on `pydantic_adherence`. The measured win is therefore not "retrieval is cheaper in this prompt implementation." The win is "retrieved schema memory buys exact structured validity in lanes where naive prompting fails."
+
+This is still an efficiency result in a capability sense: for `ascii_tree` and `pydantic_adherence`, the baseline spent fewer tokens but achieved zero reward. The retrieval-assisted arm spent more tokens but crossed the validity threshold. For `psycho_bench`, where the baseline already performs well, retrieval is not token-efficient and should not be promoted as a universal improvement.
+
 ## Storyworld Play-Diary MCP
 
 The storyworld player adds episodic memory. Repeated playthroughs write a play diary containing episode summaries, turn rows, legal actions, selected actions, NAV recommendations, endings, scores, and TRM labels.

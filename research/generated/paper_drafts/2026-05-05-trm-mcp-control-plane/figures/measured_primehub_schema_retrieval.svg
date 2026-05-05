@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="560" viewBox="0 0 920 560" role="img" aria-labelledby="title desc">
+  <title id="title">Measured Primehub Schema Retrieval</title>
+  <desc id="desc">Measured 9B Primehub structured-map retrieval rewards and total token usage across baseline, plain structured-map, and retrieval-assisted arms.</desc>
+  <rect width="920" height="560" fill="#f7f4ee"/>
+  <text x="42" y="42" font-family="Georgia,serif" font-size="24" fill="#1e2730">Recovered Live Measurement: Schema Memory Buys Validity</text>
+  <text x="42" y="68" font-family="Verdana,sans-serif" font-size="12" fill="#5b635d">Qwen3.5 9B, Primehub structured-map study. Retrieval used more tokens; reward gains appear on exact-structure lanes.</text>
+
+  <rect x="42" y="92" width="836" height="202" fill="#fffaf0" stroke="#d6cdbc"/>
+  <text x="58" y="118" font-family="Verdana,sans-serif" font-size="14" fill="#1e2730">Reward</text>
+  <line x1="95" y1="262" x2="845" y2="262" stroke="#2d3b35" stroke-width="1"/>
+  <line x1="95" y1="136" x2="95" y2="262" stroke="#2d3b35" stroke-width="1"/>
+  <g stroke="#ded5c4" stroke-width="1">
+    <line x1="95" y1="224" x2="845" y2="224"/>
+    <line x1="95" y1="186" x2="845" y2="186"/>
+    <line x1="95" y1="148" x2="845" y2="148"/>
+  </g>
+  <text x="68" y="266" font-family="Verdana,sans-serif" font-size="10" fill="#2d3b35">0</text>
+  <text x="68" y="228" font-family="Verdana,sans-serif" font-size="10" fill="#2d3b35">1</text>
+  <text x="68" y="190" font-family="Verdana,sans-serif" font-size="10" fill="#2d3b35">2</text>
+  <text x="68" y="152" font-family="Verdana,sans-serif" font-size="10" fill="#2d3b35">3</text>
+
+  <rect x="138" y="262" width="24" height="0" fill="#8f4f3f"/>
+  <rect x="168" y="262" width="24" height="0" fill="#a98a3f"/>
+  <rect x="198" y="232" width="24" height="30" fill="#2f6f73"/>
+  <rect x="393" y="136" width="24" height="126" fill="#8f4f3f"/>
+  <rect x="423" y="136.4" width="24" height="125.6" fill="#a98a3f"/>
+  <rect x="453" y="135.9" width="24" height="126.1" fill="#2f6f73"/>
+  <rect x="648" y="262" width="24" height="0" fill="#8f4f3f"/>
+  <rect x="678" y="262" width="24" height="0" fill="#a98a3f"/>
+  <rect x="708" y="224" width="24" height="38" fill="#2f6f73"/>
+
+  <g font-family="Verdana,sans-serif" font-size="10" fill="#1e2730" text-anchor="middle">
+    <text x="210" y="226">0.8</text>
+    <text x="405" y="130">3.33</text>
+    <text x="435" y="130">3.31</text>
+    <text x="465" y="130">3.33</text>
+    <text x="720" y="218">1.0</text>
+  </g>
+  <g font-family="Verdana,sans-serif" font-size="11" fill="#2d3b35" text-anchor="middle">
+    <text x="180" y="282">ascii_tree</text>
+    <text x="435" y="282">psycho_bench</text>
+    <text x="690" y="282">pydantic_adherence</text>
+  </g>
+
+  <rect x="42" y="322" width="836" height="184" fill="#eef6f4" stroke="#c8d8d4"/>
+  <text x="58" y="348" font-family="Verdana,sans-serif" font-size="14" fill="#1e2730">Total Tokens</text>
+  <line x1="95" y1="476" x2="845" y2="476" stroke="#2d3b35" stroke-width="1"/>
+  <line x1="95" y1="362" x2="95" y2="476" stroke="#2d3b35" stroke-width="1"/>
+  <g stroke="#d3e0dc" stroke-width="1">
+    <line x1="95" y1="419" x2="845" y2="419"/>
+    <line x1="95" y1="362" x2="845" y2="362"/>
+  </g>
+  <text x="58" y="480" font-family="Verdana,sans-serif" font-size="10" fill="#2d3b35">0</text>
+  <text x="46" y="423" font-family="Verdana,sans-serif" font-size="10" fill="#2d3b35">1000</text>
+  <text x="46" y="366" font-family="Verdana,sans-serif" font-size="10" fill="#2d3b35">2000</text>
+
+  <rect x="138" y="447.7" width="24" height="28.3" fill="#8f4f3f"/>
+  <rect x="168" y="438.6" width="24" height="37.4" fill="#a98a3f"/>
+  <rect x="198" y="422.5" width="24" height="53.5" fill="#2f6f73"/>
+  <rect x="393" y="412.2" width="24" height="63.8" fill="#8f4f3f"/>
+  <rect x="423" y="405.4" width="24" height="70.6" fill="#a98a3f"/>
+  <rect x="453" y="388.6" width="24" height="87.4" fill="#2f6f73"/>
+  <rect x="648" y="405.1" width="24" height="70.9" fill="#8f4f3f"/>
+  <rect x="678" y="398.3" width="24" height="77.7" fill="#a98a3f"/>
+  <rect x="708" y="370.0" width="24" height="106.0" fill="#2f6f73"/>
+
+  <g font-family="Verdana,sans-serif" font-size="10" fill="#1e2730" text-anchor="middle">
+    <text x="150" y="442">497</text>
+    <text x="180" y="433">656</text>
+    <text x="210" y="417">939</text>
+    <text x="405" y="407">1119</text>
+    <text x="435" y="400">1239</text>
+    <text x="465" y="383">1534</text>
+    <text x="660" y="400">1243</text>
+    <text x="690" y="393">1364</text>
+    <text x="720" y="365">1860</text>
+  </g>
+  <g font-family="Verdana,sans-serif" font-size="11" fill="#2d3b35" text-anchor="middle">
+    <text x="180" y="496">ascii_tree</text>
+    <text x="435" y="496">psycho_bench</text>
+    <text x="690" y="496">pydantic_adherence</text>
+  </g>
+
+  <rect x="565" y="96" width="14" height="14" fill="#8f4f3f"/>
+  <text x="585" y="108" font-family="Verdana,sans-serif" font-size="12" fill="#1e2730">baseline</text>
+  <rect x="565" y="119" width="14" height="14" fill="#a98a3f"/>
+  <text x="585" y="131" font-family="Verdana,sans-serif" font-size="12" fill="#1e2730">plain structured-map</text>
+  <rect x="565" y="142" width="14" height="14" fill="#2f6f73"/>
+  <text x="585" y="154" font-family="Verdana,sans-serif" font-size="12" fill="#1e2730">retrieval-assisted</text>
+  <text x="42" y="534" font-family="Verdana,sans-serif" font-size="11" fill="#5b635d">Source: 2026-04-22 Primehub structured-map retrieval study. Token savings are not shown; retrieval increases tokens here.</text>
+</svg>

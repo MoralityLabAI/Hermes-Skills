@@ -11,6 +11,8 @@
 | Diary memory corrected four negative-NAV cases back to baseline. | environment study | `OVERNIGHT_SUMMARY.md` and `benchmesh\summary.md` |
 | The Postgres figure shows modelled lookup efficiency for direct handles versus broad list-then-read schema lookup. | analytical model | `tables\db_lookup_efficiency_model.csv` and `data\trm_mcp_postgres_example` |
 | The MeTTa schema-enrichment figure shows addressable schema metadata in a generated Primehub schema MCP surface. | schema artifact | `data\trm_mcp_primehub_schema_example\primehub_schema_surface.json` |
+| A recovered live 9B Primehub study shows retrieval-assisted schema memory improving `ascii_tree` from `0.0` to `0.8` and `pydantic_adherence` from `0.0` to `1.0`, while staying near baseline on `psycho_bench`. | live measurement | `research\studies\2026-04-22-primehub-structured-map-retrieval\artifacts\live_eval_qwen35_9b_post_fix_3env.findings.md` |
+| The same live study shows retrieval-assisted schema memory used more total tokens than baseline in the current implementation. | live measurement | `structured_map_live_eval.results.json` files under the same study |
 
 ## Disallowed Claims For Current Evidence
 
@@ -22,6 +24,7 @@
 | The current run proves raw small LLMs can solve storyworlds through MCP. | The cited run is deterministic/NAV/diary policy evidence unless an LLM-backed receipt is added. |
 | The DB efficiency graph is measured latency or token savings. | It is currently an analytical model derived from trace structure. |
 | The MeTTa schema graph proves a live SQL database schema migration improved performance. | It is a schema-surface enrichment artifact, not a live DB migration or downstream benchmark. |
+| Retrieval-assisted schema memory reduced prompt tokens in the recovered Primehub live run. | The recovered run shows higher token usage for retrieval-assisted arms; the measured gain is structured validity, not lower token count. |
 
 ## Best Short Claim
 

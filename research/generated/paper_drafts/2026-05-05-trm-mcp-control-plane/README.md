@@ -13,9 +13,11 @@ This folder rounds up the MCP-based work into a second paper package. The thesis
 - `tables/storyworld_diary_mcp_lift.csv`: play-diary MCP benchmark lift summary.
 - `tables/db_lookup_efficiency_model.csv`: bounded model of naive broad DB lookup vs direct TRM-MCP schema handles.
 - `tables/metta_db_schema_enrichment.csv`: schema-surface enrichment counts from the MeTTa/Primehub MCP schema pack.
+- `tables/measured_primehub_schema_retrieval.csv`: recovered live 9B schema-retrieval measurement.
 - `figures/trm_mcp_architecture.mmd`: Mermaid source for the architecture figure.
 - `figures/db_lookup_efficiency.svg`: bar chart for modelled DB lookup efficiency.
 - `figures/metta_db_schema_enrichment.svg`: bar chart for MeTTa schema-surface enrichment.
+- `figures/measured_primehub_schema_retrieval.svg`: measured reward and token-cost comparison across baseline, plain structured-map, and retrieval-assisted arms.
 
 ## Current Bounded Result
 
@@ -28,4 +30,4 @@ The current matrix is a training-data and methodology artifact. It is not yet a 
 
 ## Added Graph Caveat
 
-The DB lookup efficiency graph is an analytical model derived from the Postgres trace design, not a measured latency or token benchmark. The MeTTa schema-enrichment graph is based on the generated Primehub schema MCP surface; it shows how MeTTa/MCP makes schema constraints addressable for routing and verification, not a live SQL database migration.
+The DB lookup efficiency graph is an analytical model derived from the Postgres trace design, not a measured latency or token benchmark. The measured Primehub graph is the live result recovered from the April structured-map retrieval study: retrieval-assisted schema memory spent more tokens but produced exact-structure reward gains on `ascii_tree` and `pydantic_adherence`. The MeTTa schema-enrichment graph is based on the generated Primehub schema MCP surface; it shows how MeTTa/MCP makes schema constraints addressable for routing and verification, not a live SQL database migration.

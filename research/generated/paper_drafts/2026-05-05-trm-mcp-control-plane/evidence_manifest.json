@@ -51,6 +51,17 @@
     "evidence_class": "schema_artifact",
     "claim_boundary": "Shows schema-surface enrichment for MCP/TRM routing and verification; not a live SQL database migration."
   },
+  "measured_primehub_schema_retrieval": {
+    "table": "research\\generated\\paper_drafts\\2026-05-05-trm-mcp-control-plane\\tables\\measured_primehub_schema_retrieval.csv",
+    "figure": "research\\generated\\paper_drafts\\2026-05-05-trm-mcp-control-plane\\figures\\measured_primehub_schema_retrieval.svg",
+    "study": "research\\studies\\2026-04-22-primehub-structured-map-retrieval",
+    "combined_findings": "research\\studies\\2026-04-22-primehub-structured-map-retrieval\\artifacts\\live_eval_qwen35_9b_post_fix_3env.findings.md",
+    "ascii_tree_results": "research\\studies\\2026-04-22-primehub-structured-map-retrieval\\artifacts\\live_eval_qwen35_9b_ascii_threaded\\structured_map_live_eval.results.json",
+    "psycho_pydantic_results": "research\\studies\\2026-04-22-primehub-structured-map-retrieval\\artifacts\\live_eval_qwen35_9b_after_env_fix\\structured_map_live_eval.results.json",
+    "model": "qwen35_9b",
+    "evidence_class": "live_measurement",
+    "claim_boundary": "Retrieval-assisted schema memory improved exact-structure rewards but used more tokens in this implementation; do not claim token-cost reduction from this run."
+  },
   "storyworld_play_diary_mcp": {
     "reference": "C:\\projects\\metta-storyworld\\metta-storyworld\\skills\\storyworld-player\\references\\play-diary-mcp.md",
     "app_readme": "C:\\projects\\metta-storyworld\\metta-etc\\README.md",
