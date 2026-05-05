@@ -58,6 +58,12 @@ Repair-message baseline:
 python "C:\projects\Hermes-Skills\Hermes Skills\metta-trm-meta-skill\scripts\bench_repair_training_messages.py" --messages D:\metta_trm_meta_small_model_bench\small_model_bootstrap_20260505T150037Z\repair_training_messages.jsonl --out-dir D:\metta_trm_meta_small_model_bench\small_model_bootstrap_20260505T150037Z\repair_message_baseline_qwen4b
 ```
 
+Synthetic repair curriculum:
+
+```powershell
+python "C:\projects\Hermes-Skills\Hermes Skills\metta-trm-meta-skill\scripts\build_repair_curriculum.py" --out-dir D:\metta_trm_meta_small_model_bench\repair_curriculum_v1 --examples-per-env 60
+```
+
 Common commands:
 
 ```powershell
