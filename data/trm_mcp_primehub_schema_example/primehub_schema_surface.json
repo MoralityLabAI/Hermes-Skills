@@ -1,0 +1,172 @@
+{
+  "mcp_name": "primehub_schema",
+  "resource_count": 6,
+  "envs": [
+    "psycho_bench",
+    "ascii_tree",
+    "pydantic_adherence"
+  ],
+  "resources": [
+    {
+      "uri": "mcp://primehub_schema/env/psycho_bench",
+      "family": "resource_read",
+      "label": "psycho_bench",
+      "answer_shape": "indexed_mapping_lines",
+      "summary": "Exact plain-text lines in the form `index: score`, integer scores only, and no wrapper prose.",
+      "example_status": "validated_minimal_example",
+      "query_cues": [
+        "reply numbers from 1 to 5",
+        "index: score",
+        "BFI subscale",
+        "plain text lines only"
+      ],
+      "minimal_example": "31: 2\n39: 3",
+      "failure_modes": [
+        "refusal text instead of numbered lines",
+        "extra commentary around scores",
+        "non-integer values or out-of-range scores"
+      ],
+      "validator_notes": [],
+      "known_verifier_gaps": [],
+      "validation_path": "",
+      "source_task": "instrument:BFI:all-subscales#rep:4",
+      "source_replay_path": "C:\\projects\\Hermes-Skills\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_psycho_bench_q0048.jsonl",
+      "observation_excerpt": "SYSTEM: You are a helpful assistant who can only reply numbers from 1 to 5 in every statement. Format: \"statement index: score\".\nYou must respond ONLY with plain text lines in the exact form 'index: score'.\n- Use integers in the range [1, 5].\n- Do NOT repeat statement text.\n- Do NOT use code fences, bullets, or explanations.\nExample (format only):\n31: 2\n39: 3\nUSER: You can only reply numbers from 1 to 5 in the following statements. Here are a number of characteristics that may or may not apply to you. Please indicate the extent to which you agree or disagree with that statement. 1 denotes '..."
+    },
+    {
+      "uri": "mcp://primehub_schema/templates/minimal_example?env=psycho_bench",
+      "family": "resource_template_list",
+      "label": "psycho_bench_minimal_example",
+      "answer_shape": "resource_template_list",
+      "summary": "Minimal valid example for psycho_bench.",
+      "example_status": "validated_minimal_example",
+      "query_cues": [
+        "minimal example for psycho_bench",
+        "valid sample output for psycho_bench"
+      ],
+      "minimal_example": "31: 2\n39: 3",
+      "failure_modes": [
+        "example uses the wrong env schema"
+      ],
+      "validator_notes": [],
+      "known_verifier_gaps": [],
+      "validation_path": "",
+      "source_task": "instrument:BFI:all-subscales#rep:4",
+      "source_replay_path": "C:\\projects\\Hermes-Skills\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_psycho_bench_q0048.jsonl",
+      "observation_excerpt": "SYSTEM: You are a helpful assistant who can only reply numbers from 1 to 5 in every statement. Format: \"statement index: score\".\nYou must respond ONLY with plain text lines in the exact form 'index: score'.\n- Use integers in the range [1, 5].\n- Do NOT repeat statement text.\n- Do NOT use code fences, bullets, or explanations.\nExample (format only):\n31: 2\n39: 3\nUSER: You can only reply numbers from 1 to 5 in the following statements. Here are a number of characteristics that may or may not apply to you. Please indicate the extent to which you agree or disagree with that statement. 1 denotes '..."
+    },
+    {
+      "uri": "mcp://primehub_schema/env/ascii_tree",
+      "family": "resource_read",
+      "label": "ascii_tree",
+      "answer_shape": "ascii_formatted_tree",
+      "summary": "Exact ASCII tree structure wrapped in <ascii_formatted> tags with no surrounding prose.",
+      "example_status": "validated_minimal_example",
+      "query_cues": [
+        "ASCII tree",
+        "<ascii_formatted>",
+        "directory hierarchy",
+        "plain ASCII structure"
+      ],
+      "minimal_example": "<ascii_formatted>\nmain\n `--child\n</ascii_formatted>",
+      "failure_modes": [
+        "missing wrapper tags",
+        "extra prose before or after the tree",
+        "wrong branch glyphs or unstable indentation"
+      ],
+      "validator_notes": [],
+      "known_verifier_gaps": [],
+      "validation_path": "",
+      "source_task": "ascii-tree",
+      "source_replay_path": "C:\\projects\\Hermes-Skills\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_ascii_tree_q0033.jsonl",
+      "observation_excerpt": "USER: Your task is to convert the following English description into an ASCII tree format.\npackaging is a root directory that groups 8 subdirectories. Notable ones include brew, linux-arch, linux-centos among others.\nLet me break down the formation for you:\nIn the root directory, 'brew' holds no subdirectories at the moment.\nAt the top level, The 'linux-arch' container contains nothing at present.\nAt the main level, Inside 'linux-centos', you'll find it appears to be unused.\nAt the main level, 'linux-debian' is barren.\nAt the top level, 'linux-fedora' hasn't been filled with any content.\nAt..."
+    },
+    {
+      "uri": "mcp://primehub_schema/templates/minimal_example?env=ascii_tree",
+      "family": "resource_template_list",
+      "label": "ascii_tree_minimal_example",
+      "answer_shape": "resource_template_list",
+      "summary": "Minimal valid example for ascii_tree.",
+      "example_status": "validated_minimal_example",
+      "query_cues": [
+        "minimal example for ascii_tree",
+        "valid sample output for ascii_tree"
+      ],
+      "minimal_example": "<ascii_formatted>\nmain\n `--child\n</ascii_formatted>",
+      "failure_modes": [
+        "example uses the wrong env schema"
+      ],
+      "validator_notes": [],
+      "known_verifier_gaps": [],
+      "validation_path": "",
+      "source_task": "ascii-tree",
+      "source_replay_path": "C:\\projects\\Hermes-Skills\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_ascii_tree_q0033.jsonl",
+      "observation_excerpt": "USER: Your task is to convert the following English description into an ASCII tree format.\npackaging is a root directory that groups 8 subdirectories. Notable ones include brew, linux-arch, linux-centos among others.\nLet me break down the formation for you:\nIn the root directory, 'brew' holds no subdirectories at the moment.\nAt the top level, The 'linux-arch' container contains nothing at present.\nAt the main level, Inside 'linux-centos', you'll find it appears to be unused.\nAt the main level, 'linux-debian' is barren.\nAt the top level, 'linux-fedora' hasn't been filled with any content.\nAt..."
+    },
+    {
+      "uri": "mcp://primehub_schema/env/pydantic_adherence",
+      "family": "resource_read",
+      "label": "pydantic_adherence",
+      "answer_shape": "strict_json_object",
+      "summary": "Return one JSON object compatible with the provided pydantic model and nothing else. The live community verifier extracts the last JSON object and validates it with JSON-native semantics via `model_validate_json(..., strict=False)`.",
+      "example_status": "validated_minimal_example",
+      "query_cues": [
+        "Return the json and nothing else",
+        "pydantic model",
+        "compatible with the model",
+        "strict JSON only"
+      ],
+      "minimal_example": "{\"policy_id\":\"11111111-1111-1111-1111-111111111111\",\"name\":\"Main\",\"max_books\":3,\"periods\":[],\"fine_policy\":{\"per_day\":1.0,\"max_total\":5.0},\"renewal_policy\":{\"max_renewals\":1,\"cooldown\":\"1\"},\"exceptions\":{},\"created_at\":\"2026-01-01T00:00:00\"}",
+      "failure_modes": [
+        "empty output or fallback action",
+        "markdown fences around JSON",
+        "schema-violating field types or missing required keys",
+        "natural-language cooldown values such as `14 days` instead of integer day counts"
+      ],
+      "validator_notes": [
+        "period genres must be unique",
+        "reference genre cannot exceed 7 days",
+        "fine_policy.max_total must be >= fine_policy.per_day",
+        "renewal_policy.cooldown accepts integer day counts or numeric strings before timedelta coercion",
+        "the live scorer now validates JSON-native payloads with model_validate_json(..., strict=False)"
+      ],
+      "known_verifier_gaps": [
+        "historical note: before 2026-04-22, the live scorer validated the parsed Python dict directly and made UUID/datetime fields unsatisfiable from plain JSON"
+      ],
+      "validation_path": "extract_last_json -> json.dumps(parsed_dict) -> model.model_validate_json(serialized_payload, strict=False)",
+      "source_task": "pydantic-adherence",
+      "source_replay_path": "C:\\projects\\Hermes-Skills\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_pydantic_adherence_q0049.jsonl",
+      "observation_excerpt": "USER: Below you see a pydantic model named LendingPolicy. Return a json that, when parsed to a dict, is compatible with the model. Here is the pydantic config:\n```python\nimport uuid\nfrom datetime import datetime, timedelta\nfrom enum import Enum\nfrom typing import List, Dict, Optional, Literal\nfrom pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator, ValidationError, conint, StrictStr\nclass GenreEnum(str, Enum):\n    fiction = 'fiction'\n    non_fiction = 'non-fiction'"
+    },
+    {
+      "uri": "mcp://primehub_schema/templates/minimal_example?env=pydantic_adherence",
+      "family": "resource_template_list",
+      "label": "pydantic_adherence_minimal_example",
+      "answer_shape": "resource_template_list",
+      "summary": "Minimal valid example for pydantic_adherence.",
+      "example_status": "validated_minimal_example",
+      "query_cues": [
+        "minimal example for pydantic_adherence",
+        "valid sample output for pydantic_adherence"
+      ],
+      "minimal_example": "{\"policy_id\":\"11111111-1111-1111-1111-111111111111\",\"name\":\"Main\",\"max_books\":3,\"periods\":[],\"fine_policy\":{\"per_day\":1.0,\"max_total\":5.0},\"renewal_policy\":{\"max_renewals\":1,\"cooldown\":\"1\"},\"exceptions\":{},\"created_at\":\"2026-01-01T00:00:00\"}",
+      "failure_modes": [
+        "example uses the wrong env schema"
+      ],
+      "validator_notes": [
+        "period genres must be unique",
+        "reference genre cannot exceed 7 days",
+        "fine_policy.max_total must be >= fine_policy.per_day",
+        "renewal_policy.cooldown accepts integer day counts or numeric strings before timedelta coercion",
+        "the live scorer now validates JSON-native payloads with model_validate_json(..., strict=False)"
+      ],
+      "known_verifier_gaps": [
+        "historical note: before 2026-04-22, the live scorer validated the parsed Python dict directly and made UUID/datetime fields unsatisfiable from plain JSON"
+      ],
+      "validation_path": "extract_last_json -> json.dumps(parsed_dict) -> model.model_validate_json(serialized_payload, strict=False)",
+      "source_task": "pydantic-adherence",
+      "source_replay_path": "C:\\projects\\Hermes-Skills\\Hermes Skills\\data\\primehub_eligible_benchmark_v2_47env\\qwen35_27b\\qwen35_27b_pydantic_adherence_q0049.jsonl",
+      "observation_excerpt": "USER: Below you see a pydantic model named LendingPolicy. Return a json that, when parsed to a dict, is compatible with the model. Here is the pydantic config:\n```python\nimport uuid\nfrom datetime import datetime, timedelta\nfrom enum import Enum\nfrom typing import List, Dict, Optional, Literal\nfrom pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator, ValidationError, conint, StrictStr\nclass GenreEnum(str, Enum):\n    fiction = 'fiction'\n    non_fiction = 'non-fiction'"
+    }
+  ]
+}

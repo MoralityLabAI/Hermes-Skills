@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="450" viewBox="0 0 820 450" role="img" aria-labelledby="title desc">
+  <title id="title">Modelled DB Lookup Efficiency</title>
+  <desc id="desc">Bar chart comparing naive broad schema scan with direct TRM-MCP schema handles for calls and lookup units.</desc>
+  <rect width="820" height="450" fill="#f8f5ef"/>
+  <text x="40" y="42" font-family="Georgia,serif" font-size="24" fill="#1e2a24">Modelled DB Lookup Efficiency</text>
+  <text x="40" y="68" font-family="Verdana,sans-serif" font-size="12" fill="#5e665f">Analytical model from Postgres MCP traces, not measured latency/tokens</text>
+  <line x1="78" y1="352" x2="780" y2="352" stroke="#2d3b35" stroke-width="1"/>
+  <line x1="78" y1="92" x2="78" y2="352" stroke="#2d3b35" stroke-width="1"/>
+  <text x="48" y="356" font-family="Verdana,sans-serif" font-size="11" fill="#2d3b35">0</text>
+  <text x="48" y="313" font-family="Verdana,sans-serif" font-size="11" fill="#2d3b35">1</text>
+  <text x="48" y="270" font-family="Verdana,sans-serif" font-size="11" fill="#2d3b35">2</text>
+  <text x="48" y="227" font-family="Verdana,sans-serif" font-size="11" fill="#2d3b35">3</text>
+  <text x="48" y="184" font-family="Verdana,sans-serif" font-size="11" fill="#2d3b35">4</text>
+  <text x="48" y="141" font-family="Verdana,sans-serif" font-size="11" fill="#2d3b35">5</text>
+  <text x="48" y="98" font-family="Verdana,sans-serif" font-size="11" fill="#2d3b35">6</text>
+  <g stroke="#d7d0c2" stroke-width="1">
+    <line x1="78" y1="309" x2="780" y2="309"/>
+    <line x1="78" y1="266" x2="780" y2="266"/>
+    <line x1="78" y1="223" x2="780" y2="223"/>
+    <line x1="78" y1="180" x2="780" y2="180"/>
+    <line x1="78" y1="137" x2="780" y2="137"/>
+    <line x1="78" y1="94" x2="780" y2="94"/>
+  </g>
+  <rect x="120" y="223" width="42" height="129" fill="#b85b3f"/>
+  <rect x="168" y="309" width="42" height="43" fill="#2f6f73"/>
+  <rect x="285" y="94" width="42" height="258" fill="#b85b3f"/>
+  <rect x="333" y="266" width="42" height="86" fill="#2f6f73"/>
+  <rect x="450" y="223" width="42" height="129" fill="#b85b3f"/>
+  <rect x="498" y="309" width="42" height="43" fill="#2f6f73"/>
+  <rect x="615" y="137" width="42" height="215" fill="#b85b3f"/>
+  <rect x="663" y="266" width="42" height="86" fill="#2f6f73"/>
+  <g font-family="Verdana,sans-serif" font-size="11" fill="#1e2a24" text-anchor="middle">
+    <text x="141" y="218">3</text>
+    <text x="189" y="304">1</text>
+    <text x="306" y="89">6</text>
+    <text x="354" y="261">2</text>
+    <text x="471" y="218">3</text>
+    <text x="519" y="304">1</text>
+    <text x="636" y="132">5</text>
+    <text x="684" y="261">2</text>
+  </g>
+  <g font-family="Verdana,sans-serif" font-size="11" fill="#2d3b35" text-anchor="middle">
+    <text x="165" y="382">Exact schema</text>
+    <text x="165" y="397">MCP calls</text>
+    <text x="330" y="382">Exact schema</text>
+    <text x="330" y="397">lookup units</text>
+    <text x="495" y="382">Template</text>
+    <text x="495" y="397">MCP calls</text>
+    <text x="660" y="382">Template</text>
+    <text x="660" y="397">lookup units</text>
+  </g>
+  <rect x="585" y="35" width="16" height="16" fill="#b85b3f"/>
+  <text x="608" y="48" font-family="Verdana,sans-serif" font-size="12" fill="#1e2a24">Naive broad scan</text>
+  <rect x="585" y="58" width="16" height="16" fill="#2f6f73"/>
+  <text x="608" y="71" font-family="Verdana,sans-serif" font-size="12" fill="#1e2a24">TRM-MCP direct handle</text>
+</svg>

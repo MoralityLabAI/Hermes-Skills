@@ -53,6 +53,32 @@ These traces are designed to exercise exact lookup and hard negatives: semantica
 
 This is a training-corpus seed, not a final benchmark. Its immediate value is schema design: it defines the row families, labels, negatives, and action surfaces needed to train and evaluate TRM-MCP controllers.
 
+## DB Lookup Efficiency Model
+
+The Postgres worked example motivates an efficiency graph for naive broad lookup versus typed TRM-MCP lookup. The graph is a bounded analytical model, not a measured latency benchmark. It compares a broad list-then-read workflow against direct resource-handle or template retrieval.
+
+For exact schema reads, the naive workflow is modelled as: list schema groups, list candidate relations, then read the selected relation. The TRM-MCP workflow is modelled as: route directly to the expected resource handle and read it. This reduces modelled MCP calls from `3` to `1` and lookup units from `6` to `2`.
+
+For query-template reads, the naive workflow is modelled as: list templates, inspect plausible candidates, then instantiate or read the selected template. The TRM-MCP workflow uses a direct template handle. This reduces modelled MCP calls from `3` to `1` and lookup units from `5` to `2`.
+
+The Postgres pack also includes two failure cases: a wrong-table near miss and a wrong-route schema lookup. In TRM-MCP terms these are not merely failures; they are verifier training rows. The paper should use this as a schema-control argument: a useful DB lookup controller must reject attractive wrong resources before they waste downstream context.
+
+## MeTTa Schema-Surface Enrichment
+
+A separate Primehub schema MCP pack extends the same idea from SQL-style relation lookup to benchmark schema lookup. The generated surface covers three structured environments: `psycho_bench`, `ascii_tree`, and `pydantic_adherence`.
+
+The MeTTa/MCP-enriched schema surface contains:
+
+1. `6` stable resource handles,
+2. `6` answer-shape tags,
+3. `6` query-cue sets,
+4. `6` minimal examples,
+5. `6` failure-mode sets,
+6. `2` validation-path or validator-note enriched resources,
+7. `6` source replay links.
+
+This is the concrete meaning of "MeTTa improves the DB schema" in the current evidence: it turns vague prompt and replay material into addressable schema records with handles, answer shapes, cues, examples, failure modes, and verifier notes. It is not yet a live SQL migration claim.
+
 ## Storyworld Play-Diary MCP
 
 The storyworld player adds episodic memory. Repeated playthroughs write a play diary containing episode summaries, turn rows, legal actions, selected actions, NAV recommendations, endings, scores, and TRM labels.

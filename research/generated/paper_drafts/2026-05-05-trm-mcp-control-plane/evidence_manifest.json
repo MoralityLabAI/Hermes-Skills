@@ -34,6 +34,23 @@
       "negative": 6
     }
   },
+  "db_lookup_efficiency_model": {
+    "table": "research\\generated\\paper_drafts\\2026-05-05-trm-mcp-control-plane\\tables\\db_lookup_efficiency_model.csv",
+    "figure": "research\\generated\\paper_drafts\\2026-05-05-trm-mcp-control-plane\\figures\\db_lookup_efficiency.svg",
+    "source_pack": "data\\trm_mcp_postgres_example",
+    "evidence_class": "analytical_model",
+    "claim_boundary": "Modelled call and lookup-unit comparison from broad list-then-read versus direct TRM-MCP handles; not measured latency or token savings."
+  },
+  "metta_schema_enrichment": {
+    "table": "research\\generated\\paper_drafts\\2026-05-05-trm-mcp-control-plane\\tables\\metta_db_schema_enrichment.csv",
+    "figure": "research\\generated\\paper_drafts\\2026-05-05-trm-mcp-control-plane\\figures\\metta_db_schema_enrichment.svg",
+    "source_pack": "data\\trm_mcp_primehub_schema_example",
+    "surface": "data\\trm_mcp_primehub_schema_example\\primehub_schema_surface.json",
+    "trace_summary": "data\\trm_mcp_primehub_schema_example\\primehub_schema_mcp_traces.summary.json",
+    "row_summary": "data\\trm_mcp_primehub_schema_example\\rows\\mcp_trm_rows.summary.json",
+    "evidence_class": "schema_artifact",
+    "claim_boundary": "Shows schema-surface enrichment for MCP/TRM routing and verification; not a live SQL database migration."
+  },
   "storyworld_play_diary_mcp": {
     "reference": "C:\\projects\\metta-storyworld\\metta-storyworld\\skills\\storyworld-player\\references\\play-diary-mcp.md",
     "app_readme": "C:\\projects\\metta-storyworld\\metta-etc\\README.md",

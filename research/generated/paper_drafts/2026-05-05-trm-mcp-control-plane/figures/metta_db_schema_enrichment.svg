@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="500" viewBox="0 0 860 500" role="img" aria-labelledby="title desc">
+  <title id="title">MeTTa MCP Schema-Surface Enrichment</title>
+  <desc id="desc">Bar chart showing schema metadata added by the MeTTa MCP Primehub schema surface.</desc>
+  <rect width="860" height="500" fill="#f6f7f2"/>
+  <text x="42" y="42" font-family="Georgia,serif" font-size="24" fill="#1e2730">MeTTa MCP Schema-Surface Enrichment</text>
+  <text x="42" y="68" font-family="Verdana,sans-serif" font-size="12" fill="#5b635d">Primehub schema MCP surface: 3 envs, 6 addressable resource records</text>
+  <line x1="80" y1="390" x2="820" y2="390" stroke="#2d3b35" stroke-width="1"/>
+  <line x1="80" y1="92" x2="80" y2="390" stroke="#2d3b35" stroke-width="1"/>
+  <g stroke="#d7d0c2" stroke-width="1">
+    <line x1="80" y1="340" x2="820" y2="340"/>
+    <line x1="80" y1="290" x2="820" y2="290"/>
+    <line x1="80" y1="241" x2="820" y2="241"/>
+    <line x1="80" y1="191" x2="820" y2="191"/>
+    <line x1="80" y1="142" x2="820" y2="142"/>
+    <line x1="80" y1="92" x2="820" y2="92"/>
+  </g>
+  <g font-family="Verdana,sans-serif" font-size="11" fill="#2d3b35">
+    <text x="54" y="394">0</text>
+    <text x="54" y="344">1</text>
+    <text x="54" y="294">2</text>
+    <text x="54" y="245">3</text>
+    <text x="54" y="195">4</text>
+    <text x="54" y="146">5</text>
+    <text x="54" y="96">6</text>
+  </g>
+  <g>
+    <rect x="112" y="241" width="32" height="149" fill="#b85b3f"/>
+    <rect x="150" y="241" width="32" height="149" fill="#2f6f73"/>
+    <rect x="214" y="390" width="32" height="0" fill="#b85b3f"/>
+    <rect x="252" y="92" width="32" height="298" fill="#2f6f73"/>
+    <rect x="316" y="390" width="32" height="0" fill="#b85b3f"/>
+    <rect x="354" y="92" width="32" height="298" fill="#2f6f73"/>
+    <rect x="418" y="390" width="32" height="0" fill="#b85b3f"/>
+    <rect x="456" y="92" width="32" height="298" fill="#2f6f73"/>
+    <rect x="520" y="390" width="32" height="0" fill="#b85b3f"/>
+    <rect x="558" y="92" width="32" height="298" fill="#2f6f73"/>
+    <rect x="622" y="390" width="32" height="0" fill="#b85b3f"/>
+    <rect x="660" y="290" width="32" height="100" fill="#2f6f73"/>
+    <rect x="724" y="390" width="32" height="0" fill="#b85b3f"/>
+    <rect x="762" y="92" width="32" height="298" fill="#2f6f73"/>
+  </g>
+  <g font-family="Verdana,sans-serif" font-size="10" fill="#1e2a24" text-anchor="middle">
+    <text x="128" y="236">3</text>
+    <text x="166" y="236">3</text>
+    <text x="268" y="87">6</text>
+    <text x="370" y="87">6</text>
+    <text x="472" y="87">6</text>
+    <text x="574" y="87">6</text>
+    <text x="676" y="285">2</text>
+    <text x="778" y="87">6</text>
+  </g>
+  <g font-family="Verdana,sans-serif" font-size="10" fill="#2d3b35" text-anchor="middle">
+    <text x="147" y="414">Envs</text>
+    <text x="249" y="414">Handles</text>
+    <text x="351" y="414">Answer</text>
+    <text x="351" y="428">shapes</text>
+    <text x="453" y="414">Query</text>
+    <text x="453" y="428">cues</text>
+    <text x="555" y="414">Minimal</text>
+    <text x="555" y="428">examples</text>
+    <text x="657" y="414">Validator</text>
+    <text x="657" y="428">notes</text>
+    <text x="759" y="414">Source</text>
+    <text x="759" y="428">links</text>
+  </g>
+  <rect x="585" y="35" width="16" height="16" fill="#b85b3f"/>
+  <text x="608" y="48" font-family="Verdana,sans-serif" font-size="12" fill="#1e2a24">Raw prompt / naive schema</text>
+  <rect x="585" y="58" width="16" height="16" fill="#2f6f73"/>
+  <text x="608" y="71" font-family="Verdana,sans-serif" font-size="12" fill="#1e2a24">MeTTa MCP schema surface</text>
+</svg>
