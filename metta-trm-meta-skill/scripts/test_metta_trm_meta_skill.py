@@ -246,6 +246,11 @@ class MeTTaTRMMetaSkillTests(unittest.TestCase):
             self.assertEqual(len(messages), 3)
             self.assertEqual(messages[0]["messages"][0]["role"], "system")
             self.assertEqual(messages[0]["messages"][-1]["role"], "assistant")
+            prompt_payload = json.loads(messages[0]["messages"][1]["content"])
+            self.assertEqual(
+                prompt_payload["output_contract"]["required_keys"],
+                ["accept_repair", "repair", "repaired_atom"],
+            )
             summary = json.loads(manifest.read_text(encoding="utf-8"))
             self.assertEqual(summary["row_count"], 3)
             self.assertEqual(summary["messages_count"], 3)

@@ -52,6 +52,12 @@ python "C:\projects\Hermes-Skills\Hermes Skills\metta-trm-meta-skill\scripts\run
 
 Use `--generation-mode staged` when testing whether a small model can build the package one file at a time under the same frozen base contract.
 
+Repair-message baseline:
+
+```powershell
+python "C:\projects\Hermes-Skills\Hermes Skills\metta-trm-meta-skill\scripts\bench_repair_training_messages.py" --messages D:\metta_trm_meta_small_model_bench\small_model_bootstrap_20260505T150037Z\repair_training_messages.jsonl --out-dir D:\metta_trm_meta_small_model_bench\small_model_bootstrap_20260505T150037Z\repair_message_baseline_qwen4b
+```
+
 Common commands:
 
 ```powershell
@@ -63,6 +69,8 @@ python .\metta-trm-meta-skill\scripts\metta_trm_meta_skill.py export-trm-rows --
 
 python .\metta-trm-meta-skill\scripts\metta_trm_meta_skill.py export-repair-training-rows --input D:\metta_trm_meta_small_model_bench\small_model_bootstrap_20260505T150037Z --out D:\metta_trm_meta_small_model_bench\small_model_bootstrap_20260505T150037Z\repair_training_rows.jsonl --messages-out D:\metta_trm_meta_small_model_bench\small_model_bootstrap_20260505T150037Z\repair_training_messages.jsonl --manifest D:\metta_trm_meta_small_model_bench\small_model_bootstrap_20260505T150037Z\repair_training_manifest.json
 ```
+
+The messages export includes an `output_contract` in the user payload so small models learn to emit direct action JSON instead of tool-call wrappers.
 
 ## TRM Role Set
 

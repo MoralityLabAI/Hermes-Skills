@@ -818,15 +818,21 @@ def build_rows_from_repair_report(report_path: Path) -> list[dict[str, Any]]:
 
 
 def trm_row_to_messages(row: dict[str, Any], system_prompt: str) -> dict[str, Any]:
+    action = dict(row.get("action") or {})
     prompt_payload = {
         "role": row.get("role", ""),
         "state": row.get("state", {}),
         "tools": row.get("tools", []),
+        "output_contract": {
+            "format": "direct_json_action_object",
+            "required_keys": sorted(action),
+            "forbid": ["tool_call_wrapper", "action_params_wrapper", "hidden_reasoning"],
+        },
     }
     messages = [
         {"role": "system", "content": system_prompt},
         {"role": "user", "content": json.dumps(prompt_payload, ensure_ascii=False, sort_keys=True)},
-        {"role": "assistant", "content": json.dumps(row.get("action", {}), ensure_ascii=False, sort_keys=True)},
+        {"role": "assistant", "content": json.dumps(action, ensure_ascii=False, sort_keys=True)},
     ]
     meta = dict(row.get("meta") or {})
     meta.update(
@@ -1038,7 +1044,7 @@ def build_parser() -> argparse.ArgumentParser:
     repair_export.add_argument("--messages-out", help="Optional Pure-TRM/QLoRA messages JSONL built from the exported rows.")
     repair_export.add_argument(
         "--system-prompt",
-        default="You are a MeTTa/TRM control-plane model. Emit compact JSON action only. Do not output hidden reasoning.",
+        default="You are a MeTTa/TRM control-plane model. Emit the direct JSON action object only. Do not wrap it in action/params. Do not output hidden reasoning.",
     )
     repair_export.set_defaults(func=cmd_export_repair_training_rows)
 
