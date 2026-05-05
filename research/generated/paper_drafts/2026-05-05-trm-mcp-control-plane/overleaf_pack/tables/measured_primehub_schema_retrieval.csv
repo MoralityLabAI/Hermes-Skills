@@ -1,0 +1,10 @@
+env,arm,reward,prompt_tokens,completion_tokens,total_tokens,reward_delta_vs_baseline,total_token_delta_vs_baseline,reward_per_1k_total_tokens,source
+ascii_tree,baseline,0.0000,436,61,497,0.0000,0,0.0000,research/studies/2026-04-22-primehub-structured-map-retrieval/artifacts/live_eval_qwen35_9b_ascii_threaded/structured_map_live_eval.results.json
+ascii_tree,plain_structured_map,0.0000,595,61,656,0.0000,159,0.0000,research/studies/2026-04-22-primehub-structured-map-retrieval/artifacts/live_eval_qwen35_9b_ascii_threaded/structured_map_live_eval.results.json
+ascii_tree,retrieval_assisted,0.8000,875,64,939,0.8000,442,0.8520,research/studies/2026-04-22-primehub-structured-map-retrieval/artifacts/live_eval_qwen35_9b_ascii_threaded/structured_map_live_eval.results.json
+psycho_bench,baseline,3.3283,864,255,1119,0.0000,0,2.9744,research/studies/2026-04-22-primehub-structured-map-retrieval/artifacts/live_eval_qwen35_9b_after_env_fix/structured_map_live_eval.results.json
+psycho_bench,plain_structured_map,3.3061,984,255,1239,-0.0222,120,2.6684,research/studies/2026-04-22-primehub-structured-map-retrieval/artifacts/live_eval_qwen35_9b_after_env_fix/structured_map_live_eval.results.json
+psycho_bench,retrieval_assisted,3.3311,1279,255,1534,0.0028,415,2.1715,research/studies/2026-04-22-primehub-structured-map-retrieval/artifacts/live_eval_qwen35_9b_after_env_fix/structured_map_live_eval.results.json
+pydantic_adherence,baseline,0.0000,1019,224,1243,0.0000,0,0.0000,research/studies/2026-04-22-primehub-structured-map-retrieval/artifacts/live_eval_qwen35_9b_after_env_fix/structured_map_live_eval.results.json
+pydantic_adherence,plain_structured_map,0.0000,1137,227,1364,0.0000,121,0.0000,research/studies/2026-04-22-primehub-structured-map-retrieval/artifacts/live_eval_qwen35_9b_after_env_fix/structured_map_live_eval.results.json
+pydantic_adherence,retrieval_assisted,1.0000,1709,151,1860,1.0000,617,0.5376,research/studies/2026-04-22-primehub-structured-map-retrieval/artifacts/live_eval_qwen35_9b_after_env_fix/structured_map_live_eval.results.json

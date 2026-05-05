@@ -1,0 +1,6 @@
+metric,naive_broad_schema_scan,trm_mcp_direct_handle,relative_change,evidence_class,notes
+mcp_calls_exact_relation,3,1,-66.7%,analytical_model,"Naive: list schema groups, list candidate relations, read relation. TRM-MCP: direct resource handle read."
+lookup_units_exact_relation,6,2,-66.7%,analytical_model,"Naive counts schema group descriptors, candidate relation descriptors, and payload. TRM-MCP counts selected handle and payload."
+mcp_calls_query_template,3,1,-66.7%,analytical_model,"Naive: list templates, inspect plausible candidates, instantiate selected template. TRM-MCP: direct template handle."
+lookup_units_query_template,5,2,-60.0%,analytical_model,"Naive counts template list, inspected candidates, and selected payload. TRM-MCP counts selected template handle and payload."
+wrong_near_miss_accepts_in_postgres_pack,2,0,-100.0%,trace_schema,"The Postgres pack has two wrong-resource or wrong-route cases that become verifier reject rows under TRM-MCP."

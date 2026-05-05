@@ -1,0 +1,5 @@
+pack,trace_count,row_count,mcp_route,mcp_retrieve,mcp_verify,exact_positive,negative,mcp_namespace
+filesystem,5,14,5,4,5,12,2,filesystem
+github,5,14,5,4,5,12,2,github
+postgres,5,14,5,4,5,12,2,postgres
+merged,15,42,15,12,15,36,6,"filesystem|github|postgres"
