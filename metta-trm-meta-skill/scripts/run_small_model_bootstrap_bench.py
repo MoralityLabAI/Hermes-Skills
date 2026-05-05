@@ -63,9 +63,9 @@ ALLOWED_FILES = [
 
 STAGED_FILE_RULES = {
     "package.manifest.json": (
-        "Return valid JSON only inside the file tag. Use exactly these keys: "
+        "Return valid JSON only inside the file tag. Do not include MeTTa atoms, parentheses, or unescaped quotes in JSON string values. Use exactly these keys: "
         "package_id, title, base_skill, trm_overlay, infusion_type, target_envs, bundle_outputs, notes. "
-        "Use bundle_outputs with retrieval_packet, critic_hints, trace_labels, runtime_packet, metta_trm_rows."
+        "Use bundle_outputs as a JSON list of simple strings: retrieval_packet, critic_hints, trace_labels, runtime_packet, metta_trm_rows."
     ),
     "package.metta": (
         "Return 4-6 identity atoms only: package-id, base-skill, overlay, env, goal. "
@@ -84,7 +84,8 @@ STAGED_FILE_RULES = {
         "Do not pack repair-hint or trace-label inside a failure-mode atom."
     ),
     "examples/minimal_valid.json": (
-        "Return valid JSON only inside the file tag with package_id, role, state, action, and claim_label."
+        "Return valid JSON only inside the file tag with package_id, role, state, action, and claim_label. "
+        "Do not write MeTTa atoms in this JSON file."
     ),
 }
 
@@ -180,6 +181,32 @@ def build_file_prompt(task: dict[str, str], base_prompt: str, filename: str, pri
     )
     prior_summary = "\n".join(f"- {name}: generated" for name in prior_files) or "- none"
     rule = STAGED_FILE_RULES[filename]
+    json_example = ""
+    if filename == "package.manifest.json":
+        json_example = f"""
+JSON shape to copy:
+{{
+  "package_id": "{task['task_id']}",
+  "title": "Broad Domain Adapter",
+  "base_skill": "{task['base_skill']}",
+  "trm_overlay": "metta-trm-meta-skill",
+  "infusion_type": "metta_trm_meta_control_plane",
+  "target_envs": ["{task['target_env']}"],
+  "bundle_outputs": ["retrieval_packet", "critic_hints", "trace_labels", "runtime_packet", "metta_trm_rows"],
+  "notes": {{"claim_label": "training_corpus_plan"}}
+}}
+"""
+    elif filename == "examples/minimal_valid.json":
+        json_example = f"""
+JSON shape to copy:
+{{
+  "package_id": "{task['task_id']}",
+  "role": "author_router",
+  "state": {{"target_env": "{task['target_env']}", "task_focus": "short task focus"}},
+  "action": {{"route": "metta_package_authoring", "target_env": "{task['target_env']}"}},
+  "claim_label": "training_corpus_plan"
+}}
+"""
     user = f"""FROZEN BASE SKILL:
 {base_prompt}
 
@@ -195,6 +222,7 @@ Already generated files:
 
 Generate only `{filename}`.
 Rule: {rule}
+{json_example}
 
 Strict output format:
 <{filename}>
@@ -205,6 +233,7 @@ Hard requirements:
 - Close the file tag.
 - Use target env "{task['target_env']}" consistently.
 - For .metta files, every line must be a supported parenthesized atom.
+- For .metta files, do not include filename atoms like ({filename}) and do not include XML closing tags inside the body.
 - For env-scoped .metta atoms, put the env first: (constraint "{task['target_env']}" "short value").
 - Do not write wrapper atoms like: (env "{task['target_env']}" "constraint" "value").
 """

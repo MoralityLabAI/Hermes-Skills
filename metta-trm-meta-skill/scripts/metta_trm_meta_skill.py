@@ -393,6 +393,8 @@ def repair_line(line: str, default_env: str | None = None) -> tuple[str, dict[st
     stripped = line.strip()
     if not stripped or stripped.startswith(";"):
         return line, None
+    if stripped == ")" or stripped.startswith("</"):
+        return "", {"from": stripped, "to": "", "repair": "drop_unmatched_closer"}
     parsed = parse_atom_line(stripped)
     if parsed and parsed.get("ok"):
         normalized, report = normalize_env_wrapper_atom(parsed)

@@ -157,6 +157,38 @@ class MeTTaTRMMetaSkillTests(unittest.TestCase):
             repaired = (repaired_dir / "contracts.metta").read_text(encoding="utf-8")
             self.assertIn('(answer-shape "storyworld_nav" "bounded action packet")', repaired)
 
+    def test_repair_packet_drops_unmatched_closing_parens(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            package_dir = root / "unmatched_closer"
+            repaired_dir = root / "repaired"
+            package_dir.mkdir()
+            (package_dir / "package.manifest.json").write_text(
+                json.dumps(
+                    {
+                        "package_id": "unmatched_closer",
+                        "title": "Unmatched Closer",
+                        "base_skill": "storyworld-player",
+                        "trm_overlay": "metta-trm-meta-skill",
+                        "infusion_type": "metta_trm_meta_control_plane",
+                        "target_envs": ["storyworld_nav"],
+                        "bundle_outputs": [],
+                        "notes": {},
+                    }
+                ),
+                encoding="utf-8",
+            )
+            (package_dir / "contracts.metta").write_text(
+                '(summary "storyworld_nav" "short")\n)\n',
+                encoding="utf-8",
+            )
+
+            run_cmd("repair-packet", "--package-dir", str(package_dir), "--out-dir", str(repaired_dir))
+            repaired = (repaired_dir / "contracts.metta").read_text(encoding="utf-8")
+            self.assertNotIn(")", repaired.splitlines()[-1:])
+            report = json.loads((repaired_dir / "repair_report.json").read_text(encoding="utf-8"))
+            self.assertEqual(report["repairs"][-1]["repair"], "drop_unmatched_closer")
+
     def test_export_repair_training_rows(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

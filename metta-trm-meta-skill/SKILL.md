@@ -87,6 +87,14 @@ python "C:\projects\Hermes-Skills\Hermes Skills\metta-trm-meta-skill\scripts\run
 
 Add `--router-mode llm --run-bootstrap` when a local OpenAI-compatible endpoint is live.
 
+Local 3B GGUF OpenAI-compatible shim:
+
+```powershell
+python "C:\projects\Hermes-Skills\Hermes Skills\metta-trm-meta-skill\scripts\serve_llama_cpp_openai.py" --model-path D:\models\Qwen2.5-3B-Instruct-GGUF\qwen2.5-3b-instruct-q4_k_m.gguf --model-name Qwen2.5-3B-Instruct-Q4_K_M-local --host 127.0.0.1 --port 8084 --n-ctx 4096 --n-threads 6 --n-batch 128 --n-gpu-layers 0
+```
+
+Use `--n-gpu-layers 0` when `llama_cpp.llama_supports_gpu_offload()` is false; do not force GPU offload on CPU-only builds.
+
 Common commands:
 
 ```powershell
