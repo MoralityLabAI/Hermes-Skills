@@ -49,6 +49,15 @@ REQUIRED_MANIFEST_FIELDS = {
     "notes",
 }
 
+REQUIRED_PACKAGE_FILES = [
+    "package.manifest.json",
+    "package.metta",
+    "contracts.metta",
+    "retrieval_policy.metta",
+    "failure_modes.metta",
+    "examples/minimal_valid.json",
+]
+
 TRM_ROLES = [
     "author_router",
     "metta_syntax_repair",
@@ -314,6 +323,22 @@ def repair_line(line: str) -> tuple[str, dict[str, Any] | None]:
     repaired = parse_atom_line(candidate)
     if repaired and repaired.get("ok"):
         return candidate, {"from": stripped, "to": candidate, "repair": "wrapped_single_atom"}
+    if repaired and repaired.get("error") == "unsupported_head":
+        head = str(repaired.get("head") or "")
+        args = [str(arg) for arg in repaired.get("args") or []]
+        env = next((arg for arg in args if re.search(r"(env|nav|logic|router|storyworld|intellect|tool)", arg, re.I)), "general")
+        detail = f"{head}: " + " ".join(args)
+        replacement_head = "trace-label"
+        if "repair" in head:
+            replacement_head = "repair-hint"
+        elif "valid" in head or "validator" in head or "verify" in head:
+            replacement_head = "validator-note"
+        elif "retriev" in head or "query" in head:
+            replacement_head = "query-cue"
+        elif "commit" in head or "veto" in head:
+            replacement_head = "trace-label"
+        candidate = atom(replacement_head, env, detail)
+        return candidate, {"from": stripped, "to": candidate, "repair": "unsupported_head_projected"}
     return stripped, {"from": stripped, "to": stripped, "repair": "unrepaired", "error": (parsed or repaired or {}).get("error")}
 
 
@@ -355,6 +380,8 @@ def score_package(package_dir: Path) -> dict[str, Any]:
     atoms, errors = load_atoms(package_dir)
     heads = atoms_by_head(atoms)
     manifest_missing = sorted(REQUIRED_MANIFEST_FIELDS - set(manifest))
+    missing_files = [rel for rel in REQUIRED_PACKAGE_FILES if not (package_dir / rel).exists()]
+    file_score = (len(REQUIRED_PACKAGE_FILES) - len(missing_files)) / len(REQUIRED_PACKAGE_FILES)
     envs = [str(env) for env in manifest.get("target_envs", [])] or [row["args"][0] for row in heads.get("env", []) if row["args"]]
 
     total_lines = len(atoms) + len(errors)
@@ -375,6 +402,7 @@ def score_package(package_dir: Path) -> dict[str, Any]:
     trainer_checks = [
         syntax >= 0.95,
         manifest_score >= 0.85,
+        file_score >= 0.85,
         all(contract_checks[:4]),
         all(retrieval_checks),
         all(repair_checks),
@@ -382,6 +410,7 @@ def score_package(package_dir: Path) -> dict[str, Any]:
     ]
 
     scores = {
+        "files": round(file_score, 4),
         "syntax": round(syntax, 4),
         "manifest": round(manifest_score, 4),
         "contract": round(sum(contract_checks) / len(contract_checks), 4),
@@ -389,7 +418,7 @@ def score_package(package_dir: Path) -> dict[str, Any]:
         "repair": round(sum(repair_checks) / len(repair_checks), 4),
         "trainer_export": round(sum(1 for ok in trainer_checks if ok) / len(trainer_checks), 4),
     }
-    overall = sum(scores[key] for key in ["syntax", "contract", "retrieval", "repair", "trainer_export"]) / 5
+    overall = sum(scores[key] for key in ["files", "syntax", "manifest", "contract", "retrieval", "repair", "trainer_export"]) / 7
     return {
         "generated_at_utc": utc_now(),
         "package_dir": str(package_dir),
@@ -397,11 +426,12 @@ def score_package(package_dir: Path) -> dict[str, Any]:
         "target_envs": envs,
         "scores": {**scores, "overall": round(overall, 4)},
         "manifest_missing": manifest_missing,
+        "missing_files": missing_files,
         "atom_count": len(atoms),
         "error_count": len(errors),
         "errors": errors[:50],
-        "ready_for_training_rows": overall >= 0.7,
-        "ready_for_runtime_without_review": overall >= 0.85 and not errors,
+        "ready_for_training_rows": overall >= 0.7 and manifest_score >= 0.85,
+        "ready_for_runtime_without_review": overall >= 0.85 and file_score >= 1.0 and manifest_score >= 0.85 and not errors,
     }
 
 
@@ -720,4 +750,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

@@ -44,6 +44,12 @@ Canonical CLI:
 python "C:\projects\Hermes-Skills\Hermes Skills\metta-trm-meta-skill\scripts\metta_trm_meta_skill.py" --help
 ```
 
+Strict small-model bootstrap bench:
+
+```powershell
+python "C:\projects\Hermes-Skills\Hermes Skills\metta-trm-meta-skill\scripts\run_small_model_bootstrap_bench.py" --out-dir D:\metta_trm_meta_small_model_bench --prompt-mode compact --max-tokens 1200
+```
+
 Common commands:
 
 ```powershell
@@ -82,4 +88,3 @@ Use one of:
 - `control_plane_threshold_eval`
 - `environment_design`
 - `training_corpus_plan`
-
