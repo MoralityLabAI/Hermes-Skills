@@ -1,0 +1,38 @@
+flowchart LR
+  Q[Task or user query] --> S[Compact task state]
+  S --> R[Router TRM]
+  R --> M{MCP family}
+  M --> F[Filesystem]
+  M --> G[GitHub]
+  M --> P[Postgres]
+  M --> D[Play diary]
+  F --> C[Candidate descriptors]
+  G --> C
+  P --> C
+  D --> C
+  C --> T[Retriever TRM]
+  T --> X[Deterministic MCP executor]
+  X --> V[Verifier TRM]
+  V -->|exact hit| E[Compact evidence bundle]
+  V -->|near miss| R
+  V -->|enough evidence| L[Main LLM or policy]
+  E --> L
+  L --> O[Answer / action / storyworld decision]
+  O --> Y[Outcome log]
+  Y --> Z[TRM-MCP rows]
+  Z --> R
+  Z --> T
+  Z --> V
+
+  subgraph Learned pointer policy
+    R
+    T
+    V
+  end
+
+  subgraph Structured memory
+    F
+    G
+    P
+    D
+  end

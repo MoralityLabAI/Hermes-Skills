@@ -1,0 +1,48 @@
+{
+  "paper_seed": "2026-05-05-metta-trm-meta-skill-compactification",
+  "generated_local_date": "2026-05-05",
+  "primary_repo": "C:\\projects\\Hermes-Skills\\Hermes Skills",
+  "primary_skill": "metta-trm-meta-skill",
+  "source_files": [
+    "metta-trm-meta-skill\\SKILL.md",
+    "metta-trm-meta-skill\\references\\domain_router_lattice.md",
+    "metta-trm-meta-skill\\scripts\\run_domain_router_bootstrap_study.py",
+    "metta-trm-meta-skill\\scripts\\run_small_model_bootstrap_bench.py",
+    "metta-trm-meta-skill\\scripts\\metta_trm_meta_skill.py",
+    "metta-trm-meta-skill\\scripts\\build_repair_curriculum.py",
+    "metta-trm-meta-skill\\scripts\\train_repair_controller.py",
+    "metta-trm-meta-skill\\scripts\\serve_llama_cpp_openai.py"
+  ],
+  "live_3b_model": {
+    "model": "Qwen2.5-3B-Instruct-Q4_K_M-local",
+    "gguf_path": "D:\\models\\Qwen2.5-3B-Instruct-GGUF\\qwen2.5-3b-instruct-q4_k_m.gguf",
+    "server": "llama_cpp OpenAI-compatible shim",
+    "server_script": "metta-trm-meta-skill\\scripts\\serve_llama_cpp_openai.py",
+    "gpu_offload": "none; local llama_cpp build reported no GPU offload support"
+  },
+  "artifacts": {
+    "three_case_llm_router": "D:\\metta_trm_meta_small_model_bench\\domain_router_3b\\domain_router_bootstrap_20260505T201352Z",
+    "failed_first_two_domain_bootstrap": "D:\\metta_trm_meta_small_model_bench\\domain_router_3b\\domain_router_bootstrap_20260505T201443Z",
+    "single_domain_repair_v2": "D:\\metta_trm_meta_small_model_bench\\domain_router_3b\\domain_router_bootstrap_20260505T202534Z\\bootstrap_runs\\small_model_bootstrap_20260505T202557Z\\domain_router_01_formal_reasoning\\repaired_verify_v2.json",
+    "final_two_domain_bootstrap": "D:\\metta_trm_meta_small_model_bench\\domain_router_3b\\domain_router_bootstrap_20260505T203352Z",
+    "final_two_domain_summary": "D:\\metta_trm_meta_small_model_bench\\domain_router_3b\\domain_router_bootstrap_20260505T203352Z\\bootstrap_runs\\small_model_bootstrap_20260505T203446Z\\summary.json",
+    "final_two_domain_process": "D:\\metta_trm_meta_small_model_bench\\domain_router_3b\\domain_router_bootstrap_20260505T203352Z\\bootstrap_process.json",
+    "repair_curriculum": "D:\\metta_trm_meta_small_model_bench\\repair_curriculum_v1\\repair_curriculum_manifest.json",
+    "repair_curriculum_controller": "D:\\metta_trm_meta_small_model_bench\\repair_curriculum_v1\\template_controller_eval\\summary.json",
+    "heldout_repair_generalization": "D:\\metta_trm_meta_small_model_bench\\heldout_generalization\\repair_generalization_20260505T174032Z\\summary.json",
+    "heldout_repair_controller_v2": "D:\\metta_trm_meta_small_model_bench\\heldout_generalization\\repair_generalization_20260505T174032Z\\controller_eval_on_heldout_repairs_v2\\summary.json"
+  },
+  "key_numbers": {
+    "two_domain_task_count": 2,
+    "two_domain_elapsed_seconds": 680.9,
+    "two_domain_raw_overall_avg": 0.5407,
+    "two_domain_repaired_overall_avg": 0.9115,
+    "two_domain_ready_for_rows_rate": 1.0,
+    "two_domain_ready_for_runtime_rate": 1.0,
+    "heldout_raw_overall_avg": 0.8633,
+    "heldout_repaired_overall_avg": 0.9735,
+    "heldout_fixed_controller_exact_action_rate": 1.0,
+    "heldout_fixed_controller_message_count": 117
+  },
+  "claim_boundary": "Package verifier scores and repair-controller scores are control-plane readiness metrics, not downstream benchmark success metrics."
+}

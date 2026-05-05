@@ -1,0 +1,4 @@
+run,task_id,files_extracted,files_missing,raw_overall,raw_syntax,repaired_overall,repaired_syntax,ready_for_rows,ready_for_runtime,trm_rows
+domain_router_3b_20260505T203352,domain_router_01_formal_reasoning,6,0,0.5210,0.7419,0.9388,1.0000,true,true,6
+domain_router_3b_20260505T203352,domain_router_02_empirical_science,6,0,0.5604,0.8750,0.8843,1.0000,true,true,6
+domain_router_3b_20260505T203352,AVERAGE,,,0.5407,,0.9115,,1.0000,1.0000,

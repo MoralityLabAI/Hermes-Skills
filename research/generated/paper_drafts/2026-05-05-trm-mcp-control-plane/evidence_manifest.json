@@ -1,0 +1,57 @@
+{
+  "paper_seed": "2026-05-05-trm-mcp-control-plane",
+  "generated_local_date": "2026-05-05",
+  "primary_repo": "C:\\projects\\Hermes-Skills\\Hermes Skills",
+  "trm_mcp_skill": {
+    "path": "trm-mcp",
+    "notes": "Local Hermes skill folder exists in repo, but is not listed as an active Codex skill in this session."
+  },
+  "source_files": [
+    "trm-mcp\\SKILL.md",
+    "trm-mcp\\references\\design.md",
+    "trm-mcp\\references\\filesystem_example.md",
+    "trm-mcp\\references\\github_example.md",
+    "trm-mcp\\references\\postgres_example.md",
+    "trm-mcp\\scripts\\build_skill_prompt.py",
+    "trm-mcp\\scripts\\build_mcp_trm_rows.py",
+    "trm-mcp\\scripts\\extract_codex_mcp_traces.py",
+    "trm-mcp\\scripts\\build_example_matrix.py"
+  ],
+  "generic_mcp_matrix": {
+    "manifest": "data\\trm_mcp_example_matrix\\merged\\trm_mcp_example_matrix.manifest.json",
+    "merged_traces": "data\\trm_mcp_example_matrix\\merged\\trm_mcp_example_traces.jsonl",
+    "merged_rows": "data\\trm_mcp_example_matrix\\merged\\trm_mcp_example_rows.jsonl",
+    "packs": ["filesystem", "github", "postgres"],
+    "trace_count": 15,
+    "row_count": 42,
+    "task_family_counts": {
+      "mcp_route": 15,
+      "mcp_retrieve": 12,
+      "mcp_verify": 15
+    },
+    "bucket_counts": {
+      "exact_positive": 36,
+      "negative": 6
+    }
+  },
+  "storyworld_play_diary_mcp": {
+    "reference": "C:\\projects\\metta-storyworld\\metta-storyworld\\skills\\storyworld-player\\references\\play-diary-mcp.md",
+    "app_readme": "C:\\projects\\metta-storyworld\\metta-etc\\README.md",
+    "overnight_summary_json": "C:\\projects\\metta-storyworld\\metta-etc\\artifacts\\overnight_policy_v2\\overnight_summary.json",
+    "overnight_summary_md": "C:\\projects\\metta-storyworld\\metta-etc\\artifacts\\overnight_policy_v2\\OVERNIGHT_SUMMARY.md",
+    "benchmesh_summary": "C:\\projects\\metta-storyworld\\metta-etc\\artifacts\\overnight_policy_v2\\benchmesh\\summary.md",
+    "profile": "paper",
+    "scenario_count": 15,
+    "num_plays": 20,
+    "max_depth": 7,
+    "branch_limit": 1024,
+    "average_diary_lift": 0.619333
+  },
+  "related_storyworld_conveyor_mcp": {
+    "notes": "Candidate follow-up evidence from GPTStoryworld conveyor MCP context-port work.",
+    "mcp_trm_note": "C:\\projects\\GPTStoryworld\\hermes-skills\\MCP-TRM.md",
+    "paper_skill": "C:\\projects\\GPTStoryworld\\hermes-skills\\trm-for-mcp-paper\\SKILL.md",
+    "context_port_runs": "C:\\projects\\GPTStoryworld\\hermes-skills\\storyworld-conveyor\\context_port_runs"
+  },
+  "claim_boundary": "The generic MCP matrix is training-data and schema evidence; the storyworld diary run is an environment study. Neither is yet a trained TRM-MCP neural benchmark."
+}

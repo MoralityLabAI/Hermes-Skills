@@ -1,0 +1,10 @@
+study,split_or_domain,count,raw_overall,repaired_overall,exact_action_rate,mean_key_accuracy,notes
+repair_curriculum_v1,train_messages,367,,,,,synthetic repair curriculum train split
+repair_curriculum_v1,val_messages,65,,,1.0000,1.0000,template controller validation
+heldout_generalization_20260505T174032,alife_complexity_sculptor_bootstrap,1,0.7551,0.9592,,,held-out package task
+heldout_generalization_20260505T174032,diplomacy_coalition_forecast_bootstrap,1,0.8469,0.9082,,,held-out package task
+heldout_generalization_20260505T174032,bluebeam_tamper_probe_bootstrap,1,0.8775,1.0000,,,held-out package task
+heldout_generalization_20260505T174032,storyworld_builder_balance_bootstrap,1,0.8980,1.0000,,,held-out package task
+heldout_generalization_20260505T174032,prime_math_candidate_auditor_bootstrap,1,0.9388,1.0000,,,held-out package task
+heldout_generalization_20260505T174032,AVERAGE,5,0.8633,0.9735,,,held-out package task average
+heldout_controller_v2,repair_messages,117,,,1.0000,1.0000,fixed controller on held-out repair messages

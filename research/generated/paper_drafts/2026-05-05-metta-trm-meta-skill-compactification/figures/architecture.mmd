@@ -1,0 +1,29 @@
+flowchart LR
+  A[Task prompt] --> B[Domain router]
+  B --> C[3B package drafter]
+  C --> D[File extractor]
+  D --> E[MeTTa syntax repair]
+  E --> F[Package verifier]
+  F --> G{Ready?}
+  G -- yes --> H[Export TRM rows]
+  G -- no --> I[Repair hints / veto]
+  H --> J[Controller training data]
+  J --> K[Future TRM controllers]
+  K --> B
+  K --> E
+  K --> F
+  I --> C
+
+  subgraph Typed control plane
+    D
+    E
+    F
+    G
+    H
+    I
+  end
+
+  subgraph Small LLM role
+    B
+    C
+  end
