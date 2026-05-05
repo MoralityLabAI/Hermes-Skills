@@ -93,6 +93,14 @@ def score_delta(raw_scores: dict[str, Any], repaired_scores: dict[str, Any]) -> 
     return {key: round(float(repaired_scores.get(key, 0.0)) - float(raw_scores.get(key, 0.0)), 4) for key in keys}
 
 
+def runtime_ready_from_scores(scores: dict[str, Any]) -> bool:
+    return (
+        float(scores.get("overall", 0.0)) >= 0.85
+        and float(scores.get("files", 0.0)) >= 1.0
+        and float(scores.get("manifest", 0.0)) >= 0.85
+    )
+
+
 def unsupported_projection_head(raw_head: str, learned: dict[str, str]) -> str:
     if raw_head in learned:
         return learned[raw_head]
@@ -135,7 +143,7 @@ def predict_verifier_action(state: dict[str, Any]) -> dict[str, Any]:
     repaired_scores = dict(state.get("repaired_scores") or {})
     delta = score_delta(raw_scores, repaired_scores)
     failing_after = [key for key, value in repaired_scores.items() if key != "overall" and float(value) < 0.85]
-    verdict = "runtime_ready" if not failing_after and float(repaired_scores.get("overall", 0.0)) >= 0.85 else "needs_more_repair"
+    verdict = "runtime_ready" if runtime_ready_from_scores(repaired_scores) else "needs_more_repair"
     return {"verdict": verdict, "score_delta": delta, "failing_components_after_repair": failing_after}
 
 
@@ -281,4 +289,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

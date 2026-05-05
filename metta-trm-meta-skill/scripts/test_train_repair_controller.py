@@ -47,6 +47,15 @@ class TrainRepairControllerTests(unittest.TestCase):
         controller = trainer.train_controller([row])
         self.assertEqual(trainer.predict_action(row, controller), trainer.expected_action(row))
 
+    def test_verifier_allows_nonblocking_retrieval_gap(self) -> None:
+        state = {
+            "raw_scores": {"overall": 0.8, "files": 1.0, "manifest": 1.0, "retrieval": 0.0},
+            "repaired_scores": {"overall": 0.9, "files": 1.0, "manifest": 1.0, "retrieval": 0.0},
+        }
+        action = trainer.predict_verifier_action(state)
+        self.assertEqual(action["verdict"], "runtime_ready")
+        self.assertEqual(action["failing_components_after_repair"], ["retrieval"])
+
     def test_cli_evaluates_exact(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -69,4 +78,3 @@ class TrainRepairControllerTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

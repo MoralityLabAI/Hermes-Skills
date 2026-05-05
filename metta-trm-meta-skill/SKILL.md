@@ -70,6 +70,12 @@ Compact repair controller:
 python "C:\projects\Hermes-Skills\Hermes Skills\metta-trm-meta-skill\scripts\train_repair_controller.py" --train-messages D:\metta_trm_meta_small_model_bench\repair_curriculum_v1\repair_curriculum_train_messages.jsonl --val-messages D:\metta_trm_meta_small_model_bench\repair_curriculum_v1\repair_curriculum_val_messages.jsonl --out-dir D:\metta_trm_meta_small_model_bench\repair_curriculum_v1\template_controller_eval
 ```
 
+Held-out repair generalization:
+
+```powershell
+python "C:\projects\Hermes-Skills\Hermes Skills\metta-trm-meta-skill\scripts\run_repair_generalization_study.py" --out-dir D:\metta_trm_meta_small_model_bench\heldout_generalization --controller-train-messages D:\metta_trm_meta_small_model_bench\repair_curriculum_v1\repair_curriculum_train_messages.jsonl
+```
+
 Common commands:
 
 ```powershell
