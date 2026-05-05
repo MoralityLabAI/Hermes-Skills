@@ -665,6 +665,192 @@ def load_optional_json(path: str | None) -> Any:
     return json.loads(Path(path).read_text(encoding="utf-8"))
 
 
+def load_json_if_exists(path: Path) -> Any:
+    if not path.exists():
+        return None
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def score_delta(before: dict[str, Any] | None, after: dict[str, Any] | None) -> dict[str, float]:
+    before_scores = (before or {}).get("scores") or {}
+    after_scores = (after or {}).get("scores") or {}
+    keys = sorted(set(before_scores) | set(after_scores))
+    return {key: round(float(after_scores.get(key, 0.0)) - float(before_scores.get(key, 0.0)), 4) for key in keys}
+
+
+def failing_components(report: dict[str, Any] | None, threshold: float = 0.85) -> list[str]:
+    scores = (report or {}).get("scores") or {}
+    return [key for key, value in scores.items() if key != "overall" and float(value) < threshold]
+
+
+def report_context(report_path: Path) -> dict[str, Any]:
+    package_dir = report_path.parent
+    task_dir = package_dir.parent
+    manifest = load_json_if_exists(package_dir / "package.manifest.json") or {}
+    raw_verify = load_json_if_exists(task_dir / "raw_verify.json")
+    repaired_verify = load_json_if_exists(task_dir / "repaired_verify.json")
+    if repaired_verify is None:
+        repaired_verify = score_package(package_dir)
+    package_id = (
+        (repaired_verify or {}).get("package_id")
+        or manifest.get("package_id")
+        or task_dir.name
+    )
+    target_envs = (
+        (repaired_verify or {}).get("target_envs")
+        or manifest.get("target_envs")
+        or []
+    )
+    return {
+        "task_id": task_dir.name,
+        "task_dir": str(task_dir),
+        "package_dir": str(package_dir),
+        "package_id": package_id,
+        "base_skill": manifest.get("base_skill", ""),
+        "target_envs": [str(env) for env in target_envs],
+        "raw_verify": raw_verify,
+        "repaired_verify": repaired_verify,
+    }
+
+
+def build_rows_from_repair_report(report_path: Path) -> list[dict[str, Any]]:
+    report = load_json_if_exists(report_path) or {}
+    repairs = report.get("repairs") or []
+    context = report_context(report_path)
+    raw_verify = context["raw_verify"]
+    repaired_verify = context["repaired_verify"]
+    delta = score_delta(raw_verify, repaired_verify)
+    rows: list[dict[str, Any]] = []
+    for index, repair in enumerate(repairs):
+        rows.append(
+            {
+                "role": "metta_syntax_repair",
+                "state": {
+                    "raw_atom": repair.get("from", ""),
+                    "source_file": repair.get("source_file", ""),
+                    "line_no": repair.get("line_no"),
+                    "repair_type": repair.get("repair", ""),
+                    "target_envs": context["target_envs"],
+                    "pre_scores": (raw_verify or {}).get("scores", {}),
+                    "failing_components": failing_components(raw_verify),
+                },
+                "tools": ["repair-packet", "verify-packet"],
+                "action": {
+                    "repaired_atom": repair.get("to", ""),
+                    "repair": repair.get("repair", ""),
+                    "accept_repair": True,
+                },
+                "meta": {
+                    "source": "repair_report",
+                    "report_path": str(report_path),
+                    "repair_index": index,
+                    "package_id": context["package_id"],
+                    "task_id": context["task_id"],
+                    "base_skill": context["base_skill"],
+                    "score_delta": delta,
+                    "generated_at_utc": utc_now(),
+                },
+            }
+        )
+    rows.append(
+        {
+            "role": "semantic_contract_verifier",
+            "state": {
+                "raw_scores": (raw_verify or {}).get("scores", {}),
+                "repaired_scores": (repaired_verify or {}).get("scores", {}),
+                "raw_missing_files": (raw_verify or {}).get("missing_files", []),
+                "raw_manifest_missing": (raw_verify or {}).get("manifest_missing", []),
+                "raw_error_count": (raw_verify or {}).get("error_count", 0),
+                "repair_count": len(repairs),
+            },
+            "tools": ["verify-packet", "repair-packet"],
+            "action": {
+                "verdict": "runtime_ready" if (repaired_verify or {}).get("ready_for_runtime_without_review") else "needs_more_repair",
+                "score_delta": delta,
+                "failing_components_after_repair": failing_components(repaired_verify),
+            },
+            "meta": {
+                "source": "raw_repaired_verify_pair",
+                "report_path": str(report_path),
+                "package_id": context["package_id"],
+                "task_id": context["task_id"],
+                "base_skill": context["base_skill"],
+                "generated_at_utc": utc_now(),
+            },
+        }
+    )
+    rows.append(
+        {
+            "role": "commit_veto",
+            "state": {
+                "raw_ready_for_runtime": bool((raw_verify or {}).get("ready_for_runtime_without_review")),
+                "repaired_ready_for_runtime": bool((repaired_verify or {}).get("ready_for_runtime_without_review")),
+                "raw_overall": ((raw_verify or {}).get("scores") or {}).get("overall", 0.0),
+                "repaired_overall": ((repaired_verify or {}).get("scores") or {}).get("overall", 0.0),
+                "repair_count": len(repairs),
+            },
+            "tools": ["verify-packet", "export-trm-rows"],
+            "action": {
+                "decision": "commit_repaired_package" if (repaired_verify or {}).get("ready_for_runtime_without_review") else "veto_or_collect_more_data",
+                "reason": "repaired_runtime_ready" if (repaired_verify or {}).get("ready_for_runtime_without_review") else "repair_not_runtime_ready",
+            },
+            "meta": {
+                "source": "raw_repaired_commit_veto_pair",
+                "report_path": str(report_path),
+                "package_id": context["package_id"],
+                "task_id": context["task_id"],
+                "base_skill": context["base_skill"],
+                "score_delta": delta,
+                "generated_at_utc": utc_now(),
+            },
+        }
+    )
+    return rows
+
+
+def iter_repair_reports(input_path: Path) -> list[Path]:
+    if input_path.is_file():
+        return [input_path]
+    if not input_path.exists():
+        raise SystemExit(f"missing input path: {input_path}")
+    reports = sorted(path for path in input_path.rglob("repair_report.json") if path.is_file())
+    if not reports:
+        raise SystemExit(f"no repair_report.json files found under: {input_path}")
+    return reports
+
+
+def cmd_export_repair_training_rows(args: argparse.Namespace) -> int:
+    input_path = Path(args.input)
+    reports = iter_repair_reports(input_path)
+    rows: list[dict[str, Any]] = []
+    for report_path in reports:
+        rows.extend(build_rows_from_repair_report(report_path))
+    out = Path(args.out)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text("\n".join(json.dumps(row, ensure_ascii=False) for row in rows) + "\n", encoding="utf-8")
+    role_counts: dict[str, int] = {}
+    repair_type_counts: dict[str, int] = {}
+    for row in rows:
+        role_counts[row["role"]] = role_counts.get(row["role"], 0) + 1
+        if row["role"] == "metta_syntax_repair":
+            repair_type = str(row["action"].get("repair", ""))
+            repair_type_counts[repair_type] = repair_type_counts.get(repair_type, 0) + 1
+    manifest = {
+        "generated_at_utc": utc_now(),
+        "input": str(input_path),
+        "out": str(out),
+        "report_count": len(reports),
+        "row_count": len(rows),
+        "role_counts": role_counts,
+        "repair_type_counts": repair_type_counts,
+        "reports": [str(path) for path in reports],
+    }
+    if args.manifest:
+        write_json(Path(args.manifest), manifest)
+    print(f"{out} ({len(rows)} rows from {len(reports)} reports)")
+    return 0
+
+
 def render_evolution_md(plan: dict[str, Any]) -> str:
     lines = [
         "# MeTTa TRM Meta-Skill Evolution Plan",
@@ -804,6 +990,12 @@ def build_parser() -> argparse.ArgumentParser:
     export.add_argument("--package-dir", required=True)
     export.add_argument("--out", required=True)
     export.set_defaults(func=cmd_export_trm_rows)
+
+    repair_export = sub.add_parser("export-repair-training-rows", help="Export TRM rows from repair_report.json plus raw/repaired verifier scorecards.")
+    repair_export.add_argument("--input", required=True, help="A repair_report.json, package directory, task directory, or run root.")
+    repair_export.add_argument("--out", required=True)
+    repair_export.add_argument("--manifest")
+    repair_export.set_defaults(func=cmd_export_repair_training_rows)
 
     evolve = sub.add_parser("evolve-skill", help="Generate a bounded skill evolution plan from verification and benchmark evidence.")
     evolve.add_argument("--package-dir", required=True)

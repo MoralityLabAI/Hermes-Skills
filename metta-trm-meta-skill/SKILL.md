@@ -60,6 +60,8 @@ python .\metta-trm-meta-skill\scripts\metta_trm_meta_skill.py author-packet --ta
 python .\metta-trm-meta-skill\scripts\metta_trm_meta_skill.py verify-packet --package-dir .\research\generated\metta_trm_meta\storyworld_nav_package --out .\research\generated\metta_trm_meta\storyworld_nav_verify.json
 
 python .\metta-trm-meta-skill\scripts\metta_trm_meta_skill.py export-trm-rows --package-dir .\research\generated\metta_trm_meta\storyworld_nav_package --out .\research\generated\metta_trm_meta\storyworld_nav_trm_rows.jsonl
+
+python .\metta-trm-meta-skill\scripts\metta_trm_meta_skill.py export-repair-training-rows --input D:\metta_trm_meta_small_model_bench\small_model_bootstrap_20260505T150037Z --out D:\metta_trm_meta_small_model_bench\small_model_bootstrap_20260505T150037Z\repair_training_rows.jsonl --manifest D:\metta_trm_meta_small_model_bench\small_model_bootstrap_20260505T150037Z\repair_training_manifest.json
 ```
 
 ## TRM Role Set

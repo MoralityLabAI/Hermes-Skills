@@ -157,6 +157,83 @@ class MeTTaTRMMetaSkillTests(unittest.TestCase):
             repaired = (repaired_dir / "contracts.metta").read_text(encoding="utf-8")
             self.assertIn('(answer-shape "storyworld_nav" "bounded action packet")', repaired)
 
+    def test_export_repair_training_rows(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            task_dir = root / "storyworld_task"
+            repaired_dir = task_dir / "repaired_package"
+            examples_dir = repaired_dir / "examples"
+            examples_dir.mkdir(parents=True)
+            (repaired_dir / "package.manifest.json").write_text(
+                json.dumps(
+                    {
+                        "package_id": "storyworld_task",
+                        "title": "Storyworld Task",
+                        "base_skill": "storyworld-player",
+                        "trm_overlay": "metta-trm-meta-skill",
+                        "infusion_type": "metta_trm_meta_control_plane",
+                        "target_envs": ["storyworld_nav"],
+                        "bundle_outputs": [],
+                        "notes": {},
+                    }
+                ),
+                encoding="utf-8",
+            )
+            (repaired_dir / "contracts.metta").write_text(
+                '(summary "storyworld_nav" "short")\n',
+                encoding="utf-8",
+            )
+            (examples_dir / "minimal_valid.json").write_text("{}", encoding="utf-8")
+            (repaired_dir / "repair_report.json").write_text(
+                json.dumps(
+                    {
+                        "generated_at_utc": "2026-05-05T00:00:00+00:00",
+                        "repairs": [
+                            {
+                                "source_file": "contracts.metta",
+                                "line_no": 1,
+                                "from": '(summary "short")',
+                                "to": '(summary "storyworld_nav" "short")',
+                                "repair": "env_arg_inserted",
+                            }
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            (task_dir / "raw_verify.json").write_text(
+                json.dumps(
+                    {
+                        "package_id": "storyworld_task",
+                        "target_envs": ["storyworld_nav"],
+                        "scores": {"overall": 0.75, "contract": 0.5},
+                        "ready_for_runtime_without_review": False,
+                    }
+                ),
+                encoding="utf-8",
+            )
+            (task_dir / "repaired_verify.json").write_text(
+                json.dumps(
+                    {
+                        "package_id": "storyworld_task",
+                        "target_envs": ["storyworld_nav"],
+                        "scores": {"overall": 1.0, "contract": 1.0},
+                        "ready_for_runtime_without_review": True,
+                    }
+                ),
+                encoding="utf-8",
+            )
+            out = root / "repair_rows.jsonl"
+            manifest = root / "manifest.json"
+
+            run_cmd("export-repair-training-rows", "--input", str(task_dir), "--out", str(out), "--manifest", str(manifest))
+            rows = [json.loads(line) for line in out.read_text(encoding="utf-8").splitlines()]
+            self.assertEqual([row["role"] for row in rows], ["metta_syntax_repair", "semantic_contract_verifier", "commit_veto"])
+            self.assertEqual(rows[0]["action"]["repair"], "env_arg_inserted")
+            self.assertEqual(rows[-1]["action"]["decision"], "commit_repaired_package")
+            summary = json.loads(manifest.read_text(encoding="utf-8"))
+            self.assertEqual(summary["row_count"], 3)
+
 
 if __name__ == "__main__":
     unittest.main()
