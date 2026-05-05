@@ -64,6 +64,12 @@ Synthetic repair curriculum:
 python "C:\projects\Hermes-Skills\Hermes Skills\metta-trm-meta-skill\scripts\build_repair_curriculum.py" --out-dir D:\metta_trm_meta_small_model_bench\repair_curriculum_v1 --examples-per-env 60
 ```
 
+Compact repair controller:
+
+```powershell
+python "C:\projects\Hermes-Skills\Hermes Skills\metta-trm-meta-skill\scripts\train_repair_controller.py" --train-messages D:\metta_trm_meta_small_model_bench\repair_curriculum_v1\repair_curriculum_train_messages.jsonl --val-messages D:\metta_trm_meta_small_model_bench\repair_curriculum_v1\repair_curriculum_val_messages.jsonl --out-dir D:\metta_trm_meta_small_model_bench\repair_curriculum_v1\template_controller_eval
+```
+
 Common commands:
 
 ```powershell
