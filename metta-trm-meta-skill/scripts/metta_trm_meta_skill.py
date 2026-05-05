@@ -275,6 +275,16 @@ def write_text(path: Path, text: str) -> None:
     path.write_text(text.rstrip() + "\n", encoding="utf-8")
 
 
+def write_jsonl(path: Path, rows: Iterable[dict[str, Any]]) -> int:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    count = 0
+    with path.open("w", encoding="utf-8", newline="\n") as handle:
+        for row in rows:
+            handle.write(json.dumps(row, ensure_ascii=False) + "\n")
+            count += 1
+    return count
+
+
 def cmd_author_packet(args: argparse.Namespace) -> int:
     task = read_text_arg(args.task, args.task_file)
     base_skill = args.base_skill
@@ -638,8 +648,7 @@ def build_trm_rows(package_dir: Path) -> list[dict[str, Any]]:
 def cmd_export_trm_rows(args: argparse.Namespace) -> int:
     rows = build_trm_rows(Path(args.package_dir))
     out = Path(args.out)
-    out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text("\n".join(json.dumps(row, ensure_ascii=False) for row in rows) + "\n", encoding="utf-8")
+    write_jsonl(out, rows)
     print(f"{out} ({len(rows)} rows)")
     return 0
 
@@ -808,6 +817,31 @@ def build_rows_from_repair_report(report_path: Path) -> list[dict[str, Any]]:
     return rows
 
 
+def trm_row_to_messages(row: dict[str, Any], system_prompt: str) -> dict[str, Any]:
+    prompt_payload = {
+        "role": row.get("role", ""),
+        "state": row.get("state", {}),
+        "tools": row.get("tools", []),
+    }
+    messages = [
+        {"role": "system", "content": system_prompt},
+        {"role": "user", "content": json.dumps(prompt_payload, ensure_ascii=False, sort_keys=True)},
+        {"role": "assistant", "content": json.dumps(row.get("action", {}), ensure_ascii=False, sort_keys=True)},
+    ]
+    meta = dict(row.get("meta") or {})
+    meta.update(
+        {
+            "source_format": "metta_trm_meta_repair_row",
+            "role": row.get("role", ""),
+        }
+    )
+    return {"messages": messages, "meta": meta}
+
+
+def build_messages_rows(rows: list[dict[str, Any]], system_prompt: str) -> list[dict[str, Any]]:
+    return [trm_row_to_messages(row, system_prompt) for row in rows]
+
+
 def iter_repair_reports(input_path: Path) -> list[Path]:
     if input_path.is_file():
         return [input_path]
@@ -826,8 +860,11 @@ def cmd_export_repair_training_rows(args: argparse.Namespace) -> int:
     for report_path in reports:
         rows.extend(build_rows_from_repair_report(report_path))
     out = Path(args.out)
-    out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text("\n".join(json.dumps(row, ensure_ascii=False) for row in rows) + "\n", encoding="utf-8")
+    write_jsonl(out, rows)
+    messages_count = 0
+    if args.messages_out:
+        messages = build_messages_rows(rows, args.system_prompt)
+        messages_count = write_jsonl(Path(args.messages_out), messages)
     role_counts: dict[str, int] = {}
     repair_type_counts: dict[str, int] = {}
     for row in rows:
@@ -841,6 +878,9 @@ def cmd_export_repair_training_rows(args: argparse.Namespace) -> int:
         "out": str(out),
         "report_count": len(reports),
         "row_count": len(rows),
+        "messages_out": str(Path(args.messages_out)) if args.messages_out else "",
+        "messages_count": messages_count,
+        "system_prompt": args.system_prompt if args.messages_out else "",
         "role_counts": role_counts,
         "repair_type_counts": repair_type_counts,
         "reports": [str(path) for path in reports],
@@ -995,6 +1035,11 @@ def build_parser() -> argparse.ArgumentParser:
     repair_export.add_argument("--input", required=True, help="A repair_report.json, package directory, task directory, or run root.")
     repair_export.add_argument("--out", required=True)
     repair_export.add_argument("--manifest")
+    repair_export.add_argument("--messages-out", help="Optional Pure-TRM/QLoRA messages JSONL built from the exported rows.")
+    repair_export.add_argument(
+        "--system-prompt",
+        default="You are a MeTTa/TRM control-plane model. Emit compact JSON action only. Do not output hidden reasoning.",
+    )
     repair_export.set_defaults(func=cmd_export_repair_training_rows)
 
     evolve = sub.add_parser("evolve-skill", help="Generate a bounded skill evolution plan from verification and benchmark evidence.")

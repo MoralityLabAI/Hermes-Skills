@@ -224,15 +224,31 @@ class MeTTaTRMMetaSkillTests(unittest.TestCase):
                 encoding="utf-8",
             )
             out = root / "repair_rows.jsonl"
+            messages_out = root / "repair_messages.jsonl"
             manifest = root / "manifest.json"
 
-            run_cmd("export-repair-training-rows", "--input", str(task_dir), "--out", str(out), "--manifest", str(manifest))
+            run_cmd(
+                "export-repair-training-rows",
+                "--input",
+                str(task_dir),
+                "--out",
+                str(out),
+                "--messages-out",
+                str(messages_out),
+                "--manifest",
+                str(manifest),
+            )
             rows = [json.loads(line) for line in out.read_text(encoding="utf-8").splitlines()]
             self.assertEqual([row["role"] for row in rows], ["metta_syntax_repair", "semantic_contract_verifier", "commit_veto"])
             self.assertEqual(rows[0]["action"]["repair"], "env_arg_inserted")
             self.assertEqual(rows[-1]["action"]["decision"], "commit_repaired_package")
+            messages = [json.loads(line) for line in messages_out.read_text(encoding="utf-8").splitlines()]
+            self.assertEqual(len(messages), 3)
+            self.assertEqual(messages[0]["messages"][0]["role"], "system")
+            self.assertEqual(messages[0]["messages"][-1]["role"], "assistant")
             summary = json.loads(manifest.read_text(encoding="utf-8"))
             self.assertEqual(summary["row_count"], 3)
+            self.assertEqual(summary["messages_count"], 3)
 
 
 if __name__ == "__main__":
