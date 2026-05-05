@@ -38,6 +38,24 @@ SUPPORTED_HEADS = {
     "profile-trace-label",
 }
 
+ENV_VALUE_HEADS = {
+    "goal",
+    "answer-shape",
+    "constraint",
+    "forbid",
+    "minimal-example",
+    "example-status",
+    "summary",
+    "query-cue",
+    "retrieval-priority",
+    "validation-path",
+    "validator-note",
+    "verifier-caveat",
+    "failure-mode",
+    "repair-hint",
+    "trace-label",
+}
+
 REQUIRED_MANIFEST_FIELDS = {
     "package_id",
     "title",
@@ -123,6 +141,51 @@ def parse_atom_line(line: str) -> dict[str, Any] | None:
     return {"ok": True, "head": head, "args": [str(token) for token in tokens[1:]], "line": stripped}
 
 
+def looks_like_env(value: str) -> bool:
+    compact = value.strip().lower()
+    if not compact or re.search(r"\s", compact):
+        return False
+    return bool(
+        re.search(r"(?:^|_)(env|nav|logic|router|storyworld|intellect|tool|contract)(?:_|$)", compact)
+        or compact.endswith("_bench")
+        or compact.endswith("_bootstrap")
+    )
+
+
+def normalize_env_first_atom(parsed: dict[str, Any], default_env: str | None = None) -> tuple[str | None, dict[str, Any] | None]:
+    if not parsed.get("ok"):
+        return None, None
+    head = str(parsed.get("head") or "")
+    args = [str(arg) for arg in parsed.get("args") or []]
+    if head not in ENV_VALUE_HEADS or len(args) < 1:
+        return None, None
+    if len(args) >= 2 and looks_like_env(args[1]) and not looks_like_env(args[0]):
+        normalized = atom(head, args[1], " ".join([args[0], *args[2:]]))
+        return normalized, {"from": parsed["line"], "to": normalized, "repair": "env_arg_reordered"}
+    if default_env and not looks_like_env(args[0]):
+        normalized = atom(head, default_env, " ".join(args))
+        return normalized, {"from": parsed["line"], "to": normalized, "repair": "env_arg_inserted"}
+    return None, None
+
+
+def normalize_env_wrapper_atom(parsed: dict[str, Any]) -> tuple[str | None, dict[str, Any] | None]:
+    if not parsed.get("ok") or parsed.get("head") != "env":
+        return None, None
+    args = [str(arg) for arg in parsed.get("args") or []]
+    if len(args) < 3:
+        return None, None
+    env_name = args[0]
+    nested_head = args[1]
+    if nested_head not in ENV_VALUE_HEADS:
+        return None, None
+    value_args = args[2:]
+    if len(value_args) >= 2 and looks_like_env(value_args[0]):
+        value_args = value_args[1:]
+    value = " ".join(value_args)
+    normalized = atom(nested_head, env_name, value)
+    return normalized, {"from": parsed["line"], "to": normalized, "repair": "env_wrapper_projected"}
+
+
 def iter_metta_lines(package_dir: Path) -> Iterable[tuple[Path, int, str]]:
     for path in sorted(package_dir.glob("*.metta")):
         for line_no, line in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
@@ -159,6 +222,14 @@ def atoms_by_head(atoms: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]
     for row in atoms:
         grouped.setdefault(row["head"], []).append(row)
     return grouped
+
+
+def has_env_value(heads: dict[str, list[dict[str, Any]]], head: str, envs: list[str]) -> bool:
+    rows = heads.get(head) or []
+    if not envs:
+        return bool(rows)
+    env_set = set(envs)
+    return any((row.get("args") or []) and row["args"][0] in env_set for row in rows)
 
 
 def infer_short_summary(task: str) -> str:
@@ -308,12 +379,18 @@ def cmd_author_packet(args: argparse.Namespace) -> int:
     return 0
 
 
-def repair_line(line: str) -> tuple[str, dict[str, Any] | None]:
+def repair_line(line: str, default_env: str | None = None) -> tuple[str, dict[str, Any] | None]:
     stripped = line.strip()
     if not stripped or stripped.startswith(";"):
         return line, None
     parsed = parse_atom_line(stripped)
     if parsed and parsed.get("ok"):
+        normalized, report = normalize_env_wrapper_atom(parsed)
+        if normalized:
+            return normalized, report
+        normalized, report = normalize_env_first_atom(parsed, default_env=default_env)
+        if normalized:
+            return normalized, report
         return stripped, None
     candidate = stripped
     if not candidate.startswith("("):
@@ -347,6 +424,9 @@ def cmd_repair_packet(args: argparse.Namespace) -> int:
     out_dir = Path(args.out_dir)
     if not package_dir.exists():
         raise SystemExit(f"missing package dir: {package_dir}")
+    manifest = load_manifest(package_dir)
+    target_envs = [str(env) for env in manifest.get("target_envs", []) if str(env).strip()]
+    default_env = target_envs[0] if target_envs else None
     repairs: list[dict[str, Any]] = []
     for src in sorted(package_dir.iterdir()):
         dst = out_dir / src.name
@@ -358,7 +438,7 @@ def cmd_repair_packet(args: argparse.Namespace) -> int:
             continue
         out_lines: list[str] = []
         for line_no, line in enumerate(src.read_text(encoding="utf-8").splitlines(), start=1):
-            repaired, report = repair_line(line)
+            repaired, report = repair_line(line, default_env=default_env)
             out_lines.append(repaired)
             if report:
                 repairs.append({"source_file": src.name, "line_no": line_no, **report})
@@ -389,16 +469,16 @@ def score_package(package_dir: Path) -> dict[str, Any]:
     manifest_score = 1.0 if not manifest_missing else max(0.0, 1.0 - (len(manifest_missing) / len(REQUIRED_MANIFEST_FIELDS)))
 
     contract_checks = [
-        bool(heads.get("goal")),
-        bool(heads.get("answer-shape")),
-        bool(heads.get("summary")),
-        bool(heads.get("constraint")),
-        bool(heads.get("forbid")),
-        bool(heads.get("minimal-example")),
-        bool(heads.get("validation-path")),
+        has_env_value(heads, "goal", envs),
+        has_env_value(heads, "answer-shape", envs),
+        has_env_value(heads, "summary", envs),
+        has_env_value(heads, "constraint", envs),
+        has_env_value(heads, "forbid", envs),
+        has_env_value(heads, "minimal-example", envs),
+        has_env_value(heads, "validation-path", envs),
     ]
-    retrieval_checks = [bool(heads.get("query-cue")), bool(heads.get("retrieval-priority"))]
-    repair_checks = [bool(heads.get("failure-mode")), bool(heads.get("repair-hint")), bool(heads.get("trace-label"))]
+    retrieval_checks = [has_env_value(heads, "query-cue", envs), has_env_value(heads, "retrieval-priority", envs)]
+    repair_checks = [has_env_value(heads, "failure-mode", envs), has_env_value(heads, "repair-hint", envs), has_env_value(heads, "trace-label", envs)]
     trainer_checks = [
         syntax >= 0.95,
         manifest_score >= 0.85,

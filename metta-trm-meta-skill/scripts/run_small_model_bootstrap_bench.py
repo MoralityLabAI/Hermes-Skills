@@ -61,6 +61,33 @@ ALLOWED_FILES = [
     "examples/minimal_valid.json",
 ]
 
+STAGED_FILE_RULES = {
+    "package.manifest.json": (
+        "Return valid JSON only inside the file tag. Use exactly these keys: "
+        "package_id, title, base_skill, trm_overlay, infusion_type, target_envs, bundle_outputs, notes. "
+        "Use bundle_outputs with retrieval_packet, critic_hints, trace_labels, runtime_packet, metta_trm_rows."
+    ),
+    "package.metta": (
+        "Return 4-6 identity atoms only: package-id, base-skill, overlay, env, goal. "
+        "Use quoted strings and one parenthesized atom per line."
+    ),
+    "contracts.metta": (
+        "Return 6-8 atoms. Use these heads directly: answer-shape, summary, validation-path, minimal-example, "
+        "constraint, forbid. Do not use the env head in this file."
+    ),
+    "retrieval_policy.metta": (
+        "Return 6-8 atoms using only query-cue and retrieval-priority. Do not use constraint in this file. "
+        "Include cues for task traces, benchmark failures, MCP memory, and near-miss examples."
+    ),
+    "failure_modes.metta": (
+        "Return 6-8 separate atoms using only failure-mode, repair-hint, and trace-label. "
+        "Do not pack repair-hint or trace-label inside a failure-mode atom."
+    ),
+    "examples/minimal_valid.json": (
+        "Return valid JSON only inside the file tag with package_id, role, state, action, and claim_label."
+    ),
+}
+
 BLOCK_RE = re.compile(r"```(?P<label>[^\n`]*)\n(?P<body>.*?)```", re.DOTALL)
 TAG_RE = re.compile(r"<(?P<file>package\.manifest\.json|package\.metta|contracts\.metta|retrieval_policy\.metta|failure_modes\.metta|examples/minimal_valid\.json)>\s*(?P<body>.*?)\s*</(?P=file)>", re.DOTALL)
 
@@ -145,6 +172,45 @@ Important:
     return [{"role": "system", "content": system}, {"role": "user", "content": user}]
 
 
+def build_file_prompt(task: dict[str, str], base_prompt: str, filename: str, prior_files: dict[str, str]) -> list[dict[str, str]]:
+    system = (
+        "You are a small local model being tested without Codex corrections. "
+        "Use only the provided MeTTa-TRM meta-skill base and task card. "
+        f"Return exactly one file: {filename}. Do not add commentary outside that file tag."
+    )
+    prior_summary = "\n".join(f"- {name}: generated" for name in prior_files) or "- none"
+    rule = STAGED_FILE_RULES[filename]
+    user = f"""FROZEN BASE SKILL:
+{base_prompt}
+
+TASK CARD:
+- task_id: {task['task_id']}
+- package_id: {task['task_id']}
+- base_skill: {task['base_skill']}
+- target_env: {task['target_env']}
+- task: {task['task']}
+
+Already generated files:
+{prior_summary}
+
+Generate only `{filename}`.
+Rule: {rule}
+
+Strict output format:
+<{filename}>
+file body here
+</{filename}>
+
+Hard requirements:
+- Close the file tag.
+- Use target env "{task['target_env']}" consistently.
+- For .metta files, every line must be a supported parenthesized atom.
+- For env-scoped .metta atoms, put the env first: (constraint "{task['target_env']}" "short value").
+- Do not write wrapper atoms like: (env "{task['target_env']}" "constraint" "value").
+"""
+    return [{"role": "system", "content": system}, {"role": "user", "content": user}]
+
+
 def post_chat(endpoint: str, model: str, messages: list[dict[str, str]], max_tokens: int, temperature: float, timeout: float) -> dict[str, Any]:
     url = endpoint.rstrip("/") + "/v1/chat/completions"
     payload = {
@@ -197,6 +263,65 @@ def parse_tagged_files(text: str) -> dict[str, str]:
     return files
 
 
+def parse_single_file(filename: str, text: str) -> str:
+    files = parse_tagged_files(text)
+    if filename in files:
+        return files[filename]
+    for match in BLOCK_RE.finditer(text):
+        label = match.group("label").strip()
+        if filename in label:
+            return match.group("body").strip()
+    stripped = text.strip()
+    if filename.endswith(".json"):
+        start = stripped.find("{")
+        end = stripped.rfind("}")
+        if start >= 0 and end > start:
+            return stripped[start : end + 1]
+    body_lines = []
+    for line in stripped.splitlines():
+        candidate = line.strip()
+        if not candidate or candidate.startswith("<") or candidate.startswith("====="):
+            continue
+        if filename.endswith(".metta") and not candidate.startswith("("):
+            continue
+        body_lines.append(candidate)
+    return "\n".join(body_lines).strip()
+
+
+def generate_one_shot(task: dict[str, str], args: argparse.Namespace, base_prompt: str) -> tuple[dict[str, str], str, dict[str, Any], str | None]:
+    messages = build_prompt(task, base_prompt)
+    try:
+        response = post_chat(args.endpoint, args.model, messages, args.max_tokens, args.temperature, args.timeout)
+    except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as exc:
+        return {}, "", {"error": f"{type(exc).__name__}: {exc}"}, f"{type(exc).__name__}: {exc}"
+    raw_text = extract_content(response)
+    return parse_tagged_files(raw_text), raw_text, response, None
+
+
+def generate_staged(task: dict[str, str], args: argparse.Namespace, base_prompt: str) -> tuple[dict[str, str], str, dict[str, Any], str | None]:
+    files: dict[str, str] = {}
+    responses: dict[str, Any] = {}
+    raw_parts: list[str] = []
+    errors: list[str] = []
+    per_file_tokens = max(220, min(args.max_tokens, args.stage_max_tokens))
+    for filename in ALLOWED_FILES:
+        messages = build_file_prompt(task, base_prompt, filename, files)
+        try:
+            response = post_chat(args.endpoint, args.model, messages, per_file_tokens, args.temperature, args.timeout)
+        except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as exc:
+            err = f"{filename}: {type(exc).__name__}: {exc}"
+            errors.append(err)
+            responses[filename] = {"error": err}
+            continue
+        raw_text = extract_content(response)
+        responses[filename] = response
+        raw_parts.append(f"===== {filename} =====\n{raw_text}")
+        body = parse_single_file(filename, raw_text)
+        if body:
+            files[filename] = body
+    return files, "\n\n".join(raw_parts), {"staged_responses": responses}, "; ".join(errors) if errors else None
+
+
 def write_raw_package(out_dir: Path, files: dict[str, str], raw_text: str, response: dict[str, Any]) -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "raw_model_output.txt").write_text(raw_text, encoding="utf-8")
@@ -234,17 +359,11 @@ def evaluate_task(task: dict[str, str], args: argparse.Namespace, base_prompt: s
     bench_path = task_dir / "bench_arms.json"
     evolve_dir = task_dir / "evolve"
 
-    messages = build_prompt(task, base_prompt)
-    response: dict[str, Any]
-    error: str | None = None
-    try:
-        response = post_chat(args.endpoint, args.model, messages, args.max_tokens, args.temperature, args.timeout)
-    except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as exc:
-        response = {}
-        error = f"{type(exc).__name__}: {exc}"
-    raw_text = extract_content(response) if response else ""
-    files = parse_tagged_files(raw_text)
-    write_raw_package(raw_dir, files, raw_text, response or {"error": error})
+    if args.generation_mode == "staged":
+        files, raw_text, response, error = generate_staged(task, args, base_prompt)
+    else:
+        files, raw_text, response, error = generate_one_shot(task, args, base_prompt)
+    write_raw_package(raw_dir, files, raw_text, response)
 
     extraction = {
         "expected_files": ALLOWED_FILES,
@@ -252,6 +371,7 @@ def evaluate_task(task: dict[str, str], args: argparse.Namespace, base_prompt: s
         "missing_files": [name for name in ALLOWED_FILES if name not in files],
         "raw_chars": len(raw_text),
         "error": error,
+        "generation_mode": args.generation_mode,
     }
     (task_dir / "extraction.json").write_text(json.dumps(extraction, indent=2), encoding="utf-8")
 
@@ -359,6 +479,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--timeout", type=float, default=240.0)
     parser.add_argument("--limit", type=int, default=0)
     parser.add_argument("--prompt-mode", choices=["compact", "full"], default="compact")
+    parser.add_argument("--generation-mode", choices=["one-shot", "staged"], default="one-shot")
+    parser.add_argument("--stage-max-tokens", type=int, default=520)
     return parser.parse_args()
 
 
@@ -378,6 +500,8 @@ def main() -> int:
         "temperature": args.temperature,
         "timeout": args.timeout,
         "prompt_mode": args.prompt_mode,
+        "generation_mode": args.generation_mode,
+        "stage_max_tokens": args.stage_max_tokens,
         "strict_rule": "Codex only provides frozen base prompt, extracts files, and runs deterministic validators/repair/export scripts. Rows export is skipped unless the repaired package passes ready_for_training_rows.",
         "tasks": tasks,
     }

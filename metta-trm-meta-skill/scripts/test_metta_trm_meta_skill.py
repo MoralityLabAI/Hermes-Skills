@@ -97,7 +97,66 @@ class MeTTaTRMMetaSkillTests(unittest.TestCase):
             self.assertIn('(package-id "broken")', repaired)
             self.assertTrue((repaired_dir / "repair_report.json").exists())
 
+    def test_repair_packet_reorders_env_last_atoms(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            package_dir = root / "env_last"
+            repaired_dir = root / "repaired"
+            package_dir.mkdir()
+            (package_dir / "package.manifest.json").write_text(
+                json.dumps(
+                    {
+                        "package_id": "env_last",
+                        "title": "Env Last",
+                        "base_skill": "storyworld-player",
+                        "trm_overlay": "metta-trm-meta-skill",
+                        "infusion_type": "metta_trm_meta_control_plane",
+                        "target_envs": ["storyworld_nav"],
+                        "bundle_outputs": [],
+                        "notes": {},
+                    }
+                ),
+                encoding="utf-8",
+            )
+            (package_dir / "contracts.metta").write_text(
+                '(constraint "exact legal actions" "storyworld_nav")\n',
+                encoding="utf-8",
+            )
+
+            run_cmd("repair-packet", "--package-dir", str(package_dir), "--out-dir", str(repaired_dir))
+            repaired = (repaired_dir / "contracts.metta").read_text(encoding="utf-8")
+            self.assertIn('(constraint "storyworld_nav" "exact legal actions")', repaired)
+
+    def test_repair_packet_projects_env_wrapper_atoms(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            package_dir = root / "env_wrapper"
+            repaired_dir = root / "repaired"
+            package_dir.mkdir()
+            (package_dir / "package.manifest.json").write_text(
+                json.dumps(
+                    {
+                        "package_id": "env_wrapper",
+                        "title": "Env Wrapper",
+                        "base_skill": "storyworld-player",
+                        "trm_overlay": "metta-trm-meta-skill",
+                        "infusion_type": "metta_trm_meta_control_plane",
+                        "target_envs": ["storyworld_nav"],
+                        "bundle_outputs": [],
+                        "notes": {},
+                    }
+                ),
+                encoding="utf-8",
+            )
+            (package_dir / "contracts.metta").write_text(
+                '(env "storyworld_nav" "answer-shape" "bounded action packet")\n',
+                encoding="utf-8",
+            )
+
+            run_cmd("repair-packet", "--package-dir", str(package_dir), "--out-dir", str(repaired_dir))
+            repaired = (repaired_dir / "contracts.metta").read_text(encoding="utf-8")
+            self.assertIn('(answer-shape "storyworld_nav" "bounded action packet")', repaired)
+
 
 if __name__ == "__main__":
     unittest.main()
-

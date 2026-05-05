@@ -50,6 +50,8 @@ Strict small-model bootstrap bench:
 python "C:\projects\Hermes-Skills\Hermes Skills\metta-trm-meta-skill\scripts\run_small_model_bootstrap_bench.py" --out-dir D:\metta_trm_meta_small_model_bench --prompt-mode compact --max-tokens 1200
 ```
 
+Use `--generation-mode staged` when testing whether a small model can build the package one file at a time under the same frozen base contract.
+
 Common commands:
 
 ```powershell
