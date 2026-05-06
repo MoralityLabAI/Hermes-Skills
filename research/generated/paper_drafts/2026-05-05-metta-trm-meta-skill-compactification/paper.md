@@ -97,6 +97,42 @@ The central result is not that a 3B model can autonomously design robust skills.
 
 This changes the scaling question. Instead of asking how large the LLM must be to write a correct skill in one pass, the relevant question becomes how much of the skill-improvement process can be moved into a symbolic and TRM-trainable control plane.
 
+## Feature Steering Extension: MeTTa, VPD, and Tiny LoRA TRMs
+
+The compactification frame naturally extends from training TRM controllers to steering them. The distinction matters: Goodfire's public feature-steering work in Ember is primarily an activation-feature interface, while their VPD line is a parameter-decomposition method that identifies sparse parameter subcomponents used by a model on particular inputs. The useful research direction here is to combine both intuitions without overclaiming either one.
+
+In this paper's setting, a TRM controller is small enough that feature steering can be made concrete. We already have harness I/O rows, verifier labels, repair reports, commit/veto decisions, retrieval choices, and MeTTa contracts. These can define typed behavioral features for TRM controllers:
+
+1. exact JSON/tool contract adherence,
+2. near-miss repair recognition,
+3. semantic verifier caution,
+4. retrieval precision over MCP handles,
+5. abstain versus commit thresholding,
+6. symbolic-closure recognition,
+7. unsafe shortcut rejection.
+
+MeTTa's role is to make those features explicit before training. Instead of asking a small adapter to learn an opaque "better controller" target, each row can carry a symbolic feature contract:
+
+```text
+(feature-target "commit_veto" "raise abstain when verifier_disagreement is high")
+(feature-target "retrieval_policy_router" "prefer exact handle over broad semantic near-miss")
+(feature-forbid "metta_syntax_repair" "invent unsupported atom head")
+(feature-success "semantic_contract_verifier" "reject wrong-scope resource")
+```
+
+That gives a supervised bridge from harness traces to feature targets. A tiny LoRA on a TRM can then be trained to move controller behavior along those feature axes while preserving the base controller's successful behavior. The adapter does not need broad generative capacity. It needs to alter a small number of typed decisions.
+
+VPD-style analysis becomes the audit layer. If VPD decomposes model parameters into subcomponents that are sparse and causally important on particular datapoints, then a TRM controller can be inspected for parameter subcomponents associated with feature contracts such as "commit-veto caution" or "exact-handle retrieval." The proposed loop is:
+
+1. collect harness I/O and verifier outcomes,
+2. convert them to MeTTa feature contracts,
+3. train tiny LoRA adapters on TRM controller rows,
+4. use VPD-style decomposition to identify which parameter subcomponents the adapter is using,
+5. ablate or stress-test those subcomponents against held-out semi-failures,
+6. retain adapters only when they improve the target feature without damaging unrelated controller behavior.
+
+The research claim is methodological, not yet empirical. It says that MeTTa can frame the feature space for steering small TRM controllers, while harness I/O provides dense contrastive supervision and VPD-style decomposition provides a mechanistic audit target. If successful, this would make compactification more surgical: instead of training a larger controller, train a rank-1 to rank-8 adapter that selectively improves one control feature under verifier supervision.
+
 ## Limitations
 
 The strongest live package-authoring result currently covers two domains, not the full ten-domain lattice. The held-out repair study is broader, but it is not a full live 3B domain-bootstrap study across all domains.
@@ -105,6 +141,8 @@ The repair controller result is a template controller evaluation, not a trained 
 
 Verifier scores measure package readiness under the local compiler and evaluator. They are not direct downstream task-success metrics. A later experiment should connect package quality to live benchmark improvement.
 
+The feature-steering extension is a proposed experiment. The current paper does not yet contain a trained tiny LoRA TRM, a VPD decomposition of a TRM controller, or measured feature-steering gains. Those should be reported separately from the existing 3B bootstrap and repair-controller evidence.
+
 ## Next Experiments
 
 The next paper-grade step is a ten-domain live 3B bootstrap with the same frozen prompt and the same deterministic repair pipeline. The primary table should report route accuracy, raw package score, repaired package score, runtime-readiness rate, and TRM-row readiness rate separately.
@@ -112,3 +150,5 @@ The next paper-grade step is a ten-domain live 3B bootstrap with the same frozen
 The second step is to replace the template repair controller with trained TRM controllers and evaluate on held-out repair messages and held-out package tasks.
 
 The third step is downstream transfer: use generated packages to improve actual benchmark arms and measure whether the repaired control-plane artifacts produce task-level gains.
+
+The fourth step is feature-steered TRM compactification: train rank-1 to rank-8 LoRA adapters for individual controller features, compare base TRM versus LoRA-steered TRM on held-out semi-failure rows, and audit the adapters with VPD-style parameter decomposition.

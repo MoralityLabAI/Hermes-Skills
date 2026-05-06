@@ -1,0 +1,29 @@
+flowchart LR
+  A[Harness I/O traces] --> B[Verifier and repair labels]
+  B --> C[MeTTa feature contracts]
+  C --> D[TRM controller rows]
+  D --> E[Tiny LoRA adapter<br/>rank 1 to 8]
+  E --> F[Steered TRM controller]
+  F --> G[Held-out semi-failure eval]
+  G --> H{Commit?}
+  H -- improves target<br/>no broad drift --> I[Promote adapter]
+  H -- drift or weak lift --> J[Veto / collect more rows]
+  E --> K[VPD-style parameter decomposition]
+  K --> L[Subcomponent audit]
+  L --> H
+
+  subgraph Symbolic framing
+    B
+    C
+  end
+
+  subgraph Learned control plane
+    D
+    E
+    F
+  end
+
+  subgraph Mechanistic audit
+    K
+    L
+  end

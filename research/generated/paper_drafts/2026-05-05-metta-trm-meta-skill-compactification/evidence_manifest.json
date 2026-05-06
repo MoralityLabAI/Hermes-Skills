@@ -32,6 +32,18 @@
     "heldout_repair_generalization": "D:\\metta_trm_meta_small_model_bench\\heldout_generalization\\repair_generalization_20260505T174032Z\\summary.json",
     "heldout_repair_controller_v2": "D:\\metta_trm_meta_small_model_bench\\heldout_generalization\\repair_generalization_20260505T174032Z\\controller_eval_on_heldout_repairs_v2\\summary.json"
   },
+  "feature_steering_extension": {
+    "status": "proposed_experiment",
+    "table": "research\\generated\\paper_drafts\\2026-05-05-metta-trm-meta-skill-compactification\\tables\\vpd_tiny_lora_experiment_matrix.csv",
+    "figure": "research\\generated\\paper_drafts\\2026-05-05-metta-trm-meta-skill-compactification\\figures\\vpd_tiny_lora_flow.mmd",
+    "external_sources": [
+      "https://www.goodfire.ai/research/interpreting-lm-parameters",
+      "https://www.goodfire.ai/blog/announcing-goodfire-ember",
+      "https://docs.goodfire.ai/sdk-reference/features",
+      "https://docs.goodfire.ai/sdk-reference/autosteer"
+    ],
+    "claim_boundary": "This is a research-program extension. No local VPD decomposition or tiny LoRA TRM feature-steering benchmark has been run yet."
+  },
   "key_numbers": {
     "two_domain_task_count": 2,
     "two_domain_elapsed_seconds": 680.9,
