@@ -13,6 +13,7 @@
 \usepackage{enumitem}
 \usepackage{tikz}
 \usepackage{pgfplots}
+\usepackage{listings}
 \usepackage[numbers,sort&compress]{natbib}
 
 \pgfplotsset{compat=1.18}
@@ -22,10 +23,18 @@
 \definecolor{mlred}{HTML}{8F4F3F}
 \definecolor{mlgold}{HTML}{A98A3F}
 \definecolor{mlpaper}{HTML}{F7F4EE}
+\lstdefinestyle{metta}{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  frame=single,
+  columns=fullflexible,
+  backgroundcolor=\color{mlpaper},
+  rulecolor=\color{mlgold!70}
+}
 
-\title{TRM-MCP: Tiny Recursive Controllers for Structured Tool Memory}
+\title{TRM-MCP: Efficient Context with DRAM-trained Retrieval }
 \author{Patrick Dugan\\Morality Lab}
-\date{2026}
+\date{May 6, 2026}
 
 \begin{document}
 \maketitle
@@ -36,7 +45,7 @@ Model Context Protocol (MCP) surfaces expose tools, resources, templates, and st
 
 \section{Thesis}
 
-The central claim is that MCP should not be treated as a giant text context. It should be treated as an addressable memory surface. A TRM does not need to know the contents of the filesystem, repository, database, play diary, or storyworld index. It needs to learn a compact policy:
+Model Context Protocols (MCPs) had limited early success due to the token-cost of a model reasoning about where and how to retrieve data, the chain-of-thought tokens could be cleared once the curated context was assembled from database queries, but at economic cost. Our central claim is that MCP should be treated as an addressable memory surface for training Tiny Recursive Models (TRMs) to do the retrieval for the LLM. A TRM does not need to know the contents of the filesystem, repository, database, log history, or world model index. It needs to learn a compact policy:
 
 \begin{enumerate}[leftmargin=*]
   \item Which MCP family should be queried?
@@ -47,6 +56,8 @@ The central claim is that MCP should not be treated as a giant text context. It 
 \end{enumerate}
 
 This makes TRM-MCP a control-plane architecture rather than a knowledge-distillation architecture. The TRM outputs pointers and actions, not prose answers. The language model remains useful for synthesis, but exact lookup and verification are shifted into typed, trainable control surfaces.
+
+This decomposition follows the same compactification logic as HRM and TRM-style recursive reasoning models \citep{wang2025hrm,jolicoeurmartineau2025trm}, but applies it to context access rather than puzzle solving alone. MeTTa and OpenCog Hyperon motivate the symbolic side of the design: handles, answer shapes, failure modes, and validators can be represented as editable metagraph objects rather than hidden prompt prose \citep{goertzel2021metta,meredith2023metametta}. In the Hermes setting, this connects to tool-use and skill-harness work on instruction-tuned agents \citep{teknium2024hermes3} and verifier-oriented environments such as Prime Intellect's Intellect and Environments Hub work \citep{primeintellect2025intellect3}.
 
 \section{Architecture}
 
@@ -147,7 +158,30 @@ The Postgres worked example motivates an analytical efficiency model for typed l
 
 \section{MeTTa Schema-Surface Enrichment}
 
-A Primehub schema MCP pack extends the same idea from SQL-style relation lookup to benchmark schema lookup \citep{dugan2026primehubschema}. The generated surface covers \texttt{psycho\_bench}, \texttt{ascii\_tree}, and \texttt{pydantic\_adherence}. The enriched schema surface contains 6 stable resource handles, 6 answer-shape tags, 6 query-cue sets, 6 minimal examples, 6 failure-mode sets, 2 validation-path or validator-note enriched resources, and 6 source replay links.
+A Prime Intellect Environments hub schema MCP pack extends the same idea from SQL-style relation lookup to benchmark schema lookup \citep{dugan2026primehubschema}. A script in the MeTTa programming language defines the MCP schema as a world model to constrain what data trains the retrieval TRMs. The generated surface covers \texttt{psycho\_bench}, \texttt{ascii\_tree}, and \texttt{pydantic\_adherence}. The enriched schema surface contains 6 stable resource handles, 6 answer-shape tags, 6 query-cue sets, 6 minimal examples, 6 failure-mode sets, 2 validation-path or validator-note enriched resources, and 6 source replay links.
+
+The schema surface is produced as a small symbolic contract, not as a long prompt. A representative excerpt of the MeTTa-style atoms used to frame the MCP database surface is:
+
+\begin{lstlisting}[style=metta]
+(mcp-surface "primehub_schema")
+(resource-handle "primehub_schema" "ascii_tree"
+  "mcp://primehub_schema/env/ascii_tree")
+(answer-shape "ascii_tree" "ascii_formatted_tree")
+(query-cue "ascii_tree" "ASCII tree")
+(query-cue "ascii_tree" "<ascii_formatted>")
+(failure-mode "ascii_tree" "missing wrapper tags")
+(failure-mode "ascii_tree" "extra prose before or after the tree")
+
+(resource-handle "primehub_schema" "pydantic_adherence"
+  "mcp://primehub_schema/env/pydantic_adherence")
+(answer-shape "pydantic_adherence" "strict_json_object")
+(validation-path "pydantic_adherence"
+  "extract_last_json -> model_validate_json(strict=False)")
+(verifier-note "pydantic_adherence"
+  "cooldown accepts integer day counts or numeric strings")
+\end{lstlisting}
+
+This is the concrete sense in which MeTTa improves the MCP schema: it turns benchmark prompt fragments, examples, verifier notes, and replay evidence into addressable records that can be routed to, retrieved, and rejected by small controllers.
 
 \begin{figure}[t]
 \centering
@@ -325,9 +359,106 @@ Retrieval and downstream metrics should be reported separately: first useful hit
 
 The generic MCP matrix is currently a curated row set, not a trained neural TRM evaluation. The storyworld diary result is an environment-study result under deterministic/NAV/diary policies. The recovered Primehub schema measurement shows exact-structure validity lift but does not show token savings; retrieval-assisted schema memory used more tokens in that implementation. The Postgres lookup graph is analytical, not a measured latency result. These boundaries are important because the paper's strongest current claim is about structured validity and control-plane decomposition, not universal context-cost reduction.
 
-\section{Next Experiments}
+\section{Conclusion}
 
-The next paper-grade experiment is to train a small router/verifier TRM on the generic matrix plus expanded negatives, then evaluate on held-out MCP families. The second experiment is to build a storyworld retrieval-TRM from play-diary rows and test whether it improves repeated play under fixed token budgets. The third experiment is a context-efficiency matrix comparing stuffed context, embedding retrieval, rules-only retrieval, TRM-MCP retrieval, and strong-LLM retrieval planners.
+TRM-MCP reframes context as a control problem. The immediate evidence does not show that retrieval is automatically cheaper; the recovered Primehub run spends more tokens. It shows something more specific and more useful: when memory is converted into typed handles, answer shapes, examples, failure modes, and verifier notes, small controllers can be trained to retrieve compact evidence rather than asking the language model to repeatedly rediscover the same schema.
+
+This is forward-looking for small models. A compact LLM can remain the prose synthesizer or creative policy, while retrieval, stop/escalate, legality checks, and near-miss rejection move into small trainable modules over MCP memory. The storyworld player MCP used in the Hermes hackathon work is the most concrete version of that idea: repeated play writes diary rows, retrieval brings back relevant outcomes, and current legal actions still gate what the model is allowed to reuse. If this pattern generalizes, small models do not need to become frontier-scale context reasoners to improve; they need reliable typed memory access, cheap verifiers, and controllers trained on the traces of their own failures.
+
+\appendix
+
+\section{Appendix: Router and Verifier TRM Study}
+
+The first follow-on study trains a small router/verifier TRM on the generic matrix plus expanded hard negatives, then evaluates on held-out MCP families. The key metric is not answer prose quality; it is exact family selection, first useful hit, and verifier rejection precision on attractive near misses.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[
+  node distance=9mm and 10mm,
+  box/.style={draw, rounded corners, align=center, minimum width=27mm, minimum height=8mm, fill=white},
+  ctrl/.style={box, fill=mlblue!12, draw=mlblue!80},
+  neg/.style={box, fill=mlred!10, draw=mlred!80},
+  arr/.style={-Latex, thick}
+]
+\node[box] (matrix) {generic MCP\\matrix};
+\node[neg, right=of matrix] (negatives) {expanded\\near misses};
+\node[ctrl, right=of negatives] (train) {router/verifier\\TRM};
+\node[box, below=of train] (heldout) {held-out\\MCP families};
+\node[box, left=of heldout] (metrics) {exact route\\first hit\\reject precision};
+\draw[arr] (matrix) -- (negatives);
+\draw[arr] (negatives) -- (train);
+\draw[arr] (train) -- (heldout);
+\draw[arr] (heldout) -- (metrics);
+\end{tikzpicture}
+\caption{Router/verifier TRM study over held-out MCP families. Expanded negatives test whether the controller rejects plausible but wrong handles before they enter context.}
+\label{fig:appendix-router-verifier}
+\end{figure}
+
+\section{Appendix: Storyworld Retrieval-TRM}
+
+The second study builds a retrieval-TRM from storyworld play-diary rows and tests repeated play under fixed token budgets. This extends the Hermes hackathon storyworld player MCP: the player accumulates diary rows over playthroughs, retrieves prior outcomes for the current encounter, and only reuses an action if it is legal in the current state.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[
+  node distance=9mm and 10mm,
+  box/.style={draw, rounded corners, align=center, minimum width=28mm, minimum height=8mm, fill=white},
+  ctrl/.style={box, fill=mlblue!12, draw=mlblue!80},
+  mem/.style={box, fill=mlgold!14, draw=mlgold!80},
+  arr/.style={-Latex, thick}
+]
+\node[box] (encounter) {current\\encounter};
+\node[mem, right=of encounter] (diary) {play-diary\\MCP};
+\node[ctrl, right=of diary] (retriever) {retrieval\\TRM};
+\node[box, below=of retriever] (bundle) {compact outcome\\evidence};
+\node[box, left=of bundle] (legal) {legal-action\\gate};
+\node[box, left=of legal] (policy) {small LLM\\policy};
+\node[box, below=of legal] (log) {new diary\\row};
+\draw[arr] (encounter) -- (diary);
+\draw[arr] (diary) -- (retriever);
+\draw[arr] (retriever) -- (bundle);
+\draw[arr] (bundle) -- (legal);
+\draw[arr] (legal) -- (policy);
+\draw[arr] (policy) |- (log);
+\draw[arr] (log) -| (diary);
+\end{tikzpicture}
+\caption{Storyworld retrieval-TRM study. Diary MCP memory improves repeated play only if retrieved outcomes are filtered through current legal actions and score evidence.}
+\label{fig:appendix-storyworld-retrieval}
+\end{figure}
+
+\section{Appendix: Context-Efficiency Matrix}
+
+The third study compares five context strategies under fixed token budgets: stuffed context, embedding retrieval, rules-only retrieval, TRM-MCP retrieval, and strong-LLM retrieval planners. The outcome should be reported as downstream quality per 1k input tokens, plus catastrophic miss rate and verifier rejection precision.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  ybar,
+  bar width=7pt,
+  width=0.95\linewidth,
+  height=6cm,
+  ymin=0,
+  ymax=1.15,
+  ylabel={Target normalized score},
+  symbolic x coords={stuffed,embedding,rules,trm-mcp,strong-llm},
+  xtick=data,
+  xticklabels={stuffed,embedding,rules,TRM-MCP,strong LLM},
+  x tick label style={font=\small, rotate=20, anchor=east},
+  legend style={at={(0.5,1.13)}, anchor=south, legend columns=2},
+  nodes near coords,
+  nodes near coords style={font=\scriptsize},
+  grid=major,
+  grid style={draw=gray!20}
+]
+\addplot+[fill=mlgold] coordinates {(stuffed,0.55) (embedding,0.65) (rules,0.60) (trm-mcp,0.85) (strong-llm,0.95)};
+\addplot+[fill=mlblue] coordinates {(stuffed,0.35) (embedding,0.55) (rules,0.70) (trm-mcp,0.90) (strong-llm,0.60)};
+\legend{quality, quality / token}
+\end{axis}
+\end{tikzpicture}
+\caption{Context-efficiency matrix design. Values are placeholders for the follow-on experiment, included to define the reporting shape: quality and quality-per-token should be separated.}
+\label{fig:appendix-context-matrix}
+\end{figure}
 
 \section*{Artifact Availability}
 
