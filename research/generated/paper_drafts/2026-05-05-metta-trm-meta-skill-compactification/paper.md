@@ -55,6 +55,8 @@ The live 3B package bootstrap used a CPU-only llama.cpp OpenAI-compatible shim w
 
 `D:\models\Qwen2.5-3B-Instruct-GGUF\qwen2.5-3b-instruct-q4_k_m.gguf`
 
+The later three-domain bootstrap expanded the live run from two domains to `formal_reasoning`, `empirical_science`, and `systems_engineering`. The model routed all three correctly, then produced packages that were repaired by the deterministic MeTTa/TRM pipeline. Raw verifier score averaged `0.4936`; repaired verifier score averaged `0.9048`; both TRM-row readiness and runtime-readiness reached `1.0`. This is still a small sample, but it removes the earlier two-domain-only limitation for the first live package-authoring smoke.
+
 The main two-domain run tested:
 
 1. `domain_router_01_formal_reasoning`
@@ -139,15 +141,19 @@ On 608 held-out rows, the base TRM reached `0.8931` exact decision accuracy, `0.
 
 This is a stronger result than the earlier hidden-256 smoke, but the claim boundary remains important. It does not show that Goodfire VPD has been reproduced locally, and it does not show downstream benchmark lift. It shows that MeTTa feature contracts can generate a trainable commit/veto feature surface, that tiny LoRA adapters on a small TRM can steer that surface sharply, and that VPD-style adapter ablation is an appropriate next audit layer for asking whether the steering is sparse and causal rather than broad controller drift.
 
+A follow-on run used the actual three-domain 3B bootstrap outputs as harvested commit/veto examples. Because the live run only produced three commit/veto rows, the experiment mixed those rows with 2,048 synthetic boundary cases and trained the same hidden-2048 four-step recursive controller under the Windows Job Object cap. The base controller reached `0.7197` held-out argmax accuracy with zero false commits but false-veto rate `1.0`. Rank-2 LoRA reached the best argmax accuracy in this smaller run, `0.8720`, with false-veto rate `0.0741` but false-commit rate `0.1490`. The conservative held-out frontier preferred rank-4 for zero false commits, reaching `0.8478` accuracy and false-veto rate `0.5432`.
+
+This second run also exercised the local `C:\projects\VDP` Rust/WASM acceleration path through `param_decomp_accel`. The VDP Rust scorer analyzed LoRA head rank-one components on the 289-row held-out split; the rank-8 audit scored eight components at about `4085` component-scores/sec. This is not a claim that Goodfire VPD has been replicated. It is a local parameter-decomposition audit lane for the compact TRM controllers in this project.
+
 ## Limitations
 
-The strongest live package-authoring result currently covers two domains, not the full ten-domain lattice. The held-out repair study is broader, but it is not a full live 3B domain-bootstrap study across all domains.
+The strongest live package-authoring result currently covers three domains, not the full ten-domain lattice. The held-out repair study is broader, but it is not a full live 3B domain-bootstrap study across all domains.
 
 The repair controller result is a template controller evaluation, not a trained neural TRM result. It demonstrates action-space compactness and label determinism, not learned generalization by itself.
 
 Verifier scores measure package readiness under the local compiler and evaluator. They are not direct downstream task-success metrics. A later experiment should connect package quality to live benchmark improvement.
 
-The feature-steering extension now has a 5M-class local commit/veto run, but it is still a control-plane benchmark. Its VPD-style audit is a local adapter-ablation probe rather than a reproduction of Goodfire's VPD method. Those distinctions should remain explicit.
+The feature-steering extension now has 5M-class local commit/veto runs, but they are still control-plane benchmarks. The local VDP Rust scorer and adapter-ablation probes are audit tools for these controllers, not a reproduction of Goodfire's VPD method. Those distinctions should remain explicit.
 
 ## Next Experiments
 
