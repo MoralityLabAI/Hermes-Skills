@@ -73,6 +73,20 @@ Compact repair controller:
 python "C:\projects\Hermes-Skills\Hermes Skills\metta-trm-meta-skill\scripts\train_repair_controller.py" --train-messages D:\metta_trm_meta_small_model_bench\repair_curriculum_v1\repair_curriculum_train_messages.jsonl --val-messages D:\metta_trm_meta_small_model_bench\repair_curriculum_v1\repair_curriculum_val_messages.jsonl --out-dir D:\metta_trm_meta_small_model_bench\repair_curriculum_v1\template_controller_eval
 ```
 
+Commit/veto feature steering rows:
+
+```powershell
+python "C:\projects\Hermes-Skills\Hermes Skills\metta-trm-meta-skill\scripts\build_commit_veto_feature_rows.py" --out-dir D:\metta_trm_meta_small_model_bench\commit_veto_feature_steering_v1 --messages D:\metta_trm_meta_small_model_bench\repair_curriculum_v1\repair_curriculum_messages.jsonl --messages D:\metta_trm_meta_small_model_bench\heldout_generalization\repair_generalization_20260505T174032Z\bootstrap_runs\small_model_bootstrap_20260505T174033Z\repair_training_messages.jsonl --synthetic-count 2048
+```
+
+Tiny LoRA TRM commit/veto steering:
+
+```powershell
+python "C:\projects\Hermes-Skills\Hermes Skills\metta-trm-meta-skill\scripts\train_commit_veto_lora_trm.py" --train D:\metta_trm_meta_small_model_bench\commit_veto_feature_steering_v1\commit_veto_train.jsonl --val D:\metta_trm_meta_small_model_bench\commit_veto_feature_steering_v1\commit_veto_val.jsonl --heldout D:\metta_trm_meta_small_model_bench\commit_veto_feature_steering_v1\commit_veto_heldout.jsonl --out-dir D:\metta_trm_meta_small_model_bench\commit_veto_feature_steering_v1\trm_lora_run --device cpu --ranks 1,2,4
+```
+
+The trainer records the intended safety caps and limits PyTorch CPU threads. For paper-grade or overnight runs, execute it inside a WSL `ulimit` or Windows Job Object wrapper so the `2048 MB RAM`, `50% CPU`, and `50 MB/s IO` caps are OS-enforced.
+
 Held-out repair generalization:
 
 ```powershell

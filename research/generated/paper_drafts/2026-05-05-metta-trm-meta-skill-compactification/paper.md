@@ -131,7 +131,9 @@ VPD-style analysis becomes the audit layer. If VPD decomposes model parameters i
 5. ablate or stress-test those subcomponents against held-out semi-failures,
 6. retain adapters only when they improve the target feature without damaging unrelated controller behavior.
 
-The research claim is methodological, not yet empirical. It says that MeTTa can frame the feature space for steering small TRM controllers, while harness I/O provides dense contrastive supervision and VPD-style decomposition provides a mechanistic audit target. If successful, this would make compactification more surgical: instead of training a larger controller, train a rank-1 to rank-8 adapter that selectively improves one control feature under verifier supervision.
+The research claim is methodological but now has a first smoke implementation. It says that MeTTa can frame the feature space for steering small TRM controllers, while harness I/O provides dense contrastive supervision and VPD-style decomposition provides a mechanistic audit target. If successful, this would make compactification more surgical: instead of training a larger controller, train a rank-1 to rank-8 adapter that selectively improves one control feature under verifier supervision.
+
+A local CPU smoke run tested the `commit_veto_threshold` feature using 2,089 feature-contract rows derived from harvested repair messages plus synthetic boundary cases. This was not the final 5M-parameter run; the smoke model used a 71,940-parameter hidden-256 recursive controller to validate the loop. On 306 held-out rows, the base TRM reached `0.9085` exact decision accuracy, `0.1023` false-commit rate, and `0.8704` boundary accuracy. Rank-4 LoRA steering raised held-out accuracy to `0.9150` and boundary accuracy to `0.8796`, with false-commit rate `0.0930`. Rank-1 LoRA reduced false commits further to `0.0744`, but increased false vetoes. The right interpretation is not a finished benchmark claim; it is evidence that the MeTTa feature-contract row format, tiny adapter training path, and VPD-style ablation audit are now executable end-to-end.
 
 ## Limitations
 
@@ -141,7 +143,7 @@ The repair controller result is a template controller evaluation, not a trained 
 
 Verifier scores measure package readiness under the local compiler and evaluator. They are not direct downstream task-success metrics. A later experiment should connect package quality to live benchmark improvement.
 
-The feature-steering extension is a proposed experiment. The current paper does not yet contain a trained tiny LoRA TRM, a VPD decomposition of a TRM controller, or measured feature-steering gains. Those should be reported separately from the existing 3B bootstrap and repair-controller evidence.
+The feature-steering extension currently has one local smoke result, not a paper-grade full run. The smoke uses a smaller controller than the target 5M-parameter setting, and its VPD-style audit is a local adapter-ablation probe rather than a reproduction of Goodfire's VPD method. Those distinctions should remain explicit.
 
 ## Next Experiments
 

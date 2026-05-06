@@ -1,0 +1,5 @@
+model,rank,split,accuracy,boundary_accuracy,false_commit_rate,false_veto_rate,count,claim_status
+base_trm,0,heldout,0.908497,0.87037,0.102326,0.065934,306,smoke
+lora_trm,1,heldout,0.905229,0.865741,0.074419,0.142857,306,smoke_tradeoff
+lora_trm,2,heldout,0.911765,0.875,0.097674,0.065934,306,smoke
+lora_trm,4,heldout,0.915033,0.87963,0.093023,0.065934,306,smoke_best_accuracy
