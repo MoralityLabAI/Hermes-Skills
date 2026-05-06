@@ -87,6 +87,14 @@ python "C:\projects\Hermes-Skills\Hermes Skills\metta-trm-meta-skill\scripts\tra
 
 Use `--use-cost-sensitive-loss --cost-sensitive-lora-only --false-commit-cost 1.5 --false-veto-cost 1 --max-false-veto-rate 0.20` to test the trading-style culling objective: reduce false commits while explicitly reporting the false-veto opportunity cost.
 
+VDP Rust scoring mode:
+
+```powershell
+python "C:\projects\Hermes-Skills\Hermes Skills\metta-trm-meta-skill\scripts\train_commit_veto_lora_trm.py" --train D:\metta_trm_meta_small_model_bench\commit_veto_feature_steering_v4\commit_veto_train.jsonl --val D:\metta_trm_meta_small_model_bench\commit_veto_feature_steering_v4\commit_veto_val.jsonl --heldout D:\metta_trm_meta_small_model_bench\commit_veto_feature_steering_v4\commit_veto_heldout.jsonl --out-dir D:\metta_trm_meta_small_model_bench\commit_veto_feature_steering_v4\trm_lora_vdp_rust --device cpu --ranks 1,2,4,8 --vdp-backend rust --vdp-repo C:\projects\VDP --vdp-rust-threads 8
+```
+
+`--vdp-backend rust` requires the local VDP fork's PyO3 extension (`param_decomp_accel`). It scores LoRA head rank components through `param_decomp.accel.score_rank_one_linear_components` and writes `vdp_component_scores.json` per LoRA rank. Use `--vdp-backend python` for deterministic smoke tests and `--vdp-backend auto` when fallback is acceptable.
+
 The trainer records the intended safety caps and limits PyTorch CPU threads. For paper-grade or overnight runs, execute it inside a WSL `ulimit` or Windows Job Object wrapper so the `2048 MB RAM`, `50% CPU`, and `50 MB/s IO` caps are OS-enforced.
 
 Held-out repair generalization:

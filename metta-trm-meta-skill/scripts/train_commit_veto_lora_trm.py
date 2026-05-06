@@ -3,9 +3,11 @@ from __future__ import annotations
 import argparse
 import csv
 import gc
+import importlib
 import json
 import math
 import os
+import sys
 import time
 from dataclasses import dataclass
 from datetime import datetime, timezone
@@ -15,6 +17,7 @@ from typing import Any, Iterable
 import torch
 from torch import nn
 from torch.utils.data import DataLoader, Dataset
+import numpy as np
 
 
 FEATURE_NAMES = [
@@ -448,6 +451,120 @@ def audit_lora(model: LoRATRM, rows: list[dict[str, Any]], batch_size: int, devi
     }
 
 
+def _lora_hidden_and_logits(model: LoRATRM, features: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
+    h = torch.tanh(model.base.input_proj(features))
+    for _ in range(model.base.recursive_steps):
+        h = model.base.norm(h + torch.tanh(model.base.transition(h) + model.transition_delta(h)))
+    logits = model.base.decision_head(h) + model.head_delta(h)
+    return h, logits
+
+
+def _slice_csr_for_rows(rows: list[dict[str, Any]]) -> tuple[list[str], np.ndarray, np.ndarray]:
+    slices: list[tuple[str, list[int]]] = [
+        ("label_veto", []),
+        ("label_commit", []),
+        ("verifier_disagreement", []),
+        ("near_threshold_boundary", []),
+        ("high_repair_boundary", []),
+    ]
+    by_name = {name: indices for name, indices in slices}
+    for index, row in enumerate(rows):
+        state = dict(row.get("state") or {})
+        label = str((row.get("label") or {}).get("decision"))
+        if label == "veto_or_collect_more_data":
+            by_name["label_veto"].append(index)
+        elif label == "commit_repaired_package":
+            by_name["label_commit"].append(index)
+        repaired_scores = dict(state.get("repaired_scores") or {})
+        repaired_overall = float(repaired_scores.get("overall", state.get("repaired_overall", 0.0)))
+        if state.get("verifier_disagreement"):
+            by_name["verifier_disagreement"].append(index)
+        if abs(repaired_overall - 0.85) < 0.08:
+            by_name["near_threshold_boundary"].append(index)
+        if float(state.get("repair_count", 0.0)) >= 8:
+            by_name["high_repair_boundary"].append(index)
+    names = [name for name, indices in slices if indices]
+    offsets = [0]
+    flat: list[int] = []
+    for name in names:
+        flat.extend(by_name[name])
+        offsets.append(len(flat))
+    return names, np.asarray(offsets, dtype=np.int64), np.asarray(flat, dtype=np.int64)
+
+
+def _load_vdp_scorer(vdp_repo: Path):
+    if vdp_repo.exists() and str(vdp_repo) not in sys.path:
+        sys.path.insert(0, str(vdp_repo))
+    module = importlib.import_module("param_decomp.accel")
+    return module.score_rank_one_linear_components
+
+
+@torch.no_grad()
+def audit_lora_with_vdp_backend(
+    model: LoRATRM,
+    rows: list[dict[str, Any]],
+    batch_size: int,
+    device: torch.device,
+    backend: str,
+    vdp_repo: Path,
+    rust_threads: int,
+    max_rows: int | None = None,
+) -> dict[str, Any]:
+    if max_rows:
+        rows = rows[:max_rows]
+    if not rows:
+        raise ValueError("VDP component scoring requires at least one row; increase the score split or remove the max-row cap.")
+    scorer = _load_vdp_scorer(vdp_repo)
+    loader = DataLoader(FeatureRows(rows), batch_size=batch_size, shuffle=False)
+    hidden_batches: list[np.ndarray] = []
+    logits_batches: list[np.ndarray] = []
+    label_values: list[int] = []
+    model.eval()
+    for features, labels, _weights, _row_ids in loader:
+        features = features.to(device)
+        hidden, logits = _lora_hidden_and_logits(model, features)
+        hidden_batches.append(hidden.detach().cpu().numpy().astype(np.float32, copy=False))
+        logits_batches.append(logits.detach().cpu().numpy().astype(np.float32, copy=False))
+        label_values.extend(int(value) for value in labels.tolist())
+
+    inputs = np.ascontiguousarray(np.concatenate(hidden_batches, axis=0), dtype=np.float32)
+    reference_logits = np.ascontiguousarray(np.concatenate(logits_batches, axis=0), dtype=np.float32)
+    labels = np.asarray(label_values, dtype=np.int64)
+    scale = float(model.alpha / max(1, model.rank))
+    components_u = np.ascontiguousarray((model.head_b.detach().cpu().numpy().T * scale), dtype=np.float32)
+    components_v = np.ascontiguousarray(model.head_a.detach().cpu().numpy(), dtype=np.float32)
+    slice_names, slice_offsets, slice_indices = _slice_csr_for_rows(rows)
+    started = time.perf_counter()
+    records = scorer(
+        inputs=inputs,
+        labels=labels,
+        reference_logits=reference_logits,
+        metric_reference_logits=reference_logits,
+        components_u=components_u,
+        components_v=components_v,
+        component_ids=[f"lora_head_rank_{index}" for index in range(model.rank)],
+        row_indices=np.arange(len(rows), dtype=np.int64),
+        slice_names=slice_names,
+        slice_offsets=slice_offsets,
+        slice_indices=slice_indices,
+        backend=backend,
+        rust_threads=rust_threads,
+    )
+    elapsed = time.perf_counter() - started
+    return {
+        "backend_requested": backend,
+        "vdp_repo": str(vdp_repo),
+        "rust_threads": rust_threads,
+        "score_target": "lora_head_rank_one_components",
+        "component_count": model.rank,
+        "row_count": len(rows),
+        "elapsed_seconds": round(elapsed, 6),
+        "component_scores_per_sec": round((len(records) / elapsed) if elapsed > 0 else 0.0, 3),
+        "slice_names": slice_names,
+        "records": records,
+    }
+
+
 def load_rows(path: Path, max_rows: int | None = None) -> list[dict[str, Any]]:
     rows = read_jsonl(path)
     return rows[:max_rows] if max_rows else rows
@@ -504,6 +621,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--false-veto-budget", type=float, default=0.025)
     parser.add_argument("--use-cost-sensitive-loss", action="store_true")
     parser.add_argument("--cost-sensitive-lora-only", action="store_true")
+    parser.add_argument("--vdp-backend", choices=["none", "python", "auto", "rust"], default="none")
+    parser.add_argument("--vdp-repo", default=r"C:\projects\VDP")
+    parser.add_argument("--vdp-rust-threads", type=int, default=0)
+    parser.add_argument("--vdp-score-split", choices=["val", "heldout"], default="heldout")
+    parser.add_argument("--vdp-max-score-rows", type=int)
     parser.add_argument("--seed", type=int, default=20260506)
     return parser.parse_args()
 
@@ -598,9 +720,9 @@ def main() -> int:
                 args.lora_lr,
                 args.checkpoint_interval,
                 args.timeout_seconds,
-            args.false_commit_cost,
-            args.false_veto_cost,
-            args.use_cost_sensitive_loss,
+                args.false_commit_cost,
+                args.false_veto_cost,
+                args.use_cost_sensitive_loss,
             ),
             device,
             event_log,
@@ -625,6 +747,24 @@ def main() -> int:
         budget_best = best_frontier_under_budget(heldout_frontier, base_metrics["heldout"], args.false_veto_budget)
         frontier_rows.extend({"model": "lora_trm", "rank": rank, "split": "heldout", **row} for row in heldout_frontier)
         audit = audit_lora(lora, heldout_rows, args.batch_size, device)
+        vdp_audit: dict[str, Any] | None = None
+        if args.vdp_backend != "none":
+            vdp_rows = heldout_rows if args.vdp_score_split == "heldout" else val_rows
+            vdp_audit = audit_lora_with_vdp_backend(
+                lora,
+                vdp_rows,
+                args.batch_size,
+                device,
+                args.vdp_backend,
+                Path(args.vdp_repo),
+                args.vdp_rust_threads,
+                args.vdp_max_score_rows,
+            )
+            write_json(lora_dir / "vdp_component_scores.json", vdp_audit)
+            audit["vdp_component_scores"] = {
+                key: value for key, value in vdp_audit.items()
+                if key != "records"
+            }
         write_json(lora_dir / "vpd_style_audit.json", audit)
         write_json(lora_dir / "threshold_tuning.json", {"selected": threshold, "heldout": tuned_metrics["heldout"], "heldout_budget_best": budget_best})
         torch.save(lora.state_dict(), lora_dir / "lora_final.pt")
@@ -636,6 +776,11 @@ def main() -> int:
             "heldout_budget_best": budget_best,
             "audit": audit,
         }
+        if vdp_audit is not None:
+            lora_summaries[str(rank)]["vdp_component_scores"] = {
+                key: value for key, value in vdp_audit.items()
+                if key != "records"
+            }
         metric_rows.append({"model": "lora_trm", "rank": rank, "decision_rule": "argmax", "split": "val", **val_metrics})
         metric_rows.append({"model": "lora_trm", "rank": rank, "decision_rule": "argmax", "split": "heldout", **heldout_metrics})
         metric_rows.append({"model": "lora_trm", "rank": rank, "decision_rule": "tuned_threshold", "split": "val", **tuned_metrics["val"]})
@@ -669,6 +814,13 @@ def main() -> int:
             "false_veto_budget": args.false_veto_budget,
             "use_cost_sensitive_loss": args.use_cost_sensitive_loss,
             "cost_sensitive_lora_only": args.cost_sensitive_lora_only,
+        },
+        "vdp_scoring": {
+            "backend": args.vdp_backend,
+            "repo": args.vdp_repo,
+            "rust_threads": args.vdp_rust_threads,
+            "score_split": args.vdp_score_split,
+            "max_score_rows": args.vdp_max_score_rows,
         },
     }
     write_json(out_dir / "summary.json", summary)
