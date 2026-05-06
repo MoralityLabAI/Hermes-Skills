@@ -46,7 +46,7 @@ class CommitVetoFeatureSteeringTests(unittest.TestCase):
                     "--out-dir",
                     str(out_dir),
                     "--synthetic-count",
-                    "80",
+                    "160",
                     "--seed",
                     "7",
                 ],
@@ -56,8 +56,10 @@ class CommitVetoFeatureSteeringTests(unittest.TestCase):
                 stderr=subprocess.PIPE,
             )
             manifest = json.loads((out_dir / "commit_veto_feature_manifest.json").read_text(encoding="utf-8"))
-            self.assertEqual(manifest["row_count"], 80)
-            self.assertGreater(manifest["split_counts"]["train"], 0)
+            self.assertEqual(manifest["row_count"], 160)
+            self.assertEqual(manifest["split_counts"]["train"], 112)
+            self.assertEqual(manifest["split_counts"]["val"], 24)
+            self.assertEqual(manifest["split_counts"]["heldout"], 24)
             rows = [json.loads(line) for line in (out_dir / "commit_veto_feature_rows.jsonl").read_text(encoding="utf-8").splitlines()]
             self.assertTrue(all(row["feature_contract"].startswith("(feature-target") for row in rows))
             self.assertIn("commit_repaired_package", manifest["decision_counts"])
@@ -68,6 +70,14 @@ class CommitVetoFeatureSteeringTests(unittest.TestCase):
         features = trainer.state_features(row["state"])
         self.assertEqual(len(features), len(trainer.FEATURE_NAMES))
         self.assertTrue(all(isinstance(value, float) for value in features))
+
+    def test_prediction_metrics_support_cost_frontier(self) -> None:
+        labels = [0, 0, 1, 1]
+        probs = [0.2, 0.7, 0.6, 0.9]
+        low_threshold = trainer.prediction_metrics(labels, probs, threshold=0.5, false_commit_cost=3.0, false_veto_cost=1.0)
+        high_threshold = trainer.prediction_metrics(labels, probs, threshold=0.8, false_commit_cost=3.0, false_veto_cost=1.0)
+        self.assertGreater(low_threshold["false_commit_rate"], high_threshold["false_commit_rate"])
+        self.assertLess(low_threshold["false_veto_rate"], high_threshold["false_veto_rate"])
 
     def test_tiny_lora_trainer_smoke(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -123,8 +133,10 @@ class CommitVetoFeatureSteeringTests(unittest.TestCase):
             )
             summary = json.loads((out_dir / "summary.json").read_text(encoding="utf-8"))
             self.assertEqual(summary["feature"], "commit_veto_threshold")
+            self.assertIn("cost_model", summary)
             self.assertTrue((out_dir / "metrics.csv").exists())
             self.assertTrue((out_dir / "lora_rank_1" / "vpd_style_audit.json").exists())
+            self.assertTrue((out_dir / "lora_rank_1" / "threshold_tuning.json").exists())
 
 
 if __name__ == "__main__":

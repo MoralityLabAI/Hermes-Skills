@@ -189,11 +189,51 @@ class TrainConfig:
     lr: float
     checkpoint_interval: int
     timeout_seconds: int
+    false_commit_cost: float = 1.0
+    false_veto_cost: float = 1.0
+    use_cost_sensitive_loss: bool = False
 
 
-def weighted_loss(logits: torch.Tensor, labels: torch.Tensor, weights: torch.Tensor) -> torch.Tensor:
+def weighted_loss(logits: torch.Tensor, labels: torch.Tensor, weights: torch.Tensor, cfg: TrainConfig) -> torch.Tensor:
     losses = nn.functional.cross_entropy(logits, labels, reduction="none")
+    if cfg.use_cost_sensitive_loss:
+        label_costs = torch.where(
+            labels == 0,
+            torch.full_like(weights, float(cfg.false_commit_cost)),
+            torch.full_like(weights, float(cfg.false_veto_cost)),
+        )
+        weights = weights * label_costs
     return (losses * weights).mean()
+
+
+def prediction_metrics(labels: list[int], commit_probs: list[float], threshold: float, false_commit_cost: float = 3.0, false_veto_cost: float = 1.0) -> dict[str, float]:
+    total = len(labels)
+    correct = 0
+    veto_total = 0
+    commit_total = 0
+    false_commit = 0
+    false_veto = 0
+    for label, commit_prob in zip(labels, commit_probs):
+        pred = 1 if commit_prob >= threshold else 0
+        correct += int(pred == label)
+        if label == 0:
+            veto_total += 1
+            false_commit += int(pred == 1)
+        else:
+            commit_total += 1
+            false_veto += int(pred == 0)
+    weighted_cost = false_commit_cost * false_commit + false_veto_cost * false_veto
+    max_cost = false_commit_cost * max(1, veto_total) + false_veto_cost * max(1, commit_total)
+    return {
+        "threshold": round(threshold, 4),
+        "accuracy": round(correct / total, 6) if total else 0.0,
+        "false_commit_rate": round(false_commit / veto_total, 6) if veto_total else 0.0,
+        "false_veto_rate": round(false_veto / commit_total, 6) if commit_total else 0.0,
+        "weighted_error_cost": round(weighted_cost / max_cost, 6),
+        "false_commit_count": float(false_commit),
+        "false_veto_count": float(false_veto),
+        "count": float(total),
+    }
 
 
 def train_model(
@@ -221,7 +261,7 @@ def train_model(
             labels = labels.to(device)
             weights = weights.to(device)
             optimizer.zero_grad(set_to_none=True)
-            loss = weighted_loss(model(features), labels, weights)
+            loss = weighted_loss(model(features), labels, weights, cfg)
             loss.backward()
             optimizer.step()
             step += 1
@@ -286,6 +326,92 @@ def evaluate_model(
     }
 
 
+@torch.no_grad()
+def collect_commit_probs(
+    model: nn.Module,
+    rows: list[dict[str, Any]],
+    batch_size: int,
+    device: torch.device,
+    disabled_rank: int | None = None,
+    zero_adapter: bool = False,
+) -> tuple[list[int], list[float]]:
+    loader = DataLoader(FeatureRows(rows), batch_size=batch_size, shuffle=False)
+    model.eval()
+    labels_out: list[int] = []
+    probs_out: list[float] = []
+    for features, labels, _weights, _row_ids in loader:
+        features = features.to(device)
+        if isinstance(model, LoRATRM):
+            logits = model(features, disabled_rank=disabled_rank, zero_adapter=zero_adapter)
+        else:
+            logits = model(features)
+        probs = torch.softmax(logits, dim=-1)[:, 1].detach().cpu().tolist()
+        labels_out.extend(int(value) for value in labels.tolist())
+        probs_out.extend(float(value) for value in probs)
+    return labels_out, probs_out
+
+
+def tune_threshold(
+    model: nn.Module,
+    val_rows: list[dict[str, Any]],
+    batch_size: int,
+    device: torch.device,
+    false_commit_cost: float,
+    false_veto_cost: float,
+    max_false_veto_rate: float,
+    min_accuracy: float | None = None,
+) -> dict[str, float]:
+    labels, probs = collect_commit_probs(model, val_rows, batch_size, device)
+    candidates = [round(0.05 + index * 0.01, 4) for index in range(91)]
+    scored = [prediction_metrics(labels, probs, threshold, false_commit_cost, false_veto_cost) for threshold in candidates]
+    feasible = [
+        row for row in scored
+        if row["false_veto_rate"] <= max_false_veto_rate
+        and (min_accuracy is None or row["accuracy"] >= min_accuracy)
+    ]
+    pool = feasible if feasible else scored
+    return min(pool, key=lambda row: (row["false_commit_rate"], row["weighted_error_cost"], -row["accuracy"]))
+
+
+def threshold_frontier(
+    model: nn.Module,
+    rows: list[dict[str, Any]],
+    batch_size: int,
+    device: torch.device,
+    false_commit_cost: float,
+    false_veto_cost: float,
+) -> list[dict[str, float]]:
+    labels, probs = collect_commit_probs(model, rows, batch_size, device)
+    return [
+        prediction_metrics(labels, probs, round(0.05 + index * 0.01, 4), false_commit_cost, false_veto_cost)
+        for index in range(91)
+    ]
+
+
+def best_frontier_under_budget(frontier: list[dict[str, float]], base_metrics: dict[str, float], false_veto_budget: float) -> dict[str, float]:
+    max_false_veto = float(base_metrics["false_veto_rate"]) + false_veto_budget
+    min_accuracy = float(base_metrics["accuracy"]) - 0.01
+    feasible = [
+        row for row in frontier
+        if row["false_veto_rate"] <= max_false_veto and row["accuracy"] >= min_accuracy
+    ]
+    pool = feasible if feasible else frontier
+    return min(pool, key=lambda row: (row["false_commit_rate"], row["weighted_error_cost"], -row["accuracy"]))
+
+
+def evaluate_at_threshold(
+    model: nn.Module,
+    rows: list[dict[str, Any]],
+    batch_size: int,
+    device: torch.device,
+    threshold: float,
+    false_commit_cost: float,
+    false_veto_cost: float,
+) -> dict[str, float]:
+    labels, probs = collect_commit_probs(model, rows, batch_size, device)
+    return prediction_metrics(labels, probs, threshold, false_commit_cost, false_veto_cost)
+
+
 def adapter_param_count(model: LoRATRM) -> int:
     return sum(param.numel() for name, param in model.named_parameters() if param.requires_grad and not name.startswith("base."))
 
@@ -336,6 +462,15 @@ def write_metrics_csv(path: Path, rows: list[dict[str, Any]]) -> None:
         writer.writerows(rows)
 
 
+def write_frontier_csv(path: Path, rows: list[dict[str, Any]]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    keys = ["model", "rank", "split", "threshold", "accuracy", "false_commit_rate", "false_veto_rate", "weighted_error_cost", "false_commit_count", "false_veto_count", "count"]
+    with path.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=keys)
+        writer.writeheader()
+        writer.writerows(rows)
+
+
 def parse_ranks(value: str) -> list[int]:
     return [int(part.strip()) for part in value.split(",") if part.strip()]
 
@@ -363,6 +498,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--ram-cap-mb", type=int, default=2048)
     parser.add_argument("--cpu-pct", type=int, default=50)
     parser.add_argument("--io-mb-s", type=int, default=50)
+    parser.add_argument("--false-commit-cost", type=float, default=3.0)
+    parser.add_argument("--false-veto-cost", type=float, default=1.0)
+    parser.add_argument("--max-false-veto-rate", type=float, default=0.08)
+    parser.add_argument("--false-veto-budget", type=float, default=0.025)
+    parser.add_argument("--use-cost-sensitive-loss", action="store_true")
+    parser.add_argument("--cost-sensitive-lora-only", action="store_true")
     parser.add_argument("--seed", type=int, default=20260506)
     return parser.parse_args()
 
@@ -395,7 +536,16 @@ def main() -> int:
         train_rows,
         val_rows,
         base_dir,
-        TrainConfig(args.base_epochs, args.batch_size, args.lr, args.checkpoint_interval, args.timeout_seconds),
+        TrainConfig(
+            args.base_epochs,
+            args.batch_size,
+            args.lr,
+            args.checkpoint_interval,
+            args.timeout_seconds,
+            args.false_commit_cost,
+            args.false_veto_cost,
+            args.use_cost_sensitive_loss and not args.cost_sensitive_lora_only,
+        ),
         device,
         event_log,
     )
@@ -403,11 +553,33 @@ def main() -> int:
         "val": evaluate_model(base, val_rows, args.batch_size, device),
         "heldout": evaluate_model(base, heldout_rows, args.batch_size, device),
     }
+    base_threshold = tune_threshold(
+        base,
+        val_rows,
+        args.batch_size,
+        device,
+        args.false_commit_cost,
+        args.false_veto_cost,
+        args.max_false_veto_rate,
+        min_accuracy=max(0.0, base_metrics["val"]["accuracy"] - 0.01),
+    )
+    base_tuned_metrics = {
+        "val": base_threshold,
+        "heldout": evaluate_at_threshold(base, heldout_rows, args.batch_size, device, base_threshold["threshold"], args.false_commit_cost, args.false_veto_cost),
+    }
     torch.save(base.state_dict(), base_dir / "base_final.pt")
     metric_rows: list[dict[str, Any]] = [
-        {"model": "base_trm", "rank": 0, "split": split, **metrics}
+        {"model": "base_trm", "rank": 0, "decision_rule": "argmax", "split": split, **metrics}
         for split, metrics in base_metrics.items()
     ]
+    metric_rows.extend(
+        {"model": "base_trm", "rank": 0, "decision_rule": "tuned_threshold", "split": split, **metrics}
+        for split, metrics in base_tuned_metrics.items()
+    )
+    frontier_rows: list[dict[str, Any]] = []
+    base_heldout_frontier = threshold_frontier(base, heldout_rows, args.batch_size, device, args.false_commit_cost, args.false_veto_cost)
+    base_budget_best = best_frontier_under_budget(base_heldout_frontier, base_metrics["heldout"], args.false_veto_budget)
+    frontier_rows.extend({"model": "base_trm", "rank": 0, "split": "heldout", **row} for row in base_heldout_frontier)
     lora_summaries: dict[str, Any] = {}
     for rank in parse_ranks(args.ranks):
         lora_dir = out_dir / f"lora_rank_{rank}"
@@ -420,20 +592,58 @@ def main() -> int:
             train_rows,
             val_rows,
             lora_dir,
-            TrainConfig(args.lora_epochs, args.batch_size, args.lora_lr, args.checkpoint_interval, args.timeout_seconds),
+            TrainConfig(
+                args.lora_epochs,
+                args.batch_size,
+                args.lora_lr,
+                args.checkpoint_interval,
+                args.timeout_seconds,
+            args.false_commit_cost,
+            args.false_veto_cost,
+            args.use_cost_sensitive_loss,
+            ),
             device,
             event_log,
         )
         val_metrics = evaluate_model(lora, val_rows, args.batch_size, device)
         heldout_metrics = evaluate_model(lora, heldout_rows, args.batch_size, device)
+        threshold = tune_threshold(
+            lora,
+            val_rows,
+            args.batch_size,
+            device,
+            args.false_commit_cost,
+            args.false_veto_cost,
+            args.max_false_veto_rate,
+            min_accuracy=max(0.0, val_metrics["accuracy"] - 0.01),
+        )
+        tuned_metrics = {
+            "val": threshold,
+            "heldout": evaluate_at_threshold(lora, heldout_rows, args.batch_size, device, threshold["threshold"], args.false_commit_cost, args.false_veto_cost),
+        }
+        heldout_frontier = threshold_frontier(lora, heldout_rows, args.batch_size, device, args.false_commit_cost, args.false_veto_cost)
+        budget_best = best_frontier_under_budget(heldout_frontier, base_metrics["heldout"], args.false_veto_budget)
+        frontier_rows.extend({"model": "lora_trm", "rank": rank, "split": "heldout", **row} for row in heldout_frontier)
         audit = audit_lora(lora, heldout_rows, args.batch_size, device)
         write_json(lora_dir / "vpd_style_audit.json", audit)
+        write_json(lora_dir / "threshold_tuning.json", {"selected": threshold, "heldout": tuned_metrics["heldout"], "heldout_budget_best": budget_best})
         torch.save(lora.state_dict(), lora_dir / "lora_final.pt")
-        lora_summaries[str(rank)] = {"train_summary": lora_summary, "val": val_metrics, "heldout": heldout_metrics, "audit": audit}
-        metric_rows.append({"model": "lora_trm", "rank": rank, "split": "val", **val_metrics})
-        metric_rows.append({"model": "lora_trm", "rank": rank, "split": "heldout", **heldout_metrics})
-        metric_rows.append({"model": "lora_zero_adapter", "rank": rank, "split": "heldout", **audit["zero_adapter"]})
+        lora_summaries[str(rank)] = {
+            "train_summary": lora_summary,
+            "val": val_metrics,
+            "heldout": heldout_metrics,
+            "threshold_tuning": tuned_metrics,
+            "heldout_budget_best": budget_best,
+            "audit": audit,
+        }
+        metric_rows.append({"model": "lora_trm", "rank": rank, "decision_rule": "argmax", "split": "val", **val_metrics})
+        metric_rows.append({"model": "lora_trm", "rank": rank, "decision_rule": "argmax", "split": "heldout", **heldout_metrics})
+        metric_rows.append({"model": "lora_trm", "rank": rank, "decision_rule": "tuned_threshold", "split": "val", **tuned_metrics["val"]})
+        metric_rows.append({"model": "lora_trm", "rank": rank, "decision_rule": "tuned_threshold", "split": "heldout", **tuned_metrics["heldout"]})
+        metric_rows.append({"model": "lora_trm", "rank": rank, "decision_rule": "heldout_frontier_budget_oracle", "split": "heldout", **budget_best})
+        metric_rows.append({"model": "lora_zero_adapter", "rank": rank, "decision_rule": "argmax", "split": "heldout", **audit["zero_adapter"]})
     write_metrics_csv(out_dir / "metrics.csv", metric_rows)
+    write_frontier_csv(out_dir / "threshold_frontier_heldout.csv", frontier_rows)
     summary = {
         "generated_at_utc": utc_now(),
         "status": "completed",
@@ -445,10 +655,21 @@ def main() -> int:
         "model_config": {"hidden_dim": args.hidden_dim, "recursive_steps": args.recursive_steps, "base_param_count": total_param_count(base)},
         "base_summary": base_summary,
         "base_metrics": base_metrics,
+        "base_threshold_tuning": base_tuned_metrics,
+        "base_heldout_budget_best": base_budget_best,
         "lora_summaries": lora_summaries,
         "metrics_csv": str(out_dir / "metrics.csv"),
+        "threshold_frontier_csv": str(out_dir / "threshold_frontier_heldout.csv"),
         "event_log": str(event_log),
         "caps": {"ram_mb": args.ram_cap_mb, "cpu_pct": args.cpu_pct, "io_mb_s": args.io_mb_s, "hard_cap_enforced": False},
+        "cost_model": {
+            "false_commit_cost": args.false_commit_cost,
+            "false_veto_cost": args.false_veto_cost,
+            "max_false_veto_rate": args.max_false_veto_rate,
+            "false_veto_budget": args.false_veto_budget,
+            "use_cost_sensitive_loss": args.use_cost_sensitive_loss,
+            "cost_sensitive_lora_only": args.cost_sensitive_lora_only,
+        },
     }
     write_json(out_dir / "summary.json", summary)
     write_jsonl(

@@ -85,6 +85,8 @@ Tiny LoRA TRM commit/veto steering:
 python "C:\projects\Hermes-Skills\Hermes Skills\metta-trm-meta-skill\scripts\train_commit_veto_lora_trm.py" --train D:\metta_trm_meta_small_model_bench\commit_veto_feature_steering_v1\commit_veto_train.jsonl --val D:\metta_trm_meta_small_model_bench\commit_veto_feature_steering_v1\commit_veto_val.jsonl --heldout D:\metta_trm_meta_small_model_bench\commit_veto_feature_steering_v1\commit_veto_heldout.jsonl --out-dir D:\metta_trm_meta_small_model_bench\commit_veto_feature_steering_v1\trm_lora_run --device cpu --ranks 1,2,4
 ```
 
+Use `--use-cost-sensitive-loss --cost-sensitive-lora-only --false-commit-cost 1.5 --false-veto-cost 1 --max-false-veto-rate 0.20` to test the trading-style culling objective: reduce false commits while explicitly reporting the false-veto opportunity cost.
+
 The trainer records the intended safety caps and limits PyTorch CPU threads. For paper-grade or overnight runs, execute it inside a WSL `ulimit` or Windows Job Object wrapper so the `2048 MB RAM`, `50% CPU`, and `50 MB/s IO` caps are OS-enforced.
 
 Held-out repair generalization:

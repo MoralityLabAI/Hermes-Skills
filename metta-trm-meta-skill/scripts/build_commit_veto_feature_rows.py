@@ -218,10 +218,18 @@ def synthetic_state(rng: random.Random, index: int) -> dict[str, Any]:
 
 def build_synthetic_rows(count: int, seed: int) -> list[dict[str, Any]]:
     rng = random.Random(seed)
-    return [
-        make_feature_row(synthetic_state(rng, index), "synthetic_commit_veto_feature_rows", index, "synthetic_boundary")
-        for index in range(count)
-    ]
+    rows = []
+    for index in range(count):
+        row = make_feature_row(synthetic_state(rng, index), "synthetic_commit_veto_feature_rows", index, "synthetic_boundary")
+        bucket = (index // 8) % 20
+        if bucket < 14:
+            row["split"] = "train"
+        elif bucket < 17:
+            row["split"] = "val"
+        else:
+            row["split"] = "heldout"
+        rows.append(row)
+    return rows
 
 
 def dedupe_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:

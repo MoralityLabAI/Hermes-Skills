@@ -40,6 +40,7 @@
     "smoke_results_table": "research\\generated\\paper_drafts\\2026-05-05-metta-trm-meta-skill-compactification\\tables\\commit_veto_lora_smoke_results.csv",
     "figure": "research\\generated\\paper_drafts\\2026-05-05-metta-trm-meta-skill-compactification\\figures\\vpd_tiny_lora_flow.mmd",
     "local_smoke_artifact": "D:\\metta_trm_meta_small_model_bench\\commit_veto_feature_steering_v1\\trm_lora_smoke\\summary.json",
+    "local_constrained_selector_artifact": "D:\\metta_trm_meta_small_model_bench\\commit_veto_feature_steering_v1\\trm_lora_constrained_selector_cost15_fv20\\summary.json",
     "local_feature_rows": "D:\\metta_trm_meta_small_model_bench\\commit_veto_feature_steering_v1\\commit_veto_feature_manifest.json",
     "external_sources": [
       "https://www.goodfire.ai/research/interpreting-lm-parameters",
@@ -47,7 +48,7 @@
       "https://docs.goodfire.ai/sdk-reference/features",
       "https://docs.goodfire.ai/sdk-reference/autosteer"
     ],
-    "claim_boundary": "One local hidden-256 smoke run has been executed for commit/veto feature steering. The 5M-parameter TRM run and any Goodfire-style VPD reproduction remain future work."
+    "claim_boundary": "Local hidden-256 smoke runs have been executed for commit/veto feature steering and constrained false-commit culling. The 5M-parameter TRM run, downstream skill benchmark, and any Goodfire-style VPD reproduction remain future work."
   },
   "key_numbers": {
     "two_domain_task_count": 2,

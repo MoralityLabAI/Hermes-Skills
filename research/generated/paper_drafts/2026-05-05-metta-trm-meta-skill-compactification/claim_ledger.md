@@ -11,6 +11,7 @@
 | The fixed repair controller reached exact action rate `1.0` on 117 held-out repair messages. | controller contract eval | `D:\metta_trm_meta_small_model_bench\heldout_generalization\repair_generalization_20260505T174032Z\controller_eval_on_heldout_repairs_v2\summary.json` |
 | MeTTa can define a proposed feature-contract layer for tiny LoRA steering of TRM controllers. | `training_corpus_plan` | `tables/vpd_tiny_lora_experiment_matrix.csv` and `figures/vpd_tiny_lora_flow.mmd` |
 | A local commit/veto LoRA smoke run executed end-to-end and rank-4 improved held-out exact action accuracy from `0.9085` to `0.9150` on 306 rows. | `control_plane_threshold_eval` | `D:\metta_trm_meta_small_model_bench\commit_veto_feature_steering_v1\trm_lora_smoke\summary.json` |
+| A constrained rank-1 LoRA operating point reduced held-out false commits from `0.1023` to `0.0558`, with false vetoes rising from `0.0659` to `0.1429`. | `control_plane_threshold_eval` | `D:\metta_trm_meta_small_model_bench\commit_veto_feature_steering_v1\trm_lora_constrained_selector_cost15_fv20\summary.json` |
 
 ## Disallowed Claims For Current Evidence
 
@@ -23,6 +24,7 @@
 | Goodfire VPD has already been applied to these TRM controllers. | This is a proposed extension; no local VPD run over a TRM controller exists yet. |
 | Tiny LoRA feature steering of TRMs has already improved downstream benchmark scores. | The current LoRA result is a commit/veto control-plane smoke benchmark, not a downstream skill benchmark. |
 | The commit/veto LoRA smoke is the final 5M-parameter TRM result. | The smoke used a smaller hidden-256 controller to validate the loop. |
+| The held-out frontier budget-oracle point is deployable as-is. | It uses held-out frontier inspection and should be treated as a calibration target, not validation-selected policy. |
 | Goodfire Ember feature steering and VPD are the same method. | Ember steering is an activation-feature interface; VPD is parameter decomposition. The paper should distinguish them. |
 
 ## Best Short Claim
