@@ -57,7 +57,7 @@ Model Context Protocols (MCPs) had limited early success due to the token-cost o
 
 This makes TRM-MCP a control-plane architecture rather than a knowledge-distillation architecture. The TRM outputs pointers and actions, not prose answers. The language model remains useful for synthesis, but exact lookup and verification are shifted into typed, trainable control surfaces.
 
-This decomposition follows the same compactification logic as HRM and TRM-style recursive reasoning models \citep{wang2025hrm,jolicoeurmartineau2025trm}, but applies it to context access rather than puzzle solving alone. MeTTa and OpenCog Hyperon motivate the symbolic side of the design: handles, answer shapes, failure modes, and validators can be represented as editable metagraph objects rather than hidden prompt prose \citep{goertzel2021metta,meredith2023metametta}. In the Hermes setting, this connects to tool-use and skill-harness work on instruction-tuned agents \citep{teknium2024hermes3} and verifier-oriented environments such as Prime Intellect's Intellect and Environments Hub work \citep{primeintellect2025intellect3}.
+This decomposition follows the same compactification logic as HRM and TRM-style recursive reasoning models \citep{wang2025hrm,jolicoeurmartineau2025trm}, but applies it to context access rather than puzzle solving alone. MCP itself was introduced by Anthropic as an open standard for connecting AI assistants to external systems and data sources \citep{anthropic2024mcp,modelcontextprotocol2026docs}. Recent MCP literature frames the protocol as an interoperability layer with a new security and maintainability surface \citep{hou2025mcplandscape,hasan2025mcpfirstglance,huang2026mcpthreat}. MeTTa and OpenCog Hyperon motivate the symbolic side of the design: handles, answer shapes, failure modes, and validators can be represented as editable metagraph objects rather than hidden prompt prose \citep{goertzel2021metta,meredith2023metametta}. In the Hermes setting, this connects to tool-use and skill-harness work on instruction-tuned agents \citep{teknium2024hermes3} and verifier-oriented environments such as Prime Intellect's Intellect and Environments Hub work \citep{primeintellect2025intellect3,primeintellect2026verifiers}.
 
 \section{Architecture}
 
@@ -101,7 +101,7 @@ TRM-MCP decomposes lookup into four roles: an Index TRM that compresses resource
 
 \section{Generic MCP Trace Matrix}
 
-The generic example matrix covers three MCP-like surfaces: filesystem, GitHub, and Postgres. Each pack has five traces and fourteen TRM rows. The merged matrix has 15 traces, 42 rows, 15 route rows, 12 retrieve rows, 15 verify rows, 36 exact-positive rows, and 6 negative rows \citep{dugan2026trmmcpmatrix}. These traces exercise exact lookup and hard negatives: semantically attractive resources that should be rejected because the scope, family, or answer shape is wrong.
+The generic example matrix covers three MCP-like surfaces: filesystem, GitHub, and Postgres. Each pack has five traces and fourteen TRM rows. The merged matrix has 15 traces, 42 rows, 15 route rows, 12 retrieve rows, 15 verify rows, 36 exact-positive rows, and 6 negative rows. These traces exercise exact lookup and hard negatives: semantically attractive resources that should be rejected because the scope, family, or answer shape is wrong.
 
 \begin{table}[t]
 \centering
@@ -158,7 +158,7 @@ The Postgres worked example motivates an analytical efficiency model for typed l
 
 \section{MeTTa Schema-Surface Enrichment}
 
-A Prime Intellect Environments hub schema MCP pack extends the same idea from SQL-style relation lookup to benchmark schema lookup \citep{dugan2026primehubschema}. A script in the MeTTa programming language defines the MCP schema as a world model to constrain what data trains the retrieval TRMs. The generated surface covers \texttt{psycho\_bench}, \texttt{ascii\_tree}, and \texttt{pydantic\_adherence}. The enriched schema surface contains 6 stable resource handles, 6 answer-shape tags, 6 query-cue sets, 6 minimal examples, 6 failure-mode sets, 2 validation-path or validator-note enriched resources, and 6 source replay links.
+A Prime Intellect Environments hub schema MCP pack extends the same idea from SQL-style relation lookup to benchmark schema lookup. Prime Intellect's Verifiers documentation includes an \texttt{MCPEnv} interface for connecting MCP servers to evaluation environments \citep{primeintellect2026verifiers}. A script in the MeTTa programming language defines the MCP schema as a world model to constrain what data trains the retrieval TRMs. The generated surface covers \texttt{psycho\_bench}, \texttt{ascii\_tree}, and \texttt{pydantic\_adherence}. The enriched schema surface contains 6 stable resource handles, 6 answer-shape tags, 6 query-cue sets, 6 minimal examples, 6 failure-mode sets, 2 validation-path or validator-note enriched resources, and 6 source replay links.
 
 The schema surface is produced as a small symbolic contract, not as a long prompt. A representative excerpt of the MeTTa-style atoms used to frame the MCP database surface is:
 
@@ -214,7 +214,7 @@ This is the concrete sense in which MeTTa improves the MCP schema: it turns benc
 
 \section{Recovered Live Schema-Retrieval Measurement}
 
-The April Primehub structured-map retrieval study contains the primary empirical result for the schema-memory claim \citep{dugan2026primehubretrieval}. The run compares three arms: \texttt{baseline}, with no Hermes structured-map prompt; \texttt{plain\_structured\_map}, with the structured-map skill prompt but no retrieved schema memory; and \texttt{retrieval\_assisted}, with the structured-map prompt plus TRM-MCP-style Primehub schema memory.
+The April Primehub structured-map retrieval study contains the primary empirical result for the schema-memory claim. The run compares three arms: \texttt{baseline}, with no Hermes structured-map prompt; \texttt{plain\_structured\_map}, with the structured-map skill prompt but no retrieved schema memory; and \texttt{retrieval\_assisted}, with the structured-map prompt plus TRM-MCP-style Primehub schema memory.
 
 \begin{table}[t]
 \centering
@@ -304,7 +304,7 @@ Environment & Arm & Reward & Total tokens & Reward / 1k tokens\\
 
 The storyworld player adds episodic memory. Repeated playthroughs write a diary containing episode summaries, turn rows, legal actions, selected actions, NAV recommendations, endings, scores, and TRM labels. The diary lookup is subordinate to current legal actions: a retrieved action must not be copied unless it appears in the current legal-action set.
 
-The \texttt{overnight\_policy\_v2} run used the \texttt{paper} profile with 15 scenarios, 20 plays, max depth 7, and branch limit 1024 \citep{dugan2026storyworlddiary}. The v2 policy seeds MCP memory with deterministic and NAV rollouts, then lets retrieved outcome evidence override NAV when a remembered legal action has a better score. Average diary lift reached +0.619333. The largest positive lifts were \texttt{market\_square} (+4.4), \texttt{medicine\_dilemma} (+1.4), \texttt{multi\_agent\_release\_council} (+1.64), and \texttt{scarlett\_letter} (+1.85). Four cases where NAV was negative were recovered back to baseline by diary memory.
+The \texttt{overnight\_policy\_v2} run used the \texttt{paper} profile with 15 scenarios, 20 plays, max depth 7, and branch limit 1024. The v2 policy seeds MCP memory with deterministic and NAV rollouts, then lets retrieved outcome evidence override NAV when a remembered legal action has a better score. Average diary lift reached +0.619333. The largest positive lifts were \texttt{market\_square} (+4.4), \texttt{medicine\_dilemma} (+1.4), \texttt{multi\_agent\_release\_council} (+1.64), and \texttt{scarlett\_letter} (+1.85). Four cases where NAV was negative were recovered back to baseline by diary memory.
 
 \begin{figure}[t]
 \centering
@@ -462,7 +462,7 @@ The third study compares five context strategies under fixed token budgets: stuf
 
 \section*{Artifact Availability}
 
-The bundled CSV files in \texttt{tables/} contain the local values used for the manuscript tables and plots. The principal source artifacts are listed in \texttt{evidence\_manifest.json} in the paper seed directory \citep{dugan2026trmmcpseed}. The current Overleaf package includes source tables and generated figure source, but not the full local replay logs.
+The bundled CSV files in \texttt{tables/} contain the local values used for the manuscript tables and plots. The principal source artifacts are listed in \texttt{evidence\_manifest.json} in the paper seed directory. The current Overleaf package includes source tables and generated figure source, but not the full local replay logs.
 
 \bibliographystyle{plainnat}
 \bibliography{references}
