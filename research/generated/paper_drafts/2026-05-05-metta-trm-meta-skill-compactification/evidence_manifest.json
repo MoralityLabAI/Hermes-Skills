@@ -35,20 +35,21 @@
     "heldout_repair_controller_v2": "D:\\metta_trm_meta_small_model_bench\\heldout_generalization\\repair_generalization_20260505T174032Z\\controller_eval_on_heldout_repairs_v2\\summary.json"
   },
   "feature_steering_extension": {
-    "status": "implemented_smoke_plus_proposed_full_experiment",
+    "status": "implemented_5m_class_commit_veto_control_plane_run",
     "table": "research\\generated\\paper_drafts\\2026-05-05-metta-trm-meta-skill-compactification\\tables\\vpd_tiny_lora_experiment_matrix.csv",
     "smoke_results_table": "research\\generated\\paper_drafts\\2026-05-05-metta-trm-meta-skill-compactification\\tables\\commit_veto_lora_smoke_results.csv",
     "figure": "research\\generated\\paper_drafts\\2026-05-05-metta-trm-meta-skill-compactification\\figures\\vpd_tiny_lora_flow.mmd",
-    "local_smoke_artifact": "D:\\metta_trm_meta_small_model_bench\\commit_veto_feature_steering_v1\\trm_lora_smoke\\summary.json",
-    "local_constrained_selector_artifact": "D:\\metta_trm_meta_small_model_bench\\commit_veto_feature_steering_v1\\trm_lora_constrained_selector_cost15_fv20\\summary.json",
-    "local_feature_rows": "D:\\metta_trm_meta_small_model_bench\\commit_veto_feature_steering_v1\\commit_veto_feature_manifest.json",
+    "local_5m_class_artifact": "D:\\metta_trm_meta_small_model_bench\\commit_veto_feature_steering_v4\\trm_lora_vpd_cost_sensitive_5m\\summary.json",
+    "local_5m_class_jobcap": "D:\\metta_trm_meta_small_model_bench\\commit_veto_feature_steering_v4\\jobcap_vpd_cost_sensitive_5m\\jobcap.summary.json",
+    "local_5m_class_cleanup": "D:\\metta_trm_meta_small_model_bench\\commit_veto_feature_steering_v4\\jobcap_vpd_cost_sensitive_5m\\post_run_cleanup.summary.json",
+    "local_feature_rows": "D:\\metta_trm_meta_small_model_bench\\commit_veto_feature_steering_v4\\commit_veto_feature_manifest.json",
     "external_sources": [
       "https://www.goodfire.ai/research/interpreting-lm-parameters",
       "https://www.goodfire.ai/blog/announcing-goodfire-ember",
       "https://docs.goodfire.ai/sdk-reference/features",
       "https://docs.goodfire.ai/sdk-reference/autosteer"
     ],
-    "claim_boundary": "Local hidden-256 smoke runs have been executed for commit/veto feature steering and constrained false-commit culling. The 5M-parameter TRM run, downstream skill benchmark, and any Goodfire-style VPD reproduction remain future work."
+    "claim_boundary": "A 5M-class local commit/veto LoRA run has been executed for feature steering and constrained false-commit culling. Downstream skill benchmarking and any Goodfire-style VPD reproduction remain future work."
   },
   "key_numbers": {
     "two_domain_task_count": 2,
@@ -60,7 +61,15 @@
     "heldout_raw_overall_avg": 0.8633,
     "heldout_repaired_overall_avg": 0.9735,
     "heldout_fixed_controller_exact_action_rate": 1.0,
-    "heldout_fixed_controller_message_count": 117
+    "heldout_fixed_controller_message_count": 117,
+    "vpd_commit_veto_rows": 4137,
+    "vpd_commit_veto_heldout_rows": 608,
+    "vpd_base_heldout_accuracy": 0.8931,
+    "vpd_base_false_commit_rate": 0.1189,
+    "vpd_rank8_heldout_accuracy": 0.9786,
+    "vpd_rank8_false_commit_rate": 0.0093,
+    "vpd_rank8_false_veto_rate": 0.0503,
+    "vpd_jobcap_peak_ram_mb": 576.5
   },
   "claim_boundary": "Package verifier scores and repair-controller scores are control-plane readiness metrics, not downstream benchmark success metrics."
 }

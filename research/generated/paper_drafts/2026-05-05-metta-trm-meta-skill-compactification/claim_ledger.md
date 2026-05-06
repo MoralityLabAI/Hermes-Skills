@@ -10,8 +10,9 @@
 | A five-domain held-out repair study improved verifier average from `0.8633` to `0.9735`. | `deterministic_replay` | `D:\metta_trm_meta_small_model_bench\heldout_generalization\repair_generalization_20260505T174032Z\summary.json` |
 | The fixed repair controller reached exact action rate `1.0` on 117 held-out repair messages. | controller contract eval | `D:\metta_trm_meta_small_model_bench\heldout_generalization\repair_generalization_20260505T174032Z\controller_eval_on_heldout_repairs_v2\summary.json` |
 | MeTTa can define a proposed feature-contract layer for tiny LoRA steering of TRM controllers. | `training_corpus_plan` | `tables/vpd_tiny_lora_experiment_matrix.csv` and `figures/vpd_tiny_lora_flow.mmd` |
-| A local commit/veto LoRA smoke run executed end-to-end and rank-4 improved held-out exact action accuracy from `0.9085` to `0.9150` on 306 rows. | `control_plane_threshold_eval` | `D:\metta_trm_meta_small_model_bench\commit_veto_feature_steering_v1\trm_lora_smoke\summary.json` |
-| A constrained rank-1 LoRA operating point reduced held-out false commits from `0.1023` to `0.0558`, with false vetoes rising from `0.0659` to `0.1429`. | `control_plane_threshold_eval` | `D:\metta_trm_meta_small_model_bench\commit_veto_feature_steering_v1\trm_lora_constrained_selector_cost15_fv20\summary.json` |
+| A 5M-class local commit/veto LoRA run executed end-to-end under a Windows Job Object cap: 4,137 rows, 608 heldout rows, peak RAM `576.5 MB`. | `control_plane_threshold_eval` | `D:\metta_trm_meta_small_model_bench\commit_veto_feature_steering_v4\trm_lora_vpd_cost_sensitive_5m\summary.json` and `D:\metta_trm_meta_small_model_bench\commit_veto_feature_steering_v4\jobcap_vpd_cost_sensitive_5m\jobcap.summary.json` |
+| Rank-8 LoRA improved held-out commit/veto accuracy from `0.8931` to `0.9786`, boundary accuracy from `0.8571` to `0.9714`, and false-commit rate from `0.1189` to `0.0093`. | `control_plane_threshold_eval` | Same summary JSON |
+| Rank-4 LoRA reached a lower false-commit rate of `0.0070`, with accuracy `0.9704` and false-veto rate `0.0838`. | `control_plane_threshold_eval` | Same summary JSON |
 
 ## Disallowed Claims For Current Evidence
 
@@ -23,9 +24,9 @@
 | Repaired package score implies downstream benchmark gain. | Package verification is not the same as live task performance. |
 | Goodfire VPD has already been applied to these TRM controllers. | This is a proposed extension; no local VPD run over a TRM controller exists yet. |
 | Tiny LoRA feature steering of TRMs has already improved downstream benchmark scores. | The current LoRA result is a commit/veto control-plane smoke benchmark, not a downstream skill benchmark. |
-| The commit/veto LoRA smoke is the final 5M-parameter TRM result. | The smoke used a smaller hidden-256 controller to validate the loop. |
 | The held-out frontier budget-oracle point is deployable as-is. | It uses held-out frontier inspection and should be treated as a calibration target, not validation-selected policy. |
 | Goodfire Ember feature steering and VPD are the same method. | Ember steering is an activation-feature interface; VPD is parameter decomposition. The paper should distinguish them. |
+| The 5M-class commit/veto LoRA run proves downstream skill improvement. | It is a control-plane heldout benchmark over commit/veto rows, not a downstream benchmark over live skill outcomes. |
 
 ## Best Short Claim
 
