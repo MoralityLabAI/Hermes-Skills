@@ -1,0 +1,12 @@
+\begin{tabular}{lrrrrrr}
+\toprule
+Typed gate trained on & \multicolumn{2}{c}{Qwen2.5-3B answers} & \multicolumn{2}{c}{Bonsai-8B answers} & \multicolumn{2}{c}{Bonsai-27B answers} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
+ & Solved & Unsafe & Solved & Unsafe & Solved & Unsafe \\
+\midrule
+Qwen2.5-3B failures & 48 & 24 & 43 & 22 & 54 & 39 \\
+Bonsai-8B failures & 38 & 23 & 45 & 20 & 38 & 32 \\
+Synthetic defects & 21 & 66 & 37 & 58 & 28 & 75 \\
+Repair, then verify & 63 & 0 & 69 & 0 & 66 & 0 \\
+\bottomrule
+\end{tabular}

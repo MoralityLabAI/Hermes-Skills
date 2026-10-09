@@ -1,0 +1,9 @@
+{
+  "gpu_layers": 0,
+  "model": "Qwen2.5-3B",
+  "path": "C:\\Users\\patri\\Documents\\Codex\\models\\Qwen2.5-3B-Instruct-GGUF\\qwen2.5-3b-instruct-q4_k_m.gguf",
+  "sha256": "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d",
+  "slots": 4,
+  "temperature_sampled": 0.7,
+  "threads": 8
+}

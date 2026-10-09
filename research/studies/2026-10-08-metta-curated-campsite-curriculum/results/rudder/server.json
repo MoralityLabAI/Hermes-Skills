@@ -1,0 +1,7 @@
+{
+  "gpu_layers": 0,
+  "max_tokens": 64,
+  "model": "Bonsai-8B",
+  "sha256": "284a335aa3fb2ced3b1b01fcb40b08aa783e3b70832767f0dd2e3fdfa134bd54",
+  "temperature": 0.0
+}

@@ -1,0 +1,17 @@
+propose.py --proposer Bonsai-8B --plan test:1:1 --slots 4
+propose.py --proposer Bonsai-8B --plan train:1:2,val:1:1 --slots 4
+rudder.py llm
+mixed.py llm
+propose.py --proposer Bonsai-27B --plan test:1:0 --slots 1
+qwen_replicate.py rudder-published
+qwen_replicate.py rudder-extra
+qwen_replicate.py mixed-published
+qwen_replicate.py mixed-neutral
+qwen_replicate.py campx
+propose.py --proposer Qwen2.5-3B --plan test:1:1,train:1:2,val:1:1 --slots 4
+propose.py --proposer Qwen2.5-3B --plan train2:1:1 --slots 4
+propose.py --proposer Bonsai-8B --plan train2:1:1 --slots 4
+repair_parallel.py raw atoms
+propose.py --proposer Qwen2.5-3B --plan test2:1:0 --slots 4
+propose.py --proposer Bonsai-8B --plan test2:1:0 --slots 4
+repair_parallel.py raw atoms -- --confirm

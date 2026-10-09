@@ -1,0 +1,8 @@
+# propose.py --proposer Qwen2.5-3B --plan test2:1:0 --slots 4
+Qwen2.5-3B: 141 proposals to collect (2676 already written)
+25/141 done, 1.4s each, ~3 min left
+50/141 done, 1.2s each, ~2 min left
+75/141 done, 1.1s each, ~1 min left
+100/141 done, 1.1s each, ~1 min left
+125/141 done, 1.2s each, ~0 min left
+finished 141 in 2.9 min

@@ -1,0 +1,15 @@
+\begin{tabular}{lrrr}
+\toprule
+Policy & Qwen2.5-3B & Bonsai-8B & Bonsai-27B \\
+\midrule
+Skill operators, then verify & 63 & 69 & 66 \\
+Repair TRM, raw corpus & 73 & 71 & 73 \\
+Repair TRM, MeTTa-atoms corpus & 78 & 81 & 77 \\
+Operators, then raw TRM, then verify & 90 & 86 & 86 \\
+Operators, then atoms TRM, then verify & 93 & 94 & 93 \\
+CSP solver & 148 & 148 & 148 \\
+\midrule
+Single raw TRMs (5 seeds), range & 60--67 & 60--67 & 62--67 \\
+Single atoms TRMs (5 seeds), range & 68--84 & 72--85 & 69--83 \\
+\bottomrule
+\end{tabular}

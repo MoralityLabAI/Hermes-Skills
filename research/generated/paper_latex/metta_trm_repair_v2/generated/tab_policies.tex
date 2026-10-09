@@ -1,0 +1,23 @@
+\begin{tabular}{lrrrrrrrrrrrr}
+\toprule
+ & \multicolumn{4}{c}{Qwen2.5-3B answers, of 148} & \multicolumn{4}{c}{Bonsai-8B answers, of 148} & \multicolumn{4}{c}{Bonsai-27B answers, of 148} \\
+\cmidrule(lr){2-5} \cmidrule(lr){6-9} \cmidrule(lr){10-13}
+Policy & Solved & Unsafe & Rejected & Calls & Solved & Unsafe & Rejected & Calls & Solved & Unsafe & Rejected & Calls \\
+\midrule
+Commit as written & 0 & 148 & 0 & 0.0 & 0 & 148 & 0 & 0.0 & 1 & 147 & 0 & 0.0 \\
+Published \texttt{c\_repair} flow & 22 & 126 & 0 & 1.0 & 36 & 112 & 0 & 1.0 & 28 & 120 & 0 & 1.0 \\
+Published \texttt{dual\_repair} flow & 62 & 86 & 0 & 1.0 & 69 & 79 & 0 & 1.0 & 66 & 82 & 0 & 1.0 \\
+Static rule on typed atoms & 62 & 71 & 15 & 0.9 & 68 & 80 & 0 & 1.0 & 65 & 83 & 0 & 1.0 \\
+TRM, typed, synthetic curriculum & 21 & 66 & 61 & 0.6 & 37 & 58 & 53 & 0.6 & 28 & 75 & 45 & 0.7 \\
+TRM, raw cells, Bonsai-8B curriculum & 28 & 41 & 79 & 0.5 & 45 & 22 & 81 & 0.5 & 39 & 26 & 83 & 0.4 \\
+TRM, typed and raw, Bonsai-8B curriculum & 38 & 35 & 75 & 0.5 & 55 & 29 & 64 & 0.6 & 46 & 27 & 75 & 0.5 \\
+TRM, typed, Bonsai-8B curriculum & 38 & 23 & 87 & 0.4 & 45 & 20 & 83 & 0.4 & 38 & 32 & 78 & 0.5 \\
+TRM, raw cells, Qwen curriculum & 37 & 32 & 79 & 0.5 & 42 & 37 & 69 & 0.5 & 43 & 56 & 49 & 0.7 \\
+TRM, typed, Qwen curriculum & 48 & 24 & 76 & 0.5 & 43 & 22 & 83 & 0.4 & 54 & 39 & 55 & 0.6 \\
+Repair, then verify & 63 & 0 & 85 & 4.5 & 69 & 0 & 79 & 4.5 & 66 & 0 & 82 & 4.6 \\
+TRM typed Bonsai-8B, then verify & 38 & 0 & 110 & 0.8 & 45 & 0 & 103 & 0.9 & 38 & 0 & 110 & 0.9 \\
+TRM typed Qwen, then verify & 48 & 0 & 100 & 1.0 & 43 & 0 & 105 & 0.9 & 54 & 0 & 94 & 1.3 \\
+Menu ceiling (label) & 63 & 0 & 85 & 0.4 & 69 & 0 & 79 & 0.5 & 66 & 0 & 82 & 0.4 \\
+CSP solver & 148 & 0 & 0 & 0.0 & 148 & 0 & 0 & 0.0 & 148 & 0 & 0 & 0.0 \\
+\bottomrule
+\end{tabular}

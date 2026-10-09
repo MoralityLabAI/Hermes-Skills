@@ -1,0 +1,8 @@
+# propose.py --proposer Bonsai-27B --plan test:1:0 --slots 1
+Bonsai-27B: 148 proposals to collect (0 already written)
+25/148 done, 11.7s each, ~24 min left
+50/148 done, 11.2s each, ~18 min left
+75/148 done, 11.0s each, ~13 min left
+100/148 done, 10.9s each, ~9 min left
+125/148 done, 11.2s each, ~4 min left
+finished 148 in 28.9 min

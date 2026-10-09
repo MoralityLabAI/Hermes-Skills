@@ -1,0 +1,152 @@
+{
+  "feature_names": [
+    "syntax_valid",
+    "shape_match",
+    "trees_unchanged",
+    "row_counts_match",
+    "col_counts_match",
+    "no_tent_touching",
+    "perfect_tree_matching",
+    "rows_off",
+    "cols_off",
+    "tent_surplus",
+    "moved_trees",
+    "touching_pairs",
+    "unmatched_tents",
+    "failed_gates",
+    "grid_rows",
+    "grid_cols"
+  ],
+  "files": {
+    "real-Bonsai-27B": {
+      "best_action": {
+        "test|c_repair": 27,
+        "test|commit": 1,
+        "test|dual_repair": 38,
+        "test|reject": 82
+      },
+      "pool_bucket": {
+        "test|exact_positive": 1,
+        "test|partial_improvement": 82,
+        "test|repair_success": 65
+      },
+      "rows": 148,
+      "seconds": 0.9
+    },
+    "real-Bonsai-8B": {
+      "best_action": {
+        "test2|c_repair": 34,
+        "test2|dual_repair": 34,
+        "test2|reject": 73,
+        "test|c_repair": 65,
+        "test|dual_repair": 73,
+        "test|reject": 158,
+        "train2|c_repair": 282,
+        "train2|commit": 1,
+        "train2|dual_repair": 316,
+        "train2|reject": 765,
+        "train|c_repair": 184,
+        "train|commit": 1,
+        "train|dual_repair": 232,
+        "train|reject": 483,
+        "val|c_repair": 24,
+        "val|dual_repair": 26,
+        "val|reject": 66
+      },
+      "pool_bucket": {
+        "test2|partial_improvement": 73,
+        "test2|repair_success": 68,
+        "test|no_gain": 2,
+        "test|partial_improvement": 156,
+        "test|repair_success": 138,
+        "train2|exact_positive": 1,
+        "train2|no_gain": 20,
+        "train2|partial_improvement": 745,
+        "train2|repair_success": 598,
+        "train|exact_positive": 1,
+        "train|no_gain": 4,
+        "train|partial_improvement": 479,
+        "train|repair_success": 416,
+        "val|partial_improvement": 66,
+        "val|repair_success": 50
+      },
+      "rows": 2817,
+      "seconds": 16.1
+    },
+    "real-Qwen2.5-3B": {
+      "best_action": {
+        "test2|c_repair": 16,
+        "test2|dual_repair": 46,
+        "test2|reject": 79,
+        "test|c_repair": 43,
+        "test|dual_repair": 81,
+        "test|reject": 172,
+        "train2|c_repair": 169,
+        "train2|commit": 1,
+        "train2|dual_repair": 366,
+        "train2|reject": 828,
+        "train|c_repair": 111,
+        "train|dual_repair": 266,
+        "train|reject": 523,
+        "val|c_repair": 8,
+        "val|dual_repair": 35,
+        "val|reject": 73
+      },
+      "pool_bucket": {
+        "test2|no_gain": 11,
+        "test2|partial_improvement": 68,
+        "test2|repair_success": 62,
+        "test|no_gain": 38,
+        "test|partial_improvement": 134,
+        "test|repair_success": 124,
+        "train2|exact_positive": 1,
+        "train2|no_gain": 170,
+        "train2|partial_improvement": 658,
+        "train2|repair_success": 535,
+        "train|no_gain": 125,
+        "train|partial_improvement": 398,
+        "train|repair_success": 377,
+        "val|no_gain": 14,
+        "val|partial_improvement": 59,
+        "val|repair_success": 43
+      },
+      "rows": 2817,
+      "seconds": 13.5
+    },
+    "synthetic": {
+      "best_action": {
+        "test|c_repair": 561,
+        "test|commit": 152,
+        "test|dual_repair": 148,
+        "test|reject": 257,
+        "train|c_repair": 1136,
+        "train|commit": 315,
+        "train|dual_repair": 307,
+        "train|reject": 524,
+        "val|c_repair": 221,
+        "val|commit": 61,
+        "val|dual_repair": 59,
+        "val|reject": 110
+      },
+      "pool_bucket": {
+        "test|exact_positive": 152,
+        "test|no_gain": 240,
+        "test|partial_improvement": 17,
+        "test|repair_success": 709,
+        "train|exact_positive": 315,
+        "train|no_gain": 496,
+        "train|partial_improvement": 28,
+        "train|repair_success": 1443,
+        "val|exact_positive": 61,
+        "val|no_gain": 102,
+        "val|partial_improvement": 8,
+        "val|repair_success": 280
+      },
+      "rows": 3851,
+      "seconds": 19.7
+    }
+  },
+  "hermes_skills_head": "07a177f2751c2adb1cc16dc819c1173c0cd57ad5",
+  "metta_package": "C:\\Users\\patri\\Documents\\GitHub\\MoralityLabAI\\Hermes-Skills\\research\\studies\\2026-10-08-metta-curated-campsite-curriculum\\metta\\campsite_curriculum.metta",
+  "repair_source_sha16": "d6c87060e3b163e6"
+}

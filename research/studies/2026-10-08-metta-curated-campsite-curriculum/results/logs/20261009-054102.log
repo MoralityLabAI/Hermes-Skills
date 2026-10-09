@@ -1,0 +1,8 @@
+# propose.py --proposer Bonsai-8B --plan test2:1:0 --slots 4
+Bonsai-8B: 141 proposals to collect (2676 already written)
+25/141 done, 1.5s each, ~3 min left
+50/141 done, 1.3s each, ~2 min left
+75/141 done, 1.3s each, ~1 min left
+100/141 done, 1.2s each, ~1 min left
+125/141 done, 1.3s each, ~0 min left
+finished 141 in 3.2 min

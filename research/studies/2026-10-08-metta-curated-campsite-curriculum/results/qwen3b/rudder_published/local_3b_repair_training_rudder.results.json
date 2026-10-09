@@ -1,0 +1,117 @@
+{
+  "generated_at_utc": "2026-10-08T13:34:04.686972+00:00",
+  "model_name": "Qwen2.5-3B-Instruct-Q4_K_M-GGUF-llama.cpp-CUDA",
+  "model_path": "C:\\Users\\patri\\Documents\\Codex\\models\\Qwen2.5-3B-Instruct-GGUF\\qwen2.5-3b-instruct-q4_k_m.gguf",
+  "llama_completion_path": "C:\\Users\\patri\\Documents\\Codex\\BitAgent-gym\\llama-prism\\bin\\llama-completion.exe",
+  "split_dir": "C:\\Users\\patri\\Documents\\GitHub\\MoralityLabAI\\Hermes-Skills\\research\\studies\\2026-10-08-metta-curated-campsite-curriculum\\results\\qwen3b\\head\\research\\generated\\near_miss_repair_curriculum\\splits",
+  "eval_splits": [
+    "val_seen",
+    "holdout_seen",
+    "holdout_unseen_family"
+  ],
+  "max_cases": 0,
+  "shots": 4,
+  "arms": [
+    "raw_3b_rudder",
+    "repair_training_rudder",
+    "metta_action_space_rudder",
+    "metta_action_space_training_rudder",
+    "metta_static_gate_rudder",
+    "metta_validator_gate"
+  ],
+  "resource_profile": {
+    "ctx": 1536,
+    "threads": 8,
+    "batch_size": 512,
+    "ubatch_size": 512,
+    "max_tokens": 64,
+    "max_child_rss_mb": 3500.0,
+    "cooldown_sec": 0.0
+  },
+  "summary_by_arm": {
+    "metta_action_space_rudder": {
+      "n": 88,
+      "split_counts": {
+        "val_seen": 34,
+        "holdout_seen": 36,
+        "holdout_unseen_family": 18
+      },
+      "target_action_accuracy": 0.75,
+      "repair_action_accuracy": 1.0,
+      "joint_accuracy": 0.75,
+      "json_parse_rate": 1.0,
+      "avg_elapsed_sec": 4.0219,
+      "max_peak_child_ram_mb": 2269.125
+    },
+    "metta_action_space_training_rudder": {
+      "n": 88,
+      "split_counts": {
+        "val_seen": 34,
+        "holdout_seen": 36,
+        "holdout_unseen_family": 18
+      },
+      "target_action_accuracy": 0.6818,
+      "repair_action_accuracy": 1.0,
+      "joint_accuracy": 0.6818,
+      "json_parse_rate": 1.0,
+      "avg_elapsed_sec": 5.752,
+      "max_peak_child_ram_mb": 2269.7305
+    },
+    "metta_static_gate_rudder": {
+      "n": 88,
+      "split_counts": {
+        "val_seen": 34,
+        "holdout_seen": 36,
+        "holdout_unseen_family": 18
+      },
+      "target_action_accuracy": 0.9545,
+      "repair_action_accuracy": 1.0,
+      "joint_accuracy": 0.9545,
+      "json_parse_rate": 1.0,
+      "avg_elapsed_sec": 1.8725,
+      "max_peak_child_ram_mb": 2269.1758
+    },
+    "metta_validator_gate": {
+      "n": 88,
+      "split_counts": {
+        "val_seen": 34,
+        "holdout_seen": 36,
+        "holdout_unseen_family": 18
+      },
+      "target_action_accuracy": 1.0,
+      "repair_action_accuracy": 1.0,
+      "joint_accuracy": 1.0,
+      "json_parse_rate": 1.0,
+      "avg_elapsed_sec": 0.0,
+      "max_peak_child_ram_mb": 0.0
+    },
+    "raw_3b_rudder": {
+      "n": 88,
+      "split_counts": {
+        "val_seen": 34,
+        "holdout_seen": 36,
+        "holdout_unseen_family": 18
+      },
+      "target_action_accuracy": 0.7386,
+      "repair_action_accuracy": 0.4091,
+      "joint_accuracy": 0.3636,
+      "json_parse_rate": 1.0,
+      "avg_elapsed_sec": 5.1633,
+      "max_peak_child_ram_mb": 2269.2695
+    },
+    "repair_training_rudder": {
+      "n": 88,
+      "split_counts": {
+        "val_seen": 34,
+        "holdout_seen": 36,
+        "holdout_unseen_family": 18
+      },
+      "target_action_accuracy": 0.7955,
+      "repair_action_accuracy": 0.2159,
+      "joint_accuracy": 0.1932,
+      "json_parse_rate": 1.0,
+      "avg_elapsed_sec": 5.9599,
+      "max_peak_child_ram_mb": 2269.7031
+    }
+  }
+}

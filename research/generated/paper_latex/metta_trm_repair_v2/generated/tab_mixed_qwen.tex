@@ -1,0 +1,14 @@
+\begin{tabular}{lrrrrrr}
+\toprule
+ & \multicolumn{3}{c}{Held-out, of 50} & \multicolumn{3}{c}{Hard, of 30} \\
+\cmidrule(lr){2-4} \cmidrule(lr){5-7}
+Arm & 3B, April & 3B, rerun & Bonsai-8B & 3B, April & 3B, rerun & Bonsai-8B \\
+\midrule
+Baseline & 23 & 24 & 22 & 12 & 9 & 8 \\
+Contract, baseline system prompt & -- & 35 & 25 & -- & 11 & 9 \\
+Contract, skill wording (April: pure TRM) & 27 & 28 & 24 & 11 & 11 & 10 \\
+Contract, gate wording (April: MeTTa runtime) & 32 & 34 & 31 & 9 & 8 & 10 \\
+Gate wording, then blind repair & -- & 36 & 32 & 12 & 13 & 12 \\
+Gate wording, then validator-feedback repair & 37 & 39 & 32 & 13 & 13 & 14 \\
+\bottomrule
+\end{tabular}

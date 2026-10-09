@@ -1,0 +1,15 @@
+\begin{tabular}{lrrrrr}
+\toprule
+Arm & Joint, April & Joint, rerun & Same answers as April & False commits & Unseen-family joint \\
+& of 88 & of 88 & rows & of 22 & of 18 \\
+\midrule
+Raw, six train actions & 32 & 32 & 84/88 & 22 & 0 \\
+Raw, all twelve actions & -- & 1 & new arm & 12 & 0 \\
+Retrieval, published (leaks the label) & 28 & 17 & 73/88 & 18 & 0 \\
+Retrieval, pre-repair fields only & -- & 17 & new arm & 21 & 0 \\
+Action-space & 66 & 66 & 88/88 & 22 & 12 \\
+Action-space with retrieval & 61 & 60 & 85/88 & 22 & 7 \\
+Static gate (April rules) & 84 & 84 & 88/88 & 4 & 18 \\
+Post-repair oracle (no model) & 88 & 88 & 88/88 & 0 & 18 \\
+\bottomrule
+\end{tabular}

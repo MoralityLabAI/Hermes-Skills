@@ -1,0 +1,192 @@
+{
+  "T8s|raw|TRM(seeds)": {
+    "label_accuracy_mean": 0.599
+  },
+  "T8s|typed+raw|TRM(seeds)": {
+    "label_accuracy_mean": 0.639
+  },
+  "T8s|typed|TRM(seeds)": {
+    "label_accuracy_mean": 0.688
+  },
+  "T8|raw|TRM(seeds)": {
+    "label_accuracy_mean": 0.669
+  },
+  "T8|typed+raw|TRM(seeds)": {
+    "label_accuracy_mean": 0.699
+  },
+  "T8|typed|TRM(seeds)": {
+    "label_accuracy_mean": 0.704
+  },
+  "majority_reject_rate": {
+    "T8": 0.534,
+    "T8s": 0.534
+  },
+  "realq|TQs|raw|gradient-boosting": {
+    "auc_repairable": 0.804,
+    "label_accuracy": 0.662,
+    "rejected": 94,
+    "success": 35,
+    "unsafe": 19
+  },
+  "realq|TQs|raw|logistic": {
+    "auc_repairable": 0.764,
+    "label_accuracy": 0.568,
+    "rejected": 81,
+    "success": 35,
+    "unsafe": 32
+  },
+  "realq|TQs|typed+raw|gradient-boosting": {
+    "auc_repairable": 0.83,
+    "label_accuracy": 0.75,
+    "rejected": 82,
+    "success": 45,
+    "unsafe": 21
+  },
+  "realq|TQs|typed+raw|logistic": {
+    "auc_repairable": 0.767,
+    "label_accuracy": 0.662,
+    "rejected": 85,
+    "success": 37,
+    "unsafe": 26
+  },
+  "realq|TQs|typed|gradient-boosting": {
+    "auc_repairable": 0.782,
+    "label_accuracy": 0.716,
+    "rejected": 83,
+    "success": 42,
+    "unsafe": 23
+  },
+  "realq|TQs|typed|logistic": {
+    "auc_repairable": 0.801,
+    "label_accuracy": 0.703,
+    "rejected": 81,
+    "success": 42,
+    "unsafe": 25
+  },
+  "realq|TQ|raw|gradient-boosting": {
+    "auc_repairable": 0.751,
+    "label_accuracy": 0.608,
+    "rejected": 89,
+    "success": 34,
+    "unsafe": 25
+  },
+  "realq|TQ|raw|logistic": {
+    "auc_repairable": 0.734,
+    "label_accuracy": 0.581,
+    "rejected": 82,
+    "success": 37,
+    "unsafe": 29
+  },
+  "realq|TQ|typed+raw|gradient-boosting": {
+    "auc_repairable": 0.767,
+    "label_accuracy": 0.682,
+    "rejected": 76,
+    "success": 44,
+    "unsafe": 28
+  },
+  "realq|TQ|typed+raw|logistic": {
+    "auc_repairable": 0.748,
+    "label_accuracy": 0.703,
+    "rejected": 79,
+    "success": 44,
+    "unsafe": 25
+  },
+  "realq|TQ|typed|gradient-boosting": {
+    "auc_repairable": 0.718,
+    "label_accuracy": 0.628,
+    "rejected": 78,
+    "success": 39,
+    "unsafe": 31
+  },
+  "realq|TQ|typed|logistic": {
+    "auc_repairable": 0.816,
+    "label_accuracy": 0.743,
+    "rejected": 79,
+    "success": 47,
+    "unsafe": 22
+  },
+  "real|T8s|raw|gradient-boosting": {
+    "auc_repairable": 0.779,
+    "label_accuracy": 0.662,
+    "rejected": 89,
+    "success": 38,
+    "unsafe": 21
+  },
+  "real|T8s|raw|logistic": {
+    "auc_repairable": 0.724,
+    "label_accuracy": 0.581,
+    "rejected": 88,
+    "success": 31,
+    "unsafe": 29
+  },
+  "real|T8s|typed+raw|gradient-boosting": {
+    "auc_repairable": 0.769,
+    "label_accuracy": 0.709,
+    "rejected": 84,
+    "success": 45,
+    "unsafe": 19
+  },
+  "real|T8s|typed+raw|logistic": {
+    "auc_repairable": 0.74,
+    "label_accuracy": 0.655,
+    "rejected": 80,
+    "success": 43,
+    "unsafe": 25
+  },
+  "real|T8s|typed|gradient-boosting": {
+    "auc_repairable": 0.743,
+    "label_accuracy": 0.703,
+    "rejected": 91,
+    "success": 41,
+    "unsafe": 16
+  },
+  "real|T8s|typed|logistic": {
+    "auc_repairable": 0.774,
+    "label_accuracy": 0.703,
+    "rejected": 79,
+    "success": 47,
+    "unsafe": 22
+  },
+  "real|T8|raw|gradient-boosting": {
+    "auc_repairable": 0.826,
+    "label_accuracy": 0.709,
+    "rejected": 88,
+    "success": 42,
+    "unsafe": 18
+  },
+  "real|T8|raw|logistic": {
+    "auc_repairable": 0.777,
+    "label_accuracy": 0.655,
+    "rejected": 82,
+    "success": 40,
+    "unsafe": 26
+  },
+  "real|T8|typed+raw|gradient-boosting": {
+    "auc_repairable": 0.84,
+    "label_accuracy": 0.723,
+    "rejected": 81,
+    "success": 47,
+    "unsafe": 20
+  },
+  "real|T8|typed+raw|logistic": {
+    "auc_repairable": 0.812,
+    "label_accuracy": 0.743,
+    "rejected": 75,
+    "success": 52,
+    "unsafe": 21
+  },
+  "real|T8|typed|gradient-boosting": {
+    "auc_repairable": 0.772,
+    "label_accuracy": 0.662,
+    "rejected": 97,
+    "success": 35,
+    "unsafe": 16
+  },
+  "real|T8|typed|logistic": {
+    "auc_repairable": 0.794,
+    "label_accuracy": 0.703,
+    "rejected": 87,
+    "success": 43,
+    "unsafe": 18
+  }
+}

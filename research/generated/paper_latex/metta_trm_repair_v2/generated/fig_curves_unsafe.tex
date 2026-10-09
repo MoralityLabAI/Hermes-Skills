@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+\begin{axis}[width=0.47\linewidth, height=5.0cm, xmode=log, log basis x=2, xlabel={training rows}, ylabel={unsafe commits, \% of T8},
+  ymin=0, ymax=100, ymajorgrids, grid style={gray!25}, 
+  tick label style={font=\small}, label style={font=\small}]
+\addplot[blue!70!black, mark=*, thick] coordinates {(25,21.9) (50,18.1) (100,16.4) (200,18.6) (400,15.0) (900,12.8)};
+\addplot[orange!80!black, mark=square*, thick] coordinates {(25,12.7) (50,19.3) (100,17.3) (200,18.1) (400,20.1) (900,16.2)};
+\addplot[red!70!black, dashed, mark=o, thick] coordinates {(25,32.0) (50,39.1) (100,48.6) (200,40.7) (400,41.1) (2282,37.0)};
+\addplot[black, densely dotted, thick, domain=20:2600, samples=2] {0.0};
+\end{axis}
+\end{tikzpicture}
